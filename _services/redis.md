@@ -7,7 +7,7 @@ sort: 20
 You can create Redis databases using the `convox services create` command. For example, to create a database called "redis1", use the following command:
 
     $ convox services create redis redis1
-    Creating redis1 (redis)...
+    Creating redis1 (redis)... CREATING
 
 This kicks off the provisioning of a Redis database using Amazon ElastiCache. Creation can take a few minutes. To check the status of the DB creation, use the command specified in "Database Info" below. The status will be 'creating' until the database becomes available.
 
