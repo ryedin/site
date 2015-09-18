@@ -29,7 +29,7 @@ Add the URL to the environment of any app that needs to use the database. Make s
 To delete the database, use the `convox services delete` command:
 
     $ convox services delete redis1
-    Deleting redis1... OK
+    Deleting redis1... DELETING
 
 Deleting can take several minutes. Use `info` to check on the status if you like. The info command will return a status of 'deleting' until the service is successfully deleted.
 
