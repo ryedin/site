@@ -5,12 +5,17 @@ sort: 10
 
 The Convox CLI enables you to update your Convox rack by using the `convox rack update` command. This document covers the basics of how that process works and provides some tips on how to structure your apps to avoid downtime.
 
-When you run `convox rack update`, the CLI will check for the latest published rack version. If your version is behind, it will initiate an update. You can check your version using the `convox -v` command.
+When you run `convox rack update`, the CLI will check for the latest published rack version. If your version is behind, it will initiate an update. You can check your current version using the `convox -v` command.
+
+`convox rack versions`
+`convox rack versions --unpublished` explain stable and edge
+
 
 When it's determined that your rack should be updated the update process:
 
 Downloads a new CloudFormation json file from S3
 Initiates an update on your convox CloudFormation stack using the new template
+^ make this a list if possible
 
 ## API Downtime
 
