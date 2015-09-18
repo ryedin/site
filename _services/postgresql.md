@@ -7,14 +7,9 @@ sort: 10
 You can create PostgreSQL databases using the `convox services create` command. For example, to create a database called "pg1", use the following command:
 
     $ convox services create postgres pg1
-    Creating postgres (pg1)... CREATING
+    Creating pg1 (postgres)... CREATING
 
-This kicks off the provisioning of a Postgres database on the Amazon RDS service. Creation can take up to 15 minutes. To find out if the database available, use the following command:
-
-    $ convox services info pg1
-    Name    postgres
-    Status  creating
-    URL
+This kicks off the provisioning of a Postgres database on the Amazon RDS service. Creation can take up to 15 minutes. To check the status of the DB creation, use the command specified in "Database Info" below. The status will be 'creating' until the database becomes available.
 
 ### Database info
 
@@ -34,7 +29,9 @@ Add the URL to the environment of any app that needs to use the database. Make s
 To delete the database, use the `convox services delete` command:
 
     $ convox services delete pg1
-    Deleting pg1... OK
+    Deleting pg1... DELETING
+
+Deleting can take several minutes. Use `info` to check on the status if you like. The info command will return a status of 'deleting' until the service is successfully deleted.
 
 ### Using a 3rd party database
 
