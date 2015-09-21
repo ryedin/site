@@ -2,4 +2,6 @@ web:
   build: .
   command: bundle exec jekyll serve
   ports:
-  - 4000:4000
+    - 4000:4000
+  volumes:
+    - .:/app
