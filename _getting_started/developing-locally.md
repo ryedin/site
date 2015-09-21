@@ -39,12 +39,6 @@ Convox uses three files to build and run your development environment:
   - An optional `Dockerfile` to document your build (can be used instead of a manifest)
   - An optional `.env` to contain development secrets
 
-Only one of: `docker-compose.yml`, `Procfile`, or `Dockerfile` is required.
-`convox start` will generate a `docker-compose.yml` from a `Dockerfile`.
-`convox start` will generate a `docker-compose.yml` AND a `Dockerfile` from a `Procfile`.
-
-You will most likely need to customize these generated files until we add better project detection ([pull requests welcome][rack-github]!).
-
 The `Dockerfile` and `.env` file are there to support information that is referenced in the manifest
 and required for a deterministic and declarative way to run your software.
 This allows the manifest to act as a single source of truth.
@@ -56,6 +50,14 @@ The environment data, in the `.env`, allows you to configure your development en
 Before we dive into what these files look like, let's take a look at the Convox commands we'll need to be familiar with.
 
 ## Convox commands
+
+### `convox init`
+
+As mentioned above, Convox apps can use a `Dockerfile` and `docker-compose.yml` to describe how to build and run your application.
+
+If you don't already have these files the `convox init` command will generate default files go get you started. It tries to do this intelligently based on your type of application and what files you already have. It will generate a `docker-compose.yml` from a `Dockerfile`. It will generate a `docker-compose.yml` AND a `Dockerfile` based on a `Procfile`.
+
+You will most likely need to customize these generated files until we add better project detection ([pull requests welcome][rack-github]!).
 
 ### `convox start`
 
