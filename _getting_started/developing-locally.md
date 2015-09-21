@@ -36,7 +36,7 @@ consisting of containerized linux processes and cloud services.
 Convox uses three files to build and run your development environment:
 
   - A `docker-compose.yml` file or a Procfile (referred to as the "manifest")
-  - An optional `Dockerfile` to document your build (can be used instead of a manifest)
+  - An optional `Dockerfile` to document your build
   - An optional `.env` to contain development secrets
 
 The `Dockerfile` and `.env` file are there to support information that is referenced in the manifest
