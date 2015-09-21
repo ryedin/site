@@ -6,12 +6,10 @@ sort: 20
 
 You can create Redis databases using the `convox services create` command. For example, to create a database called "redis1", use the following command:
 
-    $ convox services create redis1 redis
-    Creating service redis1 (redis)...
+    $ convox services create redis redis1
+    Creating redis1 (redis)... CREATING
 
-This kicks off the provisioning of a Redis database. Creation can take a few minutes. When the database becomes available the command will return:
-
-    Creating service redis1 (redis)... OK, redis1
+This kicks off the provisioning of a Redis database using Amazon ElastiCache. Creation can take a few minutes. To check the status of the DB creation, use the command specified in "Database Info" below. The status will be 'creating' until the database becomes available.
 
 ### Database info
 
@@ -31,7 +29,9 @@ Add the URL to the environment of any app that needs to use the database. Make s
 To delete the database, use the `convox services delete` command:
 
     $ convox services delete redis1
-    Deleting redis1... OK
+    Deleting redis1... DELETING
+
+Deleting can take several minutes. Use `info` to check on the status if you like. The info command will return a status of 'deleting' until the service is successfully deleted.
 
 ### Using a 3rd party database
 
