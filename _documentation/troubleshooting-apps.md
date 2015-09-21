@@ -4,11 +4,11 @@ sort: 60
 ---
 ## Problem: I don't know if my app is compatible with Convox.
 
-**Solution: Run `convox start` in your application directory.**
+**Solution: Run `convox init && convox start` in your application directory.**
 
-`convox start` is a tool that builds and runs your application for as a local development environment.
+`convox init` automates creating the right `Dockerfile` and `docker-compose.yml` manifest if those files are not already present.
 
-Behind the scenes it uses Docker, and automates creating the right `Dockerfile` and `docker-compose.yml` manifest if not present.
+`convox start` is a tool that builds and runs your application in your local development environment using Docker.
 
 The experience of a single `convox start` command to start a development environment is something all developers will enjoy.
 
