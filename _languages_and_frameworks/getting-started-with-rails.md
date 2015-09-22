@@ -20,7 +20,7 @@ To get started, create a new rails app. We'll call ours **simple-rails**.
 Change directories into the generated app and boot it with Convox:
 
     $ cd simple-rails
-    $ convox start
+    $ convox init && convox start
 
 Your app should now be up and running. Point your browser to http://&lt;docker host IP&gt;:5000. You should see the Rails welcome page.
 
@@ -28,7 +28,7 @@ Your app should now be up and running. Point your browser to http://&lt;docker h
 
 List the files in your app directory, and you'll notice 2 new ones, `Dockerfile` and `docker-compose.yml`. Convox uses Docker under the hood for containerization, and these two files contain all the information it needs to build and run your app.
 
-When these files don't already exist `convox start` makes some educated guesses and creates the best config files for you that it can. While this is nice, these files are meant as a starting point and can be completely customized. Let's edit `docker-compose.yml` to boot a Postgres container to be used in development mode.
+When these files don't already exist `convox init` makes some educated guesses and creates the best config files for you that it can. While this is nice, these files are meant as a starting point and can be completely customized. Let's edit `docker-compose.yml` to boot a Postgres container to be used in development mode.
 
 ## Adding a Postgres process
 
