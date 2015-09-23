@@ -36,7 +36,7 @@ The `convox install` command will kick off the process of setting up Convox in y
 
 <div class="block-callout block-show-callout type-primary">
   <h3>Rack Region</h3>
-  <p>A Rack exists in one AWS region. Since Convox depends on specific AWS services you can't deploy Rack's in all regions. Currently AWS regions that support both <em>Lambda</em> and <em>EC2 Container Service</em> are supported.</p>
+  <p>A Rack exists in one AWS region. Since Convox depends on specific AWS services you can't deploy Racks in all regions. Currently AWS regions that support both <em>Lambda</em> and <em>EC2 Container Service</em> are supported.</p>
   <p>Region can be specified on Rack install using the <code>--region</code> flag.</p>
 </div>
 
