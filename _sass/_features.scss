@@ -36,11 +36,11 @@
 
 .feature--arrows {
   &::before {
-    background-image: url("/images/icon-arrow-circle.svg");
+    background-image: url("/assets/images/static/icon-arrow-circle.svg");
   }
 
   @include media($medium-screen-up) {
-    background-image: url("/images/icon-arrow-circle.svg");
+    background-image: url("/assets/images/static/icon-arrow-circle.svg");
   }
 }
 
