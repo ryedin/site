@@ -1,0 +1,49 @@
+.feature-list {
+  margin-bottom: 3rem;
+
+  @include media($medium-screen-up) {
+    margin-bottom: 0;
+  }
+}
+
+.feature-list__item {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.feature {
+  display: block;
+
+  &::before {
+    background-position: center;
+    background-repeat: no-repeat;
+    content: "";
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  @include media($medium-screen-up) {
+    background-repeat: no-repeat;
+    padding-left: 3em;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.feature--arrows {
+  &::before {
+    background-image: url("/images/icon-arrow-circle.svg");
+  }
+
+  @include media($medium-screen-up) {
+    background-image: url("/images/icon-arrow-circle.svg");
+  }
+}
+
+.feature__name {
+  margin: 0;
+}

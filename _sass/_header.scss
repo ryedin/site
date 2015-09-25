@@ -1,0 +1,32 @@
+.app-nav {
+  @include outer-container;
+  padding: 1rem;
+  text-align: center;
+
+  @include media($medium-screen-up) {
+    text-align: left;
+  }
+}
+
+.app-nav__link {
+  color: $white;
+  margin-right: 1rem;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &:hover {
+    color: currentColor;
+    opacity: 0.75;
+  }
+}
+
+.app-nav__logo-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.app-nav__logo {
+  max-height: 2em;
+  vertical-align: middle;
+  width: auto;
+}

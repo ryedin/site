@@ -1,0 +1,164 @@
+.content {
+  @include outer-container;
+  padding: 3rem 0.75rem;
+
+  @include media($medium-screen-up) {
+    padding: 5rem 0.75rem;
+  }
+}
+
+.content--centered,
+.section-header--centered {
+  text-align: center;
+}
+
+.content--small {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.section-header {
+  @include clearfix();
+  margin-bottom: 2rem;
+
+  @include media($medium-screen-up) {
+    margin-bottom: 4rem;
+  }
+}
+
+.section-header--no-margin {
+  margin: 0;
+}
+
+.section-header--page {
+  padding: 2rem 0.5rem 3rem;
+
+  @include media($medium-screen-up) {
+    padding: 5rem 0.5rem;
+  }
+}
+
+.section-header__terminal-image {
+  margin-bottom: 2rem;
+}
+
+.section-header__terminal-image--neg-margin {
+  margin-top: 2rem;
+  margin-bottom: -4rem;
+
+  @include media($medium-screen-up) {
+    margin-top: 4rem;
+  }
+}
+
+.section-header__title {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.section-header__title--large {
+  font-size: 2rem;
+
+  @include media($medium-screen-up) {
+    font-size: 2.25rem;
+  }
+}
+
+.section-header__title--blue {
+  color: $blue;
+}
+
+.section-header__title--with-icon::before {
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  width: 4rem;
+}
+
+.icon-build::before {
+  background-image: url("/images/build-icon.svg");
+}
+
+.section-header__description--large {
+  font-size: 1.25rem;
+}
+
+.section-header__link {
+  color: $white;
+
+  &:hover,
+  &:active {
+    color: $white;
+  }
+}
+
+.section-header__action {
+  margin: 1rem 0;
+
+  @include media($medium-screen-up) {
+    display: inline-block;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.sub-section {
+  border-top: $base-border;
+}
+
+.sub-section--with-top-padding {
+  padding-top: 4rem;
+}
+
+.row {
+  clear: both;
+  display: block;
+}
+
+.col--4 {
+  @include media($medium-screen-up) {
+    @include span-columns(4 of 12);
+  }
+}
+
+.col--6 {
+  @include media($medium-screen-up) {
+    @include span-columns(6 of 12);
+  }
+}
+
+.col--8 {
+  @include media($medium-screen-up) {
+    @include span-columns(8 of 12);
+  }
+}
+
+.shift--2 {
+  @include media($medium-screen-up) {
+    @include shift(2);
+  }
+}
+
+.omega--2 {
+  @include media($medium-screen-up) {
+    @include omega(2n);
+  }
+}
+
+.omega--3 {
+  @include media($medium-screen-up) {
+    @include omega(3n);
+  }
+}
+
+.inline-container {
+  @include media($medium-screen-up) {
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+}

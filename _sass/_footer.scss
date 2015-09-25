@@ -1,0 +1,23 @@
+.app-footer {
+  text-align: center;
+
+  @include media($medium-screen-up) {
+    text-align: left;
+  }
+}
+
+.footer-links {
+  float: none;
+
+  @include media($medium-screen-up) {
+    float: right;
+  }
+}
+
+.footer-links__link {
+  margin-right: 0.5rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
