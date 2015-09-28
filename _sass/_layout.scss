@@ -115,6 +115,10 @@
   padding-top: 4rem;
 }
 
+.sub-section--with-bottom-padding {
+  padding-bottom: 4rem;
+}
+
 .row {
   clear: both;
   display: block;
@@ -161,4 +165,80 @@
     display: inline-block;
     margin-left: 0.5rem;
   }
+}
+
+.cli-example {
+  background-color: #333;
+  border-radius: 4px;
+  color: rgba(200, 200, 200, 0.7);
+  font-size: 1.08em;
+  padding: 14px;
+
+  pre.stdin {
+    color: #fff;
+  }
+
+  pre.stdout:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  pre {
+    margin: 0;
+    overflow-x: hidden;
+    font-size: 0.75em;
+  }
+
+  @include media($medium-screen-up) {
+    pre {
+      font-size: 1.0em;
+    }
+  }
+}
+
+.section--clear {
+  clear: both;
+}
+
+section {
+  @include media($medium-screen-up) {
+    dd {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+section.development {
+  dl {
+    margin-top: 0;
+  }
+}
+
+section.production {
+  @include media($medium-screen-up) {
+    pre {
+      font-size: 0.9em;
+    }
+  }
+}
+
+section.api {
+  @include media($medium-screen-up) {
+    dd {
+      margin-bottom: 4px;
+    }
+  }
+
+  .cli-example {
+    margin-bottom: 20px;
+
+    @include media($medium-screen-up) {
+      font-size: 0.8em;
+      height: 428px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+p.api-button {
+  margin-top: 40px;
 }

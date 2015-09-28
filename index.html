@@ -2,20 +2,26 @@
 layout: default
 ---
 
-<header class="gradientbg--dark">
+<header class="top">
   <nav class="app-nav">
     <div class="app-nav__logo-container">
       <img src="/assets/images/static/navbar-logo.png" class="app-nav__logo">
       <a href="/" class="app-nav__link">Convox</a>
     </div>
-    <a href="/docs" class="app-nav__link">Docs</a>
-    <a href="/api" class="app-nav__link">API</a>
-    <a href="//blog.convox.com/" class="app-nav__link">Blog</a>
+    <div class="links">
+      <a href="//blog.convox.com" class="app-nav__link">Blog</a>
+      <a href="https://github.com/convox" class="app-nav__link">Code</a>
+      <a href="/contributors" class="app-nav__link">Contributors</a>
+      <a href="/docs" class="app-nav__link">Docs</a>
+      <a href="mailto:support@convox.com" class="app-nav__link">Contact Us</a>
+    </div>
   </nav>
+</header>
 
+<header class="welcome gradientbg--dark">
   <section class="section-header--centered section-header--page">
     <h1 class="section-header__title section-header__title--large section-header__title--white">
-      Build, run, and manage applications at any scale.
+      Build, deploy, and manage applications at any scale.
     </h1>
 
     <p class="section-header__description section-header__description--large">
@@ -38,157 +44,194 @@ layout: default
   </section>
 </header>
 
-<section class="content">
+<section class="content development">
   <header class="section-header section-header--centered row">
     <h1 class="section-header__title section-header__title--blue">
-      Simplify your development workflow
+      Simplify your development environment
     </h1>
 
     <p class="section-header__description col--8 shift--2">
-      Bacon ipsum dolor amet beef salami tongue, shank sausage fatback filet
-      mignon capicola. Frankfurter shankle bresaola, ball tip bacon cupim
-      pancetta turkey
+      Start a local development environment that is identical to production with a single command.
     </p>
   </header>
 
   <section>
-    <img class="col--8" src="/assets/images/static/convox-cli.png">
+    <div class="cli-example col--8">
+      <pre class="stdin">$ convox start</pre>
+      <pre class="stdout">
+RUNNING: docker build -t zfrsyhlvdi ~/src/myapp
+Sending build context to Docker daemon 2.29 MB
+Step 0 : FROM rails:latest
+ ---> 5063434fffa1
+Step 1 : COPY Gemfile /app/Gemfile
+ ---> Using cache
+ ---> 54933d99be26
+Step 2 : COPY Gemfile.lock /app/Gemfile.lock
+ ---> Using cache
+ ---> 3969abcce8da
+Step 3 : RUN bundle install</pre>
+    </div>
 
     <dl class="col--4">
-      <dt>Instant Deploys</dt>
+      <dt>Works out of the box</dt>
       <dd>
-        Confidently deploy your code in seconds.
-        Let your developers stop worrying about infrastructure.
+        Convox will introspect your application to automatically create an
+        appropriate runtime environment.
       </dd>
 
-      <dt>Standardize Development</dt>
+      <dt>Identical to production</dt>
       <dd>
-        Quickly onboard new developers with a single command. Simplify your
-        documentation and setup scripts.
+        Runs exactly as it will in production so you can be certain
+        your changes work as expected.
       </dd>
 
-      <dt>Runs in your AWS account</dt>
+      <dt>Built on Docker</dt>
       <dd>
-        Use AWS best practices without the work.
-        Scale up with ease without breaking the bank.
+        Start with a huge library of pre-built images and customize
+        to your individual needs.
       </dd>
     </dl>
   </section>
 </section>
 
-<section class="gradientbg--light">
+<section class="production gradientbg--light">
   <div class="content">
-    <header class="section-header section-header--centered">
+    <header class="section-header section-header--centered row">
       <h1 class="section-header__title section-header__title--blue">
-        Convox Infrastructure API
+        Control your own infrastructure
       </h1>
-      <p>Powerful APIs for deploying, inspecting, and managing your private cloud with Convox.</p>
-      <p><a class="button" href="/api">Browse the API</a></p>
-      <img class="col--8 shift--2 section-header__terminal-image section-header__terminal-image--neg-margin" src="/assets/images/static/api-console.png">
+
+      <p class="section-header__description col--8 shift--2">
+        Create a zero-maintenance production environment in ten minutes.
+      </p>
     </header>
 
-    <section class="sub-section sub-section--with-top-padding">
-      <dl class="col--6 omega--2 feature feature--arrows">
-        <dt class="feature__name">Resource Management</dt>
-        <dd>Manage processes, environment variables, and resources for individual apps.</dd>
+    <section>
+      <dl class="col--4">
+        <dt>Runs in your own AWS account</dt>
+        <dd>
+          Use industry best practices without the work. Easily scale up
+          without breaking the bank.
+        </dd>
+
+        <dt>Instant deploys</dt>
+        <dd>
+          Confidently deploy new code in seconds.
+        </dd>
+
+        <dt>Graceful rollouts</dt>
+        <dd>
+          Easily deploy changes without dropping a single request.
+        </dd>
+
+        <dt>Flexible runtime</dt>
+        <dd>
+          Run any language or framework. Open TCP listeners on arbitrary ports.
+        </dd>
+
+        <dt>Powerful introspection</dt>
+        <dd>
+          Centralized access to your metrics and logs.
+        </dd>
+
+        <dt>Secure by default</dt>
+        <dd>
+          Run applications in a private network with secrets encrypted at rest.
+        </dd>
       </dl>
 
-      <dl class="col--6 omega--2 feature feature--arrows">
-        <dt class="feature__name">App Management</dt>
-        <dd>List and manage your applications in your EC2 cluster</dd>
-      </dl>
-
-      <dl class="col--6 omega--2 feature feature--arrows">
-        <dt class="feature__name">Bacon Ipsum</dt>
-        <dd>Ribeye pork chop, landjaeger t-bone shoulder pancetta fatback.</dd>
-      </dl>
-
-      <dl class="col--6 omega--2 feature feature--arrows">
-        <dt class="feature__name">Resource Management</dt>
-        <dd>Manage processes, environment variables, and resources for individual apps.</dd>
-      </dl>
-
-      <dl class="col--6 omega--2 feature feature--arrows">
-        <dt class="feature__name">App Management</dt>
-        <dd>List and manage your applications in your EC2 cluster</dd>
-      </dl>
-
-      <dl class="col--6 omega--2 feature feature--arrows">
-        <dt class="feature__name">Bacon Ipsum</dt>
-        <dd>Ribeye pork chop, landjaeger t-bone shoulder pancetta fatback.</dd>
-      </dl>
+      <div class="cli-example col--8">
+        <pre class="stdin">$ convox apps</pre>
+        <pre class="stdout">
+APP    STATUS
+myapp  running</pre>
+        <pre class="stdin">$ convox apps info</pre>
+        <pre class="stdout">
+Name       myapp
+Status     running
+Release    REXIQURVKXE
+Processes  admin web
+Hostname   myapp-1749418666.us-east-1.elb.amazonaws.com
+Ports      web:80 web:443 admin:9322</pre>
+        <pre class="stdin">$ convox ps</pre>
+        <pre class="stdout">
+ID           NAME   RELEASE      CPU    MEM     STARTED       COMMAND
+13254981d20  admin  REXIQURVKXE  0.47%  2.21%   17 hours ago  bin/admin
+92d4a822c13  web    REXIQURVKXE  3.29%  20.68%  17 hours ago  bin/web</pre>
+        <pre class="stdin">$ convox env</pre>
+        <pre class="stdout">PASSWORD=xyzzy</pre>
+        <pre class="stdin">$ convox logs</pre>
+        <pre class="stdout">
+web: [01/Jan/2015:00:00:00] "GET / HTTP/1.1" 200 554 0.0027
+web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
+      </div>
     </section>
   </div>
 </section>
 
-<section class="content sub-section">
-  <header class="section-header section-header--centered">
-    <h1 class="section-header__title section-header__title--with-icon icon-build">
-      Build applications that inspect and manage themselves
-    </h1>
+<section class="content sub-section api">
+  <div class="">
+    <header class="section-header section-header--centered">
+      <h1 class="section-header__title section-header__title--blue">
+        Customize your workflow
+      </h1>
+      <p>Easily integrate Convox with your existing tools.</p>
+      <p class="api-button"><a class="button" href="/api">Browse the API</a></p>
+    </header>
 
-    <p class="section-header__description col--8 shift--2">
-      Bacon ipsum dolor amet beef salami tongue, shank sausage fatback filet
-      mignon capicola. Frankfurter shankle bresaola, ball tip bacon.
-    </p>
-  </header>
+    <section class="cli-examples">
+      <div class="cli-example col--6">
+        <pre class="stdin">$ convox api get /apps</pre>
+        <pre class="stdout">
+[
+  {
+    "balancer": "myapp-1749418666.us-east-1.elb.amazonaws.com",
+    "name": "myapp",
+    "release": "REXIQURVKXE",
+    "status": "running"
+  },
+  {
+    "balancer": "myapp2-689551992.us-east-1.elb.amazonaws.com",
+    "name": "myapp2",
+    "release": "RNEFHNIUSKF",
+    "status": "running"
+  },
+  {
+    "balancer": "myapp3-435098803.us-east-1.elb.amazonaws.com",
+    "name": "myapp3",
+    "release": "RORJKBNVKDD",
+    "status": "running"
+  }
+]</pre>
+      </div>
 
-  <section class="row">
-    <img src="/assets/images/static/api-console.png" class="col--8 shift--2 section-header__terminal-image" alt="Convox API Console">
-
-    <div class="row">
-      <dl class="col--4 omega--3">
-        <dt>Scale your apps automatically</dt>
-        <dd>
-          Frankfurter shankle bresaola, ball tip bacon cupim pancetta turkey ribeye
-          capicola ground round. Tongue alcatra leberkas jerky sirloin flank.
-        </dd>
-      </dl>
-
-      <dl class="col--4 omega--3">
-        <dt>Enable apps to execute commands on themselves</dt>
-        <dd>
-          Frankfurter shankle bresaola, ball tip bacon cupim pancetta turkey ribeye
-          capicola ground round. Tongue alcatra leberkas jerky sirloin flank.
-        </dd>
-      </dl>
-
-      <dl class="col--4 omega--3">
-        <dt>Continuous Integration</dt>
-        <dd>
-          Frankfurter shankle bresaola, ball tip bacon cupim pancetta turkey ribeye
-          capicola ground round. Tongue alcatra leberkas jerky sirloin flank.
-        </dd>
-      </dl>
-
-      <dl class="col--4 omega--3">
-        <dt>Copy builds between staging and production apps</dt>
-        <dd>
-          Frankfurter shankle bresaola, ball tip bacon cupim pancetta turkey ribeye
-          capicola ground round. Tongue alcatra leberkas jerky sirloin flank.
-        </dd>
-      </dl>
-
-      <dl class="col--4 omega--3">
-        <dt>Copy builds between staging and production apps</dt>
-        <dd>
-          Frankfurter shankle bresaola, ball tip bacon cupim pancetta turkey ribeye
-          capicola ground round. Tongue alcatra leberkas jerky sirloin flank.
-        </dd>
-      </dl>
-
-      <dl class="col--4 omega--3">
-        <dt>Copy builds between staging and production apps</dt>
-        <dd>
-          Frankfurter shankle bresaola, ball tip bacon cupim pancetta turkey ribeye
-          capicola ground round. Tongue alcatra leberkas jerky sirloin flank.
-        </dd>
-      </dl>
-    </div>
-  </section>
+      <div class="cli-example col--6">
+        <pre class="stdin">$ convox api get /apps/myapp/processes</pre>
+        <pre class="stdout">
+[
+  {
+    "app": "myapp",
+    "command": "bin/web",
+    "cpu": 0.0329,
+    "host": "10.0.3.135",
+    "id": "13254981d20",
+    "image": "registry.internal:5000/myapp-web:BHLRYHSMXNM",
+    "memory": 0.2068,
+    "name": "web",
+    "ports": [
+      "80:3000",
+      "443:3001"
+    ],
+    "release": "REXIQURVKXE",
+    "started": "2015-01-01T00:00:00Z"
+  }
+]</pre>
+      </div>
+    </section>
+  </div>
 </section>
 
-<section class="bg--light">
+<section class="bg--light section--clear">
   <div class="content content--centered content--small">
     Have a question? Join us in our public slack channel!
 
