@@ -1,7 +1,7 @@
 FROM rails:latest
 
-EXPOSE 3000
-ENV PORT 3000
+EXPOSE 4000
+ENV PORT 4000
 
 WORKDIR /app
 
@@ -10,3 +10,5 @@ COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 
 COPY . /app
+
+CMD bundle exec jekyll serve -p $PORT
