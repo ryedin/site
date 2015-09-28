@@ -128,7 +128,7 @@ When the deployment finishes the URL of the app will be returned:
 
 Scale down the db process since we're using a hosted database:
 
-    $ convox scale simple-rails-postgres --count 0
+    $ convox scale postgres --count 0
 
 To finish up, run the database migrations on your production database:
 
