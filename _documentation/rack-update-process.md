@@ -28,15 +28,6 @@ You can see the latest stable rack releases using the `convox rack releases` com
     20150909014907
     20150905143024
 
-You can see all rack releases – stable and edge – using by adding the `--unpublished` option:
-
-    $ convox rack releases --unpublished
-    20150919002113
-    20150919000710
-    20150918233914
-    20150916194102-bad-run-process
-    20150916020649
-
 ## How rack updates work
 
 The convox API (and each of your applications) is a CloudFormation stack in AWS. Convox leverages CloudFormation to handle updates.
