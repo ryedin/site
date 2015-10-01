@@ -102,7 +102,7 @@ Now that you have an app working with `convox start` you can deploy it to produc
 
 Deployed apps should use hosted databases, not containers, so provision a Postgres database for your app to use:
 
-    $ convox services create simple-rails-postgres postgres
+    $ convox services create postgres simple-rails-postgres
     Creating service simple-rails-postgres (postgres)... OK, simple-rails-postgres
 
 Fetch the URL and set an environment variable.
