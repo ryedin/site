@@ -1,5 +1,5 @@
 .gradientbg--dark {
-  @include linear-gradient(135deg, $blue, $black);
+  @include linear-gradient(180deg, $blue, rgb(9,20,41));
   color: $white;
 }
 .gradientbg--light {
