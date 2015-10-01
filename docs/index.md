@@ -16,11 +16,11 @@ Follow the step-by-step guide below to get started.
 ## Install the CLI
 
 ##### OSX
-    $ curl -Ls "https://api.equinox.io/1/Applications/ap_TKxvw_eIPVyOzl6rKEonCU5DUY/Updates/Asset/convox.zip?os=darwin&arch=amd64&channel=stable" > /tmp/convox.zip
+    $ curl -Ls https://install.convox.com/osx.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
 
 ##### Linux
-    $ curl -Ls "https://api.equinox.io/1/Applications/ap_TKxvw_eIPVyOzl6rKEonCU5DUY/Updates/Asset/convox.zip?os=linux&arch=amd64&channel=stable" > /tmp/convox.zip
+    $ curl -Ls https://install.convox.com/linux.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
 
 ## Install Convox in AWS
