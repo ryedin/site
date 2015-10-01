@@ -1,6 +1,5 @@
 ---
 title: "Redis"
-sort: 20
 ---
 ### Creating a database
 
@@ -33,6 +32,6 @@ To delete the database, use the `convox services delete` command:
 
 Deleting can take several minutes. Use `info` to check on the status if you like. The info command will return a status of 'deleting' until the service is successfully deleted.
 
-### Using a 3rd party database
+### Using a third-party database
 
 You can use other hosted database services with your Convox app. Just set the environment varaible(s) that your app needs to connect as shown above.

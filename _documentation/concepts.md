@@ -1,6 +1,5 @@
 ---
 title: "Concepts"
-sort: 10
 ---
 ### Apps
 

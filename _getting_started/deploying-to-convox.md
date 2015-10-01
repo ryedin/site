@@ -1,6 +1,6 @@
 ---
-title: "Deploying an Application"
-sort: 20
+title: "Deploying to Convox"
+sort: 30
 ---
 Applications can be deployed to Convox via the `convox deploy` [CLI](https://github.com/convox/cli) command. To quickly see Convox deployment in action, you can clone our Sinatra [example app](https://github.com/convox-examples/sinatra).
 

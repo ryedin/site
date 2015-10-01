@@ -1,6 +1,5 @@
 ---
 title: "One-off Runs"
-sort: 15
 ---
 
 It's possible to run one-off commands against your Convox apps using the `convox run` CLI command. These can be useful for administrative tasks like database migrations as well as degugging and inspection.
@@ -24,7 +23,7 @@ By default this will start an interactive session that runs until the command on
     $ convox run web bash
     root@3e4160f0c4d0:/app#
 
-Now you're in a bash shell on the container. When you're done type "exit" or hit ctrl+D:
+Now you're in a bash shell on the container. When you're done type `exit`:
 
     root@3e4160f0c4d0:/app# exit
     $

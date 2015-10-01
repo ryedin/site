@@ -1,6 +1,6 @@
 ---
 title: "Support"
-sort: 80
+sort: 20
 ---
 
 ### Community Support

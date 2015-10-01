@@ -1,7 +1,3 @@
----
-title: "Getting Started with Convox"
-sort: 10
----
 ## What is Convox?
 
 Convox is an open source [Platform as a Service](https://en.wikipedia.org/wiki/Platform_as_a_service) that runs in your own Amazon Web Services (AWS) account.

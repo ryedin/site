@@ -1,13 +1,12 @@
 ---
-title: "Getting started with Rails"
-sort: 50
+title: "Getting Started with Rails"
 ---
 Convox provides tools for developing and deploying Rails applications. This tutorial will walk through the steps required to create a new Rails project and set it up to work with Convox.
 
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/installation/)
-- [Convox CLI](/docs/getting-started-with-convox/)
+- [Convox CLI](/docs/getting-started/)
 
 ## Creating an app
 

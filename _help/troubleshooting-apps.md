@@ -1,6 +1,5 @@
 ---
 title: "Troubleshooting Apps"
-sort: 60
 ---
 ## Problem: I don't know if my app is compatible with Convox.
 

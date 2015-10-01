@@ -1,6 +1,5 @@
 ---
 title: "Creating an IAM User"
-sort: 20
 ---
 Go to https://console.aws.amazon.com/iam/home?#security_credential and click `Get Started with IAM Users`.
 

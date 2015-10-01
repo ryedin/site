@@ -1,6 +1,6 @@
 ---
-title: "Developing an Application"
-sort: 11
+title: "Developing Locally"
+sort: 20
 ---
 ## Local development
 
@@ -337,7 +337,7 @@ Sure enough, `convox start | grep TEST` gives us what we expect:
 This is important: it preserves the *declarative* nature of your architecture, but still gives you flexibility.
 You can still avoid committing secrets to your repository, which makes for happy security engineers everywhere :).
 
-[cli]: /docs/getting-started-with-convox
+[cli]: /docs/getting-started
 [docker]: https://docs.docker.com/installation/
 [compose]: https://docs.docker.com/compose/
 [foreman]: https://github.com/ddollar/foreman
