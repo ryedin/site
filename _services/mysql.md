@@ -8,7 +8,7 @@ You can create MySQL databases using the `convox services create` command. For e
     $ convox services create mysql my1
     Creating my1 (mysql)... CREATING
 
-This kicks off the provisioning of a Postgres database on the Amazon RDS service. Creation can take up to 15 minutes. To check the status of the DB creation, use the command specified in "Database Info" below. The status will be 'creating' until the database becomes available.
+This kicks off the provisioning of a MySQL database on the Amazon RDS service. Creation can take up to 15 minutes. To check the status of the DB creation, use the command specified in "Database Info" below. The status will be 'creating' until the database becomes available.
 
 ### Database info
 
