@@ -1,3 +1,4 @@
+markdown: redcarpet
 collections:
   getting_started:
     output: true
@@ -17,6 +18,9 @@ collections:
   api:
     output: true
     permalink: /api/:name/
+  blog:
+    output: true
+    permalink: /blog/:title/
 defaults:
   - scope:
       path: ""
