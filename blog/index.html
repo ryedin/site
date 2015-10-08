@@ -1,0 +1,10 @@
+---
+layout: blog
+---
+{% assign posts = site.blog | sort: 'path' %}
+
+{% for post in posts reversed %}
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  {{ post.content }}
+  <hr class="post-separator">
+{% endfor %}
