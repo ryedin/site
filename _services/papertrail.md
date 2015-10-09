@@ -18,7 +18,7 @@ You can create a Papertrail service integration using the `convox services creat
     $ convox services create papertrail pt --url logs1.papertrailapp.com:11235
     Creating pt (papertrail)... CREATING
 
-This kicks off the provisioning of a Papertrail log forwarder using AWS Lambda. Creation can take a 45 seconds.
+This kicks off the provisioning of a Papertrail log forwarder using AWS Lambda. Creation can take 45 seconds.
 
 ### Linking Papertrail to an app
 
@@ -30,7 +30,7 @@ You can link a Papertrail service to one or more apps. For example, to start sen
     $ convox services link pt --app myapp2
     Linked papertrail to myapp2
 
-This kicks off the configuring a AWS Kinesis event source for the log forwarder. Creation of the event source and the first batch of events can take a minute to show up in Papertrail.
+This kicks off the configuring a AWS Kinesis event source for the log forwarder. Creation of the event source and the first batch of events can take 2 minutes to show up in Papertrail.
 
 ### Unlinking Papertrail from an app
 
@@ -39,7 +39,7 @@ To unlink the service and stop sending logs, use the `convox services unlink` co
     $ convox services unlink pt --app myapp
     Unlinked papertrail from myapp
 
-Removing the event source can take a minute.
+Removing the event source can take 45 seconds.
 
 ### Viewing Papertrail logs and configuring alerts
 
