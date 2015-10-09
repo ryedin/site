@@ -96,4 +96,4 @@ This file defines a single process called main. It's Docker image should be buil
 
 ## Next steps
 
-Think this is cool? [Install Convox](https://docs.convox.com/docs/getting-started-with-convox) and try it for yourself. You can read more about [Dockerfile](https://docs.docker.com/reference/builder/) and [docker-compose.yml](https://docs.docker.com/compose/) in the official docs. Both files are customizable and will not be overwritten by **convox start** or **convox deploy** if they already exist.
+Think this is cool? [Install Convox](https://convox.com/docs/) and try it for yourself. You can read more about [Dockerfile](https://docs.docker.com/reference/builder/) and [docker-compose.yml](https://docs.docker.com/compose/) in the official docs. Both files are customizable and will not be overwritten by **convox start** or **convox deploy** if they already exist.
