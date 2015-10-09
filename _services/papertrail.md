@@ -18,7 +18,7 @@ You can create a Papertrail service integration using the `convox services creat
     $ convox services create papertrail pt --url logs1.papertrailapp.com:11235
     Creating pt (papertrail)... CREATING
 
-This kicks off the provisioning of a Papertrail log forwarder using AWS Lambda. Creation can take a minute.
+This kicks off the provisioning of a Papertrail log forwarder using AWS Lambda. Creation can take a 45 seconds.
 
 ### Linking Papertrail to an app
 
