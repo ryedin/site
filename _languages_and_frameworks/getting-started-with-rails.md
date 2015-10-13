@@ -107,7 +107,7 @@ Deployed apps should use hosted databases, not containers, so provision a Postgr
     $ convox services create postgres simple-rails-postgres
     Creating service simple-rails-postgres (postgres)... OK, simple-rails-postgres
 
-This will take a 5 minutes to provision. When it is finished, fetch the URL and set an environment variable.
+This will take 5 minutes to provision. When it is finished, fetch the URL and set an environment variable.
 
     $ convox services info simple-rails-postgres
     Name    simple-rails-postgres
