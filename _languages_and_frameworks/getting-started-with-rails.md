@@ -60,10 +60,6 @@ with:
 
     gem 'pg'
 
-and run bundler:
-
-    $ bundle install
-
 ## Sync volumes
 
 Now we're ready to start editing the rails app, but first we should add a **volumes** directive to `docker-compose.yml`. This will keep the container filesystems in sync with your local filesystem. Edit your `docker-compose.yml` to look like this:
@@ -81,15 +77,21 @@ Now we're ready to start editing the rails app, but first we should add a **volu
     db:
       image: postgres
 
+## Start the app
+
+Now we can start the application. Note that both a database and web container are started, and the web container sees a change to `Gemfile` and re-runs the `bundle install` command and updates `Gemfile.lock` both in the container filesystem and on your local filesystem.
+
+    $ convox start
+
 ## Add some functionality
 
 Let's generate a scaffold so we can see Rails working. We'll make a trivial app to record books reading or read. Run the command with `convox exec` since DATABASE_URL is set on the container, but not in our local environment.
 
-    $ convox exec web rails g scaffold book title:string author:string started_on:date finished_on:date
+    $ docker exec simple-rails-web rails g scaffold book title:string author:string started_on:date finished_on:date
 
 Run the migration:
 
-    $ convox exec web rake db:migrate
+    $ docker exec simple-rails-web rake db:migrate
 
 Now you should be able to navigate to http://&lt;docker host ip&gt;:5000/books and see a listing of books. You should be able to enter a book and save the record in your containerized database.
 
@@ -105,7 +107,7 @@ Deployed apps should use hosted databases, not containers, so provision a Postgr
     $ convox services create postgres simple-rails-postgres
     Creating service simple-rails-postgres (postgres)... OK, simple-rails-postgres
 
-Fetch the URL and set an environment variable.
+This will take a 5 minutes to provision. When it is finished, fetch the URL and set an environment variable.
 
     $ convox services info simple-rails-postgres
     Name    simple-rails-postgres
@@ -114,20 +116,27 @@ Fetch the URL and set an environment variable.
 
 Attach the database to your app using the 
 
-    $ convox env set DATABASE_URL=postgres://postgres:KEDS6tKPZb1iffVB8IXi@postgres1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:5432/app 
+    $ convox env set DATABASE_URL=postgres://postgres:KEDS6tKPZb1iffVB8IXi@postgres1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:5432/app --promote
+    Updating environment... OK
+    Promoting ROJWCHUVFYU... OK
 
 Now we're ready to deploy the app:
 
     $ convox deploy
 
-When the deployment finishes the URL of the app will be returned:
+When the deployment finishes we can find the URL of the app:
 
-    Waiting for app... OK
-    web: http://simple-rails-764877228.us-east-1.elb.amazonaws.com:5000 
+    $ convox apps info
+    Name       simple-rails
+    Status     running
+    Release    RYYTQGHQERM
+    Processes  db web
+    Hostname   simple-rails-173749661.us-east-1.elb.amazonaws.com
+    Ports      web:5000
 
 Scale down the db process since we're using a hosted database:
 
-    $ convox scale postgres --count 0
+    $ convox scale db --count 0
 
 To finish up, run the database migrations on your production database:
 
