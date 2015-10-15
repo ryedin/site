@@ -26,3 +26,11 @@ Next use the Convox CLI to upload your certificate and private key, specifying t
     $ convox ssl add mydomain.crt mydomain.key 443
 
 That's it! SSL can be added to ports other than 443. Just repeat the previous two steps for your desired ports.
+
+### Inspect configuration
+
+You can use the Convox CLI to view SSL configuration for an app.
+
+    $ convox ssl
+    PORT  EXPIRES            DOMAINS
+    443   9 months from now  mydomain.com
