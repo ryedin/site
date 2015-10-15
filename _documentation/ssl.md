@@ -19,6 +19,10 @@ Edit your app's `docker-compose.yml` file to create a port mapping for your secu
         - "80:3000"
         - "443:3000"
 
+When you're done editing, redeploy your application.
+
+    $ convox deploy
+
 ### Upload your certificate
 
 Next use the Convox CLI to upload your certificate and private key, specifying the external port you want the certificate applied to. Continuing with the previous example, the command would look like:
