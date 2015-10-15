@@ -34,3 +34,10 @@ You can use the Convox CLI to view SSL configuration for an app.
     $ convox ssl
     PORT  EXPIRES            DOMAINS
     443   9 months from now  mydomain.com
+
+### Remove SSL
+
+The Convox CLI can also remove SSL.
+
+    $ convox ssl delete 443
+    Removing SSL 443... OK
