@@ -2,7 +2,7 @@
 title: "SSL"
 ---
 
-SSL is a requirement for most web applications. It guarantees privacy for the exchange of sensitive data such as login credentials.
+SSL is a requirement for most web applications. It guarantees privacy during the exchange of sensitive information such as login credentials.
 
 Convox enables easy setup of SSL on any incoming ports associated with your application.
 
