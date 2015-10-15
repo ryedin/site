@@ -25,9 +25,9 @@ When you're done editing, redeploy your application.
 
 ### Upload your certificate
 
-Next use the Convox CLI to upload your certificate and private key, specifying the external port you want the certificate applied to. Continuing with the previous example, the command would look like:
+Next, use the Convox CLI to upload your certificate and private key, specifying the external port you want the certificate applied to. Continuing with the previous example, the command would look like:
 
-    $ convox ssl add mydomain.crt mydomain.key 443
+    $ convox ssl create 443 mydomain.crt mydomain.key
 
 That's it! SSL can be added to ports other than 443. Just repeat the previous two steps for your desired ports.
 
