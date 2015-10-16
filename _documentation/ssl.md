@@ -23,7 +23,7 @@ When you're done editing, redeploy your application.
 
     $ convox deploy
 
-Your app will now be able to serve unencrypted traffic on port 443. To enable SSL traffic, you'll need to upload the your SSL certificate.
+Your app is now configured to serve unencrypted traffic on port 443. To enable SSL traffic, you'll need to upload your SSL certificate.
 
 ### Upload your certificate
 
