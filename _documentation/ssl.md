@@ -23,13 +23,17 @@ When you're done editing, redeploy your application.
 
     $ convox deploy
 
+Your app will now be able to serve unencrypted traffic on port 443. To enable SSL traffic, you'll need to upload the your SSL certificate.
+
 ### Upload your certificate
 
-Next, use the Convox CLI to upload your certificate and private key, specifying the external port you want the certificate applied to. Continuing with the previous example, the command would look like:
+Use the Convox CLI to upload your certificate and private key, specifying the external port you want the certificate applied to. Continuing with the previous example, the command would look like:
 
     $ convox ssl create 443 mydomain.crt mydomain.key
 
-That's it! SSL can be added to ports other than 443. Just repeat the previous two steps for your desired ports.
+After running this command, SSL will be terminated at the load balancer. Your app itself will continue to recieve unencrypted traffic on its internal port.
+
+SSL can be added to ports other than 443. Just repeat the previous two steps for your desired ports.
 
 ### Inspect configuration
 
