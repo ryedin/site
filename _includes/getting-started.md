@@ -74,7 +74,7 @@ You can run `convox apps` to verify that your client is properly communicating w
     $ convox apps
     APP  STATUS
 
-Congratulations! Convox is set up and ready to deploy apps. Try [deploying](/docs/deploying-to-convox)one of our sample applications.
+Congratulations! Convox is set up and ready to deploy apps. Try [deploying](/docs/deploying-to-convox) one of our sample applications.
 
 <div class="block-callout block-show-callout type-warning">
   <h3>Cost Management</h3>
