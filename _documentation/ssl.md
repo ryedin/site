@@ -29,7 +29,7 @@ Your app is now configured to serve unencrypted traffic on port 443. To enable S
 
 Use the Convox CLI to upload your certificate and private key, specifying the external port you want the certificate applied to. Continuing with the previous example, the command would look like:
 
-    $ convox ssl create 443 mydomain.crt mydomain.key
+    $ convox ssl create web:443 mydomain.crt mydomain.key
 
 After running this command, SSL will be terminated at the load balancer. Your app itself will continue to recieve unencrypted traffic on its internal port.
 
@@ -40,12 +40,12 @@ SSL can be added to ports other than 443. Just repeat the previous two steps for
 You can use the Convox CLI to view SSL configuration for an app.
 
     $ convox ssl
-    PORT  EXPIRES            DOMAINS
-    443   9 months from now  mydomain.com
+    TARGET   EXPIRES            DOMAINS
+    web:443  9 months from now  mydomain.com
 
 ### Remove SSL
 
 The Convox CLI can also remove SSL.
 
-    $ convox ssl delete 443
-    Removing SSL 443... OK
+    $ convox ssl delete web:443
+    Deleting SSL listener web:443... OK
