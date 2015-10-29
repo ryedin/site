@@ -24,10 +24,10 @@ All payloads have the following structure:
 
 ```json
 {
-  "action":"object:action"
-  "status":"success|error"
-  "timestamp":"RFC 3339"
-  "data":{}
+  "action":"object:action",
+  "status":"success|error",
+  "timestamp":"RFC 3339",
+  "data":{},
 }
 ```
 
@@ -39,9 +39,9 @@ For example, a promote on the app "foo" would be:
 
 ```json
 {
-  "action":"app:promote"
+  "action":"app:promote",
   "status":"success",
-  "timestamp":"2015-10-28T03:46:24.106682533Z"
+  "timestamp":"2015-10-28T03:46:24.106682533Z",
   "data":{
     "id":"RELEASE_ID",
     "name":"APP_NAME",
@@ -54,9 +54,9 @@ When the `status` is `error`, the `data` attribute will always have a `message` 
 
 ```json
 {
-  "action":"app:promote"
+  "action":"app:promote",
   "status":"error",
-  "timestamp":"2015-10-28T03:46:24.106682533Z"
+  "timestamp":"2015-10-28T03:46:24.106682533Z",
   "data":{
     "id":"RELEASE_ID",
     "name":"APP_NAME",
