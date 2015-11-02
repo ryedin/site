@@ -37,9 +37,9 @@ You can now boot the app with Convox:
 Apache should now be up and running. Point your browser to http://&lt;docker host IP&gt;
 
 
-If you're using `docker-machine` and your development VM is called `dev`, you can simply:
+If you're using `docker-machine` and your development VM is called `default`, you can simply:
 
-    $ open http://$(docker-machine ip dev)
+    $ open http://$(docker-machine ip default)
 
 You should see the "It works!" welcome page.
 
