@@ -6,7 +6,9 @@ Convox Grid enables continuous delivery workflows by integrating with GitHub. In
 
 First, link your Grid account to your GitHub account. This is found on the [Integrations](https://grid.convox.com/grid/user/integrations) tab of your Account page.
 
-<callout>If you don't already have a Grid account, you can also [Sign Up with GitHub](https://grid.convox.com/grid/signup).</callout>
+<div class="block-callout block-show-callout type-info">
+  <p>If you don't already have a Grid account, you can also <a href="https://grid.convox.com/grid/signup">Sign Up with GitHub</a>.</p>
+</div>
 
 Click the "Authorize" button.
 
@@ -26,7 +28,9 @@ This will open a modal dialog that allows you to configure the link. Choose a re
 
 ![create modal](/assets/images/docs/github-integration/create-modal.png)
 
-<callout>Linking private repos requires an upgrade to the [Basic Plan](link to plans doc).</callout>
+<div class="block-callout block-show-callout type-info">
+  <p>Linking private repos requires an upgrade to the <a href="https://grid.convox.com/pricing">Basic Plan</a>.</p>
+</div>
 
 An existing link can be edited to change the triggered action. Just click the button that shows the repo name to open an edit dialog.
 
