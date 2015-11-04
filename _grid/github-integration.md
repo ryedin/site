@@ -36,4 +36,4 @@ From this dialog you can also click the "Unlink" button to unlink the app and re
 
 ![unlink application](/assets/images/docs/github-integration/unlink-application.png)
 
-We hope that you find this feature useful. Inside Convox we're using GithHub hooks to auto-deploy our staging apps and auto-build production apps. Try it for yourself, and please send feedback, bug reports and feature requests to support@convox.com.
+We hope that you find this feature useful. Inside Convox we're using GithHub hooks to auto-deploy our staging apps and auto-build production apps. Try it for yourself, and please send feedback, bug reports and feature requests to [support@convox.com](mailto:support@convox.com).
