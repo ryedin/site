@@ -70,6 +70,13 @@
               <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
             {% endfor %}
           </ul>
+          <h4>Grid</h4>
+          <ul>
+            {% assign pages = site.grid | sort: 'sort', 'last' %}
+            {% for page in pages %}
+              <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
+            {% endfor %}
+          </ul>
         </section>
 
         <section class="col--9">
