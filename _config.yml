@@ -21,6 +21,9 @@ collections:
   blog:
     output: true
     permalink: /blog/:title/
+  grid:
+    output: true
+    permalink: /docs/:name/
 defaults:
   - scope:
       path: ""
