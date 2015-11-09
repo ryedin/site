@@ -1,30 +1,31 @@
 ---
-title: "Plans & Pricing"
+title: "Grid Plans & Pricing"
 ---
 
-## Free
+## Free Plan **$0/mo**\*
 
-**$0/mo**\*
-     
-  - Community Support
-  - Public GitHub Repos
-  - Slack Notifications
+For free you can to install one or more racks, link apps to public GitHub repos,
+configure a Slack integration for notifications, and give Rack access to
+teammates.
+
+Community support is available through the
+[Convox Public Slack channel](http://invite.convox.com) and through the
+[Convox GitHub projects](http://github.com/convox/rack)
 
 [Get Started](https://grid.convox.com/grid/signup)
 
-## Basic
+## Basic Plan **$19/mo**\*
 
-**$19/mo**\*
+Upgrading to the Basic Plan gets you all the features of the Free Plan plus it
+allows you to link apps to private GitHub repos. You can still give access to
+teammates for free.
 
-  - Email Support
-  - Private GitHub Repos
-  - Slack Notifications
+Priority support is available over email to
+[support@convox.com](mailto:support@convox.com).
 
 [Choose](https://grid.convox.com/grid/login)
 
-## Pro
-
-**$49/mo**\*
+## Pro Plan **$49/mo**\*
 
   - Priority Support
   - GitHub Orgs
@@ -33,10 +34,7 @@ title: "Plans & Pricing"
 
 Coming soon
 
-
-\*Plus resource costs. See below.
-
-## Open Source and Free Software
+### Open Source and Free Software
 
 The Convox team is passionate about open source and offers
 [Convox Rack](http://github.com/convox/rack) as free software under the
@@ -44,24 +42,7 @@ Apache 2.0 license.
 
 This core Convox software will always be free to read, modify, install and run.
 
-## Free Plan
-
-For free you can to install one or more racks, link apps to public GitHub repos,
-configure a Slack integration for notifications, and give access to teammates.
-
-Community support is available through the
-[Convox Public Slack channel](http://invite.convox.com) and through the
-[Convox GitHub projects](http://github.com/convox/rack)
-
-## Basic Plan
-
-Upgrading to the Basic Plan allows you to link apps to private GitHub repos. You
-can still give access to teammates for free.
-
-Priority support is available over email to
-[support@convox.com](mailto:support@convox.com).
-
-## Enterprise Services
+### Enterprise Services
 
 The Convox team knows how to run production software reliably at scale.
 
@@ -72,7 +53,7 @@ Convox also offers uptime and support SLAs.
 Contact [support@convox.com](mailto:support@convox.com) for more information and
 quotes.
 
-Resource Costs
+### \*Resource Costs
 
 Installing Rack creates infrastructure in your AWS account which incurs costs.
 On top of this, Convox chooses infrastructure configuration that maximizes
