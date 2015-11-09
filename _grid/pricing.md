@@ -20,7 +20,7 @@ Upgrading to the Basic Plan gets you all the features of the Free Plan plus it
 allows you to link apps to private GitHub repos. You can still give access to
 teammates for free.
 
-Priority support is available over email to
+Priority support is available to Basic Plan customers via email to
 [support@convox.com](mailto:support@convox.com).
 
 [Upgrade](https://grid.convox.com/grid/user/plan)
