@@ -4,13 +4,13 @@ title: "Grid Plans & Pricing"
 
 ## Free Plan **$0/mo**\*
 
-For free you can to install one or more racks, link apps to public GitHub repos,
+For free you can to install one or more Racks, link apps to public GitHub repos,
 configure a Slack integration for notifications, and give Rack access to
 teammates.
 
 Community support is available through the
 [Convox Public Slack channel](http://invite.convox.com) and through the
-[Convox GitHub projects](http://github.com/convox/rack)
+[Convox GitHub projects](http://github.com/convox/rack).
 
 [Get Started](https://grid.convox.com/grid/signup)
 
@@ -23,7 +23,7 @@ teammates for free.
 Priority support is available over email to
 [support@convox.com](mailto:support@convox.com).
 
-[Choose](https://grid.convox.com/grid/login)
+[Upgrade](https://grid.convox.com/grid/user/plan)
 
 ## Pro Plan **$49/mo**\*
 
@@ -32,7 +32,7 @@ Priority support is available over email to
   - Slack Bot
   - 5% Managed Rack Discount
 
-Coming soon
+[Coming soon](https://grid.convox.com/grid/signup)
 
 ### Open Source and Free Software
 
@@ -55,14 +55,14 @@ quotes.
 
 ### \*Resource Costs
 
-Installing Rack creates infrastructure in your AWS account which incurs costs.
-On top of this, Convox chooses infrastructure configuration that maximizes
-reliability, often at a higher price point.
+The prices above are for Grid services only. Installing a Rack creates
+infrastructure in your AWS account which incurs additional costs.
 
-For example, the default Convox cluster is 3 t2.smalls running in 3 availability
-zones. The convox API is running behind a dedicated ELB. These choices give you
-the best reliability for running a few apps, but sets the baseline cost at $80
-/ month.
+Convox chooses an infrastructure configuration that maximizes
+reliability. For example, the default Convox cluster is 3 t2.smalls running in 3
+availability zones. The convox API is running behind a dedicated ELB. These
+choices give you the best reliability for running a apps and  set the
+baseline cost at $80 / month.
 
 We believe that this cost is reasonable for most engineering teams. We also
 trust that AWS offers the best prices in the industry, and will continue their
