@@ -1,6 +1,11 @@
 ---
 title: "Concepts"
 ---
+### Rack
+
+A Rack is a private app platform that runs in your AWS account. See
+"[What is a Rack](/docs/what-is-a-rack/)" for an in-depth explanation.
+
 ### Apps
 
 An App is a collection of Processes that share a common Environment.
