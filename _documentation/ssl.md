@@ -27,7 +27,7 @@ Your app is now configured to serve unencrypted traffic on port 443. To enable S
 
 ### Upload your certificate
 
-Use the Convox CLI to upload your certificate and private key, specifying the external port you want the certificate applied to. Continuing with the previous example, the command would look like:
+Use the Convox CLI to upload your certificate and private key, specifying the process and external port you want the certificate applied to. Continuing with the previous example, the command would look like:
 
     $ convox ssl create web:443 mydomain.crt mydomain.key
 
