@@ -3,6 +3,7 @@ layout: blog
 ---
 {% for post in site.posts %}
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <h3>{{ post.date | date: '%B %d, %Y' }}</h3>
   {{ post.content }}
   <hr class="post-separator">
 {% endfor %}
