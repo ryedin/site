@@ -1,3 +1,5 @@
+name: Convox Blog
+url: https://convox.com/blog
 markdown: redcarpet
 collections:
   getting_started:
