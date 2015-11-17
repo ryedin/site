@@ -468,7 +468,7 @@ Convox is engineered to maintain uptime during all these operations.
 
 ### References
 
-[Docker Compose File Reference: Ports](https://docs.docker.com/compose/compose-file/#ports)
-[ECS Creating a Service](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-service.html)
-[ECS Service Load Balancing](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html)
-[Listeners for your Load Balancer](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html)
+* [Docker Compose File Reference: Ports](https://docs.docker.com/compose/compose-file/#ports)
+* [ECS Creating a Service](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-service.html)
+* [ECS Service Load Balancing](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html)
+* [Listeners for your Load Balancer](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html)
