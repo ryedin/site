@@ -252,8 +252,6 @@ $ AWS_DEFAULT_REGION=us-west-2 aws elb describe-load-balancers --load-balancer-n
 Production apps rely on SSL. A short manifest demonstrates how to run an httpd server that is also exposed on port 443.
 
 ```bash
-$ mkdir httpd && cd httpd
-
 $ cat >docker-compose.yml <<EOF
 web:
   image: httpd
