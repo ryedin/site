@@ -7,7 +7,7 @@ A Convox Rack is a private Platform-as-a-Service (PaaS). It gives you a place to
 
 The name “Rack” is inspired by actual equipment racks found in data centers. A hardware rack might have several web server machines, a database machine, a load balancer, etc. Convox Racks offer this same functionality (and more), but via virtual computing resources provided by Amazon Web Services (AWS).
 
-The Rack installer provisions all of the AWS components necessary to create a robust, developer-friendly platform. Convox draws its team’s substantial knowledge and experience with AWS operations to optimally configure the services needed for a Rack. While Racks use over a dozen AWS services, a few are worthy of specific mention:
+The Rack installer provisions all of the AWS components necessary to create a robust, developer-friendly platform. Convox draws on its team’s substantial knowledge and experience with AWS operations to optimally configure the services needed for a Rack. While Racks use over a dozen AWS services, a few are worthy of specific mention:
 
   - **CloudFormation** is responsible for storing and transitioning the state of your AWS infrastructure. The Rack itself and the apps and services created within it are all implemented as CloudFormation stacks. This lets AWS do the heavy lifting of infrastructure management.
 
