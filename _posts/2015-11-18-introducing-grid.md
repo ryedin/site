@@ -25,8 +25,9 @@ GitHub integration, and Slack integration.
 ## Rack Sharing
 
 As engineers the vast majority of us work on teams. Sharing (and limiting)
-access among an engineering team is critical. Security best practices demand
-that each engineer has unique, resettable credentials.
+access to resources among an engineering team is critical. Security best
+practices demand that each engineer has unique, resettable credentials for any
+critical system.
 
 Grid enables sharing of one or many Racks by acting as a control point for CLI
 commands. Now, instead of authenticating with a Rack directly using a shared
