@@ -1,6 +1,7 @@
 name: Convox Blog
 url: https://convox.com/blog
 markdown: redcarpet
+permalink: /blog/:year/:month/:day/:title/
 collections:
   getting_started:
     output: true
@@ -20,9 +21,6 @@ collections:
   api:
     output: true
     permalink: /api/:name/
-  blog:
-    output: true
-    permalink: /blog/:title/
   grid:
     output: true
     permalink: /docs/:name/
