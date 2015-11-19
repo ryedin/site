@@ -1,7 +1,7 @@
 name: Convox Blog
 url: https://convox.com/blog
 markdown: redcarpet
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 collections:
   getting_started:
     output: true
