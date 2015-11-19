@@ -2,79 +2,21 @@
 
 Convox provides an open source [Platform as a Service](https://en.wikipedia.org/wiki/Platform_as_a_service) that runs in your own Amazon Web Services (AWS) account. We call this platform a Rack. You can read more about the technical details [here](/docs/what-is-a-rack/).
 
-To start using Convox, you'll need to install the command line interface (CLI) onto your OS X or Linux computer. Then you can use the `convox` CLI to install the PaaS system into your AWS account.
+## Create a Grid account
 
-Once that's all set up you can start deploying and managing your apps with Convox, without having to worry about the underlying AWS services.
+To get started we recommend first [creating a Grid account](https://grid.convox.com/grid/signup). Grid is a web service that make it easy to install and manage Racks, share Rack access with your team, and automate workflows.
 
-Follow the step-by-step guide below to get started.
+## Install a Rack
 
+Once you're logged in to your new Grid account, click the "Install New Rack" button to get started with the web installer.
 
-## Install the CLI
+![Install New Rack](/assets/images/docs/getting-started/install-new-rack.png)
 
-##### OSX
-    $ curl -Ls https://install.convox.com/osx.zip > /tmp/convox.zip
-    $ unzip /tmp/convox.zip -d /usr/local/bin
+The installer form needs AWS credentials to install the Rack components. We strongly recommend following AWS best practices and creating an IAM user for this task. See our guide for creating a user with the correct access [here](/docs/creating-an-iam-user). When the installation is complete you can safely [delete the user](/docs/deleting-an-iam-user).
 
-##### Linux
-    $ curl -Ls https://install.convox.com/linux.zip > /tmp/convox.zip
-    $ unzip /tmp/convox.zip -d /usr/local/bin
+The installer will kick off the process of setting up Convox in your AWS account. All of the AWS resources required for creating a powerful app deployment platform will be correctly configured for you. This process takes 5-10 minutes. Until it completes, Grid will show the Rack in the Installing status. You can click "View Logs" on the Rack to see live updates.
 
-## Install Convox in AWS
-
-The `convox install` command will kick off the process of setting up Convox in your AWS account. All of the AWS resources required for creating a powerful app deployment platform will be correctly configured for you.
-
-    $ convox install
-
-<div class="block-callout block-show-callout type-info">
-  <h3>Security credentials</h3>
-  <p>To install Convox into your AWS account, the Convox CLI needs an <code>AWS Access Key ID</code> and <code>Secret Access Key</code>. We highly recommend following AWS best practices by <a href="/docs/creating-an-iam-user">creating a new IAM user to supply these credentials</a>. Once the install is complete you can safely <a href="/docs/deleting-an-iam-user">delete the user</a>.</p>
-</div>
-
-<div class="block-callout block-show-callout type-primary">
-  <h3>Rack Region</h3>
-  <p>A Rack exists in one AWS region. Since Convox depends on specific AWS services you can't deploy Rack's in all regions. Currently AWS regions that support both <em>Lambda</em> and <em>EC2 Container Service</em> are supported.</p>
-  <p>Region can be specified on Rack install using the <code>--region</code> flag.</p>
-</div>
-
-The installation process takes about 5 minutes. Feel free to go make a sandwich while you contemplate all of the AWS docs you're not reading and glue code you're not writing.
-
-    Installing Convox...
-    Created IAM User: convox-RegistryUser-1L99G5CIN2YJ2
-    Created ECS Cluster: convo-Clust-17YAVSE7MRRKH
-    Created IAM User: convox-KernelUser-OC4CV0Q5NU8B
-    Created Access Key: AKIAIIXP3G3F4TX3KY2A
-    Created Access Key: AKIAIEP4FSGRQE5GGRRA
-    Created S3 Bucket: convox-registrybucket-182tj69qj9k8y
-    Created S3 Bucket: convox-settings-l5u6qcekwsq4
-    Created VPC Internet Gateway: igw-b03f76d5
-    Created VPC: vpc-fd130e98
-    Created Lambda Function: convox-CustomTopic-484343B6HXL5
-    Created Routing Table: rtb-6306fe07
-    Created DynamoDB Table: convox-releases
-    Created DynamoDB Table: convox-builds
-    Created Security Group: sg-3be3365c
-    Created Security Group: sg-3ee33659
-    Created VPC Subnet: subnet-994567ee
-    Created VPC Subnet: subnet-bece8be7
-    Created VPC Subnet: subnet-9490febf
-    Created Elastic Load Balancer: convox
-    Created ECS TaskDefinition: KernelTasks
-    Created ECS Service: Kernel
-    Created AutoScalingGroup: convox-Instances-1496N5UFY25LU
-    Created CloudFormation Stack: convox
-    Waiting for load balancer...
-
-When the load balancer becomes available the installation is complete:
-
-    Logging in...
-    Success, try convox apps
-
-You can run `convox apps` to verify that your client is properly communicating with the system.
-
-    $ convox apps
-    APP  STATUS
-
-Congratulations! Convox is set up and ready to deploy apps. Try [deploying](/docs/deploying-to-convox) one of our sample applications.
+![Installer Logs](/assets/images/docs/getting-started/installer-logs.png)
 
 <div class="block-callout block-show-callout type-warning">
   <h3>Cost Management</h3>
@@ -85,5 +27,30 @@ Congratulations! Convox is set up and ready to deploy apps. Try [deploying](/doc
 
   <p>Each deployed app will provision an additional ELB which starts at $18/month.</p>
 
-  <p>At any time you can <a href="/docs/uninstall-convox">uninstall Convox</a> to delete the resources and stop accruing costs.</p>
+  <p>At any time you can <a href="/docs/uninstall-a-rack">uninstall a Rack</a> to delete the resources and stop accruing costs.</p>
 </div>
+
+## Install the CLI
+
+While you're waiting for the Rack installation to finish, install the Convox command line interface (CLI). The CLI will be the primary way you interact with Convox resources. Use the following commands to install the CLI on your system.
+
+##### OSX
+    $ curl -Ls https://install.convox.com/osx.zip > /tmp/convox.zip
+    $ unzip /tmp/convox.zip -d /usr/local/bin
+
+##### Linux
+    $ curl -Ls https://install.convox.com/linux.zip > /tmp/convox.zip
+    $ unzip /tmp/convox.zip -d /usr/local/bin
+
+## Log in on the CLI
+
+When the Rack installation finishes, use your Grid API key to log into Grid via the CLI, using your Grid API key as the password.
+
+    $ convox login grid.convox.com --password <Grid API key>
+
+Your `convox` commands will now be proxied through Grid to your new rack. You can run `convox apps` to verify that your client is properly communicating with the system.
+
+    $ convox apps
+    APP  STATUS
+
+Congratulations! Convox is set up and ready to deploy apps. Try [deploying](/docs/deploying-to-convox) one of our sample applications.
