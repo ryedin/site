@@ -1,13 +1,12 @@
+---
+title: "Using the CLI Installer"
+---
+
 ## What is Convox?
 
-Convox is an open source [Platform as a Service](https://en.wikipedia.org/wiki/Platform_as_a_service) that runs in your own Amazon Web Services (AWS) account.
+Convox provides an open source [Platform as a Service](https://en.wikipedia.org/wiki/Platform_as_a_service) that runs in your own Amazon Web Services (AWS) account. We call this platform a Rack. You can read more about the technical details [here](/docs/what-is-a-rack/).
 
-To start using Convox, you'll need to install the command line interface (CLI) onto your OS X or Linux computer. Then you can use the `convox` CLI to install the PaaS system into your AWS account.
-
-Once that's all set up you can start deploying and managing your apps with Convox, without having to worry about the underlying AWS services.
-
-Follow the step-by-step guide below to get started.
-
+We recommend installing Racks via Convox Grid. You can follow [this guide](/docs/getting-started) to get started through Grid. If you don't want to use Grid and just want to install a standalone Rack, follow the instructions below.
 
 ## Install the CLI
 
@@ -85,5 +84,5 @@ Congratulations! Convox is set up and ready to deploy apps. Try [deploying](/doc
 
   <p>Each deployed app will provision an additional ELB which starts at $18/month.</p>
 
-  <p>At any time you can <a href="/docs/uninstall-convox">uninstall Convox</a> to delete the resources and stop accruing costs.</p>
+  <p>At any time you can <a href="/docs/uninstall-convox">uninstall a Rack</a> to delete the resources and stop accruing costs.</p>
 </div>
