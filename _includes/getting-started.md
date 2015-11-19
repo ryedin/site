@@ -6,6 +6,10 @@ Convox provides an open source [Platform as a Service](https://en.wikipedia.org/
 
 To get started we recommend first [creating a Grid account](https://grid.convox.com/grid/signup). Grid is a web service that make it easy to install and manage Racks, share Rack access with your team, and automate workflows.
 
+<div class="block-callout block-show-callout type-info">
+  If you don't want to use Grid you can still install a Rack via the Convox CLI. See <a href="/docs/using-the-cli-installer">this guide</a> for more info.<br>&nbsp;
+</div>
+
 ## Install a Rack
 
 Once you're logged in to your new Grid account, click the "Install New Rack" button to get started with the web installer.
