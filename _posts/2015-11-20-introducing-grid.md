@@ -95,3 +95,5 @@ workflows around rock-solid infrastructure. Take a look at
 [Grid](https://grid.convox.com/), and consider how it will level up your
 engineering team.
 
+> Discuss on [Hacker News](https://news.ycombinator.com/item?id=10603550)
+
