@@ -8,7 +8,7 @@ We are proud to announce the latest addition to the Convox platform:
 
 In August we launched [Convox Rack](http://convox.com/docs/what-is-a-rack/)
 which installs a rock-solid, private PaaS into your own AWS account minutes. The
-response to Rack has been thrlling. People all over the world are using it to
+response to Rack has been thrilling. People all over the world are using it to
 deploy and scale their applications. Rack is a powerful tool for sure, but a
 great platform is about more than just managing apps. It's also about managing
 teams and workflows. Enter Grid.
@@ -55,16 +55,16 @@ GitHub](https://grid.convox.com/grid/user/integrations). Once you're linked you
 can easily add GitHub webhooks to any of your Convox apps.
 
 Webhooks can trigger automatic builds and deployments to your Convox app when
-you push Code to master on GitHub. We're working more triggers -- such as pushes
-to branches and commit status changes -- that will enable even more powerful CI
-workflows, so stay tuned.
+you push Code to master on GitHub. We're working on more triggers -- such as
+pushes to branches and commit status changes -- that will enable even more
+powerful CI workflows, so stay tuned.
 
 You can configure webhooks from public GitHub repos for free. Private repos are
 available via the Basic paid plan.
 
 ## Slack integration
 
-Chat rooms are the command centers for DevOps teams and perhaps no chat service
+Chat rooms are the command centers for DevOps teams, and perhaps no chat service
 has more buzz these days than Slack.
 
 Grid implements the
@@ -92,6 +92,6 @@ With Grid and Rack you get DevOps best practices in minutes:
 
 The [Convox community](https://invite.convox.com) is sailing along with elegant
 workflows around rock-solid infrastructure. Take a look at
-[Grid](https://grid.convox.com/) and consider how it will level up your
+[Grid](https://grid.convox.com/), and consider how it will level up your
 engineering team.
 
