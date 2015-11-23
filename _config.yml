@@ -1,5 +1,4 @@
-name: Convox Blog
-url: https://convox.com/blog
+url: https://convox.com
 markdown: redcarpet
 permalink: /blog/:title/
 collections:
