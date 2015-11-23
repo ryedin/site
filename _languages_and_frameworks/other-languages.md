@@ -1,6 +1,5 @@
 ---
-title: "Arbitrary Language Support"
-sort: 20
+title: "Other Languages"
 ---
 
 Convox supports any language or framework that can be run in a Docker container, so adding support for your language is primarily an exercise in writing a good Dockerfile. This guide will walk you through the high-level steps of writing a Dockerfile for any language. 
@@ -15,7 +14,7 @@ Reference the image in the FROM directive in the first line of the Dockerfile yo
 
 Example:
 
-    FROM golang:1.4
+    FROM golang:1.5
 
 <div class="block-callout block-show-callout type-info">
   <h3>Onbuild images</h3>
@@ -32,8 +31,8 @@ You can also install any system dependencies specifically needed by your app (su
 
 Example:
 
-    RUN apt-get update
-    RUN apt-get install imagemagick --fix-missing
+    RUN apt-get -y update
+    RUN apt-get -y install imagemagick --fix-missing
 
 ## Copy app code into app directory
 
@@ -61,6 +60,20 @@ For example, in a Rails app, you might run Bundler and execute the asset pipelin
 
     RUN bundle install
     RUN rake assets:precompile
+
+You can test building your app image by running `docker build .` at the same directory level as your Dockerfile.
+
+## Compose containers
+
+Once you're successfully building your app image, the next step is to describe how the images that make up your app will be run as containers. You do this using a `docker-compose.yml` file. For more information about how this file works, see "The Manifest(s) (continued) section of [Developing Locally](/docs/developing-locally).
+
+## Boot your app locally
+
+Once you've written your `Dockerfile` and `docker-compose.yml` try booting your app with the command `convox start`. A properly configured app should boot locally and be available at the specified ports on your Docker host IP.
+
+## Deploy to your Convox Rack
+
+An app that boots locally should boot without error when deployed to a Rack. Follow the [deployment guide](/docs/deploying-to-convox/) to for more info.
 
 ## Help
 
