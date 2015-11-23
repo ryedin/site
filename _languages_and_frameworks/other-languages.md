@@ -2,7 +2,7 @@
 title: "Other Languages"
 ---
 
-Convox supports any language or framework that can be run in a Docker container, so adding support for your language is primarily an exercise in writing a good Dockerfile. This guide will walk you through the high-level steps of writing a Dockerfile for any language. 
+Convox supports any language or framework that can be run in a Docker container, so adding support for your language is primarily an exercise in writing a good Dockerfile. This guide will walk you through the high-level steps of writing a Dockerfile for any language.
 
 ## Start with an official image
 
@@ -69,12 +69,23 @@ Once you're successfully building your app image, the next step is to describe h
 
 ## Boot your app locally
 
-Once you've written your `Dockerfile` and `docker-compose.yml` try booting your app with the command `convox start`. A properly configured app should boot locally and be available at the specified ports on your Docker host IP.
+Now that your `Dockerfile` and `docker-compose.yml` are written, try booting your app with the command `convox start`. A properly configured app should boot locally and be available at the specified ports on your Docker host IP.
 
 ## Deploy to your Convox Rack
 
 An app that boots locally should boot without error when deployed to a Rack. Follow the [deployment guide](/docs/deploying-to-convox/) to for more info.
 
-## Help
+## Documentation
 
-We hope that this guide will help you get started. If you have questions, please join our discussion on Slack by signing up at [invite.convox.com](http://invite.convox.com/).
+When you've perfected your Docker image, please consider sharing what you've learned with the Convox community by submitting a "Getting Started with <language>" guide to the [docs repo](https://github.com/convox/convox.github.io) via pull request.
+
+Add a Markdown file to the `_languages_and_frameworks` directory. A good getting started guide covers the following topics:
+
+- Creating the app
+- Writing a `Dockerfile`
+- Writing a `docker-compose.yml` file
+- Configuring dependencies
+- Booting the app localy
+- Deploying the app to a Convox Rack
+
+The Convox staff is happy to help you work through these sections and publish a doc that will be of value to the whole community. Please don't hesitate to [ask](https://invite.convox.com).
