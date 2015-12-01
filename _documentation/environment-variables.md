@@ -41,11 +41,11 @@ It's possible to set multiple variables in a single command:
 
     $ convox env set FOO=bar BAZ=qux
 
-To completely remove a variable, use the `convox unset` command.
-
     $ convox env
     BAZ=qux
     FOO=bar
+
+To completely remove a variable, use the `convox unset` command.
 
     $ convox env unset FOO
 
