@@ -18,18 +18,15 @@ For secret values that you don't want to check into version control, just stub t
       environment:
         - FOO
 
-Then set the value in a file named `.env` in top level directory of your app.
+Then set the value in a file named `.env` in top level directory of your app. Add `.env` to your version control system's ignore file.
 
     $ cat .env
     FOO=bar
 
-**Variables set in `.env` will not be applied to the container unless they are also stubbed in `docker-compose.yml`.**
-
-To intentionally set a variable blank, leave a trailing equals sign at the end of the variable name in `docker-compose.yml`:
-
-    web:
-      environment:
-        - FOO=
+<div class="block-callout block-show-callout type-warning">
+  <h3>Required Variables</h3>
+  <p>All variables declared without values in <code>docker-compose.yml</code> must have a value set in <code>.env</code>, or <code>convox start</code> will error. Likewise, variables set in <code>.env</code> will not be applied to the container unless they are also stubbed in <code>docker-compose.yml</code>.</p>
+</div>
 
 ## Deployed Applications
 
