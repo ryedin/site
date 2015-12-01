@@ -11,7 +11,7 @@ It is up to the receiver to act on and filter requests.
 
 Once you've set up an endpoint you can subscribe to notifications via:
 
-    $ convox services create webhook Notifier --url http://example.org
+    $ convox services create webhook --name Notifier --url http://example.org
     Creating Notifier (webhook)... CREATING
 
 This kicks off the provisioning of a web hook. Creation time is under 30 seconds.
