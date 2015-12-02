@@ -33,7 +33,20 @@ Use the Convox CLI to upload your certificate and private key, specifying the pr
 
 After running this command, SSL will be terminated at the load balancer. Your app itself will continue to recieve unencrypted traffic on its internal port.
 
-SSL can be added to ports other than 443. Just repeat the previous two steps for your desired ports.
+<div class="block-callout block-show-callout type-info">
+  <h3>HTTPS backends</h3>
+  <p>If your backend listener speaks HTTPS rather than HTTP you should specify the <code>--secure</code> option:</p>
+  <p><code>$ convox ssl create web:443 mydomain.crt mydomain.key --secure</code></p>
+</div>
+
+SSL can be added to multiple ports. Repeat the previous step as many times as necessary.
+
+<div class="block-callout block-show-callout type-info">
+  <h3>Intermediate certificate chains</h3>
+  <p>If you need to use a custom intermediate certificate chain you can specify it with the <code>--chain</code> option:</p>
+  <p><code>$ convox ssl create web:443 mydomain.crt mydomain.key --chain mydomain.chain</code></p>
+  <p>If you do not specify an intermediate chain it will be resolved automatically.</p>
+</div>
 
 ### Inspect configuration
 
