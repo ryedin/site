@@ -175,7 +175,7 @@ The `web` process has a `build` key.
 That instructs `convox start` to build an image using the `Dockerfile` in the specified directory.
 
 The `ports` key is passed to `docker run` and determines port mappings for the host VM.
-In this example, the port 5000 of the docker host machine is being mapped to port 3000 in the container.
+In this example, the port 3000 of the docker host machine is being mapped to port 3000 in the container.
 
 The `worker` process configuration is copied from web because it is built with the same codebase,
 talks to the same database, and otherwise shares everything in common with the `web` process except the command.
