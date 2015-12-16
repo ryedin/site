@@ -183,24 +183,7 @@ talks to the same database, and otherwise shares everything in common with the `
 And the ports. We've already mapping `3000` on the host container to the exposed `3000` on `web`.
 Because we can't have two processes on the same port, this will cause an error starting the `worker`.
 
-The worker doesn't need that port for anything anyways and this becomes explicit in the manifest.
-
-<div class="block-callout block-show-callout type-info">
-<h3>Ports</h3>
-<p>You can either explicitly map ports from the host operating system via "HOST:CONTAINER" syntax
-in the manifest, but that can lead to conflicts.
-This is usually only necessary few to one process in your application to explicitly define a port and
-that is usually to communicate with an external load balancer..
-</p>
-
-<p>
-When possible, it is better to avoid picking ports and to use container linking and/or `docker port` to query
-exposed port values.
-This
-allows the image to bind to a known port within a container but still allow
-docker to map arbitrary ports to your container.
-</p>
-</div>
+The worker doesn't need that port for anything and this becomes explicit in the manifest.
 
 The `volumes` key is passed to `docker run` to mount a volume for read and write access into the running container.
 This is useful for mapping in config files that exist in your source repository or for mapping the
