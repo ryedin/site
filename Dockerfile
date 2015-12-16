@@ -1,4 +1,7 @@
-FROM rails:latest
+FROM ruby:latest
+
+RUN apt-get update
+RUN apt-get install -y nodejs
 
 EXPOSE 4000
 ENV PORT 4000
