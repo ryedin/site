@@ -85,7 +85,7 @@ Now we can start the application. Note that both a database and web container ar
 
 ## Add some functionality
 
-Let's generate a scaffold so we can see Rails working. We'll make a trivial app to record books reading or read. Run the command with `convox exec` since DATABASE_URL is set on the container, but not in our local environment.
+Let's generate a scaffold so we can see Rails working. We'll make a trivial app to record books reading or read. Run the command with `docker exec` since DATABASE_URL is set on the container, but not in our local environment.
 
     $ docker exec simple-rails-web rails g scaffold book title:string author:string started_on:date finished_on:date
 
