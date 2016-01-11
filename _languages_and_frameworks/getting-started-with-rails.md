@@ -143,3 +143,25 @@ To finish up, run the database migrations on your production database:
     $ convox run web rake db:migrate
 
 You should now be able to visit `/books` and see your web app running on Convox!
+
+## Securing your app
+
+To protect your application's privacy, you should acquire and set up an SSL certificate. See the [SSL doc](https://convox.com/docs/ssl/) for more information.
+
+Once your cert is set up, you can automatically redirect non-secure (http) requests to secure (https) URLs using this snippet of Javascript in your view layout:
+
+    if (window.location.protocol != "https:")
+       location.href = location.href.replace(/^http:/, 'https:');
+
+To avoid complications when booting your app locally (where you probably won't have an SSL cert set up) you can wrap this in a conditional that checks your Rails environment setting:
+
+    <% if ENV['RAILS_ENV'] == 'production' %>
+      if (window.location.protocol != "https:")
+         location.href = location.href.replace(/^http:/, 'https:');
+    <% end %>
+
+<div class="block-callout block-show-callout type-info">
+  <h3>Why a Javascript redirect?</h3>
+  <p>Convox configures layer 4 TLS listeners on your app rather than HTTPS listeners. This is done to enable your apps to use websockets and layer 7 protocols other than HTTP.</p>
+  <p>Rails backend redirect features like <code>force_ssl</code> depend on HTTP headers that are not injected by AWS's TLS listeners.</p>
+</div>
