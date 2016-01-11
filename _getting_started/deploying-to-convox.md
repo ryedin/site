@@ -17,10 +17,10 @@ Change into the sinatra directory and create the application.
 
 When you create a new app, Convox provisions all of the AWS infrastructure required to support your core application. You'll also need to create the Postgres and Redis services that this app needs:
 
-    $ convox services create postgres pg1
+    $ convox services create postgres --name pg1
     Creating pg1 (postgres)... CREATING
 
-    $ convox services create redis rd1
+    $ convox services create redis --name rd1
     Creating rd1 (redis)... CREATING
 
 <div class="block-callout block-show-callout type-info">
