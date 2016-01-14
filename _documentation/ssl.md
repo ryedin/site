@@ -56,9 +56,23 @@ You can use the Convox CLI to view SSL configuration for an app.
     TARGET   EXPIRES            DOMAINS
     web:443  9 months from now  mydomain.com
 
+### Redirecting requests
+
+Once your cert is set up, you can automatically redirect non-secure (http) requests to secure (https) URLs using this snippet of Javascript on your pages:
+
+    if (window.location.protocol != "https:")
+       location.href = location.href.replace(/^http:/, 'https:');
+
+<div class="block-callout block-show-callout type-info">
+  <h3>Why a Javascript redirect?</h3>
+  <p>Convox configures layer 4 TLS listeners on your app rather than HTTPS listeners. This is done to enable your apps to use websockets and layer 7 protocols other than HTTP.</p>
+  <p>The headers necessary to detect HTTPS are not injected by TLS listeners, making backend redirect logic impractical.</p>
+</div>
+
 ### Remove SSL
 
 The Convox CLI can also remove SSL.
 
     $ convox ssl delete web:443
     Deleting SSL listener web:443... OK
+
