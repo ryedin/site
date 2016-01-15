@@ -6,8 +6,6 @@ Convox processes are run as Docker containers across a cluster of Amazon EC2 ins
 
 ## SSH access
 
-Sometimes you might want to SSH into an instance because blah blah blah.
-
 To enable SSH access, a known key must exist on the EC2 instance. Convox can manage SSH keys for you. To create a new SSH key and apply it to your Rack's instances, use the `convox instances keyroll` command.
 
     $ convox instances keyroll
@@ -15,10 +13,9 @@ To enable SSH access, a known key must exist on the EC2 instance. Convox can man
 
 This command will generate a new SSH key and store it in S3 using KMS encryption. It will then replace all of the EC2 instances in your cluster with new instances containing the key.
 
-<div class="block-callout block-show-callout type-danger">
+<div class="block-callout block-show-callout type-warning">
   <h3>Avoiding Downtime</h3>
   <p>The instances in your cluster will be replaced one at a time. To avoid downtime, make sure you are running at least 2 copies of any critical process.</p>
-  <p>You will experience brief downtime of the Rack API during the instance roll. This will prevent you from running `convox` commands while the instance is being replaced.</p>
 </div>
 
 Once the key is in place, you can log in via the Convox CLI. First get the id of the desired instance:
@@ -57,4 +54,9 @@ If you'd prefer instead to run a specific command and then exit you can pass tha
 
 ## Terminating an instance
 
+The `convox instances` command also makes it possible to terminate a specific instance:
 
+    $ convox instances terminate i-0a321c8b
+    Successfully sent terminate to instance "i-0a321c8b"
+
+A new instance will be automatically booted into the cluster to replace it, and your processes will be rebalanced as soon as the new instance is available.
