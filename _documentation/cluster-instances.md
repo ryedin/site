@@ -59,4 +59,4 @@ The `convox instances` command also makes it possible to terminate a specific in
     $ convox instances terminate i-0a321c8b
     Successfully sent terminate to instance "i-0a321c8b"
 
-A new instance will be automatically booted into the cluster to replace it, and your processes will be rebalanced as soon as the new instance is available.
+After termination a new instance will be automatically booted into the cluster to replace it.
