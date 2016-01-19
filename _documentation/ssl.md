@@ -69,6 +69,15 @@ Once your cert is set up, you can automatically redirect non-secure (http) reque
   <p>The headers necessary to detect HTTPS are not injected by TLS listeners, making backend redirect logic impractical.</p>
 </div>
 
+### Updating your SSL Cert
+
+SSL certificates expire, so it's important to have a way to update them without disrupting your app. You can do this with the `convox ssl update` command.
+
+    $ convox ssl update web:443 mydomain.crt mydomain.key
+    Updating SSL listener web:443... Done.
+
+Please note that this command only updates the certificate. To change the process, port, or termination point, use `convox ssl create`.
+
 ### Remove SSL
 
 The Convox CLI can also remove SSL.
