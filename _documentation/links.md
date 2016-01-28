@@ -3,7 +3,8 @@ title: "Linking Containers"
 ---
 
 Convox enables developers to link containers by declaring associations in the `docker-compose.yml` manifest.
-Links are created by injecting a env vars of a URL and URL components for the linked container into other process environments.
+Links are created by injecting env vars for the linked container into other process environments.
+
 
 This avoids the need for your application to interface with configuration services, key value stores, or name servers simply to discover other containers on the network.
 Discovered links are perfect for inter-container communication within a VPC or to have a development service that is discovered just like a production service.
@@ -96,7 +97,7 @@ These environment variables are:
 
 See the [convox/redis](https://github.com/convox/redis/blob/9b56f5553ce6dd0a2f72d76b752f1dded287f109/Dockerfile#L10-L13) Dockerfile for an example.
 
-Most images will *not* have these environment variable set.
+Most images will *not* have these environment variables set.
 In that case, you can do the following:
 
 ```yaml
