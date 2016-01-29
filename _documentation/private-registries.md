@@ -42,7 +42,7 @@ You will be prompted for your username and password. Once the registry has been 
     RUNNING: docker pull yourname/postgres
     latest: Pulling from yourname/postgres
 
-## Removing a Registry
+## Removing a registry
 
 To remove private registry info, use the `convox registries remove` command. To remove Docker Hub in our example the command would be:
 
