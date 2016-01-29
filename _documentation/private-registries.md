@@ -46,5 +46,5 @@ You will be prompted for your username and password. Once the registry has been 
 
 To remove private registry info, use the `convox registries remove` command. To remove Docker Hub in our example the command would be:
 
-    $ $ convox registries remove https://index.docker.io/v1/
+    $ convox registries remove https://index.docker.io/v1/
     Done.
