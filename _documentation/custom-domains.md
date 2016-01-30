@@ -8,7 +8,6 @@ Every app with open ports that you deploy to Convox will be assigned a load bala
     Status     running
     Release    RDKYJGPGXVZ
     Processes  main
-    Hostname   myapp-62376059.us-east-1.elb.amazonaws.com
-    Ports      main:5000
-
-To make the app available at a custom domain, create a CNAME record with your DNS provider that points to the Hostname returned by `convox apps info`.
+    Endpoints  myapp-62376059.us-east-1.elb.amazonaws.com:5000 (main)
+    
+To make the app available at a custom domain, create a CNAME record with your DNS provider that points to the hostname in one of the Endpoints returned by `convox apps info`. (In the example above, the hostname is "myapp-62376059.us-east-1.elb.amazonaws.com").
