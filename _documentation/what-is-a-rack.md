@@ -21,7 +21,7 @@ Once the AWS services are provisioned, the final components of the Rack are inst
 
   - **Rack API** is the interface that developers interact with once the Rack is installed. You can use our official CLI to interface with the Rack, or write your own client, guided by our [API docs](https://www.convox.com/api).
 
-  - The **private Docker** registry is where your application images are stored. Whenever you build or deploy a Convox app your code is shipped to the Rack API, which builds it into a Docker image and stores the image in your registry. Images from this registry are used to launch containers in ECS to run your processes.
+  - The **private Docker** registry is where your application images are stored. Whenever you build or deploy a Convox app your code is shipped to the Rack API, which builds it into a Docker image and stores the image in your registry. Images from this registry are used to launch containers in ECS to run your processes. (NOTE: As of January 2016, Racks running in the US East region use [Amazon ECR](https://aws.amazon.com/ecr/) to store images).
 
   - **convox/agent** is installed on every machine in your ECS cluster. It works with Docker to monitor your containers, gather stats about resource utilization and ship container logs to Kinesis.
 
