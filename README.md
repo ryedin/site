@@ -34,7 +34,6 @@ title: "Custom Domains"
 sort: 40
 ---
 ```
-
 # Publishing
 
 Docs are published automatically by Github Pages.
