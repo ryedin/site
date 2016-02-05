@@ -5,6 +5,10 @@ Your rack can be uninstalled using the CLI. AWS credentials are required for thi
 
     $ convox uninstall
 
+You may specify the region your cluster is installed in with the option --region (defaults to us-east-1):
+
+    $ convox uninstall --region your-cluster-region
+
 This will remove all of the AWS data and services created by Convox.
 
     Uninstalling Convox...
