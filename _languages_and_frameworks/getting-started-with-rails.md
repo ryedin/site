@@ -38,15 +38,13 @@ To use a Postgres container in development we need to describe it and link it to
       ports:
         - 5000:3000
       links:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:@db:5432
-    db:
-      image: postgres
+        - database
+    database:
+      image: convox/postgres
 
-The links item does a few things, but most importantly it adds a "db" entry to the `/etc/hosts` file on the web container, pointing to the IP address of the db container.
-
-The environment item creates an environment variable, DATABASE_URL which stores a URL to the database. The default postgres image boots a database with a user called "postgres" with no password, running on port 5432. With this information, your rails app should be able to connect to the database.
+<div class="block-callout block-show-callout type-info">
+<p>By specifying the <code>database</code> process in its links, the web process will be assigned an environment variable named <code>DATABASE_URL</code>. See <a href="/docs/links">Linking Containers</a> for more details.</p>
+</div>
 
 Now we need to make a couple of changes to the app itself. First, delete the database config file so that DATABASE_URL will be used.
 
@@ -69,13 +67,11 @@ Now we're ready to start editing the rails app, but first we should add a **volu
       ports:
         - 5000:3000
       links:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:@db:5432
+        - database
       volumes:
         - .:/app
-    db:
-      image: postgres
+    database:
+      image: convox/postgres
 
 ## Start the app
 
@@ -130,13 +126,13 @@ When the deployment finishes we can find the URL of the app:
     Name       simple-rails
     Status     running
     Release    RYYTQGHQERM
-    Processes  db web
+    Processes  database web
     Hostname   simple-rails-173749661.us-east-1.elb.amazonaws.com
     Ports      web:5000
 
-Scale down the db process since we're using a hosted database:
+Scale down the database process since we're using a hosted database:
 
-    $ convox scale db --count 0
+    $ convox scale database --count 0
 
 To finish up, run the database migrations on your production database:
 
@@ -146,7 +142,7 @@ You should now be able to visit `/books` and see your web app running on Convox!
 
 ## Securing your app
 
-To protect your application's privacy, you should acquire and set up an SSL certificate. See the [SSL doc](https://convox.com/docs/ssl/) for more information.
+To protect your application's privacy, you should acquire and set up an SSL certificate. See the [SSL doc](/docs/ssl/) for more information.
 
 Once your cert is set up, you can automatically redirect non-secure (http) requests to secure (https) URLs using this snippet of Javascript in your view layout:
 

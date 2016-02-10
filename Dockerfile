@@ -14,4 +14,4 @@ RUN bundle install
 
 COPY . /app
 
-CMD bundle exec jekyll serve -p $PORT --force_polling
+CMD bundle exec jekyll serve -H 0.0.0.0 -p $PORT --force_polling

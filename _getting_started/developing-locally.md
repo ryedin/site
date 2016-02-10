@@ -141,8 +141,6 @@ The `docker-compose.yml` looks like this:
       command: bin/web
       environment:
         - RACK_ENV=development
-        - POSTGRES_URL=postgres://postgres:password@postgres:5432/app
-        - REDIS_URL=redis://redis:password@redis:6379/0
       ports:
         - 3000:3000
       volumes:
