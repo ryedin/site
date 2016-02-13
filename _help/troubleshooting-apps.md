@@ -27,4 +27,4 @@ Run `convox logs` to access your application logs for errors. A common problem i
 
 ## Problem: Convox deploy hangs at 'Waiting for app...'
 
-**Solution: Ensure that your application is bound to 0.0.0.0, not 127.0.0.1. Otherwise diagnose with `convox logs` as described above.
+**Solution: Ensure that your application is bound to 0.0.0.0, not 127.0.0.1. Otherwise diagnose with `convox logs` as described above.**
