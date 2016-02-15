@@ -260,7 +260,7 @@ deterministic credentials, a `Dockerfile` and `docker-compose.yml` are enough.
 However, we have found that some credentials are only possible or significantly easier to generate outside of the application.
 This can often be the case with cloud resources; there just isn't a simple solution to running large parts of the internet on your laptop.
 
-To support this use-case, we automatically populate `enivronment` variables that are listed in the manifest but not declared to equal anything (no equals sign) with `KEY=VALUE` pairs from your `.env` file.
+To support this use-case, we automatically populate `environment` variables that are listed in the manifest but not declared to equal anything (no equals sign) with `KEY=VALUE` pairs from your `.env` file.
 
 ## Bringing it together
 
