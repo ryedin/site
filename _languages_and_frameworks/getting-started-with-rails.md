@@ -41,6 +41,8 @@ To use a Postgres container in development we need to describe it and link it to
         - database
     database:
       image: convox/postgres
+      ports:
+        - 5432
 
 <div class="block-callout block-show-callout type-info">
 <p>By specifying the <code>database</code> process in its links, the web process will be assigned an environment variable named <code>DATABASE_URL</code>. See <a href="/docs/links">Linking Containers</a> for more details.</p>
@@ -72,6 +74,8 @@ Now we're ready to start editing the rails app, but first we should add a **volu
         - .:/app
     database:
       image: convox/postgres
+      ports:
+        - 5432
 
 ## Start the app
 
