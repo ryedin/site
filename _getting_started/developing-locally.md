@@ -106,24 +106,28 @@ A `CTRL+C` on the `convox start` process stops everything and exits.
 By using Docker, Convox is able to achieve fast setup and teardown, dev/prod parity, and an intuitive developer experience behind a simple command.
 
 
-### `convox exec <process> <command>`
+### `docker ps`, `docker exec`, etc.
 
-Convox supports executing a command within the context of one of your local running processes via the `convox exec`[CLI][cli] command.
+Convox supports executing a command within the context of one of your local running processes via `docker` commands.
 
-This allows you to administer your development app via [one-off processes][12fac-oneoff] using the same commands you would pass to `convox run`. For example, you could run database migrations via:
+This allows you to administer your development app via [one-off processes][12fac-oneoff]. For example, you could run database migrations via:
 
-    $ convox exec web rake db:migrate
+    $ docker ps
+    CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                    NAMES
+    02d9c958720f        simple-rails/web        "sh -c bin/web"          10 seconds ago      Up 10 seconds       0.0.0.0:80->3000/tcp     simple-rails-web
+    089d4504630c        simple-rails/database   "/docker-entrypoint.s"   13 seconds ago      Up 13 seconds       0.0.0.0:5432->5432/tcp   simple-rails-database
+    
+    $ docker exec 02d9c958720f rake db:migrate
 
 Depending on your base image's operating system, you can can also start a shell for interactive debugging:
 
-    $ convox exec main bash
-    $ convox exec web sh
+    $ docker exec -it 02d9c958720f bash
 
 Or start an interactive session with your favorite REPL:
 
-    $ convox exec web rails console    # rails
-    $ convox exec web node             # node.js
-    $ convox exec main psql <host>     # SQL session
+    $ docker exec -it 02d9c958720f rails console    # rails
+    $ docker exec -it cdbe5d7c48c7 node             # node.js
+    $ docker exec -it 15fdd402f094 psql <host>      # SQL session
 
 Your only limit is the software in your manifest!
 
