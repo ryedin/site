@@ -116,6 +116,7 @@ This allows you to administer your development app via [one-off processes][12fac
     CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                    NAMES
     02d9c958720f        simple-rails/web        "sh -c bin/web"          10 seconds ago      Up 10 seconds       0.0.0.0:80->3000/tcp     simple-rails-web
     089d4504630c        simple-rails/database   "/docker-entrypoint.s"   13 seconds ago      Up 13 seconds       0.0.0.0:5432->5432/tcp   simple-rails-database
+    
     $ docker exec 02d9c958720f rake db:migrate
 
 Depending on your base image's operating system, you can can also start a shell for interactive debugging:
