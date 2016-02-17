@@ -28,10 +28,6 @@ web:
     - database
 database:
   image: convox/postgres
-  environment:
-    - LINK_SCHEME=postgres
-    - LINK_PASSWORD=password
-    - LINK_USERNAME=postgres
   ports:
     - 5432
 ```
