@@ -18,7 +18,7 @@ title: "Updating Convox"
 
 <div class="block-callout block-show-callout type-warning">
   <h3>Instance Replacement</h3>
-  <p>Most updates restart the convox API process from a newer [convox/api image](https://hub.docker.com/r/convox/api/). However some updates are system changes that require all the EC2 instances in the Rack to be replaced. Convox executes this slowly -- one instance at a time -- to maintain app, Rack API and Registry availability. Depending on your Rack size, this update could take a significant amount of time.</p>
+  <p>Most updates restart the convox API process from a newer <a href="https://hub.docker.com/r/convox/api/">convox/api image</a>. However some updates are system changes that require all the EC2 instances in the Rack to be replaced. Convox executes this slowly -- one instance at a time -- to maintain app, Rack API and Registry availability. Depending on your Rack size, this update could take a significant amount of time.</p>
 </div>
 
 <div class="block-callout block-show-callout type-warning">
