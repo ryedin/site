@@ -48,3 +48,52 @@ To remove private registry info, use the `convox registries remove` command. To 
 
     $ convox registries remove https://index.docker.io/v1/
     Done.
+
+## Adding an Amazon EC2 Container Registry (ECR)
+
+You may also want to pull and build from images stored in a private EC2 Container Registry (ECR):
+
+    database:
+      image: 901416387788.dkr.ecr.us-east-1.amazonaws.com/postgres
+
+Since [ECR authorization tokens expire ever 12 hours](http://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth),
+you must give Convox IAM access keys that have permission to generate ECR tokens and pull images:
+
+    $ aws iam create-user --user-name ECRReadOnly
+    {
+        "User": {
+            "UserName": "ECRReadOnly",
+            "Path": "/",
+            "CreateDate": "2016-02-23T00:52:05.930Z",
+            "UserId": "AIDAJ6JPEYYKRY5PEVSU6",
+            "Arn": "arn:aws:iam::901416387788:user/ECRReadOnly"
+        }
+    }
+
+    $ aws iam attach-user-policy --user-name ECRReadOnly --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+
+    $ aws iam create-access-key --user-name ECRReadOnly
+    {
+        "AccessKey": {
+            "UserName": "ECRReadOnly",
+            "Status": "Active",
+            "CreateDate": "2016-02-23T00:54:32.475Z",
+            "SecretAccessKey": "2yf2HqhykiGHNKlwbvuS66WOBgSTefWXClOQIy0f",
+            "AccessKeyId": "AKIAJ7GE3UMOANV37YNQ"
+        }
+    }
+
+Now pass the access key info to `convox registries add`:
+
+    $ convox registries add 901416387788.dkr.ecr.us-east-1.amazonaws.com
+    Username: AKIAJ7GE3UMOANV37YNQ
+    Password: 2yf2HqhykiGHNKlwbvuS66WOBgSTefWXClOQIy0f
+    Done.
+
+You can revoke Convox access by deleting the IAM user and removing the registry:
+
+    $ aws iam delete-access-key --user-name ECRReadOnly --access-key-id AKIAJ7GE3UMOANV37YNQ
+    $ aws iam detach-user-policy --user-name ECRReadOnly --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+    $ aws iam delete-user --user-name ECRReadOnly
+    $ convox registries remove 901416387788.dkr.ecr.us-east-1.amazonaws.com
+    Done.
