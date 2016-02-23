@@ -5,7 +5,7 @@ title: "Private Networking"
 Convox Racks are launched in public mode by default. You can specify private mode using one of two options:
 
   * Use the `--private` flag to `convox install`.
-  * Set the `Private` parameter of the rack CloudFormation stack to `Yes`. You can do this through the web console or by running `convox rack params set Private=Yes`.
+  * Set the `Private` parameter of the Rack CloudFormation stack to `Yes`. You can do this through the web console or by running `convox rack params set Private=Yes`.
 
 ## Public Rack
 
@@ -32,7 +32,7 @@ A standard Convox Rack launches its instances in a public subnet relying on secu
 
 ## Private Rack
 
-In private mode, your Convox rack instead launches instances in private subnets and creates NAT Gateways to handle outbound traffic.
+In private mode, your Convox Rack instead launches instances in private subnets and creates NAT Gateways to handle outbound traffic.
 
 Load Balancers continue to follow the existing behavior laid out in the [Port Mapping](http://convox.com/docs/port-mapping/) documentation. External load balancers in a private Rack straddle the public and private subnets and allow you to receive inbound traffic without directly exposing your instances to the internet.
 
