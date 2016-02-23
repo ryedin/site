@@ -1,5 +1,4 @@
 url: https://convox.com
-markdown: kramdown
 permalink: /blog/:title/
 collections:
   getting_started:
@@ -28,3 +27,5 @@ defaults:
       path: ""
     values:
       layout: docs
+kramdown:
+  input: GFM
