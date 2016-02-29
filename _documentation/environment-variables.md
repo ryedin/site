@@ -4,7 +4,7 @@ title: "Environment Variables"
 
 ## Local Development
 
-Environment varibles can be set directly in `docker-compose.yml`. For example:
+Environment variables can be set directly in `docker-compose.yml`. For example:
 
     web:
       environment:
