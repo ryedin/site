@@ -32,6 +32,10 @@ To delete the database, use the `convox services delete` command:
 
 Deleting can take several minutes. Use `info` to check on the status if you like. The info command will return a status of 'deleting' until the service is successfully deleted.
 
+### Using a larger instance type
+
+By default, creating a redis database will provision a `cache.t2.micro` instance. You can also specify a larger instance type: `convox services create redis --name redis1 --instance-type cache.t2.medium`. A list of available instance types are on the [AWS elasticache pricing page](https://aws.amazon.com/elasticache/pricing/).
+
 ### Using a third-party database
 
 You can use other hosted database services with your Convox app. Just set the environment varaible(s) that your app needs to connect as shown above.
