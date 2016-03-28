@@ -34,4 +34,4 @@ Deleting can take several minutes. Use `info` to check on the status if you like
 
 ### Using a third-party database
 
-You can use other hosted database services with your Convox app. Just set the environment varaible(s) that your app needs to connect as shown above.
+You can use other hosted database services with your Convox app. Just set the environment variable(s) that your app needs to connect as shown above.
