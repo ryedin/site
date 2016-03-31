@@ -1,0 +1,27 @@
+.team-member {
+  padding: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+
+  img {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    margin-right: 8px;
+    vertical-align: top;
+  }
+
+  .details {
+    display: inline-block;
+    width: 870px;
+    font-size: 0.85em;
+
+    h2 {
+      font-size: 1.2em;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 6px;
+      margin-top: 3px;
+    }
+  }
+}
