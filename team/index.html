@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<script src="/api/lib/jquery-1.8.0.min.js"></script>
+
 <header class="top">
   <nav class="app-nav">
     <div class="app-nav__logo-container">
@@ -63,3 +65,67 @@ layout: default
     </a>
   </section>
 </section>
+
+<section class="content contributors">
+  <h1>Contributors</h1>
+
+  <section>
+  </section>
+</section>
+
+<script>
+
+var projects = [
+  'convox/rack',
+  'convox/convox.github.io'
+]
+
+var g_contributors = {}
+
+function add_contributors(contributors) {
+  for (var i in contributors) {
+    var c = contributors[i];
+
+    if (!(c.id in g_contributors)) {
+      g_contributors[c.id] = { contributions: 0, login: c.login };
+    }
+
+    g_contributors[c.id].contributions += c.contributions
+  }
+}
+
+function display_contributors() {
+  var sorted = [];
+
+  for (var id in g_contributors) {
+    sorted.push([id, g_contributors[id]]);
+  }
+
+  sorted.sort(function(a, b) {
+    return b[1].contributions-a[1].contributions;
+  });
+
+  var root = $('.contributors > section');
+
+  for (var i in sorted) {
+    var id = sorted[i][0];
+    var contributions = sorted[i][1].contributions;
+    var login = sorted[i][1].login;
+
+    root.append('<div class="contributor"><a href="https://github.com/' + login + '"><img src="https://avatars3.githubusercontent.com/u/' + id + '?v=3&s=460"></a></div>');
+
+    console.log('id', id, contributions);
+  }
+}
+
+$(window).ready(function() {
+  $.get('https://api.github.com/repos/convox/rack/contributors', function(data) {
+    add_contributors(data);
+    $.get('https://api.github.com/repos/convox/convox.github.io/contributors', function(data) {
+      add_contributors(data);
+      display_contributors();
+    });
+  });
+});
+
+</script>
