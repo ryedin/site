@@ -33,7 +33,7 @@ All payloads have the following structure:
 
 The `action` will always be of the form: `object:action` and `status` will be one of `success` or `error`.
 Every `data` section includes a `rack` set to the name of the rack this event came from (set at install time).
-The timestamp is in (RFC 3339)[http://www.ietf.org/rfc/rfc3339.txt] format.
+The timestamp is in [RFC 3339](http://www.ietf.org/rfc/rfc3339.txt) format.
 
 For example, a promote on the app "foo" would be:
 
