@@ -7,6 +7,10 @@ pre {
   color: #fff;
 }
 
+#subnav {
+  margin-top: 50px !important;
+}
+
 @media (max-width: 768px) {
   .navbar-brand {
     padding-left: 30px;
@@ -16,10 +20,14 @@ pre {
     margin: 15px 0px;
   }
 
-  ul.nav {
+  .navbar-header {
+    float: left;
+  }
+
+  #navbar > ul.nav {
     float: right !important;
     margin: 0;
-    margin-right: -15px;
+    margin-top: 12px;
   }
 
   .navbar-collapse {
@@ -45,13 +53,35 @@ pre {
     margin-top: 0 !important;
   }
 
-  pre {
-    overflow-x: auto;
+  #mobile-nav {
+    background-color: #333;
+    margin-top: 50px;
+    border-bottom: 1px #000 solid;
   }
 
-  pre code {
-    overflow-wrap: normal;
-    white-space: pre;
+  #mobile-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #mobile-nav li {
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    padding: 14px 18px 12px;
+  }
+
+  #mobile-nav li a {
+    color: #aaa;
+  }
+
+  #mobile-nav li a:hover {
+    text-decoration: none;
+  }
+
+  #subnav {
+    margin-top: 0px !important;
   }
 }
 
@@ -87,10 +117,7 @@ pre {
 }
 
 #subnav {
-  z-index: 999;
-  position: absolute;
   background-color: #1777bb;
-  top: 50px;
   width: 100%;
 }
 
@@ -166,7 +193,7 @@ html, body {
 }
 
 .container[role="main"].subnav-content {
-  padding: 110px 0px 10px;
+  padding: 19px 0px 10px;
 }
 
 nav > .container {
@@ -395,10 +422,11 @@ h1.title {
 }
 
 .content h4 {
-  color: #555;
-  font-size: 1.05em;
+  color: #777;
+  font-size: 1.1em;
   margin-top: 22px;
   padding-bottom: 3px;
+  font-weight: bold;
 }
 
 .content table {
@@ -478,4 +506,13 @@ h1.title {
 
 code {
   font-family: Courier, monospace;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+pre code {
+  overflow-wrap: normal;
+  white-space: pre;
 }
