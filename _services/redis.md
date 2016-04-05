@@ -1,41 +1,49 @@
 ---
 title: "Redis"
 ---
-### Creating a database
+## Service Creation
 
-You can create Redis databases using the `convox services create` command. For example, to create a database called "redis1", use the following command:
+You can create redis databases using the `convox services create` command:
 
-    $ convox services create redis --name redis1
-    Creating redis1 (redis)... CREATING
+    $ convox services create redis
+    Creating redis-3785 (redis)... CREATING
 
-This kicks off the provisioning of a Redis database using Amazon ElastiCache. Creation can take a few minutes. To check the status of the DB creation, use the command specified in "Database Info" below. The status will be 'creating' until the database becomes available.
+This will provision Redis on the Amazon ElastiCache. Creation can take a few minutes. To check the status use `convox services info`.
 
-### Database info
+### Additional Options
 
-To see relevant info about the database, use the `convox services info` command.
+<table>
+  <tr><th>Option</th><th>Description</th></tr>
+  <tr><td><code>--automatic-failover-enabled</code></td><td>Enable automatic failover (requires <code>num-cache-clusters > 1</code>)</td></tr>
+  <tr><td><code>--instance-type=<b><i>cache.t2.micro</i></b></code></td><td>ElastiCache instance type to use</td></tr>
+  <tr><td><code>--num-cache-clusters=<b><i>1</i></b></code></td><td>Number of cache clusters to create (one read-write, rest read-only)</td></tr>
+  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the service to create</td></tr>
+</table>
 
-    $ convox services info redis1
-    Name    redis1
+## Service Information
+
+To see relevant info about the database, use the `convox services info` command:
+
+    $ convox services info redis-3785
+    Name    redis-3785
     Status  running
-    URL     redis://u:Rn2uRT7g7NJ8iXNAtnSj@redis1-Balancer-124JJ4R695MAR-153811640.us-east-1.elb.amazonaws.com:6379/0
+    URL     redis://atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0
 
-Add the URL to the environment of any app that needs to use the database. Make sure to put quotes around the string to avoid issues with invalid characters:
+## Service Linking
 
-    $ convox env set 'REDIS_URL=redis://u:Rn2uRT7g7NJ8iXNAtnSj@redis1-Balancer-124JJ4R695MAR-153811640.us-east-1.elb.amazonaws.com:6379/0' --app myapp
+You can add this URL to any application with `convox env set`:
 
-### Deleting a database
+    $ convox env set 'redis://atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0' --app example-app
+
+## Service Deletion
 
 To delete the database, use the `convox services delete` command:
 
-    $ convox services delete redis1
-    Deleting redis1... DELETING
+    $ convox services delete redis-3785
+    Deleting redis-3785... DELETING
 
-Deleting can take several minutes. Use `info` to check on the status if you like. The info command will return a status of 'deleting' until the service is successfully deleted.
+Deleting the database will take several minutes.
 
-### Using a larger instance type
-
-By default, creating a redis database will provision a `cache.t2.micro` instance. You can also specify a larger instance type: `convox services create redis --name redis1 --instance-type cache.t2.medium`. A list of available instance types are on the [AWS elasticache pricing page](https://aws.amazon.com/elasticache/pricing/).
-
-### Using a third-party database
-
-You can use other hosted database services with your Convox app. Just set the environment variable(s) that your app needs to connect as shown above.
+<div class="block-callout block-show-callout type-warning">
+This action will cause an unrecoverable loss of data.
+</div>

@@ -1,37 +1,49 @@
 ---
 title: "MySQL"
 ---
-### Creating a database
+## Service Creation
 
-You can create MySQL databases using the `convox services create` command. For example, to create a database called "my1", use the following command:
+You can create MySQL databases using the `convox services create` command:
 
-    $ convox services create mysql --name my1
-    Creating my1 (mysql)... CREATING
+    $ convox services create mysql
+    Creating mysql-3785 (mysql)... CREATING
 
-This kicks off the provisioning of a MySQL database on the Amazon RDS service. Creation can take up to 15 minutes. To check the status of the DB creation, use the command specified in "Database Info" below. The status will be 'creating' until the database becomes available.
+This will provision MySQL database on the Amazon RDS service. Creation can take up to 15 minutes. To check the status use `convox services info`.
 
-### Database info
+### Additional Options
 
-To see relevant info about the database, use the `convox services info` command.
+<table>
+  <tr><th>Option</th><th>Description</th></tr>
+  <tr><td><code>--allocated-storage=<b><i>10</i></b></code></td><td>Size of the database in GB</td></tr>
+  <tr><td><code>--instance-type=<b><i>db.t2.micro</i></b></code></td><td>RDS instance type to use</td></tr>
+  <tr><td><code>--multi-az</code></td><td>Enhanced availability and durability</td></tr>
+  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the service to create</td></tr>
+</table>
 
-    $ convox services info my1
-    Name    my1
+## Service Information
+
+To see relevant info about the database, use the `convox services info` command:
+
+    $ convox services info mysql-3785
+    Name    mysql-3785
     Status  running
     URL     mysql://mysql::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app
 
-Add the URL to the environment of any app that needs to use the database. Make sure to put quotes around the string to avoid issues with invalid characters:
+## Service Linking
 
-    $ convox env set 'DATABASE_URL=mysql://mysql::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app' --app myapp
+You can add this URL to any application with `convox env set`:
 
-### Deleting a database
+    $ convox env set 'DATABASE_URL=mysql://mysql::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app' --app example-app
+
+## Service Deletion
 
 To delete the database, use the `convox services delete` command:
 
-    $ convox services delete my1
-    Deleting my1... DELETING
+    $ convox services delete mysql-3785
+    Deleting mysql-3785... DELETING
 
-Deleting can take several minutes. Use `info` to check on the status if you like. The info command will return a status of 'deleting' until the service is successfully deleted.
+Deleting the database will take several minutes.
 
-### Using a third-party database
-
-You can use other hosted database services with your Convox app. Just set the environment varaible(s) that your app needs to connect as shown above.
+<div class="block-callout block-show-callout type-warning">
+This action will cause an unrecoverable loss of data.
+</div>

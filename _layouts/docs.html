@@ -1,96 +1,141 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html>
+	<head>
+		<title>{{ page.title }}</title>
 
-    <title>{{ page.title }}</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700italic,700,300italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ "/assets/stylesheets/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  </head>
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+		<link rel="stylesheet" href="/assets/css/console.css">
 
-  <body"docs">
-    <header class="top">
-      <nav class="app-nav">
-        <div class="app-nav__logo-container">
-          <img src="/assets/images/static/navbar-logo.png" class="app-nav__logo">
-          <a href="/" class="app-nav__link">Convox</a>
-        </div>
-        <div class="links">
-          <a href="/blog" class="app-nav__link">Blog</a>
-          <a href="https://github.com/convox" class="app-nav__link">Code</a>
-          <a href="/docs" class="app-nav__link active">Docs</a>
-          <a href="/team" class="app-nav__link">Team</a>
-          <a href="mailto:support@convox.com" class="app-nav__link">Contact Us</a>
-        </div>
-      </nav>
-    </header>
+		<script src="/assets/js/jquery.min.js"></script>
+	</head>
 
-    <div class="docs">
-      <div class="content">
-        <section class="navigation col--3 sidebar">
-          <h4>Getting Started</h4>
-          <ul>
-            {% assign pages = site.getting_started | sort: 'sort', 'last' %}
-            {% for page in pages %}
-              <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-            {% endfor %}
-          </ul>
-          <h4>Languages and Frameworks</h4>
-          <ul>
-            {% assign pages = site.languages_and_frameworks | sort: 'sort', 'last' %}
-            {% for page in pages %}
-              <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-            {% endfor %}
-          </ul>
-          <h4>Documentation</h4>
-          <ul>
-            {% assign pages = site.documentation | sort: 'sort', 'last' %}
-            {% for page in pages %}
-              <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-            {% endfor %}
-          </ul>
-          <h4>Services</h4>
-            <ul>
-            {% assign pages = site.services | sort: 'sort', 'last' %}
-            {% for page in pages %}
-              <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-            {% endfor %}
-          </ul>
-          <h4>Help</h4>
-          <ul>
-            {% assign pages = site.help | sort: 'sort', 'last' %}
-            {% for page in pages %}
-              <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-            {% endfor %}
-          </ul>
-          <h4>Grid</h4>
-          <ul>
-            {% assign pages = site.grid | sort: 'sort', 'last' %}
-            {% for page in pages %}
-              <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-            {% endfor %}
-          </ul>
-        </section>
+	<body role="document">
+		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">
+						<img src="/assets/img/logo.png" />
+						<span class="logo-convox">Convox</span>
+					</a>
+				</div>
+				<div id="navbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="visible-md visible-lg">
+							<a href="/blog">
+								<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+								Blog
+							</a>
+						</li>
+						<li class="visible-md visible-lg">
+							<a href="https://github.com/convox">
+								<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+								Code
+							</a>
+						</li>
+						<li class="visible-md visible-lg">
+							<a href="/docs">
+								<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+								Docs
+							</a>
+						</li>
+						<li class="visible-md visible-lg">
+							<a href="/team">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								Team
+							</a>
+						</li>
+						<li>
+							<button class="btn btn-primary btn-xs">
+								<span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+								Console
+							</a>
+						</li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
 
-        <section class="col--9">
-          <h1>{{ page.title }}</h1>
-          <hr>
-          {{ content }}
-        </section>
-      </div>
-    </div>
+		<div id="subnav" class="container">
+			<ul class="nav nav-tabs container">
+				<li><h2>Convox Documentation</h2></li>
+				<li class="pull-right visible-md-block visible-lg-block"><h2 id="version"></h2></li>
+			</ul>
+		</div>
 
-    <script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    {% include _search.html %}
-    {% include _google_analytics.html %}
-    {% include _intercom.html %}
-  </body>
+		<div class="container subnav-content" role="main">
+			<section id="toc" class="col-md-3 col-lg-3 visible-md-block visible-lg-block">
+				{% for collection in site.collections %}
+					{% if collection.label != "posts" %}
+						<div class="collection">
+							<h3>{{ collection.title }}</h3>
+							<ul>
+								{% assign pages = collection.docs | sort: 'order' %}
+								{% for page in pages %}
+									<li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</section>
+
+			<section class="col-md-9 col-sm-12 col-xs-12">
+				<div class="btn-group visible-xs-block visible-sm-block pull-right">
+					<button id="toc-toggle" type="button" class="btn btn-default dropdown-toggle"
+						data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+						<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						{% for collection in site.collections %}
+							{% if collection.label != "posts" %}
+								<li class="dropdown-header">{{ collection.title }}</li>
+								{% assign pages = collection.docs | sort: 'order' %}
+								{% for page in pages %}
+									<li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+
+				<h1 class="title">{{ page.title }}</h1>
+
+				<div class="content">
+					{{ content }}
+				</div>
+			</section>
+		</div>
+
+		<script>
+			$(window).ready(function() {
+				$.getJSON('http://convox.s3.amazonaws.com/release/versions.json', function(versions) {
+					versions.sort(function(a, b) {
+						return b.version.localeCompare(a.version);
+					});
+					for (var i in versions) {
+						if (versions[i].published) {
+							$('#version').text(versions[i].version);
+							return
+						}
+					}
+				});
+			});
+		</script>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+		<!-- Latest compiled and minified bootstrap JavaScript -->
+		<script src="/assets/js/bootstrap.min.js"></script>
+
+		{% include _search.html %}
+		{% include _google_analytics.html %}
+	</body>
 </html>

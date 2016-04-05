@@ -1,7 +1,7 @@
 ---
 title: "Deleting an IAM User"
 ---
-Go to https://console.aws.amazon.com/iam/home?region=us-east-1#users and click the "convox" user.
+Go to [https://console.aws.amazon.com/iam/home?#users](https://console.aws.amazon.com/iam/home?#users) and click the "convox" user.
 
 ![](/assets/images/docs/deleting-an-iam-user/check_convox.png)
 

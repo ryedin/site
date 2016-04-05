@@ -1,31 +1,54 @@
 url: https://convox.com
+
+kramdown:
+  input: GFM
+
 permalink: /blog/:title/
+
 collections:
-  getting_started:
+  introduction:
+    title: Introduction
+    output: true
+    permalink: /docs/:name/
+  development:
+    title: Development
+    output: true
+    permalink: /docs/:name/
+  deployment:
+    title: Deployment
+    output: true
+    permalink: /docs/:name/
+  management:
+    title: Management
+    output: true
+    permalink: /docs/:name/
+  monitoring:
+    title: Monitoring
+    output: true
+    permalink: /docs/:name/
+  integrations:
+    title: Integrations
+    output: true
+    permalink: /docs/:name/
+  languages:
+    title: Languages
     output: true
     permalink: /docs/:name/
   services:
+    title: Services
     output: true
     permalink: /docs/:name/
-  languages_and_frameworks:
-    output: true
-    permalink: /docs/:name/
-  documentation:
+  reference:
+    title: Reference
     output: true
     permalink: /docs/:name/
   help:
+    title: Help
     output: true
     permalink: /docs/:name/
-  api:
-    output: true
-    permalink: /api/:name/
-  grid:
-    output: true
-    permalink: /docs/:name/
+
 defaults:
   - scope:
       path: ""
     values:
       layout: docs
-kramdown:
-  input: GFM
