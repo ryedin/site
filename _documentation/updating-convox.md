@@ -34,16 +34,16 @@ If you need to update AMIs or the Linux kernel for security reasons you can:
 
 * Contact Convox on Slack, GitHub or support@convox.com to report a security problem. We will help prepare an update that delivers the security fix to everyone.
 
-* Immediately update your Rack to a custom AMI. The custom AMI will need to run the ecs-agent to participate in container management.
+* Immediately update your Rack to a custom AMI that runs the ecs-agent and has a new kernel.
 
-```
+```bash
 $ convox rack params set Ami=foo
 Updating parameters... OK
 ```
 
-* Immediately update instance kernels:
+* Immediately update instance kernels with `yum`:
 
-```
+```bash
 # install an SSH key if you haven't already
 
 $ convox instances keyroll
