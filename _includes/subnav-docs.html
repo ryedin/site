@@ -22,3 +22,19 @@
 		</div>
 	</li>
 </ul>
+
+<script>
+	$(window).ready(function() {
+		$.getJSON('http://convox.s3.amazonaws.com/release/versions.json', function(versions) {
+			versions.sort(function(a, b) {
+				return b.version.localeCompare(a.version);
+			});
+			for (var i in versions) {
+				if (versions[i].published) {
+					$('#version').text(versions[i].version);
+					return
+				}
+			}
+		});
+	});
+</script>

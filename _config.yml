@@ -65,3 +65,7 @@ defaults:
       sidebar: docs
       subnav: docs
       type: docs
+  - scope:
+      path: team
+    values:
+      subnav: team

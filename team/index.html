@@ -1,57 +1,58 @@
 ---
 ---
 
-<section class="content team">
-  <h1>Convox Team</h1>
-
-  <section>
+<section class="team">
+  <row class="team-member col-xs-12">
     <a href="https://github.com/ddollar">
-      <div class="team-member">
+      <div class="col-xs-4 col-md-2">
         <img src="https://avatars1.githubusercontent.com/u/3308?v=3&s=460">
-        <span class="details">
-          <h2>David Dollar</h2>
-          I’ve been working on infrastructure automation for almost 20 years, ever since I booted up my second Linux box. Over that time I’ve watched computing power evolve from hulking, expensive metal boxes to specialized API-based services. With this change has come both incredible potential and huge complexity. My goal with Convox is to build tools that developers love that help them both understand and forget about all of this complexity. I strongly believe that the right approach to building software is to consume services run by other people and that open-source is key to making sure we all stand on each other's shoulders as much as possible.
-        </span>
+      </div>
+      <div class="details col-md-10">
+        <h2>David Dollar</h2>
+        I’ve been working on infrastructure automation for almost 20 years, ever since I booted up my second Linux box. Over that time I’ve watched computing power evolve from hulking, expensive metal boxes to specialized API-based services. With this change has come both incredible potential and huge complexity. My goal with Convox is to build tools that developers love that help them both understand and forget about all of this complexity. I strongly believe that the right approach to building software is to consume services run by other people and that open-source is key to making sure we all stand on each other's shoulders as much as possible.
       </div>
     </a>
+  </row>
 
+  <row class="team-member col-xs-12">
     <a href="https://github.com/awsmsrc">
-      <div class="team-member">
+      <div class="col-xs-4 col-md-2">
         <img src="https://avatars1.githubusercontent.com/u/994907?v=3&s=460">
-        <div class="details">
-          <h2>Luke Roberts</h2>
-          A Brit currently based in San Francisco. I have been plugging together the pipes for various SAAS and agency projects that require distributed systems for the past 5 years. Now I'm working at Convox on making sure these pipes always fit and are as simple as possible! I do all this whilst traveling the world with just my laptop in my backpack as often as I can.
-        </div>
+      </div>
+      <div class="details col-md-10">
+        <h2>Luke Roberts</h2>
+        A Brit currently based in San Francisco. I have been plugging together the pipes for various SAAS and agency projects that require distributed systems for the past 5 years. Now I'm working at Convox on making sure these pipes always fit and are as simple as possible! I do all this whilst traveling the world with just my laptop in my backpack as often as I can.
       </div>
     </a>
+  </row>
 
+  <row class="team-member col-xs-12">
     <a href="https://github.com/mattmanning">
-      <div class="team-member">
+      <div class="col-xs-4 col-md-2">
         <img src="https://avatars3.githubusercontent.com/u/44615?v=3&s=460">
-        <div class="details">
-          <h2>Matt Manning</h2>
-          Working on Convox lets me pursue two of my strongest passions: building the future and helping people. I previously worked for Heroku in both support and engineering roles. While it was thrilling to see Heroku customers have success, it was equally disheartening seeing the struggles of those who built their own infrastructure as they reinvented wheels and made the same mistakes over and over again. Building Convox as an open source project means our team can share our hard-won knowledge with the world and accelerate everyone's ability to leverage powerful new technology. 
-        </div>
+      </div>
+      <div class="details col-md-10">
+        <h2>Matt Manning</h2>
+        Working on Convox lets me pursue two of my strongest passions: building the future and helping people. I previously worked for Heroku in both support and engineering roles. While it was thrilling to see Heroku customers have success, it was equally disheartening seeing the struggles of those who built their own infrastructure as they reinvented wheels and made the same mistakes over and over again. Building Convox as an open source project means our team can share our hard-won knowledge with the world and accelerate everyone's ability to leverage powerful new technology. 
       </div>
     </a>
+  </row>
 
+  <row class="team-member col-xs-12">
     <a href="https://github.com/nzoschke">
-      <div class="team-member">
+      <div class="col-xs-4 col-md-2">
         <img src="https://avatars3.githubusercontent.com/u/147410?v=3&s=460">
-        <div class="details">
-          <h2>Noah Zoschke</h2>
-          I have been trying to tell computers what to do since I got a my first 486 and a Slackware CD. Now I’m allergic to building anything if it can’t be done with an API call. Prior to Convox I spent more than 5 years building infrastructure at Heroku. Most of the time I was managing and operating the low level container execution system, but also built products like Heroku Scheduler and PGBackups. It was extremely satisfying watching countless developers build their businesses on top of these systems. My goal at Convox is to build more delightful and robust infrastructure automation tools and share them with everyone.
-        </div>
+      </div>
+      <div class="details col-md-10">
+        <h2>Noah Zoschke</h2>
+        I have been trying to tell computers what to do since I got a my first 486 and a Slackware CD. Now I’m allergic to building anything if it can’t be done with an API call. Prior to Convox I spent more than 5 years building infrastructure at Heroku. Most of the time I was managing and operating the low level container execution system, but also built products like Heroku Scheduler and PGBackups. It was extremely satisfying watching countless developers build their businesses on top of these systems. My goal at Convox is to build more delightful and robust infrastructure automation tools and share them with everyone.
       </div>
     </a>
-  </section>
+  </row>
 </section>
 
 <section class="content contributors">
-  <h1>Contributors</h1>
-
-  <section>
-  </section>
+  <h2 class="col-xs-12">Contributors</h2>
 </section>
 
 <script>
@@ -86,16 +87,14 @@ function display_contributors() {
     return b[1].contributions-a[1].contributions;
   });
 
-  var root = $('.contributors > section');
+  var root = $('.contributors');
 
   for (var i in sorted) {
     var id = sorted[i][0];
     var contributions = sorted[i][1].contributions;
     var login = sorted[i][1].login;
 
-    root.append('<div class="contributor"><a href="https://github.com/' + login + '"><img src="https://avatars3.githubusercontent.com/u/' + id + '?v=3&s=460"></a></div>');
-
-    console.log('id', id, contributions);
+    root.append('<div class="contributor col-xs-3 col-md-1"><a href="https://github.com/' + login + '"><img src="https://avatars3.githubusercontent.com/u/' + id + '?v=3&s=460"></a></div>');
   }
 }
 
