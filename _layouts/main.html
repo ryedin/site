@@ -125,6 +125,18 @@
 		{% include intercom.html %}
 
 		<script src="/assets/js/bootstrap.min.js"></script>
+
+		<script>
+			$(window).ready(function() {
+				if ($(window).width() < 768 && $(window).scrollTop() == 0) {
+					window.setTimeout(function() {
+						console.log('here');
+						$(window).scrollTop(47);
+						console.log('was');
+					}, 100);
+				}
+			});
+		</script>
 	</body>
 </html>
 

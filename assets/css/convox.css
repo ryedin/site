@@ -523,8 +523,8 @@ pre code {
 }
 
 .team {
-  font-size: 1.0em;
-  line-height: 20px;
+  font-size: 1.05em;
+  line-height: 22px;
   margin: 16px -16px;
 }
 
@@ -552,7 +552,7 @@ pre code {
   margin: 0;
   padding: 0;
   margin-bottom: 6px;
-  margin-top: 3px;
+  margin-top: 0px;
 }
 
 .contributors {
