@@ -567,3 +567,9 @@ pre code {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
+ul.docs-index {
+  overflow-y: auto;
+  max-height: 400px;
+  -webkit-overflow-scrolling: touch;
+}
