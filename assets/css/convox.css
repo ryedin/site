@@ -573,3 +573,29 @@ ul.docs-index {
   max-height: 400px;
   -webkit-overflow-scrolling: touch;
 }
+
+h1.blog-title {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+h1.blog-title a {
+  color: #000;
+  font-weight: 800;
+}
+
+.blog-date {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-top: 16px;
+  color: #1777bb;
+}
+
+.post-separator {
+  margin-top: 40px;
+  border-top: 2px #ccc solid;
+}
+
+p {
+  margin-bottom: 14px;
+}

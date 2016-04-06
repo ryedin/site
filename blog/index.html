@@ -2,18 +2,28 @@
 title: "Convox Blog"
 ---
 
+<section class="posts col-xs-12">
+
 {% for post in site.posts %}
 
-  <h1 class="title">
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </h1>
+  <section class="row">
+    <h1 class="blog-title col-md-10">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h1>
 
-  <h3>{{ post.date | date: '%B %d, %Y' }}</h3>
+    <div class="col-md-2">
+      <div class="blog-date pull-right">
+        {{ post.date | date: "%b %d, %Y" }}
+      </div>
+    </div>
+  </section>
 
   {{ post.content }}
 
   <hr class="post-separator">
 
 {% endfor %}
+
+</section>
 
 <a href="/blog/rss.xml"><img src="/assets/images/static/rss-icon.png"></a>
