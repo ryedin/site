@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: "Modern Twelve-Factor Apps with Docker"
 ---
 Docker is awesome for developing [twelve-factor apps](http://12factor.net/).  

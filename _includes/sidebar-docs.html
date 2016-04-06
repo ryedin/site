@@ -1,0 +1,13 @@
+{% for collection in site.collections %}
+  {% if collection.label != "posts" %}
+    <div class="collection">
+      <h3>{{ collection.title }}</h3>
+      <ul>
+        {% assign pages = collection.docs | sort: 'order' %}
+        {% for page in pages %}
+          <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endfor %}

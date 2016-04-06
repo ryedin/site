@@ -9,7 +9,7 @@
 
 		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/assets/css/bootstrap-social.css">
-		<link rel="stylesheet" href="/assets/css/console.css">
+		<link rel="stylesheet" href="/assets/css/convox.css">
 
 		<script src="/assets/js/jquery.min.js"></script>
 	</head>
@@ -84,56 +84,29 @@
 		</div>
 
 		<div id="subnav" class="container">
-			<ul class="nav nav-tabs container">
-				<li><h2>Convox Documentation</h2></li>
-				<li class="pull-right visible-md-block visible-lg-block"><h2 id="version"></h2></li>
-				<li class="pull-right visible-xs-block visible-sm-block">
-					<div class="btn-group visible-xs-block visible-sm-block pull-right">
-						<button id="toc-toggle" type="button" class="btn btn-xs btn-default dropdown-toggle"
-							data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-							<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							{% for collection in site.collections %}
-								{% if collection.label != "posts" %}
-									<li class="dropdown-header">{{ collection.title }}</li>
-									{% assign pages = collection.docs | sort: 'order' %}
-									{% for page in pages %}
-										<li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-									{% endfor %}
-								{% endif %}
-							{% endfor %}
-						</ul>
-					</div>
-				</div>
-			</ul>
+			{% include subnav-{{page.subnav}}.html %}
 		</div>
 
 		<div class="container subnav-content" role="main">
-			<section id="toc" class="col-md-3 col-lg-3 visible-md-block visible-lg-block">
-				{% for collection in site.collections %}
-					{% if collection.label != "posts" %}
-						<div class="collection">
-							<h3>{{ collection.title }}</h3>
-							<ul>
-								{% assign pages = collection.docs | sort: 'order' %}
-								{% for page in pages %}
-									<li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
-								{% endfor %}
-							</ul>
-						</div>
-					{% endif %}
-				{% endfor %}
-			</section>
+			{% if page.sidebar != "none" %}
+				<section id="toc" class="col-md-3 col-lg-3 visible-md-block visible-lg-block">
+					{% include sidebar-{{page.sidebar}}.html %}
+				</section>
 
-			<section class="col-md-9 col-sm-12 col-xs-12">
-				<h1 class="title">{{ page.title }}</h1>
+				<section class="col-md-9 col-sm-12 col-xs-12">
+					<h1 class="title">{{ page.title }}</h1>
 
-				<div class="content">
-					{{ content }}
-				</div>
-			</section>
+					<div class="content">
+						{{ content }}
+					</div>
+				</section>
+			{% else %}
+				<section class="col-xs-12">
+					<div class="content">
+						{{ content }}
+					</div>
+				</section>
+			{% endif %}
 		</div>
 
 		<!-- scripts placed at the end of the document to improve load time -->
@@ -160,3 +133,4 @@
 		<script src="/assets/js/bootstrap.min.js"></script>
 	</body>
 </html>
+

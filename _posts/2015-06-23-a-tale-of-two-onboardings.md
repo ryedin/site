@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: "A Tale of Two Onboardings"
 ---
 

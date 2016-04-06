@@ -51,4 +51,17 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: docs
+      layout: main
+      sidebar: none
+      subnav: none
+      type: default
+  - scope:
+      path: blog
+    values:
+      subnav: blog
+  - scope:
+      path: docs
+    values:
+      sidebar: docs
+      subnav: docs
+      type: docs

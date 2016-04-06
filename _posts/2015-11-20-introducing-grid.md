@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: "Grid: Devops Services for Engineering Teams"
 ---
 
