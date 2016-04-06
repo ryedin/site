@@ -151,7 +151,7 @@ pre {
 }
 
 #subnav button {
-  margin-top: 8px;
+  margin-top: 11px;
 }
 
 #subnav h2 {
@@ -193,7 +193,7 @@ html, body {
 }
 
 .container[role="main"].subnav-content {
-  padding: 19px 0px 10px;
+  padding: 15px 0px 10px;
 }
 
 nav > .container {
