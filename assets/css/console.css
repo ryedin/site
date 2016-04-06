@@ -78,6 +78,7 @@ pre {
 
   #mobile-nav li a:hover {
     text-decoration: none;
+    color: #fff;
   }
 
   #subnav {
@@ -92,6 +93,14 @@ pre {
   margin-left: 0px;
   display: inline;
   vertical-align: middle;
+}
+
+.navbar a, #mobile-nav a {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin: 0px 4px;
 }
 
 .navbar .btn {
