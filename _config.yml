@@ -31,7 +31,7 @@ collections:
     output: true
     permalink: /docs/:name/
   languages:
-    title: Languages
+    title: Languages & Frameworks
     output: true
     permalink: /docs/:name/
   services:

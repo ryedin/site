@@ -136,6 +136,8 @@
 			</section>
 		</div>
 
+		<!-- scripts placed at the end of the document to improve load time -->
+
 		<script>
 			$(window).ready(function() {
 				$.getJSON('http://convox.s3.amazonaws.com/release/versions.json', function(versions) {
@@ -152,14 +154,9 @@
 			});
 		</script>
 
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
+		{% include google-analytics.html %}
+		{% include intercom.html %}
 
-		<!-- Latest compiled and minified bootstrap JavaScript -->
 		<script src="/assets/js/bootstrap.min.js"></script>
-
-		{% include _search.html %}
-		{% include _google_analytics.html %}
 	</body>
 </html>
