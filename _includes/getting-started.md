@@ -31,7 +31,7 @@ The installer will kick off the process of setting up Convox in your AWS account
 
   <p>Each deployed app will provision an additional ELB which starts at $18/month.</p>
 
-  <p>At any time you can <a href="/docs/uninstall-a-rack">uninstall a Rack</a> to delete the resources and stop accruing costs.</p>
+  <p>At any time you can <a href="/docs/uninstall-convox">uninstall a Rack</a> to delete the resources and stop accruing costs.</p>
 </div>
 
 ## Install the CLI
