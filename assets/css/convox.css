@@ -600,3 +600,53 @@ h1.blog-title a {
 p {
   margin-bottom: 14px;
 }
+
+.gradientbg--dark {
+  background-color: #1D5DB3;
+  background-image: -webkit-linear-gradient(-450deg, #1D5DB3, #091429);
+  background-image: linear-gradient(180deg,#1D5DB3, #091429);
+  color: #fff;
+}
+
+.cli-example pre {
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 0.75em;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  color: rgba(200, 200, 200, 0.7);
+  line-height: 23px;
+}
+
+.cli-example {
+  background-color: #333;
+  border-radius: 4px;
+  font-size: 1.3em;
+  padding: 14px;
+}
+
+.cli-example pre.stdin {
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.cli-example pre.stdout:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  section.api .cli-example {
+    height: 428px;
+    margin-bottom: 40px;
+    font-size: 1.0em;
+  }
+
+  section.api .cli-example pre {
+    line-height: 19px;
+  }
+}
+
+dl dt {
+  margin-top: 0.75em;
+}

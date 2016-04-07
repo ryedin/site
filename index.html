@@ -1,4 +1,5 @@
 ---
+layout: common
 ---
 <header class="welcome gradientbg--dark">
   <section class="section-header--centered section-header--page">
@@ -22,21 +23,22 @@
   </section>
 </header>
 
-<section class="development">
-  <header class="section-header section-header--centered row">
-    <h1 class="section-header__title section-header__title--blue">
-      Simplify your development environment
-    </h1>
+<section class="development col-xs-12">
+  <div class="content">
+    <header class="section-header section-header--centered row">
+      <h1 class="section-header__title section-header__title--blue">
+        Simplify your development environment
+      </h1>
 
-    <p class="section-header__description col--8 shift--2">
-      Start a local development environment that is identical to production with a single command.
-    </p>
-  </header>
+      <p class="section-header__description col--8 shift--2">
+        Start a local development environment that is identical to production with a single command.
+      </p>
+    </header>
 
-  <section>
-    <div class="cli-example col--8">
-      <pre class="stdin">$ convox start</pre>
-      <pre class="stdout">
+    <section>
+      <div class="cli-example col-xs-12 col-md-8">
+        <pre class="stdin">$ convox start</pre>
+        <pre class="stdout">
 RUNNING: docker build -t zfrsyhlvdi ~/src/myapp
 Sending build context to Docker daemon 2.29 MB
 Step 0 : FROM rails:latest
@@ -48,31 +50,32 @@ Step 2 : COPY Gemfile.lock /app/Gemfile.lock
  ---> Using cache
  ---> 3969abcce8da
 Step 3 : RUN bundle install</pre>
-    </div>
+      </div>
 
-    <dl class="col--4">
-      <dt>Works out of the box</dt>
-      <dd>
-        Convox will introspect your application to automatically create an
-        appropriate runtime environment.
-      </dd>
+      <dl class="col-xs-12 col-md-4">
+        <dt>Works out of the box</dt>
+        <dd>
+          Convox will introspect your application to automatically create an
+          appropriate runtime environment.
+        </dd>
 
-      <dt>Identical to production</dt>
-      <dd>
-        Runs exactly as it will in production so you can be certain
-        your changes work as expected.
-      </dd>
+        <dt>Identical to production</dt>
+        <dd>
+          Runs exactly as it will in production so you can be certain
+          your changes work as expected.
+        </dd>
 
-      <dt>Built on Docker</dt>
-      <dd>
-        Start with a huge library of pre-built images and customize
-        to your individual needs.
-      </dd>
-    </dl>
-  </section>
+        <dt>Built on Docker</dt>
+        <dd>
+          Start with a huge library of pre-built images and customize
+          to your individual needs.
+        </dd>
+      </dl>
+    </section>
+  </div>
 </section>
 
-<section class="production gradientbg--light">
+<section class="production gradientbg--light col-xs-12">
   <div class="content">
     <header class="section-header section-header--centered row">
       <h1 class="section-header__title section-header__title--blue">
@@ -85,7 +88,7 @@ Step 3 : RUN bundle install</pre>
     </header>
 
     <section>
-      <dl class="col--4">
+      <dl class="col-xs-12 col-md-4">
         <dt>Runs in your own AWS account</dt>
         <dd>
           Use industry best practices without the work. Easily scale up
@@ -118,7 +121,7 @@ Step 3 : RUN bundle install</pre>
         </dd>
       </dl>
 
-      <div class="cli-example col--8">
+      <div class="cli-example col-xs-12 col-md-8">
         <pre class="stdin">$ convox apps</pre>
         <pre class="stdout">
 APP    STATUS
@@ -147,7 +150,7 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
   </div>
 </section>
 
-<section class="production gradientbg--light">
+<section class="production gradientbg--light col-xs-12">
   <div class="content">
     <header class="section-header section-header--centered row">
       <h1 class="section-header__title section-header__title--blue">
@@ -157,10 +160,10 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
     </header>
 
     <section>
-      <div class="col--8">
+      <div class="col-xs-12 col-md-8">
         <img src="/assets/images/static/slack.png" class="screenshot">
       </div>
-      <dl class="col--4">
+      <dl class="col-xs-12 col-md-4">
         <dt>Continuous delivery</dt>
         <dd>Trigger automated builds and deployments when you push your code.
         <dt>Real-time notifications</dt>
@@ -170,7 +173,7 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
   </div>
 </section>
 
-<section class="content sub-section api">
+<section class="content sub-section api col-xs-12">
   <div class="">
     <header class="section-header section-header--centered">
       <h1 class="section-header__title section-header__title--blue">
@@ -181,9 +184,10 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
     </header>
 
     <section class="cli-examples">
-      <div class="cli-example col--6">
-        <pre class="stdin">$ convox api get /apps</pre>
-        <pre class="stdout">
+      <div class="col-xs-12 col-md-6">
+        <div class="cli-example">
+          <pre class="stdin">$ convox api get /apps</pre>
+          <pre class="stdout">
 [
   {
     "balancer": "myapp-1749418666.us-east-1.elb.amazonaws.com",
@@ -204,11 +208,13 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
     "status": "running"
   }
 ]</pre>
+        </div>
       </div>
 
-      <div class="cli-example col--6">
-        <pre class="stdin">$ convox api get /apps/myapp/processes</pre>
-        <pre class="stdout">
+      <div class="col-xs-12 col-md-6">
+        <div class="cli-example">
+          <pre class="stdin">$ convox api get /apps/myapp/processes</pre>
+          <pre class="stdout">
 [
   {
     "app": "myapp",
@@ -227,19 +233,19 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
     "started": "2015-01-01T00:00:00Z"
   }
 ]</pre>
+        </div>
       </div>
     </section>
   </div>
 </section>
 
-<section class="bg--light section--clear">
+<section class="bg--light section--clear col-xs-12">
   <div class="content content--centered content--small">
-    Have a question? Join us in our public slack channel!
-
-    <div class="inline-container">
-      <a class="button slack-button" href="//invite.convox.com/">
-        <img src="/assets/images/static/slack-logo.png" class="slack-button__logo" alt="Slack Logo">
-      </a>
-    </div>
+    <p class="pull-left">
+      Have a question? Join us in our public slack channel!
+    </p>
+    <a class="button slack-button pull-left" href="//invite.convox.com/">
+      <img src="/assets/images/static/slack-logo.png" class="slack-button__logo" alt="Slack Logo">
+    </a>
   </div>
 </section>
