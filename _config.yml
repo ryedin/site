@@ -52,9 +52,12 @@ defaults:
       path: ""
     values:
       layout: main
-      sidebar: none
       subnav: none
-      type: default
+  - scope:
+      type: posts
+    values:
+      layout: post
+      subnav: blog
   - scope:
       path: blog
     values:
@@ -62,9 +65,8 @@ defaults:
   - scope:
       path: docs
     values:
-      sidebar: docs
+      layout: docs
       subnav: docs
-      type: docs
   - scope:
       path: team
     values:
