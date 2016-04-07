@@ -24,6 +24,6 @@ Convox is designed to have as few moving parts as possible. Rather than implemen
 
 Convox is designed to minimize operations overhead by relying heavily on resilient configuration and powerful automation. Once an application is deployed to Convox it will continue running forever. We believe that you shouldn't have to waste your time keeping the lights on or constantly upgrading on someone else's schedule.
 
-#### Ownership
+#### Control
 
 Convox is open-source and runs in your own AWS account. You control the software. You decide when and if to upgrade it and you can change it to suit your needs. We believe that you shouldn't have to worry who has access to your code and customer data or about noisy neighbors crippling your application.
