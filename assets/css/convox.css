@@ -676,13 +676,13 @@ dl dt:first-child {
   color: #FCFDFE;
   margin-top: -34px;
   padding: 20px;
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 50px;
 }
 
 .top-header .tagline {
   color: #64ABDD;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 1.2em;
 }
 
@@ -692,7 +692,7 @@ dl dt:first-child {
 
 @media (max-width: 768px) {
   .top-header {
-    margin-top: -18px;
+    margin-top: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -703,10 +703,11 @@ dl dt:first-child {
 
   .top-header .tagline {
     font-size: 1.1em;
+    margin-top: 20px;
   }
 
   .top-header .signup {
-    margin-top: 16px;
+    margin-top: 20px;
   }
 
   section#development dt:first-child {
