@@ -31,9 +31,10 @@ layout: common
     </p>
 
     <section>
-      <div class="cli-example col-xs-12 col-md-8">
-        <pre class="stdin">$ convox start</pre>
-        <pre class="stdout">
+      <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 cli-example">
+          <pre class="stdin">$ convox start</pre>
+          <pre class="stdout">
 RUNNING: docker build -t zfrsyhlvdi ~/src/myapp
 Sending build context to Docker daemon 2.29 MB
 Step 0 : FROM rails:latest
@@ -45,6 +46,7 @@ Step 2 : COPY Gemfile.lock /app/Gemfile.lock
  ---> Using cache
  ---> 3969abcce8da
 Step 3 : RUN bundle install</pre>
+        </div>
       </div>
 
       <dl class="col-xs-12 col-md-4">
@@ -114,30 +116,32 @@ Step 3 : RUN bundle install</pre>
         </dd>
       </dl>
 
-      <div class="cli-example col-xs-12 col-md-8">
-        <pre class="stdin">$ convox apps</pre>
-        <pre class="stdout">
+      <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 cli-example">
+          <pre class="stdin">$ convox apps</pre>
+          <pre class="stdout">
 APP    STATUS
 myapp  running</pre>
-        <pre class="stdin">$ convox apps info</pre>
-        <pre class="stdout">
+          <pre class="stdin">$ convox apps info</pre>
+          <pre class="stdout">
 Name       myapp
 Status     running
 Release    REXIQURVKXE
 Processes  admin web
 Hostname   myapp-1749418666.us-east-1.elb.amazonaws.com
 Ports      web:80 web:443 admin:9322</pre>
-        <pre class="stdin">$ convox ps</pre>
-        <pre class="stdout">
+          <pre class="stdin">$ convox ps</pre>
+          <pre class="stdout">
 ID           NAME   RELEASE      CPU    MEM     STARTED       COMMAND
 13254981d20  admin  REXIQURVKXE  0.47%  2.21%   17 hours ago  bin/admin
 92d4a822c13  web    REXIQURVKXE  3.29%  20.68%  17 hours ago  bin/web</pre>
-        <pre class="stdin">$ convox env</pre>
-        <pre class="stdout">PASSWORD=xyzzy</pre>
-        <pre class="stdin">$ convox logs</pre>
-        <pre class="stdout">
+          <pre class="stdin">$ convox env</pre>
+          <pre class="stdout">PASSWORD=xyzzy</pre>
+          <pre class="stdin">$ convox logs</pre>
+          <pre class="stdout">
 web: [01/Jan/2015:00:00:00] "GET / HTTP/1.1" 200 554 0.0027
 web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
+        </div>
       </div>
     </section>
   </div>
@@ -173,7 +177,7 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
 
     <p>Customize your environment to suit your needs.</p>
 
-    <p class="api-button"><a class="button" href="/api">Browse the API</a></p>
+    <p class="api-button"><a class="btn btn-primary" href="/api">Browse the API</a></p>
 
     <section class="cli-examples">
       <div class="col-xs-12 col-md-6">
@@ -233,11 +237,11 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
 
 <section id="contact" class="index col-xs-12">
   <div class="content">
-    <p class="pull-left">
-      Have a question? Join us in our public slack channel!
+    <p class="col-xs-12">
+      Have a question? Join us in our public channel!
+      <a class="slack-button" href="//invite.convox.com/">
+        <img src="/assets/images/static/slack-logo.png" class="slack-button__logo" alt="Slack Logo">
+      </a>
     </p>
-    <a class="button slack-button pull-left" href="//invite.convox.com/">
-      <img src="/assets/images/static/slack-logo.png" class="slack-button__logo" alt="Slack Logo">
-    </a>
   </div>
 </section>

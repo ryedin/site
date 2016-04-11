@@ -84,6 +84,14 @@ pre {
   #subnav {
     margin-top: 0px !important;
   }
+  
+  .content h3 {
+    margin-top: 30px !important;
+  }
+}
+
+.navbar-brand {
+  padding-top: 17px;
 }
 
 .navbar-brand img {
@@ -115,10 +123,11 @@ pre {
   font-weight: bold;
   text-transform: uppercase;
   margin-left: 2px;
-  font-size: 1.2em;
+  font-size: 1.38em;
   letter-spacing: 0.04em;
   display: inline-block;
-  margin-top: 2px;
+  margin-top: -5px;
+  vertical-align: middle;
 }
 
 .well {
@@ -654,21 +663,26 @@ p {
 }
 
 dl dt {
-  margin-top: 0.75em;
+  margin-top: 20px;
+}
+
+dl dt:first-child {
+  margin-top: 10px;
 }
 
 .top-header {
   text-align: center;
-  background-color: #1777bb;
-  color: #fff;
+  background-image: linear-gradient(180deg, #1777BB, #023152);
+  color: #FCFDFE;
   margin-top: -34px;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding: 20px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 .top-header .tagline {
-  margin-top: 30px;
-  color: #eee;
+  color: #64ABDD;
+  margin-top: 20px;
   font-size: 1.2em;
 }
 
@@ -676,8 +690,67 @@ dl dt {
   margin-top: 30px;
 }
 
+@media (max-width: 768px) {
+  .top-header {
+    margin-top: -18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .top-header h1 {
+    font-size: 1.4em;
+  }
+
+  .top-header .tagline {
+    font-size: 1.1em;
+  }
+
+  .top-header .signup {
+    margin-top: 16px;
+  }
+
+  #development dt:first-child {
+    margin-top: 30px;
+  }
+
+  .cli-example {
+    font-size: 0.8em;
+  }
+
+  .cli-example pre {
+    line-height: 12px;
+    overflow-x: auto;
+  }
+
+  .index {
+    padding-bottom: 10px !important;
+  }
+
+  #production, #api {
+    padding-bottom: 40px !important;
+  }
+
+  .index h1 {
+    font-size: 1.3em !important;
+  }
+
+  .index > .content > p {
+    font-size: 0.9em !important;
+    padding: 10px 20px 0px;
+  }
+
+  .slack-button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  #api .cli-example:first-child {
+    margin-bottom: 20px;
+  }
+}
+
 section.index {
-  padding: 10px 30px;
+  padding: 20px 20px 50px;
 }
 
 section.index h1 {
@@ -691,4 +764,40 @@ section.index > .content > p {
   text-align: center;
   margin-bottom: 30px;
   color: #075D9A;
+}
+
+#production, #api {
+  background-color: #EAF6FF;
+}
+
+#contact {
+  padding: 50px 20px 40px;
+}
+
+p.api-button {
+  margin-top: -10px;
+}
+
+#contact p {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.slack-button {
+  background-color: #FCFCFC;
+  background-image: -webkit-linear-gradient(#FCFCFC, #EAEAEA);
+  background-image: linear-gradient(#FCFCFC, #EAEAEA);
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  margin-left: 12px;
+  display: inline-block;
+}
+
+.slack-button img {
+  height: 2.0rem;
+  width: auto;
 }
