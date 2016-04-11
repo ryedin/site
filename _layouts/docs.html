@@ -9,8 +9,12 @@ layout: common
         <h3>{{ collection.title }}</h3>
         <ul>
           {% assign pages = collection.docs | sort: 'order' %}
-          {% for page in pages %}
-            <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
+          {% for p in pages %}
+            {% if page.title == p.title %}
+              <li class="active">{{ p.title }}</li>
+            {% else %}
+              <li><a href="{{ p.url }}"><span>{{ p.title }}</span></a></li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>
