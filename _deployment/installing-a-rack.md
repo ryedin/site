@@ -3,7 +3,7 @@ title: "Installing a Rack"
 order: 100
 ---
 
-In order to install a Rack into your AWS account you will first need to create temporary AWS credentials. See [Creating an IAM User](/docs/creating-an-iam-user) for instructions.
+A [Rack](/docs/rack) is installed into your AWS account to manage your infrastructure and provision applications. In order to install a Rack you will first need to create temporary AWS credentials. See [Creating an IAM User](/docs/creating-an-iam-user) for instructions.
 
 <div class="block-callout block-show-callout type-info" markdown="1">
 Installation will take approximately 10 minutes to complete.
