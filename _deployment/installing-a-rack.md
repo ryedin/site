@@ -11,9 +11,9 @@ Installation will take approximately 10 minutes to complete.
 
 ## Installing from Console
 
-* Choose the desired Organization from the dropdown in the top navigation.
+* Choose the desired Organization from the dropdown in the top navigation
 * Click **Add a Rack** and then **Install New Rack**
-* Choose a name for your Rack and select the desired AWS region.
+* Choose a name for your Rack, and select the desired AWS region
 * Enter your AWS credentials
 * Click **Install Convox**
 
