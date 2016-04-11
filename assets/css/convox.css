@@ -444,10 +444,6 @@ h1.title {
   font-weight: bold;
 }
 
-.content span.slack-message {
-  color: #075D9A;
-}
-
 .content table {
   border: 1px #ccc solid;
 }
@@ -646,17 +642,53 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-  section.api .cli-example {
+  section#api .cli-example {
     height: 428px;
     margin-bottom: 40px;
     font-size: 1.0em;
   }
 
-  section.api .cli-example pre {
+  section#api .cli-example pre {
     line-height: 19px;
   }
 }
 
 dl dt {
   margin-top: 0.75em;
+}
+
+.top-header {
+  text-align: center;
+  background-color: #1777bb;
+  color: #fff;
+  margin-top: -34px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.top-header .tagline {
+  margin-top: 30px;
+  color: #eee;
+  font-size: 1.2em;
+}
+
+.top-header .signup {
+  margin-top: 30px;
+}
+
+section.index {
+  padding: 10px 30px;
+}
+
+section.index h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+section.index > .content > p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #075D9A;
 }
