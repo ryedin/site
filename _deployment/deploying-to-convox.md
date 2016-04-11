@@ -18,5 +18,5 @@ You can easily configure Console to build and deploy your application when chang
 ## CLI
 
 * Go to the directory that contains your application
-* Type `convox switch <org>/<rack>` to select the Rack that contains the application you would like to deploy.
+* Type `convox switch <org>/<rack>` to select the Rack that contains the application to deploy.
 * Type `convox deploy --app <appname>`
