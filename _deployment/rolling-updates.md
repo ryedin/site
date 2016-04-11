@@ -3,7 +3,7 @@ title: "Rolling Updates"
 order: 400
 ---
 
-When a Release is promoted for an application it will be gracefully rolled into production using the following workflow for each process type on your application:
+When a Release is promoted for an application it will be gracefully rolled into production using the following steps for each process type on your application:
 
 #### Starting a new process
 
