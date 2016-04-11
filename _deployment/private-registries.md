@@ -34,7 +34,7 @@ Continuing with our Docker Hub example, the command would be:
     Password:
     Done.
 
-You will be prompted for your username and password. Once the registry has been added, you can now pull private images:
+You will be prompted for your username and password. Once the registry has been added, you can pull private images:
 
     $ convox deploy
     Deploying test
@@ -57,8 +57,7 @@ You may also want to pull and build from images stored in a private EC2 Containe
     database:
       image: 901416387788.dkr.ecr.us-east-1.amazonaws.com/postgres
 
-Since [ECR authorization tokens expire every 12 hours](http://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth),
-you must give Convox IAM access keys that have permission to generate ECR tokens and pull images:
+Since [ECR authorization tokens expire every 12 hours](http://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth), you must give Convox IAM access keys that have permission to generate ECR tokens and pull images:
 
     $ aws iam create-user --user-name ECRReadOnly
     {
