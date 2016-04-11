@@ -683,7 +683,7 @@ dl dt:first-child {
 .top-header .tagline {
   color: #64ABDD;
   margin-top: 30px;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 .top-header .signup {
@@ -801,4 +801,8 @@ p.api-button {
 .slack-button img {
   height: 2.0rem;
   width: auto;
+}
+
+#console-button {
+  cursor: pointer;
 }
