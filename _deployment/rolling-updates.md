@@ -7,7 +7,7 @@ When a Release is promoted for an application it will be gracefully rolled into 
 
 #### Starting a new process
 
-* A new Process will be started on the desired Release
+* A new Process will be started on the desired Release.
 * If the Process [exposes ports](/docs/port-mapping) it will be added to the appropriate load balancer.
 
 #### Health check
@@ -17,7 +17,7 @@ When a Release is promoted for an application it will be gracefully rolled into 
 
 #### Stopping an old process
 
-* One Process running the previous Release will be stopped
+* One Process running the previous Release will be stopped.
 
 #### Repeat
 

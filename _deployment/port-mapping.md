@@ -3,16 +3,16 @@ title: "Port Mapping"
 order: 700
 ---
 
-You can define the ports your Processes will listen in the manifest for your application.
+You can define the ports on which your Processes will listen in the manifest for your application.
 
 ## External Ports
 
-External ports are open to the internet. You define an external port using a port pair in the `ports:` section of your `docker-compose.yml`:
+External ports are open to the Internet. You define an external port using a port pair in the `ports:` section of your `docker-compose.yml`:
 
     ports:
       - 80:5000
       
-This example configuration would listen to port `80` on an internet-accessible load balancer and forward connections to port `5000` on the Process.
+This example configuration would listen to port `80` on an Internet-accessible load balancer and forward connections to port `5000` on the Process.
 
 ## Internal Ports
 
