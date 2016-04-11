@@ -26,4 +26,4 @@ Convox is designed to minimize operations overhead by relying heavily on resilie
 
 #### Control
 
-Convox is open-source and runs in your own AWS account. You control the software. You decide when and if to upgrade it and you can change it to suit your needs. We believe that you shouldn't have to worry who has access to your code and customer data or about noisy neighbors crippling your application.
+Convox is open-source and runs in your own AWS account. You control the software. You decide when and if to upgrade it, and you can change it to suit your needs. We believe that you shouldn't have to worry who has access to your code and customer data or about noisy neighbors crippling your application.
