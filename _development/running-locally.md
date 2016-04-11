@@ -19,7 +19,7 @@ Install Docker from your application's default package manager.
 
 #### convox start
 
-`convox start` builds and runs your application locally.
+Use `convox start` to build and run your application locally.
 
     $ cd ~/example-app
     $ convox start
