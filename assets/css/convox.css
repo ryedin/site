@@ -709,7 +709,7 @@ dl dt:first-child {
     margin-top: 16px;
   }
 
-  #development dt:first-child {
+  section#development dt:first-child {
     margin-top: 30px;
   }
 
@@ -726,7 +726,7 @@ dl dt:first-child {
     padding-bottom: 10px !important;
   }
 
-  #production, #api {
+  section#production, section#api {
     padding-bottom: 40px !important;
   }
 
@@ -744,7 +744,7 @@ dl dt:first-child {
     margin-bottom: 30px;
   }
 
-  #api .cli-example:first-child {
+  section#api .cli-example:first-child {
     margin-bottom: 20px;
   }
 }
@@ -766,7 +766,7 @@ section.index > .content > p {
   color: #075D9A;
 }
 
-#production, #api {
+section#production, section#api {
   background-color: #EAF6FF;
 }
 
