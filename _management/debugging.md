@@ -28,7 +28,7 @@ ID            NAME  RELEASE      SIZE  STARTED     COMMAND
 
 ```
 $ convox exec 5e3c8576b942 bash
-bash-4.3#
+/app #
 ```
     
 You can use this shell to examine your running application in detail.
