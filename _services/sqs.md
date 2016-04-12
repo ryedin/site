@@ -3,7 +3,7 @@ title: "SQS"
 ---
 ## Service Creation
 
-You can create redis databases using the `convox services create` command:
+You can create SQS queues using the `convox services create` command:
 
     $ convox services create sqs
     Creating sqs-3785 (sqs)... CREATING
