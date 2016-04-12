@@ -26,10 +26,6 @@ collections:
     title: Monitoring
     output: true
     permalink: /docs/:name/
-  integrations:
-    title: Integrations
-    output: true
-    permalink: /docs/:name/
   languages:
     title: Languages & Frameworks
     output: true
