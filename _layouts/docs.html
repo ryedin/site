@@ -11,7 +11,7 @@ layout: common
           {% assign pages = collection.docs | sort: 'order' %}
           {% for p in pages %}
             {% if page.title == p.title %}
-              <li class="active">{{ p.title }}</li>
+              <li class="active"><a href="{{ p.url }}">{{ p.title }}</a></li>
             {% else %}
               <li><a href="{{ p.url }}"><span>{{ p.title }}</span></a></li>
             {% endif %}

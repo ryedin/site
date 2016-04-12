@@ -412,10 +412,10 @@ form#env .form-group .form-control {
   text-decoration: none;
 }
 
-#toc li.active {
-  padding: 6px 10px;
+#toc li.active a {
   font-weight: bold;
   font-size: 1.1em;
+  color: #075D9A;
 }
 
 h1.title {
