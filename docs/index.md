@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with Convox"
-sort: 10
+title: "Overview"
 ---
-{% include getting-started.md %}
+
+{% include overview.md %}

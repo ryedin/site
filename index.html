@@ -1,60 +1,22 @@
 ---
-layout: default
+layout: index
 ---
 
-<header class="top">
-  <nav class="app-nav">
-    <div class="app-nav__logo-container">
-      <img src="/assets/images/static/navbar-logo.png" class="app-nav__logo">
-      <a href="/" class="app-nav__link">Convox</a>
-    </div>
-    <div class="links">
-      <a href="/blog" class="app-nav__link">Blog</a>
-      <a href="https://github.com/convox" class="app-nav__link">Code</a>
-      <a href="/docs" class="app-nav__link">Docs</a>
-      <a href="/team" class="app-nav__link">Team</a>
-      <a href="mailto:support@convox.com" class="app-nav__link">Contact Us</a>
-    </div>
-  </nav>
-</header>
-
-<header class="welcome gradientbg--dark">
-  <section class="section-header--centered section-header--page">
-    <h1 class="section-header__title section-header__title--large section-header__title--white">
-      Build, deploy, and manage applications with ease.
-    </h1>
-
-    <p class="section-header__description section-header__description--large">
-      Stop worrying about servers and focus on your code.
-    </p>
-
-    <ul>
-      <li class="section-header__action">
-        <a class="button button--green" href="https://grid.convox.com/grid/signup">
-          Sign up for free
-        </a>
-      </li>
-    </ul>
-    <p>
-    </p>
-  </section>
-</header>
-
-<section class="content development">
-  <header class="section-header section-header--centered row">
-    <h1 class="section-header__title section-header__title--blue">
+<section id="development" class="index col-xs-12">
+  <div class="content">
+    <h1>
       Simplify your development environment
     </h1>
 
-    <p class="section-header__description col--8 shift--2">
+    <p>
       Start a local development environment that is identical to production with a single command.
     </p>
-  </header>
 
-  <section>
-    <div class="cli-example col--8">
-      <pre class="stdin">$ convox start</pre>
-      <pre class="stdout">
+    <section>
+      <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 cli-example">
+          <pre class="stdin">$ convox start</pre>
+          <pre class="stdout">
 RUNNING: docker build -t zfrsyhlvdi ~/src/myapp
 Sending build context to Docker daemon 2.29 MB
 Step 0 : FROM rails:latest
@@ -66,44 +28,44 @@ Step 2 : COPY Gemfile.lock /app/Gemfile.lock
  ---> Using cache
  ---> 3969abcce8da
 Step 3 : RUN bundle install</pre>
-    </div>
+        </div>
+      </div>
 
-    <dl class="col--4">
-      <dt>Works out of the box</dt>
-      <dd>
-        Convox will introspect your application to automatically create an
-        appropriate runtime environment.
-      </dd>
+      <dl class="col-xs-12 col-md-4">
+        <dt>Works out of the box</dt>
+        <dd>
+          Convox will introspect your application to automatically create an
+          appropriate runtime environment.
+        </dd>
 
-      <dt>Identical to production</dt>
-      <dd>
-        Runs exactly as it will in production so you can be certain
-        your changes work as expected.
-      </dd>
+        <dt>Identical to production</dt>
+        <dd>
+          Runs exactly as it will in production so you can be certain
+          your changes work as expected.
+        </dd>
 
-      <dt>Built on Docker</dt>
-      <dd>
-        Start with a huge library of pre-built images and customize
-        to your individual needs.
-      </dd>
-    </dl>
-  </section>
+        <dt>Built on Docker</dt>
+        <dd>
+          Start with a huge library of pre-built images and customize
+          to your individual needs.
+        </dd>
+      </dl>
+    </section>
+  </div>
 </section>
 
-<section class="production gradientbg--light">
+<section id="production" class="index col-xs-12">
   <div class="content">
-    <header class="section-header section-header--centered row">
-      <h1 class="section-header__title section-header__title--blue">
-        Production-grade infrastructure
-      </h1>
+    <h1>
+      Production-grade infrastructure
+    </h1>
 
-      <p class="section-header__description col--8 shift--2">
-        Zero-maintenance architecture built on industry best practices.
-      </p>
-    </header>
+    <p>
+      Zero-maintenance architecture built on industry best practices.
+    </p>
 
     <section>
-      <dl class="col--4">
+      <dl class="col-xs-12 col-md-4">
         <dt>Runs in your own AWS account</dt>
         <dd>
           Use industry best practices without the work. Easily scale up
@@ -136,49 +98,50 @@ Step 3 : RUN bundle install</pre>
         </dd>
       </dl>
 
-      <div class="cli-example col--8">
-        <pre class="stdin">$ convox apps</pre>
-        <pre class="stdout">
+      <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 cli-example">
+          <pre class="stdin">$ convox apps</pre>
+          <pre class="stdout">
 APP    STATUS
 myapp  running</pre>
-        <pre class="stdin">$ convox apps info</pre>
-        <pre class="stdout">
+          <pre class="stdin">$ convox apps info</pre>
+          <pre class="stdout">
 Name       myapp
 Status     running
 Release    REXIQURVKXE
 Processes  admin web
 Hostname   myapp-1749418666.us-east-1.elb.amazonaws.com
 Ports      web:80 web:443 admin:9322</pre>
-        <pre class="stdin">$ convox ps</pre>
-        <pre class="stdout">
+          <pre class="stdin">$ convox ps</pre>
+          <pre class="stdout">
 ID           NAME   RELEASE      CPU    MEM     STARTED       COMMAND
 13254981d20  admin  REXIQURVKXE  0.47%  2.21%   17 hours ago  bin/admin
 92d4a822c13  web    REXIQURVKXE  3.29%  20.68%  17 hours ago  bin/web</pre>
-        <pre class="stdin">$ convox env</pre>
-        <pre class="stdout">PASSWORD=xyzzy</pre>
-        <pre class="stdin">$ convox logs</pre>
-        <pre class="stdout">
+          <pre class="stdin">$ convox env</pre>
+          <pre class="stdout">PASSWORD=xyzzy</pre>
+          <pre class="stdin">$ convox logs</pre>
+          <pre class="stdout">
 web: [01/Jan/2015:00:00:00] "GET / HTTP/1.1" 200 554 0.0027
 web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
+        </div>
       </div>
     </section>
   </div>
 </section>
 
-<section class="production gradientbg--light">
+<section id="automation" class="index col-xs-12">
   <div class="content">
-    <header class="section-header section-header--centered row">
-      <h1 class="section-header__title section-header__title--blue">
-        Automate your development workflow
-      </h1>
-      <p>One-click integration with the tools you're already using.</p>
-    </header>
+    <h1>
+      Automate your development workflow
+    </h1>
+
+    <p>One-click integration with the tools you're already using.</p>
 
     <section>
-      <div class="col--8">
+      <div class="col-xs-12 col-md-8">
         <img src="/assets/images/static/slack.png" class="screenshot">
       </div>
-      <dl class="col--4">
+      <dl class="col-xs-12 col-md-4">
         <dt>Continuous delivery</dt>
         <dd>Trigger automated builds and deployments when you push your code.
         <dt>Real-time notifications</dt>
@@ -188,20 +151,21 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
   </div>
 </section>
 
-<section class="content sub-section api">
-  <div class="">
-    <header class="section-header section-header--centered">
-      <h1 class="section-header__title section-header__title--blue">
-        Open API
-      </h1>
-      <p>Customize your environment to suit your needs.</p>
-      <p class="api-button"><a class="button" href="/api">Browse the API</a></p>
-    </header>
+<section id="api" class="index col-xs-12">
+  <div class="content">
+    <h1>
+      Open API
+    </h1>
+
+    <p>Customize your environment to suit your needs.</p>
+
+    <p class="api-button"><a class="btn btn-primary" href="/api">Browse the API</a></p>
 
     <section class="cli-examples">
-      <div class="cli-example col--6">
-        <pre class="stdin">$ convox api get /apps</pre>
-        <pre class="stdout">
+      <div class="col-xs-12 col-md-6">
+        <div class="cli-example">
+          <pre class="stdin">$ convox api get /apps</pre>
+          <pre class="stdout">
 [
   {
     "balancer": "myapp-1749418666.us-east-1.elb.amazonaws.com",
@@ -222,11 +186,13 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
     "status": "running"
   }
 ]</pre>
+        </div>
       </div>
 
-      <div class="cli-example col--6">
-        <pre class="stdin">$ convox api get /apps/myapp/processes</pre>
-        <pre class="stdout">
+      <div class="col-xs-12 col-md-6">
+        <div class="cli-example">
+          <pre class="stdin">$ convox api get /apps/myapp/processes</pre>
+          <pre class="stdout">
 [
   {
     "app": "myapp",
@@ -245,19 +211,19 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
     "started": "2015-01-01T00:00:00Z"
   }
 ]</pre>
+        </div>
       </div>
     </section>
   </div>
 </section>
 
-<section class="bg--light section--clear">
-  <div class="content content--centered content--small">
-    Have a question? Join us in our public slack channel!
-
-    <div class="inline-container">
-      <a class="button slack-button" href="//invite.convox.com/">
+<section id="contact" class="index col-xs-12">
+  <div class="content">
+    <p class="col-xs-12">
+      Have a question? Join us in our public channel!
+      <a class="slack-button" href="//invite.convox.com/">
         <img src="/assets/images/static/slack-logo.png" class="slack-button__logo" alt="Slack Logo">
       </a>
-    </div>
+    </p>
   </div>
 </section>

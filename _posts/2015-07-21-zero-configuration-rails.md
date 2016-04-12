@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: "Zero Configuration Rails"
 ---
 Convox can run and deploy a default Rails app with no manual configuration. Give it a try:
