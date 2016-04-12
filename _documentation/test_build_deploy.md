@@ -44,6 +44,10 @@ For the purposes of this document let's assume that we wish to have convox build
 
 Awesome! Now every push to the `master` branch of our github repo will trigger a new build and deploy on our convox rack. You can easily test and confirm this by pushing code directly to the `master` branch from your own workstation.
 
+There are two ways to confirm Convox has created the builds and releases we expect. Through the convox CLI we can run `convox releases` and `convox builds`. Either command will give us a list of the releases or builds in reverse chronological order. You can also see the the same list in the web UI by clicking on the 'Racks' tab and then clicking -> name_of_your_rack -> name_of_your_app. Below is sample with a rack name of `sinatra` and an app name of `sinatra1`:
+
+![Convox Releases](/assets/images/docs/test_build_deploy/convox_releases.png)
+
 ## Integrate CircleCI with Github
 
 Automated deploys from `master` is great. But we have tests that we want to run. Let's set up automated testing with [CircleCI.](https://circleci.com)
@@ -71,6 +75,10 @@ deployment:
       - deploy/merge-develop.sh 
 ```
 In the case that the `develop` branch has all tests pass, CircleCI will run this deployment script.
+
+If your tests fail, then CircleCI will not execute anything in the deployment section. Here's an example of what that looks like:
+
+![CircleCI test failures doesn't deploy](/assets/images/docs/test_build_deploy/circle_failure_no_deploy.png)
 
 The entirety of our `merge-develop.sh` script looks like this:
 
