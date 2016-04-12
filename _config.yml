@@ -26,10 +26,6 @@ collections:
     title: Monitoring
     output: true
     permalink: /docs/:name/
-  languages:
-    title: Languages & Frameworks
-    output: true
-    permalink: /docs/:name/
   services:
     title: Services
     output: true
