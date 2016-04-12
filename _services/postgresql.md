@@ -45,6 +45,6 @@ To delete the database, use the `convox services delete` command:
 
 Deleting the database will take several minutes.
 
-<div class="block-callout block-show-callout type-warning">
+<div class="block-callout block-show-callout type-warning" markdown="1">
 This action will cause an unrecoverable loss of data.
 </div>
