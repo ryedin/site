@@ -49,3 +49,7 @@ i-d8740c43  on     active  5 days ago   4   0.00%  21.04%
 $ convox instances ssh i-0234d285
 [ec2-user@ip-10-0-3-209 ~]$ 
 ````
+
+<div class="block-callout block-show-callout type-info" markdown="1">
+Before you can use `convox instances ssh` the first time you will need to run `convox instances keyroll` to load an SSH key on to your Rack instances.
+</div>
