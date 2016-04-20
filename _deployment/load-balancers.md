@@ -22,11 +22,17 @@ worker:
 
 In this example, Convox will create a load balancer in front of the `web` process. This load balancer will accept traffic from the internet on port 80 and forward it to the `web` containers on port `5000`.
 
-<div class="block-callout block-show-callout type-info" markdown="1">
-You can create a load balancer that is only accessible inside your Rack by specifying a single port, like `- 5000`
-</div>
-
 ### Advanced Options
+
+#### Internal Load Balancers
+
+You can create a load balancer that is only accessible inside your Rack by specifying a single port:
+
+```
+web:
+  ports:
+    - 5000
+```
 
 #### Balancer Protocol
 
@@ -64,7 +70,7 @@ web:
 </table>
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-If no protocol label is specified then the protocol will be assumed to be `tcp`.
+If no protocol label is specified the default of `tcp` will be used.
 </div>
     
 #### End-to-end encryption
