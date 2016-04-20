@@ -22,7 +22,7 @@ Example: to run the command `rake myjob` every hour on the `web` process, you wo
 ```yaml
 web:
   labels:
-    - "convox.cron.myjob=0 * * * ? rake myjob
+    - convox.cron.myjob=0 * * * ? rake myjob
 ```
 
 #### Cron expression format
