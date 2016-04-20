@@ -455,6 +455,7 @@ h1.title {
 
 .content table {
   border: 1px #ccc solid;
+  margin-bottom: 10px;
 }
 
 .content table th {
