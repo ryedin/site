@@ -55,6 +55,10 @@ Some example expressions:
     <td>Run every minute</td>
   </tr>
   <tr>
+    <td><code>*/10 * * * ?</code></td>
+    <td>Run every 10 minutes</td>
+  </tr>
+  <tr>
     <td><code>0 * * * ?</code></td>
     <td>Run every hour</td>
   </tr>
