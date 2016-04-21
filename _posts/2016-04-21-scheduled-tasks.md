@@ -19,7 +19,7 @@ web:
     - "3000:3000"
 ```
 
-To actually collate the data and send the email, it is highly likely the tool you would look to first would be [Rake](https://github.com/ruby/rake). Once you had written and tested your Rake task, how would you tell convox how and, more importantly when to run your task? Well I'll tell you; with **labels**.
+To actually collate the data and send the email, it is highly likely the tool you would look to first would be [Rake](https://github.com/ruby/rake). Once you had written and tested your Rake task, how would you tell Convox how and, more importantly when to run your task? Well I'll tell you; with **labels**.
 
 As you can see in the following example we simply add a label with a crontab entry in the following format: `- convox.cron.{YOUR TASK ID HERE}=0 8 * * ? {YOUR TASK COMMAND HERE}`. This tells Convox to run the task at 8am every day. You can see how that would look in our example below.
 
@@ -34,7 +34,7 @@ web:
     - convox.cron.dailyupdate=0 8 * * ? rake daily_update
 ```
 
-If you wanted the task to run at different intervals you could manipulate the crontab entry to match any of the example expressions:`
+If you wanted the task to run at different intervals you could manipulate the crontab entry to match any of the example expressions:
 
 <table>
   <tr>
@@ -69,4 +69,6 @@ If you wanted the task to run at different intervals you could manipulate the cr
 
 ## How does it work?
 
-The current implementation converts the crontab entry to a scheduled [Lambda](http://docs.aws.amazon.com/lambda/latest/dg/with-scheduled-events.html) function. This function basically uses Convox APIs to run the command specified in a container in your rack. To read more you can check out the [docs](/docs/scheduled-tasks/). We'd love to hear how you might use this feature and feedback, as always, is very welcome.
+We've taken a single line of config and configured a powerful production ready task runner without the need to install, configure or maintain  any 3rd party dependencies or services, but how?
+
+The current implementation converts the crontab entry to a [scheduled Lambda function](http://docs.aws.amazon.com/lambda/latest/dg/with-scheduled-events.html)This function basically uses Convox APIs to run the command specified in a container in your rack. To read more you can check out the [docs](/docs/scheduled-tasks/). We'd love to hear how you might use this feature and feedback, as always, is very welcome.
