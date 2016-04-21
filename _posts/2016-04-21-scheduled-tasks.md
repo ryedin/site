@@ -6,7 +6,7 @@ Over the past week the team (and in particular my friend [Matt](https://twitter.
 
 ## A practical example
 
-Let's say you are working on a application that collects analytics on behalf of your users about their customer usage and you want to send a daily update summary to each user.
+Let's say you are working on a application that collects analytics on behalf of your users about their customer usage, and you want to send a daily update summary to each user.
 
 In this hypothetical example let's assume you alread have a well tested rails app successfully running on Convox. If that was the case you would probably have a docker-compose.yml file containing the following process definition
 
