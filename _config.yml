@@ -51,6 +51,10 @@ defaults:
       layout: post
       subnav: blog
   - scope:
+      path: api
+    values:
+      subnav: api
+  - scope:
       path: blog
     values:
       subnav: blog
