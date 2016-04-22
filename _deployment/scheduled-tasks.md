@@ -17,12 +17,12 @@ Scheduled tasks are configured in `docker-compose.yml` using labels in the `conv
 
 - **command** is the command to be run in this process. Invocations of the command are equivalent to manually running `convox run <command> --detached`, and in fact it's a good idea to test that your command works using `convox run`.
 
-Example: to run the command `rake myjob` every hour on the `web` process, you would configure the label like this:
+Example: to run the command `bin/myjob` every hour on the `web` process, you would configure the label like this:
 
 ```yaml
 web:
   labels:
-    - convox.cron.myjob=0 * * * ? rake myjob
+    - convox.cron.myjob=0 * * * ? bin/myjob
 ```
 
 #### Cron expression format
