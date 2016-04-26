@@ -11,9 +11,16 @@ $ convox logs
 2016-04-12 19:45:00 i-0234d285 example-app/web:RSPZQWVWGOP : 10.0.1.242 - - [12 Apr/2016:19:45:00 +0000] "GET / HTTP/1.0" 200 70 0.0019
 ```
 
-You can use the `--follow=false` option to return a log report which can be piped into other utilities. You can use `--filter=keyword` or `--filter="foo bar"` to filter your logs. Only logs that have all the keywords will be return. You can use the `--since=20m` or `--since=48h` to specify a time range. 
+### Additional Options
 
-Tie all these together to generate a report from the logs from a single container over the last 2 days:
+<table>
+  <tr><th>Option</th><th>Description</th></tr>
+  <tr><td><code>--follow=<b><i>false</i></b></code></td><td>Return a finite set of logs. Useful for reporting.</td></tr>
+  <tr><td><code>--filter=<b><i>'web "GET /"'</i></b></code></td><td>Return only the logs that match all the filters. Filters are case sensitive and non-alphanumeric terms must be inside double quotes.</td></tr>
+  <tr><td><code>--since=<b><i>20m</i></b></code></td><td>Return logs starting this duration ago. Values are a duration like <code>10m</code> or <code>48h</code>.</td></tr>
+</table>
+
+You can tie all these together to generate a report from the logs from a single container over the last 2 days:
 
 ```
 $ convox ps
@@ -48,7 +55,11 @@ Type     t2.medium
 $ convox logs -a demo
 2016-04-12 19:55:08 i-1d1fe49a demo/web:20160408020109 : time="2016-04-12T19:55:08Z" level=info msg="started handling request" method=GET remote="10.0.3.199:58107" request="/check"
 2016-04-12 19:55:08 i-1d1fe49a demo/web:20160408020109 : time="2016-04-12T19:55:08Z" level=info msg="completed handling request" count#status2XX=1 measure#web.elapsed=0.095ms method=GET remote="10.0.3.199:58107" request="/check" status=200 text_status=OK
+```
 
+You can use filters to understand Rack operations like what webhooks were sent:
+
+```
 $ convox logs -a demo --filter=EventSend --follow=false --since=20m
 2016-04-25T20:58:16Z web:20160425202355/1eb3f413602b aws EventSend msg="{\"action\":\"build:create\",\"status\":\"error\",\"data\":{\"app\":\"httpd\",\"id\":\"BEAIOGUJGTU\",\"message\":\"exit status 1\"},\"timestamp\":\"2016-04-25T20:58:16.428582907Z\"}"
 2016-04-25T20:58:16Z web:20160425202355/1eb3f413602b ns=kernel at=EventSend message-id="a0266efc-1cd8-54f6-bc46-21649bf06b5a"
