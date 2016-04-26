@@ -7,7 +7,16 @@ You can easily secure traffic to your application using TLS (SSL).
 
 ### Acquire an SSL certificate
 
-SSL certificates can be purchased from most registrars and DNS providers. Convox is a fan of [gandi.net](https://www.gandi.net/ssl).
+You can request an SSL certificate for any domain you control using `convox certs generate`:
+
+    $ convox certs generate foo.example.org
+    Requesting certificate... OK, acm-01234567890
+
+<div class="block-callout block-show-callout type-info" markdown="1">
+Certificate generation is currently [only available in certain regions](http://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html).
+</div>
+
+You can also purchase an SSL certificate from most registrars and DNS providers. Convox is a fan of [Gandi](https://www.gandi.net/ssl).
 
 ### Add the secure port to your manifest
 
@@ -28,23 +37,42 @@ Your app is now configured to serve encrypted traffic with a self-signed certifi
 
 ### Upload your certificate
 
-Use the Convox CLI to upload your certificate and private key, specifying the process and external port you want the certificate applied to. Continuing with the previous example, the command would look like:
+Upload your certificate using `convox certs create`:
 
-    $ convox ssl update web:443 example.org.crt example.org.key
+    $ convox certs create example.org.pub example.org.key
+    Uploading certificate... OK, cert-1234567890
 
-After running this command, SSL will be terminated at the load balancer. Your app itself will continue to recieve unencrypted traffic on its internal port.
+You can then apply this certificate to your load balancer with `convox ssl update`:
+
+    $ convox ssl update web:443 cert-1234567890
+    Updating certificate... OK
 
 ### Inspect SSL configuration
 
 You can use the Convox CLI to view SSL configuration for an app.
 
     $ convox ssl
-    TARGET   EXPIRES            DOMAINS
-    web:443  9 months from now  example.org
+    TARGET   CERTIFICATE       DOMAIN       EXPIRES
+    web:443  cert-1234567890   example.org  2 months from now
 
 ### Updating your SSL certificate
 
-When it's time to update your SSL certificate, use `convox ssl update` again:
+When it's time to update your SSL certificate, upload your new certificate and use `convox ssl update` again:
 
-    $ convox ssl update web:443 example.org.crt example.org.key
-    Updating SSL listener web:443... Done.
+    $ convox certs create example.org.pub example.org.key
+    Uploading certificate... OK, cert-0987654321
+
+    $ convox ssl update web:443 certs-0987654321
+    Updating certificate... OK
+
+### Removing old certificates
+
+You can remove old certificates that you are no longer using. You can see the certificates associated with your account with `convox certs`:
+
+    $ convox certs
+    ID               DOMAIN       EXPIRES
+    cert-1234567890  example.org  2 months ago
+    cert-0987654321  example.org  2 months from now
+
+    $ convox certs delete cert-1234567890
+    Removing certificate... OK
