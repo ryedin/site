@@ -19,7 +19,7 @@ Any changes from the default environment should be fully specified. Anything not
 
 #### Reproducible
 
-Deterministic builds, common runtimes, and explicit environments ensure that code running succesfully in development will also run successfully and predictably in production.
+Deterministic builds, common runtimes, and explicit environments ensure that code running successfully in development will also run successfully and predictably in production.
 
 ## Manifests
 
@@ -80,7 +80,7 @@ Each top level key defines the processes necessary to run your application. This
 
 * The `web` and `worker` processes have a `build` key which instructs `convox start` to build an image using the `Dockerfile` in the specified directory.
 
-* The `environment` key declares environment variables for this process. Defaults can be specified. Any variable with no value (such as `MYSERVICE_API_KEY`) must be declared in your local environment to start the application succesfully (see the section on `.env` below for more details)
+* The `environment` key declares environment variables for this process. Defaults can be specified. Any variable with no value (such as `MYSERVICE_API_KEY`) must be declared in your local environment to start the application successfully (see the section on `.env` below for more details)
 
 * The `ports` key declares the ports that a process wishes to expose to traffic. These ports are defined in pairs, the externally facing port and the port on which the process is listening.
 

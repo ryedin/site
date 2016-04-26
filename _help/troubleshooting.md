@@ -16,6 +16,6 @@ Run `convox logs --app convox` to inspect the Convox API logs for errors and `co
 
 Run `convox apps info` to find the load balancer endpoints for your application.
 
-Run `convox ps` to determine if your application is booting succesfully.
+Run `convox ps` to determine if your application is booting successfully.
 
 Run `convox logs` to inspect your application logs and cluster events for problems placing your container, starting your app, or registering with the load balancer.
