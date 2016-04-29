@@ -1,5 +1,6 @@
 ---
 layout: index
+title: Convox
 ---
 
 <section id="development" class="index col-xs-12">
@@ -129,6 +130,55 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
   </div>
 </section>
 
+<section id="testimonials" class="index col-xs-12">
+  <div class="testimonial">
+    <blockquote class="col-xs-11">
+      Deploying our scientific Python stack used to be a nightmare. Convox eliminates the stress and uncertainty of packaging our code for production.
+      <cite>
+        <span class="name">Ian Wong</span>
+        <a class="company" href="https://www.opendoor.com/">OpenDoor</a>
+      </cite>
+    </blockquote>
+    <a href="https://twitter.com/ihat">
+      <img class="col-xs-1 face" src="https://twitter.com/ihat/profile_image?size=bigger"/>
+    </a>
+  </div>
+  <div class="testimonial">
+    <blockquote class="col-xs-11">
+      Convox has been instrumental in helping us enjoy the flexibility of AWS. Their support, product, and team are second to none.
+      <cite>
+        <span class="name">Jamie Quint</span>
+        <a class="company" href="https://interstateanalytics.com/">Interstate Analytics</a>
+      </cite>
+    </blockquote>
+    <a href="https://twitter.com/jamiequint">
+      <img class="col-xs-1 face" src="https://twitter.com/jamiequint/profile_image?size=bigger"/>
+    </a>
+  </div>
+  <div class="testimonial">
+    <blockquote class="col-xs-11">
+      Having Convox on board has freed up roughly 25% of our engineer's time every week. The level of service they provide is truly astounding.
+      <cite>
+        <span class="name">Arthur Weagel</span>
+        <a class="company" href="https://podium.co">Podium</a>
+      </cite>
+    </blockquote>
+    <img class="col-xs-1 face" src="/assets/img/arthur.png"/>
+  </div>
+  <div class="testimonial">
+    <blockquote class="col-xs-11">
+      Convox has enabled us to make sustainable changes to scale quickly and keep up with our customers' demands.
+      <cite>
+        <span class="name">Eric Rea</span>
+        <a class="company" href="https://podium.co">Podium</a>
+      </cite>
+    </blockquote>
+    <a href="https://twitter.com/ericwilliamrea">
+      <img class="col-xs-1 face" src="https://twitter.com/ericwilliamrea/profile_image?size=bigger"/>
+    </a>
+  </div>
+</section>
+
 <section id="automation" class="index col-xs-12">
   <div class="content">
     <h1>
@@ -227,3 +277,23 @@ web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
     </p>
   </div>
 </section>
+
+<script>
+  $.fn.random = function() {
+    return $(this[Math.floor(Math.random() * this.length)]);
+  }
+
+  $(window).ready(function() {
+    $('.testimonial').random().show();
+
+    /*
+    window.setInterval(function() {
+      var next = $('.testimonial:hidden').random();
+
+      $('.testimonial:visible').fadeOut(500, function() {
+        $(next).fadeIn(500);
+      });
+    }, 8000);
+    */
+  });
+</script>

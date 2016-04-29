@@ -149,6 +149,11 @@ pre {
   border-bottom: 0;
 }
 
+#subnav .nav-tabs a {
+  color: #FFF;
+  text-decoration: none;
+}
+
 #subnav .nav-tabs li a {
   border: 0;
   border-radius: 0;
@@ -591,26 +596,107 @@ ul.docs-index {
   -webkit-overflow-scrolling: touch;
 }
 
-h1.blog-title {
-  font-size: 1.6em;
+.posts {
+  font-size: 20px;
+  font-family: Georgia,serif;
+  margin-top: 10px;
+}
+
+.post {
+  margin-top: 16px;
   margin-bottom: 20px;
 }
 
-h1.blog-title a {
+.posts p {
+  font-size: 1.02em;
+  line-height: 1.58;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.posts ul {
+  margin-top: 29px;
+}
+
+.posts li p {
+  margin-top: 10px;
+}
+
+.posts h1 {
+  font-size: 1.5em;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.posts h1 a {
   color: #000;
-  font-weight: 800;
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.posts h2 {
+  font-size: 1.3em;
+  line-height: 1.15;
+  margin-bottom: 0;
+}
+
+.post .highlighter-rouge {
+  margin-top: 12px;
+}
+
+.post blockquote {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.post table {
+  margin-top: 20px;
+}
+
+.post li {
+  margin-top: 7px;
+}
+
+.post blockquote p {
+  margin-top: 0;
+}
+
+.blog-author {
+  font-family: Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.blog-author a {
+  margin-left: 10px;
+  margin-right: -10px;
+}
+
+.blog-author img {
+  margin-top: -5px;
 }
 
 .blog-date {
-  font-weight: bold;
-  font-size: 0.9em;
-  margin-top: 16px;
   color: #075D9A;
 }
 
-.post-separator {
-  margin-top: 40px;
-  border-top: 2px #ccc solid;
+.posts hr {
+  border-top: 3px solid #eee;
+  margin-left: 30px;
+}
+
+.posts img + em {
+  font-size: 14px;
+  margin-left: 60px;
+}
+
+@media (max-width: 768px) {
+  .posts {
+    font-size: 0.95em;
+  }
 }
 
 p {
@@ -768,7 +854,7 @@ section.index > .content > p {
   color: #075D9A;
 }
 
-section#production, section#api {
+section.index:nth-child(even) {
   background-color: #EAF6FF;
 }
 
@@ -811,7 +897,7 @@ p.api-button {
 #api {
   margin: 0;
   padding: 0;
-  font-size: 0.8em;
+  padding-top: 20px;
 }
 
 #api .info {
@@ -895,4 +981,73 @@ p.api-button {
 
 #api .footer {
   display: none;
+}
+
+#testimonials {
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 0px;
+  padding-top: 40px;
+  min-height: 114px;
+}
+
+.testimonial {
+  display: none;
+}
+
+.testimonial blockquote {
+  border-left: 0;
+  padding-left: 50px;
+  color: rgba(0,0,0,0.74);
+  font-weight: bold;
+  text-align: justify;
+  margin-bottom: 0;
+  display: inline-block;
+  padding-right: 30px;
+  font-size: 1.5em;
+  width: 90%;
+}
+
+.testimonial blockquote:before {
+  content: "\201C";
+  position: absolute;
+  left: -12px;
+  top: -14px;
+  font-size: 80px;
+  color: rgba(0,0,0,0.2);
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+
+.testimonial cite {
+  display: block;
+  float: right;
+  margin-top: 12px;
+  color: rgba(0,0,0,0.4);
+  margin-right: 0px;
+  font-size: 0.9em;
+  font-style: normal;
+}
+
+.testimonial .name:after {
+  content: ",";
+  color: rgba(0,0,0,0.2);
+}
+
+.testimonial .company {
+  margin-left: 2px;
+  font-style: italic;
+  font-weight: 900;
+  color: rgba(5, 72, 119,0.4);
+}
+
+.testimonial .face {
+  padding-right: 0px;
+  padding-left: 0;
+  margin-right: 28px;
+  margin-top: 8px;
+  height: 70px;
+  width: 70px;
+  border-radius: 36px;
+  border: 2px #ddd solid;
 }

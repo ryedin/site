@@ -1,13 +1,39 @@
-<section class="row">
-  <h1 class="blog-title col-xs-8 col-md-10">
-    <a href="{{ include.post.url }}">{{ include.post.title }}</a>
-  </h1>
-
-  <div class="col-xs-4 col-md-2">
-    <div class="blog-date pull-right">
+<section class="post col-xs-12">
+  <section class="col-xs-9 col-md-10">
+    <h1 class="blog-title">
+      <a href="{{ include.post.url }}">{{ include.post.title }}</a>
+    </h1>
+    <div class="blog-date visible-xs">
       {{ include.post.date | date: "%b %d, %Y" }}
     </div>
-  </div>
-</section>
+  </section>
 
-{{ include.post.content }}
+  {% if include.post.author %}
+  <section class="col-xs-3 col-md-2">
+    <div class="blog-author">
+      <a class="pull-right" href="https://twitter.com/@{{ include.post.twitter }}">
+        <img class="img-circle" src="https://twitter.com/{{ include.post.twitter }}/profile_image?size=normal" />
+      </a>
+      <div class="pull-right visible-sm visible-md visible-lg">
+        <div>{{ include.post.author }}</div>
+        <div class="blog-date">
+          {{ include.post.date | date: "%b %d, %Y" }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="col-xs-12">
+    <div>
+      {% if include.excerpt %}
+        {{ include.post.excerpt }}
+        <p>
+          <a href="{{ include.post.url }}">Read more...</a>
+        </p>
+      {% else %}
+        {{ include.post.content }}
+      {% endif %}
+    </div>
+  </section>
+</section>

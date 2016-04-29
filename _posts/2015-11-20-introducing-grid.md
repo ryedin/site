@@ -1,5 +1,7 @@
 ---
 title: "Grid: Devops Services for Engineering Teams"
+author: David Dollar
+twitter: ddollar
 ---
 
 We are proud to announce the latest addition to the Convox platform:

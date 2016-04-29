@@ -1,5 +1,7 @@
 ---
 title: "Integration over Invention"
+author: Noah Zoschke
+twitter: nzoschke
 ---
 
 In 10 minutes [Convox](https://convox.com/) installs a system that takes over the management of your AWS servers, networking, and data and lets you deploy applications to the Internet with a single command.  

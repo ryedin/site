@@ -1,5 +1,7 @@
 ---
 title: "Modern Twelve-Factor Apps with Docker"
+author: Noah Zoschke
+twitter: nzoschke
 ---
 Docker is awesome for developing [twelve-factor apps](http://12factor.net/).  
 

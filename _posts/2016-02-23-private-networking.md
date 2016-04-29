@@ -1,5 +1,7 @@
 ---
 title: Private Networking
+author: David Dollar
+twitter: ddollar
 ---
 
 We are pleased to announce Convox support for private networks inside your Amazon VPCs. 

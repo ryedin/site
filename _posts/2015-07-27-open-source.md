@@ -1,5 +1,7 @@
 ---
 title: "Open Source"
+author: David Dollar
+twitter: ddollar
 ---
 > "...as we enjoy great advantages from the inventions of others, we should be glad of an opportunity to serve others by any invention of ours; and this we should do freely and generously." -Benjamin Franklin
 

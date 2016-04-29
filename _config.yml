@@ -67,3 +67,7 @@ defaults:
       path: team
     values:
       subnav: team
+  - scope:
+      path: jobs
+    values:
+      subnav: jobs

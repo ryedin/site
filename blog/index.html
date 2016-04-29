@@ -2,16 +2,13 @@
 title: "Convox Blog"
 ---
 
-<section class="posts col-xs-12">
+<section class="posts">
+  {% for post in site.posts %}
+    {% include post.html post=post excerpt=true %}
+    <hr class="col-xs-11" class="post-separator">
+  {% endfor %}
 
-{% for post in site.posts %}
-
-  {% include post.html post=post %}
-
-  <hr class="post-separator">
-
-{% endfor %}
-
+  <div class="blog-author col-xs-12 col-md-12">
+    <a href="/blog/rss.xml"><img src="/assets/images/static/rss-icon.png"></a>
+  </div>
 </section>
-
-<a href="/blog/rss.xml"><img src="/assets/images/static/rss-icon.png"></a>

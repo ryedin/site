@@ -1,5 +1,7 @@
 ---
 title: Scheduled Tasks
+author: Luke Roberts
+twitter: awsmsrc
 ---
 
 Over the past week the team (and in particular my friend [Matt](https://twitter.com/mattmanning)) has been working on a feature I'm excited to share with you. Convox now natively supports Scheduled tasks. This allows you to specify units of work, ran at any interval you desire with out writing any extra code.

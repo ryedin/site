@@ -1,5 +1,7 @@
 ---
 title: "A Tale of Two Onboardings"
+author: Matt Manning
+twitter: mattmanning
 ---
 
 Joe is a junior developer starting his first real programming job for the photo sharing site SendFace. He arrives at the office Monday morning and meets Susan, his engineering manager. After a quick tour of the office, Susan hands Joe a shiny new Macbook Pro. Joe asks if there are any new developer docs.  
