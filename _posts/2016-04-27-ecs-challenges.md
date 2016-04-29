@@ -244,3 +244,11 @@ Finally its still the early days for all of these tools. ECS started out rather 
 I fully expect Amazon will continue to chip away at these hard infrastructure parts and Docker will continue to improve the container runtime.
 
 We will get to focus the vast majority of time building and deploying new versions of our apps and trust that the container services will keep everything running.
+
+--
+
+I work full time on open source infrastructure automation at Convox ([website](http://convox.com/), [GitHub](https://github.com/convox)).
+
+Please send feedback and/or questions Twitter to [@nzoschke](https://twitter.com/@nzoschke) or email to noah@convox.com.
+
+Thanks to Mackenzie Burnett, Eric Holmes, Calvin French-Owen and Malia Powers among others for feedback.
