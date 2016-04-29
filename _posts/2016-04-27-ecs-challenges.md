@@ -245,10 +245,14 @@ I fully expect Amazon will continue to chip away at these hard infrastructure pa
 
 We will get to focus the vast majority of time building and deploying new versions of our apps and trust that the container services will keep everything running.
 
---
+<hr>
 
 I work full time on open source infrastructure automation at Convox ([website](http://convox.com/), [GitHub](https://github.com/convox)).
 
 Please send feedback and/or questions Twitter to [@nzoschke](https://twitter.com/@nzoschke) or email to noah@convox.com.
 
 Thanks to Mackenzie Burnett, Eric Holmes, Calvin French-Owen and Malia Powers among others for feedback.
+
+<blockquote markdown="1">
+  Discuss this on [Hacker News](https://news.ycombinator.com/item?id=11598058).
+</blockquote>
