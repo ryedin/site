@@ -1052,3 +1052,16 @@ p.api-button {
   border-radius: 36px;
   border: 2px #ddd solid;
 }
+
+#jobs {
+  text-align: left !important;
+  padding: 20px 40px;
+}
+
+#jobs p {
+  text-align: left !important;
+}
+
+#jobs li {
+  margin-bottom: 8px;
+}
