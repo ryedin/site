@@ -1,7 +1,6 @@
 ---
+title: Solutions Engineer
 ---
-
-# Solutions Engineer
 
 We are looking for experienced DevOps engineer who can help our customers be sucessful on the platform. The ideal candidate has exceptional problem-solving and communication skills and a broad background in web technologies.
 

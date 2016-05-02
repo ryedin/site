@@ -70,4 +70,5 @@ defaults:
   - scope:
       path: jobs
     values:
+      layout: jobs
       subnav: jobs
