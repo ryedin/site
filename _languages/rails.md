@@ -20,11 +20,11 @@ See [Preparing an Application](/docs/preparing-an-application) for more details.
 
 The Convox-generated `Dockerfile` and `docker-compose.yml` will set up the following:
 
-### bin/web
+#### bin/web
 
 This wrapper script will be created to assist in booting your application. You can find the source [here](https://github.com/convox/rails/blob/master/bin/web).
 
-### nginx
+#### nginx
 
 Nginx is included in your application to buffer incoming connections and inject proper headers to incoming HTTPS requests. You can find the configuration [here](https://github.com/convox/rails/blob/master/conf/nginx.conf).
 
