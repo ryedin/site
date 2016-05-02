@@ -67,9 +67,10 @@ pre {
 
   #mobile-nav li {
     display: inline-block;
-    width: 24%;
+    width: 18.8%;
     text-align: center;
-    padding: 14px 18px 12px;
+    padding: 12px 16px 10px;
+    font-size: 0.9em;
   }
 
   #mobile-nav li a {
