@@ -216,6 +216,21 @@ html, body {
   min-height: 100%;
 }
 
+.container[role="blog"] {
+  background-color: #fff;
+}
+
+@media (min-width: 1200px) {
+  .container[role="blog"] {
+    width: 800px;
+  }
+
+  .subnav-blog {
+    display: block;
+    width: 800px;
+  }
+}
+
 .container[role="main"].subnav-content {
   padding: 15px 0px 10px;
 }
@@ -604,7 +619,7 @@ ul.docs-index {
 }
 
 .post {
-  margin-top: 16px;
+  padding-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -677,7 +692,8 @@ ul.docs-index {
 }
 
 .blog-author img {
-  margin-top: -5px;
+  margin-top: -3px;
+  width: 40px;
 }
 
 .blog-date {
