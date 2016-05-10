@@ -401,7 +401,8 @@ form#env .form-group .form-control {
   }
 }
 
-#toc .collection {
+#toc-collapsed a {
+  color: #000 !important;
 }
 
 #toc .collection h3 {
