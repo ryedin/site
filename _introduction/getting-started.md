@@ -96,7 +96,7 @@ While remaining in the directory with your local application source let's deploy
 Convox infers the app name from the current directory name. If you'd like to specify another name use `convox apps create <name>` and specify `--app <name>` to each of the following commands.
 </div>
     
-Wait the underlying components to be created by waiting for the app status to change to `running`:
+Wait for the underlying components to be created by waiting for the app status to change to `running`:
 
     $ convox apps info
     
