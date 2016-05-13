@@ -3,13 +3,13 @@ title: "Getting Started"
 order: 400
 ---
 
-Getting started with Convox is easy. The instructions below will guide you through:
+Getting started with Convox is easy. The instructions below guide you through:
 
-* Signing up for an account
+* Signing up for a Convox account
 * Installing Convox Rack, your production-ready deployment environment
 * Setting up your development environment
-* Developing your first application
-* Deploying your first application
+* Developing your first app
+* Deploying your first app
 
 This guide takes around 30 minutes to go from zero to your first production deploy.
 
@@ -36,9 +36,9 @@ We provide a `convox` command line tool that offers:
 
 * `convox start` - A single command to start your development environment
 * `convox deploy` - A single command to deploy your application to a Rack
-* `convox update` - A single command to deliver API and infrastructure improvements for your Rack
+* `convox rack update` - A single command to deliver API and infrastructure improvements to a Rack
 
-Along with numerous other utilities that make building, configuring, scaling and securing your apps easy.
+along with numerous other utilities that make building, configuring, scaling and securing your apps easy.
 
 You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) or install it via the command line:
 
@@ -58,9 +58,9 @@ You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) o
 
 We strongly recommend the [Docker for Mac or Windows](https://blog.docker.com/2016/03/docker-for-mac-windows-beta/) tool. Presently you need a [Docker ID to enroll in a beta program](https://beta.docker.com/) to download this tool. See [Docker For Mac Beta Review](https://medium.com/@nzoschke/docker-for-mac-beta-review-b91692289eb5#.mnmxfa999) for more details.
 
-### Log in to Console
+### Log In
 
-Finally you need to log into the Console with your API key to manage your Racks:
+Finally you need to log in with the API key found **Account** section in the top navigation bar:
 
     $ convox login
     Password: <Your Console API key>
@@ -122,4 +122,4 @@ Now that you've deployed your first application you can:
 * Set up Continuous Delivery workflows with GitHub, GitLab and Slack
 * Install another Rack for isolated development or staging deployments
 
-Or you can easily [uninstall everything](/docs/uninstalling-a-rack/) you just experimented with.
+Or you can easily [uninstall everything](/docs/uninstalling-convox/) you just experimented with.
