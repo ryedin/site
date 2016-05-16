@@ -56,7 +56,7 @@ You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) o
 
 `convox start` uses Docker to create a development environment that closely mimics the production environment.
 
-We strongly recommend the [Docker for Mac or Windows](https://blog.docker.com/2016/03/docker-for-mac-windows-beta/) tool. Presently you need a [Docker ID to enroll in a beta program](https://beta.docker.com/) to download this tool. See [Docker For Mac Beta Review](https://medium.com/@nzoschke/docker-for-mac-beta-review-b91692289eb5#.mnmxfa999) for more details.
+We strongly recommend the Docker for Mac tool. See the [Getting Started Guide](https://beta.docker.com/docs/mac/getting-started/) for instructions to download and install this tool. Presently you also need a [Docker ID to enroll in a beta program](https://beta.docker.com/) to activate this tool.
 
 ### Log In
 
