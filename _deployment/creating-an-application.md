@@ -1,5 +1,5 @@
 ---
-title: "Creating an application"
+title: "Creating an Application"
 order: 150
 ---
 
