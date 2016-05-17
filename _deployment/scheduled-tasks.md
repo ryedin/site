@@ -11,7 +11,7 @@ Scheduled tasks are configured in `docker-compose.yml` using labels in the `conv
 
 `convox.cron.<task name>=<cron expression> <command>`
 
-- **task name** is a unique name for each task that you choose. Task names may not be reused within the same application process.
+- **task name** is a unique name for each task that you choose. Task names may not be reused within the same application process and must be alphanumeric.
 
 - **cron expression** describes the schedule on which the task will be invoked. See "Cron expression format" below for more info.
 
