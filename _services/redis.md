@@ -31,9 +31,9 @@ To see relevant info about the database, use the `convox services info` command:
 
 ## Service Linking
 
-You can add this URL to any application with `convox env set`:
+You can add this URL as an environment variable to any application with `convox env set`:
 
-    $ convox env set 'redis://atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0' --app example-app
+    $ convox env set REDIS_URL='redis://atb1alu32d6lfy19.c63i2h.ng.0001.use1.cache.amazonaws.com:6379/0' --app example-app
 
 ## Service Deletion
 
