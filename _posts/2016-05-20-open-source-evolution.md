@@ -44,7 +44,7 @@ And we all use the clouds to run the software we built with open source:
 
 * Postgres, MySQL, Redis, MongoDB
 
-Open source is so pervasive its easy to forget how much is in the stack.
+Open source is so pervasive it's easy to forget how much is in the stack.
 
 This is what the commoditization of computing looks like. The supply chain for building and running software is increasingly solved and the component solutions are all open source and free.
 
@@ -54,7 +54,7 @@ The grandfather of all open source licenses is the GNU Public License (GPL). Par
 
 GPL has been called “viral”. If you take a GPL code base and modify it for your needs and distribute that to users, you **have** to license the code changes GPL and distribute them publicly too.
 
-This is “viral” in the greatest sense. Linux embraced this license. This philosophy has attracted attracted incredibly smart people that all share the goal of building a truly free operating system as a computing foundation available for all. The model works incredibly well and today Linux is the most important operating system in the cloud.
+This is “viral” in the best sense. Linux embraced this license. This philosophy has attracted incredibly smart people that all share the goal of building a truly free operating system as a computing foundation available for all. The model works incredibly well, and today Linux is the most important operating system in the cloud.
 
 ## Pragmatic Open Source — Services
 
@@ -64,13 +64,13 @@ One intriguing cause here is the rise of Cloud Services in general. When you run
 
 Amazon and Google do take massive advantage this “loophole”. These companies integrate lots open source software but keep the vast majority of their business software private. Their code bases are serious competitive advantages between each other and against incumbents.
 
-For example, AWS EC2 is built on the GPL [Xen Hypervisor](https://en.wikipedia.org/wiki/Xen) that surely has massive modifications for their unique product and engineering needs. And AWS ELB is build on the GPL HAProxy software. While AWS certainly does contribute back to these projects they aren’t beholden to virally making all their EC2 and ELB software public.
+For example, AWS EC2 is built on the GPL [Xen Hypervisor](https://en.wikipedia.org/wiki/Xen) that surely has massive modifications for their unique product and engineering needs. And AWS ELB is built on the GPL [HAProxy](http://www.haproxy.org/) software. While AWS certainly does contribute back to these projects they aren’t beholden to virally making all their EC2 and ELB software public.
 
-This is OK. The philosophy of GPL is a powerful concept but the reality of running infrastructure at AWS or Google scale deserves them a break. We demand cheap and always available compute, network, data and email. Open source code purity matters less.
+This is OK. The philosophy of GPL is a powerful concept, but companies like AWS or Google get a big break for dealing with the realities of running infrastructure at scale and making it available to all of us. We demand cheap and always available compute, network, data and email. Open source code purity matters less.
 
 ## Pragmatic Open Source — Permissive
 
-Much “new” open source software projects adopt the “more permissive” BSD or Apache licenses that do not have the “viral” clause that require changes be re-distributed.
+Many “new” open source software projects adopt the “more permissive” BSD or Apache licenses that do not have the “viral” clause that require changes be re-distributed.
 
 This open source software is incredibly free. The service loophole is fine. Forking, closing and selling software based on the parent project is allowed and even encouraged.
 
@@ -104,7 +104,7 @@ Open source won. Open, free and transparent software projects will continue to d
 
 However, as cloud computing marches towards a utility service the vast majority of the software we write and the open source software we adopt will lease utility cloud services for very pragmatic reasons.
 
-This has started years ago around AWS S3. Important open source infrastructure like RubyGems and the Docker Registry happily delegate storage responsibilities to S3 so they can focus on building great tools and APIs and not worry about tough challenges around data durability.
+This started years ago around AWS S3. Important open source infrastructure like RubyGems and the Docker Registry happily delegate storage responsibilities to S3 so they can focus on building great tools and APIs and not worry about tough challenges around data durability.
 
 Convox is working to advance this trend. The Convox project is developed in the open for all the philosophical reasons. But we embrace the pragmatism of leveraging cloud services when possible provided they hit an acceptable quality and cost bar.
 
