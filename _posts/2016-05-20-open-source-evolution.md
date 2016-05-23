@@ -46,7 +46,13 @@ And we all use the clouds to run the software we built with open source:
 
 Open source is so pervasive it's easy to forget how much is in the stack.
 
-This is what the commoditization of computing looks like. The supply chain for building and running software is increasingly solved and the component solutions are all open source and free.
+This is what the commoditization of computing looks like. The supply chain for building and running software is increasingly solved and the component solutions are all open source. 
+
+A large majority of these components are free (both as in beer and in speech) to take a use however needed. But not all. For pragmatic reasons, our own software and the open source software we adopt integrate with utility cloud services that are closed systems that must be leased.
+
+Still this is great. Open source won, and we found one very agreeable model for renting and leasing utility infrastructure services. 
+
+With open source software and utility cloud services we now all have the tools to accomplish anything.
 
 ## Philosophical Open Source
 
