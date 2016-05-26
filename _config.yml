@@ -48,36 +48,27 @@ defaults:
       path: ""
     values:
       layout: main
-      subnav: none
   - scope:
       type: posts
     values:
       layout: post
-      subnav: blog
-  - scope:
-      path: api
-    values:
-      subnav: api
   - scope:
       path: blog
     values:
-      subnav: blog
+      layout: blog
   - scope:
       path: docs
     values:
       layout: docs
-      subnav: docs
-  - scope:
-      path: team
-    values:
-      subnav: team
   - scope:
       path: jobs
     values:
       layout: jobs
-      subnav: jobs
   - scope:
-      path: privacy
+      path: legal
     values:
-      layout: privacy
-      subnav: privacy
+      layout: legal
+  - scope:
+      path: team
+    values:
+      layout: team

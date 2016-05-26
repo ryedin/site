@@ -1,31 +1,39 @@
 ---
-layout: common
+layout: base
 ---
 
-<section id="toc" class="col-md-3 col-lg-3 visible-md-block visible-lg-block">
-  {% for collection in site.collections %}
-    {% if collection.label != "posts" %}
-      <div class="collection">
-        <h3>{{ collection.title }}</h3>
-        <ul>
-          {% assign pages = collection.docs | sort: 'order' %}
-          {% for p in pages %}
-            {% if page.title == p.title %}
-              <li class="active"><a href="{{ p.url }}">{{ p.title }}</a></li>
-            {% else %}
-              <li><a href="{{ p.url }}"><span>{{ p.title }}</span></a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-  {% endfor %}
-</section>
+<div id="subnav" class="container">
+	<ul class="nav nav-tabs container">
+		<li><h2><a href="/blog">Convox Documentation</a></h2></li>
+	</ul>
+</div>
 
-<section class="col-md-9 col-sm-12 col-xs-12">
-  <h1 class="title">{{ page.title }}</h1>
+<div class="container subnav-content" role="main">
+  <section id="toc" class="col-md-3 col-lg-3 visible-md-block visible-lg-block">
+    {% for collection in site.collections %}
+      {% if collection.label != "posts" %}
+        <div class="collection">
+          <h3>{{ collection.title }}</h3>
+          <ul>
+            {% assign pages = collection.docs | sort: 'order' %}
+            {% for p in pages %}
+              {% if page.title == p.title %}
+                <li class="active"><a href="{{ p.url }}">{{ p.title }}</a></li>
+              {% else %}
+                <li><a href="{{ p.url }}"><span>{{ p.title }}</span></a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
 
-  <div class="content">
-    {{ content }}
-  </div>
-</section>
+  <section class="col-md-9 col-sm-12 col-xs-12">
+    <h1 class="title">{{ page.title }}</h1>
+
+    <div class="content">
+      {{ content }}
+    </div>
+  </section>
+</div>
