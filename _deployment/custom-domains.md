@@ -42,5 +42,5 @@ Create an appropriate DNS entry to map your desired custom domain to your Convox
 &nbsp;
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-To set up DNS for a root domain you shoukd use the `ALIAS` type with Route 53 or the equivalent with your DNS provider.
+To set up DNS for a root domain you should use the `ALIAS` type with Route 53 or the equivalent with your DNS provider.
 </div>
