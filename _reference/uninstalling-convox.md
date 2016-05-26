@@ -93,6 +93,6 @@ Uninstall will take approximately 15 minutes to complete.
 
     Successfully uninstalled.
 
-<div class="block-callout block-show-callout type-warning" markdown="1">
-This action will cause an unrecoverable loss of data and resources.
+<div class="block-callout block-show-callout type-danger" markdown="1">
+This action will cause an unrecoverable loss of Convox-created data and resources.
 </div>
