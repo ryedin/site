@@ -49,14 +49,6 @@ defaults:
     values:
       layout: main
   - scope:
-      type: posts
-    values:
-      layout: post
-  - scope:
-      path: blog
-    values:
-      layout: blog
-  - scope:
       path: docs
     values:
       layout: docs
@@ -72,3 +64,7 @@ defaults:
       path: team
     values:
       layout: team
+  - scope:
+      type: posts
+    values:
+      layout: post
