@@ -20,7 +20,7 @@ An app build failed. Run `convox builds info <id>` to view build logs.
 
 The AWS ECS service had trouble finding an available server instance on which to run one of your containers. This can be a transient error, but seeing it repeatedly can indicated that your deployment is memory- or port-constrained.
 
-To solve this problem you can either manually scale your Rack using the `convox rack scale` command, or enable Rack autoscaling with the command `convox params set Autoscale=Yes`.
+To solve this problem you can either manually scale your Rack using the `convox rack scale` command, or enable Rack autoscaling with the command `convox rack params set Autoscale=Yes`.
 
 #### [*example-rack*] Rack in steady state
 
