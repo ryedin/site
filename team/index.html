@@ -99,9 +99,9 @@ function display_contributors() {
 }
 
 $(window).ready(function() {
-  $.get('https://api.github.com/repos/convox/rack/contributors', function(data) {
+  $.get('https://api.github.com/repos/convox/rack/contributors?per_page=100', function(data) {
     add_contributors(data);
-    $.get('https://api.github.com/repos/convox/convox.github.io/contributors', function(data) {
+    $.get('https://api.github.com/repos/convox/convox.github.io/contributors?per_page=100', function(data) {
       add_contributors(data);
       display_contributors();
     });
