@@ -8,7 +8,7 @@ In 10 minutes [Convox](https://convox.com/) installs a system that takes over th
 
 The `convox install` command configures and integrates the latest and best AWS services to provide a production-ready infrastructure for your applications. CloudFormation, VPC, ASG, EC2, ELB, Kinesis, Dynamo, S3 and even Lambda play important parts of the system. With Convox the hard parts of researching, testing and integrating these services are already solved.
 
-<div>Then, the `convox deploy` command can put any [12-factor](http://12factor.net/) or Docker application onto AWS and on the Internet. The Convox build and release API and private Docker registry coordinate making the images and containers and load balancers. Again the tough parts of integrating these components are already solved.</div>
+Then, the `convox deploy` command can put any [12-factor](http://12factor.net/) or Docker application onto AWS and on the Internet. The Convox build and release API and private Docker registry coordinate making the images and containers and load balancers. Again the tough parts of integrating these components are already solved.
 
 Convox is open-source, available right now, and free to use. [Get started](http://docs.convox.com)!
 
