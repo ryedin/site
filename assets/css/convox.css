@@ -625,6 +625,7 @@ ul.docs-index {
 }
 
 .posts p {
+  text-align: left;
   font-size: 1.02em;
   line-height: 1.58;
   margin-top: 20px;
