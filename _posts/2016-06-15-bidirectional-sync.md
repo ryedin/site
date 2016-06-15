@@ -4,7 +4,7 @@ author: Matt Manning
 twitter: mattmanning
 ---
 
-About a year ago I published a blog post called "[A Tale of Two Onboardings](https://convox.com/blog/a-tale-of-two-onboardings/)" that was widely shared. I think people responded to it because it painted a picture of an easier world, where a development machine with Docker installed can boot anything you need for your development workflow with a single command.
+About a year ago I published a blog post called "[A Tale of Two Onboardings](https://convox.com/blog/a-tale-of-two-onboardings/)" that was widely shared. I think people responded to it, because it painted a picture of an easier world where a development machine with Docker installed can boot anything you need for your development workflow with a single command.
 
 This kind of workflow — where you develop inside a running container — has been a promise of Docker for as long as I’ve known about it, but a great developer experience has never been fully realized, until now.
 
