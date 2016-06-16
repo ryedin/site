@@ -75,3 +75,7 @@ $ rake db:migrate
 Observe the changed files on your local filesystem. Try changing a file locally and observe the file change on the container.
 
 Please [join our Slack](https://invite.convox.com), and let us know what you think about this feature. Bug reports, feature requests and patches are welcome on the [project repo](https://github.com/convox/rack).
+
+<blockquote markdown="1">
+  Discuss this on [Hacker News](https://news.ycombinator.com/item?id=11915854).
+</blockquote>
