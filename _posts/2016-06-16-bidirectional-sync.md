@@ -59,17 +59,17 @@ You’ll also need Docker installed locally. If you’re on OS X be sure to [sig
 Once you have the prerequisites installed you can play around with our Rails example:
 
 ```
-git clone git@github.com:convox-examples/rails.git
-cd rails
-convox start
+$ git clone git@github.com:convox-examples/rails.git
+$ cd rails
+$ convox start
 ```
 
 With the app booted you can run `docker ps` to get a list of container IDs and then exec onto a container and run Rails commands:
 
 ```
-docker exec -it <container ID> bash
-rails g scaffold ...
-rake db:migrate
+$ docker exec -it <container ID> bash
+$ rails g scaffold ...
+$ rake db:migrate
 ```
 
 Observe the changed files on your local filesystem. Try changing a file locally and observe the file change on the container.
