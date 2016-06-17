@@ -97,7 +97,7 @@ When using the `tcp` or `tls` protocols, standard proxy HTTP headers like `X-For
 ```
 web:
   labels:
-    - convox.port.443.protocol=https
+    - convox.port.443.protocol=tls
     - convox.port.443.proxy=true
   ports:
     - 443:5000
