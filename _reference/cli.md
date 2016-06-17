@@ -101,6 +101,19 @@ All of the above tools control what `Rack` header is sent in API commands. You c
       }
     ]
 
+#### Precedence
+
+The order of precedence is:
+
+* --rack flag
+* CONVOX_RACK environment variable
+* ./convox/rack app repository setting
+* `convox switch` default setting in ~/.convox/rack
+
+When you want to manage multiple racks in multiple terminals you should use `CONVOX_RACK`.
+
+When you want to pin an app to a specific Rack you should use `./convox/rack` which can only be overridded by an explicit `--rack` flag.
+
 ## Bash Autocomplete and PS1 Helpers
 
 The `convox` CLI offers bash autocompletion and command prompt utilities.
