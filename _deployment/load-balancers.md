@@ -72,7 +72,7 @@ web:
 <div class="block-callout block-show-callout type-info" markdown="1">
 If no protocol label is specified the default of `tcp` will be used.
 </div>
-    
+
 #### End-to-end encryption
 
 Traffic between your load balancer and your application happens entirely on your Rack's internal network. For extra security you can encrypt the traffic between your load balancer and application.
@@ -102,3 +102,21 @@ web:
   ports:
     - 443:5000
 ```
+
+#### Limited Application Access
+
+For security reasons, access to an application might need to be limited. To achieve this, an existing security group can be applied to an application's load balancer. For example, within said security group, access can be granted only to an office VPN.
+
+This is done via an application parameter with a known security group ID:
+
+```
+convox apps params --app <name> set SecurityGroup=sg-123456
+```
+
+Validate the setting has been applied by running:
+
+```
+convox apps params --app <name>
+```
+
+For further reading on security groups, check out the AWS [documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) and [CLI reference](http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-sg.html).
