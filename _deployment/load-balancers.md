@@ -118,3 +118,5 @@ Validate the setting has been applied by running:
 ```
 convox apps params --app <name>
 ```
+
+For further reading on security groups, check out the AWS [documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) and [CLI reference](http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-sg.html).
