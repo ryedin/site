@@ -6,10 +6,10 @@ twitter: mattmanning
 
 We’ve streamlined our SSL configuration and integrated with Amazon Certificate Manager to bring easy, free SSL to everyone. You can generate a free SSL certificate with a single Convox command:
 
-    $ convox certs generate \*.mydomain.com
+    $ convox certs generate *.mydomain.com
     Requesting certificate... OK, acm-bea0ac39a538
 
-Once the certificate is generated you’ll need to approve it. Amazon sends approval emails to the Domain owner, Technical contact, and Administrative contact based on WHOIS records. They also send to the following addresses:
+Once the certificate is generated you’ll need to approve it. Amazon sends approval emails to the domain owner, technical contact, and administrative contact based on WHOIS records. They also send to the following addresses:
 
 * administrator@mydomain.com
 * hostmaster@mydomain.com
@@ -17,7 +17,7 @@ Once the certificate is generated you’ll need to approve it. Amazon sends appr
 * webmaster@mydomain.com
 * admin@mydomain.com
 
-As long as at least 1 of these addresses is deliverable, you’re good to go. Follow the link from the email to your AWS account and click the **I Approve** button.
+As long as at least one of these addresses is deliverable, you’re good to go. Follow the link from the email to your AWS account and click the **I Approve** button.
 
 Once the certificate is approved it’s ready to use. You can add it to a secure endpoint on your app with one more command:
 
