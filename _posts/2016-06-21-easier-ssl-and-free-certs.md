@@ -4,7 +4,7 @@ author: Matt Manning
 twitter: mattmanning
 ---
 
-We’ve streamlined our SSL configuration and integrated with Amazon Certificate Manager to bring easy, free SSL to everyone. You can generate a free SSL certificate with a single Convox command:
+We’ve streamlined our SSL configuration and integrated with [Amazon Certificate Manager](https://aws.amazon.com/certificate-manager/) to bring easy, free SSL to everyone. You can generate a free SSL certificate with a single Convox command:
 
     $ convox certs generate *.mydomain.com
     Requesting certificate... OK, acm-bea0ac39a538
