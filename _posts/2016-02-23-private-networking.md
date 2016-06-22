@@ -14,7 +14,7 @@ Load Balancers continue to follow the existing behavior laid out in our [Port Ma
 
 You can install a new Rack in private mode by specifying the `--private` option to `convox install`.
 
-You can also set an existing Rack to private mode by running `convox rack params set Private=yes`. This transition will take several minutes but should result in no downtime.
+You can also set an existing Rack to private mode by running `convox rack params set Private=Yes`. This transition will take several minutes but should result in no downtime.
 
 See the [Private Networking](https://convox.com/docs/private-networking/) documentation for more information.
 
