@@ -23,6 +23,18 @@ NAME  DESIRED  RUNNING  MEMORY
 web   2        1        1024
 ```
 
+#### Scaling down unused services
+
+Sometimes you want to run a service like redis in a container locally, but when you've deployed to your production rack, you have an external data store like ElastiCache or RDS. In this case, you can scale redis down and destroy the ELB which was created:
+
+```
+$ convox scale redis --count=-1
+NAME  DESIRED  RUNNING  MEMORY
+redis   -1        1        256
+```
+
+Note: If you scale this service back up, the ELB will be recreated, but will have a different domain name associated with it. If you want to scale a service down, but keep the ELB, you can set `--count=0`.
+
 ### Scaling the Rack
 
 You can define both the type and count of instances being run in your Rack.
