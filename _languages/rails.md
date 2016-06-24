@@ -2,7 +2,7 @@
 title: "Ruby (Rails)"
 ---
 
-Getting started with Rails on Convox is easy. Your app will need a `Dockerfile` and `docker-compose.yml` which you can either provide or generate using `convox init`.
+Getting started with Rails on Convox is easy. Your app will need a `Dockerfile`, `docker-compose.yml`, and `.dockerignore` which you can either provide or generate using `convox init`.
 
 ## Getting Started
 
@@ -13,6 +13,7 @@ Go to your local source directory and run `convox init`:
     Initializing rails...
     Writing Dockerfile... OK
     Writing docker-compose.yml... OK
+    Writing .dockerignore... OK
 
 See [Preparing an Application](/docs/preparing-an-application) for more details.
 
