@@ -6,10 +6,10 @@ Convox will run in any region that supports EC2 Container Service, Lambda and at
 
 ## Currently supported regions:
 
+- ap-southeast-2
+- eu-west-1
 - us-east-1
 - us-west-2
-- eu-west-1
-- ap-southeast-2
 
 
 ## Future Inclusion
