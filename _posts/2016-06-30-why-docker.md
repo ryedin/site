@@ -6,9 +6,9 @@ twitter: nzoschke
 
 The most common question to my [Docker For Mac Beta Review](https://medium.com/@nzoschke/docker-for-mac-beta-review-b91692289eb5) is: Why use Docker at all?
 
-The reason to use Docker is for its modern packaging and runtime APIs. The Docker [Image](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#2-2-images) and [Container](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#2-1-containers) APIs have become a [de facto standard](https://en.wikipedia.org/wiki/De_facto_standard). Every major computing platform— from OS X to AWS — now has native support for working with Docker Images and Containers. 
+The reason to use Docker is for its modern packaging and runtime APIs. The Docker [Image](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#2-2-images) and [Container](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#2-1-containers) APIs have become a [de facto standard](https://en.wikipedia.org/wiki/De_facto_standard). Every major computing platform — from OS X to AWS — now has native support for working with Docker Images and Containers.
 
-This happened because Docker presented a modern, API first approach to distributing and running software at the exact time when we all want cloud providers interoperate better.
+This happened because Docker presented a modern, API-first approach to distributing and running software at the exact time when we all want cloud providers interoperate better.
 
 This is an unprecedented feat of cooperation across the industry and makes these Docker APIs the obvious best system to target.
 
@@ -39,7 +39,7 @@ We have been building application package archives to run on another computer:
 
 * Shell/Perl/Ruby scripts — Homebrew, Makefile and bespoke distribution
 
-There has been plenty of work and tooling for systems to interoperate with the different archive formats but we can’t deny that virtual machine images are proprietary and clunky and application packages have been hard to build, maintain and distribute.
+There has been plenty of work and tooling for systems to interoperate with the different archive formats, but we can’t deny that virtual machine images are proprietary and clunky, and application packages have been hard to build, maintain and distribute.
 
 Docker changed all this with Images and the [Image API](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#2-2-images).
 
@@ -96,7 +96,7 @@ Process management is also nothing new. We are all intimately familiar with vari
 
 * Security and Containerization tools like chroot, jails and lxc
 
-Docker improved on all this with  Containers and the [Container API](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#2-1-containers). 
+Docker improved on all this with Containers and the [Container API](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#2-1-containers).
 
 With Docker, every process is:
 
@@ -109,15 +109,15 @@ We are familiar with tools like `docker run`, `docker ps`, `docker stats`, `dock
 [<img src="https://medium2.global.ssl.fastly.net/max/7860/1*Dx070Ud3KNx7l1F9XcVJKg.png">](https://medium2.global.ssl.fastly.net/max/7860/1*Dx070Ud3KNx7l1F9XcVJKg.png)
 <p class="caption">Docker Tools in Production. No custom AMI required.</p>
 
-But now that everything on an system can be accomplished via well documented APIs and language client libraries like the [go-dockerclient](https://github.com/fsouza/go-dockerclient), extremely sophisticated process management systems have emerged.
+But now that everything on a system can be accomplished via well-documented APIs and language client libraries like the [go-dockerclient](https://github.com/fsouza/go-dockerclient), extremely sophisticated process management systems have emerged.
 
 A simple example is that `docker ps` works exactly the same on my OS X computer and on AWS, where `ps` doesn’t due to differences between the BSD and GNU implementations.
 
-An extreme example is that AWS ECS turns one or more instances running `dockerd` into a compute cluster. You can ask this cluster to run 5 web processes and an agent will tell the Docker daemons to start the 5 web processes on different hosts. It will then constantly introspect the Docker daemons and will start a new container if it observes that a container failed. 
+An extreme example is that AWS ECS turns one or more instances running `dockerd` into a compute cluster. You can ask this cluster to run 5 web processes, and an agent will tell the Docker daemons to start the 5 web processes on different hosts. It will then constantly introspect the Docker daemons and will start a new container if it observes that a container failed.
 
-Before Docker cluster computing has been tied very closely to a specific operating systems like [RedHat Cluster Suite](https://en.wikipedia.org/wiki/Red_Hat_cluster_suite) or [Solaris Cluster](https://en.wikipedia.org/wiki/Solaris_Cluster) and lots of platform specific glue. The Docker Remote APIs make cluster computing approachable for far more users.
+Before Docker, cluster computing had been tied very closely to specific operating systems like [RedHat Cluster Suite](https://en.wikipedia.org/wiki/Red_Hat_cluster_suite) or [Solaris Cluster](https://en.wikipedia.org/wiki/Solaris_Cluster) and lots of platform specific glue. The Docker Remote APIs make cluster computing approachable for far more users.
 
-Compared to previous process management techniques Docker Containers are clearly a better format to target. The engine runs everywhere and the API first design makes it easier to program around that any other systems programming techniques before it.
+Compared to previous process management techniques Docker Containers are clearly a better format to target. The engine runs everywhere, and the API-first design makes it easier to program around than any other systems programming techniques before it.
 
 ## De Facto Standard
 
@@ -142,9 +142,9 @@ For starters, if you’re happy with your current packaging and runtime solution
 
 Next, I recommend caution in going deeper into the Docker universe than Images and Container APIs right now.
 
-There is interesting work in the Docker container scheduling space (Swarm, Mesos, Kuberenetes, Nomad) but these are extremely complex systems that can bring in massive headaches for you and your team. These dynamic systems make networking, load balancing, logging and debugging **harder than ever before**. 
+There is interesting work in the Docker container scheduling space (Swarm, Mesos, Kuberenetes, Nomad), but these are extremely complex systems that can bring in massive headaches for you and your team. These dynamic systems make networking, load balancing, logging and debugging **harder than ever before**.
 
-I recently wrote up a bunch of the [biggest challenges I have building systems on top of AWS ECS](https://medium.com/@nzoschke/the-seven-biggest-challenges-of-deployment-to-ecs-414ebcd6d9ec#.n1etvfynm) and that’s with letting Amazon operate most of the system.
+I recently wrote up a bunch of the [biggest challenges I have building systems on top of AWS ECS](https://medium.com/@nzoschke/the-seven-biggest-challenges-of-deployment-to-ecs-414ebcd6d9ec#.n1etvfynm), and that’s with letting Amazon operate most of the system.
 
 If you don’t know what you are doing, you can end up with a Docker system that is overly complex on the container, network, persistence and scheduling fronts.
 
