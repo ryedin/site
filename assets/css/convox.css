@@ -632,6 +632,12 @@ ul.docs-index {
   margin-bottom: 0px;
 }
 
+.posts p.caption {
+  text-align: center;
+  font-size: 14px;¬
+  font-style: italic;
+}
+
 .posts ul {
   margin-top: 29px;
 }
