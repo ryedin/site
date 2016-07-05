@@ -43,7 +43,7 @@ You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) o
 
 ## Run an Application Locally
 
-`convox start` helps your team develop sophistated applications locally. We maintain a set of [sample applications](https://github.com/convox-examples) that demonstrate a feature-rich development environment with:
+`convox start` helps your team develop sophisticated applications locally. We maintain a set of [sample applications](https://github.com/convox-examples) that demonstrate a feature-rich development environment with:
 
 * Code syncing and server reloading
 * HTTP and HTTPS support
@@ -64,18 +64,15 @@ The application will be available at the address of your Docker host (`localhost
 
 ## Sign Up
 
-You first need to sign up to the Convox Console, a web UI for managing your Racks, Organizations and Integrations.
-
-* Visit the Console [signup page](https://console.convox.com/grid/signup)
-* Create an account
+First, sign up for [Convox Console](https://console.convox.com/grid/signup), a web UI for managing your Racks, Organizations and Integrations.
 
 ### Create an Organization
 
-You start out in a `personal` organization where the Racks you install are only visible to you. If you'd like to create a deployment environment that is shared with other members of your team, click on the **personal** dropdown followed by **Create Organization**. After this you can invite members of your team and assign them roles that control what they can access.
+In Console, you start out in a `personal` organization where the Racks you install are only visible to you. If you'd like to create a deployment environment that is shared with other members of your team, click on the **personal** dropdown followed by **Create Organization**. After this you can invite members of your team and assign them roles that control what they can access.
 
 ## Install a Rack
 
-Click on **Add a Rack** followed by **Install a New Rack** in the top navigation bar. For the name enter `production` if you plan to deploy production services, or `staging` or `development` if this is for testing.
+Click on **Add a Rack** followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
 
 Follow the instructions to generate and share AWS credentials that allow Convox to install a new Rack into your AWS account. See [Installing a Rack](/docs/installing-a-rack) for more details.
 
