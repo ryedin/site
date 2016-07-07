@@ -5,30 +5,19 @@ order: 400
 
 Getting started with Convox is easy. The instructions below guide you through:
 
-* Signing up for a Convox account
-* Installing Convox Rack, your production-ready deployment environment
 * Setting up your development environment
 * Developing your first app
+* Signing up for a Convox account
+* Installing Convox Rack, your production-ready deployment environment
 * Deploying your first app
 
 This guide takes around 30 minutes to go from zero to your first production deploy.
 
-## Sign Up
+### Install Docker
 
-You first need to sign up to the Convox Console, a web UI for managing your Racks, Organizations and Integrations.
+Convox uses Docker to create a development environment that closely mimics the production environment.
 
-* Visit the Console [signup page](https://console.convox.com/grid/signup)
-* Create an account
-
-### Create an Organization
-
-You start out in a `personal` organization where the Racks you install are only visible to you. If you'd like to create a deployment environment that is shared with other members of your team, click on the **personal** dropdown followed by **Create Organization**. After this you can invite members of your team and assign them roles that control what they can access.
-
-## Install a Rack
-
-Click on **Add a Rack** followed by **Install a New Rack** in the top navigation bar. For the name enter `production` if you plan to deploy production services, or `staging` or `development` if this is for testing.
-
-Follow the instructions to generate and share AWS credentials that allow Convox to install a new Rack into your AWS account. See [Installing a Rack](/docs/installing-a-rack) for more details.
+We strongly recommend the Docker for Mac tool. See the [Getting Started Guide](https://beta.docker.com/docs/mac/getting-started/) for instructions to download and install this tool.
 
 ## Set Up Your Development Environment
 
@@ -52,22 +41,9 @@ You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) o
     $ curl -Ls https://install.convox.com/linux.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
 
-### Install Docker
-
-`convox start` uses Docker to create a development environment that closely mimics the production environment.
-
-We strongly recommend the Docker for Mac tool. See the [Getting Started Guide](https://beta.docker.com/docs/mac/getting-started/) for instructions to download and install this tool. Presently you also need a [Docker ID to enroll in a beta program](https://beta.docker.com/) to activate this tool.
-
-### Log In
-
-Finally you need to log in with the API key found **Account** section in the top navigation bar:
-
-    $ convox login
-    Password: <Your Console API key>
-
 ## Run an Application Locally
 
-`convox start` helps your team develop sophistated applications locally. We maintain a set of sample applications that demonstrate a feature-rich development environment with:
+`convox start` helps your team develop sophisticated applications locally. We maintain a set of [sample applications](https://github.com/convox-examples) that demonstrate a feature-rich development environment with:
 
 * Code syncing and server reloading
 * HTTP and HTTPS support
@@ -84,11 +60,34 @@ Finally you need to log in with the API key found **Account** section in the top
 
     $ convox start
 
+The application will be available at the address of your Docker host (`localhost` when using Docker for Mac). Once an application can be successfully booted with `convox start` it is ready to be deployed. The following steps will guide you through installing a Rack and deploying your application to it.
+
+## Sign Up
+
+First, sign up for [Convox Console](https://console.convox.com/grid/signup), a web UI for managing your Racks, Organizations and Integrations.
+
+### Create an Organization
+
+In Console, you start out in a `personal` organization where the Racks you install are only visible to you. If you'd like to create a deployment environment that is shared with other members of your team, click on the **personal** dropdown followed by **Create Organization**. After this you can invite members of your team and assign them roles that control what they can access.
+
+## Install a Rack
+
+Click on **Add a Rack** followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
+
+Follow the instructions to generate and share AWS credentials that allow Convox to install a new Rack into your AWS account. See [Installing a Rack](/docs/installing-a-rack) for more details.
+
+### Log In
+
+Finally you need to log in with the API key found **Account** section in the top navigation bar:
+
+    $ convox login
+    Password: <Your Console API key>
+
 ## Deploy to Convox
 
 #### Create an app on your Rack
 
-While remaining in the directory with your local application source let's deploy the application to AWS.
+Navigate to the directory containing your application source, and create a deployment target in your Rack.
 
     $ convox apps create
 
