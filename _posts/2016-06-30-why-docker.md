@@ -12,8 +12,7 @@ This happened because Docker presented a modern, API-first approach to distribut
 
 This is an unprecedented feat of cooperation across the industry and makes these Docker APIs the obvious best system to target.
 
-![](/assets/img/why-docker-providers.png)
-<p class="caption">Docker, Docker, Docker</p>
+![Docker, Docker, Docker](/assets/img/why-docker-providers.png)*Docker, Docker, Docker*
 
 ## Packaging Before and After Docker
 
@@ -106,8 +105,7 @@ With Docker, every process is:
 
 We are familiar with tools like `docker run`, `docker ps`, `docker stats`, `docker logs`, and `docker kill`. These are utilities that come out of the box with Docker that wrap the APIs. 
 
-[<img src="https://medium2.global.ssl.fastly.net/max/7860/1*Dx070Ud3KNx7l1F9XcVJKg.png">](https://medium2.global.ssl.fastly.net/max/7860/1*Dx070Ud3KNx7l1F9XcVJKg.png)
-<p class="caption">Docker Tools in Production. No custom AMI required.</p>
+![Docker Tools in Production. No custom AMI required.](https://medium2.global.ssl.fastly.net/max/7860/1*Dx070Ud3KNx7l1F9XcVJKg.png)*Docker Tools in Production. No custom AMI required.*
 
 But now that everything on a system can be accomplished via well-documented APIs and language client libraries like the [go-dockerclient](https://github.com/fsouza/go-dockerclient), extremely sophisticated process management systems have emerged.
 
@@ -127,8 +125,7 @@ Providers saw the trend and listened, making it possible to push Docker Images i
 
 The next iteration of this concept will come from the [Open Container Initiative](https://www.opencontainers.org/), but we can all be certain that any other standards in this space will be heavily influenced and very compatible with the existing Docker APIs.
 
-![Industry Cooperation](https://medium2.global.ssl.fastly.net/max/2328/1*UWOC6AEQXQUaLYMgSCheLg.png)
-<p class="caption">Industry Cooperation</p>
+![Industry Cooperation](https://medium2.global.ssl.fastly.net/max/2328/1*UWOC6AEQXQUaLYMgSCheLg.png)*Industry Cooperation*
 
 ## Why Not Docker?
 
