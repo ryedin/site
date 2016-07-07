@@ -715,7 +715,13 @@ ul.docs-index {
 
 .posts img + em {
   font-size: 14px;
-  margin-left: 60px;
+  text-align: center;
+  display: block;
+}
+
+.posts img.center {
+  margin: 0 auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
