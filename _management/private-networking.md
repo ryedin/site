@@ -29,17 +29,12 @@ convox rack params set Private=Yes
 
 ## Why Use a Private Rack?
 
-There are several possible benefits to running a Rack in private mode.
+The benefits of running a Rack in private mode include:
 
-### Extra Security
+- **Extra Security**: Private mode adds an extra layer of network security. The private subnet means all inbound traffic must pass through an ELB that explicitly listens only on known ports. The outbound NAT gateway prevents situations where malicious or errant software could leak information undetected.
 
-Private mode adds an extra layer of network security. The private subnet means all inbound traffic must pass through an ELB that explicitly listens only on known ports. The outbound NAT gateway prevents situations where malicious or errant software could leak information undetected. 
+- **Static Outbound IP**: The NAT gateway created to handle outbound traffic has a static IP address. This can be useful in cases where your applications need to make requests to services that require IP whitelisting.
 
-### Compliance
+## Cost
 
-[Need specifics here or remove this section].
-
-### Static Outbound IP
-
-The NAT gateway created to handle outbound traffic has a static IP address. This can be useful in cases where your applications need to make requests to services that require IP whitelisting.
-
+Private networking mode requires the provisioning of up to three NAT gateways (one for each availability zone) which are charged based on time and traffic. This will increase the monthly cost of your rack. More pricing details can be found in the [AWS docs](https://aws.amazon.com/vpc/pricing/).
