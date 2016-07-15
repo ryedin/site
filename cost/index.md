@@ -5,12 +5,24 @@ layout: base
 
 <div id="subnav" class="container">
   <ul class="nav nav-tabs container">
-    <li><h2><a href="/blog">Convox Cost</a></h2></li>
+    <li><h2><a href="/blog">Convox Pricing</a></h2></li>
   </ul>
 </div>
 
 <div class="container subnav-content" role="main">
-  <section class="col-xs-12" id="cost">
+  <section class="col-xs-12 index" id="cost-intro">
+    <div class="content">
+      <h1>Convox makes your cloud easy and your team productive.</h1>
+
+      <p>Get security, performance, availability and automatic updates at a low cost.</p>
+      <p>The open-source version is free. Unlock team and production support.</p>
+      <p>
+        <a class="btn btn-primary" href="https://console.convox.com/grid/signup">Sign Up</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="col-xs-12 index" id="cost">
     <div class="col-xs-12 col-md-3">
       <div class="plan">
         <div class="header">
@@ -83,6 +95,16 @@ layout: base
           <li class="support">24/7 SLA Support</li>
         </ul>
       </div>
+    </div>
+  </section>
+  <section class="col-xs-12 index" id="services">
+    <div class="content">
+      <h1>Want help with a migration?</h1>
+
+      <p>Convox can help you containerize apps, set up your cloud and get your team on board.</p>
+      <p>
+        <a class="btn btn-primary" href="mailto:support@convox.com">Contact Us</a>
+      </p>
     </div>
   </section>
 </div>
