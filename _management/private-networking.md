@@ -31,7 +31,7 @@ convox rack params set Private=Yes
 
 The benefits of running a Rack in private mode include:
 
-- **Extra Security**: Private mode adds an extra layer of network security. The private subnet means all inbound traffic must pass through an ELB that explicitly listens only on known ports. The outbound NAT gateway prevents situations where malicious or errant software could leak information undetected.
+- **Network Isolation**: Private mode adds an extra layer of network security. The private subnet means all inbound traffic must pass through an ELB that explicitly listens only on known ports. The NAT gateway allows outbound traffic from the private subnet.
 
 - **Static Outbound IP**: The NAT gateway created to handle outbound traffic has a static IP address. This can be useful in cases where your applications need to make requests to services that require IP whitelisting.
 
