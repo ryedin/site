@@ -20,13 +20,7 @@ web:
 ```
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-If you'd like to specify the different host path as well you can do so in the `host:container` format.
-
-```
-web:
-  volumes:
-    - /my/host/path:/my/container/path
-```
+If you'd like to specify the different host path as well you can do so in the `host:container` format, e.g. `/foo:/my/container/path`.
 </div>
 
 ## Example: WordPress
