@@ -7,7 +7,7 @@ You can mount volumes from your host into your application Processes.
 
 ## Shared Filesystem
 
-Convox creates a network filesystem that is shared among all of the instances in your Rack. It is mounted at `/volumes` on each instance. You can use this in conjunction with [Docker host volume mounting](https://docs.docker.com/v1.11/engine/userguide/containers/dockervolumes/#mount-a-host-directory-as-a-data-volume) to persist files in your Processes across restarts and to share files between Processes.
+Convox uses a network filesystem backed by EFS that is shared among all of the instances in your Rack. You can use this in conjunction with [Docker host volume mounting](https://docs.docker.com/v1.11/engine/userguide/containers/dockervolumes/#mount-a-host-directory-as-a-data-volume) to persist files in your Processes across restarts and to share files between Processes.
 
 ## Specifying the Container Path
 
