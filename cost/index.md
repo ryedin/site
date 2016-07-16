@@ -12,9 +12,8 @@ layout: base
 <div class="container subnav-content" role="main">
   <section class="col-xs-12 index" id="cost-intro">
     <div class="content">
-      <h1>Convox makes your cloud easy and your team productive.</h1>
+      <h1>Security, performance, availability and automatic updates at a low cost.</h1>
 
-      <p>Get security, performance, availability and automatic updates at a low cost.</p>
       <p>The open-source version is free. Unlock team and production support.</p>
       <p>
         <a class="btn btn-primary" href="https://console.convox.com/grid/signup">Sign Up</a>
@@ -97,7 +96,7 @@ layout: base
       </div>
     </div>
   </section>
-  <section class="col-xs-12 index" id="services">
+  <section class="col-xs-12 index" id="cost-services">
     <div class="content">
       <h1>Want help with a migration?</h1>
 
@@ -107,4 +106,6 @@ layout: base
       </p>
     </div>
   </section>
+
+  {% include contact.html %}
 </div>

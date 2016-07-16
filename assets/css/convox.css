@@ -1100,6 +1100,10 @@ p.api-button {
   margin-top: 10px;
 }
 
+#cost-intro, #cost-services {
+  padding-bottom: 0;
+}
+
 #cost .plan {
   border: 1px #054877 solid;
   background-color: #f0f0f0;
