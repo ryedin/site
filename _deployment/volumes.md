@@ -11,7 +11,7 @@ Convox uses a network filesystem backed by EFS that is shared among all of the i
 
 ## Specifying the Container Path
 
-You can mount a volume by specifying the container path. In this case, Convox will choose a good location on the host to store the relevant directories and files. This approach works both in your Rack and with `convox start` and is the recommended method.
+You can mount a volume by specifying the container path. In this case, Convox will mount your volumes on a network filesystem to be shared between Processes of the same type.
 
 ```
 web:
@@ -19,15 +19,15 @@ web:
     - /my/container/path
 ```
 
-## Specifying the Host and Container Paths
-
-If you'd like to specify the host path as well you can do so in the `host:container` format.
+<div class="block-callout block-show-callout type-info" markdown="1">
+If you'd like to specify the different host path as well you can do so in the `host:container` format.
 
 ```
 web:
   volumes:
     - /my/host/path:/my/container/path
 ```
+</div>
 
 ## Example: WordPress
 
