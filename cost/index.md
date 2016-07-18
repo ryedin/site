@@ -10,7 +10,7 @@ layout: base
 </div>
 
 <div class="container subnav-content" role="main">
-  <section class="col-xs-12 index" id="cost-intro">
+  <section class="col-xs-12 index" id="cost">
     <div class="content">
       <h1>Security, performance, availability and automatic updates at a low cost.</h1>
 
@@ -19,9 +19,7 @@ layout: base
         <a class="btn btn-primary" href="https://console.convox.com/grid/signup">Sign Up</a>
       </p>
     </div>
-  </section>
 
-  <section class="col-xs-12 index" id="cost">
     <div class="col-xs-12 col-md-3">
       <div class="plan">
         <div class="header">
