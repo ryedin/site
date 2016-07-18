@@ -906,6 +906,10 @@ p.api-button {
   font-weight: bold;
 }
 
+#contact p#newsletter {
+  padding-top: 40px;
+}
+
 .slack-button {
   background-color: #FCFCFC;
   background-image: -webkit-linear-gradient(#FCFCFC, #EAEAEA);
