@@ -48,7 +48,7 @@ layout: base
           <li>Workflow Automation</li>
           <li>GitHub/GitLab Integration</li>
           <li>Slack Integration</li>
-          <li class="support">Ticket-based Support</li>
+          <li class="support">Support Tickets</li>
         </ul>
       </div>
     </div>
@@ -67,7 +67,7 @@ layout: base
           <li>Role-based Access Control</li>
           <li>Audit Logs</li>
           <li>Google Authentication</li>
-          <li class="support">Chat-based Support</li>
+          <li class="support">Business-Day Support</li>
         </ul>
       </div>
     </div>
@@ -89,7 +89,7 @@ layout: base
           <li>LDAP/SAML Authentication</li>
           <li>Multi-Rack Deployments</li>
           <li>Self-Hosted Console</li>
-          <li class="support">24/7 SLA Support</li>
+          <li class="support">24/7 One-Hour Support</li>
         </ul>
       </div>
     </div>
