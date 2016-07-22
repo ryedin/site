@@ -1,0 +1,100 @@
+---
+title: "WordPress"
+---
+
+[WordPress](https://wordpress.org/) is a popular blogging platform based on PHP and MySQL. It's simple to set up a WordPress blog on Convox with the following steps.
+
+## Create the App and Database
+
+```
+$ convox apps create wordpress
+$ convox services create mysql --name wordpress-db
+```
+
+## Create the Local Files
+
+```
+$ mkdir wordpress && cd wordpress
+```
+
+Inside the `wordpress` directory, create a `docker-compose.yml` file with the following contents:
+
+```
+web:
+  image: wordpress:4.5.3-apache
+  labels:
+    - convox.port.443.protocol=https
+  ports:
+    - 80:80
+    - 443:80
+  volumes:
+    - /var/www/html
+```
+
+The [official WordPress image from Docker Hub](https://hub.docker.com/_/wordpress/) will be used in your app.
+
+The `volumes` directive will persist all of your WordPress files to a network filesystem associated with your Rack. This means your themes, plugins, and uploaded media will not be lost on restarts, and can be shared between containers, supporting scaling.
+
+## Deploy the App
+
+```
+$ convox deploy
+```
+
+## Attach the Database to the App
+
+The database creation that you kicked off above will take 10-15 minutes to complete. You can check status with:
+
+```
+$ convox services
+```
+
+Once the status is `RUNNING` fetch the DB info:
+
+```
+$ convox services info wordpress-db
+Name    wordpress-db
+Status  running
+Exports
+  URL: mysql://app:EXWKHJKDZTBQIPGUMEKGSNTRYGAYAC@convox-dev-wordpress-db.cbm4183bzjrr.us-east-1.rds.amazonaws.com:3306/app
+```
+
+Set the RDS database environment variables on the app:
+
+```
+$ convox env set WORDPRESS_DB_HOST=convox-dev-wordpress-db.cbm4183bzjrr.us-east-1.rds.amazonaws.com:3306 WORDPRESS_DB_USER=app WORDPRESS_DB_PASSWORD=EXWKHJKDZTBQIPGUMEKGSNTRYGAYAC WORDPRESS_DB_NAME=app
+Updating environment... OK
+To deploy these changes run `convox releases promote RJTBVWWIKDE`
+
+$ convox releases promote RJTBVWWIKDE
+Promoting RJTBVWWIKDE... UPDATING
+```
+
+## Run the WordPress Web Installer
+
+Fetch the app URL:
+
+```
+$ convox apps info -a wordpress
+Name       wordpress
+Status     running
+Release    RKOHYAOPRST
+Processes  web wordpress-db
+Endpoints  wordpress-web-OXGXLU7-1245013691.us-east-1.elb.amazonaws.com:80 (web)
+           :3306 (wordpress-db)
+```
+
+Visit the web URL in your browser, and go through WordPress web installer.
+
+## Custom Domain
+
+See the [Custom Domains](/docs/custom-domains) doc for instructions on setting up a domain for your WordPress site.
+
+## SSL
+
+The `docker-compose.yml` file above configures port 443 for secure traffic. To enable SSL on your site follow the instructions in the [SSL](/docs/ssl) doc to upload or generate an SSL certificate.
+
+Then log into the Wordpress admin interface and click **Settings -> General**.
+
+Set **WordPress Address (URL)** and **Site Address (URL)** to https://www.yourdomain.com.
+
