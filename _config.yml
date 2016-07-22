@@ -34,6 +34,10 @@ collections:
     title: Languages & Frameworks
     output: true
     permalink: /docs/:name/
+  console:
+    title: Console
+    output: true
+    permalink: /docs/:name/
   reference:
     title: Reference
     output: true
