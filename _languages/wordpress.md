@@ -7,17 +7,17 @@ title: "WordPress"
 ## Create the App and Database
 
 ```
-$ convox apps create wordpress
+$ convox apps create wordpress-site
 $ convox services create mysql --name wordpress-db
 ```
 
 ## Create the Local Files
 
 ```
-$ mkdir wordpress && cd wordpress
+$ mkdir wordpress-site && cd wordpress-site
 ```
 
-Inside the `wordpress` directory, create a `docker-compose.yml` file with the following contents:
+Inside the `wordpress-site` directory, create a `docker-compose.yml` file with the following contents:
 
 ```
 web:
@@ -33,7 +33,7 @@ web:
 
 The [official WordPress image from Docker Hub](https://hub.docker.com/_/wordpress/) will be used in your app.
 
-The `volumes` directive will persist all of your WordPress files to a network filesystem associated with your Rack. This means your themes, plugins, and uploaded media will not be lost on restarts, and can be shared between containers, supporting scaling.
+The `volumes` directive will persist all of your WordPress files to a [network filesystem associated with your Rack](/docs/volumes). This means your themes, plugins, and uploaded media will not be lost on restarts, and can be shared between containers, supporting scaling.
 
 ## Deploy the App
 
@@ -59,10 +59,13 @@ Exports
   URL: mysql://app:EXWKHJKDZTBQIPGUMEKGSNTRYGAYAC@convox-dev-wordpress-db.cbm4183bzjrr.us-east-1.rds.amazonaws.com:3306/app
 ```
 
-Set the RDS database environment variables on the app:
+Reference the URL output to set the necessary database environment variables on the app:
 
 ```
-$ convox env set WORDPRESS_DB_HOST=convox-dev-wordpress-db.cbm4183bzjrr.us-east-1.rds.amazonaws.com:3306 WORDPRESS_DB_USER=app WORDPRESS_DB_PASSWORD=EXWKHJKDZTBQIPGUMEKGSNTRYGAYAC WORDPRESS_DB_NAME=app
+$ convox env set WORDPRESS_DB_USER=app WORDPRESS_DB_NAME=app \
+WORDPRESS_DB_HOST=convox-dev-wordpress-db.cbm4183bzjrr.us-east-1.rds.amazonaws.com:3306 \
+WORDPRESS_DB_PASSWORD=EXWKHJKDZTBQIPGUMEKGSNTRYGAYAC
+
 Updating environment... OK
 To deploy these changes run `convox releases promote RJTBVWWIKDE`
 
@@ -75,16 +78,16 @@ Promoting RJTBVWWIKDE... UPDATING
 Fetch the app URL:
 
 ```
-$ convox apps info -a wordpress
-Name       wordpress
+$ convox apps info -a wordpress-site
+Name       wordpress-site
 Status     running
 Release    RKOHYAOPRST
 Processes  web wordpress-db
-Endpoints  wordpress-web-OXGXLU7-1245013691.us-east-1.elb.amazonaws.com:80 (web)
+Endpoints  wordpress-site-web-OXGXLU7-1245013691.us-east-1.elb.amazonaws.com:80 (web)
            :3306 (wordpress-db)
 ```
 
-Visit the web URL in your browser, and go through WordPress web installer.
+Visit the port 80 URL in your browser, and go through WordPress web installer.
 
 ## Custom Domain
 
