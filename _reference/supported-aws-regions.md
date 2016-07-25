@@ -13,7 +13,7 @@ Convox will run in any region that supports EC2 Container Service, Lambda and at
 
 
 ## Future Inclusion
-Regions such as `eu-west-1 (Ireland)` and `us-west-1 (N. California)` are not supported for their limited Availability Zones support. This can change in the future for any region, so as soon as a region supports the required services to run a Convox Rack, this list will be updated accordingly.
+Regions such as `eu-central-1 (Frankfurt)` and `us-west-1 (N. California)` are not supported for their limited Availability Zones support. This can change in the future for any region, so as soon as a region supports the required services to run a Convox Rack, this list will be updated accordingly.
 
 
 ## References:
