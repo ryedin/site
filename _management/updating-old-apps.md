@@ -3,7 +3,7 @@ title: "Updating Old Apps"
 order: 900
 ---
 
-A small number of very old Convox apps have a different load balancer configuration than what is used in current releases. Upcoming changes to Convox Rack will break backwards compatibility with these apps, causing problems if they are deployed to. This guide explains how to recognize old apps and deploy new ones to replace them.
+A small number of very old Convox apps have a different load balancer configuration than what is used in current releases. Upcoming changes to Convox Rack will break backwards compatibility with these apps, causing problems if they are deployed. This guide explains how to recognize old apps and deploy new ones to replace them.
 
 ## How to recognize an old app
 
@@ -74,14 +74,16 @@ $ convox apps info -a newapp
 
 #### Update syslog link (if applicable)
 
-If your app is linked to a [syslog service](/docs/syslog) unlink from the old app:
+If your app is linked to a [syslog service](/docs/syslog) link the new app:
+
+```
+$ convox services link service-name -a newapp
+```
+
+Once you have the new app in production, unlink from the old app:
 
 ```
 $ convox services unlink service-name -a oldapp
 ```
 
-and link the new app:
-
-```
-$ convox services link service-name -a newapp
-```
+Deleting the old app will also remove the link.
