@@ -1,6 +1,6 @@
 ---
 title: "Rolling Back"
-order: 850
+order: 775
 ---
 
 Convox keeps history for your Apps and for Rack and CLI releases. It's possible to roll back to previous versions of all of these.
@@ -30,7 +30,7 @@ Promoting RHKOIXXVDMJ... UPDATING
 
 ## Rack
 
-To roll back your Rack, update to a named release.
+To roll back your Rack, update to a specific release.
 
 ```
 $ convox rack releases
