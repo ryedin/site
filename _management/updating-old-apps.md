@@ -32,7 +32,7 @@ Endpoints  newapp-web-5YMD4CB-7924824.us-east-1.elb.amazonaws.com:80 (web)
            internal-newapp-database-3LOPPMR-i-390257104.us-east-1.elb.amazonaws.com:5432 (database)
 ```
 
-Note that the leftmost segment of the domain has the format `<app name>-<process name>-<random string>-<random-string>`. If all of your endpoints are of this format or the shown internal format, then your app does not need to be upgraded.
+Note that the leftmost segment of the domain has the format `<app name>-<process name>-<random string>-<random-string>`. If all of your endpoints are of this format or the shown internal format, then your app does not need to be updated.
 
 ## How to update
 
