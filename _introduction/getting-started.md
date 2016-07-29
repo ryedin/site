@@ -60,7 +60,7 @@ You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) o
 
     $ convox start
 
-The application will be available at the address of your Docker host (`localhost` when using Docker for Mac). Once an application can be successfully booted with `convox start` it is ready to be deployed. The following steps will guide you through installing a Rack and deploying your application to it.
+The application will be available at the address of your Docker host (`localhost` when using Docker for Mac). Once an application can be successfully booted with `convox start` it is ready to be deployed. The following steps will guide you through installing a Rack and deploying the sample application to it.
 
 ## Sign Up
 
@@ -87,7 +87,7 @@ Finally you need to log in with the API key found **Account** section in the top
 
 #### Create an app on your Rack
 
-Navigate to the directory containing your application source, and create a deployment target in your Rack.
+Navigate to the directory containing the source for the sample application used above, and create a deployment target in your Rack.
 
     $ convox apps create
 
