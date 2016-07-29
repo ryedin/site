@@ -70,8 +70,12 @@ The `docker-compose.yml` for this application looks like this:
         - redis
     redis:
       image: convox/redis
+      ports:
+        - 6379
     postgres:
       image: convox/postgres
+      ports:
+        - 5432
 
 
 Each top level key defines the processes necessary to run your application. This particular manifest describes four processes: `web`, `worker`, `postgres`, and `redis`.
@@ -82,7 +86,7 @@ Each top level key defines the processes necessary to run your application. This
 
 * The `environment` key declares environment variables for this process. Defaults can be specified. Any variable with no value (such as `MYSERVICE_API_KEY`) must be declared in your local environment to start the application successfully (see the section on `.env` below for more details)
 
-* The `ports` key declares the ports that a process wishes to expose to traffic. These ports are defined in pairs, the externally facing port and the port on which the process is listening.
+* The `ports` key declares the ports on which a process will listen. Listing `- 8080` instructs the process to listen on port 8080. An optional prefix exposes an internet-facing port, e.g. `- 80:8080` sends port 80 internet traffic to the process listening on port 8080 inside the container. Processes listing only a single internal port will be reachable from other processes in the application, but not from the internet.
 
 * The `links` key defines dependencies on other processes named in this file. `convox start` sets environment variables so that a process can find its links. See [Linking](/docs/linking) for more details.
 
