@@ -36,6 +36,8 @@ Use `convox start` to build and run your application locally.
     web    | == Sinatra (v1.4.6) has taken the stage on 3000 for development with backup from WEBrick
     web    | [2015-09-18 06:16:53] INFO  WEBrick::HTTPServer#start: pid=7 port=3000
 
+This will boot all of your app processes and apply configured [links](/docs/linking). Local code changes will be [synced](/docs/code-sync) with your running processes in real time.
+
 To exit `convox start` press `Ctrl+C`.
 
 ## Data persistence
