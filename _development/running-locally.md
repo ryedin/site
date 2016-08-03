@@ -36,13 +36,9 @@ Use `convox start` to build and run your application locally.
     web    | == Sinatra (v1.4.6) has taken the stage on 3000 for development with backup from WEBrick
     web    | [2015-09-18 06:16:53] INFO  WEBrick::HTTPServer#start: pid=7 port=3000
 
+This will boot all of your app processes and apply configured [links](/docs/linking). Local code changes will be [synced](/docs/code-sync) with your running processes in real time.
+
 To exit `convox start` press `Ctrl+C`.
-
-## Code sync
-
-By default `convox start` will synchronize code between your local filesystem and the container filesystem. Any files or directories that appear in a `COPY` or `ADD` directive in your `Dockerfile` will be synced. This enables local changes to be reflected in the container without a restart. It also enables changes made in the container, such as dynamic code generation, to be synced back to the local filesystem where they can be committed to version control.
-
-If you don't want code sync you can disable it by passing the `--sync=false` option to `convox start`.
 
 ## Data persistence
 
@@ -54,7 +50,5 @@ database:
   ports:
     - 5432
   volumes:
-    - /var/lib/example/postgres:/var/lib/postgresql/data
+    - /var/lib/postgresql/data
 ```
-
-It's a good idea to use a host directory outside of the application directory for your data. This ensures your Docker volume won't have unwanted interactions with convox start's built in code syncing. On Linux and Mac the `/var/lib` directory is a good place for this.

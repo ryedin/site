@@ -1,6 +1,6 @@
 ---
 title: "Linking"
-order: 300
+order: 400
 ---
 
 Convox allows you to link containers by declaring associations in the `docker-compose.yml` manifest. Links are created by injecting environment variables that point at the linked container.
