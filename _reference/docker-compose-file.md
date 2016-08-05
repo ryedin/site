@@ -105,6 +105,7 @@ Add metadata to containers using Docker labels. Convox has several custom labels
       - convox.health.path
       - convox.health.port
       - convox.health.timeout
+      - convox.idle.timeout
       - convox.port.<number>.protocol
       - convox.port.<number>.proxy
       - convox.port.<number>.secure
