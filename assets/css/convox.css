@@ -1325,17 +1325,23 @@ pre span {
 }
 
 .pricing #intro {
-  background: #f6f6f6;
+  background: #fff;
   border-bottom: 1px solid #ddd;
   margin: 0;
   text-align: center;
 }
 
+.pricing #intro h2 {
+  font-weight: 700;
+}
+
 .pricing #features {
+  background: #f6f6f6;
   border-bottom: 1px solid #ddd;
 }
 
 .pricing .plan {
+  background: #fff;
   border: 1px solid #eee;
   border-radius: 10px;
   margin: 0 20px;
@@ -1368,11 +1374,11 @@ pre span {
   text-align: center;
 }
 
-.pricing li.upgrade {
+.pricing #features li.upgrade {
   font-weight: 400;
 }
 
-.pricing li.highlight {
+.pricing #features li.highlight {
   border-bottom: 1px dotted #ddd;
   padding-bottom: 10px;
 }
@@ -1384,7 +1390,7 @@ pre span {
 }
 
 .pricing #services {
-  background: #f6f6f6;
+  background: #fff;
   border-bottom: 1px solid #ddd;
   margin: 0;
   text-align: center;
