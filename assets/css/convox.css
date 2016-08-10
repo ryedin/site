@@ -1254,7 +1254,7 @@ pre span {
 }
 
 .docs #doc p,.docs #doc pre,.docs #doc ul {
-  margin-bottom: 1em;
+  margin-bottom: 1.4em;
 }
 
 .docs #doc a {
@@ -1269,7 +1269,7 @@ pre span {
   font-family: Merriweather, serif;
   font-size: 0.95em;
   font-weight: 300;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 
 .docs #doc pre {
