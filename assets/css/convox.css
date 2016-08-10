@@ -1401,3 +1401,78 @@ pre span {
 .team-member {
   padding-bottom: 10px;
 }
+
+
+/*
+ *
+ * Team
+ *
+ */
+
+.team h2 {
+  color: #444;
+  margin-top: 0;
+}
+
+.team .members {
+  padding: 50px 0;
+}
+
+.team .members .container {
+  margin: auto;
+  padding: 0;
+}
+
+.team .member {
+  margin-bottom: 2em;
+}
+
+.team .member:last-of-type {
+  margin-bottom: 0;
+}
+
+.team .member div {
+  padding: 0;
+}
+
+.team .member img {
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.team .member ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.team .member li {
+  line-height: 1.5;
+  margin: 0 0 0;
+}
+
+.team .contributors h2 {
+  margin-bottom: 1em;
+}
+
+.team .contributors {
+  background: #f6f6f6;
+  border-top: 1px solid #ddd;
+  padding: 50px 0;
+}
+
+.team .contributors .list {
+  margin: 0 -5px;
+}
+
+.team .contributor {
+  display: inline-block;
+  margin: 6px;
+}
+
+.team .contributor img {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  height: 64px;
+  width: 64px;
+}
