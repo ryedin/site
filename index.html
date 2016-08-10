@@ -162,16 +162,16 @@ Hostname   myapp-1749418666.us-east-1.elb.amazonaws.com
 Ports      web:80 web:443 admin:9322
 
 <span>$ convox ps</span>
-ID          NAME   RELEASE      CPU    MEM    STARTED       COMMAND
-13254981d20 admin  REXIQURVKXE  0.47%  2.21%   17 hours ago  bin/admin
-92d4a822c13 web    REXIQURVKXE  3.29%  20.68%  17 hours ago  bin/web
+NAME   CPU    MEM     STARTED       COMMAND
+admin  0.47%  2.21%   17 hours ago  bin/admin
+web    3.29%  20.68%  17 hours ago  bin/web
 
 <span>$ convox env</span>
 PASSWORD=xyzzy
 
 <span>$ convox logs</span>
-web: [01/Jan/2015:00:00:00] "GET / HTTP/1.1" 200 554 0.0027
-web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049
+web: "GET / HTTP/1.1" 200 554 0.0027
+web: "POST /users HTTP/1.1" 303 - 0.0049
           </pre>
 
           <!--<img src="/assets/images/cmd-img.png" alt="CMD Command Image" class="img-responsive">-->
