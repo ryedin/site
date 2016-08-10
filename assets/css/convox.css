@@ -1648,3 +1648,77 @@ pre span {
   height: 64px;
   width: 64px;
 }
+
+
+/*
+ *
+ * Jobs
+ *
+ */
+
+.jobs p {
+  color: #444;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.jobs #mission {
+  background: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.jobs #mission h2 {
+  color: #444;
+  font-size: 2.1em;
+  font-weight: 700;
+  margin-bottom: .6em;
+}
+
+.jobs #mission .positions {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin: 50px auto 0;
+  padding: 0;
+  width: 22%;
+}
+
+.jobs #mission .positions h3 {
+  border-bottom: 1px solid #eee;
+  font-size: 1.8em;
+  font-weight: 400;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.jobs #mission .positions ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.jobs #mission .positions li {
+  font-size: 1.05em;
+  margin-bottom: .6em;
+  text-align: center;
+}
+
+.jobs #mission .positions li a {
+  font-weight: 300;
+}
+
+.jobs #contact {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.jobs #contact p {
+  margin-bottom: 0;
+}
