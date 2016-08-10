@@ -25,9 +25,9 @@ layout: base
       <div class="plan col-xs-12 col-md-3">
         <h3>Developer</h3>
         <ul>
-          <li class="price">Free</li>
-          <li class="different">Community Support</li>
-          <li class="different">Max 1 User</li>
+          <li class="price highlight">Free</li>
+          <li class="highlight">Community Support</li>
+          <li>Max 1 User</li>
           <li>Unlimited Racks</li>
           <li>Workflow Automation</li>
           <li>GitHub/GitLab Integration</li>
@@ -37,9 +37,9 @@ layout: base
       <div class="plan col-xs-12 col-md-3">
         <h3>Basic</h3>
         <ul>
-          <li class="price monthly">$100</li>
-          <li class="different">Support Tickets</li>
-          <li>Unlimited Users</li>
+          <li class="price monthly highlight">$100</li>
+          <li class="highlight">Support Tickets</li>
+          <li class="upgrade">Unlimited Users</li>
           <li>Unlimited Racks</li>
           <li>Workflow Automation</li>
           <li>GitHub/GitLab Integration</li>
@@ -49,14 +49,14 @@ layout: base
       <div class="plan col-xs-12 col-md-3">
         <h3>Pro</h3>
         <ul>
-          <li class="price monthly">$500</li>
-          <li class="different">Business-Day Support</li>
-          <li>Unlimited Users</li>
+          <li class="price monthly highlight">$500</li>
+          <li class="highlight">Business-Day Support</li>
+          <li class="upgrade">Unlimited Users</li>
           <li>Unlimited Racks</li>
           <li>Workflow Automation</li>
           <li>GitHub/GitLab Integration</li>
           <li>Slack Integration</li>
-          <li class="different">Role-based Access Control</li>
+          <li>Role-based Access Control</li>
           <li>Audit Logs</li>
           <li>Google Authentication</li>
         </ul>
@@ -64,14 +64,14 @@ layout: base
       <div class="plan col-xs-12 col-md-3">
         <h3>Enterprise</h3>
         <ul>
-          <li class="price"><a href="#" class="js-intercom-show">Get a Quote</a></li>
-          <li class="different">24/7 One-Hour Support</li>
-          <li>Unlimited Users</li>
+          <li class="price highlight"><a href="#" class="js-intercom-show">Get a Quote</a></li>
+          <li class="highlight">24/7 One-Hour Support</li>
+          <li class="upgrade">Unlimited Users</li>
           <li>Unlimited Racks</li>
           <li>Workflow Automation</li>
           <li>GitHub/GitLab Integration</li>
           <li>Slack Integration</li>
-          <li class="different">Fine-grained Access Control</li>
+          <li class="upgrade">Fine-grained Access Control</li>
           <li>Audit Logs</li>
           <li>Google Authentication</li>
           <li>LDAP/SAML Authentication</li>
@@ -79,7 +79,6 @@ layout: base
           <li>Self-Hosted Console</li>
         </ul>
       </div>
-      <p class="key">* Plan-specific feature</p>
     </div>
   </section>
 

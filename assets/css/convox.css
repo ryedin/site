@@ -1305,9 +1305,11 @@ pre span {
 }
 
 .pricing h3 {
+  border-bottom: 1px solid #eee;
   font-size: 1.8em;
   font-weight: 400;
-  margin-bottom: .5em;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .pricing section {
@@ -1334,17 +1336,19 @@ pre span {
 }
 
 .pricing .plan {
-  margin: 0;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin: 0 20px;
   padding: 0;
   width: 22%;
 }
 
 .pricing .plan:first-of-type {
-  margin-left: 90px;
+  margin-left: 0;
 }
 
 .pricing .plan:last-of-type {
-  margin-right: -90px;
+  margin-right: 0;
 }
 
 .pricing .price.monthly:after {
@@ -1355,17 +1359,22 @@ pre span {
 .pricing ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 10px;
 }
 
-.pricing #features li,.pricing #features p {
+.pricing #features li {
   font-size: 1.05em;
   margin-bottom: .6em;
+  text-align: center;
 }
 
-.pricing li.different:after {
-  color: #bbb;
-  content: " *";
+.pricing li.upgrade {
+  font-weight: 400;
+}
+
+.pricing li.highlight {
+  border-bottom: 1px dotted #ddd;
+  padding-bottom: 10px;
 }
 
 .pricing .key {
