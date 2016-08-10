@@ -824,6 +824,7 @@ footer .row {
 
 .footer-middle .row {
   padding-bottom: 20px;
+  margin-left: 0;
 }
 
 footer .footer-bottom ul {
