@@ -57,9 +57,9 @@ defaults:
     values:
       layout: cases
   - scope:
-      path: cost
+      path: pricing
     values:
-      layout: cost
+      layout: pricing
   - scope:
       path: docs
     values:
