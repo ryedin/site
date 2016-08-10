@@ -1273,10 +1273,10 @@ pre span {
 }
 
 .docs #doc pre {
-  background: #000;
-  border-left: 25px solid #333;
+  background: #eee;
+  border-left: 25px solid #ddd;
   border-radius: 4px;
-  color: #eee;
+  color: #666;
   font-family: 'Roboto Mono', Monaco, Consolas, monospace;
   font-size: .9em;
   font-weight: 300;
@@ -1289,7 +1289,7 @@ pre span {
 }
 
 .docs pre span {
-  color: #eee;
+  color: #666;
 }
 
 /*
