@@ -1,288 +1,253 @@
 ---
-layout: index
+layout: base
 title: Convox
 ---
 
-<section id="development" class="index col-xs-12">
-  <div class="content">
-    <h1>
-      Simplify your development environment
-    </h1>
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <div class="intro-text">
+          <span class="name">Don't waste time</span>
+          <span class="name-desc">setting up infrastructure</span>
+        </div>
+        <div class="col-sm-12 col-md-8 short-desc get-str">
+          <div class="row">
+            <a href="https://console.convox.com/grid/signup" class="btnshadow green_button">Get Started</a>
+            <span class="short-desc-r c-d-green">Free for personal use, starting at $100/mo for teams</span>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-sm-12 col-md-8 short-desc sign-up">
+          <div class="row">
+            <a href="#" class="btnshadow orange_button js-intercom-show">Request a Demo</a>
+            <span class="short-desc-r c-orange">See how to set up and migrate your apps</span>
+          </div>
+        </div>
 
-    <p>
-      Start a local development environment that is identical to production with a single command.
-    </p>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <section>
-      <div class="col-xs-12 col-md-8">
-        <div class="col-xs-12 cli-example">
-          <pre class="stdin">$ convox start</pre>
-          <pre class="stdout">
-RUNNING: docker build -t zfrsyhlvdi ~/src/myapp
-Sending build context to Docker daemon 2.29 MB
-Step 0 : FROM rails:latest
- ---> 5063434fffa1
-Step 1 : COPY Gemfile /app/Gemfile
- ---> Using cache
- ---> 54933d99be26
-Step 2 : COPY Gemfile.lock /app/Gemfile.lock
- ---> Using cache
- ---> 3969abcce8da
-Step 3 : RUN bundle install</pre>
+<!-- life better Grid Section -->
+<section class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>Convox solves the boring problems so you can focus on your business.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="services-inner">
+        <div class="col-sm-4 col-xs-12 first">
+          <div class="box">
+            <h4>Compliance</h4>
+            <img src="/assets/images/compliance.png" alt="Compliance">
+            <ul>
+              <li>Installs into your certified account</li>
+              <li>Uses only services that are HIPAA eligable</li>
+              <li>Follows best practices for security</li>
+            </ul>
+            <p>Read the <a href="/docs/hipaa-compliance/">HIPAA docs</a></p>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="box">
+            <h4>Customization</h4>
+            <img src="/assets/images/customization.png" alt="Data Science">
+            <ul>
+              <li>Runs containers from 64 MB to 60+ GB</li>
+              <li>Offers storage from 10 GB to 10+ TB</li>
+              <li>Serves web apps and private data services alike</li>
+            </ul>
+            <p>Read the <a href="https://labs.opendoor.com/moving-opendoors-data-science-stack-from-heroku-to-convox">OpenDoor case study</a></p>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12 last">
+          <div class="box">
+            <h4>Scalability</h4>
+            <img src="/assets/images/high-data.png" alt="High Data Throughput">
+            <ul>
+              <li>Balances traffic across 1 to 100+ containers</li>
+              <li>Deploys new code with zero-downtime</li>
+              <li>Keeps all your logs and metrics in one place</li>
+            </ul>
+            <p>Read the <a href="/cases/interstate">Interstate Analytics case study</a></p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <dl class="col-xs-12 col-md-4">
-        <dt>Works out of the box</dt>
-        <dd>
-          Convox will introspect your application to automatically create an
-          appropriate runtime environment.
-        </dd>
-
-        <dt>Identical to production</dt>
-        <dd>
-          Runs exactly as it will in production so you can be certain
-          your changes work as expected.
-        </dd>
-
-        <dt>Built on Docker</dt>
-        <dd>
-          Start with a huge library of pre-built images and customize
-          to your individual needs.
-        </dd>
-      </dl>
-    </section>
   </div>
 </section>
 
-<section id="production" class="index col-xs-12">
-  <div class="content">
-    <h1>
-      Production-grade infrastructure
-    </h1>
+<!-- competitors section -->
+<section class="compet">
+  <div class="container">
+    <div class="col-lg-12 text-center">
+      <h2>What makes Convox different?</h2>
+    </div>
+    <div class="center-row">
+      <div class="col-xs-12">
+        <h4 class="text-center">The cloud is hard to navigate.</h4>
+        <p>PaaS makes it easy to deploy your first apps, but lacks the customization, privacy and cost controls you need to keep your business there forever.</p>
+        <p>IaaS is too flexible, requiring a large up-front investment in research and development to build a solution for your team.</p>
+        <p>Container Orchestration is hot technology, but introduces serious complexity challenges.</p>
+      </div>
+  
+      <div class="col-xs-12">
+        <h4 class="text-center">Convox offers the best way forward.</h4> 
 
-    <p>
-      Zero-maintenance architecture built on industry best practices.
-    </p>
+        <p>Convox gives your Developers single-command deploys for your apps, and simple ways to tune them for any scale.</p> 
+        <p>Convox gives your DevOps engineers a battle-tested private architecture that is easy to set up, operate and modify.</p>
+        <p>Convox uses container technology as a means for fast deploys and cost savings, not as an technological end.</p>
+      </div>
+    </div>
+  </div>
 
-    <section>
-      <dl class="col-xs-12 col-md-4">
-        <dt>Runs in your own AWS account</dt>
-        <dd>
-          Use industry best practices without the work. Easily scale up
-          without breaking the bank.
-        </dd>
+  <div class="container" id="correct">  
+    <div class="col-xs-12 text-center">
+      <h2>Convox turns the best cloud services into a cohesive platform.</h2>
+      <p>The result is a simple and powerful platform with the best security, reliability, performance and cost you can find anywhere.</p>
+      <p>Read about the benefits of <a href="/blog/integration-over-invention/">Integration over Invention</a> and <a href="/blog/services-over-software/">Services over Software</a> to understand this approach.
+      <p>Learn <a href="/cases/compare">how Convox compares</a> to other platforms.</p>
+    </div>
+  </div>
+</section>
 
-        <dt>Instant deploys</dt>
-        <dd>
-          Confidently deploy new code in seconds without dropping a single request.
-        </dd>
+<!-- infrastructure Section -->
+<section class="infra">
 
-        <dt>Predictable performance</dt>
-        <dd>
-          Your instances, your code. Stop worrying about noisy neighbors.
-        </dd>
+  <!-- Begin 50% page content -->
+  <div class="center-container">
+    <div class="center-row">
+      <div class="bg-one text-center col-xs-12">
+        <div class="grade-box">
+          <div class="grade-box-top">
+            <h3>How Convox Works</h3>
 
-        <dt>Flexible runtime</dt>
-        <dd>
-          Run any language or framework. Open TCP listeners on arbitrary ports.
-        </dd>
+            <p>Convox automates cloud service setup and application deployment.</p>
+          </div>
+          <div class="grade-box-btm">
+            <h4>Install in your own AWS accounts</h4>
 
-        <dt>Powerful introspection</dt>
-        <dd>
-          Centralized access to your metrics and logs.
-        </dd>
+            <p>Get industry best practices without the research and development. Bring control and consistency to your team.</p>
 
-        <dt>Secure by default</dt>
-        <dd>
-          Run applications in a private network that you control.
-        </dd>
-      </dl>
+            <h4>Integrate with existing resources</h4>
 
-      <div class="col-xs-12 col-md-8">
-        <div class="col-xs-12 cli-example">
-          <pre class="stdin">$ convox apps</pre>
-          <pre class="stdout">
+            <p>Connect to your other private databases and VPCs. You control the private networking.</p>
+
+            <h4>Use the Convox API and CLI</h4>
+
+            <p>Manage apps, builds, and logs. Not servers and containers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-two text-center col-xs-12">
+        <div class="cmd-box">
+          <pre>
+<span>$ convox apps</span>
 APP    STATUS
-myapp  running</pre>
-          <pre class="stdin">$ convox apps info</pre>
-          <pre class="stdout">
+myapp  running
+
+<span>$ convox apps info</span>
 Name       myapp
 Status     running
 Release    REXIQURVKXE
 Processes  admin web
 Hostname   myapp-1749418666.us-east-1.elb.amazonaws.com
-Ports      web:80 web:443 admin:9322</pre>
-          <pre class="stdin">$ convox ps</pre>
-          <pre class="stdout">
-ID           NAME   RELEASE      CPU    MEM     STARTED       COMMAND
-13254981d20  admin  REXIQURVKXE  0.47%  2.21%   17 hours ago  bin/admin
-92d4a822c13  web    REXIQURVKXE  3.29%  20.68%  17 hours ago  bin/web</pre>
-          <pre class="stdin">$ convox env</pre>
-          <pre class="stdout">PASSWORD=xyzzy</pre>
-          <pre class="stdin">$ convox logs</pre>
-          <pre class="stdout">
+Ports      web:80 web:443 admin:9322
+
+<span>$ convox ps</span>
+ID          NAME   RELEASE      CPU    MEM    STARTED       COMMAND
+13254981d20 admin  REXIQURVKXE  0.47%  2.21%   17 hours ago  bin/admin
+92d4a822c13 web    REXIQURVKXE  3.29%  20.68%  17 hours ago  bin/web
+
+<span>$ convox env</span>
+PASSWORD=xyzzy
+
+<span>$ convox logs</span>
 web: [01/Jan/2015:00:00:00] "GET / HTTP/1.1" 200 554 0.0027
-web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049</pre>
+web: [01/Jan/2015:00:00:00] "POST /users HTTP/1.1" 303 - 0.0049
+          </pre>
+
+          <!--<img src="/assets/images/cmd-img.png" alt="CMD Command Image" class="img-responsive">-->
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </section>
 
-<section id="testimonials" class="index col-xs-12">
-  <div class="testimonial">
-    <blockquote class="col-xs-11">
-      Deploying our scientific Python stack used to be a nightmare. Convox eliminates the stress and uncertainty of packaging our code for production.
-      <cite>
-        <span class="name">Ian Wong</span>
-        <a class="company" href="https://www.opendoor.com/">OpenDoor</a>
-      </cite>
-    </blockquote>
-    <a href="https://twitter.com/ihat">
-      <img class="col-xs-1 face" src="https://twitter.com/ihat/profile_image?size=bigger"/>
-    </a>
-  </div>
-  <div class="testimonial">
-    <blockquote class="col-xs-11">
-      Convox has been instrumental in helping us enjoy the flexibility of AWS. Their support, product, and team are second to none.
-      <cite>
-        <span class="name">Jamie Quint</span>
-        <a class="company" href="https://interstateanalytics.com/">Interstate Analytics</a>
-      </cite>
-    </blockquote>
-    <a href="https://twitter.com/jamiequint">
-      <img class="col-xs-1 face" src="https://twitter.com/jamiequint/profile_image?size=bigger"/>
-    </a>
-  </div>
-  <div class="testimonial">
-    <blockquote class="col-xs-11">
-      Having Convox on board has freed up roughly 25% of our engineer's time every week. The level of service they provide is truly astounding.
-      <cite>
-        <span class="name">Arthur Weagel</span>
-        <a class="company" href="https://podium.co">Podium</a>
-      </cite>
-    </blockquote>
-    <img class="col-xs-1 face" src="/assets/img/arthur.png"/>
-  </div>
-  <div class="testimonial">
-    <blockquote class="col-xs-11">
-      Convox has enabled us to make sustainable changes to scale quickly and keep up with our customers' demands.
-      <cite>
-        <span class="name">Eric Rea</span>
-        <a class="company" href="https://podium.co">Podium</a>
-      </cite>
-    </blockquote>
-    <a href="https://twitter.com/ericwilliamrea">
-      <img class="col-xs-1 face" src="https://twitter.com/ericwilliamrea/profile_image?size=bigger"/>
-    </a>
-  </div>
-</section>
 
-<section id="automation" class="index col-xs-12">
-  <div class="content">
-    <h1>
-      Automate your development workflow
-    </h1>
+<!-- Logo Section -->
+<section class="trusted-client">
+  <div class="container">
+    <div class="row">
+      <div class="trusted-client-inner text-center">
+        <h3>Trusted by</h3>
 
-    <p>One-click integration with the tools you're already using.</p>
-
-    <section>
-      <div class="col-xs-12 col-md-8">
-        <img src="/assets/images/static/slack.png" class="screenshot">
-      </div>
-      <dl class="col-xs-12 col-md-4">
-        <dt>Continuous delivery</dt>
-        <dd>Trigger automated builds and deployments when you push your code.
-        <dt>Real-time notifications</dt>
-        <dd>Get notified of system and app events in your team's chat room.
-      </dl>
-    </section>
-  </div>
-</section>
-
-<section id="api" class="index col-xs-12">
-  <div class="content">
-    <h1>
-      Open API
-    </h1>
-
-    <p>Customize your environment to suit your needs.</p>
-
-    <p class="api-button"><a class="btn btn-primary" href="/api">Browse the API</a></p>
-
-    <section class="cli-examples">
-      <div class="col-xs-12 col-md-6">
-        <div class="cli-example">
-          <pre class="stdin">$ convox api get /apps</pre>
-          <pre class="stdout">
-[
-  {
-    "balancer": "myapp-1749418666.us-east-1.elb.amazonaws.com",
-    "name": "myapp",
-    "release": "REXIQURVKXE",
-    "status": "running"
-  },
-  {
-    "balancer": "myapp2-689551992.us-east-1.elb.amazonaws.com",
-    "name": "myapp2",
-    "release": "RNEFHNIUSKF",
-    "status": "running"
-  },
-  {
-    "balancer": "myapp3-435098803.us-east-1.elb.amazonaws.com",
-    "name": "myapp3",
-    "release": "RORJKBNVKDD",
-    "status": "running"
-  }
-]</pre>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div>
+            <img src="/assets/images/shyp.png" alt="Shyp" class="img-responsive">
+          </div>
+          <div>Shyp</div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div>
+            <img src="/assets/images/opendoor.png" alt="OpenDoor" class="img-responsive">
+          </div>
+          <div>OpenDoor</div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div>
+            <img src="/assets/images/doordash.png" alt="DoorDash" class="img-responsive">
+          </div>
+          <div>DoorDash</div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div>
+            <img src="/assets/images/podium.png" alt="Podium" class="img-responsive">
+          </div>
+          <div>Podium</div>
         </div>
       </div>
-
-      <div class="col-xs-12 col-md-6">
-        <div class="cli-example">
-          <pre class="stdin">$ convox api get /apps/myapp/processes</pre>
-          <pre class="stdout">
-[
-  {
-    "app": "myapp",
-    "command": "bin/web",
-    "cpu": 0.0329,
-    "host": "10.0.3.135",
-    "id": "13254981d20",
-    "image": "registry.internal:5000/myapp-web:BHLRYHSMXNM",
-    "memory": 0.2068,
-    "name": "web",
-    "ports": [
-      "80:3000",
-      "443:3001"
-    ],
-    "release": "REXIQURVKXE",
-    "started": "2015-01-01T00:00:00Z"
-  }
-]</pre>
-        </div>
-      </div>
-    </section>
+    </div>
   </div>
 </section>
 
-{% include contact.html %}
+<!-- Testimonial Section -->
+<section class="testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 text-center">
 
-<script>
-  $.fn.random = function() {
-    return $(this[Math.floor(Math.random() * this.length)]);
-  }
+        <div class="testimonial-outer">
+          <div class="title-double-border">
+            <span>“</span>
+          </div>
+          <div class="col-lg-7 col-sm-12 testimonial-inner testimonial-first">
+            <p>"Deploying our scientific Python stack used to be a nightmare. Convox eliminates the
+               stress and uncertainty of packaging our code for production."</p>
+            <span>Ian Wong, OpenDoor</span>
+          </div>
+          <div class="hr_line"></div>
+          <div class="col-lg-6 col-sm-12 testimonial-inner testimonial-second">
+            <p>"Convox has been instrumental in helping us enjoy the flexibility of AWS.
+               Their support, product, and team are second to none."</p>
+            <span>Jamie Quint, Interstate Analytics</span>
+          </div>
+          <div class="hr_line"></div>
+          <div class="col-lg-7 col-sm-12 testimonial-inner testimonial-first">
+            <p>"Having Convox on board has freed up roughly 25% of our engineer's time every week.
+               The level of service they provide is truly astounding."</p>
+            <span>Arthur Weagel, Podium</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  $(window).ready(function() {
-    $('.testimonial').random().show();
-
-    window.setInterval(function() {
-      var next = $('.testimonial:hidden').random();
-
-      $('.testimonial:visible').fadeOut(500, function() {
-        $(next).fadeIn(500);
-      });
-    }, 8000);
-  });
-</script>

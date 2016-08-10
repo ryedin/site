@@ -1,141 +1,83 @@
-<!doctype html>
-<html>
-	<head>
-		<title>{{ page.title }}</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
 
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
 
-		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/assets/css/bootstrap-social.css">
-		<link rel="stylesheet" href="/assets/css/convox.css">
+    <!-- CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/convox.css" rel="stylesheet">
 
-		<script src="/assets/js/jquery.min.js"></script>
-	</head>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:300,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 
-	<body role="document">
-		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">
-						<img src="/assets/img/logo.png" />
-						<span class="logo-convox">Convox</span>
-					</a>
-				</div>
-				<div id="navbar">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="visible-sm visible-md visible-lg">
-							<a href="/">
-								Home
-							</a>
-						</li>
-						<li class="visible-sm visible-md visible-lg">
-							<a href="/blog">
-								Blog
-							</a>
-						</li>
-						<li class="visible-sm visible-md visible-lg">
-							<a href="/cost">
-								Cost
-							</a>
-						</li>
-						<li class="visible-sm visible-md visible-lg">
-							<a href="/docs">
-								Docs
-							</a>
-						</li>
-						<li class="visible-sm visible-md visible-lg">
-							<a href="/jobs">
-								Jobs
-							</a>
-						</li>
-						<li class="visible-sm visible-md visible-lg">
-							<a href="/team">
-								Team
-							</a>
-						</li>
-						<li>
-							<button id="console-button" class="btn btn-primary btn-xs">
-								<span class="glyphicon glyphicon-th" aria-hidden="true"></span>
-								Console
-							</a>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</nav>
+    <!-- JS -->
+    <script src="/assets/js/jquery.min.js"></script>
 
-		<div id="mobile-nav" class="visible-xs">
-			<div class="container">
-				<ul>
-					<li>
-						<a href="/">
-							Home
-						</a>
-					</li>
-					<li>
-						<a href="/blog">
-							Blog
-						</a>
-					</li>
-					<li>
-						<a href="/cost">
-							Cost
-						</a>
-					</li>
-					<li>
-						<a href="/docs">
-							Docs
-						</a>
-					</li>
-					<li>
-						<a href="/jobs">
-							Jobs
-						</a>
-					</li>
-					<li>
-						<a href="/team">
-							Team
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-		{{ content }}
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      {% include nav.html %}
+    </nav>
 
-		<!-- scripts placed at the end of the document to improve load time -->
+    {{ content }}
 
-		{% include google-analytics.html %}
-		{% include facebook.html %}
-		{% include intercom.html %}
+    <footer class="text-left">
+      <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+            <a href="https://invite.convox.com" class="btnshadow green_button">Join&nbsp;Slack</a>
+            <span class="short-desc-r c-d-green">Chat with the Convox Team and community</span>
+          </div>
+          <div class="row last">
+            <a href="https://t.co/r4Tta2jk0w" class="btnshadow orange_button">Subscribe</a>
+            <span class="short-desc-r c-orange">Receive occasional product updates and news</span>
+          </div>
+        </div>
+      </div>
 
-		<script src="/assets/js/bootstrap.min.js"></script>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              © 2016 Convox, Inc.
+              <br><a href="/legal/privacy">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-		<script>
-			$(window).ready(function() {
-				if ($(window).width() < 768 && $(window).scrollTop() == 0) {
-					window.setTimeout(function() {
-						console.log('here');
-						$(window).scrollTop(47);
-						console.log('was');
-					}, 100);
-				}
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.easing.1.3.min.js"></script>
+    <script src="/assets/js/classie.js"></script>
 
-				$('#console-button').on('click', function() {
-					window.location.href = 'https://console.convox.com/grid/login'
-				});
-			});
-		</script>
+    {% include google-analytics.html %}
+    {% include facebook.html %}
+    {% include intercom.html %}
+    {% include segment.html %}
 
-		<!-- segment -->
-		<script type="text/javascript">
-			!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
-				analytics.load("NzIX0WCLfP76p5QlHsAjL58l5AZp55Uz");
-				analytics.page()
-		  }}();
-		</script>
-	</body>
+    <script>
+      $('.js-intercom-show').click(function () {
+        Intercom('show');
+        return false;
+      });
+    </script>
+  </body>
 </html>
-

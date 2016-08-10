@@ -1,5 +1,6 @@
 ---
 title: Systems Engineer
+layout: jobs
 ---
 
 As a Systems Engineer you will be working on the core engineering team and our community on the open-source convox/rack project that aims to fully manage private, secure, production-ready AWS and Docker system. You will also be working with our users to help install, troubleshoot and maintain their Convox systems. You are an experienced engineer with exceptional problem solving skills. You are a self-starter who thrives in a vibrant, fast paced environment and takes pride in getting things done. If you are such a person, we’d love to have you join us.   

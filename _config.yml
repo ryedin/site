@@ -53,6 +53,10 @@ defaults:
     values:
       layout: main
   - scope:
+      path: cases
+    values:
+      layout: cases
+  - scope:
       path: cost
     values:
       layout: cost
