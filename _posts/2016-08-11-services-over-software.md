@@ -24,11 +24,11 @@ I’ve seen good teams struggle to get a single Kubernetes cluster and Prometheu
 
 A year in and I can’t point to a serious Convox outage.
 
-We’ve certainly helped customers with problems like deploys getting stuck, logs going missing, AMI updates rolling back, and yes app downtime.
+We’ve certainly helped customers with problems like deploys getting stuck, logs going missing, AMI updates rolling back, and yes -- app downtime.
 
 In the worst case -- self-inflicted app downtime -- the playbook is always the same: roll back the configuration change. With a single CloudFormation API call we easily go back to the last good Docker Image, ELB configuration, and process formation.
 
-The root cause for the smaller issues have been problems with the underlying services like EC2, ECS, Lambda and CloudFormation.
+The root cause for the smaller issues have been problems with the underlying services like EC2, ECS, Lambda, and CloudFormation.
 
 When Lambda is demonstrating a service degradation, we observe that some operations that depend on the service — say deploying a new version of our app — fails. However we have 100% trust that AWS will recover the service in due time without any intervention.
 
