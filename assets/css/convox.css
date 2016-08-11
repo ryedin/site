@@ -1803,3 +1803,42 @@ pre span {
   font-weight: 300;
   line-height: 1.8;
 }
+
+
+/*
+ *
+ * Case
+ *
+ */
+
+.case #study {
+  background: #f6f6f6;
+  margin: 0;
+}
+
+.case #study .content {
+  background: #fff;
+  padding: 50px 65px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.case #study h1 {
+  color: #000;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.case #study h2 {
+  font-weight: 400;
+  margin-bottom: .6em;
+}
+
+.case li,
+.case p {
+  color: #444;
+  font-family: Merriweather, serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.8;
+}

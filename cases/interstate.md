@@ -1,5 +1,6 @@
 ---
 title: Interstate Analytics
+layout: case
 ---
 
 [Interstate Analytics](https://interstateanalytics.com/) helps marketers make better decisions faster. The platform collects marketing data spread across numerous channels like Facebook, Google AdWords and AdRoll to provide unique insights in the performance data. Every day Interstate Analytics is seeing more customers, and every day those customers are sending over larger volumes of marketing data.
