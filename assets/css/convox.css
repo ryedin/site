@@ -1123,11 +1123,19 @@ pre span {
     padding-left: 0;
   }
 
+  .cmd-box {
+    max-width: 555px;
+  }
+
 @media all and (min-width: 1023px) {
     .grade-box {
       float: right;
       max-width: 530px;
       padding-left: 0;
+    }
+
+    .cmd-box {
+      max-width: 530px;
     }
 }
 
@@ -1191,6 +1199,34 @@ pre span {
 
 .blog h6,.docs h6 {
   font-size: 1em;
+}
+
+
+/*
+ *
+ * Home
+ *
+ */
+
+.cmd-box pre {
+  background: #333;
+  border-left: 25px solid #222;
+  border-radius: 4px;
+  color: #aaa;
+  font-family: 'Roboto Mono', Monaco, Consolas, monospace;
+  font-size: .9em;
+  font-weight: 300;
+  line-height: 1.2em;
+  padding: 20px;
+}
+
+.cmd-box pre span {
+  color: #eee;
+}
+
+.cmd-box pre span .ps1 {
+  color: #ea9b23;
+  /* color: #1aa6ab; */
 }
 
 /*
