@@ -18,11 +18,11 @@ We built the first viable version of Convox with a few people and a few weeks. W
 
 It’s much, much faster to learn how to use mature services than to write new software or to adopt and modify immature software projects.
 
-I’ve seen good teams struggle to get a single Kuberenetes cluster or Prometheus server figured out in the same time we’ve stood up hundreds of ECS clusters pumping data to CloudWatch Logs.
+I’ve seen good teams struggle to get a single Kubernetes cluster and Prometheus server working reliabiliy in the same time we’ve stood up hundreds of ECS clusters pumping data to CloudWatch Logs.
 
 ## Minimal Operations
 
-A year in and I can’t point to a serious Convox outage. 
+A year in and I can’t point to a serious Convox outage.
 
 We’ve certainly helped customers with problems like deploys getting stuck, logs going missing, AMI updates rolling back, and yes app downtime.
 
@@ -66,6 +66,8 @@ When we started Convox, we integrated the Docker registry software since no othe
 
 Likewise, for a while Convox used Kinesis for log streaming and processing. However when the native Docker CloudWatch Logs driver came out, we cut logging over to the easier service. We got to delete code, and gain features of log archival and search.
 
+AWS just [announced a new Application Load Balancer](https://aws.amazon.com/blogs/aws/new-aws-application-load-balancer/) (ALB) service, and we're already laying plans. Convox can add an option to provision new ALBs, in addition to the existing ELBs, on an app deploy so anyone can test out the new service in production. If it works well, and offers real advantages like saving money and supporting HTTP/2, we'll can make ALB the default, and document how to migrate from ELB to ALB.
+
 We can keep migrating like this forever.
 
 ## Leverage
@@ -76,6 +78,6 @@ AWS offers the best infrastructure services. GitHub and GitLab offer the best co
 
 By integrating these services together, we can get a great experience at fair price without having to write or operate much software.
 
-Our engineers aren't responsible for setting up, managing and troubleshooting virtual machines, containers, git repos and chat websockets. A trusted service provider is.
+Our engineers aren't responsible for setting up, managing and troubleshooting virtual machines, containers, load balancing software, git repos and chat websockets. A trusted service provider is.
 
 Instead our engineers can focus on writing the software that uniquely defines our businesses.
