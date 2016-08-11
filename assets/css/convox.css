@@ -363,7 +363,7 @@ h3 {
   margin-bottom: 10px;
 }
 
-.testimonial-inner span {
+.testimonial-inner span, .trusted-client-inner div {
   color: #1777bb;
   font-size: 14px;
   font-weight: 700;
@@ -1069,7 +1069,8 @@ pre span {
   }
 
   footer .short-desc-r {
-    display: none;
+    display: block;
+    margin-top: 20px;
   }
 
   .footer-middle .row.last {
