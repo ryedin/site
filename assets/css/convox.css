@@ -1764,3 +1764,42 @@ pre span {
 .jobs #contact p {
   margin-bottom: 0;
 }
+
+
+/*
+ *
+ * Job
+ *
+ */
+
+.job #listing {
+  background: #f6f6f6;
+  margin: 0;
+}
+
+.job #listing .content {
+  background: #fff;
+  padding: 50px 65px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.job #listing h1 {
+  color: #000;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.job #listing h2 {
+  font-weight: 400;
+  margin-bottom: .6em;
+}
+
+.job li,
+.job p {
+  color: #444;
+  font-family: Merriweather, serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.8;
+}
