@@ -2,22 +2,10 @@
 layout: base
 ---
 
-<div id="subnav" class="container">
-	<ul class="nav nav-tabs container">
-		<li><h2><a href="/blog">Convox Jobs</a></h2></li>
-	</ul>
-</div>
+<header class="jobs">
+  <div class="container"><h2>Convox Jobs</h2></div>
+</header>
 
-<div class="container subnav-content" role="main">
-  <section class="col-xs-12" id="jobs">
-    <div class="pull-right">
-      <a href="/jobs">&laquo; Back to Job Listings</a>
-    </div>
-
-    <h1 class="title">{{ page.title }}</h1>
-
-    <div class="content">
-      {{ content }}
-    </div>
-  </section>
+<div class="jobs">
+  {{ content }}
 </div>
