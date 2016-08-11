@@ -1485,6 +1485,13 @@ pre span {
   color: #666;
 }
 
+@media (max-width: 768px) {
+  .docs #doc {
+    padding: 30px;
+  }
+}
+
+
 /*
  *
  * Pricing
