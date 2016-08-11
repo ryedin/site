@@ -1709,7 +1709,7 @@ pre span {
   background: #f6f6f6;
   border-bottom: 1px solid #ddd;
   margin: 0;
-  padding: 50px 0;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -1726,7 +1726,7 @@ pre span {
   border-radius: 10px;
   margin: 50px auto 0;
   padding: 0;
-  width: 22%;
+  width: 200px;
 }
 
 .jobs #mission .positions h3 {
@@ -1765,6 +1765,15 @@ pre span {
   margin-bottom: 0;
 }
 
+@media (max-width: 768px) {
+  .jobs #mission {
+    padding: 30px 15px;
+  }
+
+  .jobs #mission p {
+    margin-bottom: 1.5em;
+  }
+}
 
 /*
  *
