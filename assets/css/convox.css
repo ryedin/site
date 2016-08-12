@@ -1202,6 +1202,11 @@ pre span {
   font-size: 1em;
 }
 
+.blog img + em {
+  display: block;
+  text-align: center;
+  font-size: .8em;
+}
 
 /*
  *
