@@ -8,6 +8,8 @@ We are proud to announce the latest addition to the Convox platform: [Grid](http
 
 In August we launched [Convox Rack](http://convox.com/docs/what-is-a-rack/) which installs a rock-solid, private PaaS into your own AWS account minutes. The response to Rack has been thrilling. People all over the world are using it to deploy and scale their applications. Rack is a powerful tool for sure, but a great platform is about more than just managing apps. It's also about managing teams and workflows. Enter Grid.
 
+<!--more-->
+
 Grid is the hub for your modern DevOps organization. It provides intuitive, web-based tools to install Racks, seamlessly switch between Racks via the CLI, control developer access, and integrate with 3rd-party services to leverage powerful workflows.
 
 While we have a ton of exciting features in the pipeline for Grid, we're proud to launch today with 3 powerful tools that we think you'll love: Rack sharing, GitHub integration, and Slack integration.

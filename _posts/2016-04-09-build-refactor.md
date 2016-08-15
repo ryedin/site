@@ -6,6 +6,8 @@ twitter: nzoschke
 
 This release continues the Convox tradition of offering a simple, reliable, private build service.
 
+<!--more-->
+
 We further this goal with a massive simplification of the build code. See PR #507 for code.
 
 Most notably it removes the one build at a time limit. This limit was put in place to avoid transient errors that occur in the Docker registry when pushing two images at once. The occurrence of this error was already greatly reduced with the migration to ECR. The error is eliminated by adding a retry/backoff to the image push step.

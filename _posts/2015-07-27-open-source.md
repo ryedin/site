@@ -3,9 +3,12 @@ title: "Open Source"
 author: Matt Manning
 twitter: mattmanning
 ---
+
 > "...as we enjoy great advantages from the inventions of others, we should be glad of an opportunity to serve others by any invention of ours; and this we should do freely and generously." -Benjamin Franklin
 
 Convox believes in open source. We think that the inner workings of the software you depend on should be knowable. We also believe in sharing our insights with the world. When we leverage each others' creations we all benefit.
+
+<!--more-->
 
 A great thing about sharing is that others share back. This weekend, [Oren Golan](https://github.com/oren) dug into the Convox codebase. He's interested in using Convox for a project requiring [HIPAA compliance](http://aws.amazon.com/compliance/hipaa-compliance/). Convox isn't currently certified HIPAA compliant, but since it's open source, Oren was able to make changes toward his use case.
 

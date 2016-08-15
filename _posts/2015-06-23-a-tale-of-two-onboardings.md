@@ -8,6 +8,8 @@ Joe is a junior developer starting his first real programming job for the photo 
 
 “No, unfortunately,” says Susan, “but it’s a pretty standard Rails app. It shouldn’t be too hard to get going. Let me know if you need help.”
 
+<!--more-->
+
 He sits down at his desk, excited to check out the app and dive into his work. The code is stored in a private Github repo, so Joe installs Homebrew and then git and clones the project.
 
 Excited to get the app running, he types

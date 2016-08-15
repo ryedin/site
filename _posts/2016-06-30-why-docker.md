@@ -12,6 +12,8 @@ This happened because Docker presented a modern, API-first approach to distribut
 
 This is an unprecedented feat of cooperation across the industry and makes these Docker APIs the obvious best system to target.
 
+<!--more-->
+
 ![Docker, Docker, Docker](/assets/img/why-docker-providers.png)*Docker, Docker, Docker*
 
 ## Packaging Before and After Docker

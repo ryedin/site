@@ -9,6 +9,8 @@ We’ve streamlined our SSL configuration and integrated with [Amazon Certificat
     $ convox certs generate *.mydomain.com
     Requesting certificate... OK, acm-bea0ac39a538
 
+<!--more-->
+
 Once the certificate is generated you’ll need to approve it. Amazon sends approval emails to the domain owner, technical contact, and administrative contact based on WHOIS records. They also send to the following addresses:
 
 * administrator@mydomain.com
