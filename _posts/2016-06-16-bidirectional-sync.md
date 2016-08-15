@@ -13,6 +13,8 @@ The Convox CLI now has the ability to enhance Docker usage with 2-way code sync.
 - Edit files on your host using your favorite text editor and see file changes reflected in the container immediately.
 - Run commands that generate code changes on the container and have that code appear on your host where you can commit it to version control.
 
+<!--more-->
+
 ## How does it work?
 
 When you run `convox start`, the CLI watches the files on your host and copies any changes to your built container(s).

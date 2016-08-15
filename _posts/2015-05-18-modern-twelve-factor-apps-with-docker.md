@@ -11,6 +11,8 @@ Docker [images](https://docs.docker.com/userguide/dockerimages/) and [contain
 
 This is a brief guide for satisfying key factors of twelve-factor with Docker tools. It explains what techniques you can use to develop a archetypical Rails / Postgres / Redis / web / worker application under Docker.
 
+<!--more-->
+
 A future post will deep dive into a code base that demonstrates everything working together.
 
 ### II. Dependencies — Explicitly declare and isolate dependencies

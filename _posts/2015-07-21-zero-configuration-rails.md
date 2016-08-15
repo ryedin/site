@@ -12,6 +12,8 @@ $ convox start
 
 Your app will boot and be available on port 5000 of the Docker host.
 
+<!--more-->
+
 ```
 $ curl $(boot2docker ip):5000  
 <!DOCTYPE html>  

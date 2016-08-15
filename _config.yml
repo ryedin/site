@@ -1,5 +1,7 @@
 url: https://convox.com
 
+excerpt_separator: <!--more-->
+
 kramdown:
   input: GFM
 

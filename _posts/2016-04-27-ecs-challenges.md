@@ -10,6 +10,8 @@ I have been working seriously with ECS for close to a year now, building open-so
 
 Through this lens, I can confidently say that ECS is living up to the promise. It offers flexible options for running apps as containers while offering great reliability for service uptime and and formation management. But it is not trivial to get it all working, and it requires a new way of thinking about our infrastructure and how we build our applications.
 
+<!--more-->
+
 ## ECS Primer
 
 ECS is a set of APIs that turn EC2 instances into compute cluster for container management. 

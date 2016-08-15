@@ -8,6 +8,8 @@ I feel incredibly lucky to get to use, build and think about open source softwar
 
 I’d like to share my thoughts about the open source ecosystem right now, where I see it going in the future, and how Convox navigates the open source and cloud services ecosystem.
 
+<!--more-->
+
 ## Open Source Software → Utility Computing
 
 We all pay water, gas, and electric utility bills every month. We barely think about all the infrastructure that lets us take a hot shower for pennies. We have zero loyalties to the companies that process the fossil fuels that turn into gas, heat, and electricity. If anything goes wrong, we are confident that we can call a technician who will restore service quickly and cheaply with standard parts available at any hardware store.

@@ -6,6 +6,8 @@ twitter: awsmsrc
 
 Over the past week the team (and in particular my friend [Matt](https://twitter.com/mattmanning)) has been working on a feature I'm excited to share with you. Convox now natively supports Scheduled tasks. This allows you to specify units of work, ran at any interval you desire with out writing any extra code.
 
+<!--more-->
+
 ## A practical example
 
 Let's say you are working on an application that collects analytics on behalf of your users about their customers behaviour, and you want to send a daily update summary to each user. Let's assume you already have a well tested application written in the language of your choice successfully running on Convox. If that was the case you would probably have a docker-compose.yml file containing the following process definition

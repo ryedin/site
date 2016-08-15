@@ -12,6 +12,8 @@ Convox would simply not be this far along if we were building distributed system
 
 I’d like to re-affirm the big advantages of **using services** over writing **software**.
 
+<!--more-->
+
 ## Rapid Prototyping
 
 We built the first viable version of Convox with a few people and a few weeks. We’ve added countless features and onboarded hundreds of customers over the following months with only adding a few more engineers.
