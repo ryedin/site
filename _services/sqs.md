@@ -19,7 +19,7 @@ This will provision an SQS queue. Creation will take a few moments. To check the
 
 ## Service Information
 
-To see relevant info about the database, use the `convox services info` command:
+To see relevant info about the queue, use the `convox services info` command:
 
     $ convox services info sqs-3785
     Name    sqs-3785
