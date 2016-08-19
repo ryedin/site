@@ -73,6 +73,39 @@ web:
 If no protocol label is specified the default of `tcp` will be used.
 </div>
 
+#### Health Check Options
+
+By default Convox will set up a `tcp` health check to your application. You can customize the health check by adding the following labels to your `docker-compose.yml` file.
+
+```
+web:
+  labels:
+      - convox.health.path=/_health
+      - convox.health.port=5000
+      - convox.health.timeout=3
+  ports:
+    - 443:5000
+```
+<table>
+  <tr>
+    <th>Label</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td><code>path</code></td>
+    <td>The endpoint the load balancer will use to determine the applications health</strong></em></td>
+  </tr>
+  <tr>
+    <td><code>port</code></td>
+    <td>This is the port that your container is set up to listen on, not the load balancer port.</strong></em></td>
+  </tr>
+  <tr>
+    <td><code>timeout</code></td>
+    <td>This is time that the load balancer will wait before timing out the health check request. Note that the request on your load balancer will be statically set to 2 greater than whatever the timeout value is.</strong></em></td>
+  </tr>
+</table>
+
+
 #### End-to-end encryption
 
 Traffic between your load balancer and your application happens entirely on your Rack's internal network. For extra security you can encrypt the traffic between your load balancer and application.
