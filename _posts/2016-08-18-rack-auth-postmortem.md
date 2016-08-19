@@ -16,7 +16,7 @@ The biggest change we’d like to implement is the concept of a ‘stable’ and
 
 ## Root Cause and Recovery
 
-Recently we set out to make a security improvement to Rack to not display the API in CloudFormation in plaintext, as reported in [GitHub Issue #425](https://github.com/convox/rack/issues/425).
+Recently we set out to make a security improvement to Rack to not display the API key in CloudFormation in plaintext, as reported in [GitHub Issue #425](https://github.com/convox/rack/issues/425).
 
 [Pull Request 969](https://github.com/convox/rack/pull/969) had a patch to use the CloudFormation NoEcho security feature. This was released in version [20160816160115](https://github.com/convox/rack/releases/tag/20160816160115) on Tues. August 16th.
 
@@ -26,7 +26,7 @@ When we understood the problem, we unpublished the version in question, notified
 
 Affected users had to perform a manual CloudFormation procedure to roll back to an earlier release and set a new API key and to work directly with the Convox team to restore Console connectivity.
 
-Late Wed Aug 16th [Pull Request 1088](https://github.com/convox/rack/releases/tag/20160816160115) was released in version [20160818013241](https://github.com/convox/rack/releases/tag/20160816160115) which handles the `convox rack params` path correctly.
+Late Wed Aug 16th [Pull Request 1088](https://github.com/convox/rack/pull/1088) was released in version [20160818013241](https://github.com/convox/rack/releases/tag/20160816160115) which handles the `convox rack params` path correctly.
 
 We recommend everyone do a standard `convox rack update` to get this latest version.
 
