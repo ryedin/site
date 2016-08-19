@@ -7,7 +7,7 @@ order: 300
 
 Console users have a master API key that can access all the configured Racks. If you lose this API key, you can generate a new one.
 
-Log In to Console → Click Account → Click Roll API Key
+Log in to Console → Click Account → Click Roll API Key
 
 Then you can log in from the CLI with your new API key:
 
@@ -26,7 +26,7 @@ The Rack may show up as unavailable while the change takes effect.
 
 If you're accessing a single Rack directly, a secure API key was generated on `convox install` and saved in `~/.convox/auth`.
 
-If you lose this key, it can not be recovered, and a new key must be set through the AWS CloudFormation APIs.
+If you lose this key, it can not be recovered, and a new key must be set through the AWS CloudFormation Management Console or by using the aws-cli:
 
 
 ```bash
