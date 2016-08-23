@@ -9,7 +9,7 @@ layout: case
 
 The Interstate Analytics platform:
 
-* Injest peaks of 10,000 requests/minute of ad tracking data
+* Ingest peaks of 10,000 requests/minute of ad tracking data
 * Analyze millions of data points to provide customer insights
 
 The team needs to focus on building new analytics tools and reports for their customers.
