@@ -17,7 +17,25 @@ Certain AWS permissions are required to successfully install (and uninstall) a C
 6. Click **Create Policy**
 
 ## Using an IAM Policy
-With the newly created policy, all that's left is to attach it to a user or group. While it veries from user to user, attaching the policy to an existing user is the most straight forward.
+With the newly created policy, all that's left is to attach it to a user or group. While it varies depending on the organization, attaching the policy to an existing user is usually the most straight forward.
+
+### To create a new user (skip this step if a user already exist):
+1. From the [IAM User dashboard](https://console.aws.amazon.com/iam/home#users), select **Create New User**
+2. Enter a username (e.g "convox") and click **Create**
+3. On the next screen click the **Download Credentials** button, and save the resulting file. Then click **Close**
+
+### To attach an IAM policy for a user:
+1. From the [IAM User dashboard](https://console.aws.amazon.com/iam/home#users), click on the user who will use the install policy
+2. Click on the **Permissions** tab
+3. Click on the **Attach Policy** button
+4. In the filter box, type the name of policy (e.g **ConvoxRackInstall** if the [new policy steps](#creating-an-iam-policy) above were followed)
+5. Select the checkbox next to the username, then click **Attach Policy** at the bottom right
+
+
+<div class="block-callout block-show-callout type-info" markdown="1">
+With the IAM permissions set, next step would be to [install a rack](/docs/installing-a-rack).
+</div>
+
 
 
 ## IAM Policy
