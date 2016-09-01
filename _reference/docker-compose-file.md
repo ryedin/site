@@ -102,6 +102,8 @@ Add metadata to containers using Docker labels. Convox has several custom labels
 
     labels:
       - convox.cron.<task name>
+      - convox.deployment.maximum
+      - convox.deployment.minimum
       - convox.health.path
       - convox.health.port
       - convox.health.timeout
@@ -111,41 +113,7 @@ Add metadata to containers using Docker labels. Convox has several custom labels
       - convox.port.<number>.secure
       - convox.start.shift
 
-#### convox.cron
-
-The `convox.cron` label allows you to schedule recurring tasks for any of your apps. The following example would run a task named `myjob` at 6:30pm UTC every weekday.
-
-    labels:
-      - convox.cron.myjob=30 18 ? * MON-FRI bin/myjob
-
-See our [scheduled tasks documentation](/docs/scheduled-tasks) for more.
-
-#### convox.health
-
-During [rolling updates](/docs/rolling-updates), Convox will attempt to start a new process and check its health before stopping an old process. These labels allow you to customize the path on your app that will respond to the health checks, the port on which the app will listen for the health check, and the number of seconds Convox should wait for a health check response before giving up and trying again.
-
-    labels:
-      - convox.health.path=/health_check
-      - convox.health.port=3001
-      - convox.health.timeout=60
-
-#### convox.port
-
-Use these labels to configure load balancer behavior on specific ports.
-
-    labels:
-      - convox.port.<number>.protocol=tls
-      - convox.port.<number>.proxy=true
-      - convox.port.<number>.secure=true
-
-See our [load balancer documentation](/docs/load-balancers) for more.
-
-#### convox.start
-
-Use the `convox.start.shift` label to offset the external ports of processes run by `convox start` by a given number. This allows multiple applications to run on one host without conflicts. A container configured to listen on host ports 80 and 443 could be shifted to listen on ports 1080 and 1443 with the following configuration:
-
-    labels:
-      - convox.start.shift=1000
+For more details about how to use these labels, visit our [Docker Compose Labels doc](/docs/docker-compose-labels).
 
 ### Links
 
