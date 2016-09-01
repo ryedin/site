@@ -34,11 +34,9 @@ Name       httpd
 Status     failed
 ```
 
-
-
 #### Health Checks
 
-If the Process does not [exposes ports](/docs/port-mapping) it is considered healthy if it starts and doesn't immediately exit or crash. 
+If the Process does not [expose ports](/docs/port-mapping) it is considered healthy if it starts and doesn't immediately exit or crash.
 
 If the Process [exposes ports](/docs/port-mapping) is it considered healthy after it:
 
@@ -48,6 +46,7 @@ If the Process [exposes ports](/docs/port-mapping) is it considered healthy afte
 Common causes for not passing health checks are:
 
 * The cluster does not have sufficient memory or CPU resources available to start a new process
+* The cluster does not have sufficient instances where a new process port is not already reserved by an older release
 * A process crashes immediately after starting due to a problem in the latest code
 * A process takes too long to initialize its server and therefore fails a network health check
 
@@ -80,7 +79,7 @@ version: '2'
       	- convox.deployment.maximum=300
 ```
 
-This generally is accompanied by extra Rack capacity to support the extra processes during rollout.
+You can add extra Rack capacity to support the extra processes during rollout.
 
 ```bash
 $ convox rack scale --count 10
