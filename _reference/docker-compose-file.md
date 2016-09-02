@@ -4,6 +4,20 @@ title: "Docker Compose File"
 
 [Docker Compose](https://docs.docker.com/compose/overview/) makes it easier to configure and run applications made up of multiple containers. For the uninitiated, imagine being able to define three containers&mdash;one running a web app, another running postgres, and a third running redis&mdash;all in one YAML file and then running those three connected containers with a single command. That file is `docker-compose.yml`, and when using Convox locally, the command is `convox start`.
 
+## Service Names
+
+Please note that service names should not include underscores.
+
+    services:
+      foo_bar: # will not work
+        ...
+
+Dashed service names are allowed.
+
+    services:
+      foo-bar: # will work
+        ...
+
 ## Supported Docker Compose Configuration Options
 
 Though there are [50+ configuration options](https://docs.docker.com/compose/compose-file/) supported by Docker Compose, Convox curates a smaller list of options to keep configuration simple and to ensure that the majority of users can get their multi-container applications up and running quickly.
