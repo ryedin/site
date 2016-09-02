@@ -29,8 +29,10 @@ Select a key for more information and example usage.
   services:
     web:
       <a href="#build">build</a>: .
+      <a href="#build">build</a>:
+        <a href="#context">context</a>: .
+        <a href="#dockerfile">dockerfile</a>: Dockerfile.alternate
       <a href="#command">command</a>: bin/web
-      <a href="#dockerfile">dockerfile</a>: Dockerfile.alternate
       <a href="#entrypoint">entrypoint</a>: /bin/entrypoint
       <a href="#environment">environment</a>:
         - RACK_ENV=development
@@ -74,17 +76,49 @@ Specify the path to the Dockerfile.
 
     build: ./another/dir
 
+If you are using the Docker Compose v2 file format, you may also need to use the nested build configuration options `context` and `dockerfile` when using a Dockerfile with a non-standard name. This nested structure is not supported by the Docker Compose v1 file format.
+
+    build:
+      context: .
+      dockerfile: Dockerfile.alternate
+
 ### Command
 
 Override the default command.
 
     command: bin/web
 
+### Context
+
+Supported by the Docker Compose v2 file format only. Specify a path to a directory containing a Dockerfile. Must be nested under the `build:` directive.
+
+    build:
+      context: .
+
+In the v1 and v2 file formats, the following syntax is equivalent to the nested example above.
+
+    build: .
+
+The `context` directive is required if you are using the Docker Compose v2 file format and specifying a non-standard name for a Dockerfile with the `dockerfile:` directive.
+
+    build:
+      context: .
+      dockerfile: Dockerfile.alternate
+
 ### Dockerfile
 
-Specify an alternate name if not named `Dockerfile`.
+Specify an alternate name if not named `Dockerfile`. Note that the Docker Compose v1 file format differs from v2.
 
+Docker Compose v1 file format:
+
+    build: .
     dockerfile: Dockerfile.alternate
+
+Docker Compose v2 file format:
+
+    build:
+      context: .
+      dockerfile: Dockerfile.alternate
 
 ### Entrypoint
 
