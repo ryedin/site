@@ -52,22 +52,29 @@ Common causes for not passing health checks are:
 
 #### Configuring Deployment Parameters
 
-The health check URL and timeout can be configured for apps that take longer to boot:
-
+By default, a process must boot and pass the network health check in 3 seconds. If your app takes longer to boot, you may need to increase this to 60 seconds by adding a label:
 
 ```yaml
 version: '2'
   services:
     web:
       labels:
-        - convox.health.path=/_health
-        - convox.health.port=5000
-        - convox.health.timeout=3
+        - convox.health.timeout=60
       ports:
         - 443:5000
 ```
 
-The number of new processes to start can be configured for apps that need to start many processes within the 10m timeout:
+See the [load balancers](/docs/load-balancers) doc for more information about configuring the timeout as well as setting a custom health check port and HTTP path.
+
+By default, 100% of the processes on the old release stay running and the same number of processes on the new release will attempt to start at once. As new processes are deemed healthy, old ones will be stopped.
+
+If we want to spare no expense for the fastest deployment speed, we can scale a Rack to have enough capacity to run two releases of the app simultaneously. For example if your app needs 5 instances to support 5 web processes that expose ports, running 10 instances will guarantee a fast deploys:
+
+```bash
+$ convox rack scale --count 10
+```
+
+If we can tolerate a temporary decrease in service capacity, we can configure an app to not require 100% of the old processes to stay running. For example we can say that we're ok stopping 50% of the old processes immediately to free up capacity for new processes:
 
 ```yaml
 version: '2'
@@ -76,11 +83,9 @@ version: '2'
       build: .
       image: convox/rails
       labels:
-      	- convox.deployment.maximum=300
+        - convox.deployment.minimum=50
 ```
 
-You can add extra Rack capacity to support the extra processes during rollout.
+See the [deployment labels](/docs/docker-compose-labels/#convoxdeployment) doc for more information about setting a deployment minimum.
 
-```bash
-$ convox rack scale --count 10
-```
+Most apps will not need to configure any of these settings to gracefully roll out.
