@@ -55,3 +55,9 @@ Your Rack can scale its own instance count based on the needs of the containers 
 ```
 $ convox rack params set Autoscale=Yes
 ```
+
+To monitor for autoscaling events, use `convox rack logs` with the `--filter` option.
+
+```
+$ convox rack logs --filter="autoscaleRack change="
+```
