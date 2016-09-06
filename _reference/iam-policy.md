@@ -12,7 +12,7 @@ Certain AWS permissions are required to successfully install (and uninstall) a C
 3. Fill in the Name and Description as you like. For example:
   - Name: ConvoxRackInstall
   - Description: Policy to install and uninstall a Convox Rack
-4. For **Policy Document**, copy and paste the [policy](#iam-policy):
+4. For **Policy Document**, copy and paste the [Convox IAM Policy](#convox-iam-policy) from below.
 5. Click **Validate Policy** to make sure the policy is valid
 6. Click **Create Policy**
 
@@ -38,7 +38,7 @@ With the IAM permissions set, next step would be to [install a rack](/docs/insta
 
 
 
-## IAM Policy
+## Convox IAM Policy
 ```
 {
     "Version": "2012-10-17",
