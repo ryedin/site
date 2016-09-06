@@ -2,7 +2,7 @@
 title: "IAM Policy"
 ---
 
-## Rack IAM Policy for AWS
+## Convox Rack IAM Policy for AWS
 
 Certain AWS permissions are required to successfully install (and uninstall) a Convox Rack. As Rack takes advantage of many AWS services, the best way to set these permissions securely is to leverage a managed [IAM Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
 
