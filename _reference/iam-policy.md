@@ -2,7 +2,7 @@
 title: "IAM Policy"
 ---
 
-## Rack IAM Policy for AWS
+## Convox Rack IAM Policy for AWS
 
 Certain AWS permissions are required to successfully install (and uninstall) a Convox Rack. As Rack takes advantage of many AWS services, the best way to set these permissions securely is to leverage a managed [IAM Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
 
@@ -67,25 +67,31 @@ With the IAM permissions set, next step would be to [install a rack](/docs/insta
           "dynamodb:DeleteTable",
           "dynamodb:DescribeTable",
 
+          "ec2:AllocateAddress",
           "ec2:AssociateRouteTable",
           "ec2:AttachInternetGateway",
           "ec2:AuthorizeSecurityGroupIngress",
           "ec2:CreateInternetGateway",
           "ec2:CreateKeyPair",
+          "ec2:CreateNatGateway",
           "ec2:CreateNetworkInterface",
           "ec2:CreateRoute",
           "ec2:CreateRouteTable",
           "ec2:CreateSecurityGroup",
           "ec2:CreateSubnet",
+          "ec2:CreateTags",
           "ec2:CreateVpc",
           "ec2:DeleteInternetGateway",
+          "ec2:DeleteNatGateway",
           "ec2:DeleteNetworkInterface",
           "ec2:DeleteRoute",
           "ec2:DeleteRouteTable",
           "ec2:DeleteSecurityGroup",
           "ec2:DeleteSubnet",
           "ec2:DeleteVpc",
+          "ec2:DescribeAddresses",
           "ec2:DescribeInternetGateways",
+          "ec2:DescribeNatGateways",
           "ec2:DescribeNetworkInterfaces",
           "ec2:DescribeRouteTables",
           "ec2:DescribeSecurityGroups",
@@ -94,7 +100,7 @@ With the IAM permissions set, next step would be to [install a rack](/docs/insta
           "ec2:DetachInternetGateway",
           "ec2:DisassociateRouteTable",
           "ec2:ModifyVpcAttribute",
-          "ec2:createTags",
+          "ec2:ReleaseAddress",
 
           "ecs:CreateCluster",
           "ecs:CreateService",

@@ -4,7 +4,7 @@ title: "Uninstalling Convox"
 
 At any time you can easily remove all the AWS resources Convox uses for your Services, Apps and Racks. This makes experimenting with Convox very easy.
 
-In order to uninstall a Rack you will first need to create temporary AWS credentials. See [Creating an IAM User](/docs/creating-an-iam-user/) for instructions.
+In order to uninstall a Rack you will first need to create temporary AWS credentials. See the [Convox Rack IAM Policy](/docs/iam-policy) for instructions.
 
 <div class="block-callout block-show-callout type-info" markdown="1">
 Uninstall will take approximately 15 minutes to complete.
