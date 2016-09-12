@@ -7,7 +7,7 @@ You have a few options for building and deploying your applications to Convox.
 
 ## Automatic Builds
 
-You can easily configure Console to build and deploy your application when changes are pushed to your main repository.
+You can easily configure [Console](https://console.convox.com) to build and deploy your application when changes are pushed to your main repository.
 
 * Choose your desired Organization.
 * Click on the **Integrations** tab and ensure that your Organization is linked to a GitHub or GitLab account.
