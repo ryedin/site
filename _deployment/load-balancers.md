@@ -3,7 +3,7 @@ title: "Load Balancers"
 order: 750
 ---
 
-Once you have containers running the next step is to allow them to be accessed from the internet. Convox automatically helps you set up and configure load balancers appropriately to route traffic to your containers.
+Once you have containers running the next step is to allow them to be accessed from the Internet. Convox automatically helps you set up and configure load balancers appropriately to route traffic to your containers.
 
 ### Configuration
 
@@ -21,6 +21,17 @@ worker:
 ```
 
 In this example, Convox will create a load balancer in front of the `web` process. This load balancer will accept traffic from the internet on port 80 and forward it to the `web` containers on port `5000`.
+
+### Balancer Hostname
+
+You can find the load balancer hostname(s) for your application using `convox apps info`:
+
+    $ convox apps info
+    Name       docs
+    Status     running
+    Release    RHUFNNNVEAP
+    Processes  web
+    Endpoints  docs-web-R72RMTP-326048479.us-east-1.elb.amazonaws.com:80 (web)
 
 ### Advanced Options
 
@@ -93,35 +104,33 @@ web:
   </tr>
   <tr>
     <td><code>path</code></td>
-    <td>The endpoint the load balancer will use to determine the applications health</strong></em></td>
+    <td>The endpoint the load balancer will use to determine the application's health.</td>
   </tr>
   <tr>
     <td><code>port</code></td>
-    <td>This is the port that your container is set up to listen on, not the load balancer port.</strong></em></td>
+    <td>This is the instance port that your container is set up to listen on, not the load balancer port.</td>
   </tr>
   <tr>
     <td><code>timeout</code></td>
-    <td>This is time that the load balancer will wait before timing out the health check request. Note that the request on your load balancer will be statically set to 2 greater than whatever the timeout value is.</strong></em></td>
+    <td>This is time in seconds after which no response means a failed health check. If the process fails 2 consecutive health checks it will be restarted. By default, the interval between health checks is this value plus 2.</td>
   </tr>
 </table>
 
 
 #### End-to-end encryption
 
-Traffic between your load balancer and your application happens entirely on your Rack's internal network. For extra security you can encrypt the traffic between your load balancer and application.
-
-You can terminate HTTPS or TLS either directly inside your application or with a reverse proxy like nginx or haproxy.
-
-If your application's backends listen on HTTPS or TLS you can configure the load balance to encrypt internal traffic using in your `docker-compose.yml`:
+Typically, HTTPS/TLS is terminated at the load balancer, and the resulting data is transmitted unencrypted to your application. This is OK, because traffic between your load balancer and your application happens entirely on your Rack's internal network. However, for extra security you can encrypt the traffic between your load balancer and application by setting the `convox.port.<port>.secure label.
 
 ```
 web:
   labels:
-    - convox.port.443.protocol=https
     - convox.port.443.secure=true
+    - convox.port.443.protocol=https
   ports:
     - 443:5001
 ```
+
+When you use this option you will need to terminate HTTPS or TLS directly inside your application or with a reverse proxy like nginx or haproxy.
 
 #### PROXY protocol
 
