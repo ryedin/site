@@ -3,7 +3,7 @@ title: "Convox Console"
 order: 300
 ---
 
-Convox offers the Console service to manage and monitor your Racks. Console allows you to install new Racks, decide who has access to them, and integrate them with other services such as Gitlab or Slack.
+Convox offers the [Console](https://console.convox.com) service to manage and monitor your Racks. Console allows you to install new Racks, decide who has access to them, and integrate them with other services such as Gitlab or Slack.
 
 ## How it works
 
@@ -15,7 +15,7 @@ In Console you can create Organizations to manage your infrastructure and decide
 
 #### Audit Logs
 
-Console keeps track of every event that happens on your Racks. You get a historical record of what has changed and who changed it.
+Console keeps track of all events that happen on your Racks. You get a historical record of what has changed and who changed it.
 
 #### Notifications
 
