@@ -3,9 +3,9 @@ title: "Preparing an Application"
 order: 100
 ---
 
-Most production servers run Linux but a large majority of professional developers prefer to work on a Mac, or on Windows. While it is possible to work on most modern programming languages in any operating system, this discrepancy can lead to subtle bugs that are not noticed until an application reaches production.
+Most production servers run Linux, but a large majority of professional developers prefer to work on a Mac or on Windows. While it is possible to work on most modern programming languages in any operating system, this discrepancy can lead to subtle bugs that are not noticed until an application reaches production.
 
-Linux containers solve many of these issues, allowing us to fully specify a working artifact and then run it easily on both your local development machine and production. Convox uses containers under the hood to ensure that your development environment is identical to production.
+Linux containers solve many of these issues, allowing you to fully specify a working artifact and then run it easily on both your local development machine and production. Convox uses containers under the hood to ensure that your development environment is identical to production.
 
 We believe a development environment should have these properties:
 
@@ -55,8 +55,11 @@ The `docker-compose.yml` for this application looks like this:
       environment:
         - MYSERVICE_API_KEY
         - RACK_ENV=development
+      labels:
+        - convox.port.443.protocol=tls
       ports:
-        - 3000:3000
+        - 80:3000
+        - 443:3000
       links:
         - postgres
         - redis
@@ -86,9 +89,11 @@ Each top level key defines the processes necessary to run your application. This
 
 * The `environment` key declares environment variables for this process. Defaults can be specified. Any variable with no value (such as `MYSERVICE_API_KEY`) must be declared in your local environment to start the application successfully (see the section on `.env` below for more details)
 
-* The `ports` key declares the ports on which a process will listen. Listing `- 8080` instructs the process to listen on port 8080 for traffic from other processes in the application. Including an optional prefix exposes an internet-facing port, e.g. `- 80:8080` sends port 80 internet traffic to the process listening on port 8080 inside the container.
+* The `ports` key declares the ports on which a process will listen. Listing `- 6379` instructs the process to listen on port 6379 for traffic from other processes in the application. Including an optional prefix exposes an internet-facing port, e.g. `- 80:3000` sends port 80 internet traffic to the process listening on port 3000 inside the container.
 
 * The `links` key defines dependencies on other processes named in this file. `convox start` sets environment variables so that a process can find its links. See [Linking](/docs/linking) for more details.
+
+* The `labels` key is used by Convox to offer configuration settings that are not part of the official Docker Compose spec. In this example we use the `convox.port.443.protocol` label to configure a TLS listener on the load balancer. For a full list of supported labels, see the [Docker Compose Labels](/docs/docker-compose-labels) reference.
 
 #### Dockerfile
 
@@ -122,3 +127,5 @@ The `Dockerfile` describes the steps you need to build and run your application.
 * `CMD` defines the default command to start application.
 
 For more information on how to write Dockerfiles, see the [Docker user guide](https://docs.docker.com/userguide/dockerimages/#building-an-image-from-a-dockerfile) and the [Dockerfile reference](http://docs.docker.com/reference/builder/).
+
+Convox also offers custom Docker configuration as a paid service. To find out more about scheduling and pricing, contact us via the chat icon on the bottom right of your screen.
