@@ -3,15 +3,15 @@ title: "Volumes"
 order: 600
 ---
 
-You can use volumes to share data between Processes of the same type. This is useful for applications like Wordpress or Jenkins that need to persist data to the filesystem.
+You can use Docker volumes to share data between application processes and persist data across restarts. This is useful for applications like WordPress or Jenkins that need to store data on the filesystem.
 
 ## Shared Filesystem
 
-Convox uses a network filesystem backed by EFS that is shared among all of the instances in your Rack. You can use this in conjunction with volume directives to persist files across restarts and to share data between Processes of the same type.
+Convox uses a network filesystem backed by [Amazon EFS](https://aws.amazon.com/efs/) that is shared among all of the instances in your Rack.
 
 ## Sharing Data
 
-You can mount a shared volume by specifying an entry in the `volumes:` section of your `docker-compose.yml`: 
+You can mount a shared volume by specifying a container path in the `volumes:` section of your `docker-compose.yml`: 
 
 ```
 services:
@@ -20,8 +20,10 @@ services:
       - /my/shared/data
 ```
 
+If you specify your volume path this way, Convox will persist data on your Rack instances in an application-namespaced path under `/volumes`.
+
 <div class="block-callout block-show-callout type-info" markdown="1">
-You can also specify the volume in the `host:container` format, e.g. `/foo:/my/container/path`.
+  You can also specify the volume in the more explicit `host:container` format, e.g. `/host/path:/container/path`. This allows you to set exactly where on the host instance to persist the data.
 </div>
 
 ## Persistence
@@ -52,7 +54,7 @@ The path structure looks like this:
 
 ## Example: WordPress
 
-[WordPress](https://wordpress.com/) is a popular PHP blogging platform. It expects a persistent filesystem for storing themes, plugins, and media uploads. You can persist this data by specifying a shared volume at `/var/www/html`:
+[WordPress](/docs/wordpress) is a popular PHP blogging platform. It expects a persistent filesystem for storing themes, plugins, and media uploads. You can persist this data by specifying a shared volume at `/var/www/html`:
 
 ```
 services:
@@ -64,4 +66,4 @@ services:
       - /var/www/html
 ```
 
-This configuration will work with both `convox start` and `convox deploy`. Files written to `/var/www/html` will be persisted and shared between Processes of the same type.
+This configuration will work with both `convox start` and `convox deploy`. Files written to `/var/www/html` will be persisted on the Docker host.
