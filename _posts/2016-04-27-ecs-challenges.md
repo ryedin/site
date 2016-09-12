@@ -95,7 +95,7 @@ This is simple to ask for but **deceptively hard to actually make happen**.
 
 To grant our wish, ECS needs to execute this request across at least four instances, but every instance is a black box over the network and poses known challenges.
 
-Sometimes the the instance can’t even think about starting the container:
+Sometimes the instance can’t even think about starting the container:
 
 * Unreachable due to a bad network
 
