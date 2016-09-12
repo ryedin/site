@@ -27,13 +27,13 @@ A &lt;ProcessName&gt;Formation parameter is created for each app process you def
 
 See the [cpu section](http://docs.aws.amazon.com/AmazonECS/latest/APIReference//API_ContainerDefinition.html#ECS-Type-ContainerDefinition-cpu) of the AWS ContainerDefinition doc for more information about reserving CPU units.
 
-Keep in mind that [CF will terminate your app](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-memory) if it attempts to use more than the amount of memory you have reserved for it. You may need to [scale up your app's memory](/docs/scaling#memory) if you encounter this kind of termination unexpectedly.
+Keep in mind that [ECS will terminate your app](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-memory) if it attempts to use more than the amount of memory you have reserved for it. You may need to [scale up your app's memory](/docs/scaling#memory) if you encounter this kind of termination unexpectedly.
 
 | Default value  | "1,0,256"        |
 
 ## Internal
 
-Have the app use an Internal ELB, i.e. make it unreachable from the Internet. See our [Internal Apps doc](https://convox.com/docs/internal-apps-racks) for more information.
+Have the app use Internal ELBs for all processes, i.e. make it unreachable from the Internet. See our [Internal Apps doc](https://convox.com/docs/internal-apps-racks) for more information.
 
 | Allowed values | "Yes", "No" |
 | Default value  | "No"        |
