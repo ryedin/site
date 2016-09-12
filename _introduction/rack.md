@@ -9,7 +9,7 @@ Convox Rack is an [open source](https://github.com/convox/rack) deployment platf
 
 ### Rack API
 
-Once installed your Rack will expose a simple [REST API](https://convox.com/api) for managing the Rack and its applications. This API is consumed by the Convox CLI and Console or can be used to build your own workflows and automation.
+Once installed your Rack will expose a simple [REST API](https://convox.com/api) for managing the Rack and its applications. This API is consumed by the [Convox CLI](https://dl.equinox.io/convox/convox/stable) and [Console](https://console.convox.com) or can be used to build your own workflows and automation.
 
 ### Dynamic Runtime
 
@@ -21,4 +21,4 @@ Each Rack creates a private network inside which it runs its servers and service
 
 ### Services
 
-Backing services such as Postgres, MySQL, or Redis can be easily installed into your Rack. Once installed, these services are only accessible to applications running on that Rack. Convox services are backed by powerful primitives in the underlying infrastructure such as [RDS](https://aws.amazon.com/rds/) and [ElastiCache](https://aws.amazon.com/elasticache/).
+Backing services such as [Postgres](/docs/postgresql), [MySQL](/docs/mysql), or [Redis](/docs/redis) can be easily installed into your Rack. Once installed, these services are only accessible to applications running on that Rack. Convox services are backed by powerful primitives in the underlying infrastructure such as [RDS](https://aws.amazon.com/rds/) and [ElastiCache](https://aws.amazon.com/elasticache/).
