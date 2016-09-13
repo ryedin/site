@@ -3,7 +3,7 @@ title: "Builds"
 order: 250
 ---
 
-When you deploy or build your application a build artifact is created. This consists of the Docker images that make up your application plus metadata stored in your Rack's database.
+When you deploy or build your application a "build" artifact is created. This consists of the Docker images that make up your application plus metadata stored in your Rack's database. Each build has a unique ID and is associated with one or more [releases](/docs/release).
 
 ## Creating a Build
 
