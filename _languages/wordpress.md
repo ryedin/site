@@ -35,12 +35,6 @@ The [official WordPress image from Docker Hub](https://hub.docker.com/_/wordpres
 
 The `volumes` directive will persist all of your WordPress files to a [network filesystem associated with your Rack](/docs/volumes). This means your themes, plugins, and uploaded media will not be lost on restarts, and can be shared between containers, supporting scaling.
 
-## Deploy the App
-
-```
-$ convox deploy
-```
-
 ## Attach the Database to the App
 
 The database creation that you kicked off above will take 10-15 minutes to complete. You can check status with:
@@ -65,12 +59,12 @@ Reference the URL output to set the necessary database environment variables on 
 $ convox env set WORDPRESS_DB_USER=app WORDPRESS_DB_NAME=app \
 WORDPRESS_DB_HOST=convox-dev-wordpress-db.cbm4183bzjrr.us-east-1.rds.amazonaws.com:3306 \
 WORDPRESS_DB_PASSWORD=EXWKHJKDZTBQIPGUMEKGSNTRYGAYAC
+```
 
-Updating environment... OK
-To deploy these changes run `convox releases promote RJTBVWWIKDE`
+## Deploy the App
 
-$ convox releases promote RJTBVWWIKDE
-Promoting RJTBVWWIKDE... UPDATING
+```
+$ convox deploy
 ```
 
 ## Run the WordPress Web Installer
