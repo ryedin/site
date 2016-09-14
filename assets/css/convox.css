@@ -1469,6 +1469,10 @@ pre span {
   line-height: 1.8em;
 }
 
+.docs #doc li,.docs #doc blockquote p {
+  margin: 0;
+}
+
 .docs #doc pre {
   background: #eee;
   border-left: 25px solid #ddd;
