@@ -42,7 +42,7 @@ Cron expressions use the following format:
 <div class="block-callout block-show-callout type-info" markdown="1">
   Using both day-of-week and day-of-month in the same expression is not supported. One of these fields must be a `?`.<br/>
   <br/>
-  The actual start time of a job may be skewed up to 10 seconds. This is done to prevent infrastructure throttling errors when lots of jobs start at the same time. If you need to ensure that jobs are started in a specific order, make sure to start them at least 20 seconds apart.
+  The actual start time of a job may be skewed up to 10 seconds. This is done to prevent infrastructure throttling errors when lots of jobs start at the same time. If you need to ensure that jobs are started in a specific order, make sure to start them at least 10 seconds apart.
 </div>
 
 Some example expressions:
