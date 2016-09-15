@@ -40,12 +40,12 @@ You can add this URL as an environment variable to any application with `convox 
 
 ## Service Deletion
 
-To delete the database, use the `convox services delete` command:
+To delete the service, use the `convox services delete` command:
 
     $ convox services delete memcached-5864
     Deleting memcached-5864... DELETING
 
-Deleting the database will take several minutes.
+Deleting the service will take several minutes.
 
 <div class="block-callout block-show-callout type-warning" markdown="1">
 This action will cause an unrecoverable loss of data.
