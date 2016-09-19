@@ -3,7 +3,7 @@ title: "Updating Old Apps"
 order: 900
 ---
 
-A small number of old Convox apps — those created with Rack releases older than `20160223211445` — have a different load balancer configuration than what is used in current apps. Upcoming changes to Convox Rack will break backwards compatibility with these apps, causing problems if they are deployed. This guide explains how to identify old apps and deploy new ones to replace them.
+A small number of old Convox apps — those created with Rack releases older than `20160223211445` — have a different load balancer configuration than what is used in current apps. Recent changes to Convox Rack break backwards compatibility with these apps, causing problems if they are deployed. This guide explains how to identify old apps and deploy new ones to replace them.
 
 ## How to recognize an old app
 
@@ -51,6 +51,8 @@ Use the command below to copy environment variables from the old app to the new 
 ```
 $ convox env -a oldapp | convox env set -a newapp
 ```
+
+If you get errors from this command you can still fetch the enviroment from the ECS TaskDefinition. From the ECS web page, click "Task Definitions". Click the Task Definition that matches your app, then click the latest version. On the next page, expand the process name and view the "Environment Variables" section.
 
 #### Deploy
 
