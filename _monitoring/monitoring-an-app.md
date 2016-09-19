@@ -7,11 +7,11 @@ Once you've got an app running on Convox, setting up monitoring can help you kee
 1. [Set up availability monitoring](#set-up-availability-monitoring) to be notified if your app stops responding.
 1. [Create a CloudWatch Dashboard](#create-a-cloudwatch-dashboard) to help track multiple metrics of your app.
 1. [Create CloudWatch Alarms](#create-cloudwatch-alarms) to be notified of critical changes to your app's metrics.
-1. [Create CloudWatch Metrics](#create-cloudwatch-metrics) to keep tabs on your database.
+1. [Track CloudWatch Metrics](#track-cloudwatch-metrics) to keep tabs on your database, etc.
 
 ## Set up availability monitoring
 
-Let's say your app runs at example.com. By having a third-party service like [Pingdom](pingdom.com) send an HTTP request to example.com at frequent intervals, you can ensure that you'll be notified as soon as part of your system fails. Whether you are having problems with your infrastructure, database, web application, or DNS, simple availability monitoring can be used to help you catch many major problems quickly.
+Let's say your app runs at example.com. By having a third-party service like [Pingdom](https://www.pingdom.com) send an HTTP request to example.com at frequent intervals, you can ensure that you'll be notified as soon as part of your system fails. Whether you are having problems with your infrastructure, database, web application, or DNS, simple availability monitoring can be used to help you catch many major problems quickly.
 
 We recommend using an availability monitoring service not run on AWS so that an AWS outage doesn't leave you blind to the problem.
 
@@ -54,9 +54,9 @@ If, in addition to being able to monitor your new CloudWatch Dashboard, you'd li
 Keep in mind that a notification email sent by a CloudWatch Alarm can be used as a trigger for other services like PagerDuty. See their [Email Integration Guide](https://www.pagerduty.com/docs/guides/email-integration-guide/) for more information.
 </div>
 
-## Create CloudWatch Metrics
+## Track CloudWatch Metrics
 
-Once you've [created a CloudWatch Dashboard](#create-a-cloudwatch-dashboard), you can configure additional CloudWatch Metrics and add them to a dashboard as widgets. Let's say you want to keep an eye on the swap usage of your PostgreSQL RDS instance so you know when you might need to upgrade to a larger instance type. You could add a widget displaying that usage to a dashboard by following these steps:
+Once you've [created a CloudWatch Dashboard](#create-a-cloudwatch-dashboard), you can configure additional CloudWatch Metrics and add them to a dashboard as widgets. Let's say you want to keep an eye on the swap usage of your PostgreSQL RDS instance, so you know when to upgrade to a larger instance type. You could add a widget displaying that usage to a dashboard by following these steps:
 
 1. Visit your CloudWatch console and navigate to Metrics.
 1. From the RDS Metrics category, select "Per-Database Metrics."
