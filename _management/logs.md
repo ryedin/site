@@ -39,33 +39,19 @@ $ convox logs --filter=5e3c8576b942 --follow=false --since=48h
 
 ### Rack Logs
 
-You can view the logs for Convox itself by specifying the Rack's stack name to `convox logs`:
+You can view the logs for Convox itself using the `convox rack logs` command:
 
 ```
-$ convox rack
-Name     demo
-Status   running
-Version  20160408020109
-Region   us-east-1
-Count    3
-Type     t2.medium
-```
-
-```
-$ convox logs -a demo
-2016-04-12 19:55:08 i-1d1fe49a demo/web:20160408020109 : time="2016-04-12T19:55:08Z" level=info msg="started handling request" method=GET remote="10.0.3.199:58107" request="/check"
-2016-04-12 19:55:08 i-1d1fe49a demo/web:20160408020109 : time="2016-04-12T19:55:08Z" level=info msg="completed handling request" count#status2XX=1 measure#web.elapsed=0.095ms method=GET remote="10.0.3.199:58107" request="/check" status=200 text_status=OK
+$ convox rack logs
+2016-09-19T05:59:14Z web:20160916121812/560705a6c103 ns=api.web at=request state=success status=200 method="GET" path="/check" elapsed=0.115
+2016-09-19T05:59:14Z web:20160916121812/560705a6c103 ns=api.web at=request state=success status=200 method="GET" path="/check" elapsed=0.089
 ```
 
 You can use filters to understand Rack operations like what webhooks were sent:
 
 ```
-$ convox logs -a demo --filter=EventSend --follow=false --since=20m
-2016-04-25T20:58:16Z web:20160425202355/1eb3f413602b aws EventSend msg="{\"action\":\"build:create\",\"status\":\"error\",\"data\":{\"app\":\"httpd\",\"id\":\"BEAIOGUJGTU\",\"message\":\"exit status 1\"},\"timestamp\":\"2016-04-25T20:58:16.428582907Z\"}"
-2016-04-25T20:58:16Z web:20160425202355/1eb3f413602b ns=kernel at=EventSend message-id="a0266efc-1cd8-54f6-bc46-21649bf06b5a"
-2016-04-25T21:00:59Z web:20160425202355/1eb3f413602b aws EventSend msg="{\"action\":\"build:create\",\"status\":\"success\",\"data\":{\"app\":\"httpd\",\"id\":\"BIRNSOLKVUC\"},\"timestamp\":\"2016-04-25T21:00:59.002442447Z\"}"
-2016-04-25T21:00:59Z web:20160425202355/1eb3f413602b ns=kernel at=EventSend message-id="1976c1a2-d4cd-5db6-a8c7-8e3a5306b920"
-2016-04-25T21:01:02Z web:20160425202355/7971b3dd9ee6 aws EventSend msg="{\"action\":\"release:create\",\"status\":\"success\",\"data\":{\"app\":\"httpd\",\"id\":\"RQYRSVEXGLD\"},\"timestamp\":\"2016-04-25T21:01:02.065567824Z\"}"
-2016-04-25T21:01:02Z web:20160425202355/7971b3dd9ee6 ns=kernel at=EventSend message-id="313b7ec7-5b3f-51a6-ba28-315fdcf1c150"
-2016-04-25T21:01:04Z web:20160425202355/7971b3dd9ee6 models EventSend msg="{\"action\":\"release:promote\",\"status\":\"success\",\"data\":{\"app\":\"httpd\",\"id\":\"RQYRSVEXGLD\",\"rack\":\"demo\"},\"timestamp\":\"2016-04-25T21:01:04.657552667Z\"}"
+$ convox rack logs --filter=EventSend --follow=false --since=1h
+2016-09-19T05:28:22Z web:20160916121812/560705a6c103 aws EventSend msg="{\"action\":\"release:create\",\"status\":\"success\",\"data\":{\"app\":\"site-staging\",\"id\":\"RGZFEZWCLJY\"},\"timestamp\":\"2016-09-19T05:28:22.939075154Z\"}"
+2016-09-19T05:29:42Z web:20160916121812/1a7fc4c6d61b aws EventSend msg="{\"action\":\"rack:update\",\"status\":\"success\",\"data\":{\"count\":\"5\"},\"timestamp\":\"2016-09-19T05:29:42.46924934Z\"}"
+2016-09-19T05:30:26Z web:20160916121812/560705a6c103 aws EventSend msg="{\"action\":\"build:create\",\"status\":\"success\",\"data\":{\"app\":\"site-staging\",\"id\":\"BLRICHJXPCV\"},\"timestamp\":\"2016-09-19T05:30:26.007917831Z\"}"
 ```
