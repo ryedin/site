@@ -11,7 +11,6 @@ When building a new system on AWS we are faced with an architecture choice:
 * Build Docker images, and run **ECS Tasks** behind an ALB
 * Build Node, Python or Java project zip files, and run **Lambda Functions** behind an API Gateway
 
-
 EC2, ECS and Lambda represent three generations of AWS services rolled out over the past decade. Instances, Tasks and Functions are the primary building blocks in these three generations respectively.
 
 While each architecture can lead to success, and real-world systems will use some of each, ECS Tasks are the best architecture to target right now.
@@ -83,4 +82,6 @@ If you’re building a modern real-world system on AWS, an architecture based ar
 
 ---
 
-At Convox, we have been using ECS in production for our services and our customers services for more than 18 months. If you want an easy way use ECS, the Convox tutorial will get your app running in minutes.
+At Convox, we have been using ECS in production for our services and our customers services for more than 18 months. If you want an easy way use ECS, the [Convox tutorial](https://convox.com/docs/) will get your app running in minutes.
+
+For more cloud architecture discussion, follow [@nzoschke](https://twitter.com/nzoschke) and [@goconvox](https://twitter.com/goconvox) on Twitter.
