@@ -49,7 +49,7 @@ EC2 Instances with container orchestration **is** the best practice.
 
 This explains why there is heated competition in the orchestration software space, and why AWS launched their EC2 Container Service (ECS).
 
-If we install Swarm or Mesos we're responsible for operating the software. We need to keep an orchestration service up 100% of the time so Instances can always check in and see if they need to start or stop processes. If we use ECS, we delegate that responsibility to Amazon.
+If we install Swarm or Mesos we're responsible for operating the software. We need to keep an orchestration service up 100% of the time, so Instances can always check in and see if they need to start or stop processes. If we use ECS, we delegate that responsibility to Amazon.
 
 
 ## Why ECS Tasks?
@@ -68,7 +68,7 @@ It’s also important to understand that AWS considers Tasks a first-class primi
 
 This year we saw two new services, Elastic File System (EFS) and Application Load Balancer (ALB) which complement ECS very well.
 
-In many ways Tasks have more platform more features out of the box than EC2 Instances ever did.
+In many ways, Tasks already have more platform features out of the box than EC2 Instances ever did.
 
 I expect continual platform improvements around Tasks, like improved auditing and billing over the next years. I also expect reduced effort for cluster management.
 
