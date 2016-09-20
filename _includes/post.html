@@ -3,6 +3,11 @@
     <h1 class="blog-title">
       <a href="{{ include.post.url }}">{{ include.post.title }}</a>
     </h1>
+    {% if include.post.subtitle %}
+    <h2 class="blog-subtitle">
+      {{ include.post.subtitle }}
+    </h2>    
+    {% endif %}
     <div class="blog-date visible-xs">
       {{ include.post.date | date: "%b %d, %Y" }}
     </div>

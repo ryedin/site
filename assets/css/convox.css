@@ -1272,6 +1272,13 @@ pre span {
   margin-right: -10px;
 }
 
+.blog .blog-subtitle {
+  color: #666;
+  font-style: italic;
+  margin-top: -15px;
+  font-size: 1.25em;
+}
+
 .blog-author img {
   margin-top: -3px;
   width: 40px;
