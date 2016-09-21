@@ -112,14 +112,14 @@ web:
   </tr>
   <tr>
     <td><code>timeout</code></td>
-    <td>This is time in seconds after which no response means a failed health check. If the process fails 2 consecutive health checks it will be restarted. By default, the interval between health checks is this value plus 2.</td>
+    <td>The time in seconds after which no response means a failed health check. If the process fails 2 consecutive health checks it will be restarted. By default, the interval between health checks is this value plus 2.</td>
   </tr>
 </table>
 
 
 #### End-to-end encryption
 
-Typically, HTTPS/TLS is terminated at the load balancer, and the resulting data is transmitted unencrypted to your application. This is OK, because traffic between your load balancer and your application happens entirely on your Rack's internal network. However, for extra security you can encrypt the traffic between your load balancer and application by setting the `convox.port.<port>.secure label.
+By default, HTTPS/TLS is terminated at the load balancer, and the resulting data is transmitted unencrypted to your application. This is OK, because traffic between your load balancer and your application happens entirely on your Rack's internal network. However, for extra security you can encrypt the traffic between your load balancer and application by setting the `convox.port.<port>.secure label.
 
 ```
 web:
