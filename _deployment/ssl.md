@@ -22,7 +22,7 @@ When you're done editing, redeploy your application.
 
     $ convox deploy
 
-Your app is now configured to serve encrypted traffic with a self-signed certificate on port 443. To use a real certificate, you will need to update the SSL endpoint.
+Your app is now configured to serve encrypted traffic with a self-signed certificate on port 443. To use a real certificate, you will need to acquire an SSL Certificate and apply it to your SSL endpoint. See the following sections for more information.
 
 ## Acquire an SSL Certificate
 
