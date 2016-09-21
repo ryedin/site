@@ -5,6 +5,25 @@ order: 900
 
 You can easily secure traffic to your application using TLS (SSL).
 
+## Add a Secure Port to Your Manifest
+
+Edit your app's `docker-compose.yml` file to create a port mapping for your secure traffic. For most web applications this will be port 443, the standard for HTTPS.
+
+You'll also need to set the protocol for the port using the `convox.port.<port>.protocol` label. Use `https` as the value if you want to get HTTP headers and don't need to support websockets. Otherwise use `tls`. For example:
+
+    web:
+      labels:
+        - convox.port.443.protocol=https
+      ports:
+        - 80:3000
+        - 443:3000
+
+When you're done editing, redeploy your application.
+
+    $ convox deploy
+
+Your app is now configured to serve encrypted traffic with a self-signed certificate on port 443. To use a real certificate, you will need to update the SSL endpoint.
+
 ## Acquire an SSL Certificate
 
 ### Generate a Certificate
@@ -29,25 +48,6 @@ Upload your certificate and private key using `convox certs create`:
     $ convox certs create example.org.pub example.org.key
     Uploading certificate... OK, cert-1234567890
 
-### Add a Secure Port to Your Manifest
-
-Edit your app's `docker-compose.yml` file to create a port mapping for your secure traffic. For most web applications this will be port 443, the standard for HTTPS.
-
-You'll also need to set the protocol for the port using the `convox.port.<port>.protocol` label. Use `https` as the value if you want to get HTTP headers and don't need to support websockets. Otherwise use `tls`. For example:
-
-    web:
-      labels:
-        - convox.port.443.protocol=https
-      ports:
-        - 80:3000
-        - 443:3000
-
-When you're done editing, redeploy your application.
-
-    $ convox deploy
-
-Your app is now configured to serve encrypted traffic with a self-signed certificate on port 443. To use a real certificate, you will need to update the SSL endpoint.
-
 ### Apply the Certificate
 
 You can then apply a certificate to your load balancer with `convox ssl update`:
@@ -62,6 +62,10 @@ You can use the Convox CLI to view SSL configuration for an app.
     $ convox ssl
     TARGET   CERTIFICATE       DOMAIN       EXPIRES
     web:443  cert-1234567890   example.org  2 months from now
+
+## Managing Certificates
+
+The Convox CLI includes commands that let you list, update, and remove SSL certificates.
 
 ### Listing Certificates
 
