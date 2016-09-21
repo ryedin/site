@@ -1337,7 +1337,8 @@ pre span {
 }
 
 .posts ul {
-  margin-top: 29px;
+  color: #444;
+  margin-bottom: 1.2em;
 }
 
 .posts li p {
@@ -1348,6 +1349,20 @@ pre span {
   color: #000;
   font-weight: 700;
   text-decoration: none;
+}
+
+.posts table {
+  color: #444;
+  margin-bottom: 1.2em;
+  font-size: 0.9em;
+  
+}
+
+.posts table tr {
+}
+
+.posts table td {
+  padding-left: 10px;
 }
 
 .post .highlighter-rouge {
