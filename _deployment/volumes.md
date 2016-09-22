@@ -28,7 +28,7 @@ If you specify your volume path this way, Convox will persist data on your Rack 
 
 ## Persistence
 
-When your `docker-compose.yml` declares a volume with the single-path format, the volume will be persisted across container runs of the same process type. The path where these volumes persist differs depending on whether you are running your apps locally or deployed in a Rack.
+When your `docker-compose.yml` declares a volume with the single-path format, the volume will be persisted across container runs of the same process type. The path where these volumes persist on the Docker host differs depending on whether you are running your apps locally or deployed in a Rack.
 
 ### Persistence for local containers
 

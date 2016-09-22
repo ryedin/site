@@ -9,7 +9,7 @@ Convox can boot your application locally using Docker in an environment identica
 
 #### OS X
 
-Install the [Docker for Mac](https://docs.docker.com/engine/installation/mac/#/docker-for-mac) to get a local Docker environment.
+Install [Docker for Mac](https://docs.docker.com/engine/installation/mac/#/docker-for-mac) to get a local Docker environment.
 
 #### Linux
 
