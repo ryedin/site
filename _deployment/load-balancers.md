@@ -108,7 +108,7 @@ web:
   </tr>
   <tr>
     <td><code>port</code></td>
-    <td>This is the instance port that your container is set up to listen on, not the load balancer port.</td>
+    <td>This is the port that your container is set up to listen on, not the load balancer port.</td>
   </tr>
   <tr>
     <td><code>timeout</code></td>
