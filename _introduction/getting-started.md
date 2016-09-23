@@ -60,11 +60,33 @@ You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) o
 
     $ convox start
 
-The application will be available at the address of your Docker host (`localhost` when using Docker for Mac). Once an application can be successfully booted with `convox start` it is ready to be deployed. The following steps will guide you through installing a Rack and deploying the sample application to it.
+The Convox CLI will read the `docker-compose.yml` file from the application directory, and boot all of the processes described there as Docker containers. The `docker-compose.yml` contains all the information needed to run the app including but not limited to:
+
+- Whether to build process images from a `Dockerfile` or pull them from a registry
+- Which ports the process should listen on
+- Environment variable declarations
+- Connections to other containers, also known as [links]()
+- Routing protocol configuration
+- Cron job specifications
+
+For a full listing of all of the `docker-compose.yml` settings that Convox uses, please see the [Docker Compose File](/docs/docker-compose-file) reference.
+
+Once the application boots, it will be available at the address of your Docker host (`localhost` when using Docker for Mac). You can list all of the running Docker containers with `docker ps` and run commands on them directly with `docker exec`. For example, if your container has `bash` you can run `docker exec -it <container ID> bash` to get an interactive session on it.
+
+Once an application can be successfully booted with `convox start` it is ready to be deployed. The following steps will guide you through installing a Rack and deploying the sample application to it.
 
 ## Sign Up
 
 First, sign up for [Convox Console](https://console.convox.com/grid/signup), a web UI for managing your Racks, Organizations and Integrations.
+
+### Log Into the CLI
+
+Once your account is created you can log into the CLI with the API key shown on the welcome page:
+
+    $ convox login console.convox.com
+    Password: <Your Console API key>
+
+For security purposes your API key will only be shown once, but you can generate a new one at any time by visiting your **Account** page and clicking the **Roll API Key** button.
 
 ### Create an Organization
 
@@ -75,13 +97,6 @@ In Console, you start out in a `personal` organization where the Racks you insta
 Click on **Add a Rack** followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
 
 Follow the instructions to generate and share AWS credentials that allow Convox to install a new Rack into your AWS account. See [Installing a Rack](/docs/installing-a-rack) for more details.
-
-### Log In
-
-Finally you need to log in with the API key found **Account** section in the top navigation bar:
-
-    $ convox login
-    Password: <Your Console API key>
 
 ## Deploy to Convox
 
@@ -117,7 +132,7 @@ Now that you've deployed your first application you can:
 
 * Create a production database like [Postgres](/docs/postgresql/) and link it to your app
 * [Prepare and deploy more of your own apps](/docs/preparing-an-application/)
-* Grant your team members access to the deployment environment
+* Grant your team members [access](/docs/access-control) to the deployment environment
 * Set up Continuous Delivery workflows with GitHub, GitLab and Slack
 * Install another Rack for isolated development or staging deployments
 

@@ -15,7 +15,7 @@ Scheduled tasks are configured in `docker-compose.yml` using labels in the `conv
 
 - **cron expression** describes the schedule on which the task will be invoked. See "Cron expression format" below for more info.
 
-- **command** is the command to be run in this process. Invocations of the command are equivalent to manually running `convox run <process> <command> --detach`, and in fact it's a good idea to test that your command works using `convox run`.
+- **command** is the command to be run in this process. Before configuring the task you can test that your command works by running `convox run <process name> <command>`.
 
 Example: to run the command `bin/myjob` every hour on the `web` process, you would configure the label like this:
 
@@ -27,7 +27,7 @@ web:
 
 #### Cron expression format
 
-Cron expressions use the following format:
+Cron expressions use the following format. All times are UTC.
 
 ```
 .---------------- minute (0 - 59)

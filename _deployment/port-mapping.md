@@ -3,7 +3,7 @@ title: "Port Mapping"
 order: 700
 ---
 
-You can define the ports on which your Processes will listen in the manifest for your application.
+You can define the ports on which your processes will listen in the manifest for your application.
 
 ## External Ports
 
@@ -23,13 +23,6 @@ Internal ports are only accessible to other apps and services on the same Rack. 
       
 This example configuration would listen to port `5000` on an internal-only load balancer and forward connections to port `5000` on the Process.
 
-## Balancer Hostname
+If you want to make all of an application's ports internal, regardless of port definition, you can set the Internal app parameter.
 
-You can find the load balancer hostname(s) for your application using `convox apps info`:
-
-    $ convox apps info 
-    Name       docs
-	Status     running
-	Release    RHUFNNNVEAP
-	Processes  web  
-	Endpoints  docs-web-R72RMTP-326048479.us-east-1.elb.amazonaws.com:80 (web)
+    $ convox apps params set Internal=Yes

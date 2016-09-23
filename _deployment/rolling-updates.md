@@ -68,7 +68,7 @@ See the [load balancers](/docs/load-balancers) doc for more information about co
 
 By default, 100% of the processes on the old release stay running and the same number of processes on the new release will attempt to start at once. As new processes are deemed healthy, old ones will be stopped.
 
-If we want to spare no expense for the fastest deployment speed, we can scale a Rack to have enough capacity to run two releases of the app simultaneously. For example if your app needs 5 instances to support 5 web processes that expose ports, running 10 instances will guarantee a fast deploys:
+If we want to spare no expense for the fastest deployment speed, we can scale a Rack to have enough capacity to run two releases of the app simultaneously. For example if your app needs 5 instances to support 5 web processes that expose ports, running 10 instances will guarantee fast deploys:
 
 ```bash
 $ convox rack scale --count 10

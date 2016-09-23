@@ -7,17 +7,15 @@ Convox allows you to link containers by declaring associations in the `docker-co
 
 This avoids the need for your application to interface with configuration or service discovery mechanisms to find the other services it needs to talk to.
 
-To link containers add some additional confguration to your `docker-compose.yml`:
+To link containers add a `links` section to the relevant container in your `docker-compose.yml`:
 
 ## Defining Links
 
 ```bash
 web:
-  image: rails
+  build: .
   ports:
     - 80:80
-  environment:
-    - DATABASE_URL
   links:
     - database
 database:
@@ -36,7 +34,7 @@ Configuring the `links` section in this way will cause the following environment
 - `DATABASE_USERNAME`
 - `DATABASE_PASSWORD`
 
-Here is an example  those actually look like with the `convox/postgres` image:
+Here is an example of what those actually look like with the `convox/postgres` image:
 
 #### Local environment
 
@@ -50,7 +48,7 @@ Here is an example  those actually look like with the `convox/postgres` image:
 
 #### Production
 
-    DATABASE_HOST=postgres-i-191910196.us-east-1.elb.amazonaws.com
+  DATABASE_HOST=postgres-i-191910196.us-east-1.elb.amazonaws.com
 	DATABASE_PASSWORD=password
 	DATABASE_PATH=/app
 	DATABASE_PORT=5432
