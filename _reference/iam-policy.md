@@ -130,6 +130,8 @@ With the IAM permissions set, next step would be to [install a rack](/docs/insta
           "iam:DeleteInstanceProfile",
           "iam:RemoveRoleFromInstanceProfile",
 
+          "kms:CreateKey",
+
           "lambda:AddPermission",
           "lambda:CreateFunction",
           "lambda:DeleteFunction",
