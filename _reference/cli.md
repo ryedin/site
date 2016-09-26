@@ -112,7 +112,7 @@ The order of precedence is:
 
 When you want to manage multiple racks in multiple terminals you should use `CONVOX_RACK`.
 
-When you want to pin an app to a specific Rack you should use `./convox/rack` which can only be overridded by an explicit `--rack` flag.
+When you want to pin an app to a specific Rack you should use `./convox/rack` which can only be overridden by an explicit `--rack` flag.
 
 ## Bash Autocomplete and PS1 Helpers
 
