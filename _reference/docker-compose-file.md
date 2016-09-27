@@ -53,7 +53,7 @@ Select a key for more information and example usage.
         - 5432
       <a href="#volumes">volumes</a>:
         - /var/lib/postgresql/data
-  <a href="#network">networks</a>:
+  <a href="#networks">networks</a>:
     outside:
       external:
         name: foo-bar
