@@ -19,7 +19,7 @@ $ convox run web bin/migrate
 Migrating database... Done
 ```
 
-By default, `convox run` processes are run as "attached." This means that the output from your terminal is piped to the input of the process and vice versa.
+By default, `convox run` processes are run as "attached." This means you can interact with the running process via the terminal (stdin and stdout).
 
 <div class="block-callout block-show-callout type-warning" markdown="1">
   Attached processes have a timeout of 1 hour.
