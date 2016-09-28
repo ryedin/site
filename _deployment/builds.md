@@ -27,6 +27,16 @@ The newly created release will not be promoted (made active) until you run `conv
 
 If you'd like to build your app and promote the release in a single step, you can run `convox deploy` rather than `convox build`.
 
+### Building From a Git Repository
+
+You can tell convox to build from a remote git repository rather than shipping your local files. To do so, pass the URL (with the .git extension) as an argument to `convox build`. For example:
+
+```
+$ convox build https://github.com/myuser/myproject.git
+```
+
+This is the manual way to build from a git repository. For info on automated builds based on git actions please refer to [Deploying to Convox](/docs/deploying-to-convox).
+
 ## Inspecting Builds
 
 Run `convox builds` to see a list of builds for your application.
