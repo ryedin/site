@@ -31,7 +31,9 @@ If you'd like to build your app and promote the release in a single step, you ca
 
 Run `convox builds` to see a list of builds for your application.
 
-Run `convox builds info <build ID>` to see the logs for a particular build.
+Run `convox builds info <build ID>` to view metadata for a particular build.
+
+Run `convox builds logs <build ID>` to view the logs for a particular build.
 
 ## Automatic Builds
 
