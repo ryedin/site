@@ -19,6 +19,20 @@ $ convox run web bin/migrate
 Migrating database... Done
 ```
 
+By default, `convox run` processes are run as "attached." This means that the output from your terminal is piped to the input of the process and vice versa.
+
+<div class="block-callout block-show-callout type-warning" markdown="1">
+  Attached processes have a timeout of 1 hour.
+</div>
+
+If you don't need to run a process interactively you can add the `--detach` option to your `convox run` command.
+
+```
+$ convox run web --detach bin/long_running_process
+```
+
+Detached processes have no timeout and their output is available in the application logs.
+
 ### `convox exec`
 
 Attaches to an existing Process and runs the desired command. You can spawn an interactive shell or run a one-off command.
