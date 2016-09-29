@@ -56,9 +56,9 @@ As mentioned above, workflows can be used along with other tools that set commit
 
 1. Configure TravisCI to run on pull requests and set the commit status when finished
 2. Create workflow that triggers on your repo's master branch
-3. Define a task to build an promote your staging app
+3. Define a task to build and promote your staging app
 4. Define a second task to build (but not promote) your production app
 
 With this setup, a merge into your master branch will automatically execute everything needed right up to going live in production. If you are satisfied with the state of your staging app when the workflow completes, you can simply click "Promote" on your production app in Console to complete the process.
 
-For a fully automated production pipeline, enable promotion in step 4. Since a failure of any task in a workflow halts execution for remaning tasks, you can be sure that your production app will only be promoted if the staging app was successfully promoted (i.e. all containers were rolled out and passed health checks).
+For a fully automated production pipeline, enable promotion in step 4. Since a failure of any task in a workflow halts execution for remaining tasks, you can be sure that your production app will only be promoted if the staging app was successfully promoted (i.e. all containers were rolled out and passed health checks).
