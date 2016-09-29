@@ -6,13 +6,13 @@ title: "Workflows"
 
 ## Creating a Workflow
 
-To access the workflows interface, click the Workflows tab.
+To access the workflows interface, click the Workflows tab. Click "Create Workflow" button to get started.
 
-[screenshot]
+![](/assets/images/docs/workflows/tab.png)
 
 Give the workflow a unique, recognizable name.
 
-[screenshot]
+![](/assets/images/docs/workflows/name.png)
 
 ### Defining the Trigger
 
@@ -20,7 +20,7 @@ Next, choose a trigger for the workflow. This is the action that will kick off e
 
 Once you've chosen an integration, define the rest of the trigger. For GitHub and GitLab, this means choosing a repository and a branch.
 
-[screenshot]
+![](/assets/images/docs/workflows/trigger.png)
 
 When commits are pushed to the specified repository branch, workflow tasks are triggered.
 
@@ -32,7 +32,7 @@ When commits are pushed to the specified repository branch, workflow tasks are t
 
 Next, define the tasks to be executed once the trigger fires. Tasks are actions that can be executed on any app in your organization. Currently "Build" is the only available task type, but more will be added soon. For builds, you can set an alternate manifest filename if your app uses something other than `docker-compose.yml`. You can also choose to promote the resulting build by clicking the checkbox.
 
-[screenshot]
+![](/assets/images/docs/workflows/task.png)
 
 To define additional tasks, click the green "Add Task" button. Once you've defined all of your tasks, click "Create".
 
@@ -40,17 +40,15 @@ To define additional tasks, click the green "Add Task" button. Once you've defin
 
 Existing workflows can be managed via the main Workflows tab. Use the buttons to the right if you wish to edit or remove a workflow.
 
-[screenshot]
+![](/assets/images/docs/workflows/manage.png)
 
 ## Workflow History
 
 The execution of a workflow is referred to as a "job". Click the Jobs tab to view a list of previously executed workflows. A red or green indicator will tell you whether the job completed successfully.
 
-[screenshot]
+![](/assets/images/docs/workflows/jobs.png)
 
 Click the timestamp link associated with a job to see more detailed information including logs.
-
-[screenshot]
 
 ## Suggested Workflows
 
