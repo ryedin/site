@@ -2,7 +2,7 @@
 title: "Workflows"
 ---
 
-[Convox Console](https://console.convox.com) supports the creation of "workflows" – series of tasks that are executed when triggered by user-defined actions. Workflows make it easy to automate continuous delivery of your applications.
+[Convox Console](https://console.convox.com) supports the creation of "workflows" – series of tasks that are executed on your app(s) when triggered by user-defined actions.
 
 ## Creating a Workflow
 
