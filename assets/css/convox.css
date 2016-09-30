@@ -1336,7 +1336,7 @@ pre span {
   text-align: left;
 }
 
-.posts ul {
+.posts ul, .posts ol {
   color: #444;
   margin-bottom: 1.2em;
 }
