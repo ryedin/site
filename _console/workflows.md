@@ -24,10 +24,6 @@ Once you've chosen an integration, define the rest of the trigger. For GitHub an
 
 When commits are pushed to the specified repository branch, workflow tasks are triggered.
 
-<div class="block-callout block-show-callout type-info" markdown="1">
-  If the status of the latest commit is *pending* or *failing*, the workflow will not be triggered. This allows you to build integration testing gates, for example, into your workflows using tools such as CircleCI or TravisCI which can set commit statuses.
-</div>
-
 ### Definining Tasks
 
 Next, define the tasks to be executed once the trigger fires. Tasks are actions that can be executed on any app in your organization. Currently "Build" is the only available task type, but more will be added soon. For builds, you can set an alternate manifest filename if your app uses something other than `docker-compose.yml`. You can also choose to promote the resulting build by clicking the checkbox.
@@ -54,11 +50,10 @@ Click the timestamp link associated with a job to see more detailed information 
 
 As mentioned above, workflows can be used along with other tools that set commit statuses to build Continuous Integration pipelines. An example of one of these pipelines might look like:
 
-1. Configure TravisCI to run on pull requests and set the commit status when finished
-2. Create workflow that triggers on your repo's master branch
-3. Define a task to build and promote your staging app
-4. Define a second task to build (but not promote) your production app
+1. Create workflow that triggers on your repo's master branch
+2. Define a task to build and promote your staging app
+3. Define a second task to build (but not promote) your production app
 
 With this setup, a merge into your master branch will automatically execute everything needed right up to going live in production. If you are satisfied with the state of your staging app when the workflow completes, you can simply click "Promote" on your production app in Console to complete the process.
 
-For a fully automated production pipeline, enable promotion in step 4. Since a failure of any task in a workflow halts execution for remaining tasks, you can be sure that your production app will only be promoted if the staging app was successfully promoted (i.e. all containers were rolled out and passed health checks).
+For a fully automated production pipeline, enable promotion in step 3. Since a failure of any task in a workflow halts execution for remaining tasks, you can be sure that your production app will only be promoted if the staging app was successfully promoted (i.e. all containers were rolled out and passed health checks).
