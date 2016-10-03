@@ -1,3 +1,4 @@
 .bundle
+.env
 .git
 _site
