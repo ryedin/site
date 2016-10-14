@@ -39,7 +39,7 @@ $ convox logs --filter=5e3c8576b942 --follow=false --since=48h
 
 ### Rack Logs
 
-You can view the logs for Convox itself using the `convox rack logs` command:
+You can view the logs for a Convox Rack itself using the `convox rack logs` command:
 
 ```
 $ convox rack logs
