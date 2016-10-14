@@ -16,16 +16,6 @@ A convox app has been deleted, as with `convox apps delete`.
 
 An app build failed. Run `convox builds info <id>` to view build logs.
 
-#### [*example-rack*] Detected capacity warning
-
-The AWS ECS service had trouble finding an available server instance on which to run one of your containers. This can be a transient error, but seeing it repeatedly can indicated that your deployment is memory- or port-constrained.
-
-To solve this problem you can either manually scale your Rack using the `convox rack scale` command, or enable Rack autoscaling with the command `convox rack params set Autoscale=Yes`.
-
-#### [*example-rack*] Rack in steady state
-
-All of the requested processes have been successfully launched. This includes app processes and Rack processes, such as the Rack API.
-
 #### [*example-rack*] Created release `RMDKLNZIACD` for app *example-app*
 
 A new release has been created and is ready to be deployed. Releases are created when new builds complete or when the app’s environment variables are changed. You can promote a new release with the `convox releases promote` command.

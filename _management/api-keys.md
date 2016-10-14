@@ -16,18 +16,19 @@ $ convox login console.convox.com
 Password: <paste API key>
 ```
 
+## Rack API Keys
+
 Console encrypts and saves Rack API keys to proxy access. For security purposes you should generate new Rack API keys periodically.
 
 Console Log In → Click Racks → Select a Rack → Click Settings → Click Roll API Key
 
-The Rack may show up as unavailable while the change takes effect.
+The Rack may be temporarily unavailable while the change takes effect.
 
-## Rack API Keys
+### Logging into a Rack Directly
 
 If you're accessing a single Rack directly, a secure API key was generated on `convox install` and saved in `~/.convox/auth`.
 
 If you lose this key, it can not be recovered, and a new key must be set through the AWS CloudFormation Management Console or by using the aws-cli:
-
 
 ```bash
 # Update the stack Password Parameter to a new secret
