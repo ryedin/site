@@ -52,7 +52,7 @@ Use the command below to copy environment variables from the old app to the new 
 $ convox env -a oldapp | convox env set -a newapp
 ```
 
-If you get errors from this command you can still fetch the enviroment from the ECS TaskDefinition. From the ECS web page, click "Task Definitions". Click the Task Definition that matches your app, then click the latest version. On the next page, expand the process name and view the "Environment Variables" section.
+If you get errors from this command you can still fetch the enviroment from the ECS TaskDefinition. From the ECS web page, click "Task Definitions". Click the TaskDefinition that matches your app, then click the latest version. On the next page, expand the process name and view the "Environment Variables" section.
 
 #### Deploy
 
