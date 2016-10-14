@@ -26,6 +26,10 @@ The Rack may be temporarily unavailable while the change takes effect.
 
 ### Logging into a Rack Directly
 
-If you're accessing a single Rack directly, a secure API key was generated on `convox install` and saved in `~/.convox/auth`.
+If you're accessing a single Rack directly, a secure API key was generated on `convox install` and saved in `~/.convox/auth`. Use the hostname from `~/.convox/auth` to log into the Rack:
 
-If you lose this key, it can not be recovered, and a new key must be set through the AWS CloudFormation Management Console.
+```
+$ convox login <hostname>
+```
+
+If you lose the Rack key, it can not be recovered, and a new key must be set through the AWS CloudFormation Management Console.
