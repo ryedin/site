@@ -86,6 +86,6 @@ Have the Rack API use an Internal ELB, making it unreachable from the Internet.
 
 ## VolumeSize
 
-Default disk size of the EBS volume attached to each EC2 instance in the cluster.
+Default disk size (in gibibytes) of the EBS volume attached to each EC2 instance in the cluster.
 
 | Default value | 50 |
