@@ -52,6 +52,9 @@ collections:
     title: Help
     output: true
     permalink: /docs/:name/
+  guide:
+    title: The Convox Guide 0.5
+    output: true
 
 defaults:
   - scope:
@@ -86,3 +89,8 @@ defaults:
       path: team
     values:
       layout: team
+  - scope:
+      path: guide
+    values:
+      layout: guide
+
