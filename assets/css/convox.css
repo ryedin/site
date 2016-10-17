@@ -37,6 +37,11 @@ a,a:hover,a:focus,a:active,a.active {
   color: #18bc9c;
 }
 
+code.highlighter-rouge {
+  border: 1px solid #eee;
+  padding: 3px 4px;
+}
+
 h1,h2,h3,h4,h5,h6, {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -1495,9 +1500,39 @@ pre span {
   margin: 0;
 }
 
+.docs #doc pre.file:before {
+  background: #ddd;
+  content: attr(title);
+  display: block;
+  margin: -20px -20px 20px;
+  padding: 10px 20px;
+}
+
+/* "a" for added line in diff */
+.docs #doc pre.file .diff-a {
+  color: green;
+}
+
+.docs #doc pre.file .diff-a:before {
+  content: "+ ";
+}
+
+/* "r" for removed line in diff */
+.docs #doc pre.file .diff-r {
+  color: red;
+}
+
+.docs #doc pre.file .diff-r:before {
+  content: "- ";
+}
+
+/* "u" for unchanged line in diff */
+.docs #doc pre.file .diff-u:before {
+  content: "  ";
+}
+
 .docs #doc pre {
   background: #eee;
-  border-left: 25px solid #ddd;
   border-radius: 4px;
   color: #666;
   font-family: 'Roboto Mono', Monaco, Consolas, monospace;
@@ -1513,6 +1548,29 @@ pre span {
 
 .docs pre span {
   color: #666;
+}
+
+.docs #doc pre.terminal {
+  background: #444;
+  color: #bbb;
+}
+
+.docs #doc pre.terminal .command {
+  color: #eee;
+}
+
+.docs #doc pre.terminal .command:before {
+  content: "$";
+  color: #ea9b23;
+  margin-right: 10px;
+}
+
+.docs #doc pre.terminal .pass {
+  color: green;
+}
+
+.docs #doc pre.terminal .service {
+  color: aqua;
 }
 
 @media (max-width: 768px) {
@@ -1911,4 +1969,13 @@ pre span {
   border-top: 1px #ccc solid;
   margin-top: 30px;
   padding-top: 20px;
+}
+
+/* Guide */
+
+.guide #toc li.build,
+.guide #toc li.run,
+.guide #toc li.develop,
+.guide #toc li.deploy {
+  margin-left: 10px;
 }
