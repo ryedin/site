@@ -40,7 +40,7 @@ Start by reading the Introduction on [convox.com](https://convox.com/guide) or i
 ## Contributing
 
 * Join the [Convox Slack](https://invite.convox.com) channel to ask questions from the community and team
-* Open a [GitHub Issue](https://github.com/convox/guide/issues/new) for corrections or enhancements
+* Open a [GitHub Issue](https://github.com/convox/site/issues/new) for corrections or enhancements
 * Initiate a [GitHub Pull Request](https://help.github.com/articles/using-pull-requests/) to submit patches
 
 We would love help with:
