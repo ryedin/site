@@ -1360,7 +1360,7 @@ pre span {
   color: #444;
   margin-bottom: 1.2em;
   font-size: 0.9em;
-
+  
 }
 
 .posts table tr {
@@ -1432,9 +1432,6 @@ pre span {
 }
 
 .docs #toc {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 60px;
   padding: 40px 40px 40px 15px;
   width: 25%;
 }

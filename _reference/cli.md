@@ -13,6 +13,17 @@ You can easily update the CLI to get bugfixes and features:
     client: 20160617165137
     server: 20160615213630 (console.convox.com)
 
+## Overriding App Defaults
+
+You can set a default app name in an app directory. Instead of inferring the default app name from the current directory name, CLI commands will default to the app name specified in `.convox/app`:
+
+    $ cd myapp
+    $ mkdir .convox
+    $ echo myapp-staging > .convox/app
+    $ convox apps info
+    Name       myapp-staging
+    ...
+
 ## Switching Between Racks
 
 The Convox Console makes it easy to install and manage multiple Racks, like one for development, staging and production. The `convox` CLI offers a few strategies to switch between these environments.
