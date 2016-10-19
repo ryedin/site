@@ -6,15 +6,15 @@ twitter: _sandeep
 
 [Botmetrics](https://www.getbotmetrics.com) is an [open source package](https://github.com/botmetrics/botmetrics) and [a hosted service](http://www.getbotmertrics.com) for measuring and growing Facebook Messenger, Kik, Slack and in-app messaging bots. 
 
-Analytics for web and mobile rely on events to deliver insights. For chat bots, on the other hand, insights comes from analyzing the content of conversations. Botmetrics accomplishes this with a several services -- collectors, workers, and a web app -- for interfacing with the user. These need to be setup separately and configured to work in concert.
+Analytics for web and mobile rely on events to deliver insights. For chat bots, on the other hand, insights comes from analyzing the content of conversations. Botmetrics accomplishes this with several services—collectors, workers, and a web app for interfacing with the user. These need to be setup separately and configured to work in concert.
 
 ![Botmetrics Architecture Diagram](https://medium2.global.ssl.fastly.net/max/2000/1*GgZPs13LmUueafcf8NI4YQ.png)*Botmetrics Architecture Diagram*
 
- Convox makes it almost trivial to bring up this mix of Go and Ruby services in a coordinated and scalable way. We’re going to assume that you already have a [Rack](https://github.com/convox/rack) setup and the Convox CLI installed. If not, follow [The Convox Guide](https://convox.com/guide/) to setup your laptop and cloud environment.
+Convox makes it almost trivial to bring up this mix of Go and Ruby services in a coordinated and scalable way. We're going to assume that you already have a [Rack](https://github.com/convox/rack) set up and the Convox CLI installed. If not, follow [The Convox Guide](https://convox.com/guide/) to set up your laptop and cloud environment.
 
 ## Setting up the Botmetrics App
 
-Clone the [Bometrics repo](http://www.github.com/botmetrics/botmetrics) and in your `botmetrics` directory issue the following commands to setup the app:
+Clone the [Botmetrics repo](http://www.github.com/botmetrics/botmetrics) and in your `botmetrics` directory issue the following commands to set up the app:
 
 * `convox apps create` to create an application called `botmetrics`
 * `convox apps info` to check if the app has been created
@@ -35,7 +35,7 @@ Provisioning a Postgres database and Redis key store is easy with Convox:
 
 ## Deploying to Production and Initial Setup
 
-Now it’s time to deploy the app. Kick it off by `convox deploy`. (Time to go surf reddit.)
+Now it's time to deploy the app. Kick it off with `convox deploy`. (Time to go surf reddit.)
 
 ## Setting up the Environment
 
@@ -43,7 +43,7 @@ Next, we need to set the environment variables for Redis and Postgres so that we
 
 For each service instance (Redis and Postgres) you can get the URL with:
 
-* `convox service info <service_instance_name>`
+* `convox services info <service_instance_name>`
 
 Then set the environment variables REDIS_URL for Redis and DATABASE_URL for Postgres with:
 
@@ -55,7 +55,7 @@ You then need to set a few other environment variables that are required for Bot
 
 * `convox env set RAILS_ENV=production SECRET_KEY_BASE=$(openssl rand -hex 32) JSON_WEB_TOKEN_SECRET=$(openssl rand -hex 32)`
 
-Once you’re done, promote the release ID that is printed:
+Once you're done, promote the release ID that is printed:
 
 * `convox releases promote <RELEASE-ID-AFTER-SETTING-PROD-VARIABLES>`
 
@@ -63,7 +63,7 @@ Run `convox apps info` to get the status of your app and once it is `running`, y
 
 ## Migrating your database
 
-Once the app is deployed setup your database for the first time with:
+Once the app is deployed set up your database for the first time with:
 
 * `convox run web rake db:structure:load db:seed`
 
@@ -79,8 +79,8 @@ Browse to the URL and [start collecting data from your bots](https://blog.botmet
 
 ## Updating your Botmetrics App
 
-When future updates of Botmetrics lands, you can git pull the latest version from GitHub and run `convox deploy` to deploy the changes to your private infrastructure.
+When future updates of Botmetrics land, you can `git pull` the latest version from GitHub and run `convox deploy` to deploy the changes to your private infrastructure.
 
 ## Stay Connected
 
-If you want to talk bots, analytics or have questions we’re available [@getbotmetrics on Twitter](https://www.twittter.com/getbotmetrics) or by email: [hello@getbotmetrics.com](mailto:hello@getbotmetrics.com)
+If you want to talk bots, analytics or have questions we're available [@getbotmetrics on Twitter](https://www.twittter.com/getbotmetrics) or by email: [hello@getbotmetrics.com](mailto:hello@getbotmetrics.com).
