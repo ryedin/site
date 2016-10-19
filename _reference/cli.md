@@ -15,13 +15,14 @@ You can easily update the CLI to get bugfixes and features:
 
 ## Overriding App Defaults
 
-You can set a default app name in an app directory. This will override inferring the app name from the current directory name:
+You can set a default app name in an app directory. Instead of inferring the default app name from the current directory name, CLI commands will default to the app name specified in `.convox/app`:
 
-    $ cd rails
+    $ cd myapp
     $ mkdir .convox
-    $ echo rails-staging > .convox/app
+    $ echo myapp-staging > .convox/app
     $ convox apps info
-    Name       rails-staging
+    Name       myapp-staging
+    ...
 
 ## Switching Between Racks
 
