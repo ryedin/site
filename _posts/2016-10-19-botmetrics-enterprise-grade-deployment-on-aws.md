@@ -73,7 +73,7 @@ Get the public URL for your app with:
 
 ![Getting the App Hostname](https://medium2.global.ssl.fastly.net/max/3600/1*757jJ63VvdtU0VT6wcBGZg.png)*Getting the App Hostname*
 
-Browse to the URL and [start collecting data from your bots](https://blog.botmetrics.com)!
+Browse to the URL and start collecting data from your bots!
 
 ![Botmetrics Homepage!](https://medium2.global.ssl.fastly.net/max/2640/1*D19tEMuLz_d5nzuKi6t5sg.png)*Botmetrics Homepage!*
 
