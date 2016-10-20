@@ -8,7 +8,7 @@ module.exports = redis.createClient({
       return new Error("Retry time exhausted");
     }
 
-    return Math.max(options.attempt * 100, 3000);  
+    return Math.max(options.attempt * 100, 3000);
   },
   url: process.env.REDIS_URL
 });
