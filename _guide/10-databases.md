@@ -6,9 +6,9 @@ phase: run
 
 A Database manages persistent data for your app. The most common Databases are PostgreSQL, MySQL and Redis.
 
-When it comes time to [deploy](/guide/deploy/) your application, you should rely on a managed database like [RDS Postgres](https://aws.amazon.com/rds/postgresql/) or [ElastiCache Redis](https://aws.amazon.com/elasticache/), provisioned it as a Convox [Resource](/guide/resources/).
+When it comes time to [deploy](/guide/deploy/) your application, you should rely on a managed database like [RDS Postgres](https://aws.amazon.com/rds/postgresql/) or [ElastiCache Redis](https://aws.amazon.com/elasticache/), provisioned as a Convox [Resource](/guide/resources/).
 
-When [developing](/guide/develop/) locally, however, you should run a Database as one of the Services of your app. This strategy enables you to run the entire app with a single `convox start` command and not depend on addition configuration on your laptop. Add it in the `services:` section of `docker-compose.yml`.
+When [developing](/guide/develop/) locally, however, you should run a Database as one of the Services of your app. This strategy enables you to run the entire app with a single `convox start` command and not depend on additional configuration on your laptop. Add it in the `services:` section of `docker-compose.yml`.
 
 Because the Database runs on software not maintained by your team, you should use a pre-built Image. Convox offers [convox/postgres](https://hub.docker.com/r/convox/postgres/), [convox/mysql](https://hub.docker.com/r/convox/mysql/), and [convox/redis](https://hub.docker.com/r/convox/postgres/) on DockerHub as convenient starting images.
 
