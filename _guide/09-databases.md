@@ -8,9 +8,9 @@ A Database is an external Resource that your app talks to. The most common Datab
 
 In the [`convox deploy`](/guide/deploy/) phase, you will provision a Managed Database Resource like [RDS Postgres](https://aws.amazon.com/rds/postgresql/) or [ElastiCache Redis](https://aws.amazon.com/elasticache/).
 
-For the [`convox start`](/guide/start/) phase, you want a disposable Database to start with the rest of your app Services. For this you will add another Service in the `services:` section of `docker-compose.yml`.
+But here in the [`convox start`](/guide/start/) phase, you want to set up a disposable Database that start with your other app Services. For this you will add another Service in the `services:` section of `docker-compose.yml`.
 
-Because this is external to your app, you should use a pre-built Image. Convox offers [convox/postgres](https://hub.docker.com/r/convox/postgres/) [convox/mysql](https://hub.docker.com/r/convox/mysql/), , and [convox/redis](https://hub.docker.com/r/convox/postgres/) on DockerHub.
+Because the Database is external to your app, you should use a pre-built Image. Convox offers [convox/postgres](https://hub.docker.com/r/convox/postgres/) [convox/mysql](https://hub.docker.com/r/convox/mysql/), and [convox/redis](https://hub.docker.com/r/convox/postgres/) on DockerHub.
 
 For the example Node.js app, add `convox/redis`:
 
@@ -31,7 +31,7 @@ For the example Node.js app, add `convox/redis`:
 <span class="diff-a">    image: convox/redis</span>
 </pre>
 
-Even in `convox start` you must think carefully about how your app interacts with Databases. Previously you saw `convox start` blow up with Redis connection errors. It is a best practice to add graceful reconnection logic at the app level. For the simple Node.js app, now is a good time to configure the Redis client to retry with backoff:
+Even here in `convox start` you must think carefully about how your app interacts with Databases. Previously you saw `convox start` blow up with Redis connection errors. It is a best practice to add graceful reconnection logic at the app level. For the simple Node.js app, now is a good time to configure the Redis client to retry with backoff:
 
 <pre class="file js" title="redis-client.js">
 var redis = require("redis");
