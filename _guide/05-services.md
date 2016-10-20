@@ -1,6 +1,6 @@
 ---
-title: Service
-permalink: /guide/service/
+title: Services
+permalink: /guide/services/
 phase: build
 ---
 

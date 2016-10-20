@@ -1,6 +1,6 @@
 ---
-title: Balancer
-permalink: /guide/balancer/
+title: Balancers
+permalink: /guide/balancers/
 phase: run
 ---
 
@@ -39,4 +39,4 @@ Run `convox doctor` to validate your Balancer definitions:
 [<span class="pass">✓</span>] Service <span class="service">web</span> has valid ports
 </pre>
 
-Now that you have defined Balancers, you can [add a database Resource](/guide/resource/).
+Now that you have defined Balancers, you can [add a Database](/guide/databases/).

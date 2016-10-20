@@ -10,4 +10,4 @@ With Docker on your laptop, you now have the tools to move this build process to
 * Manage all your app dependencies in code
 * Build a single Image that works for development, testing and production
 
-So your very first step is to [build an Image](/guide/image/).
+So your very first step is to [build Images](/guide/images/).
