@@ -1,14 +1,18 @@
 ---
-title: Resource
-permalink: /guide/resource/
+title: Databases
+permalink: /guide/databases/
 phase: run
 ---
 
-A Resource is an external Service that your app talks to.
+A Database is an external Resource that your app talks to. The most common Databases are PostgreSQL, MySQL and Redis.
 
-Apps commonly use database Resources like Postgres or Redis.
+In the [`convox deploy`](/guide/deploy/) phase, you will provision a Managed Database Resource like [RDS Postgres](https://aws.amazon.com/rds/postgresql/) or [ElastiCache Redis](https://aws.amazon.com/elasticache/).
 
-For the [Run](/guide/run/) phase, a Resource is defined as another Service in the `services:` section of `docker-compose.yml`. Because this is external to our app, we prefer to use a pre-built Image:
+For the [`convox start`](/guide/start/) phase, you want a disposable Database to start with the rest of your app Services. For this you will add another Service in the `services:` section of `docker-compose.yml`.
+
+Because this is external to your app, you should use a pre-built Image. Convox offers [convox/postgres](https://hub.docker.com/r/convox/postgres/) [convox/mysql](https://hub.docker.com/r/convox/mysql/), , and [convox/redis](https://hub.docker.com/r/convox/postgres/) on DockerHub.
+
+For the example Node.js app, add `convox/redis`:
 
 <pre class="file yaml" title="docker-compose.yml">
 <span class="diff-u">version: '2'</span>
@@ -27,11 +31,7 @@ For the [Run](/guide/run/) phase, a Resource is defined as another Service in th
 <span class="diff-a">    image: convox/redis</span>
 </pre>
 
-Outside of the [Run](/guide/run/) or [Develop](/guide/develop/) phase, you should never run a database as a Service. When you [Deploy](/guide/deploy/) you will replace this with a managed database Resource.
-
-Because they are external to your app, and therefore not always under your control, you have to handle Resources carefully. Previously you saw `convox start` blow up with redis connection errors. Now is the time to think about how your app behaves if the web Service comes up before the redis Resource, or if the redis Resource is offline due to maintenance.
-
-It is a best practice to add graceful reconnection logic at the app level. For a simple Node.js app, you can configure the redis client to retry with backoff:
+Even in `convox start` you must think carefully about how your app interacts with Databases. Previously you saw `convox start` blow up with Redis connection errors. It is a best practice to add graceful reconnection logic at the app level. For the simple Node.js app, now is a good time to configure the Redis client to retry with backoff:
 
 <pre class="file js" title="redis-client.js">
 var redis = require("redis");
@@ -44,13 +44,13 @@ module.exports = redis.createClient({
       return new Error("Retry time exhausted");
     }
 
-    return Math.max(options.attempt * 100, 3000);  
+    return Math.max(options.attempt * 100, 3000);
   },
   url: process.env.REDIS_URL
 });
 </pre>
 
-Then you can change the web and worker code to not crash immediately if redis is unavailable:
+Then you can change the web and worker Services to not crash immediately if Redis is unavailable:
 
 <pre class="file diff" title="web.js">
 <span class="diff-u">var http = require("http");</span>
@@ -88,7 +88,7 @@ Then you can change the web and worker code to not crash immediately if redis is
 <span class="diff-u">console.log("worker running");</span>
 </pre>
 
-Now try to run your app. Instead of crashing, it periodically tries to reconnect to the redis Resource.
+Now try to run your app. Instead of crashing, it periodically tries to reconnect to the Redis Database.
 
 <pre class="terminal">
 <span class="command">convox start</span>
@@ -105,14 +105,14 @@ web    │ redis client retry with backoff
 worker │ redis client retry with backoff
 </pre>
 
-Run `convox doctor` to validate your Resource definitions:
+Run `convox doctor` to validate your Database definitions:
 
 <pre class="terminal">
 <span class="command">convox doctor</span>
 
-### Run: Resource
-[<span class="pass">✓</span>] Application configures Resources
-[<span class="pass">✓</span>] Resource redis is valid
+### Start: Database
+[<span class="pass">✓</span>] Application uses Databases
+[<span class="pass">✓</span>] Database redis is valid
 </pre>
 
-Now that you have added a Resource and made your app resilient to connection errors, you can [define a Link between Services and Resources](/guide/link/).
+Now that you have added a Database and made your app resilient to connection errors, you can [define Links between Services and Databases](/guide/links/).
