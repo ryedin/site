@@ -1,6 +1,6 @@
 ---
-title: Link
-permalink: /guide/link/
+title: Links
+permalink: /guide/links/
 phase: run
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Image"
-permalink: /guide/image/
+title: Images
+permalink: /guide/images/
 phase: build
 ---
 
@@ -78,4 +78,4 @@ Now run `convox doctor` to build and validate your first Image:
 
 The last check may take a few minutes to pull the Ubuntu OS from DockerHub, system packages from Ubuntu, and app dependencies from npm. Subsequent Image builds will be much faster.
 
-Now that you have a portable Image, you can [configure Services to use it](/guide/service/).
+Now that you have a portable Image, you can [configure Services to use it](/guide/services/).

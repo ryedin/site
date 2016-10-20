@@ -58,4 +58,4 @@ worker │     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1063:14)
 
 The Image built, and Services started, but they errored out immediately. Even if the web Service did come up, it's not obvious how you would connect to it.
 
-So your next step is to [define a Balancer](/guide/balancer/).
+So your next step is to [define a Balancer](/guide/balancers/).
