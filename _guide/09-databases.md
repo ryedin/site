@@ -4,13 +4,13 @@ permalink: /guide/databases/
 phase: run
 ---
 
-A Database is an external Resource that your app talks to. The most common Databases are PostgreSQL, MySQL and Redis.
+A Database manages persistent data for your app. The most common Databases are PostgreSQL, MySQL and Redis.
 
-In the [`convox deploy`](/guide/deploy/) phase, you will provision a Managed Database Resource like [RDS Postgres](https://aws.amazon.com/rds/postgresql/) or [ElastiCache Redis](https://aws.amazon.com/elasticache/).
+When it comes time to [deploy](/guide/deploy/) your application to a production environment, you should rely on a managed database like [RDS Postgres](https://aws.amazon.com/rds/postgresql/) or [ElastiCache Redis](https://aws.amazon.com/elasticache/), and provision it as a Convox [Resource](/guide/resources/).
 
-But here in the [`convox start`](/guide/start/) phase, you want to set up a disposable Database that start with your other app Services. For this you will add another Service in the `services:` section of `docker-compose.yml`.
+When [developing](/guide/develop/) locally, however, you should run a Database as one of the Services of your app. Add it in the `services:` section of `docker-compose.yml`.
 
-Because the Database is external to your app, you should use a pre-built Image. Convox offers [convox/postgres](https://hub.docker.com/r/convox/postgres/) [convox/mysql](https://hub.docker.com/r/convox/mysql/), and [convox/redis](https://hub.docker.com/r/convox/postgres/) on DockerHub.
+Because the Database runs on software not maintained by your team, you should use a pre-built Image. Convox offers [convox/postgres](https://hub.docker.com/r/convox/postgres/), [convox/mysql](https://hub.docker.com/r/convox/mysql/), and [convox/redis](https://hub.docker.com/r/convox/postgres/) on DockerHub as convenient starting images.
 
 For the example Node.js app, add `convox/redis`:
 
@@ -31,7 +31,7 @@ For the example Node.js app, add `convox/redis`:
 <span class="diff-a">    image: convox/redis</span>
 </pre>
 
-Even here in `convox start` you must think carefully about how your app interacts with Databases. Previously you saw `convox start` blow up with Redis connection errors. It is a best practice to add graceful reconnection logic at the app level. For the simple Node.js app, now is a good time to configure the Redis client to retry with backoff:
+At the [Run step](/guide/run/) earlier in the Guide, you saw `convox start` fail with Redis connection errors. It is a best practice to add graceful reconnection logic at the app level. For the simple Node.js app, now is a good time to configure the Redis client to retry with backoff:
 
 <pre class="file js" title="redis-client.js">
 var redis = require("redis");
@@ -54,7 +54,9 @@ Then you can change the web and worker Services to not crash immediately if Redi
 
 <pre class="file diff" title="web.js">
 <span class="diff-u">var http = require("http");</span>
-<span class="diff-u"></span>
+<span class="diff-r">var redis = require("redis");</span>
+<span class="diff-r"></span>
+<span class="diff-r">var client = redis.createClient(process.env.REDIS_URL);</span>
 <span class="diff-a">var client = require("./redis-client.js");</span>
 <span class="diff-u"></span>
 <span class="diff-u">var server = http.createServer(function(request, response) {</span>
@@ -74,6 +76,9 @@ Then you can change the web and worker Services to not crash immediately if Redi
 </pre>
 
 <pre class="file diff" title="worker.js">
+<span class="diff-r">var redis = require("redis");</span>
+<span class="diff-r"></span>
+<span class="diff-r">var client = redis.createClient(process.env.REDIS_URL);</span>
 <span class="diff-a">var client = require("./redis-client.js")</span>
 <span class="diff-u"></span>
 <span class="diff-u">var dequeue = function() {</span>
