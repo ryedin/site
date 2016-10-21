@@ -17,23 +17,26 @@ A Link is defined in the `links:` and `environment:` sections of `docker-compose
 <span class="diff-u">    build: .</span>
 <span class="diff-u">    command: ["node", "web.js"]</span>
 <span class="diff-a">    environment:</span>
-<span class="diff-a">     - REDIS_URL</span>
-<span class="diff-a">  links:</span>
-<span class="diff-a">    - redis</span>
+<span class="diff-a">      - REDIS_URL</span>
+<span class="diff-u">    labels:</span>
+<span class="diff-u">      - convox.port.443.protocol=https</span>
+<span class="diff-a">    links:</span>
+<span class="diff-a">      - redis</span>
 <span class="diff-u">    ports:</span>
-<span class="diff-u">     - 80:8000</span>
+<span class="diff-u">      - 80:8000</span>
+<span class="diff-u">      - 443:8000</span>
 <span class="diff-u">  worker:</span>
 <span class="diff-u">    build: .</span>
 <span class="diff-u">    command: ["node", "worker.js"]</span>
 <span class="diff-u">    environment:</span>
-<span class="diff-u">     - GITHUB_API_TOKEN</span>
-<span class="diff-a">     - REDIS_URL</span>
-<span class="diff-a">  links:</span>
-<span class="diff-a">    - redis</span>
+<span class="diff-u">      - GITHUB_API_TOKEN</span>
+<span class="diff-a">      - REDIS_URL</span>
+<span class="diff-a">    links:</span>
+<span class="diff-a">      - redis</span>
 <span class="diff-u">  redis:</span>
 <span class="diff-u">    image: convox/redis</span>
 <span class="diff-a">    ports:</span>
-<span class="diff-a">     - 6379</span>
+<span class="diff-a">      - 6379</span>
 </pre>
 
 Now try to run your app. You can see that the `web` and `worker` Services are started with new options so they can easily discover the `redis` Resource through `REDIS_URL`. You can make a request to the web Balancer on port 80. It all works!

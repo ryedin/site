@@ -20,13 +20,16 @@ For the example Node.js app, add `convox/redis`:
 <span class="diff-u">  web:</span>
 <span class="diff-u">    build: .</span>
 <span class="diff-u">    command: ["node", "web.js"]</span>
+<span class="diff-u">    labels:</span>
+<span class="diff-u">      - convox.port.443.protocol=https</span>
 <span class="diff-u">    ports:</span>
-<span class="diff-u">     - 80:8000</span>
+<span class="diff-u">      - 80:8000</span>
+<span class="diff-u">      - 443:8000</span>
 <span class="diff-u">  worker:</span>
 <span class="diff-u">    build: .</span>
 <span class="diff-u">    command: ["node", "worker.js"]</span>
 <span class="diff-u">    environment:</span>
-<span class="diff-u">     - GITHUB_API_TOKEN</span>
+<span class="diff-u">      - GITHUB_API_TOKEN</span>
 <span class="diff-a">  redis:</span>
 <span class="diff-a">    image: convox/redis</span>
 </pre>

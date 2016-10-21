@@ -4,11 +4,14 @@ services:
     build: .
     command: ["node", "web.js"]
     environment:
-     - REDIS_URL
+      - REDIS_URL
+    labels:
+      - convox.port.443.protocol=https
     links:
-     - redis
+      - redis
     ports:
-     - 80:8000
+      - 80:8000
+      - 443:8000
   worker:
     build: .
     command: ["node", "worker.js"]
