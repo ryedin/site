@@ -6,9 +6,9 @@ html {
 }
 
 body {
+  color: #666;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  color: #666;
   font-weight: 400;
   margin-bottom: 267px;
 }
@@ -1246,23 +1246,22 @@ pre span {
  *
  */
 
-.container[role="blog"] {
-  background-color: #fff;
+.blog {
+  background: #f6f6f6;
+  font-family: Merriweather, serif;
+  font-size: 1em;
+  font-weight: 300;
 }
 
-@media (min-width: 1200px) {
-  .container[role="blog"] {
-    width: 800px;
-  }
-
-  .subnav-blog {
-    display: block;
-    width: 800px;
-  }
+.blog .content {
+  background: #fff;
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
 }
 
-.blog .subnav-content {
-  padding: 0;
+.blog .content.with-extras {
+  width: 1100px;
 }
 
 .blog-author {
@@ -1277,7 +1276,7 @@ pre span {
   margin-right: -10px;
 }
 
-.blog .blog-subtitle {
+.blog-subtitle {
   color: #666;
   font-style: italic;
   margin-top: -15px;
@@ -1293,46 +1292,26 @@ pre span {
   color: #bbb;
 }
 
-.posts {
-  background: #fff;
-  font-size: 1em;
-  font-weight: 300;
-  font-family: Merriweather, serif;
-  margin: 0;
-  padding: 0;
-}
-
-.posts a {
+.blog a {
   color: #337ab7;
 }
 
-.posts hr {
+.blog hr {
   border-top: 1px solid #eee;
   padding: 0;
   width: 100%;
 }
 
-.posts img.center {
+.blog img.center {
   margin: 0 auto;
   display: block;
 }
 
-.container.blog {
-  background-color: #f6f6f6;
-  padding: 0;
-  width: 100%;
-}
-
-.content img {
+.blog img {
   max-width: 100%;
 }
 
-.post {
-  padding: 50px 50px 40px;
-  margin: 0;
-}
-
-.posts p {
+.blog p {
   color: #444;
   font-size: 1.05em;
   font-weight: 300;
@@ -1341,33 +1320,35 @@ pre span {
   text-align: left;
 }
 
-.posts ul, .posts ol {
+.blog ul, .blog ol {
   color: #444;
   margin-bottom: 1.2em;
 }
 
-.posts li p {
+.blog li p {
   margin-top: 10px;
 }
 
-.posts h1 a {
+.blog h1 a {
   color: #000;
   font-weight: 700;
   text-decoration: none;
 }
 
-.posts table {
+.blog table {
   color: #444;
   margin-bottom: 1.2em;
   font-size: 0.9em;
   
 }
 
-.posts table tr {
+.blog table td {
+  padding-left: 10px;
 }
 
-.posts table td {
-  padding-left: 10px;
+.post {
+  padding: 50px 50px 40px;
+  margin: 0;
 }
 
 .post .highlighter-rouge {
@@ -1388,7 +1369,7 @@ pre span {
 }
 
 @media (max-width: 768px) {
-  .posts {
+  .blog {
     font-size: 0.95em;
   }
 
@@ -1419,6 +1400,22 @@ pre span {
   .blog h6 {
     font-size: 1em;
   }
+}
+
+/*
+ *
+ * Blog Extras
+ *
+ */
+
+.blog .extras {
+  font-size: 80%;
+  width: 300px;
+  padding: 50px 50px 50px 0;
+}
+
+.blog .extras h3:first-of-type {
+  margin-top: 0;
 }
 
 /*

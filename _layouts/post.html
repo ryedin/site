@@ -2,6 +2,25 @@
 layout: blog
 ---
 
-<section class="posts col-xs-12">
-  {% include post.html post=page %}
-</section>
+<main class="blog">
+  <section class="content with-extras">
+    {% include post.html post=page %}
+
+    <section class="extras">
+      <section class="what-is-convox">
+        <h3>What is Convox?</h3>
+        <p>Convox is an open-source framework for your cloud infrastructure.</p>
+      </section>
+
+      <section class="newsletter">
+        <h3>Keep up</h3>
+        <p>Convox is evolving quickly. <a href="http://convox.us10.list-manage.com/subscribe?u=55a0526a0c4fd5e0010c9bae3&id=69fa821fe6">Subscribe</a> to our newsletter to stay on top of the latest developments.</p>
+      </section>
+
+      <section class="console">
+        <h3>Dive in</h3>
+        <p>Ready to get started? <a href="https://console.convox.com/">Sign up</a> for a Convox account now.</p>
+      </section>
+    </section>
+  </section>
+</main>
