@@ -43,7 +43,7 @@ layout: blog
 
       <section class="console">
         <h3>Dive in</h3>
-        <p>Ready to get started? <a href="https://console.convox.com/">Sign up</a> for a Convox account now.</p>
+        <p>Ready to get started? <a href="https://console.convox.com/grid/signup">Sign up</a> for a Convox account now.</p>
       </section>
     </section>
   </section>
@@ -75,7 +75,7 @@ layout: blog
             });
             analytics.track("Subscribed", { email: email });
 
-            $("#mc_embed_signup").html("Thank you! Please check your inbox to confirm.")
+            $("#mc_embed_signup").html("<p>Thank you! Please check your inbox to confirm.</p>")
 
             analytics.page("subscribed");
           }
