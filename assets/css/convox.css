@@ -1273,7 +1273,8 @@ pre span {
 }
 
 @media screen and (max-width: 768px) {
-  .blog .content {
+  .blog .content,
+  .blog.index .content {
     width: 100%;
   }
 }
