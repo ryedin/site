@@ -65,14 +65,11 @@ layout: blog
           } else {
             var email = $form.find('[name=EMAIL]').val();
 
-            analytics.identify(email, {
-              email: email
-            });
-            analytics.track("Subscribed", { email: email });
+            analytics.identify({ email: email });
+            analytics.track("Subscription Created", { email: email });
+            analytics.page("/subscription_created");
 
             $("#mc_embed_signup").html('<p>Thank you! Please check your inbox to confirm.</p>')
-
-            analytics.page("subscribed");
           }
         }
     });
