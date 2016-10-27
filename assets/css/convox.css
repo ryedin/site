@@ -1258,12 +1258,22 @@ pre span {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  width: 1100px;
+}
+
+.blog.index .content {
   width: 800px;
+}
+
+@media screen and (max-width: 1100px) {
+  .blog .content {
+    flex-direction: column;
+    width: 800px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .blog .content {
-    flex-direction: column;
     width: 100%;
   }
 }
@@ -1446,16 +1456,17 @@ input#mc-embedded-subscribe {
   color: red;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
   .blog .extras {
+    border-top: 1px solid #eee;
     flex-direction: row;
     justify-content: space-between;
-    padding: 35px;
+    padding: 65px;
     width: 100%;
   }
 
   .blog .extras section {
-    margin-right: 20px;
+    margin-right: 40px;
   }
 
   .blog .extras section:last-of-type {
@@ -1463,7 +1474,7 @@ input#mc-embedded-subscribe {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 620px) {
   .blog .extras {
     flex-direction: column;
     padding: 35px;
