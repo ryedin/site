@@ -6,9 +6,9 @@ twitter: nzoschke
 
 The "container era" that recently began is explained by one core belief: 
 
-We -- the entire community of developers, operators and infrastructure providers -- desire "one true way" to package our application workloads.
+We--the entire community of developers, operators and infrastructure providers--desire "one true way" to package our application workloads.
 
-Packaging is as old as computing itself. The universal `tar` command, short for "tape archive", was introduced in the seventh edition of Unix in 1979 ([wikipedia](https://en.wikipedia.org/wiki/Tar_(computing))). Many more package formats have been introduced in the subsequent decades.
+Packaging is as old as computing itself. The universal `tar` command, short for "tape archive," was introduced in the seventh edition of Unix in 1979 ([wikipedia](https://en.wikipedia.org/wiki/Tar_(computing))). Many more package formats have been introduced in the subsequent decades.
 
 ![Dorothy Whitaker works in the National Oceanographic Data Center (NODC) magnetic tape library](/assets/img/NDOC_magnetic_tape_library.jpg)*[Dorothy Whitaker works in the National Oceanographic Data Center (NODC) magnetic tape library](https://en.wikipedia.org/wiki/Tape_library#/media/File:NDOC_magnetic_tape_library.jpg)*
 
@@ -31,6 +31,6 @@ Service providers will fight to build and store our Image data forever at low co
 
 The Continuous Integration practitioners will run automated tests against every new Image for developer feedback. The Continuous Delivery practitioners will automate rolling out every verified Image to production.
 
-DevOps teams will customize the Image pipeline to suit complex organizational and business needs. Chatbots, blue green deploys and metrics based automation will control what Images are running where.
+DevOps teams will customize the Image pipeline to suit complex organizational and business needs. Chatbots, blue-green deploys, and metrics-based automation will control what Images are running where.
 
 People, cloud services, and software tools will speak the same language: workflows around Images.
