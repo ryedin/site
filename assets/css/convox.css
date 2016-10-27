@@ -1256,12 +1256,16 @@ pre span {
 .blog .content {
   background: #fff;
   display: flex;
-  width: 800px;
+  flex-direction: row;
   margin: 0 auto;
+  width: 800px;
 }
 
-.blog .content.with-extras {
-  width: 1100px;
+@media screen and (max-width: 768px) {
+  .blog .content {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .blog-author {
@@ -1409,6 +1413,8 @@ pre span {
  */
 
 .blog .extras {
+  display: flex;
+  flex-direction: column;
   font-size: 80%;
   width: 300px;
   padding: 50px 50px 50px 0;
@@ -1438,6 +1444,35 @@ input#mc-embedded-subscribe {
 
 #mce-error-response {
   color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .blog .extras {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 35px;
+    width: 100%;
+  }
+
+  .blog .extras section {
+    margin-right: 20px;
+  }
+
+  .blog .extras section:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .blog .extras {
+    flex-direction: column;
+    padding: 35px;
+    width: 100%;
+  }
+
+  .blog .extras section {
+    margin: 0;
+  }
 }
 
 /*
