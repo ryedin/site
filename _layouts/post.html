@@ -59,7 +59,9 @@ layout: blog
         error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
         success     : function(data) {
           if (data.result != "success") {
-            // Something went wrong, do something to notify the user. maybe alert(data.msg);
+            // strip off beginning of '0 - This email address looks fake or invalid. Please enter a real email address.'
+            var msg = data.msg.replace(/^[0-9]+ - /, "")
+            $("#mce-error-response").html(msg).show()
           } else {
             var email = $form.find('[name=EMAIL]').val();
 
@@ -68,7 +70,7 @@ layout: blog
             });
             analytics.track("Subscribed", { email: email });
 
-            $("#mc_embed_signup").html("<p>Thank you! Please check your inbox to confirm.</p>")
+            $("#mc_embed_signup").html('<p>Thank you! Please check your inbox to confirm.</p>')
 
             analytics.page("subscribed");
           }

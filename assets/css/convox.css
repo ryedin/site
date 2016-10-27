@@ -1436,6 +1436,10 @@ input#mc-embedded-subscribe {
   width: 100%;
 }
 
+#mce-error-response {
+  color: red;
+}
+
 /*
  *
  * Docs
