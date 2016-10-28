@@ -1685,6 +1685,12 @@ input#mc-embedded-subscribe {
   color: aqua;
 }
 
+.docs #doc img {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  max-width: 100%;
+}
+
 @media (max-width: 768px) {
   .docs #doc {
     padding: 30px;
