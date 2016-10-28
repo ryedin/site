@@ -260,6 +260,7 @@ header .intro-text .name-desc {
   padding-bottom: 26px;
   height: 297px;
 }
+
 .services-inner .box p, #features .box p {
   color: #777;
   padding: 0 40px;
@@ -297,6 +298,10 @@ header .intro-text .name-desc {
 #features .box img {
   height: 80px;
   margin-bottom: 18px;
+}
+
+header#automation_intro {
+  text-align: center;
 }
 
 #cta .help {
