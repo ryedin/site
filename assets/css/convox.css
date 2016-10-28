@@ -33,6 +33,7 @@ p {
 }
 
 a,a:hover,a:focus,a:active,a.active {
+  cursor: pointer;
   outline: 0;
   color: #18bc9c;
 }
@@ -287,7 +288,8 @@ header .intro-text .name-desc {
 }
 
 #features .box {
-  height: 350px;
+	padding-top: 8px;
+	height: 350px;
 }
 
 #features .box p {
@@ -299,6 +301,20 @@ header .intro-text .name-desc {
   height: 80px;
   margin-bottom: 18px;
 }
+
+@media (max-width: 620px) {
+	#features .box {
+		height: 300px;
+	}
+
+	#features .box p {
+		height: initial;
+	}
+	#features .box img {
+		display: none;
+	}
+}
+
 
 header#automation_intro {
   text-align: center;
@@ -784,7 +800,7 @@ h3 {
 
 .navbar-default {
   border-bottom: 1px solid #2b73a7;
-  background-color: #222;
+  background-color: #000;
 }
 
 .navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:focus,.navbar-default .navbar-nav > .active > a:hover {
@@ -800,6 +816,7 @@ h3 {
   padding: 5px 8px;
   font-weight: normal;
   margin-top: 10px;
+  margin-left: 15px;
 }
 
 .navbar-default .navbar-toggle {
@@ -1282,10 +1299,6 @@ pre span {
   flex-direction: row;
   margin: 0 auto;
   width: 1100px;
-}
-
-.blog.index .content {
-  width: 800px;
 }
 
 @media screen and (max-width: 1100px) {
