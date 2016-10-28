@@ -251,13 +251,18 @@ header .intro-text .name-desc {
   text-align: center;
 }
 
-.services-inner .box {
+.services-inner .box, #features .box {
   text-align: center;
   border: 1px solid #dddddd;
   border-radius: 4px;
   background-color: #fff;
   margin: 0 0 35px 0;
   padding-bottom: 26px;
+  height: 297px;
+}
+.services-inner .box p, #features .box p {
+  color: #777;
+  padding: 0 40px;
 }
 
 .services-inner .box.first {
@@ -268,7 +273,7 @@ header .intro-text .name-desc {
   margin-right: 0;
 }
 
-.services-inner .box h4 {
+.services-inner .box h4, #features .box h4 {
   font-size: 20px;
   font-weight: 600;
   color: #1777bb;
@@ -276,7 +281,26 @@ header .intro-text .name-desc {
 }
 
 .services-inner .box img {
+  height: 61px;
   margin: 0 0 20px 0;
+}
+
+#features .box {
+  height: 350px;
+}
+
+#features .box p {
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+#features .box img {
+  height: 80px;
+  margin-bottom: 18px;
+}
+
+#cta .help {
+  text-align: center;
 }
 
 h3 {
@@ -716,7 +740,6 @@ h3 {
 
 @media (min-width: 768px) {
   .navbar-fixed-top {
-    padding: 12px 0;
     -webkit-transition: padding .3s;
     -moz-transition: padding .3s;
     transition: padding .3s;
@@ -728,7 +751,7 @@ h3 {
     -moz-transition: all .3s;
     transition: all .3s;
     height: 30px;
-    padding: 3px 15px 0 15px;
+    padding: 11px 15px 0 15px;
   }
 }
 
@@ -744,8 +767,6 @@ h3 {
 
 .navbar .navbar-nav li a {
   outline: 0;
-  color: #ffffff;
-  padding: 8px 22px;
   font-weight: 400;
 }
 
@@ -758,7 +779,7 @@ h3 {
 
 .navbar-default {
   border-bottom: 1px solid #2b73a7;
-  background-color: #000;
+  background-color: #222;
 }
 
 .navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:focus,.navbar-default .navbar-nav > .active > a:hover {
@@ -771,12 +792,9 @@ h3 {
   background-color: #1777bb;
   color: #fff;
   border-radius: 3px;
-  font-weight: 700;
-  padding: 7px 20px;
-}
-
-#menu .navbar-nav li:last-child {
-  margin-left: 15px;
+  padding: 5px 8px;
+  font-weight: normal;
+  margin-top: 10px;
 }
 
 .navbar-default .navbar-toggle {
@@ -1090,8 +1108,8 @@ pre span {
 }
 
 @media all and (min-width: 768px) and (max-width: 992px) {
-  .navbar .navbar-nav li a {
-    padding: 4px 14px;
+  .navbar .navbar-nav > li > a {
+    padding: 15px 12px;
   }
 
   .competitors_main .competitors_l {
