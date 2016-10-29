@@ -35,7 +35,7 @@ When changes are pushed to the specified repository branch, Workflow tasks will 
 
 Next, define the tasks to be executed once the trigger fires. Tasks are actions that can be executed for any app in your organization. You can currently choose from the following task types:
 
-- **Build**: take a branch, update the app's images accordingly, and capture them as a Build.
+- **Build**: create a Build from the specified branch.
 - **Promote**: take a Build and promote its corresponding Release.
 - **Run**: execute a command against a particular Service of a Build.
 - **Copy**: export a Build from one App and import it to another, even across Racks.
@@ -94,4 +94,4 @@ With this setup, each PR in your repo would be tested automatically upon submiss
 6. After completing QA on the staging app, promote the release in production, or...
    Define a final task to promote the Build automatically in production
 
-With this setup, merging changes to your master branch and pushing them to your Github or Gitlab remote would trigger a new Build in your staging Rack. If that Build were to pass your test suite, its changes would go live (i.e. its Release would be promoted) for that app in your staging Rack. That same Build would be copied to your production Rack in anticipation of wanting to promote its Release as well. You could then manually promote the Release corresponding to that build at any time to complete the deployment to production, allowing your team to complete QA on the staging app first.
+With this setup, merging changes to your master branch and pushing them to your GitHub or GitLab remote would trigger a new Build in your staging Rack. If that Build were to pass your test suite, its changes would go live (i.e. its Release would be promoted) for that app in your staging Rack. That same Build would be copied to your production Rack in anticipation of wanting to promote its Release as well. You could then manually promote the Release corresponding to that build at any time to complete the deployment to production, allowing your team to complete QA on the staging app first.
