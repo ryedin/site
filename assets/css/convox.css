@@ -1579,8 +1579,18 @@ input#mc-embedded-subscribe {
   margin-top: 0;
 }
 
-.docs #doc p,.docs #doc pre,.docs #doc ul, .docs #doc table {
+.docs #doc p,
+.docs #doc pre,
+.docs #doc ul,
+.docs #doc table {
   margin-bottom: 1.4em;
+}
+
+.docs #doc ol ol,
+.docs #doc ol ul,
+.docs #doc ul ol,
+.docs #doc ul ul {
+  margin-bottom: 0;
 }
 
 .docs #doc a {
@@ -1673,6 +1683,12 @@ input#mc-embedded-subscribe {
 
 .docs #doc pre.terminal .service {
   color: aqua;
+}
+
+.docs #doc img {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
