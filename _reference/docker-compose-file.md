@@ -33,6 +33,7 @@ Select a key for more information and example usage.
         <a href="#context">context</a>: .
         <a href="#dockerfile">dockerfile</a>: Dockerfile.alternate
       <a href="#command">command</a>: bin/web
+      <a href="#cpu-shares">cpu_shares</a>: 73
       <a href="#entrypoint">entrypoint</a>: /bin/entrypoint
       <a href="#environment">environment</a>:
         - RACK_ENV=development
@@ -43,6 +44,7 @@ Select a key for more information and example usage.
         - convox.port.443.proxy=true
       <a href="#links">links</a>:
         - database
+      <a href="#memory-limit">mem_limit</a>: 1024
       <a href="#ports">ports</a>:
         - 80:4000
         - 443:4001
@@ -104,6 +106,31 @@ The `context` directive is required if you are using the Docker Compose v2 file 
     build:
       context: .
       dockerfile: Dockerfile.alternate
+
+### CPU Shares
+
+CPU shares (relative weight).
+
+Corresponds to the `-c` or `--cpu-shares` flag of the `docker run` command.
+
+This can be specified for the initial deployment in `docker-compose.yml`:
+
+    cpu_shares: 512
+
+Or by running `convox scale` (see also [Scaling](https://convox.com/docs/scaling/)):
+
+    convox scale <process> --cpu=512
+
+The default Convox value is `0`. When set to `0`, Docker will ignore the value and use the default of `1024` instead.
+
+You can view the current CPU shares allocation with either of the following commands:
+
+- `convox api get /apps/<app name>/formation`
+- `convox scale <process name>`
+
+Note: `cpu_shares` is not taken into account when running locally via `convox start`.
+
+See also [CPU share constraint](https://docs.docker.com/engine/reference/run/#/cpu-share-constraint "docs.docker.com") in the Docker documentation.
 
 ### Dockerfile
 
@@ -185,6 +212,29 @@ Convox currently supports a single use (via `convox start`) of the `networks` co
       outside:
         external:
           name: foo-bar
+
+### Memory Limit
+
+Amount of memory, in MB, available to the specified process type.
+
+This can be specified for the initial deployment in `docker-compose.yml`:
+
+    mem_limit: 256
+
+Or by running `convox scale` (see also [Scaling](https://convox.com/docs/scaling/)):
+
+    convox scale <process> --memory=256
+
+Minimum is 4.
+
+Note: Unlike the behavior of the `-m` flag on `docker run`, `number` must be an integer (text labels for units, e.g. `b`, `k`, `m`, or `g`, are not supported).
+
+Note: `mem_limit` is not taken into account when running locally via `convox start`.
+
+You can view the current memory limit with either of the following commands:
+
+- `convox api get /apps/<app name>/formation`
+- `convox scale <process name>`
 
 ### Ports
 
