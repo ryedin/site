@@ -3,13 +3,13 @@ title: Introduction
 permalink: /guide/
 ---
 
-Welcome to The Convox Guide. This walks you through every step for developing, deploying and automating an app on the Convox platform.
+Welcome to the Convox Guide, a set of step-by-step instructions for developing, deploying and automating an app on the Convox platform.
 
 This guide is written for app developers who are ready to learn modern practices that make an app simple to develop on a laptop and effortless to manage in the cloud.
 
-This guide begins with the [Convox Command Line Interface](https://dl.equinox.io/convox/convox/stable). Install the CLI on your laptop to verify and develop your app.
+We begin with the [Convox Command Line Interface](https://dl.equinox.io/convox/convox/stable), which you should install on your laptop to verify and develop your app.
 
-Later chapters of the guide reference the [Convox Web Console](https://console.convox.com/grid/signup). [Sign up](https://console.convox.com/grid/signup) to automate your apps.
+Later chapters of the guide reference [Convox Console](https://console.convox.com/grid/signup). [Sign up](https://console.convox.com/grid/signup) to automate your apps.
 
 # Preface
 
@@ -32,7 +32,7 @@ The Convox Platform follows a philosophy of "Integration Over Invention" which l
 * [Docker](https://docker.com)
 * [Amazon Web Services](https://aws.amazon.com/)
 
-Convox does impose well-designed constraints on your application to give you a reliable development and deployment environment.
+Convox imposes carefully considered constraints on your application to give you a reliable development and deployment environment.
 
 This will require some changes around how you write and configure your apps. You have to follow constraints and handle a bit more complexity in the application layer.
 
