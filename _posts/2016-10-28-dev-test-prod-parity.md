@@ -26,15 +26,14 @@ A very common setup is [Homebrew](http://brew.sh/) for development on a Mac lapt
 
 ![Laptop, CI Service, and Production Service Incompatibility Matrix](/assets/img/dev-test-prod-matrix.png){: .center } *Laptop, CI Service, and Production Service Incompatibility Matrix*
 
-It’s not impossible to set it all up but there are pitfalls.
+It’s not impossible to set it all up, but there are pitfalls.
 
-You need to maintain good documentation and scripts in the app codebase to help maintain a Homebrew environment.
+You need to:
 
-You need to wrangle a circle.yml file, and SSH in to failed test runners to figure out what packages to install to get the test environment running.
-
-You need to understand what the Heroku [Buildpacks](https://devcenter.heroku.com/articles/buildpacks) and Runtime add to build and run your app in production.
-
-You probably need to add hooks to your code base to turn functions off or on in development, testing and production.
+- Maintain good documentation and scripts in the app codebase to help maintain a Homebrew environment
+- Wrangle a [circle.yml](https://circleci.com/docs/configuration/) file, and SSH in to failed test runners to figure out what packages to install to get the test environment running
+- Understand what the Heroku [Buildpacks](https://devcenter.heroku.com/articles/buildpacks) and Runtime add to build and run your app in production
+- Add hooks to your code base to turn functions off or on in development, testing and production
 
 Once it works, it’s smooth sailing. Until you want to upgrade Ruby, or add PhantomJS for web acceptance testing, or Homebrew packages change, or...
 
@@ -67,7 +66,7 @@ First, you need to describe each process in your Procfile as a "Service" in `doc
 
 Next, you need write a `Dockerfile` that can build and run your app. You need to pick a base operating system, add system dependencies, then add a few more commands to install the language packages your app uses.
 
-I recommend using Ubuntu 16.04. Ubuntu 16.04 makes it easy to get the latest Node.JS, Ruby, Python PHP system packages. It is a "Long Term Support" distribution that will receive security updates through 2021. This is another huge advantage of Docker: we are no longer constrained by the limited CircleCI and Heroku operating system choices.
+I recommend using Ubuntu 16.04. Ubuntu 16.04 makes it easy to get the latest Node.JS, Ruby, Python, and PHP system packages. It is a "Long Term Support" distribution that will receive security updates through 2021. This is another huge advantage of Docker: we are no longer constrained by the limited CircleCI and Heroku operating system choices.
 
     # start from a base Image
     FROM ubuntu:16.04
