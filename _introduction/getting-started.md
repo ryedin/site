@@ -29,16 +29,16 @@ We provide a `convox` command line tool that offers:
 
 along with numerous other utilities that make building, configuring, scaling and securing your apps easy.
 
-You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) or install it via the command line:
+You can install it via the command line:
 
 #### OS X
 
-    $ curl -Ls https://install.convox.com/osx.zip > /tmp/convox.zip
+    $ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
     
 #### Linux
 
-    $ curl -Ls https://install.convox.com/linux.zip > /tmp/convox.zip
+    $ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
 
 ## Run an Application Locally
