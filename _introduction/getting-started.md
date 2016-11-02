@@ -33,12 +33,12 @@ You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) o
 
 #### OS X
 
-    $ curl -Ls https://install.convox.com/osx.zip > /tmp/convox.zip
+    $ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
     
 #### Linux
 
-    $ curl -Ls https://install.convox.com/linux.zip > /tmp/convox.zip
+    $ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
 
 ## Run an Application Locally

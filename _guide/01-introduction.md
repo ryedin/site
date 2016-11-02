@@ -7,7 +7,21 @@ Welcome to the Convox Guide, a set of step-by-step instructions for developing, 
 
 This guide is written for app developers who are ready to learn modern practices that make an app simple to develop on a laptop and effortless to manage in the cloud.
 
-We begin with the [Convox Command Line Interface](https://dl.equinox.io/convox/convox/stable), which you should install on your laptop to verify and develop your app.
+We begin with the Convox Command Line Interface, which you should install on your laptop to verify and develop your app.
+
+## OS X
+
+```
+$ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
+$ unzip /tmp/convox.zip -d /usr/local/bin
+```
+
+## Linux
+
+```
+$ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
+$ unzip /tmp/convox.zip -d /usr/local/bin
+```
 
 Later chapters of the guide reference [Convox Console](https://console.convox.com/grid/signup). [Sign up](https://console.convox.com/grid/signup) to automate your apps.
 
