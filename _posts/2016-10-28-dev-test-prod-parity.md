@@ -43,7 +43,7 @@ Containerization technology, made accessible by Docker, offers a better way.
 
 First, install the fantastic [Docker for Mac](https://docs.docker.com/engine/installation/mac/) to get a Docker environment running on your laptop. This app is practically magic, and offers a fast Linux environment on your Mac laptop.
 
-Next, put in some effort to "Dockerize" your app. The goal is to boot your app with a single command: `docker-compose up`. This involves writing a `Dockerfile` and a `docker-compose.yml` file.
+Next, put in some effort to "Dockerize" your app. The goal is to boot your app with a single command: `docker-compose up` or `convox start`. This involves writing a `Dockerfile` and a `docker-compose.yml` file.
 
 Apps that already follow the Twelve Factor Methodology aren’t too hard to get into shape.
 
