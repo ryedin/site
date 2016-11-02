@@ -29,7 +29,7 @@ We provide a `convox` command line tool that offers:
 
 along with numerous other utilities that make building, configuring, scaling and securing your apps easy.
 
-You can [download the CLI package](https://dl.equinox.io/convox/convox/stable) or install it via the command line:
+You can install it via the command line:
 
 #### OS X
 
