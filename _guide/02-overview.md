@@ -25,11 +25,25 @@ This will save you endless frustrations in production.
 
 ## Setup
 
-You can't work on the Build phase until your computer is set up with the pre-requisites.
+You can't work on the Build phase until your computer is set up with the tools.
 
-First [Download and install the Convox CLI](https://dl.equinox.io/convox/convox/stable).
+If you haven't already, install the Convox Command Line Interface:
 
-Next run `convox doctor` to run the first checklist:
+## OS X
+
+```
+$ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
+$ unzip /tmp/convox.zip -d /usr/local/bin
+```
+
+## Linux
+
+```
+$ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
+$ unzip /tmp/convox.zip -d /usr/local/bin
+```
+
+Now run `convox doctor` to run the first checklist:
 
 ```
 $ convox doctor
