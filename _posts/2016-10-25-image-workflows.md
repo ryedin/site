@@ -10,7 +10,7 @@ We--the entire community of developers, operators and infrastructure providers--
 
 Packaging is as old as computing itself. The universal `tar` command, short for "tape archive," was introduced in the seventh edition of Unix in 1979 ([wikipedia](https://en.wikipedia.org/wiki/Tar_(computing))). Many more package formats have been introduced in the subsequent decades.
 
-![Dorothy Whitaker works in the National Oceanographic Data Center (NODC) magnetic tape library](/assets/img/NDOC_magnetic_tape_library.jpg)*[Dorothy Whitaker works in the National Oceanographic Data Center (NODC) magnetic tape library](https://en.wikipedia.org/wiki/Tape_library#/media/File:NDOC_magnetic_tape_library.jpg)*
+![Dorothy Whitaker works in the National Oceanographic Data Center (NODC) magnetic tape library](/assets/img/NDOC_magnetic_tape_library.jpg){: .center }*[Dorothy Whitaker works in the National Oceanographic Data Center (NODC) magnetic tape library](https://en.wikipedia.org/wiki/Tape_library#/media/File:NDOC_magnetic_tape_library.jpg)*
 
 <!--more-->
 
