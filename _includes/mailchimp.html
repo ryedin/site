@@ -40,7 +40,9 @@
 
             analytics.identify({ email: email });
             analytics.track("Subscription Created", { email: email });
-            analytics.page("/subscription_created");
+            analytics.page("Subscription Created", {
+              path: '/subscription_created'
+            });
 
             $("#mc_embed_signup").html('<p>Thank you! Please check your inbox to confirm.</p>')
           }
