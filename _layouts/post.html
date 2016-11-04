@@ -4,7 +4,11 @@ layout: blog
 
 <main class="blog">
   <section class="content with-extras">
-    {% include post.html post=page %}
-    {% include blog-extras.html %}
+    <div class="col-md-9 col-sm-12">
+      {% include post.html post=page %}
+    </div>
+    <div class="col-md-3">
+      {% include blog-extras.html %}
+    </div>
   </section>
 </main>

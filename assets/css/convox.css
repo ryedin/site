@@ -1101,18 +1101,10 @@ pre span {
 }
 
 @media all and (max-width: 620px) {
-  body {
-    margin-bottom: 247px;
-  }
-
   header .btnshadow {
     float: none;
     display: block;
     margin-bottom: 8px;
-  }
-
-  footer {
-    height: 247px;
   }
 
   footer .short-desc-r {
@@ -1123,6 +1115,14 @@ pre span {
   .footer-middle .row.last {
     padding-bottom: 5px;
   }
+}
+
+.with-extras .extras section {
+  margin-bottom: 20px;
+}
+
+.with-extras .extras section p{
+  margin-bottom: 0px;
 }
 
 @media all and (min-width: 992px) and (max-width: 1024px) {
@@ -1463,11 +1463,29 @@ pre span {
  */
 
 .blog .extras {
-  display: flex;
-  flex-direction: column;
   font-size: 80%;
-  width: 300px;
-  padding: 50px 50px 50px 0;
+  padding-top: 42px;
+}
+
+.blog .extras.affix {
+  top: 30px;
+}
+
+@media (min-width: 1200px) {
+  .blog .extras.affix {
+    width: 245px;
+  }
+}
+
+@media (min-width: 992px) {
+  .blog .extras.affix {
+    width: 245px;
+  }
+}
+@media (max-width: 991px) {
+  .blog .extras.affix {
+    position: relative;
+  }
 }
 
 .blog .extras h3:first-of-type {
