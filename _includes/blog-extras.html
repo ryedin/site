@@ -10,8 +10,56 @@
     {% include mailchimp.html %}
   </section>
 
+  <section class="slack-join">
+    <h3>Join us on Slack</h3>
+    <p>
+      We have an active and friendly community
+      <script async defer src="https://invite.convox.com/slackin.js"></script>
+    </p>
+  </section>
+
+  <section>
+    <h3>Social</h3>
+    <p>
+      Share the love<br />
+      <a class="twitter-share-button" href="https://twitter.com/intent/tweet"></a>
+    </p>
+  </section>
+
   <section class="console">
     <h3>Dive in</h3>
     <p>Ready to get started? <a href="https://console.convox.com/grid/signup">Sign up</a> for a Convox account now.</p>
   </section>
 </section>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
+
+<script>
+  //sticky sidebar
+$(function(){
+  console.log("foo")
+  $('.blog .extras').affix({
+    offset: {
+      top: 135,
+      bottom: function () {
+        return (this.bottom = $('.footer-bottom').outerHeight(true))
+      }
+    }
+  })
+});
+</script>
