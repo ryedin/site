@@ -4,11 +4,11 @@ permalink: /guide/links/
 phase: run
 ---
 
-A Link is an explicit connection between a Service and another Service or Resource.
+A _link_ is an explicit connection between a service and another service or Convox resource.
 
-Adding a Link enables network discovery by injecting Environment varibles with the hostname of the Service or Resource that is linked to.
+Adding a link enables network discovery by injecting environment variables with the hostname of the service or resource that is linked to.
 
-A Link is defined in the `links:` and `environment:` sections of `docker-compose.yml`. The `links:` section defines the relationship. In a simple Node.js app both the `web` and `worker` Services link to the `redis` Resource. Now the development or production environment will inject the hostname and port of the `redis` Resource into the `web` and `worker` Environments as `REDIS_URL`.
+A link is defined in the `links:` and `environment:` sections of `docker-compose.yml`. The `links:` section defines the relationship. In a simple Node.js app both the `web` and `worker` services link to the `redis` resource. Now in the development or production environment, Convox will inject the hostname and port of the `redis` resource into the `web` and `worker` environments as `REDIS_URL`.
 
 <pre class="file yaml" title="docker-compose.yml">
 <span class="diff-u">version: '2'</span>
@@ -39,12 +39,18 @@ A Link is defined in the `links:` and `environment:` sections of `docker-compose
 <span class="diff-a">      - 6379</span>
 </pre>
 
-Now try to run your app. You can see that the `web` and `worker` Services are started with new options so they can easily discover the `redis` Resource through `REDIS_URL`. You can make a request to the web Balancer on port 80. It all works!
+Run `convox doctor` to validate your link definitions:
 
 <pre class="terminal">
-<span class="command">curl localhost</span>
-Hello World!
+<span class="command">convox doctor</span>
+
+### Run: Links
+[<span class="pass">✓</span>] Resource redis exposes ports
+[<span class="pass">✓</span>] Service web environment includes REDIS_URL
+[<span class="pass">✓</span>] Service worker environment includes REDIS_URL
 </pre>
+
+Now try to run your app:
 
 <pre class="terminal">
 <span class="command">convox start</span>
@@ -59,17 +65,14 @@ worker │ [ 'queue',
 worker │   '{"host":"localhost","user-agent":"curl/7.43.0","accept":"*/*"}' ]
 </pre>
 
-Run `convox doctor` to validate your Link definitions:
+You can see that the `web` and `worker` services are started with new options so they can easily discover the `redis` resource through `REDIS_URL`. You can make a request to the web Balancer on port 80:
 
 <pre class="terminal">
-<span class="command">convox doctor</span>
-
-### Run: Links
-[<span class="pass">✓</span>] Resource redis exposes ports
-[<span class="pass">✓</span>] Service web environment includes REDIS_URL
-[<span class="pass">✓</span>] Service worker environment includes REDIS_URL
+<span class="command">curl localhost</span>
+Hello World!
 </pre>
 
-Now that you've added a Link between your app Services and Resources, you have completed the second phase and can run your app as a set of Services running on Images.
+
+Now that you've added a link between your app services and resources, you have completed the second phase and can run your app as a set of services running on images.
 
 You now have the foundation you need to [develop your app](/guide/develop/)!

@@ -3,10 +3,10 @@ title: "Deploy"
 permalink: /guide/deploy/
 ---
 
-You just configured your app so that you can Develop it locally. The next goal is to get it ready for customers. This requires:
+You just configured your app so that you can develop it locally. The next goal is to get it ready for production. This requires:
 
 * [Provisioning a Rack](/docs/installing-a-rack/)
-* Provisioning a production-ready [Postgres](/docs/postgresql/), [MySQL](/docs/mysql/) or [Redis](/docs/redis/) Database.
+* Provisioning a production-ready [Postgres](/docs/postgresql/), [MySQL](/docs/mysql/) or [Redis](/docs/redis/) database
 * [Releasing your app](/docs/releases/)
 * [Scaling your app Services](/docs/scaling/)
 * [Adding a custom domain](/docs/custom-domains/)

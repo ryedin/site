@@ -4,11 +4,11 @@ permalink: /guide/environment/
 phase: build
 ---
 
-Environment is a set of configuration values for Services.
+The _environment_ is a set of configuration values for services.
 
-Extracting configuration out of your app code and into the Environment enables you to use the same Image in development, staging and production.
+Extracting configuration out of your app code and into the environment enables you to use the same image in development, staging and production.
 
-Environment is defined with the `environment:` section in `docker-compose.yml`:
+The environment is defined with the `environment:` section in `docker-compose.yml`:
 
 <pre class="file diff" title="docker-compose.yml">
 <span class="diff-u">version: '2'</span>
@@ -23,7 +23,7 @@ Environment is defined with the `environment:` section in `docker-compose.yml`:
 <span class="diff-a">     - GITHUB_API_TOKEN</span>
 </pre>
 
-Because environment carries sensitive secrets, the environment declaration is a whitelist. Here the `web` Service will not have access to any `GITHUB_API_TOKEN` config, but `worker` will.
+Because the environment holds sensitive secrets, the environment declaration is a whitelist. Here the `web` service will not have access to the `GITHUB_API_TOKEN` variable, but `worker` will.
 
 Now you can declare config specific to development in a local `.env` file:
 
@@ -42,11 +42,11 @@ These are sensitive secrets and should be ignored by Docker and Git:
 <span class="diff-a">.env</span>
 </pre>
 
-The sample Node.js app can reference this configuration via `process.env.GITHUB_API_TOKEN` in your code. This enables you to use a personal GitHub token on your laptop and a company GitHub token in production, without ever having to rebuild the Image.
+The sample Node.js app can reference this configuration via `process.env.GITHUB_API_TOKEN` in your code. This enables you to use a personal GitHub token on your development machine and a company GitHub token in production, without ever having to rebuild the image.
 
-Add the list of environment variables your app uses to `docker-compose.yml`. Create `.env` with development values, and make sure to never include this file in the git repository or Image.
+Add the list of environment variables your app uses to `docker-compose.yml`. Create your `.env` file with default development values, and make sure to never include this file in the git repository or image.
 
-Run `convox doctor` to validate the Environment:
+Run `convox doctor` to validate the environment:
 
 <pre class="terminal">
 <span class="command">convox doctor</span>
@@ -59,6 +59,6 @@ Run `convox doctor` to validate the Environment:
 [<span class="pass">✓</span>] Service <span class="service">worker</span> environment found in .env   
 </pre>
 
-Now that you have extracted configuration into the Environment, you have completed the first phase and built a portable Image.
+Now that you've extracted configuration into the environment, you have completed the first phase and built a portable image.
 
 You now have the foundation you need to [run your app](/guide/run/)!

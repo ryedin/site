@@ -3,7 +3,7 @@ title: "Develop"
 permalink: /guide/develop/
 ---
 
-You just ran your app as a set of Services and made a successful network request. The next goals are to:
+You just ran your app as a set of services and made a successful network request. The next goals are to:
 
 * Make changes to your app code
 * See your app reflect those changes

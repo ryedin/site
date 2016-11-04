@@ -3,29 +3,27 @@ title: "Overview"
 permalink: /guide/overview/
 ---
 
-Software delivery happens in five distinct phases:
+Software delivery happens in five distinct phases, which can be thought of as a pipeline:
 
-- **Build** portable Images
-- **Run** an app as a set of Services running on Images
-- **Develop** and verify changes to Images interactively
-- **Deploy** new Images safely to production
-- **Automate** additional verifications of Images before production
+- **Build** portable images
+- **Run** an app as a set of Services running on images
+- **Develop** and verify changes to images interactively
+- **Deploy** new images safely to production
+- **Automate** additional verifications of images before production
 
-This can be thought of as a pipeline. If the Build phase isn't reliable and reproducible, we can't expect development or deployment to work every time. But once we master building great Images, it's not hard to design a clear path to send them through testing to production.
+If the Build phase isn't reliable and reproducible, we can't expect development or deployment to work every time. But once we master building great images, it's not hard to design a clear path to send them through testing to production.
 
-In turn, each phase can be broken down further into a series of steps. We might, for instance, come up with a mental checklist of things to do or not to do, like keeping secrets out of the Images we build.
+In turn, each phase can be broken down further into a series of steps. We might, for instance, come up with a mental checklist of things to do or not to do, like keeping secrets out of the images we build.
 
-When armed with a computer, we can generally automate these things. We want a computer to stop us from checking in secrets as early and as often as possible, rather than having to remember to do this ourselves.
+We can generally automate these things, like enforcing prevention of checking in secrets, as early and as often as possible, rather than relying on humans to remember to do it.
 
 For that reason, this guide walks you through every key step of every phase. The companion tools do their best to automatically verify that your app adheres to these key concepts.
 
-You will hit road blocks where your app is not doing the right thing. But you will hit these early on in the process when you have time and energy, and you will be pointed towards likely solutions.
-
-This will save you endless frustrations in production.
+You will hit roadblocks where your app is deviating from these best practices--but you will hit these early on in the process and will be pointed towards likely solutions, which will save you endless frustrations in production.
 
 ## Setup
 
-You can't work on the Build phase until your computer is set up with the tools.
+You can't work on the build phase until your computer is set up with the tools.
 
 If you haven't already, install the Convox Command Line Interface:
 
