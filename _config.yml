@@ -94,3 +94,9 @@ defaults:
     values:
       layout: guide
 
+gems:
+  - algoliasearch-jekyll
+
+algolia:
+  application_id: '2VBKDVKUPC'
+  index_name:     'convox'
