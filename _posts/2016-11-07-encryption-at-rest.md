@@ -1,15 +1,15 @@
 ---
-title: Encryption At Rest
+title: Encryption at Rest
 subtitle: Table Stakes for Compliance
 author: Noah Zoschke
 twitter: nzoschke
 ---
 
-HIPAA and PCI both have strict requirements around "encrypting data at rest".
+HIPAA and PCI both have strict requirements around "encrypting data at rest."
 
 AWS [Key Management Service](https://aws.amazon.com/kms/) (KMS), a managed service that offers API access to a Hardware Security Module (HSM), makes encrypting data at rest so easy and cost effective that all systems, not just those with strict compliance needs, should consider using it.
 
-At Convox, we use encryption at rest with KMS for app environment variables, which can contain sensitive secrets like database credentials in a DATABASE_URL variable.
+At Convox, we use encryption at rest with KMS for app environment variables, which can contain sensitive secrets like database credentials in a `DATABASE_URL` variable.
 
 A KMS key costs $1/month and offers priceless security.
 
@@ -29,11 +29,11 @@ HIPAA and PCI compliance have strict requirements around this because the stakes
 
 With KMS, all these challenges are addressed and made easy.
 
-KMS is backed by a [Hardware Security Module](https://en.wikipedia.org/wiki/Hardware_security_module) (HSM), a specialized computer for generating and storing keys. An HSM is designed to be tamper-proof both in the hardware and software layer. Somewhere deep in the AWS datacenters is a secure enclave managing master keys for Netflix, banks and our systems.
+KMS is backed by a [Hardware Security Module](https://en.wikipedia.org/wiki/Hardware_security_module) (HSM), a specialized computer for generating and storing keys. An HSM is designed to be tamper-proof both in the hardware and software layer. Somewhere deep in the AWS datacenters is a secure enclave managing master keys for Netflix, banks, and our systems at Convox.
 
-Then everything follows as API access to the HSM.
+From there everything follows as API access to the HSM.
 
-The simplest API call is [Encrypt](http://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html). With this you POST data to the KMS service. KMS will the access the HSM to get a secret key, apply [industry-best AES 256 encryption algorithm](http://docs.aws.amazon.com/kms/latest/developerguide/crypto-intro.html),  and return a cyphertext. What is truly special is that the key never leaves the KMS service, so there is no chance that we accidentally leak it.
+The simplest API call is [Encrypt](http://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html). With this you POST data to the KMS service. KMS will then access the HSM to get a secret key, apply the [industry-best AES 256 encryption algorithm](http://docs.aws.amazon.com/kms/latest/developerguide/crypto-intro.html),  and return a cyphertext. What is truly special is that the key never leaves the KMS service, so there is no chance that we accidentally leak it.
 
 An API call to [Decrypt](http://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html) reverses the process, taking a cyphertext and decoding it inside the KMS service, again not exposing the key.
 
@@ -43,7 +43,7 @@ The one catch is that we are putting all our trust into the black box service th
 
 [KMS is integrated with the CloudTrail auditing service](http://docs.aws.amazon.com/kms/latest/developerguide/logging-using-cloudtrail.html). Every Encrypt and Decrypt API call is recorded for near real-time monitoring, and periodic reporting.
 
-## KMS In Action
+## KMS in Action
 
 Let’s see how KMS works. For this demo you’ll need an AWS account, with CloudTrail enabled. We will:
 
@@ -55,7 +55,7 @@ Let’s see how KMS works. For this demo you’ll need an AWS account, with Clou
 
 ### Create KMS master key
 
-First we create a master key. Somewhere deep inside Amazon a random, secure key is generated for us. We'll **never** see the value of this key, we will use the key id and the KMS APIs.
+First we create a master key. Somewhere deep inside Amazon a random, secure key is generated for us. We'll **never** see the value of this key--we will only use its key ID and the KMS APIs.
 
 ```bash
 $ aws kms list-keys
@@ -90,7 +90,7 @@ $ aws kms list-keys
 
 ### Encrypt data
 
-Now we can use the key ud to encrypt data. Note: this only works for a data less than 4KB. For larger sizes of data, a [Data Key](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys) must be used.
+Now we can use the key ID to encrypt data. Note: this only works with less than 4KB of data. To encrypt more than 4KB of data, a [Data Key](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys) must be used.
 
 ```bash
 $ aws kms encrypt --key-id 32eda7ac-25d1-4700-b988-c11cc93746d8 --plaintext secret
@@ -102,7 +102,7 @@ $ aws kms encrypt --key-id 32eda7ac-25d1-4700-b988-c11cc93746d8 --plaintext secr
 
 ### Store in S3 encrypted at rest
 
-We can save the cyphertext the encrpyt call returns to disk then upload to S3. This data is **encrypted at rest**. Mission accomplished.
+We can save the cyphertext returned from the encrypt call to disk then upload it to S3. This data is **encrypted at rest**. Mission accomplished.
 
 ```bash
 $ aws kms encrypt --key-id 32eda7ac-25d1-4700-b988-c11cc93746d8 --plaintext secret --query CiphertextBlob --output text | base64 --decode > /tmp/encrypted
@@ -129,12 +129,11 @@ $ rm /tmp/encrypted
 
 ### Fetch from S3 and decrypt
 
-We can download the cypertext again. It's contents are jibberish until we decrypt it. Note that we don't specify the key id. The data has the key id encoded into it.
+We can download the cyphertext again. Its contents are jibberish until we decrypt it. Note that we don't specify the key ID. The data has the key ID encoded into it.
 
 ```bash
 $ aws s3 cp s3://secrets-1o9j53zqcpce9/encrypted /tmp
 download: s3://secrets-1o9j53zqcpce9/encrypted to /tmp/encrypted
-
 
 $ aws kms decrypt --ciphertext-blob fileb:///tmp/encrypted  --output text --query Plaintext | base64 --decode
 secret
@@ -142,7 +141,7 @@ secret
 
 ### Review audit log
 
-Finally we can audit the key usage. CloudTrail events are saved to files in an S3 bucket. When we search through these we see all the actions performed against the key id. We see 3 `aws` CLI calls, as well as a web browser action.
+Finally we can audit the key usage. CloudTrail events are saved to files in an S3 bucket. When we search through these we see all the actions performed against the key ID. We see 3 `aws` CLI calls, as well as a web browser action.
 
 ```bash
 $ aws s3 ls s3://cloudtrail-1o9j53zqcpce9/AWSLogs/132866487567/CloudTrail/us-east-1/2016/11/05/
@@ -196,4 +195,4 @@ KMS and CloudTrail make this a solved problem that is easy to add to any system.
 
 We use KMS and encryption at rest for Convox environment variables because it’s easy. It's almost impossible to build a more secure system at any cost, but KMS costs a mere $1/month.
 
-Why aren’t you using KMS or a HSM for your important secrets?
+Why aren’t you using KMS or an HSM for your important secrets?
