@@ -65,7 +65,7 @@ worker │ [ 'queue',
 worker │   '{"host":"localhost","user-agent":"curl/7.43.0","accept":"*/*"}' ]
 </pre>
 
-You can see that the `web` and `worker` services are started with new options so they can easily discover the `redis` resource through `REDIS_URL`. You can make a request to the web Balancer on port 80:
+You can see that the `web` and `worker` services are started with new options so they can easily discover the `redis` resource through `REDIS_URL`. You can make a request to the web balancer on port 80:
 
 <pre class="terminal">
 <span class="command">curl localhost</span>

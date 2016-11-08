@@ -8,7 +8,7 @@ A database, such as PostgreSQL, MySQL or Redis, manages persistent data for your
 
 Storing persistent data is a common difficulty when migrating to a container-based workflow. Convox makes this simple with integrations of managed databases like [RDS Postgres](https://aws.amazon.com/rds/postgresql/) or [ElastiCache Redis](https://aws.amazon.com/elasticache/), provisioned as a Convox [Resource](/guide/resources/).
 
-When [developing](/guide/develop/) locally, however, you should run a database as one of the Services of your app. This strategy enables you to run the entire app with a single `convox start` command and not depend on additional configuration on your development machine.
+When [developing](/guide/develop/) locally, however, you should run a database as one of the services of your app. This strategy enables you to run the entire app with a single `convox start` command and not depend on additional configuration on your development machine.
 
 Because the database runs on software not maintained by your team, you should use a pre-built image. Convox offers [convox/postgres](https://hub.docker.com/r/convox/postgres/), [convox/mysql](https://hub.docker.com/r/convox/mysql/), and [convox/redis](https://hub.docker.com/r/convox/postgres/) on the Docker Hub as convenient base images, which you can add in the `services:` section of `docker-compose.yml`.
 
@@ -53,7 +53,7 @@ module.exports = redis.createClient({
 });
 </pre>
 
-Then you can change the web and worker Services to not crash immediately if Redis is unavailable:
+Then you can change the web and worker services to not crash immediately if Redis is unavailable:
 
 <pre class="file diff" title="web.js">
 <span class="diff-u">var http = require("http");</span>

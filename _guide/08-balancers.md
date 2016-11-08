@@ -42,6 +42,13 @@ An _internet_ balancer is defined by a pair of external and internal ports, e.g.
 
 An _internal_ balancer is defined by a single port, e.g. `8000`. The balancer will not listen to the internet, but will listen on port `8000` on the internal network and forward requests to app containers that are bound to port `8000`.
 
+<div class="block-callout block-show-callout type-info" markdown="1">
+For details on these two types of Elastic Load Balancers, see the AWS ELB documentation:
+
+* [Internet-Facing Classic Load Balancers](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-internet-facing-load-balancers.html)
+* [Internal Classic Load Balancers](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-internal-load-balancers.html)
+</div>
+
 The Convox balancer looks at your services' published ports and publishes those same ports itself instead, then automatically passes requests to those containers just as you would expect it to based on the contents of your `docker-compose.yml`. In this way, you're sure to get the same behavior when you run `convox deploy`, where a real ELB performs the same function.
 
 Run `convox doctor` to validate your balancer definitions:

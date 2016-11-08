@@ -8,7 +8,7 @@ You just configured your app so that you can develop it locally. The next goal i
 * [Provisioning a Rack](/docs/installing-a-rack/)
 * Provisioning a production-ready [Postgres](/docs/postgresql/), [MySQL](/docs/mysql/) or [Redis](/docs/redis/) database
 * [Releasing your app](/docs/releases/)
-* [Scaling your app Services](/docs/scaling/)
+* [Scaling your app services](/docs/scaling/)
 * [Adding a custom domain](/docs/custom-domains/)
 * [Configuring a certificate](/docs/ssl/)
 
