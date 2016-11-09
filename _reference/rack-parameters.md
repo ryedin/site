@@ -36,9 +36,9 @@ Autoscale rack instances. See our [Scaling doc](https://convox.com/docs/scaling#
 
 ## BuildMemory
 
-Amount of memory allocated to builds.
+Amount of memory (in MB) allocated to builds.
 
-| Default value  | 256 |
+| Default value  | 1024 |
 
 ## InstanceBootCommand
 
