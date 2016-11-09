@@ -5,11 +5,7 @@ permalink: /guide/
 
 Welcome to the Convox Guide, a set of best practices for developing, deploying and automating an app on the Convox platform.
 
-If you plan to follow along, you'll want to <a href="https://console.convox.com/grid/signup" target="_blank">sign up for Convox</a> and install the Convox Command Line Interface. The `convox` tool is all you need for your development environment.
-
-<div class="block-callout block-show-callout type-info" markdown="1">
-If you're looking for a quicker overview of how to get started, or instructions for installing the Convox CLI, see [Getting Started](https://convox.com/docs/getting-started/) in the Convox documentation.
-</div>
+If you plan to follow along, you'll want to <a href="https://console.convox.com/grid/signup" target="_blank">sign up for Convox</a> and [install the Convox Command Line Interface](/docs/installation).
 
 # Our mission
 
@@ -67,6 +63,10 @@ $ convox doctor
 [✓] Docker run hello-world works
 [✓] Convox CLI up to date
 ```
+
+<div class="alert alert-warning">
+  <strong>Note: </strong>`doctor`, as run at this point in the guide, will eventually find errors. For now, let's just look at the output of the first section, `Setup`.
+</div>
 
 If you don't have Docker installed, `convox doctor` will point you to the [Installing Docker Guide](https://docs.docker.com/engine/installation/).
 

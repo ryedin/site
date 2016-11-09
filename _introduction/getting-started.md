@@ -29,17 +29,7 @@ We provide a `convox` command line tool that offers:
 
 along with numerous other utilities that make building, configuring, scaling and securing your apps easy.
 
-You can install it via the command line:
-
-#### OS X
-
-    $ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
-    $ unzip /tmp/convox.zip -d /usr/local/bin
-    
-#### Linux
-
-    $ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
-    $ unzip /tmp/convox.zip -d /usr/local/bin
+See [Installing the Convox CLI](/docs/installation/) for details.
 
 ## Run an Application Locally
 
