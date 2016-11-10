@@ -64,7 +64,3 @@ You can uninstall a rack by running `convox uninstall`:
 ```
 $ convox uninstall <stack-name> <region> [credentials.csv]
 ```
-
-<!--
-TODO: Add 'convox uninstall' output.
--->
