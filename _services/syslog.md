@@ -44,9 +44,10 @@ To delete the syslog forwarder, use the `convox services delete` command:
 
 ## VPC Access
 
-There are use cases for the URL used by the syslog service to resolve to an internal process within
-a Rack. This can be accomplished by simply creating the service while running a Rack with [private networking](/docs/private-networking/).
+In most cases you will be shipping logs via the syslog service to an external drain like Papertrail or Logentries, for example. However, in some cases you might want to ship the logs back to a syslog drain running in your Rack. For this to work, you'll need to first switch your rack to [private networking mode](/docs/private-networking/) before creating the syslog service.
 
-If a syslog service exist and a Rack's networking mode is changed to private, the existing syslog would have to be recreated *if* internal access is needed. Otherwise it can stay as with just external internet access.
+Any pre-existing syslog services already shipping logs to external drains will continue to work if you switch your Rack to private mode.
 
-Due to a known limitation with AWS Lambda, some planning is involved with syslog services and disabling a Rack's private network. Before the switch to public networking can be made, the existing syslog service (if it was created in private mode) has to be deleted. After being deleted, a Lambda function could leave an elastic network interface (ENI) with attached private subnets behind. We are in contact with AWS to address this limitation, but in the mean time the ENI must be manually deleted from the AWS VPC console. The ENI ID varies, but it's description in the AWS Console will begin with `AWS Lambda VPC ENI`. Once the ENI is manually detached and deleted, it is safe to disable private networking.
+WARNING: If you have any syslog services created while your Rack was in private mode and you want to switch your Rack back to public mode, you will need to do some manual cleanup. This is an unfortunate, known limitation of AWS Lambda.
+
+Before switching your rack to public networking mode, log into the AWS VPC console. You will need to manually remove an Elastic Network Interface (ENI). The ENI ID varies, but its description in the AWS onsole will begin with `AWS Lambda VPC ENI`. Once the ENI is manually detached and deleted, it is safe to disable private networking. If you need assistance with this process, please open a support ticket at [https://console.convox.com](https://console.convox.com).
