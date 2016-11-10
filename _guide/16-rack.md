@@ -56,3 +56,11 @@ You can update your Rack by running `convox rack update`.
 ### `convox doctor`
 
 We haven't implemented any deploy checks in `doctor` yet, so there's nothing to see here for now.
+
+## How do I uninstall a Rack?
+
+You can uninstall a rack by running `convox uninstall`:
+
+```
+$ convox uninstall <stack-name> <region> [credentials.csv]
+```
