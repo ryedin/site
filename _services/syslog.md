@@ -48,6 +48,8 @@ In most cases you will be shipping logs via the syslog service to an external dr
 
 Any pre-existing syslog services already shipping logs to external drains will continue to work if you switch your Rack to private mode.
 
-WARNING: If you have any syslog services created while your Rack was in private mode and you want to switch your Rack back to public mode, you will need to do some manual cleanup. This is an unfortunate, known limitation of AWS Lambda.
+WARNING: If you want to switch your Rack back to public networking mode after creating syslog services in private mode, you will need to do some manual cleanup. This is an unfortunate, known limitation of AWS Lambda.
 
-Before switching your rack to public networking mode, log into the AWS VPC console. You will need to manually remove an Elastic Network Interface (ENI). The ENI ID varies, but its description in the AWS onsole will begin with `AWS Lambda VPC ENI`. Once the ENI is manually detached and deleted, it is safe to disable private networking. If you need assistance with this process, please open a support ticket at [https://console.convox.com](https://console.convox.com).
+First, delete the syslog service(s) created in private mode: `convox services delete syslog-1234`
+
+Next, log into the AWS VPC console. You will need to manually remove an Elastic Network Interface (ENI). The ENI ID varies, but its description in the AWS onsole will begin with `AWS Lambda VPC ENI`. Once the ENI is manually detached and deleted, it is safe to disable private networking. If you need assistance with this process, please open a support ticket at [https://console.convox.com](https://console.convox.com).
