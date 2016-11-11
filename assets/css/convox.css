@@ -80,6 +80,7 @@ header .intro-text .name {
   font-weight: 300;
   color: #ea9b23;
   line-height: 1;
+  margin-bottom: 30px;
 }
 
 header .intro-text .name-desc p {
@@ -93,6 +94,7 @@ header ul.actions {
   list-style: none;
   display: block;
   padding-left: 0;
+  margin-bottom: 30px;
 }
 
 header ul.actions li {
@@ -110,7 +112,6 @@ header ul.actions li a:hover {
 }
 
 .short-desc {
-  margin-bottom: 24px;
   display: block;
   font-family: 'Lato', Arial, sans-serif;
   font-weight: 700;
