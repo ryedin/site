@@ -50,7 +50,7 @@ You will hit roadblocks where your app is deviating from these best practices--b
 
 # Get ready
 
-If you haven't already, install the Convox Command Line Interface (see [Getting Started](https://convox.com/docs/getting-started/)).
+If you haven't already, install the Convox Command Line Interface (see [Installation](https://convox.com/docs/installation/)).
 
 Now run `convox doctor` to run the first checklist:
 
