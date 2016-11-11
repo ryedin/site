@@ -61,25 +61,6 @@ See our [VPC doc](/docs/vpc-configurations#installing-into-an-existing-vpc) for 
 
 ## How do I uninstall a Rack?
 
-You can uninstall a Rack by running `convox uninstall`:
+We recommend uninstalling a Rack via the [web console](https://console.convox.com/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
 
-```
-$ convox uninstall <stack-name> <region> [credentials.csv]
-```
-
-<div class="block-callout block-show-callout type-info" markdown="1">
-`stack-name` will correspond to the name of the Rack as shown in `convox rack`:
-
-```
-$ convox rack --rack personal/example
-Name     example
-Status   running
-Version  20161102160040
-Region   us-east-1
-Count    3
-Type     t2.small
-
-```
-</div>
-
-For more details on uninstall a Rack, see [Uninstalling Convox](https://convox.com/docs/uninstalling-convox/).
+For more advanced options and details on uninstalling a Rack, see [Uninstalling Convox](https://convox.com/docs/uninstalling-convox/).
