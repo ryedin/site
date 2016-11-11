@@ -4,12 +4,12 @@ author: Noah Zoschke
 twitter: nzoschke
 ---
 
-There is a wave of Docker retrospectives out there right now. A couple negative:
+There is a wave of Docker retrospectives out there right now. A couple are negative:
 
 - [Docker in Production: A History of Failure](https://thehftguy.wordpress.com/2016/11/01/docker-in-production-an-history-of-failure/)
 - [Docker in Production: A retort](http://patrobinson.github.io/2016/11/05/docker-in-production/)
 
-And one positive:
+And one is positive:
 
 - [Running Docker in Production](http://racknole.com/blog/running-docker-in-production-for-6-months/)
 
@@ -27,9 +27,9 @@ Building a custom deployment system with any tech (Docker, Kubernetes, Ansible, 
 
 6 months later, when things aren't totally stable, you get very angry about all the time wasted and blame the tools.
 
-The cost of DIY over the life of a business is. You need at a bare minimum one full-time DevOps Engineer to build and maintain things. But if your business systems are growing, you need a whole team to keep things humming 24/7.
+The cost of DIY over the life of a business is massive. You need at a bare minimum one full-time DevOps Engineer to build and maintain things. But if your business systems are growing, you'll need a whole team to keep things humming 24/7.
 
-Instead, pick an existing platform and teach your developers to embrace the constraints.
+Instead, pick an existing platform and teach your Developers to embrace the constraints and your DevOps Engineers to use the platform support as force multiplier.
 
 The ["Just Use Heroku" Rant](https://circleci.com/blog/its-the-future/) is still standing strong.
 
@@ -51,7 +51,7 @@ Configuring an AWS VPC is far simpler than mastering the Docker networking stack
 
 ## A Recipe For Success
 
-If you do need to run Docker in production, this recipe is working well for us at Convox:
+If you do need to run Docker in production yourself, this recipe is working well for us at Convox:
 
 * ECS Optimized AMI for the OS
     * Amazon Linux
