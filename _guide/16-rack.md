@@ -12,13 +12,13 @@ You can deploy one or more applications to a Rack.
 
 A Rack is secure cloud environment. It is a collection of a VPC, VM and Container cloud services that are configured to run your app images and services.
 
-Convox installs the resources composing a rack into your AWS account, then helps you manage it via the `convox` CLI and web console.
+Convox installs the resources composing a Rack into your AWS account, then helps you manage it via the `convox` CLI and web console.
 
 You don't have to worry about the underlying infrastructure, but if you do look [under the hood](https://convox.com/docs/rack/), you'll find a simple open-source system that packages up the best practices of cloud infrastructure management.
 
 Since all Rack components are installed in your own AWS account, you can always add extras or tweak things if needed.
 
-## Installing a rack
+## Installing a Rack
 
 Though there are other ways, we recommend installing Racks from the [web console](https://console.convox.com/).
 
@@ -93,7 +93,7 @@ personal/example   installing
 personal/dev       running
 ```
 
-For more installation options, including how to install a Rack via CLI, see [installing a Rack](https://convox.com/docs/installing-a-rack/) in the Convox docs.
+For more advanced options, including how to install a Rack via CLI, see [installing a Rack](https://convox.com/docs/installing-a-rack/) in the Convox docs.
 
 ## How do I start using a Rack?
 
@@ -106,7 +106,7 @@ $ convox switch personal/example
 Switched to personal/example
 ```
 
-Run `convox rack` to view more information about the rack:
+Run `convox rack` to view more information about the Rack:
 
 ```
 $ convox rack

@@ -31,7 +31,7 @@ Run `convox install --help` to see the available command line options.
 Note: Running `convox install` automatically logs you into the newly created Rack.
 </div>
 
-To install a rack via the CLI, run `convox install` with your desired options:
+To install a Rack via the CLI, run `convox install` with your desired options:
 
 <pre class="terminal">
 <span class="command">convox install</span>
@@ -61,14 +61,14 @@ See our [VPC doc](/docs/vpc-configurations#installing-into-an-existing-vpc) for 
 
 ## How do I uninstall a Rack?
 
-You can uninstall a rack by running `convox uninstall`:
+You can uninstall a Rack by running `convox uninstall`:
 
 ```
 $ convox uninstall <stack-name> <region> [credentials.csv]
 ```
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-`stack-name` will correspond to the name of the rack as shown in `convox rack`:
+`stack-name` will correspond to the name of the Rack as shown in `convox rack`:
 
 ```
 $ convox rack --rack personal/example
@@ -82,4 +82,4 @@ Type     t2.small
 ```
 </div>
 
-For more details on uninstall a rack, see [Uninstalling Convox](https://convox.com/docs/uninstalling-convox/).
+For more details on uninstall a Rack, see [Uninstalling Convox](https://convox.com/docs/uninstalling-convox/).
