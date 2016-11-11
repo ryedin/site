@@ -54,6 +54,7 @@ header {
   background: url("../images/pattern.png") repeat top left;
   text-align: left;
   color: #fff;
+  text-align: center;
   /*background: #045394;*/
 }
 
@@ -68,7 +69,7 @@ header img {
 }
 
 header .intro-text {
-  margin: 45px 0 30px;
+  margin: 20px 0 30px;
 }
 
 header .intro-text .name {
@@ -81,11 +82,31 @@ header .intro-text .name {
   line-height: 1;
 }
 
-header .intro-text .name-desc {
-  font-size: 55px;
+header .intro-text .name-desc p {
+  font-size: 30px;
   font-weight: 400;
   color: #fff;
   line-height: 1.25;
+}
+
+header ul.actions {
+  list-style: none;
+  display: block;
+  padding-left: 0;
+}
+
+header ul.actions li {
+  display: inline;
+  padding: 0 1em;
+}
+
+header ul.actions li a {
+  color: #FFF;
+}
+
+header ul.actions li a:hover {
+  text-decoration: none;
+  color: #FFF;
 }
 
 .short-desc {
