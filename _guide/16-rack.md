@@ -128,7 +128,9 @@ $ convox rack update
 Updating to 20161102160040... ERROR: no system updates are to be performed
 ```
 
-## What commands do I need to run to use a Rack with the example app?
+## Rack in action with the example app
+
+Now that we've installed a rack, let's get ready to see it in action.
 
 ### `convox doctor`
 
