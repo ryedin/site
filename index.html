@@ -35,91 +35,85 @@ title: Convox
   </div>
 </header>
 
-<!-- life better Grid Section -->
-<section class="services">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2>Convox solves the boring problems so you can focus on your business.</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="services-inner">
-        <div class="col-sm-4 col-xs-12 first">
-          <div class="box">
-            <h4>Compliance</h4>
-            <img src="/assets/images/compliance.png" alt="Compliance">
-            <ul>
-              <li>Installs into your certified account</li>
-              <li>Uses only services that are HIPAA eligible</li>
-              <li>Follows best practices for security</li>
-            </ul>
-            <p>Read the <a href="/docs/hipaa-compliance/">HIPAA docs</a></p>
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-          <div class="box">
-            <h4>Customization</h4>
-            <img src="/assets/images/customization.png" alt="Data Science">
-            <ul>
-              <li>Runs containers from 64 MB to 60+ GB</li>
-              <li>Offers storage from 10 GB to 10+ TB</li>
-              <li>Serves web apps and private data services alike</li>
-            </ul>
-            <p>Read the <a href="https://labs.opendoor.com/moving-opendoors-data-science-stack-from-heroku-to-convox">Opendoor migration</a> and <a href="/cases/opendoor">case study</a></p>
-          </div>
-        </div>
-        <div class="col-sm-4 col-xs-12 last">
-          <div class="box">
-            <h4>Scalability</h4>
-            <img src="/assets/images/high-data.png" alt="High Data Throughput">
-            <ul>
-              <li>Balances traffic across 1 to 100+ containers</li>
-              <li>Deploys new code with zero-downtime</li>
-              <li>Keeps all your logs and metrics in one place</li>
-            </ul>
-            <p>Read the <a href="/cases/interstate">Interstate Analytics case study</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- competitors section -->
 <section class="compet">
   <div class="container">
-    <div class="col-lg-12 text-center">
-      <h2>What makes Convox different?</h2>
-    </div>
-    <div class="center-row">
-      <div class="col-xs-12">
-        <h4 class="text-center">The cloud is hard to navigate.</h4>
-        <p>PaaS makes it easy to deploy your first apps, but lacks the customization, privacy and cost controls you need to keep your business there forever.</p>
-        <p>IaaS is too flexible, requiring a large up-front investment in research and development to build a solution for your team.</p>
-        <p>Container Orchestration is hot technology, but introduces serious complexity challenges.</p>
-      </div>
-  
-      <div class="col-xs-12">
-        <h4 class="text-center">Convox offers the best way forward.</h4> 
-
-        <p>Convox gives your Developers single-command deploys for your apps, and simple ways to tune them for any scale.</p> 
-        <p>Convox gives your DevOps engineers a battle-tested private architecture that is easy to set up, operate and modify.</p>
-        <p>Convox uses container technology as a means for fast deploys and cost savings, not as an technological end.</p>
+    <div class="col-xs-12 col-md-6">
+      <div class="cmd-box">
+        <pre>
+<span><span class="ps1">$</span> convox doctor</span>
+Name       myapp
+Status     running
+Release    REXIQURVKXE
+Processes  admin web
+Hostname   myapp.us-east-1.elb.amazonaws.com
+Ports      web:80 web:443 admin:9322
+        </pre>
       </div>
     </div>
-  </div>
-
-  <div class="container" id="correct">  
-    <div class="col-xs-12 text-center">
-      <h2>Convox turns the best cloud services into a cohesive open-source platform.</h2>
-      <p>The result is a simple and powerful platform with the best security, reliability, performance and cost you can find anywhere.</p>
-      <p>Read about the benefits of <a href="/blog/integration-over-invention/">Integration over Invention</a> and <a href="/blog/services-over-software/">Services over Software</a> to understand this approach.
-      <p>Learn <a href="/cases/compare">how Convox compares</a> to other platforms.</p>
+    <div class="col-xs-12 col-md-6">
+      <h3 class="code">convox doctor</h3>
+      <ul>
+        <li>Run on any existing application code</li>
+        <li>Receive simple instructions to prepare your code for containerization</li>
+        <li>Easily integrate into a CI workflow</li>
+      </ul>
     </div>
   </div>
 </section>
+
+<section class="services">
+  <div class="container">
+    <div class="col-xs-12 col-md-6">
+      <h3 class="code">convox start</h3>
+      <ul>
+        <li>Boot an application for local development</li>
+        <li>Use your own editor on your local filesystem</li>
+        <li>Runs exactly like it will in production</li>
+        <li>New developers clone the app and run one command to get started</li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="cmd-box">
+        <pre>
+<span><span class="ps1">$</span> convox start</span>
+Name       myapp
+Status     running
+Release    REXIQURVKXE
+Processes  admin web
+Hostname   myapp.us-east-1.elb.amazonaws.com
+Ports      web:80 web:443 admin:9322
+        </pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compet">
+  <div class="container">
+    <div class="col-xs-12 col-md-6">
+      <div class="cmd-box">
+        <pre>
+<span><span class="ps1">$</span> convox deploy</span>
+Name       myapp
+Status     running
+Release    REXIQURVKXE
+Processes  admin web
+Hostname   myapp.us-east-1.elb.amazonaws.com
+Ports      web:80 web:443 admin:9322
+        </pre>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <h3 class="code">convox deploy</h3>
+      <ul>
+        <li>Deploy app code to cloud infrastructure</li>
+        <li>Rolling zero-downtime deploys with automatic rollbacks</li>
+        <li>Stage builds and run migrations or tests with a simple CLI or API</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
 <!-- infrastructure Section -->
 <section class="infra">
