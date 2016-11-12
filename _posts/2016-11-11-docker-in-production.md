@@ -23,7 +23,7 @@ How can this be?
 
 ## Don’t Do-It-Yourself
 
-Building a custom deployment system with any tech (Docker, Kubernetes, Ansible, Packer, etc.) is a challenge. All the small problems and subtle decisions add up to one big burden on you. 
+Building a custom deployment system with any tech (Docker, Kubernetes, Ansible, Packer, etc.) is a challenge. All the small problems and subtle decisions add up to one big burden on you.
 
 6 months later, when things aren't totally stable, you get very angry about all the time wasted and blame the tools.
 
@@ -71,8 +71,10 @@ If you do need to run Docker in production yourself, this recipe is working well
 
 ## Conclusion
 
-If you are starting a new business you should not take on building a deployment system as part of your numerous challenges. 
+If you are starting a new business you should not take on building a deployment system as part of your numerous challenges.
 
 Use an expertly-built and peer-reviewed platform like Heroku, Elastic Beanstalk or Convox. Docker (and containers in general) play a big part of these platforms, but is a means to an end.
 
-
+<blockquote markdown="1">
+  Discuss this on [Hacker News](https://news.ycombinator.com/item?id=12932189).
+</blockquote>
