@@ -1324,7 +1324,7 @@ pre span {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  width: 1100px;
+  width: 1140px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -2141,4 +2141,8 @@ input#mc-embedded-subscribe {
 .guide #toc li.develop,
 .guide #toc li.deploy {
   margin-left: 10px;
+}
+
+.container.automation {
+	padding: 0;
 }
