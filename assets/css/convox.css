@@ -35,7 +35,7 @@ p {
 a,a:hover,a:focus,a:active,a.active {
   cursor: pointer;
   outline: 0;
-  color: #18bc9c;
+  color: rgb(95,157,222);
 }
 
 code.highlighter-rouge {
@@ -51,11 +51,9 @@ h1,h2,h3,h4,h5,h6, {
 }
 
 header {
-  background: url("../images/pattern.png") repeat top left;
   text-align: left;
   color: #fff;
-  text-align: center;
-  /*background: #045394;*/
+	background: #045394;
 }
 
 header .container {
@@ -136,25 +134,25 @@ header ul.actions li a:hover {
   outline: none;
   text-transform: uppercase;
   position: relative;
-  width: 180px;
+  width: 220px;
   color: #FFF;
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  padding: 11px 15px;
+  padding: 11px 12px;
   border-radius: 4px;
   margin-right: 15px;
 }
 
 .green_button {
-  border: solid 1px #1aa6ab;
-  background: #1aa6ab;
+	border: rgb(59,122,187);
+	background: rgb(55,117,182);
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   transition: all 0.1s;
-  -webkit-box-shadow: 0px 5px 0px #00797d;
-  -moz-box-shadow: 0px 5px 0px #00797d;
-  box-shadow: 0px 5px 0px #00797d;
+  -webkit-box-shadow: 0px 5px 0px rgb(19,64,109);
+  -moz-box-shadow: 0px 5px 0px rgb(19,64,109);
+  box-shadow: 0px 5px 0px rgb(19,64,109);
 }
 
 .green_button:active,.green_button:focus,.green_button:hover {
@@ -163,11 +161,11 @@ header ul.actions li a:hover {
 }
 
 .green_button:active,.green_button:active:hover {
-  background: #189ba0;
+  background: rgb(95,157,222);
 }
 
 .green_button:hover {
-  background: #1cb5ba;
+  background: rgb(95,157,222);
 }
 
 .orange_button {
@@ -176,9 +174,9 @@ header ul.actions li a:hover {
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   transition: all 0.1s;
-  -webkit-box-shadow: 0px 5px 0px #a46300;
-  -moz-box-shadow: 0px 5px 0px #a46300;
-  box-shadow: 0px 5px 0px #a46300;
+  -webkit-box-shadow: 0px 5px 0px #7d4f08;
+  -moz-box-shadow: 0px 5px 0px #7d4f08;
+  box-shadow: 0px 5px 0px #7d4f08;
 }
 
 .orange_button:active,.orange_button:focus,.orange_button:hover {
@@ -192,6 +190,10 @@ header ul.actions li a:hover {
 
 .orange_button:hover {
   background: #efae4e;
+}
+
+.wide_button {
+	width: 260px;
 }
 
 @media (max-width: 479px) {
@@ -217,7 +219,7 @@ header ul.actions li a:hover {
 }
 
 .sign-up {
-  position: relative;
+	margin-left: 20px;
 }
 
 .open-api {
@@ -1414,7 +1416,7 @@ pre span {
   color: #444;
   margin-bottom: 1.2em;
   font-size: 0.9em;
-  
+
 }
 
 .blog table td {
