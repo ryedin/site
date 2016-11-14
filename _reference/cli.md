@@ -125,9 +125,11 @@ When you want to manage multiple racks in multiple terminals you should use `CON
 
 When you want to pin an app to a specific Rack you should use `./convox/rack` which can only be overridden by an explicit `--rack` flag.
 
-## Bash Autocomplete and PS1 Helpers
+## Shell Autocomplete Support
 
 The `convox` CLI offers bash autocompletion and command prompt utilities.
+
+### OSX 
 
 To set this up on OS X with Homebrew, save the convox autocomplete helper in the `bash_completion.d` directory, then add an autocomplete initializer and `PS1` variable to your `~/.bash_profile`:
 
@@ -141,16 +143,37 @@ To set this up on OS X with Homebrew, save the convox autocomplete helper in the
     __convox_switch() { [ -e ~/.convox/rack ] && convox switch || echo unknown; }
     export PS1="\h:\W \u (\$(__convox_switch))\$(__git_ps1)$ "
 
+### Debian-based Linux distributions
 
-Now open a new tab and try `convox` and `convox builds` followed by the TAB key:
+As root, save [this bash_autocomplete snippet](https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete) in `/etc/bash_completion.d/convox`:
+
+    $ curl https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete | sudo tee /etc/bash_completion.d/convox
+
+Now open a new tab and type `convox` and `convox builds` followed by the TAB key:
  
-    Study:rails noah (unknown) (master)$ convox switch personal/staging
-    Study:rails noah (personal/staging) (master)$ 
+    $ convox <TAB>
+    api         certs       exec        install     proxy       registries  services    uninstall
+    apps        deploy      h           instances   ps          releases    ssl         update
+    build       doctor      help        login       rack        run         start       
+    builds      env         init        logs        racks       scale       switch      
 
-    Study:rails noah (personal/staging) (master)$ convox <TAB>
-    api         builds      env         help        instances   proxy       racks       run         ssl         uninstall   
-    apps        certs       exec        init        login       ps          registries  scale       start       update      
-    build       deploy      h           install     logs        rack        releases    services    switch    
+    $ convox builds <TAB>
+    create  delete  export  h       help    import  info    logs    
 
-    Study:rails noah (personal/staging) (master)$ convox builds <TAB>
-    copy    create  delete  h       help    info 
+## Active Rack Command Prompt Helper
+
+In your `.profile`, define `__convox_switch` as a function:
+
+    __convox_switch() {
+      [ -e ~/.convox/rack ] && convox switch || echo unknown;
+    }
+
+Then include `$(__convox_switch)` in your prompt (`PS1`):
+
+    export PS1="\h:\W \u (\$(__convox_switch))\$(__git_ps1)$ "
+
+or
+
+    PS1+="[$(__convox_switch)] "
+    export PS1
+
