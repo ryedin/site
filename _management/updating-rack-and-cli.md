@@ -27,13 +27,13 @@ $ convox doctor
 
 ## Updating a Rack
 
-There are several ways to update a Rack.
+There are two ways to update a Rack.
 
 ### Via the console
 
 After logging into [the Convox web console](https://console.convox.com/), you can see your list of Racks under the `Racks` tab:
 
-![List of Racks]({{ site.url }}/assets/images/docs/what-is-a-rack/list-of-racks.png)
+![List of Racks](/assets/images/docs/what-is-a-rack/list-of-racks.png)
 
 If any of the Racks in the list are outdated, you can click the `Update` button to update to the next version. If the Rack is very outdated, you may need to update more than once.
 
