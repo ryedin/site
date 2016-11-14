@@ -29,4 +29,4 @@ The commands are:
 <span class="command">convox ssl update web:443 cert-1234567890</span>
 </pre>
 
-Stay tuned while we improve the deploy guide to explain each step.
+Let's start by [installing a Rack](/guide/rack/).

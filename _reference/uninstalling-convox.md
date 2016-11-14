@@ -10,7 +10,30 @@ In order to uninstall a Rack you will first need to create temporary AWS credent
 Uninstall will take approximately 15 minutes to complete.
 </div>
 
+## Uninstalling from the console
+
+We recommend uninstalling a Rack via the [web console](https://console.convox.com/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
+
 ## Uninstalling from the CLI
+
+Alternatively, you can uninstall a Rack by running `convox uninstall <stack-name> <region> [credentials.csv]`.
+
+<div class="block-callout block-show-callout type-info" markdown="1">
+`stack-name` will correspond to the name of the Rack as shown in `convox rack`:
+
+```
+$ convox rack --rack personal/example
+Name     example
+Status   running
+Version  20161102160040
+Region   us-east-1
+Count    3
+Type     t2.small
+
+```
+</div>
+
+Here's what it looks like in action:
 
     $ convox rack
     Name     staging
