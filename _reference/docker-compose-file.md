@@ -123,12 +123,15 @@ Or by running `convox scale` (see also [Scaling](https://convox.com/docs/scaling
 
 The default Convox value is `0`. When set to `0`, Docker will ignore the value and use the default of `1024` instead.
 
+Note:
+
+- With `convox deploy`: `cpu_shares` is read and taken into account from `docker-compose.yml` only during the initial deployment. If you need to change it after deploying for the first time, use [`convox scale`](https://convox.com/docs/scaling/).
+- With `convox start`: When running locally via `convox start`, `cpu_shares` is always read from `docker-compose.yml`.
+
 You can view the current CPU shares allocation with either of the following commands:
 
 - `convox api get /apps/<app name>/formation`
 - `convox scale <process name>`
-
-Note: `cpu_shares` is not taken into account when running locally via `convox start`.
 
 See also [CPU share constraint](https://docs.docker.com/engine/reference/run/#/cpu-share-constraint "docs.docker.com") in the Docker documentation.
 
@@ -225,11 +228,12 @@ Or by running `convox scale` (see also [Scaling](https://convox.com/docs/scaling
 
     convox scale <process> --memory=256
 
-Minimum is 4.
+Minimum is 4 MB.
 
-Note: Unlike the behavior of the `-m` flag on `docker run`, `number` must be an integer (text labels for units, e.g. `b`, `k`, `m`, or `g`, are not supported).
+Note:
 
-Note: `mem_limit` is not taken into account when running locally via `convox start`.
+- With `convox deploy`: `mem_limit` is read and taken into account from `docker-compose.yml` only during the initial deployment. If you need to change it after deploying for the first time, use [`convox scale`](https://convox.com/docs/scaling/).
+- With `convox start`: When running locally via `convox start`, `mem_limit` is always read from `docker-compose.yml`.
 
 You can view the current memory limit with either of the following commands:
 
