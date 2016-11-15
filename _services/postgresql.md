@@ -15,6 +15,7 @@ This will provision postgres database on the Amazon RDS service. Creation can ta
 <table>
   <tr><th>Option</th><th>Description</th></tr>
   <tr><td><code>--allocated-storage=<b><i>10</i></b></code></td><td>Size of the database in GB</td></tr>
+  <tr><td><code>--database=<b><i>app</i></b></code></td><td>The name of the database to create</td></tr>
   <tr><td><code>--instance-type=<b><i>db.t2.micro</i></b></code></td><td>RDS instance type to use</td></tr>
   <tr><td><code>--max-connections=<b><i>{DBInstanceClassMemory/15000000}</i></b></code></td><td>Maximum connections to allow</td></tr>
   <tr><td><code>--multi-az</code></td><td>Enhanced availability and durability</td></tr>
