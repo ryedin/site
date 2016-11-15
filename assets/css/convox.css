@@ -301,7 +301,7 @@ header ul.actions li a:hover {
 
 .services-inner .box p, #features .box p {
   color: #777;
-  padding: 0 40px;
+  padding-top: 20px;
 }
 
 .services-inner .box.first {
