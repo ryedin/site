@@ -129,23 +129,25 @@ When you want to pin an app to a specific Rack you should use `./convox/rack` wh
 
 The `convox` CLI offers bash autocompletion and command prompt utilities.
 
-### OSX 
+### OSX + Homebrew
 
-To set this up on OS X with Homebrew, save the convox autocomplete helper in the `bash_completion.d` directory, then add an autocomplete initializer and `PS1` variable to your `~/.bash_profile`:
+To set this up on OS X with Homebrew, save the convox autocomplete helper in the `bash_completion.d` directory:
 
-    $ curl -o $(brew --prefix)/etc/bash_completion.d/convox https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete
+    $ curl -o $(brew --prefix)/etc/bash_completion.d/convox \
+      https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete
 
-    $ cat ~/.bash_profile
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
+then add an autocomplete initializer `~/.bash_profile`:
+
+    # Add bash completions, if brew is installed and <brew prefix>/etc/bash_completion.d/ exists
+    if [[ $(type -a brew 2>/dev/null) ]] && [[ -d $(brew --prefix)/etc/bash_completion.d ]]; then
+       for f in $(brew --prefix)/etc/bash_completion.d/*; do
+          . "$f"
+       done
     fi
-
-    __convox_switch() { [ -e ~/.convox/rack ] && convox switch || echo unknown; }
-    export PS1="\h:\W \u (\$(__convox_switch))\$(__git_ps1)$ "
 
 ### Debian-based Linux distributions
 
-As root, save [this bash_autocomplete snippet](https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete) in `/etc/bash_completion.d/convox`:
+As root, save [this bash_autocomplete snippet](https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete) in `/etc/bash_completion.d/convox`, as in the following command:
 
     $ curl https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete | sudo tee /etc/bash_completion.d/convox
 
