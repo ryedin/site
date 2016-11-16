@@ -8,11 +8,11 @@ Resources behave a lot like services, but are external to your application and w
 
 ## Resource Creation
 
-You can create resources using the `convox services create` command.
+You can create resources using the `convox resources create` command.
 
 This will provision the appropriate AWS service and associate it with your active Convox Rack.
 
-Creation can take up to 15 minutes. To check the status, use `convox services info`. You can also view the resource in the appropriate section of your AWS console (RDS for postgres and mysql, etc).
+Creation can take up to 15 minutes. To check the status, use `convox resources info`. You can also view the resource in the appropriate section of your AWS console (RDS for postgres and mysql, etc).
 
 For advanced creation options, see the documentation for the specific resource type in the sidebar on the left.
 
@@ -53,15 +53,23 @@ URL: mysql://app:672ffd60a4eb323gf238ff28508f95@dev-mysql-4624.caujtavicybf.us-e
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                ^^^^^^^^^^^^
 ```
 
-## Linking the resource to your app
+## Connecting the resource to your app
 
-TODO
 
 ### Via environment variables
 
 You can add this URL as an environment variable to any application with `convox env set`:
 
     $ convox env set MEMCACHED_URL='dev-ca-m3z4ik3n7bej.77prpt.cfg.use1.cache.amazonaws.com:11211' --app example-app
+
+### Via `convox resource link`
+
+To forward logs from an application to a syslog forwarder use `convox resources link`:
+
+    $ convox resources link syslog-3785 --app example-app
+    Linked syslog-3786 to example-app
+
+Note: This is currently only supported with `syslog` resources. To link other resource types, use `convox env set` as described above.
 
 ## Resource Deletion
 
