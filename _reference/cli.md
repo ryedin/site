@@ -2,6 +2,10 @@
 title: "CLI"
 ---
 
+## Install the CLI
+
+To install the `convox` CLI tool, see [Installing the Convox CLI](/docs/installation/).
+
 ## Convox Update
 
 You can easily update the CLI to get bugfixes and features:
@@ -138,18 +142,18 @@ To set this up on OS X with Homebrew, save the convox autocomplete helper in the
 
 then add an autocomplete initializer `~/.bash_profile`:
 
-    # Add bash completions, if brew is installed and <brew prefix>/etc/bash_completion.d/ exists
-    if [[ $(type -a brew 2>/dev/null) ]] && [[ -d $(brew --prefix)/etc/bash_completion.d ]]; then
-       for f in $(brew --prefix)/etc/bash_completion.d/*; do
-          . "$f"
-       done
-    fi
+    echo "source $(brew --prefix)/etc/bash_completion.d/convox" >> "$HOME/.profile"
 
 ### Debian-based Linux distributions
 
 As root, save [this bash_autocomplete snippet](https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete) in `/etc/bash_completion.d/convox`, as in the following command:
 
-    $ curl https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete | sudo tee /etc/bash_completion.d/convox
+    $ curl https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete \
+      | sudo tee /etc/bash_completion.d/convox
+
+Make sure you're sourcing `/etc/bash_completion.d/convox` in your `.profile`:
+
+    $ echo "source /etc/bash_completion.d/convox" >> "$HOME/.profile"
 
 Now open a new tab and type `convox` and `convox builds` followed by the TAB key:
  
