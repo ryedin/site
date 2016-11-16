@@ -1,5 +1,5 @@
 ---
-title: Creating and linking a redis resource
+title: Adding a redis resource
 permalink: /guide/resources/
 phase: deploy
 ---
@@ -10,6 +10,8 @@ Resources behave like services, but are external to your application. Your appli
 
 Examples of typical resources used with Convox are data stores like RDS or redis, mailservers, and so on.
 
+To illustrate this concept, we'll replace the `redis` service in [our example app](https://github.com/convox-examples/convox-guide/) with a hosted `redis` resource.
+
 ## Create our redis resource
 
 Tell Convox to create the resource you want by running `convox resources create <resource type>`:
@@ -19,7 +21,7 @@ $ convox resources create redis
 Creating redis-2975 (redis)... CREATING
 ```
 
-The resource will be created in the region shown in `convox rack`.
+The resource will be created in the region of your currently active rack, as shown in `convox rack`.
 
 It will take a few minutes for the resource to be created. To view the status, check the output of `convox resources`:
 
@@ -30,6 +32,8 @@ redis-2975  redis  creating
 ```
 
 Above, we can see that the new `redis` resource we created is running, and it's named `redis-2975`.
+
+We can view the status and URL of our new `redis` resource by running `convox resources info <resource name>`:
 
 ```
 $ convox resources info redis-2975
@@ -45,7 +49,7 @@ You'll see a variety of info about the resource, including the `URL`, which cont
 
 ## Linking the resource to our app
 
-Let's add this URL as an environment variable to our application with `convox env set`.
+Next, we need to update the `REDIS_URL` environment variable in our Rack containers with the URL we retrieved in the previous command. To do this, we'll use the `convox env set` command.
 
 ```
 $ convox env set REDIS_URL=redis://der11wmx77bulki2.x6825x.ng.0001.use1.cache.amazonaws.com:6379/0
@@ -95,3 +99,5 @@ For more information on resources, see:
 * [Heroku backing services](https://12factor.net/backing-services){:target="_blank"}
 
 {% include service-to-resource.md %}
+
+Up next: [Automation](/guide/automate/)!
