@@ -1,5 +1,5 @@
 ---
-title: Adding a redis resource
+title: Adding resources
 permalink: /guide/resources/
 phase: deploy
 ---
