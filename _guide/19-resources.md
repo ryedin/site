@@ -78,7 +78,7 @@ $ convox exec 95c2c7b2fd8e echo \$REDIS_URL
 redis://der11wmx77bulki2.x6825x.ng.0001.use1.cache.amazonaws.com:6379/0
 ```
 
-So we might as well scale our `redis` service, which we've just replaced with an external `redis` _resource_, down to 0:
+So we should scale our `redis` service, which we've just replaced with an external `redis` _resource_, down to 0:
 
 ```
 $ convox scale redis --count=0
