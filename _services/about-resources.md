@@ -45,8 +45,8 @@ $ convox resources proxy mysql-4624
 
 ### Resource credentials
 
-You can get the RDS credentials with `convox resources info <resource name>`.
-The username and password are contained in `MYSQL_URL`:
+For some types of resources, the username and password are contained in the resource URL, which can be retrieved by running `convox resources info <resource name>`.
+For example, below we can see the RDS credentials embedded in a `mysql` resource URL:
 
 ```
 URL: mysql://app:672ffd60a4eb323gf238ff28508f95@dev-mysql-4624.caujtavicybf.us-east-1.rds.amazonaws.com:3306/app
