@@ -4,6 +4,8 @@ permalink: /guide/releases/
 phase: deploy
 ---
 
+A _release_ is a specific version of an app corresponding to its state at the time of a given deployment.
+
 ## Releases
 
 Each time you deploy with `convox deploy` (or update the app's env, as we'll see later), a new release is created.

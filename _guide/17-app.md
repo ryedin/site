@@ -4,6 +4,8 @@ permalink: /guide/app/
 phase: deploy
 ---
 
+An _app_ is a collection of one or more services that share a common code base, environment configuration, and manifest (like `docker-compose.yml`).
+
 # Creating our app
 
 Since we haven't created any apps yet, running `convox apps` should show an empty list:
