@@ -4,7 +4,7 @@ title: "About resources"
 
 ## What is a resource?
 
-Resources behave a lot like services, but are external to your application and which your application communicates with over a network.
+_Resources_ are dependencies of an app that communicate with it over the network and run software outside the scope of your team's focus.
 
 ## Resource Creation
 
@@ -31,7 +31,7 @@ To see relevant info about a resource, use the `convox resources info` command:
 
 ### Via AWS console
 
-You can view AWS resources in your AWS console. For example, mysql resources are visible in your [RDS Console](https://console.aws.amazon.com/rds/home).
+You can view AWS resources in your AWS console, where they will have their own CloudFormation stack. For example, mysql resources are visible in your [RDS Console](https://console.aws.amazon.com/rds/home).
 
 If you don't see what you expect, check that the correct geographic region is active.
 
