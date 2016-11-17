@@ -110,3 +110,7 @@ $ curl convox-guide-web-z5yq7fa-1775143282.us-east-1.elb.amazonaws.com
 Hello World!
 ```
 
+## Further reading
+
+* [Releases](/docs/releases/) in the Convox docs
+* [Rolling back](/docs/rolling-back/) in the Convox docs
