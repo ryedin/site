@@ -31,3 +31,6 @@ Windows users can download the installer [here](https://dl.equinox.io/convox/con
 
 CentOS users can download the .rpm [here](https://dl.equinox.io/convox/convox/stable).
 
+## Bash auto-complete
+
+To set up shell auto-completion features and PS1 helpers for your terminal prompt, see [the CLI reference](/docs/cli).
