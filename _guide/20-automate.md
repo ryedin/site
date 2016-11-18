@@ -9,7 +9,7 @@ In continuing with this image-centric pattern, our next goal is to automate some
 
 ## Console
 
-Our goal is to trigger a variety of actions by, for example, pushing to the master branch of a GitHub or BitBucket repo.
+Our goal is to trigger a variety of actions by, for example, pushing to the master branch of a GitHub or GitLab repo.
 
 This is useful for automating various steps in your delivery pipeline, such as:
 
@@ -19,7 +19,7 @@ This is useful for automating various steps in your delivery pipeline, such as:
 
 ## Webhooks and integrations
 
-You can set up your app to deploy automatically when you push to a specific branch on GitHub or BitBucket, or subscribe to Slack notifications for app events.
+You can set up your app to deploy automatically when you push to a specific branch on GitHub or GitLab, or subscribe to Slack notifications for app events.
 
 For this, you'll need to authorize the relevant third-party applications in the `Integrations` tab of the [Console](https://console.convox.com/).
 
