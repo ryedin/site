@@ -1,5 +1,5 @@
 ---
-title: Installing a Rack
+title: Rack
 permalink: /guide/rack/
 phase: deploy
 ---

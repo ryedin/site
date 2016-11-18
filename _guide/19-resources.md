@@ -1,5 +1,5 @@
 ---
-title: Adding resources
+title: Resources
 permalink: /guide/resources/
 phase: deploy
 ---
