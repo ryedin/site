@@ -23,5 +23,3 @@ Previously called a process.
 </div>
 
 {% include definitions/service.md %}
-
-
