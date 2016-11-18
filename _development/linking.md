@@ -63,6 +63,7 @@ Most images will work out of the box and will use the `tcp` scheme by default. I
 * `LINK_SCHEME`
 * `LINK_USERNAME`
 * `LINK_PASSWORD`
+* `LINK_PORT`
 * `LINK_PATH`
 
 See the [convox/redis](https://github.com/convox/redis/blob/9b56f5553ce6dd0a2f72d76b752f1dded287f109/Dockerfile#L10-L13) Dockerfile for an example.
@@ -78,6 +79,7 @@ database:
     - LINK_SCHEME=postgres
     - LINK_PASSWORD=password2
     - LINK_USERNAME=postgres
+    - LINK_PORT=5432
   ports:
     - 5432
 ```
@@ -86,4 +88,4 @@ database:
 
 When a service declares a link, the linked container (`database` in our example) needs to expose at least one port so convox can create a load balancer and construct the service URL.
 
-When multiple ports are specified, the first one in the list of ports is used to construct the link URL.
+When multiple ports are specified, the first one in the list of ports is used to construct the link URL. This can be overridden with the `LINK_PORT` environment variable described above.
