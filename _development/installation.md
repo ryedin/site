@@ -13,24 +13,39 @@ Here are some of the highlights:
 
 You can install it via the command line:
 
-#### OS X
+## OS X
 
     $ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
 
-#### Linux
+#### Homebrew
+
+Alternatively, on OSX you can also install via Homebrew:
+
+    $ brew install convox
+
+## Linux
 
     $ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
     $ unzip /tmp/convox.zip -d /usr/local/bin
 
-#### Windows
+## Windows
 
 Windows users can download the installer [here](https://dl.equinox.io/convox/convox/stable).
 
-#### CentOS
+## CentOS
 
 CentOS users can download the .rpm [here](https://dl.equinox.io/convox/convox/stable).
 
-## Bash auto-complete
+# Next steps
 
-To set up shell auto-completion features and PS1 helpers for your terminal prompt, see [the CLI reference](/docs/cli).
+After convox has been installed, don't forget to run:
+
+- `convox update`
+- `convox login`
+
+You can also set up [shell auto-completion features](/docs/cli#shell-autocomplete-support) and [PS1 helpers](/docs/cli#active-rack-command-prompt-helper) for your terminal prompt.
+
+## Further reading
+
+For details about how to use `convox` on the command line, see the [CLI reference](/docs/cli/).
