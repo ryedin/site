@@ -39,25 +39,6 @@ In [Console](https://console.convox.com/), click the Workflows tab. Click the "C
 For more information, see the [Workflows](/docs/workflows/) documentation.
 
 
-## Autoscaling
-
-Your Rack can scale its own instance count based on the needs of the containers it provisions. To use this command, set the `Autoscale` parameter:
-
-    $ convox rack params set Autoscale=Yes
-
-For more information about scaling, see the [Scaling](/docs/scaling) documentation.
-
-
-## Health checks
-
-See the [Health Checks](/docs/load-balancers/#health-check-options) documentation.
-
-
-## Scheduled tasks
-
-Convox can set up cron-like recurring tasks on any of your application processes. For details, see the [scheduled tasks](/docs/scheduled-tasks/) documentation.
-
-
 ## Further reading
 
 - [Convox Console](/docs/console/) documentation
