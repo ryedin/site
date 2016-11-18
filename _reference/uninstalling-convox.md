@@ -2,21 +2,17 @@
 title: "Uninstalling Convox"
 ---
 
+<div class="alert alert-warning">
+This action will cause an unrecoverable loss of Convox-created data and resources.
+</div>
+
 At any time you can easily remove all the AWS resources Convox uses for your Services, Apps and Racks. This makes experimenting with Convox very easy.
 
 In order to uninstall a Rack you will first need to create temporary AWS credentials. See the [Convox Rack IAM Policy](/docs/iam-policy) for instructions.
 
-<div class="block-callout block-show-callout type-info" markdown="1">
 Uninstall will take approximately 15 minutes to complete.
-</div>
 
-## Uninstalling from the console
-
-We recommend uninstalling a Rack via the [web console](https://console.convox.com/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
-
-## Uninstalling from the CLI
-
-Alternatively, you can uninstall a Rack by running `convox uninstall <stack-name> <region> [credentials.csv]`.
+You can uninstall a Rack by running `convox uninstall <stack-name> <region> [credentials.csv]`.
 
 <div class="block-callout block-show-callout type-info" markdown="1">
 `stack-name` will correspond to the name of the Rack as shown in `convox rack`:
@@ -117,5 +113,7 @@ Here's what it looks like in action:
     Successfully uninstalled.
 
 <div class="block-callout block-show-callout type-danger" markdown="1">
-This action will cause an unrecoverable loss of Convox-created data and resources.
+## Removing a Rack
+
+If you simply want to unlink a Rack from Convox without deleting the associated resources, you can do so via the [web console](https://console.convox.com/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
 </div>
