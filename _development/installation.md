@@ -24,6 +24,8 @@ Alternatively, on OSX you can also install via Homebrew:
 
     $ brew install convox
 
+**Note for Homebrew users:** You will need to update the CLI by running `convox update`. `brew upgrade convox` will not work.
+
 ## Linux
 
     $ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
