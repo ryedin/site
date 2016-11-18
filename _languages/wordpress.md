@@ -2,13 +2,15 @@
 title: "WordPress"
 ---
 
+{% include definition-changes-warning.md %}
+
 [WordPress](https://wordpress.org/) is a popular blogging platform based on PHP and MySQL. It's simple to set up a WordPress blog on Convox with the following steps.
 
 ## Create the App and Database
 
 ```
 $ convox apps create wordpress-site
-$ convox services create mysql --name wordpress-db
+$ convox resources create mysql --name wordpress-db
 ```
 
 ## Create the Local Files
@@ -40,13 +42,13 @@ The `volumes` directive will persist all of your WordPress files to a [network f
 The database creation that you kicked off above will take 10-15 minutes to complete. You can check status with:
 
 ```
-$ convox services
+$ convox resources
 ```
 
 Once the status is `RUNNING` fetch the DB info:
 
 ```
-$ convox services info wordpress-db
+$ convox resources info wordpress-db
 Name    wordpress-db
 Status  running
 Exports
@@ -95,3 +97,4 @@ Then log into the Wordpress admin interface and click **Settings -> General**.
 
 Set **WordPress Address (URL)** and **Site Address (URL)** to https://www.yourdomain.com.
 
+{% include service-to-resource.md %}

@@ -24,7 +24,7 @@ database:
     - 5432
 ```
 
-Configuring the `links` section in this way will cause the following environment variables to be set for the `web` process:
+Configuring the `links` section in this way will cause the following environment variables to be set for the `web` service:
 
 - `DATABASE_URL`
 - `DATABASE_SCHEME`
@@ -84,6 +84,6 @@ database:
 
 ## Ports
 
-When a process declares a link, the linked container (`database` in our example) needs to expose at least one port so convox can create a load balancer and construct the service URL.
+When a service declares a link, the linked container (`database` in our example) needs to expose at least one port so convox can create a load balancer and construct the service URL.
 
 When multiple ports are specified, the first one in the list of ports is used to construct the link URL.

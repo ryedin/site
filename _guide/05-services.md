@@ -85,5 +85,4 @@ Then, run `convox doctor` to validate your service definitions:
 
 Now that you have defined your app's services, you can [define your environment to configure how the services run](/guide/environment/).
 
-{% include service-to-resource.md %}
-
+{% include process-to-service.md %}

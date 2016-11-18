@@ -2,7 +2,7 @@
 title: "Uninstalling Convox"
 ---
 
-At any time you can easily remove all the AWS resources Convox uses for your Services, Apps and Racks. This makes experimenting with Convox very easy.
+At any time you can easily remove all the AWS resources Convox uses for your resources, apps and Racks. This makes experimenting with Convox very easy.
 
 In order to uninstall a Rack you will first need to create temporary AWS credentials. See the [Convox Rack IAM Policy](/docs/iam-policy) for instructions.
 
@@ -56,8 +56,8 @@ Here's what it looks like in action:
     Resources to delete:
 
     STACK             TYPE      STATUS
-    staging-events    service   UPDATE_COMPLETE
-    redis             service   UPDATE_COMPLETE
+    staging-events    resource   UPDATE_COMPLETE
+    redis             resource   UPDATE_COMPLETE
     httpd             app       UPDATE_COMPLETE
     staging           rack      CREATE_COMPLETE
 
