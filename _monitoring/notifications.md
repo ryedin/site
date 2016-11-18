@@ -2,6 +2,8 @@
 title: "Notifications"
 ---
 
+{% include definition-changes-warning.md %}
+
 Console users can get notification for common Rack events. Below you can find a list of the types of notifications you will receive.
 
 #### [*example-rack*] Created app *example-app*
@@ -32,13 +34,13 @@ A release has been promoted to be the live version on the application. This does
 
 A `convox scale` command has been received, instructing the Rack to run a different number of copies for a specific process.
 
-#### [*example-rack*] Created postgres service *pg1*
+#### [*example-rack*] Created postgres resource *pg1*
 
-A service (such as postgres, mysql, redis, etc) has been created by Convox, as with `convox services create`. This notification tells you the service type and service name, respectively.
+A resource (such as postgres, mysql, redis, etc) has been created by Convox, as with `convox resources create`. This notification tells you the resource type and resource name, respectively.
 
-#### [*example-rack*] Deleted postgres service *pg1*
+#### [*example-rack*] Deleted postgres resource *pg1*
 
-A service has been deleted by Convox, as with `convox services delete`.
+A resource has been deleted by Convox, as with `convox resources delete`.
 
 #### [*example-rack*] Updating rack to: version *20160405223647*
 
@@ -52,3 +54,4 @@ A request has been received to alter the number of instances in your Rack’s cl
 
 A request has been received to alter the type of instances in your Rack’s cluster. This will require processes to be re-launched and can take a few minutes to complete.
 
+{% include service-to-resource.md %}

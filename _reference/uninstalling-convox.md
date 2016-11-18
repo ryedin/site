@@ -52,8 +52,8 @@ Here's what it looks like in action:
     Resources to delete:
 
     STACK             TYPE      STATUS
-    staging-events    service   UPDATE_COMPLETE
-    redis             service   UPDATE_COMPLETE
+    staging-events    resource   UPDATE_COMPLETE
+    redis             resource   UPDATE_COMPLETE
     httpd             app       UPDATE_COMPLETE
     staging           rack      CREATE_COMPLETE
 
