@@ -2,7 +2,7 @@
 title: "PostgreSQL"
 ---
 
-{% include definition-changes-warning.md %}
+{% include definitions/changes/warning.md %}
 
 ## Resource Creation
 
@@ -54,4 +54,4 @@ Deleting the database will take several minutes.
 This action will cause an unrecoverable loss of data.
 </div>
 
-{% include service-to-resource.md %}
+{% include definitions/changes/service-to-resource.md %}

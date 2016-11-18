@@ -4,7 +4,7 @@ permalink: /guide/resources/
 phase: deploy
 ---
 
-{% include definition-changes-warning.md %}
+{% include definitions/changes/warning.md %}
 
 Resources behave like services, but are external to your application. Your application communicates with these resources over a network.
 
@@ -98,6 +98,6 @@ For more information on resources, see:
 * `convox resources create --help`
 * [Heroku backing services](https://12factor.net/backing-services){:target="_blank"}
 
-{% include service-to-resource.md %}
+{% include definitions/changes/service-to-resource.md %}
 
 Up next: [Automation](/guide/automate/)!
