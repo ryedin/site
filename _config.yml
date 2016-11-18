@@ -28,8 +28,8 @@ collections:
     title: Monitoring
     output: true
     permalink: /docs/:name/
-  services:
-    title: Services
+  resources:
+    title: Resources
     output: true
     permalink: /docs/:name/
   integrations:
