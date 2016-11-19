@@ -1,7 +1,7 @@
 ---
-title: "Logs"
+title: "App & Rack Logs"
 permalink: /guide/logs/
-phase: inspect
+phase: monitor
 ---
 
 ## App logs
