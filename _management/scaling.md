@@ -23,6 +23,14 @@ NAME  DESIRED  RUNNING  MEMORY
 web   2        1        1024
 ```
 
+#### CPU
+
+```
+$ convox scale web --cpu=1024
+NAME  DESIRED  RUNNING  CPU
+web   1        1        1024
+```
+
 #### Scaling down unused services
 
 It's often convenient to run a service like Redis in a container locally. You can do so by defining a `redis` process in your `docker-compose.yml`. However, when you've deployed the app to your rack, you should use a hosted resource like ElastiCache. In this case, you can scale redis down and destroy the ELB which was created:
