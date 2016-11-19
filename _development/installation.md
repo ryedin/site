@@ -57,7 +57,6 @@ To update the CLI you can run `convox update`:
     Updating convox/proxy: OK
     Updating convox: OK, 20161111173317
 
-
 ## Extras
 
 You can also set up [shell auto-completion features](/docs/cli#shell-autocomplete-support) and [PS1 helpers](/docs/cli#active-rack-command-prompt-helper) for your terminal prompt.
