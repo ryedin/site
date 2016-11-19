@@ -4,6 +4,8 @@ permalink: /guide/releases/
 phase: deploy
 ---
 
+A _release_ is a specific version of an app corresponding to its state at the time of a given deployment.
+
 ## Releases
 
 Each time you deploy with `convox deploy` (or update the app's env, as we'll see later), a new release is created.
@@ -110,3 +112,7 @@ $ curl convox-guide-web-z5yq7fa-1775143282.us-east-1.elb.amazonaws.com
 Hello World!
 ```
 
+## Further reading
+
+* [Releases](/docs/releases/) in the Convox docs
+* [Rolling back](/docs/rolling-back/) in the Convox docs

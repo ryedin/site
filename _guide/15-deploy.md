@@ -16,7 +16,7 @@ The commands are:
 
 <pre class="terminal">
 <span class="command">convox install --region=us-east-1</span>
-<span class="command">convox services create redis</span>
+<span class="command">convox resources create redis</span>
 <span class="command">convox apps create myapp</span>
 <span class="command">convox deploy</span>
 <span class="command">convox env set GITHUB_API_URL=a962c6c31d904c67ae9094ae071de2e3fcfa14f6</span>

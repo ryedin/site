@@ -1,8 +1,10 @@
 ---
-title: Create and deploy an app
+title: Apps
 permalink: /guide/app/
 phase: deploy
 ---
+
+An _app_ is a collection of one or more services that share a common code base, environment configuration, and manifest (like `docker-compose.yml`).
 
 # Creating our app
 
