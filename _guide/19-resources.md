@@ -96,7 +96,7 @@ For more information on resources, see:
 * [Resources](/guide/resources/) in the Convox docs
 * [Service linking](https://convox.com/docs/syslog#service-linking) in the Convox docs
 * `convox resources create --help`
-* [Heroku backing services](https://12factor.net/backing-services){:target="_blank"}
+* [The Twelve-Factor App: Backing services](https://12factor.net/backing-services){:target="_blank"}
 
 {% include definitions/changes/service-to-resource.md %}
 

@@ -4,4 +4,4 @@ Examples of typical resources used with Convox are data stores like RDS or redis
 
 Resources are typically stateful services.
 
-Resources correspond closely to Heroku's notion of [_backing services_](https://devcenter.heroku.com/articles/development-configuration#backing-services).
+Resources correspond closely to the twelve-factor app notion of [_backing services_](https://12factor.net/backing-services).
