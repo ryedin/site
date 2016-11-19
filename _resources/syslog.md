@@ -2,7 +2,7 @@
 title: "Syslog"
 ---
 
-{% include definition-changes-warning.md %}
+{% include definitions/changes/warning.md %}
 
 ## Resource Creation
 
@@ -58,4 +58,4 @@ First, delete the syslog resource(s) created in private mode: `convox resources 
 Next, log into the AWS VPC console. You will need to manually remove an Elastic Network Interface (ENI). The ENI ID varies, but its description in the AWS console will begin with `AWS Lambda VPC ENI`. Once the ENI is manually detached and deleted, it is safe to disable private networking. If you need assistance with this process, please open a support ticket at [https://console.convox.com](https://console.convox.com).
 
 
-{% include service-to-resource.md %}
+{% include definitions/changes/service-to-resource.md %}

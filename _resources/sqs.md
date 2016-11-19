@@ -2,7 +2,7 @@
 title: "SQS"
 ---
 
-{% include definition-changes-warning.md %}
+{% include definitions/changes/warning.md %}
 
 ## Resource Creation
 
@@ -36,4 +36,4 @@ To delete the queue, use the `convox resources delete` command:
     $ convox resources delete sqs-3785
     Deleting sqs-3785... DELETING
 
-{% include service-to-resource.md %}
+{% include definitions/changes/service-to-resource.md %}

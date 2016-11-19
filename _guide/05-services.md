@@ -4,9 +4,9 @@ permalink: /guide/services/
 phase: build
 ---
 
-{% include definition-changes-warning.md %}
+{% include definitions/changes/warning.md %}
 
-A _service_ is a component of your app, defined as a command run against an image. An app is composed of one or more services, e.g. `web` and `worker`, as in the example below.
+{% include definitions/service.md %}
 
 Defining an app as a collection of services enables independent horizontal scaling of each service.
 
@@ -85,4 +85,4 @@ Then, run `convox doctor` to validate your service definitions:
 
 Now that you have defined your app's services, you can [define your environment to configure how the services run](/guide/environment/).
 
-{% include process-to-service.md %}
+{% include definitions/changes/process-to-service.md %}

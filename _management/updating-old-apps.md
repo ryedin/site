@@ -3,7 +3,7 @@ title: "Updating Old Apps"
 order: 900
 ---
 
-{% include definition-changes-warning.md %}
+{% include definitions/changes/warning.md %}
 
 A small number of old Convox apps — those created with Rack releases older than `20160223211445` — have a different load balancer configuration than what is used in current apps. Recent changes to Convox Rack break backwards compatibility with these apps, causing problems if they are deployed. This guide explains how to identify old apps and deploy new ones to replace them.
 
@@ -92,4 +92,4 @@ $ convox resources unlink resource-name -a oldapp
 
 Deleting the old app will also remove the link.
 
-{% include service-to-resource.md %}
+{% include definitions/changes/service-to-resource.md %}
