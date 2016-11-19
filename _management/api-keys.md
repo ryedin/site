@@ -22,7 +22,7 @@ Console encrypts and saves Rack API keys to proxy access. For security purposes 
 
 Console Log In → Click Racks → Select a Rack → Click Settings → Click Roll API Key
 
-The Rack may be temporarily unavailable while the change takes effect.
+The Rack may be temporarily unavailable while the change takes effect. For more information, see [Keyrolls](/docs/keyroll).
 
 ### Logging into a Rack Directly
 
