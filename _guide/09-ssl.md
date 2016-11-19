@@ -4,11 +4,11 @@ permalink: /guide/ssl/
 phase: run
 ---
 
-SSL is a protocol that provides for the encryption of network traffic to and from your Balancers.
+SSL is a protocol that provides for the encryption of network traffic to and from your balancers.
 
 Using SSL ensures the privacy and data integrity of your network communications.
 
-To set up HTTPS, which is HTTP communication over an encrypted SSL connection, on port 443, add a label and port declaration in `docker-compose.yml`.
+To set up HTTPS, publish port 443 and add the label `convox.port.443.protocol=https` to your `docker-compose.yml`.
 
 <pre class="file yaml" title="docker-compose.yml">
 <span class="diff-u">version: '2'</span>
@@ -28,9 +28,9 @@ To set up HTTPS, which is HTTP communication over an encrypted SSL connection, o
 <span class="diff-u">      - GITHUB_API_TOKEN</span>
 </pre>
 
-The Balancer will now listen for traffic from the internet on port 443, secure connections with the HTTPS protocol using a self-signed cert, and forward requests to the `web` Service processes that are bound to port 8000.
+The Convox balancer will now listen for external HTTPS traffic on port 443, secure these connections using a self-signed cert, and forward requests to containers of the `web` service which have exposed port 8000.
 
-Run `convox doctor` to validate your port protocol label and Balancer definitions:
+Run `convox doctor` to validate your port protocol label and balancer definitions:
 
 <pre class="terminal">
 <span class="command">convox doctor</span>
@@ -40,4 +40,4 @@ Run `convox doctor` to validate your port protocol label and Balancer definition
 [<span class="pass">✓</span>] Service <span class="service">web</span> port 443 responds to HTTPS
 </pre>
 
-Now that you have defined Balancers, you can [add a database Resource](/guide/resource/).
+Now that you have added SSL, you can [add a Database](/guide/databases/).

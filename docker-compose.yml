@@ -11,3 +11,6 @@ web:
     - ALGOLIA_SEARCH_API_KEY
     - ALGOLIA_MONITORING_API_KEY
     - ALGOLIA_API_KEY
+    - DEVELOPMENT
+  command:
+    - _bin/web

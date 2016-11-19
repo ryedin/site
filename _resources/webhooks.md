@@ -2,21 +2,23 @@
 title: "Webhooks"
 ---
 
-You can use the `webhook` service to subscribe to notifications for events on your Rack.
+{% include definitions/changes/warning.md %}
 
-## Service Creation
+You can use the `webhook` resource to subscribe to notifications for events on your Rack.
 
-    $ convox services create webhook --url http://example.org
+## Resource Creation
+
+    $ convox resources create webhook --url http://example.org
     Creating webhook-9344 (webhook)... CREATING
 
 ### Additional Options
 
 <table>
   <tr><th>Option</th><th>Description</th></tr>
-  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the service to create</td></tr>
+  <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
 </table>
 
-## Service Events
+## Resource Events
 
 All events are sent as `POST` requests with a content type of `application/json`.
 
@@ -113,9 +115,11 @@ When the `status` is `error`, the `data` attribute will have a `message` availab
   </tr>
 </table>
 
-## Service Deletion
+## Resource Deletion
 
-To delete the service, use the `convox services delete` command:
+To delete the resource, use the `convox resources delete` command:
 
-    $ convox services delete webhook-9344
+    $ convox resources delete webhook-9344
     Deleting webhook-9344... DELETING
+
+{% include definitions/changes/service-to-resource.md %}

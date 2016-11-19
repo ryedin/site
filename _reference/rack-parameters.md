@@ -6,6 +6,7 @@ Parameters can be used to configure your Convox Rack. Below is a list of the ava
 
 <ul>
   <li><a href="#autoscale">Autoscale</a></li>
+  <li><a href="#buildmemory">BuildMemory</a></li>
   <li><a href="#instancebootcommand">InstanceBootCommand</a></li>
   <li><a href="#instancecount">InstanceCount</a></li>
   <li><a href="#instanceruncommand">InstanceRunCommand</a></li>
@@ -32,6 +33,12 @@ Autoscale rack instances. See our [Scaling doc](https://convox.com/docs/scaling#
 
 | Allowed values | "Yes", "No" |
 | Default value  | "No"        |
+
+## BuildMemory
+
+Amount of memory (in MB) allocated to builds.
+
+| Default value  | 1024 |
 
 ## InstanceBootCommand
 

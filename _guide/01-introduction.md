@@ -3,76 +3,72 @@ title: Introduction
 permalink: /guide/
 ---
 
-Welcome to the Convox Guide, a set of step-by-step instructions for developing, deploying and automating an app on the Convox platform.
+Welcome to the Convox Guide, a set of best practices for developing, deploying and automating an app on the Convox platform.
 
-This guide is written for app developers who are ready to learn modern practices that make an app simple to develop on a laptop and effortless to manage in the cloud.
+If you plan to follow along, you'll want to <a href="https://console.convox.com/grid/signup" target="_blank">sign up for Convox</a> and [install the Convox Command Line Interface](/docs/installation).
 
-First, <a href="https://console.convox.com/grid/signup" target="_blank">sign up for Convox</a>. Later in the guide you will use the web console to set up your AWS environment.
+# Our mission
 
-Next, install the Convox Command Line Interface. The `convox` tool is all you need for your development environment.
+We built Convox to address the challenge of implementing and automating container-based deployment pipelines.
 
-## OS X
+Our goal is to make it easy to build a simple and consistent workflow that's easy for your entire development team to understand, use, and maintain.
 
-```
-$ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
-$ unzip /tmp/convox.zip -d /usr/local/bin
-```
-
-## Linux
-
-```
-$ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
-$ unzip /tmp/convox.zip -d /usr/local/bin
-```
-
-Finally, register the CLI with Convox.
-
-```
-$ convox login
-Password: <Your Console API key>
-```
-
-# Preface
-
-The goal is simple: take any app, develop a change on your laptop, ship the change to production, and watch it run forever.
-
-The tools are common: your git repo, a text editor, config files, scripts, and cloud services.
-
-The real challenge is building a simple and consistent pipeline. One that's easy for your entire development team to understand and maintain. One that lets you focus 100% on your app features and quality, and not waste time setting up and debugging your laptop or cloud computing environments.
-
-Convox is such a system.
-
-The Convox CLI follows a philosophy of "Convention over Configuration" which leads to three **simple commands** to manage any app:
+The Convox CLI follows a philosophy of "Convention over Configuration" which leads to three **simple commands** to develop and deploy any app:
 
 * `convox doctor` -- run checks to verify your app is portable from development to production
-* `convox start` -- start a development environment for your app
-* `convox deploy` -- create a cloud service architecture for your app
+* `convox start` -- start a local development environment for your app
+* `convox deploy` -- create and launch a cloud service architecture for your app
 
 The Convox Platform follows a philosophy of "Integration Over Invention" which leads us to building the system on top of:
 
-* [Docker](https://docker.com)
+* [Docker](https://docker.com) and Docker Compose
 * [Amazon Web Services](https://aws.amazon.com/)
 
-Convox imposes carefully considered constraints on your application to give you a reliable development and deployment environment.
-
-This will require some changes around how you write and configure your apps. You have to follow constraints and handle a bit more complexity in the application layer.
-
-But this isn't hard when armed with knowledge and good tooling as you write your app. Precisely what this guide offers!
-
-# How To Use The Guide
-
-We recommend that you first spend 30 minutes to read through the guide from start to finish. This will orient you with the concepts and terminology.
-
-Many of the concepts will be familiar if you have experience with [Twelve-Factor Apps](https://12factor.net/), [Docker Compose](https://docs.docker.com/compose/overview/) and/or Infrastructure-as-a-Service.
-
-Then we recommend you return to the beginning with your real app codebase and the `convox` CLI tool. As you progress through the concepts, the `convox doctor` command will examine your app and help you change it accordingly.
-
-Modern codebases might already pass many of the verifications and take less than an hour to get running. Old code bases probably won't be so lucky, and could take a week of work to get into shape. Trust us, though, it's worth it for all the time you will save going forward!
-
-You do not need to go "all in" on any of the tools. Like most systems, an expert can swap out the various components. However you do need to understand all of the concepts to see how the later steps of the pipeline influence the earlier ones, all the way back to what you have to put in the codebase.
+Convox imposes carefully considered constraints on your application to help you take advantage of the best features of these tools while avoiding common pitfalls. This guide serves as an outline to those constraints, as well as a bit of detail about the underlying reasons behind them.
 
 # Background
 
-The guide and tools are informed by the hands-on experience the team and community at [Convox](https://convox.com) have gained by "Dockerizing" 1000s of apps and deploying them to the AWS EC2 Container Service. Much of that experience is in turn based on years of hands-on experience working on and using the [Heroku](https://heroku.com) platform.
+The guide and tools are informed by the hands-on experience the team and community at [Convox](https://convox.com) have gained by "Dockerizing" thousands of apps and deploying them to the AWS EC2 Container Service. Much of that experience is in turn based on years of hands-on experience working on and using the [Heroku](https://heroku.com) platform.
 
-Now that we we understand the goals, let's take a look at the [five phases of software delivery](/guide/overview/).
+Many of the concepts in this guide will be familiar if you have experience with [Twelve-Factor Apps](https://12factor.net/), [Docker Compose](https://docs.docker.com/compose/overview/) and/or Infrastructure-as-a-Service.
+
+Modern codebases might already pass many of the verifications performed by `convox doctor`. For those that don't, this guide can help.
+
+## The five phases of software delivery
+
+Container-based software delivery happens in five distinct phases, which can be thought of as a pipeline:
+
+- **Build** portable images
+- **Run** an app as a set of Services running on images
+- **Develop** and verify changes to images interactively
+- **Deploy** new images safely to production
+- **Automate** additional verifications of images before production
+
+This guide walks you through every key step of every phase. The companion tools do their best to automatically verify that your app adheres to these key concepts.
+
+You will hit roadblocks where your app is deviating from these best practices--but you will hit these early on in the process and will be pointed towards likely solutions, which will save you endless frustrations in production.
+
+# Get ready
+
+If you haven't already, install the Convox Command Line Interface (see [Installation](https://convox.com/docs/installation/)).
+
+Now run `convox doctor` to run the first checklist:
+
+```
+$ convox doctor
+
+### Setup
+[✓] Docker running
+[✓] Docker version >= 1.9
+[✓] Docker run hello-world works
+[✓] Convox CLI up to date
+```
+
+<div class="alert alert-warning">
+  <strong>Note: </strong>`doctor`, as run at this point in the guide, will eventually find errors. For now, let's just look at the output of the first section, `Setup`.
+</div>
+
+If you don't have Docker installed, `convox doctor` will point you to the [Installing Docker Guide](https://docs.docker.com/engine/installation/).
+
+Now that you understand the five phases and have run your first checklist to test that your computer is set up, you can begin to [build your app](/guide/build/)!
+

@@ -3,12 +3,12 @@ title: Run
 permalink: /guide/run/
 ---
 
-You just built an Image that is designed to run anywhere. The next goals are to:
+You just built an image that is designed to run anywhere. The next goals are to:
 
-* Run your app on your laptop with a single command
+* Run your app on your development machine with a single command
 * Respond to network requests
 
-Give it a try!
+Let's see what happens when we try to run our app for the first time with `convox start`:
 
 <pre class="terminal">
 <span class="command">convox start</span>
@@ -56,6 +56,6 @@ worker │     at exports._exceptionWithHostPort (util.js:893:20)
 worker │     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1063:14)
 </pre>
 
-The Image built, and Services started, but they errored out immediately. Even if the web Service did come up, it's not obvious how you would connect to it.
+The image built, and services started, but they errored out immediately. Even if the web service did come up, it's not obvious how you would connect to it.
 
 So your next step is to [define a Balancer](/guide/balancers/).

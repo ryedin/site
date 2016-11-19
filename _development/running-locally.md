@@ -53,4 +53,4 @@ database:
     - /var/lib/postgresql/data
 ```
 
-Convox does not recommend running datastores as containers in your Rack. Instead, you should use a hosted service, such as the [Postgres](/docs/postgresql) service that Convox configures using Amazon RDS, or externally-hosted services like [Compose.io's MongoDB](https://www.compose.com/mongodb).
+Convox does not recommend running datastores as containers in your Rack. Instead, you should use a hosted service, such as the [Postgres](/docs/postgresql) resource that Convox configures using Amazon RDS, or externally-hosted resources like [Compose.io's MongoDB](https://www.compose.com/mongodb). For more information, see [Resources](/docs/about-resources/).

@@ -2,15 +2,34 @@
 title: "Uninstalling Convox"
 ---
 
+<div class="alert alert-warning">
+This action will cause an unrecoverable loss of Convox-created data and resources.
+</div>
+
 At any time you can easily remove all the AWS resources Convox uses for your Services, Apps and Racks. This makes experimenting with Convox very easy.
 
 In order to uninstall a Rack you will first need to create temporary AWS credentials. See the [Convox Rack IAM Policy](/docs/iam-policy) for instructions.
 
-<div class="block-callout block-show-callout type-info" markdown="1">
 Uninstall will take approximately 15 minutes to complete.
+
+You can uninstall a Rack by running `convox uninstall <stack-name> <region> [credentials.csv]`.
+
+<div class="block-callout block-show-callout type-info" markdown="1">
+`stack-name` will correspond to the name of the Rack as shown in `convox rack`:
+
+```
+$ convox rack --rack personal/example
+Name     example
+Status   running
+Version  20161102160040
+Region   us-east-1
+Count    3
+Type     t2.small
+
+```
 </div>
 
-## Uninstalling from the CLI
+Here's what it looks like in action:
 
     $ convox rack
     Name     staging
@@ -33,8 +52,8 @@ Uninstall will take approximately 15 minutes to complete.
     Resources to delete:
 
     STACK             TYPE      STATUS
-    staging-events    service   UPDATE_COMPLETE
-    redis             service   UPDATE_COMPLETE
+    staging-events    resource   UPDATE_COMPLETE
+    redis             resource   UPDATE_COMPLETE
     httpd             app       UPDATE_COMPLETE
     staging           rack      CREATE_COMPLETE
 
@@ -94,5 +113,7 @@ Uninstall will take approximately 15 minutes to complete.
     Successfully uninstalled.
 
 <div class="block-callout block-show-callout type-danger" markdown="1">
-This action will cause an unrecoverable loss of Convox-created data and resources.
+## Removing a Rack
+
+If you simply want to unlink a Rack from Convox without deleting the associated resources, you can do so via the [web console](https://console.convox.com/). Click on the Rack name, then navigate to the `Settings` tab and click `Remove Rack`.
 </div>

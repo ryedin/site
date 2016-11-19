@@ -3,12 +3,12 @@ title: "Deploy"
 permalink: /guide/deploy/
 ---
 
-You just configured your app so that you can Develop it locally. The next goal is to get it ready for customers. This requires:
+You just configured your app so that you can develop it locally. The next goal is to get it ready for production. This requires:
 
 * [Provisioning a Rack](/docs/installing-a-rack/)
-* Provisioning a production-ready [Postgres](/docs/postgresql/), [MySQL](/docs/mysql/) or [Redis](/docs/redis/) Database.
+* Provisioning a production-ready [Postgres](/docs/postgresql/), [MySQL](/docs/mysql/) or [Redis](/docs/redis/) database
 * [Releasing your app](/docs/releases/)
-* [Scaling your app Services](/docs/scaling/)
+* [Scaling your app services](/docs/scaling/)
 * [Adding a custom domain](/docs/custom-domains/)
 * [Configuring a certificate](/docs/ssl/)
 
@@ -16,7 +16,7 @@ The commands are:
 
 <pre class="terminal">
 <span class="command">convox install --region=us-east-1</span>
-<span class="command">convox services create redis</span>
+<span class="command">convox resources create redis</span>
 <span class="command">convox apps create myapp</span>
 <span class="command">convox deploy</span>
 <span class="command">convox env set GITHUB_API_URL=a962c6c31d904c67ae9094ae071de2e3fcfa14f6</span>
@@ -29,4 +29,4 @@ The commands are:
 <span class="command">convox ssl update web:443 cert-1234567890</span>
 </pre>
 
-Stay tuned while we improve the deploy guide to explain each step.
+Let's start by [installing a Rack](/guide/rack/).
