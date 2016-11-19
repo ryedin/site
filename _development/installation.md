@@ -62,7 +62,6 @@ To update the CLI you can run `convox update`:
 
 You can also set up [shell auto-completion features](/docs/cli#shell-autocomplete-support) and [PS1 helpers](/docs/cli#active-rack-command-prompt-helper) for your terminal prompt.
 
-
 ## Further reading
 
 For details about how to use `convox` on the command line, see the [CLI reference](/docs/cli/).
