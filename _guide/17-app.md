@@ -1,5 +1,5 @@
 ---
-title: Create and deploy an app
+title: Apps
 permalink: /guide/app/
 phase: deploy
 ---
