@@ -160,7 +160,7 @@ The number of instances to update in a batch.
 
 ## Internal
 
-Make all new apps created in the Rack use Internal ELBs by ddefault, i.e. make them accessible only from within the VPC and unreachable from the internet. See the [Internal Racks](https://convox.com/docs/internal-apps#internal-racks) section of our Internal Apps doc for more information.
+Make all new apps created in the Rack use Internal ELBs by default, i.e. make them accessible only from within the VPC and unreachable from the internet. See the [Internal Racks](https://convox.com/docs/internal-apps#internal-racks) section of our Internal Apps doc for more information.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
