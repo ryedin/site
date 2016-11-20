@@ -35,7 +35,7 @@ The following parameters can be used to configure your Convox Rack:
 * [InstanceUpdateBatchSize](#instanceupdatebatchsize)
 * [Internal](#internal)
 * [Key](#key)
-* **[Password](#password) (required)**
+* [Password](#password) **(required)**
 * [Private](#private)
 * [PrivateApi](#privateapi)
 * [Subnet0CIDR](#subnet0cidr)
@@ -46,7 +46,7 @@ The following parameters can be used to configure your Convox Rack:
 * [SubnetPrivate2CIDR](#subnetprivate2cidr)
 * [SwapSize](#swapsize)
 * [Tenancy](#tenancy)
-* [**Version**](#version) **(required)**
+* [Version](#version) **(required)**
 * [VolumeSize](#volumesize)
 * [VPCCIDR](#vpccidr)
 
@@ -107,14 +107,14 @@ Default container disk size in GB.
 
 Development mode.
 
-| Default value | `No` |
+| Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
 
 ## Encryption
 
 Encrypt secrets with KMS.
 
-| Default value | `Yes` |
+| Default value    | `Yes`       |
 | Permitted values | `Yes`, `No` |
 
 ## ExistingVpc
@@ -133,9 +133,8 @@ For more information about using cloud-init with EC2, see the AWS doc [Running C
 
 The number of EC2 instances in your Rack cluster.
 
-| Minimum value | `2`    |
 | Default value | `3`    |
-| Type          | Number |
+| Minimum value | `2`    |
 
 ## InstanceRunCommand
 
@@ -156,9 +155,8 @@ The type of EC2 instance run in your Rack cluster.
 
 The number of instances to update in a batch.
 
-| Minimum value | `1`    |
 | Default value | `1`    |
-| Type          | Number |
+| Minimum value | `1`    |
 
 ## Internal
 
