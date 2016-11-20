@@ -20,6 +20,10 @@ Custom Amazon endpoint.
 
 AWS credentials.
 
+## `CONVOX_CONFIG`
+
+Location of convox config directory.
+
 ## `CONVOX_DEBUG`
 
 Makes `convox` produce more verbose output.
