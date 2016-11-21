@@ -4,7 +4,7 @@ author: Sandeep Chivukula
 twitter: _sandeep
 ---
 
-[Botmetrics](https://www.getbotmetrics.com) is an [open source package](https://github.com/botmetrics/botmetrics) and [a hosted service](http://www.getbotmertrics.com) for measuring and growing Facebook Messenger, Kik, Slack and in-app messaging bots. 
+[Botmetrics](https://www.getbotmetrics.com) is an [open source package](https://github.com/botmetrics/botmetrics) and [a hosted service](http://www.getbotmetrics.com) for measuring and growing Facebook Messenger, Kik, Slack and in-app messaging bots. 
 
 Analytics for web and mobile rely on events to deliver insights. For chat bots, on the other hand, insights comes from analyzing the content of conversations. Botmetrics accomplishes this with several services—collectors, workers, and a web app for interfacing with the user. These need to be setup separately and configured to work in concert.
 
@@ -85,4 +85,4 @@ When future updates of Botmetrics land, you can `git pull` the latest version fr
 
 ## Stay Connected
 
-If you want to talk bots, analytics or have questions we're available [@getbotmetrics on Twitter](https://www.twittter.com/getbotmetrics) or by email: [hello@getbotmetrics.com](mailto:hello@getbotmetrics.com).
+If you want to talk bots, analytics or have questions we're available [@getbotmetrics on Twitter](https://www.twitter.com/getbotmetrics) or by email: [hello@getbotmetrics.com](mailto:hello@getbotmetrics.com).
