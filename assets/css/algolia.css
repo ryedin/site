@@ -4,7 +4,8 @@
   position: relative; }
 
 .aa-input-search {
-  width: 200px;
+  margin-top: 7px; margin-right: 7px;
+    height: 32px; width: 130px;
   padding: 12px 28px 12px 12px;
   border: 2px solid #e4e4e4;
   border-radius: 4px;
@@ -31,15 +32,15 @@
   height: 16px;
   width: 16px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 16px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  fill: #e4e4e4;
+  fill: #EA9B00;
   pointer-events: none; }
 
 .aa-hint {
-  color: #e4e4e4; }
+  color: red; }
 
 .aa-dropdown-menu {
     width: 600px;
