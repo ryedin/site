@@ -14,7 +14,7 @@ Amazon region in which new Racks will be installed.
 
 ## `AWS_ENDPOINT`
 
-Custom Amazon endpoint.
+Custom [Amazon endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html).
 
 ## `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`
 
@@ -22,7 +22,7 @@ AWS credentials.
 
 ## `CONVOX_CONFIG`
 
-Location of convox config directory.
+Location of Convox config directory.
 
 ## `CONVOX_DEBUG`
 
@@ -50,12 +50,10 @@ Custom Rack name. Used when [installing a new Rack](/docs/installing-a-rack).
 
 If `SUBNETS_PRIVATE` is empty, `SUBNETS` will be used.
 
-## `VERSION`
-
-Custom Rack version. Used when [installing a new Rack](/docs/installing-a-rack). Defaults to `latest`.
-
 ## `TEMPLATE_FILE`
 
 Custom CloudFormation stack template.
 
+## `VERSION`
 
+Custom Rack version. Used when [installing a new Rack](/docs/installing-a-rack). Defaults to `latest`.
