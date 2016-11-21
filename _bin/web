@@ -2,11 +2,6 @@
 
 nginx &
 
-#<<<<<<< HEAD
-jekyll algolia push
-#bundle exec jekyll serve -H 0.0.0.0 -P 5000 --force_polling
-#bin/jekyll
-#=======
 echo "DEVELOPMENT: $DEVELOPMENT"
 
 if [ "$DEVELOPMENT" == "true" ]; then
@@ -18,8 +13,9 @@ if [ "$DEVELOPMENT" == "true" ]; then
         --force_polling \
         --watch) "$@"
 else
+    jekyll algolia push
+
     $(bundle exec jekyll serve \
         -H 0.0.0.0 \
         -P 5000) "$@"
 fi
-#>>>>>>> master
