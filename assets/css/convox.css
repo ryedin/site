@@ -330,6 +330,10 @@ header ul.actions li a:hover {
   margin-bottom: 10px;
 }
 
+.box span.glyphicon {
+  font-size: 80px;
+}
+
 #features .box {
 	padding-top: 8px;
 	height: 350px;
