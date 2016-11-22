@@ -113,6 +113,11 @@ header ul.actions li a:hover {
   color: #FFF;
 }
 
+span.mono {
+  font-family: 'Roboto Mono', Monaco, Consolas, monospace;
+  color: #000;
+}
+
 .short-desc {
   display: block;
   font-family: 'Lato', Arial, sans-serif;
