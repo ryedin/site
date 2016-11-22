@@ -1,3 +1,6 @@
+.aa-dropdown-menu {
+  text-transform: none;
+}
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700');
 .aa-input-container {
   display: inline-block;
@@ -39,80 +42,3 @@
   fill: #EA9B00;
   pointer-events: none; }
 
-.aa-hint {
-  color: red; }
-
-.aa-dropdown-menu {
-    width: 600px;
-    background-color: #fff;
-    border: 2px solid rgba(228, 228, 228, 0.6);
-    border-top-width: 0;
-    font-family: "Merriweather", sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    margin-top: 10px;
-    box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
-    font-size: 11px;
-    border-radius: 4px;
-    box-sizing: border-box; }
-
-  .aa-dropdown-menu > div {
-    display: inline-block;
-    width: 100%;
-    vertical-align: top; }
-
-.aa-suggestion {
-  padding: 6px 12px;
-  cursor: crosshair;
-  -webkit-transition: .2s;
-  transition: .2s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
-  .aa-suggestion:hover, .aa-suggestion.aa-cursor {
-    background-color: rgba(235, 155, 0, 0.1122); }
-
-  .aa-suggestion > div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%; }
-
-.aa-suggestion span {
-    color: #1777BB; 
-    text-transform: none; }
-
-.aa-suggestion span:first-child, .aa-suggestion span:last-child {
-    color: #888;
-    min-width: 200px;}
-
-    .aa-suggestion span:first-child {
-      font-family: "Lato", "Helvetica", "Arial", san-serif;
-text-transform: uppercase;
-      font-weight: 700;
-      font-style: normal;
-    color: #1777BB; }
-
-.aa-suggestion span:first-child em, .aa-suggestion span:last-child em {
-  font-weight: 700;
-  font-style: normal;
-  background-color: rgba(58, 150, 207, 0.1);
-  padding: 2px 0 2px 2px; }
-
-
-
-.aa-empty {
-  padding: 6px 12px; }
