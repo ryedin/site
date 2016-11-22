@@ -13,8 +13,6 @@ if [ "$DEVELOPMENT" == "true" ]; then
         --force_polling \
         --watch) "$@"
 else
-    jekyll algolia push
-
     $(bundle exec jekyll serve \
         -H 0.0.0.0 \
         -P 5000) "$@"

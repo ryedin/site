@@ -1,10 +1,13 @@
 .aa-dropdown-menu {
   text-transform: none;
 }
+
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700');
 .aa-input-container {
   display: inline-block;
-  position: relative; }
+  position: relative;
+  float: right;
+}
 
 .aa-input-search {
   margin-top: 7px; margin-right: 7px;
@@ -40,5 +43,32 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   fill: #EA9B00;
-  pointer-events: none; }
+  pointer-events: none;
+}
+
+
+input[type=search] {
+    background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+    border: solid 1px #ccc;
+    padding: 9px 10px 9px 32px;
+    width: 55px;
+
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+input[type=search]:focus {
+    width: 130px;
+    background-color: #fff;
+    border-color: #66CC75;
+
+    -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
 
