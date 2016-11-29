@@ -134,7 +134,7 @@ For more information about using cloud-init with EC2, see the AWS doc [Running C
 The number of EC2 instances in your Rack cluster.
 
 | Default value | `3`    |
-| Minimum value | `2`    |
+| Minimum value | `3`    |
 
 ## InstanceRunCommand
 
