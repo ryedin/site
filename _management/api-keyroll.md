@@ -18,7 +18,7 @@ Click **Roll API Key**. Make sure to store the new API key that will be displaye
 Note that rolling your account API key will disable CLI access until you run `convox login console.convox.com`.
 
 
-### Roll Rack API key (nee "password")
+### Roll Rack API key (née "password")
 
 | CLI instructions                      | Console instructions                          | Effect                                |
 | `convox rack params set Password=`    | "Roll API key" (Rack settings page)           | 
