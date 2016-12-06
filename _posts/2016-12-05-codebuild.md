@@ -58,3 +58,5 @@ We expect to see tangible platform improvements from this. Builds will be:
 * More secure by removing privileged operations from the ECS cluster
 
 What do you think? Are you already using a build service? Can you simplify your build system by letting AWS CodeBuild do all the heavy lifting?
+
+Tweet at [@goconvox](https://twitter.com/goconvox) or [chat with us in Slack](http://invite.convox.com/).
