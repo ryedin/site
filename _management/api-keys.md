@@ -33,3 +33,7 @@ $ convox login <hostname>
 ```
 
 If you lose the Rack key, it can not be recovered, and a new key must be set through the AWS CloudFormation Management Console.
+
+## See also
+
+- [Keyroll](/docs/keyroll)
