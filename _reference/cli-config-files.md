@@ -1,16 +1,15 @@
 ---
 title: "CLI Configuration files"
-order: 150
 ---
 
-This page describes a number of files and directories which can exist in `~/.convox/` and/or `./.convox/`.
+This page describes a number of files and directories which can exist in `~/.convox/` and/or `./.convox/`, and which are taken into account by the Convox CLI.
 
 As a Convox user, there are 3 concepts you should be aware of:
 
 1. **Convox account password**: chosen by you at signup,
 2. **Convox Console API key** (one per user account): used to log in to Racks created via Console, and can be regenerated at your request via Console, 
 3. **Rack API keys**: one per rack; can be regenerated at your request but aren't exposed to you, as they are used by Console to proxy your requests to your active Rack.
-4. **Instance SSH keys**: one per EC2 instance; you can't specify your own SSH key to be added to instances, but they can be regenerated via `convox instances keyroll`
+4. **Instance SSH keys**: one per EC2 instance; you can't specify your own SSH key to be added to instances, but they can be [re]generated via `convox instances keyroll`.
 
 ## Configuration files
 
