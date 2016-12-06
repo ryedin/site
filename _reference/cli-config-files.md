@@ -104,3 +104,9 @@ It's because Console generates a new API key, kicks off a CloudFormation update 
 If a service has fewer than 3 containers, downtime can happen when you run `convox instances keyroll` (indeed, any time there is a full instance replacement).
 
 This downtime can be avoided by running at least 3 containers of any critical service. If you have 2 containers you'll *sometimes* get short downtime. If you have only 1 container, you'll be guaranteed some downtime.
+
+### How do I log out?
+
+When we talk about being "logged in" means that `~/.convox/auth` contains the hostname in `~/.convox.host` along with the corresponding Console or Rack API key (referred to in some places as a "Rack password").
+
+In other words: if `auth` contains the correct hostname + API key pair corresponding to the hostname in `host`, then you're "logged in."
