@@ -13,19 +13,28 @@ When you [install a Rack](/docs/installing-a-rack/), most of the AWS resources u
 
 By default, Convox Rack installations create a new VPC with subnets in two or three (when available) Availability Zones in your chosen AWS Region. If you'd like to install a Convox Rack into an existing VPC, we recommend allocating a /24 block subnet in each of three Availability Zones.
 
-To install a Rack into an existing VPC, you'll need to provide the VPC ID and the CIDRs of the subnets into which Convox should be installed.
+To install a Rack into an existing VPC, you'll need to provide:
 
-    convox install \
-      --existing-vpc <VPC ID> \
-      --vpc-cidr <VPC CIDR> \
-      --subnet-cidrs <comma-separated CIDRs>
+* the VPC ID
+* the VPC CIDR
+* the CIDRs of the subnets into which Convox should be installed
+* the Internet Gateway ID (can be found in the AWS VPC console)
+
+```
+convox install \
+  --existing-vpc <VPC ID> \
+  --vpc-cidr <VPC CIDR> \
+  --subnet-cidrs <comma-separated CIDRs>
+  --internet-gateway <Internet Gateway ID>
+```
 
 For example:
 
     convox install \
       --existing-vpc "vpc-abcd1234" \
       --vpc-cidr "10.0.0.0/16" \
-      --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24"
+      --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24" \
+      --internet-gateway "igw-abcd1234"
 
 ### Finding the VPC ID and VPC CIDR
 
@@ -47,6 +56,7 @@ Installing a private Rack into an existing VPC requires specifying a couple more
       --vpc-cidr "10.0.0.0/16" \
       --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24" \
       --private-cidrs "10.0.4.0/24,10.0.5.0/24,10.0.6.0/24"
+      --internet-gateway "igw-abcd1234"
 
 Keep in mind that you will need to create six /24 CIDR block subnets: three public, and three private.
 
