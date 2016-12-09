@@ -36,6 +36,10 @@ If this file exists, its contents are used as if passed to the `--email` flag du
 
 It can be overridden by setting the `CONVOX_EMAIL` environment variable.
 
+The ID is for metrics and for the name of the CloudFormation stack.
+
+If not provided, a randomly generated string will be used.
+
 ### `~/.convox/rack`
 
 This file contains the organization and name of the active Rack. This is how `convox rack` determines which Rack you want to know about:
