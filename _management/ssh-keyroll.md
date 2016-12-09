@@ -42,11 +42,3 @@ This downtime can be avoided by running at least 3 containers of any critical se
 
 We consider it a best practice to consider your infrastructure ephemeral and immutable.
 Therefore, Convox doesn't support this out of the box; we discourage relying on SSH because it shouldn't be necessary.
-
-Nonetheless, you can add SSH keys manually if you wish:
-
-- Make sure you're logged into Console `convox login console.convox.com`)
-- Run `convox instances keyroll`
-- Run `convox instances ssh <instance id>`
-
-Once you have a shell on the instance, proceed like you normally would (e.g. add your public SSH key to the `authorized_keys` file, then SSH to the public IP of the instance as the ??? user.

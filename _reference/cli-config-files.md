@@ -4,7 +4,13 @@ title: "CLI Configuration files"
 
 This page describes a number of files and directories which can exist in `~/.convox/` and/or `./.convox/`, and which are taken into account by the Convox CLI.
 
-As a Convox user, there are 3 concepts you should be aware of:
+Configuration is evaluated in the following order:
+
+1. Environment variables (e.g. `$CONVOX_RACK`)
+2. Local configuration directory (`./.convox/`)
+3. User configuration directory (`~/.convox/`)
+
+As a Convox user, there are several authentication-related concepts you should be aware of:
 
 1. **Convox account password**: chosen by you at signup,
 2. **Convox Console API key** (one per user account): used to log in to Racks created via Console, and can be regenerated at your request via Console, 
@@ -35,6 +41,10 @@ This file contains the hostname of the Rack you're currently logged into.
 
 
 ### `~/.convox/id`
+
+If this file exists, its contents are used as if passed to the `--email` flag during `rack install`.
+
+It can be overridden by setting the `CONVOX_EMAIL` environment variable.
 
 ### `~/.convox/rack`
 
@@ -80,6 +90,9 @@ $ cat ~/.convox/rack
 personal/dev
 ```
 
+You can also pin a repo to a specific rack by creating a `.convox` directory in the repo root. However, note that `convox switch` only updates `~/.convox/rack` and not `.convox/rack`.
+
+
 ## Login, authorization, and keyroll FAQ
 
 ### What's the difference between `convox login` and `convox switch`?
@@ -98,11 +111,6 @@ Since Console is a proxy for a Rack, Console stores the encrypted original Rack 
 
 It's because Console generates a new API key, kicks off a CloudFormation update (to update the rack's Password param), then stores the new key in Dynamo. But it takes a while for the CF update to complete. So until that CF update completes, Console is trying to use the new key, but the rack API still has the old key.
 
-### Why is the Rack unavailable during an SSH instances keyroll? [`convox instances keyroll`]
-
-If a service has fewer than 3 containers, downtime can happen when you run `convox instances keyroll` (indeed, any time there is a full instance replacement).
-
-This downtime can be avoided by running at least 3 containers of any critical service. If you have 2 containers you'll *sometimes* get short downtime. If you have only 1 container, you'll be guaranteed some downtime.
 
 ### How do I log out?
 

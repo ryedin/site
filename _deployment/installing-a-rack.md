@@ -58,6 +58,9 @@ Success. Try `convox apps`.
 
 See our [VPC doc](/docs/vpc-configurations#installing-into-an-existing-vpc) for more information.
 
+## What's the difference between installing via Console vs using the CLI?
+
+FIXME
 
 ## How do I disconnect a Rack from Convox?
 
