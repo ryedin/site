@@ -8,8 +8,10 @@ There are two different concepts here: rolling a **Rack API key** (what Console 
 
 ### Roll User/Account API Key
 
-| CLI instructions                      | Console instructions                          | Effect                                |
-| n/a                                   | "Roll API key" (Account settings page)        | 
+Each Convox account has its own API key (not to be confused with the account password).
+
+| CLI instructions                      | Console instructions                          |
+| n/a                                   | "Roll API key" (Account settings page)        |
 
 If you're trying to roll your user API key, you can do that on the [Account page](https://console.convox.com/grid/user/profile).
 
@@ -20,19 +22,35 @@ Note that rolling your account API key will disable CLI access until you run `co
 
 ### Roll Rack API key (née "password")
 
-| CLI instructions                      | Console instructions                          | Effect                                |
-| `convox rack params set Password=`    | "Roll API key" (Rack settings page)           | 
-
 A Rack has a master API key (previously referred to as a "password").
 
-Console stores that password and brokers individual user access via user API keys.
-The "Roll API key" button does `convox rack params set Password=NEWRANDOMTHING` but it also stores NEWRANDOMTHING in the rack record in console
+| CLI instructions                      | Convox Console instructions                   | AWS Console instructions                             |
+| `convox rack params set Password=`    | "Roll API key" (Rack settings page)           | Change `Password` parameter in CloudFormation stack  |
+
+The “Roll API key” button in Console:
+
+* runs `convox rack params set Password=MySuperDuperNewPassword`
+* stores `MySuperDuperNewPassword` in the rack record in console
+* brokers individual user access via user API keys.
+
+Console stores Rack API keys and acts as a proxy, brokering individual user access to the Rack via User API keys.
+The Rack API key isn't revealed to you, since you don't need to log into it directly.
+Instead, you should run `convox login console.convox.com` and then `convox/switch` to activate the Rack.
+
+However, if you ever need to reset this manually (i.e. if console.convox.com is down), you can do so by updating the `Password` parameter in your CloudFormation stack in the AWS console (Options -> Update Stack -> Use current template -> Password).
+
+Note: The rack will be unavailable during the keyroll. (See FAQ for explanation.)
 
 
-The rack will be unavailable during the keyroll.
+### Why is the Rack is unavailable during an API key roll?
+
+The rack will be temporarily unavailable during the keyroll. This is because Console generates a new API key, kicks off a CloudFormation update (to update the rack's Password param), then stores the new key in Dynamo. But it takes a while for the CloudFormation update to complete, and until it does, Console is trying to use the new key, whereas the Rack API still has the old key.
 
 
 ## See also
 
 - [API Keys](/docs/api-keys)
-- For information on accessing your instances via SSH, see [Debugging](/docs/debugging).
+- [Login and authentication](/docs/login-and-authentication/)
+- [CLI configuration files](/docs/cli-config-files/)
+- [CLI environment variables](/docs/cli-environment-variables/)
+
