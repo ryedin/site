@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="/favicon.ico">
 
     <title>{{ page.title }}</title>
 
@@ -49,7 +49,39 @@
 
     {{ content }}
 
+    <footer class="text-left">
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              © 2016 Convox, Inc.
+              <br />
+              <a href="/legal/privacy">Privacy Policy</a> |
+              <a href="/jobs">Jobs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    {% include footer.html %}
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.easing.1.3.min.js"></script>
+    <script src="/assets/js/classie.js"></script>
+
+    {% if jekyll.environment != 'development' %}
+      {% include facebook.html %}
+      {% include intercom.html %}
+      {% include segment.html %}
+
+      <script>
+        $('.js-intercom-show').click(function () {
+          Intercom('show');
+          return false;
+        });
+
+        analytics.trackLink($('a.cta'), function(e) { return "clicked " + e.id })
+      </script>
+    {% endif %}
   </body>
 </html>
