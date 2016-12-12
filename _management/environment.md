@@ -87,7 +87,6 @@ Environment variables are considered app-level configuration.
 
 There isn't currently a way to set an environment variable for a whole cluster rather than just a single app.
 
-
 ## Sensitive Information
 
 Since `docker-compose.yml` will typically be under version control, we recommend not setting sensitive default values there.
