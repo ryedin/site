@@ -42,7 +42,7 @@ Note: The Rack will be unavailable during the keyroll. (See FAQ for explanation.
 
 ### Why is the Rack is unavailable during an API key roll?
 
-The Rack will be temporarily unavailable during the keyroll. This is because Console generates a new API key, kicks off a CloudFormation update (to update the Rack's Password param), then stores the new key in Dynamo. But it takes a while for the CloudFormation update to complete, and until it does, Console is trying to use the new key, whereas the Rack API still has the old key.
+The Rack will be temporarily unavailable during the keyroll. This is because Console generates a new API key, kicks off a CloudFormation update (to update the Rack's Password param), then stores the new key in DynamoDB. But it takes a while for the CloudFormation update to complete, and until it does, Console is trying to use the new key, whereas the Rack API still has the old key.
 
 
 ## See also

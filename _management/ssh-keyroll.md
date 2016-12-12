@@ -16,10 +16,7 @@ This sets up a keypair between the Rack API and the EC2 instances for SSH access
 
 ## Under the hood
 
-Keyroll causes Console to trigger a CloudFormation update that performs a rolling replacement of all of the Rack's instances.
-
-**Note:** If the CloudFormation update fails and rolls back, the SSH keys in console will have already been updated, and will therefore no longer be valid. In other words, if an update fails, `convox instances ssh` won't work you've done a successful `convox instances keyroll`.
-
+Keyroll triggers a CloudFormation update that performs a rolling replacement of all of the Rack's instances.
 
 ## SSH Keyroll FAQ
 

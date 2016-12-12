@@ -7,9 +7,9 @@ order: 300
 As a Convox user, there are several authentication-related concepts you should be aware of:
 
 1. **Convox account password**: chosen by you at signup,
-2. **Convox Console API key** (one per user account): used to log in to Racks created via Console, and can be regenerated at your request via Console,
-3. **Rack API keys**: one per rack; can be regenerated at your request but aren't exposed to you, as they are used by Console to proxy your requests to your active Rack.
-4. **Instance SSH keys**: one per EC2 instance; you can't specify your own SSH key to be added to instances, but they can be [re]generated via `convox instances keyroll`.
+2. **Convox Console API key** (one per user account): used with the CLI to log into Racks created via Console; can be regenerated at your request via Console,
+3. **Rack API keys**: one per rack; can be regenerated at your request but aren't exposed to you, as they are used by Console to proxy your requests to your active Rack,
+4. **Instance SSH keys**: one per Rack, applied to all the Rack's EC2 instances. You can't specify your own SSH key to be added to the instances, but they can be [re]generated via `convox instances keyroll`.
 
 
 ## Console API Keys

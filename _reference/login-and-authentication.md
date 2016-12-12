@@ -6,13 +6,15 @@ title: "Login and Authentication"
 
 ### What's the difference between `convox login` and `convox switch`?
 
-Both commands change the active Rack, but `convox login` is only possible with Racks which have been installed via Console, and `convox switch` is only available with Racks that have been installed via `convox install`.
+`convox login` tells your CLI what hostname to send requests to. The target can be Console or a Rack. This is stored in [`~/.convox/host`](/docs/cli-config-files/#configuration-files).
+
+When the CLI is logged into Console, `convox switch` tells Console which Rack to proxy your commands to. `convox switch` is only available with Racks that have been installed via Console, or which have been installed via CLI and manually added to the Console web interface.
 
 ### Difference between `convox login console.convox.com` and `convox login <rack hostname>`?
 
-When you're logged into Console, Console acts as a proxy for your active Rack. This is only available for Racks that have been installed via the Console web interface. If you installed a Rack via `convox install` command, you have to log into it by its hostname, e.g. `convox login <hostname> --password <password>` as they appear in `~/.convox/auth`.
+When you're logged into Console, Console acts as a proxy for your active Rack. This is only available for Racks that have been installed via the Console web interface (or installed via CLI and manually added to the Console web interface). If you installed a Rack via `convox install` command, and want to log into it directly, you have to log into it by its hostname, e.g. `convox login <hostname> --password <password>` as they appear in `~/.convox/auth`.
 
-You can switch between Racks which have been installed via the Console with `convox switch <org>/<rackname>`.
+You can switch between Racks which have been installed or manually added to Console with `convox switch <org>/<rackname>`.
 
 Since Console is a proxy for a Rack, Console stores the encrypted original Rack password (generated automatically when you install a Rack via Console) and authenticates using its own API key (which you can regenerate on your Account Settings screen).
 
