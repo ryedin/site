@@ -58,6 +58,16 @@ Success. Try `convox apps`.
 
 See our [VPC doc](/docs/vpc-configurations#installing-into-an-existing-vpc) for more information.
 
+## What's the difference between installing via Console vs using the CLI?
+
+The CLI installer has some advanced options that aren't available in the web UI yet.
+
+When you install via the CLI, your CLI gets logged into the Rack at the end of a successful installation. That means all commands go straight to the Rack instead of being proxied through Console. After installing a Rack via CLI, you'll need to:
+
+- run `convox login console.convox.com` to log your CLI back into Console
+- manually add the Rack to the Console web interface (Open the **Add Rack** dropdown and select **Add Existing**)
+
+Then you can activate the Rack by running `convox switch <org>/<rack>`.
 
 ## How do I disconnect a Rack from Convox?
 
