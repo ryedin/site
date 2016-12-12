@@ -30,21 +30,19 @@ A Rack has a master API key (previously referred to as a "password").
 The “Roll API key” button in Console:
 
 * runs `convox rack params set Password=MySuperDuperNewPassword`
-* stores `MySuperDuperNewPassword` in the rack record in console
+* stores `MySuperDuperNewPassword` in the Rack record in Console
 * brokers individual user access via user API keys.
 
-Console stores Rack API keys and acts as a proxy, brokering individual user access to the Rack via User API keys.
-The Rack API key isn't revealed to you, since you don't need to log into it directly.
-Instead, you should run `convox login console.convox.com` and then `convox/switch` to activate the Rack.
+Console stores Rack API keys and acts as a proxy, brokering individual user access to the Rack via User API keys. The Rack API key isn't revealed to you, since you don't need to log into it directly. Instead, you should run `convox login console.convox.com` and then `convox/switch` to activate the Rack.
 
-However, if you ever need to reset this manually (i.e. if console.convox.com is down), you can do so by updating the `Password` parameter in your CloudFormation stack in the AWS console (Options -> Update Stack -> Use current template -> Password).
+However, if you ever need to reset this manually (i.e. if console.convox.com is down), you can do so by updating the `Password` parameter in your CloudFormation stack in the AWS console (**Options** -> **Update Stack** -> **Use current template** -> **Password**). Note that resetting the Rack API key in this way will cause Console to lose its connection to the Rack. The Rack will need to be removed and re-added to Console with the new API key.
 
-Note: The rack will be unavailable during the keyroll. (See FAQ for explanation.)
+Note: The Rack will be unavailable during the keyroll. (See FAQ for explanation.)
 
 
 ### Why is the Rack is unavailable during an API key roll?
 
-The rack will be temporarily unavailable during the keyroll. This is because Console generates a new API key, kicks off a CloudFormation update (to update the rack's Password param), then stores the new key in Dynamo. But it takes a while for the CloudFormation update to complete, and until it does, Console is trying to use the new key, whereas the Rack API still has the old key.
+The Rack will be temporarily unavailable during the keyroll. This is because Console generates a new API key, kicks off a CloudFormation update (to update the Rack's Password param), then stores the new key in Dynamo. But it takes a while for the CloudFormation update to complete, and until it does, Console is trying to use the new key, whereas the Rack API still has the old key.
 
 
 ## See also
