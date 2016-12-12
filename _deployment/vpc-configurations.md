@@ -13,6 +13,10 @@ When you [install a Rack](/docs/installing-a-rack/), most of the AWS resources u
 
 By default, Convox Rack installations create a new VPC with subnets in two or three (when available) Availability Zones in your chosen AWS Region. If you'd like to install a Convox Rack into an existing VPC, we recommend allocating a /24 block subnet in each of three Availability Zones.
 
+<div class="block-callout block-show-callout type-info" markdown="1">
+  Your VPC must have both the `enableDnsHostnames` and `enableDnsSupport` attributes set to `true`. These settings can also be found as **Edit DNS Hostnames** and **Edit DNS Resloution** in the **Actions** menu for your VPC in the AWS VPC web console.
+</div>
+
 To install a Rack into an existing VPC, you'll need to provide:
 
 * the VPC ID
