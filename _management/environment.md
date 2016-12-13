@@ -83,9 +83,11 @@ services:
 
 ## Scope
 
-Environment variables are considered app-level configuration.
+Environment variables set via `convox env` are considered app-level configuration.
 
 There isn't currently a way to set an environment variable for a whole cluster rather than just a single app.
+
+You can set environment variables at the [service](https://convox.com/docs/definitions/#service) level in `docker-compose.yml`.
 
 ## Sensitive Information
 
