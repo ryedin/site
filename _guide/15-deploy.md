@@ -34,12 +34,10 @@ The commands are:
 Let's start by [installing a Rack](/guide/rack/).
 
 <section>
-    <div id="container_buttons" align="right">
-        <p>
-            <a href="/guide/rack" class="a_demo_four">
-                Installing a Rack
-            </a>
-        </p>
-    </div>
+  <div id="container_buttons" align="right">
+      <a href="/guide/rack" class="a_demo_four">
+        Installing a Rack
+      </a>
+  </div>
 </section>
 
