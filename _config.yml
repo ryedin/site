@@ -54,6 +54,8 @@ collections:
     permalink: /docs/:name/
   guide:
     output: true
+  heroku:
+    output: true
 
 defaults:
   - scope:
@@ -92,4 +94,8 @@ defaults:
       path: guide
     values:
       layout: guide
+  - scope:
+      path: heroku
+    values:
+      layout: heroku
 
