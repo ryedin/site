@@ -401,20 +401,9 @@ Promoting RWGFPGSELVA... OK
 
 # verify the Convox environment, database connection and data
 
-<span class="command">convox run web bash</span>
-root@f9e6c6371d6c:/app# env
-DATABASE_URL=postgres://ginscgyaelubeu:redacted@ec2-54-235-72-121.compute-1.amazonaws.com:5432/d8balliluqtur2
-
-
-root@f9e6c6371d6c:/app# python manage.py migrate
+<span class="command">convox run web python manage.py migrate</span>
 Running migrations:
   No migrations to apply.
-
-# double check the config matches Heroku
-
-<span class="command">heroku config</span>
-=== pure-basin-53177 Config Vars
-DATABASE_URL: postgres://ginscgyaelubeu:redacted@ec2-54-235-72-121.compute-1.amazonaws.com:5432/d8balliluqtur2
 </pre>
 
 #### Migrate Data
