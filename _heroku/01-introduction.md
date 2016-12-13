@@ -5,7 +5,7 @@ permalink: /guide/heroku/
 
 Heroku and Convox are both Platforms-as-a-Service designed around [The Twelve-Factor App methodologies](https://12factor.net/).
 
-Convox is open-source and built entirely on AWS cloud services. It enables you to deploy your apps to your own AWS account for minimum upkeep and maximum control. Depending on your application and engineering team, migrating an app to Convox could unlock security, reliability, performance, cost and/or operational improvements.
+Convox is open-source and built entirely on AWS cloud services. It enables you to deploy your apps to your own AWS account for maximum control. Depending on your application and engineering team, migrating an app to Convox could unlock security, reliability, performance, cost and/or operational improvements.
 
 Many parts of the Heroku platform map directly to Convox:
 
@@ -136,8 +136,8 @@ Other parts are similar, but represent more significant changes to your apps:
 </pre>
       </td>
     </tr>
-    <tr id="dev">
-      <td>Dev</td>
+    <tr>
+      <td>Development</td>
       <td>
         <pre>$ heroku local</pre>
         <div>Homebrew</div>
@@ -147,8 +147,8 @@ Other parts are similar, but represent more significant changes to your apps:
         <div>Docker</div>
       </td>
     </tr>
-    <tr id="prod">
-      <td>Prod</td>
+    <tr>
+      <td>Production</td>
       <td>
         <div>Cedar Stack Image</div>
         <div>PaaS</div>
@@ -163,22 +163,21 @@ Other parts are similar, but represent more significant changes to your apps:
 
 This guide explains the differences of the platforms, and walks you through the steps required to migrate an app.
 
-Depending on your app and engineering team, migrating an app to Convox could unlock security, reliability, performance, cost and/or operational improvements.
-
 ## Prerequisites
 
 Let's start with a simple Python and Postgres Heroku app. The codebase is in a GitHub repo.
 
-```bash
-$ https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started-getting-started
+<pre class="terminal">
+# clone source code and deploy to Heroku
 
-$ heroku create
+<span class="command">git clone https://github.com/heroku/python-getting-started.git</span>
+<span class="command">cd python-getting-started-getting-started</span>
+
+<span class="command">heroku create</span>
 Creating app... done, ⬢ pure-basin-53177
 https://pure-basin-53177.herokuapp.com/ | https://git.heroku.com/pure-basin-53177.git
 
-
-$ git push heroku master
+<span class="command">git push heroku master</span>
 remote: Building source:
 remote: 
 remote: -----> Python app detected
@@ -195,7 +194,9 @@ remote: Verifying deploy... done.
 To https://git.heroku.com/pure-basin-53177.git
  * [new branch]      master -> master
 
-$ heroku run python manage.py migrate
+# run database migrations
+
+<span class="command">heroku run python manage.py migrate</span>
 Running python manage.py migrate on ⬢ pure-basin-53177... up, run.3384 (Free)
 Operations to perform:
   Apply all migrations: sessions, hello, contenttypes, auth, admin
@@ -203,14 +204,14 @@ Running migrations:
   Rendering model states... DONE
   Applying contenttypes.0001_initial... OK
   ...
-```
+</pre>
 
 Next, let's start with an empty Convox app:
 
-```bash
-$ convox apps create
+<pre class="terminal">
+<span class="command">convox apps create</span>
 Creating app python-getting-started... CREATING
-```
+</pre>
 
 If you don't have Convox set up in your AWS account, refer to the [Getting Started](http://localhost/docs/getting-started/) doc.
 
@@ -235,11 +236,11 @@ If you don't have Convox set up in your AWS account, refer to the [Getting Start
 
 First we have to add a `Dockerfile` to our Heroku app.
 
-There are many strategies, but we prefer to write a Dockerfile from scratch that builds our application. This will result in a build recipe that is simple to understand and modify over the life of our application.
+We prefer to write a Dockerfile from scratch that builds the application. This will result in a build recipe that is simple to understand and modify over the life of our application.
 
 For some apps this is straightforward. On the example app we can change to a modern Linux operating system, install the build dependencies with standard tooling, and run standard build steps in a few lines of code and no changes to the app.
 
-```Dockerfile
+<pre class="file dockerfile" title="Dockerfile">
 FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y libpq-dev python python-pip
@@ -250,10 +251,10 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt --disable-pip-version-check
 
 COPY . ./app
-```
+</pre>
 
-```bash
-$ docker build .
+<pre class="terminal">
+<span class="command">docker build .</span>
 Sending build context to Docker daemon 184.8 kB
 Step 1 : FROM ubuntu:16.04
 Step 2 : RUN apt-get update && apt-get install -y libpq-dev python python-pip
@@ -262,9 +263,9 @@ Step 4 : COPY requirements.txt /app/requirements.txt
 Step 5 : RUN pip install -r requirements.txt --disable-pip-version-check
 Step 6 : COPY . /app
 Successfully built 21389aff49d2
-```
+</pre>
 
-For other apps this could be hard due to the specifics of the Heroku runtime, assumptions in the buildpacks and nuances of Docker tooling. See the [Building a Heroku App with Docker](/guide/heroku/docker/) guide for ways to emulate Heroku.
+For other apps this could be hard due to the specifics of the Heroku runtime, assumptions in the buildpacks and nuances of Docker tooling. See the [Building a Heroku App with Docker](/guide/heroku/docker/) guide for ways to better emulate Heroku.
 
 ## Processes
 
@@ -287,13 +288,13 @@ For other apps this could be hard due to the specifics of the Heroku runtime, as
 
 Next we have to add a `docker-compose.yml` file to our Convox app. Every process type and command in `Procfile` is added as a service and command to `docker-compose.yml`.
 
-```yaml
+<pre class="file yaml" title="docker-compose.yml">
 version: 2
 services:
   web:
     build: .
     command: gunicorn gettingstarted.wsgi --log-file -
-```
+</pre>
 
 ## Ports
 
@@ -316,15 +317,15 @@ services:
 
 Next we have to add port mapping to our Convox app.
 
-```yaml
-version: 2
-services:
-  web:
-    build: .
-    command: gunicorn gettingstarted.wsgi --log-file -
-    ports:
-      - 80:8000
-```
+<pre class="file yaml" title="docker-compose.yml">
+<span class="diff-u">version: 2</span>
+<span class="diff-u">services:</span>
+<span class="diff-u">  web:</span>
+<span class="diff-u">    build: .</span>
+<span class="diff-u">    command: gunicorn gettingstarted.wsgi --log-file -</span>
+<span class="diff-a">    ports:</span>
+<span class="diff-a">      - 80:8000</span>
+</pre>
 
 Convox uses virtual networking which allows every process to bind to whatever port(s) it wants. So we add a port mapping that says we want public-facing port `80` to map to the `gunicorn` server's port `8000`.
 
@@ -334,36 +335,34 @@ See the [Port Mapping](http://localhost/docs/port-mapping/) doc for more informa
 
 Now our app can be deployed to Convox:
 
-```bash
-$ convox deploy
-
-$ convox deploy
+<pre class="terminal">
+<span class="command">convox deploy</span>
 Deploying python-getting-started
 Creating tarball... OK
 Uploading: 70.30 KB / 70.12 KB [=========================] 100.25 % 0s
 
 Starting build... OK
-Authenticating 132866487567.dkr.ecr.us-east-1.amazonaws.com: Login Succeeded
-running: docker build -f /tmp/917127267/Dockerfile -t python-getting-started/web /tmp/917127267
+running: docker build
 Sending build context to Docker daemon 184.8 kB
 Step 1 : FROM ubuntu:16.04
 ...
 Successfully built b0acccdaa320
 
-running: docker tag python-getting-started/web 132866487567.dkr.ecr.us-east-1.amazonaws.com/running: docker push ...
-web.BLEWKYOZMOV: digest: sha256:514ad420fccb59657e7ed96362200066202d72ef19b4556fd8e83e67a7a80d71 size: 7865
+running: docker tag 
+running: docker push 
+web.BLEWKYOZMOV: digest: sha256:514ad420 size: 7865
 
 Promoting RQZVCPKHSIT... OK
 
-$ convox apps info
+<span class="command">convox apps info</span>
 Name       python-getting-started
 Status     running
 Release    RQZVCPKHSIT
 Processes  web
-Endpoints  python-getting-started-w-OMR6OMC-1706078211.us-east-1.elb.amazonaws.com:80 (web)
-```
+Endpoints  python-w-OMR6OMC-1706078211.us-east-1.elb.amazonaws.com:80 (web)
+</pre>
 
-Sure enough, our app is available behind the endpoint.
+Sure enough, our app is available at the endpoint.
 
 ## Databases
 
@@ -390,16 +389,21 @@ The final step is to add database to our Convox app. There are two strategies.
 
 Both Heroku and Convox run in the AWS cloud. As long as the Heroku addons and Convox app are in the same region, access between them is fast. So the simplest strategy is to connect the Convox app to the Heroku addons by copying over the config.
 
-```bash
-# copy config to Convox
-$ heroku config -s | convox env set
+<pre class="terminal">
+# copy Heroku config to Convox app environment
+
+<span class="command">heroku config -s | convox env set</span>
 Updating environment... OK
 To deploy these changes run `convox releases promote RWGFPGSELVA`
 
-# verify the Convox env, database connection and data
-$ convox run web bash
+<span class="command">convox releases promote RWGFPGSELVA</span>
+Promoting RWGFPGSELVA... OK
+
+# verify the Convox environment, database connection and data
+
+<span class="command">convox run web bash</span>
 root@f9e6c6371d6c:/app# env
-DATABASE_URL=postgres://ginscgyaelubeu:<redacted>@ec2-54-235-72-121.compute-1.amazonaws.com:5432/d8balliluqtur2
+DATABASE_URL=postgres://ginscgyaelubeu:redacted@ec2-54-235-72-121.compute-1.amazonaws.com:5432/d8balliluqtur2
 
 
 root@f9e6c6371d6c:/app# python manage.py migrate
@@ -407,10 +411,11 @@ Running migrations:
   No migrations to apply.
 
 # double check the config matches Heroku
-$ heroku config
+
+<span class="command">heroku config</span>
 === pure-basin-53177 Config Vars
-DATABASE_URL: postgres://ginscgyaelubeu:<redacted>@ec2-54-235-72-121.compute-1.amazonaws.com:5432/d8balliluqtur2
-```
+DATABASE_URL: postgres://ginscgyaelubeu:redacted@ec2-54-235-72-121.compute-1.amazonaws.com:5432/d8balliluqtur2
+</pre>
 
 #### Migrate Data
 
@@ -418,35 +423,37 @@ The other strategy is to create new databases and migrate data. This has the sec
 
 To do this, we will backup the Heroku database, and restore it into a new, private Postgres database.
 
-```bash
+<pre class="terminal">
 # create the Convox resource and open a local proxy
-$ convox resources create postgres
+
+<span class="command">convox resources create postgres</span>
 Creating postgres-2098 (postgres)... CREATING
 
-
-$ convox resources proxy postgres-2098
+<span class="command">convox resources proxy postgres-2098</span>
 proxying 127.0.0.1:5432 to dev-east-postgres-2098.cyzckls48pd3.us-east-1.rds.amazonaws.com:5432
 
+# stop writing data and capture a backup
 
-# stop writing data to the Heroku addon and capture a backup
-$ heroku maintenance:on
-$ heroku pg:backups:capture
+<span class="command">heroku maintenance:on</span>
+
+<span class="command">heroku pg:backups:capture</span>
 Backing up DATABASE to b001... done
-$ heroku pg:backups:download
+
+<span class="command">heroku pg:backups:download</span>
 Getting backup from ⬢ pure-basin-53177... done, #1
 Downloading latest.dump...
 
-
 # restore the Convox database from the backup
-$ pg_restore -Ov -d app -h localhost -n public -U postgres latest.dump 
+
+<span class="command">pg_restore -Ov -d app -h localhost -n public -U postgres latest.dump</span>
 pg_restore: connecting to database for restore
 Password: 
 pg_restore: creating TABLE "public.auth_group"
 pg_restore: creating SEQUENCE "public.auth_group_id_seq"
 ...
-```
+</pre>
 
-### Further reading
+### Next Steps
 
 Our first deploy to Convox is just the beginning. From here you can explore:
 

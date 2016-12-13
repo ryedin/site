@@ -21,9 +21,14 @@ layout: base
         </button>
         <ul class="dropdown-menu docs-index guide">
           <li class="dropdown-header">{{ collection.title }}</li>
-          {% for d in collection.docs %}
-            <li><a href="{{ doc.url }}"><span>{{ d.title }}</span></a></li>
-          {% endfor %}
+          <li><a href="/guide/heroku/#introduction">Introduction</a></li>
+          <li><a href="/guide/heroku/#prerequisites">Prerequisites</a></li>
+          <li><a href="/guide/heroku/#dependencies">Dependencies</a></li>
+          <li><a href="/guide/heroku/#processes">Processes</a></li>
+          <li><a href="/guide/heroku/#ports">Ports</a></li>
+          <li><a href="/guide/heroku/#deploying">Deploying</a></li>
+          <li><a href="/guide/heroku/#databases">Databases</a></li>
+          <li><a href="/guide/heroku/docker/">Building a Heroku App with Docker</a></li>
         </ul>
       </div>
     </li>
@@ -35,17 +40,17 @@ layout: base
     <div class="collection">
       <h3>{{ collection.title }}</h3>
       <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="/guide/heroku/#introduction">Introduction</a></li>
+        <li><a href="/guide/heroku/#prerequisites">Prerequisites</a></li>
         <li style="margin-top: 15px;">App Changes</li>
-        <li><a href="#dependencies">Dependencies</a></li>
-        <li><a href="#processes">Processes</a></li>
-        <li><a href="#ports">Ports</a></li>
+        <li><a href="/guide/heroku/#dependencies">Dependencies</a></li>
+        <li><a href="/guide/heroku/#processes">Processes</a></li>
+        <li><a href="/guide/heroku/#ports">Ports</a></li>
         <li style="margin-top: 15px;">Migrating</li>
-        <li><a href="#deploying">Deploying</a></li>
-        <li><a href="#databases">Databases</a></li>
+        <li><a href="/guide/heroku/#deploying">Deploying</a></li>
+        <li><a href="/guide/heroku/#databases">Databases</a></li>
         <li style="margin-top: 15px;">Advanced Reading</li>
-        <li><a href="/guide/heroku/images/">Buildpack vs. Dockerfile</a></li>
+        <li><a href="/guide/heroku/docker/">Building a Heroku App with Docker</a></li>
       </ul>
     </div>
   </section>
