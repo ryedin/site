@@ -7,5 +7,6 @@ web:
     - 443:4001
   environment:
     - DEVELOPMENT
+    - JEKYLL_ENV
   command:
     - _bin/web
