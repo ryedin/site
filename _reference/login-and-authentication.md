@@ -24,6 +24,8 @@ When we talk about being "logged in" means that `~/.convox/auth` contains the ho
 
 In other words: if `auth` contains the correct hostname + API key pair corresponding to the hostname in `host`, then you're "logged in."
 
+To switch accounts, run `convox login console.convox.com --password=USER_API_KEY`.
+
 ## See also
 
 - [API Keyroll](/docs/keyroll)
