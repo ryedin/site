@@ -40,9 +40,21 @@ For example:
       --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24" \
       --internet-gateway "igw-abcd1234"
 
-### Finding the VPC ID and VPC CIDR
+### Finding the VPC ID, VPC CIDR, and Internet Gateway ID
 
-You can find your VPC ID and CIDR in the [AWS VPC console](https://console.aws.amazon.com/vpc). Navigate to "Your VPCs" and look in the "VPC ID" and "VPC CIDR" columns.
+You can find your VPC ID and CIDR in the [AWS VPC console](https://console.aws.amazon.com/vpc). Navigate to "Your VPCs" and look in the "VPC ID" and "VPC CIDR" columns. The Internet Gateway ID can also be found in the VPC console under "Internet Gateways".
+
+You can also ist your VPCs using the AWS CLI:
+
+```
+$ aws ec2 describe-internet-gateways
+```
+
+Once you have the VPC ID you can use it to fetch the Internet Gateway ID:
+
+```
+$ aws ec2 describe-internet-gateways --filters "Name=attachment.vpc-id,Values=vpc-abcd1234"
+```
 
 ### Choosing suitable CIDR blocks
 
