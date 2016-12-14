@@ -115,7 +115,7 @@ Other parts are similar, but represent more significant changes to your apps:
       </td>
     </tr>
     <tr>
-      <td>Processes</td>
+      <td>Manifest</td>
       <td>
         <div>Procfile</div>
       </td>
@@ -267,7 +267,7 @@ Successfully built 21389aff49d2
 
 For other apps this could be hard due to the specifics of the Heroku runtime, assumptions in the buildpacks and nuances of Docker tooling. See the [Building a Heroku App with Docker](/guide/heroku/docker/) guide for ways to better emulate Heroku.
 
-## Processes
+## Manifest (service definitions)
 
 <table class="vs">
   <thead>
@@ -281,7 +281,7 @@ For other apps this could be hard due to the specifics of the Heroku runtime, as
       Heroku uses a <b>Procfile</b> to define process types and commands.
     </td>
     <td>
-      Convox uses a <b>docker-compose.yml file</b> to define process types and commands.
+      Convox uses a <b>docker-compose.yml file</b> to define service types and commands.
     </td>
   </tr>
 </table>
@@ -329,7 +329,7 @@ Next we have to add port mapping to our Convox app.
 
 Convox uses virtual networking which allows every process to bind to whatever port(s) it wants. So we add a port mapping that says we want public-facing port `80` to map to the `gunicorn` server's port `8000`.
 
-See the [Port Mapping](http://localhost/docs/port-mapping/) doc for more information.
+See the [Port Mapping](/docs/port-mapping/) doc for more information.
 
 ## Deploying
 
@@ -378,12 +378,12 @@ Sure enough, our app is available at the endpoint.
       Heroku uses <b>addons</b> to provision database services, and sets app <b>config</b> with service connection information.
     </td>
     <td>
-      Convox uses <b>resources</b> to provision database services, and sets app <b>environment</b> with service connection information.
+      Convox uses <b><a href="/docs/about-resources/">resources</a></b> to provision database services, and sets app <b><a href="/docs/environment/">environment</a></b> with service connection information.
     </td>
   </tr>
 </table>
 
-The final step is to add database to our Convox app. There are two strategies.
+The final step is to add a database to our Convox app. There are two strategies.
 
 #### Reuse Heroku Addons
 
