@@ -44,7 +44,7 @@ For example:
 
 You can find your VPC ID and CIDR in the [AWS VPC console](https://console.aws.amazon.com/vpc). Navigate to "Your VPCs" and look in the "VPC ID" and "VPC CIDR" columns. The Internet Gateway ID can also be found in the VPC console under "Internet Gateways".
 
-You can also ist your VPCs using the AWS CLI:
+You can also list your VPCs using the AWS CLI:
 
 ```
 $ aws ec2 describe-internet-gateways
