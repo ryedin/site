@@ -28,7 +28,7 @@ To install a Rack into an existing VPC, you'll need to provide:
 convox install \
   --existing-vpc <VPC ID> \
   --vpc-cidr <VPC CIDR> \
-  --subnet-cidrs <comma-separated CIDRs>
+  --subnet-cidrs <comma-separated CIDRs> \
   --internet-gateway <Internet Gateway ID>
 ```
 
@@ -59,7 +59,7 @@ Installing a private Rack into an existing VPC requires specifying a couple more
       --existing-vpc "vpc-abcd1234" \
       --vpc-cidr "10.0.0.0/16" \
       --subnet-cidrs "10.0.1.0/24,10.0.2.0/24,10.0.3.0/24" \
-      --private-cidrs "10.0.4.0/24,10.0.5.0/24,10.0.6.0/24"
+      --private-cidrs "10.0.4.0/24,10.0.5.0/24,10.0.6.0/24" \
       --internet-gateway "igw-abcd1234"
 
 Keep in mind that you will need to create six /24 CIDR block subnets: three public, and three private.
