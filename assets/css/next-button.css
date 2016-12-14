@@ -5,7 +5,7 @@ DEMO 4
 http://tympanus.net/codrops/2012/01/11/css-buttons-with-pseudo-elements/
 */
 
-.a_demo_four {
+.next {
     background-color:#3bb3e0;
     font-family: 'Open Sans', sans-serif;
     font-size:12px;
@@ -36,7 +36,7 @@ http://tympanus.net/codrops/2012/01/11/css-buttons-with-pseudo-elements/
     box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
 }
 
-.a_demo_four:active {
+.next:active {
     top:3px;
     background-image: linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
     background-image: -o-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
@@ -56,7 +56,7 @@ http://tympanus.net/codrops/2012/01/11/css-buttons-with-pseudo-elements/
     box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
 }
 
-.a_demo_four::before {
+.next::before {
     background-color:#2591b4;
     background-image:url(../images/right_arrow.png);
     background-repeat:no-repeat;
@@ -78,7 +78,7 @@ http://tympanus.net/codrops/2012/01/11/css-buttons-with-pseudo-elements/
     box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
 }
 
-.a_demo_four:active::before {
+.next:active::before {
     top:50%;
     margin-top:-12px;
     -webkit-box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
@@ -91,7 +91,65 @@ http://tympanus.net/codrops/2012/01/11/css-buttons-with-pseudo-elements/
 
 
 
+.previous {
+    background-color:#3bb3e3;
+    font-family: 'Open Sans', sans-serif;
+    font-size:12px;
+    text-decoration:none;
+    color:#orange;
+    position:relative;
+    padding:10px 20px;
+    padding-left:50px;
+    background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(44,160,202)),
+    color-stop(1, rgb(62,184,229))
+    );
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+    -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+}
 
+
+.previous::before {
+    background-color:#2591b4;
+    background-image:url(../images/right_arrow.png);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    background-repeat:no-repeat;
+    background-position:center center;
+    content:"";
+    width:20px;
+    height:20px;
+    position:absolute;
+    left:15px;
+    top:50%;
+    margin-top:-9px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+    -moz-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+    -o-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+    box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+}
 
 
 
@@ -133,7 +191,7 @@ http://tympanus.net/codrops/2012/01/11/css-buttons-with-pseudo-elements/
 	/*width: 900px;*/
 	margin: 0 auto;
 	background: rgba(255,255,255,0.3);
-    text-align:right;
+    text-align:center;
 	padding: 20px 20px 00px;
 	border-radius: 10px;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.09) inset;
