@@ -99,3 +99,7 @@ defaults:
     values:
       layout: heroku
 
+
+algolia:
+  application_id: '2VBKDVKUPC'
+  index_name:     'convox'
