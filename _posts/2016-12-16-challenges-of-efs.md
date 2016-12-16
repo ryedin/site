@@ -12,9 +12,9 @@ The good:
 
 * EFS does offer shared persistence across many EC2 instances and/or ECS containers
 
-* EFS has rigorously documented performance rates and recommended settings for web apps
+* EFS has [rigorously documented performance rates](http://docs.aws.amazon.com/efs/latest/ug/performance.html) and recommended settings for web apps
 
-* EFS CloudWatch metrics are very good
+* [EFS CloudWatch metrics](http://docs.aws.amazon.com/efs/latest/ug/monitoring-cloudwatch.html) are very good
 
 The bad:
 
@@ -58,11 +58,12 @@ The app I am testing is ownCloud. This is an open-source PHP program that’s pr
 
 It is distributed as a Docker image that uses Docker volumes serve the app and save and retrieve file uploads.
 
-I am using EFS in “General Purpose Performance Mode”, the recommended setting for web server environments. I am also uses the [recommended Linux mount options](http://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html).
+I am using EFS in “General Purpose Performance Mode”, the recommended setting for web server environments. I am also using the [recommended Linux mount options](http://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html).
 
 ![EFS Management Console](https://medium2.global.ssl.fastly.net/max/6032/1*H-MoTFwXult9oZeHld9KMw.png){: .center }*EFS Management Console*
 
     $ mount
+
     us-east-1e.fs-d.efs.us-east-1.amazonaws.com://dev-east-owncloud/main/var/www/html on /var/www/html type nfs4
     (rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.2.19,local_lock=none,addr=10.0.2.33)
 
@@ -200,7 +201,7 @@ I get an I/O error creating the database. Looking at the volume the database fil
 
 It seems like the write latency is a challenge for the PHP code and SQLite database driver.
 
-Of course I would heed the SQLite warning anyway in favor of RDS. Configuring that and we finally have ownCloud running!
+Of course I would heed the SQLite warning in all cases and use RDS. [Configuring that](https://convox.com/docs/postgresql/) and I finally have ownCloud running!
 
 ![](https://medium2.global.ssl.fastly.net/max/2000/1*oD0Hgni5Ka_DVLfamgPXpg.png){: .center }*SQLite Errors*
 
