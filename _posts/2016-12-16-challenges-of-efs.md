@@ -63,7 +63,8 @@ I am using EFS in “General Purpose Performance Mode”, the recommended settin
 ![EFS Management Console](https://medium2.global.ssl.fastly.net/max/6032/1*H-MoTFwXult9oZeHld9KMw.png){: .center }*EFS Management Console*
 
     $ mount
-    us-east-1e.fs-045a8b4d.efs.us-east-1.amazonaws.com://dev-east-owncloud/main/var/www/html on /var/www/html type nfs4 (rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.2.19,local_lock=none,addr=10.0.2.33)
+    us-east-1e.fs-d.efs.us-east-1.amazonaws.com://dev-east-owncloud/main/var/www/html on /var/www/html type nfs4
+    (rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.2.19,local_lock=none,addr=10.0.2.33)
 
 ## ownCloud App
 
