@@ -1,5 +1,5 @@
 ---
-title: "EFS: The Good, the Bad and the Ugly"
+title: The Challenges of EFS
 author: Noah Zoschke
 twitter: nzoschke
 ---
@@ -10,7 +10,7 @@ With some effort, I have a file upload and sharing app serving from three web se
 
 The good:
 
-* EFS does offer shared persistence across many instances and/or containers
+* EFS does offer shared persistence across many EC2 instances and/or ECS containers
 
 * EFS has rigorously documented performance rates and recommended settings for web apps
 
@@ -50,7 +50,7 @@ Amazon offers a lengthy doc about [EFS performance](http://docs.aws.amazon.com/e
 
 ## Test Harness
 
-I have been doing my AWS testing with [Convox](https://convox.com/), an [open-source](https://github.com/convox/rack) Platform-as-a-Service built on top of AWS services. Convox uses EFS for [persistent container volumes](https://convox.com/docs/volumes/).
+I have been doing my AWS testing with [Convox](https://convox.com/), an [open-source](https://github.com/convox/rack) PaaS built on top of AWS services. Following a "use services, not software" philosophy, Convox uses EFS for [persistent container volumes](https://convox.com/docs/volumes/).
 
 With the Convox tools it only takes a few minutes to set up a production-ready three node ECS cluster with EFS and deploy an app to it.
 
@@ -62,9 +62,12 @@ I am using EFS in “General Purpose Performance Mode”, the recommended settin
 
 ![EFS Management Console](https://medium2.global.ssl.fastly.net/max/6032/1*H-MoTFwXult9oZeHld9KMw.png){: .center }*EFS Management Console*
 
+    $ mount
+    us-east-1e.fs-045a8b4d.efs.us-east-1.amazonaws.com://dev-east-owncloud/main/var/www/html on /var/www/html type nfs4 (rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.2.19,local_lock=none,addr=10.0.2.33)
+
 ## ownCloud App
 
-Since ownCloud has [official Docker images](https://hub.docker.com/_/owncloud/) that use Docker volumes for data, we can write a simple manifest then deploy it:
+Since ownCloud has [official Docker images](https://hub.docker.com/_/owncloud/) that use Docker volumes for data, we can write a simple manifest and deploy it:
 
     $ cat docker-compose.yml
 
@@ -131,7 +134,7 @@ This volume is backed by EFS. Could this be the reason it’s taking more than 3
 
 The ownCloud image is trying to copy **11,000 files** that take up **98 MB** to the EFS volume.
 
-I saw between **204 kBps** for the slow untar and **1.63 MBbs** for a parallel rsync.
+I saw between **204 kBps** for the sequential untar and **1.63 MBbs** for a parallel rsync.
 
 Some baselines of various tar commands 
 
@@ -192,7 +195,7 @@ ownCloud defaults to SQLite. It shows a big performance warning around SQLite on
 
 No.
 
-I get an I/O error creating the database. Looking at the volume, the database file is 0 bytes.
+I get an I/O error creating the database. Looking at the volume the database file is 0 bytes.
 
 It seems like the write latency is a challenge for the PHP code and SQLite database driver.
 
@@ -289,15 +292,15 @@ After a few more runs of Apache Bench over the next minutes the performance even
 
 Even after all this, I feel pretty good about running a web app off EFS. 
 
-I now have **web app served from a shared EFS data volume**. The app feels fine for normal file uploads and downloads. Response time are slower and more variable that I’d like, but once the app is “warmed up” it benchmarks well.
+I now have **web app served from a shared EFS data volume**. The app feels fine for normal file uploads and downloads. Response times can be slower and more variable that I’d like, but once the app is “warmed up” it benchmarks well.
 
 This web is **highly available**, **horizontally scalable** and required **no code changes**. The data is also **highly available** with **no operational work**.
 
-The **visibility through CloudWatch is very good** showing I’m not actually I/O bound.
+The **visibility through CloudWatch is very good** showing I’m not anywhere close to maxing out EFS I/O.
 
 For this particular type of app, the final step would be to **add a CDN to improve performance** and have the best of all worlds.
 
-That said, the performance characteristics of EFS are concerning. Just like SQLite not working, and tar going slow, I can see many standard apps having trouble with the latency or throughput. This could be a deal breaker for many apps.
+That said, the performance characteristics of EFS are concerning. Just like SQLite not working and tar going slow, I can see many standard apps having trouble with the latency or throughput. This could be a deal breaker for many apps.
 
 ## Questions…
 
