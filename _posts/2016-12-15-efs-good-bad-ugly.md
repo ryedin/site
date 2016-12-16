@@ -143,7 +143,7 @@ Some baselines of various tar commands
 
 * **10 seconds** to tar all the **files from EFS**
 
-Somersync baselines, since it’s more hackable than tar:
+Then I took some rsync baselines, since it’s more hackable than tar:
 
 * **10 minutes** to rsync all the **files to EFS**
 
