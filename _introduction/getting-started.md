@@ -17,7 +17,7 @@ This guide takes around 30 minutes to go from zero to your first production depl
 
 Convox uses Docker to create a development environment that closely mimics the production environment.
 
-We strongly recommend the Docker for Mac tool. See the [Getting Started Guide](https://beta.docker.com/docs/mac/getting-started/) for instructions to download and install this tool.
+We strongly recommend the [Docker for Mac](https://docs.docker.com/docker-for-mac/) and [Docker for Windows](https://docs.docker.com/docker-for-windows/) tools. See the [Get Started guides](https://docs.docker.com/docker-for-mac/) for instructions to download and install these tools.
 
 ## Set Up Your Development Environment
 
