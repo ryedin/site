@@ -50,3 +50,8 @@ $ convox rack logs
 
 For more details, see the [Logs documentation](/docs/logs).
 
+
+{% include_relative _includes/next.html
+  next="Set up a syslog resource"
+  next_url="/guide/syslog/"
+%}

@@ -85,3 +85,9 @@ Now run `convox doctor` to build and validate your first image:
 In our example, the last check may take a few minutes to pull the Ubuntu base image from Docker Hub, install system packages from Ubuntu and app dependencies from npm. Subsequent image builds will be much faster.
 
 Now that you have a portable image, you can [configure services to use it](/guide/services/).
+
+{% include_relative _includes/next.html
+  next="Configure services"
+  next_url="/guide/services"
+%}
+

@@ -29,15 +29,8 @@ The commands are:
 <span class="command">convox ssl update web:443 cert-1234567890</span>
 </pre>
 
-## Up Next
-
-Let's start by [installing a Rack](/guide/rack/).
 
 {% include_relative _includes/next.html
   next="Install a Rack"
   next_url="/guide/rack"
-  current=page.title
-  previous="One-off commands"
-  previous_url="/guide/one-off-commands"
 %}
-

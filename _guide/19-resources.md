@@ -99,3 +99,8 @@ For more information on resources, see:
 * [The Twelve-Factor App: Backing services](https://12factor.net/backing-services){:target="_blank"}
 
 {% include definitions/changes/service-to-resource.md %}
+
+{% include_relative _includes/next.html
+  next="Monitor your app"
+  next_url="/guide/monitor/"
+%}

@@ -11,3 +11,9 @@ With Docker installed on your development machine, you now have the tools to mov
 * Build a single image that works for development, testing and production
 
 So your very first step is to [build images](/guide/images/).
+
+{% include_relative _includes/next.html
+  next="Build images"
+  next_url="/guide/images"
+%}
+

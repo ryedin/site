@@ -11,3 +11,8 @@ You've deployed your app and seen how to promote releases. The next goals are to
 - Analyze metrics
 
 Let's start by [viewing logs](/guide/logs).
+
+{% include_relative _includes/next.html
+  next="View your app and rack logs"
+  next_url="/guide/logs/"
+%}

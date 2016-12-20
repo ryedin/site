@@ -72,3 +72,8 @@ If you don't have Docker installed, `convox doctor` will point you to the [Insta
 
 Now that you understand the five phases and have run your first checklist to test that your computer is set up, you can begin to [build your app](/guide/build/)!
 
+{% include_relative _includes/next.html
+  next="Build an app"
+  next_url="/guide/build"
+%}
+

@@ -146,3 +146,8 @@ APP  STATUS
 ```
 
 So next, let's [create our first app](/guide/app/).
+
+{% include_relative _includes/next.html
+  next="Create an app"
+  next_url="/guide/app/"
+%}

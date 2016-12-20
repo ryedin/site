@@ -62,3 +62,9 @@ Run `convox doctor` to validate your balancer definitions:
 </pre>
 
 Now that you have defined Balancers, you can [add SSL](/guide/ssl/).
+
+{% include_relative _includes/next.html
+  next="Add SSL"
+  next_url="/guide/ssl"
+%}
+

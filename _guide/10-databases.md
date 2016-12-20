@@ -124,3 +124,9 @@ Run `convox doctor` to validate your Database definitions:
 </pre>
 
 Now that you have added a Database and made your app resilient to connection errors, you can [define Links between Services and Databases](/guide/links/).
+
+{% include_relative _includes/next.html
+  next="Define links"
+  next_url="/guide/links"
+%}
+

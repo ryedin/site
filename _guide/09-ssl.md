@@ -41,3 +41,9 @@ Run `convox doctor` to validate your port protocol label and balancer definition
 </pre>
 
 Now that you have added SSL, you can [add a Database](/guide/databases/).
+
+{% include_relative _includes/next.html
+  next="Add a database"
+  next_url="/guide/databases"
+%}
+

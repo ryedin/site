@@ -17,3 +17,8 @@ Here's an example:
 For more details and other types of commands, see [One-off commands](/docs/one-off-commands/) in the Convox documentation.
 
 Now that you can make code changes and run commands in a development environment, you are ready to [deploy your app](/guide/deploy)!
+
+{% include_relative _includes/next.html
+  next="Deploy your app"
+  next_url="/guide/deploy/"
+%}

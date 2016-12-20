@@ -123,3 +123,8 @@ Hello World!
 
 
 Next, let's look at how Convox helps you manage [releases](/guide/releases).
+
+{% include_relative _includes/next.html
+  next="Manage releases"
+  next_url="/guide/releases/"
+%}

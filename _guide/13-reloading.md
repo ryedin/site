@@ -162,3 +162,8 @@ Now, when you run `convox deploy`, the `command` used will be `node` and not `no
 In this way, you can have an ideal local environment for development and a proper deployment environment for production, without needing to make any manual modifications.
 
 Now that we can make changes that quickly reload, let's [run our automated test command](/guide/one-off-commands/).
+
+{% include_relative _includes/next.html
+  next="Run test commands"
+  next_url="/guide/one-off-commands/"
+%}

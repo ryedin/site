@@ -116,3 +116,8 @@ Hello World!
 
 * [Releases](/docs/releases/) in the Convox docs
 * [Rolling back](/docs/rolling-back/) in the Convox docs
+
+{% include_relative _includes/next.html
+  next="Configure resources"
+  next_url="/guide/resources/"
+%}

@@ -59,3 +59,9 @@ worker │     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1063:14)
 The image built, and services started, but they errored out immediately. Even if the web service did come up, it's not obvious how you would connect to it.
 
 So your next step is to [define a Balancer](/guide/balancers/).
+
+{% include_relative _includes/next.html
+  next="Define a Balancer"
+  next_url="/guide/balancers"
+%}
+

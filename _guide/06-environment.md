@@ -62,3 +62,9 @@ Run `convox doctor` to validate the environment:
 Now that you've extracted configuration into the environment, you have completed the first phase and built a portable image.
 
 You now have the foundation you need to [run your app](/guide/run/)!
+
+{% include_relative _includes/next.html
+  next="Run your app"
+  next_url="/guide/run"
+%}
+

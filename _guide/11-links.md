@@ -76,3 +76,9 @@ Hello World!
 Now that you've added a link between your app services and resources, you have completed the second phase and can run your app as a set of services running on images.
 
 You now have the foundation you need to [develop your app](/guide/develop/)!
+
+{% include_relative _includes/next.html
+  next="Develop your app"
+  next_url="/guide/develop/"
+%}
+
