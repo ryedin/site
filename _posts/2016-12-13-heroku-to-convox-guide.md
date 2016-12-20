@@ -14,6 +14,8 @@ Other parts are similar, but represent more significant changes to your apps. Fo
 
 This guide explains the differences of the platforms, and walks you through the steps required to migrate an app.
 
+![Heroku and Convox Similarities](/assets/images/heroku.png)*Heroku and Convox Similarities*
+
 Start by reading the [Introduction](https://convox.com/guide/heroku/). 
 
 If you have any questions or feedback, reach out on the [Convox Slack](https://invite.convox.com) or [GitHub](https://github.com/convox/site/issues/new?title=Heroku+Guide+Feedback).
