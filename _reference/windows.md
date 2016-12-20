@@ -15,9 +15,9 @@ You do not need to enable <a href="https://docs.docker.com/docker-for-windows/#/
 To get a `git` and `bash` environment, install <a href="https://git-for-windows.github.io/">Git for Windows</a>.
 
 <div class="alert alert-warning">
-<p>The container filesystem expects Unix-style line endings, not Windows. Select the <b>Checkout as-is, commit Unix-style line endings</b> installer option so `git` doesn't modify line-endings.</p>
-
-<p>You can also run `git config --global core.autocrlf input`</p>.
+The container filesystem expects Unix-style line endings, not Windows. Select the <b>Checkout as-is, commit Unix-style line endings</b> installer option so `git` doesn't modify line-endings.
+<br /><br />
+You can also run `git config --global core.autocrlf input`.
 </div>
 
 ## Install Convox
