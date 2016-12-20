@@ -2249,3 +2249,8 @@ h6:hover .header-link {
   color: #777;
   font-style: italic;
 }
+
+.screenshot {
+  margin: 0 auto !important;
+  display: block !important;
+}
