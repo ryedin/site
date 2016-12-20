@@ -76,4 +76,8 @@ Some example expressions:
     <td><code>0 12 1 * ?</code></td>
     <td>Run at noon on the first day of every month</td>
   </tr>
+  <tr>
+    <td><code>0 0,12 * * ?</code></td>
+    <td>Run at Midnight and Noon every day</td>
+  </tr>
 </table>
