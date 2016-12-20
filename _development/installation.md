@@ -35,6 +35,8 @@ Alternatively, on OSX you can also install via Homebrew:
 
 Windows users can download the installer [here](https://dl.equinox.io/convox/convox/stable).
 
+See the [Windows Reference](/docs/windows/) for details.
+
 ## CentOS
 
 CentOS users can download the .rpm [here](https://dl.equinox.io/convox/convox/stable).
