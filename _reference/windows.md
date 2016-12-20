@@ -32,4 +32,4 @@ Windows 10 warns that the Convox installer is not signed. Click "more info" then
 
 ## Terminal Support
 
-The `convox` CLI works best with Git BASH. Powershell and Command Prompt are also work but may display graphical errors.
+The `convox` CLI works best with Git BASH. Powershell and Command Prompt also work but may display graphical errors.
