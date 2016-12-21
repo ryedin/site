@@ -35,7 +35,7 @@ Console encrypts and saves Rack API keys to proxy access. For security purposes 
 
 Console Log In → Click Racks → Select a Rack → Click Settings → Click Roll API Key
 
-The Rack may be temporarily unavailable while the change takes effect. For more information, see [Keyrolls](/docs/keyroll).
+The Rack may be temporarily unavailable while the change takes effect. For more information, see [Keyrolls](/docs/api-keyroll).
 
 
 ### Logging into a Rack Directly
@@ -50,7 +50,7 @@ If you lose the Rack key, it can not be recovered, and a new key must be set thr
 
 ## See also
 
-- [API Keyroll](/docs/keyroll)
+- [API Keyroll](/docs/api-keyroll)
 - [Login and authentication](/docs/login-and-authentication/)
 - [CLI configuration files](/docs/cli-config-files/)
 - [CLI environment variables](/docs/cli-environment-variables/)

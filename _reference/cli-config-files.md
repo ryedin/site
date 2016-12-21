@@ -90,6 +90,6 @@ You can also pin a repo to a specific Rack by creating a `.convox` directory in 
 ## See also
 
 - [API Keys](/docs/api-keys)
-- [API Keyroll](/docs/keyroll)
+- [API Keyroll](/docs/api-keyroll)
 - [Login and authentication](/docs/login-and-authentication/)
 - [CLI environment variables](/docs/cli-environment-variables/)
