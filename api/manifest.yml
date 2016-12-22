@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   version: 1.0.0
   title: Convox Rack API
-  description: Enter your Convox API key from your account settings in the field above and click Explore. <br><b>Caution:</b> Commands on this page will really be applied to your resources. <br>For help, see the <a href="https://convox.com/docs/api-keys/">documentation</a>.
+  description: Enter your Convox API key from your <a href="https://console.convox.com/grid/user/profile">account settings</a> in the field above and click Authorize. <br><b>Caution:</b> Commands on this page will really be applied to your resources. <br>For help, see the <a href="https://convox.com/docs/api-keys/">documentation</a>.
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0
@@ -35,6 +35,14 @@ paths:
             type: array
             items:
               $ref: '#/definitions/app'
+        400:
+          description: Rack not found
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: Error locating rack
+          schema:
+            $ref: '#/definitions/error'
     post:
       description: Create an app
       parameters:
@@ -53,8 +61,16 @@ paths:
           description: app
           schema:
             $ref: '#/definitions/app'
+        400:
+          description: Rack not found
+          schema:
+            $ref: '#/definitions/error'
         403:
-          description: invalid name
+          description: invalid name, or app already exists
+          schema:
+            $ref: '#/definitions/error'
+        502:
+          description: rack not running
           schema:
             $ref: '#/definitions/error'
 
@@ -77,8 +93,16 @@ paths:
           description: app
           schema:
             $ref: '#/definitions/app'
+        400:
+          description: rack not found
+          schema:
+            $ref: '#/definitions/error'
         404:
-          description: not found
+          description: app not found
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: no rack specified
           schema:
             $ref: '#/definitions/error'
     delete:
@@ -99,8 +123,12 @@ paths:
           description: success
           schema:
             $ref: '#/definitions/success'
+        400:
+          description: rack not found
+          schema:
+            $ref: '#/definitions/error'
         404:
-          description: not found
+          description: app not found
           schema:
             $ref: '#/definitions/error'
 
@@ -125,8 +153,13 @@ paths:
             type: array
             items:
               $ref: '#/definitions/build'
-        404:
-          description: not found
+        400:
+          description: rack not found
+          schema:
+            $ref: '#/definitions/error'
+        # FIXME: this should be a 404
+        500:
+          description: app not found
           schema:
             $ref: '#/definitions/error'
     post:
@@ -738,23 +771,6 @@ paths:
           schema:
             $ref: '#/definitions/error'
 
-############
-### auth ###
-############
-
-  /auth:
-    get:
-      description: authenticate password
-      responses:
-        200:
-          description: valid password
-          schema:
-            type: string
-        401:
-          description: invalid password
-          schema:
-            type: string
-
 ####################
 ### certificates ###
 ####################
@@ -841,6 +857,12 @@ paths:
   /instances:
     get:
       description: List instances.
+      parameters:
+      - name: rack
+        description: rack name
+        type: string
+        in: header
+        required: false
       responses:
         200:
           description: instance list
@@ -864,21 +886,6 @@ paths:
           description: success
           schema:
             $ref: '#/definitions/success'
-
-#############
-### racks ###
-#############
-
-  /racks:
-    get:
-      description: List racks
-      responses:
-        200:
-          description: List Racks
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/rack'
 
 ##################
 ### registries ###
@@ -1070,6 +1077,12 @@ paths:
   /system:
     get:
       description: Get system information
+      parameters:
+      - name: rack
+        description: rack name
+        type: string
+        in: header
+        required: false
       responses:
         200:
           description: system
