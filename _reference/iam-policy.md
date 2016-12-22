@@ -7,33 +7,31 @@ title: "IAM Policy"
 Certain AWS permissions are required to successfully install (and uninstall) a Convox Rack. As Rack takes advantage of many AWS services, the best way to set these permissions securely is to leverage a managed [IAM Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
 
 ## Creating an IAM Policy
-1. From the [IAM Policy dashboard](https://console.aws.amazon.com/iam/home#policies), select **Create Policy**
-2. Select **Create Your Own Policy**
-3. Fill in the Name and Description as you like. For example:
-  - Name: ConvoxRackInstall
-  - Description: Policy to install and uninstall a Convox Rack
+1. From the [IAM Policy dashboard](https://console.aws.amazon.com/iam/home#policies), select **Create Policy**.
+2. Select **Create Your Own Policy**.
+3. Fill in the **Policy Name** and **Description** as you like. For example:
+  - Name: `ConvoxRackInstall`
+  - Description: `Policy to install and uninstall a Convox Rack`
 4. For **Policy Document**, copy and paste the [Convox IAM Policy](#convox-iam-policy) from below.
-5. Click **Validate Policy** to make sure the policy is valid
-6. Click **Create Policy**
+5. Click **Validate Policy** to make sure the policy is valid.
+6. Click **Create Policy**.
 
 ## Using an IAM Policy
-With the newly created policy, all that's left is to attach it to a user or group. While it varies depending on the organization, attaching the policy to an existing user is usually the most straight forward.
+With the newly created policy, all that's left is to attach it to a user or group. While it varies depending on the organization, attaching the policy to an existing user is usually the most straightforward.
 
-### To create a new user (skip this step if a user already exist):
-1. From the [IAM User dashboard](https://console.aws.amazon.com/iam/home#users), select **Create New User**
-2. Enter a username (e.g "convox") and click **Create**
-3. On the next screen click the **Download Credentials** button, and save the resulting file. Then click **Close**
+### To create a new user (skip this step if a user already exists):
+1. From the [IAM User dashboard](https://console.aws.amazon.com/iam/home#users), select **Add user**.
+2. Enter a username (e.g. `convox`). Select the "Programmatic access" checkbox and click **Next: Permissions**.
+3. Select the "Attach existing policies directly" button at the top. Select the `ConvoxRackInstall` policy you just created, then click **Next: Review**. If everything looks OK, click **Create user**.
+4. On the next screen, click the **Download .csv** button, and save the resulting file (we recommend saving it in your AWS config directory, e.g. `~/.aws/credentials.csv`, or `~/.aws/credentials-convox.csv` if that file already exists). Then click **Close**.
 
 ### To attach an IAM policy for a user:
-1. From the [IAM User dashboard](https://console.aws.amazon.com/iam/home#users), click on the user who will use the install policy
-2. Click on the **Permissions** tab
-3. Click on the **Attach Policy** button
-4. In the filter box, type the name of policy (e.g **ConvoxRackInstall** if the [new policy steps](#creating-an-iam-policy) above were followed)
-5. Select the checkbox next to the username, then click **Attach Policy** at the bottom right
-
+1. From the [IAM User dashboard](https://console.aws.amazon.com/iam/home#users), click on the name of the user who will use the install policy.
+2. Click on the **Add permissions** button on the **Permissions** tab.
+3. Select the "Attach existing policies directly" button at the top. Select the checkbox next to the `ConvoxRackInstall` policy you just created, then click **Next: Review**. If everything looks OK, click the **Add permissions** button.
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-With the IAM permissions set, next step would be to [install a rack](/docs/installing-a-rack).
+With the IAM permissions in place, the next step is to [install a Rack](/docs/installing-a-rack).
 </div>
 
 
