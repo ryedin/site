@@ -48,6 +48,10 @@ Local code changes will be [synced](/docs/code-sync) with your running processes
 
 Your app is rebuilt each time you run `convox start`, which takes advantages of Docker's built-in caching mechanism by default. To bypass the cache and rebuild from scratch, you can pass the `--no-cache` flag to `convox start`.
 
+### Running without building
+
+As explained above, your app is rebuilt each time you run `convox start`. If you'd like to skip the build step and start your app with previously built images, you can pass the `--no-build` flag to `convox start`.
+
 ### Shifting ports
 
 You can offset the external ports of processes run by `convox start` by a given number, allowing you to easily run multiple applications on one host without port conflicts.
