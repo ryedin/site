@@ -48,7 +48,7 @@ Here is an example of what those actually look like with the `convox/postgres` i
 
 #### Production
 
-  DATABASE_HOST=postgres-i-191910196.us-east-1.elb.amazonaws.com
+	DATABASE_HOST=postgres-i-191910196.us-east-1.elb.amazonaws.com
 	DATABASE_PASSWORD=password
 	DATABASE_PATH=/app
 	DATABASE_PORT=5432
