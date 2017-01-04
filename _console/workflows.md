@@ -17,13 +17,9 @@ In [Console](https://console.convox.com/), click the Workflows tab. Click the "C
 
 ![](/assets/images/docs/workflows/tab.png)
 
-Give the Workflow a unique, recognizable name.
-
-![](/assets/images/docs/workflows/name.png)
-
 ### Defining the Trigger
 
-Next, choose a trigger for the Workflow. This is the action that will kick off execution of the Workflow tasks.
+First, choose a trigger for the Workflow. This is the action that will kick off execution of the Workflow tasks.
 
 ![](/assets/images/docs/workflows/trigger.png)
 
@@ -42,6 +38,12 @@ Next, define the tasks to be executed once the trigger fires. Tasks are actions 
 
 Add additional tasks to your Workflow by clicking the green "Add Task" button. Once you've defined all of your tasks, click "Create Workflow".
 
+### Naming the Workflow
+
+Finally, give the Workflow a unique, recognizable name.
+
+![](/assets/images/docs/workflows/name.png)
+
 #### An Example
 
 Here is an example Build task that uses a manifest named `docker-compose.yml` (this could be `docker-compose.custom.yml`). It promotes the Release corresponding to the resulting Build to complete the automated deployment.
@@ -56,7 +58,7 @@ Existing Workflows can be managed via the main Workflows tab. Use the buttons to
 
 ## Workflow History
 
-The execution of a Workflow is referred to as a "job." Click the Jobs tab to view a list of previously executed Workflows. A red or green indicator will tell you whether the job completed successfully.
+The execution of a Workflow is referred to as a "job." From the main Workflows page, click the Jobs button in the right-side column to view a list of previously executed Workflows. A red or green indicator will tell you whether the job completed successfully.
 
 ![](/assets/images/docs/workflows/jobs.png)
 
