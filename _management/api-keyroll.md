@@ -24,8 +24,7 @@ Note that rolling your account API key will disable CLI access until you run `co
 
 A Rack has a master API key (previously referred to as a "password").
 
-| **CLI instructions**                  | **Convox Console instructions**               | **AWS Console instructions**                         |
-| `convox rack params set Password=`    | "Roll API key" (Rack settings page)           | Change `Password` parameter in CloudFormation stack  |
+**The preferred method of rolling the Rack API key is by clicking the "Roll API key" button from the Rack settings page in the [Convox web console](https://console.convox.com).**
 
 The “Roll API key” button in Console:
 
@@ -36,13 +35,19 @@ The “Roll API key” button in Console:
 
 **The randomly generated Rack API key will not be revealed to you.** Rather, Console stores Rack API keys and acts as a proxy, brokering individual user access to the Rack via User API keys. Therefore, you don't need the API key since you don't need to log into the Rack directly. Instead, you should run `convox login console.convox.com` and then `convox/switch` to activate the Rack.
 
+Note: The Rack will be unavailable during the keyroll. (See FAQ below for explanation.)
+
+#### Other ways to change Rack API keys
+
+| **CLI instructions**                  | **Convox Console instructions**               | **AWS Console instructions**                         |
+| `convox rack params set Password=`    | "Roll API key" (Rack settings page)           | Change `Password` parameter in CloudFormation stack  |
+
+
 If you want to set your own Rack API key, you can do by passing the `--password` flag during `convox install`, or later by running `convox rack params set Password=YourNewPassword`.
 
 If you ever need to bypass Convox altogether to reset the Rack API key manually (i.e. if console.convox.com is down), you can do so by updating the `Password` parameter in your CloudFormation stack in the AWS console (**Options** -> **Update Stack** -> **Use current template** -> **Password**).
 
 Note that resetting the Rack API key manually will cause Console to lose its connection to the Rack. You will need to remove and re-add the Rack to Console with the new API key.
-
-Note: The Rack will be unavailable during the keyroll. (See FAQ for explanation.)
 
 
 ### Why is the Rack is unavailable during an API key roll?
