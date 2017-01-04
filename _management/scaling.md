@@ -7,6 +7,15 @@ Convox allows you to scale your application's concurrency, memory allocation, an
 
 ### Scaling an application
 
+#### Show current application scaling
+
+```
+$ convox scale
+NAME  DESIRED  RUNNING  MEMORY
+web   2        1        256
+redis 1        1        256
+```
+
 #### Concurrency
 
 ```
