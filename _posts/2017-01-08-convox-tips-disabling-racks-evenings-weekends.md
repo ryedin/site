@@ -36,7 +36,7 @@ When you’re done, you should be have something like this:
 
 ## Using the AWS CLI
 
-If you want to automate things a bit more, you can configure the scheduled actions using the AWS CLI. Create the following files (to get around issues with wildcards in the cron schedule):
+If you want to automate things a bit more, you can configure the scheduled actions using the AWS CLI. Create the following files:
 
 **down.json**
 
