@@ -6,6 +6,15 @@ You can streamline your workflow by integrating Convox and Travis CI. At a high 
 
 ## Modifying .travis.yml
 
+First you need to tell Travis CI to install the Convox CLI by adding this to your `.travis.yml`:
+
+```
+before_install: |
+  curl -O https://bin.equinox.io/c/jewmwFCp7w9/convox-stable-linux-amd64.tgz &&\
+  tar zxvf convox-stable-linux-amd64.tgz -C /tmp
+```
+
+
 The [after_success section](https://docs.travis-ci.com/user/deployment/custom/) of `.travis.yml` lets you specify commands to run after a successful build. In the example below, a successful build would trigger a deployment of `example-app` to the `org/staging` Rack.
 
     after_success:
@@ -29,8 +38,18 @@ To generate a **deploy key**, log into your account at [console.convox.com](http
 If you do not use [Console](https://console.convox.com/), you can grant Travis CI direct access to your Rack by setting the following environment variables in Travis CI:
 
     CONVOX_HOST=<Rack host>
-    CONVOX_PASSWORD=<Rack password>
+    CONVOX_PASSWORD=<Rack API key>
 
-You can find your **Rack host** by visiting the CloudFormation console, selecting your Rack stack, and navigating to the "Outputs" tab. You'll want the value of the "Dashboard" output, which will have the following format: `<rack-name>-<timestamp>.<aws-region>.elb.amazonaws.com`.
+You can find your **Rack host** by either:
 
-Your **Rack password** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p PASSWORD`, or if you installed your Rack from the Console web interface, you'll need to reset your Rack password.
+* visiting the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation), specifying your region (as it appears in `convox rack --rack <name>`), selecting your Rack stack, and navigating to the "Outputs" tab. You'll want the value of the `Dashboard` output, which will have the following format: `<rack-name>-<timestamp>.<aws-region>.elb.amazonaws.com`.
+* via the AWS CLI, replacing `legit` with the name of your Rack below:
+
+```
+aws cloudformation describe-stacks \
+    --region us-east-1 \
+    --stack-name legit \
+    --query 'Stacks[*].Outputs[?OutputKey==`Dashboard`].OutputValue'
+```
+
+Your **Rack API key** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p PASSWORD`, or if you installed your Rack from the Console web interface, you'll need to [reset your Rack API key](/docs/api-keyroll/#roll-rack-api-key-ne-password).
