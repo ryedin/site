@@ -1,20 +1,20 @@
 ---
-title: Convox Tips: Disabling racks on evenings and weekends
+title: "Convox Tips: Disabling racks on evenings and weekends"
 author: Michael Warkentin
 twitter: mwarkentin
 ---
 
-At [Wave](https://www.waveapps.com/) we’re running several Convox racks: production, staging, and multiple “dev” racks. Our production environment obviously needs to be running constantly, but the other environments are mainly used Monday to Friday, between 9am and 8pm.
+At [Wave](https://www.waveapps.com/) we’re running several [Convox](https://convox.com/) racks: production, staging, and multiple “dev” racks. Our production environment obviously needs to be running constantly, but the other environments are mainly used Monday to Friday, between 9am and 8pm.
 
 One of the reasons we’re migrating to AWS is the improved automation that it provides, and we are leveraging that to turn off our dev and staging racks when they’re not in use — saving roughly 66% on our EC2 bills for those environments.
 
-We played around with a few ways to achieve this, but the simplest ended up being AWS Auto Scaling Groups Scheduled Actions. You can set these up using the AWS console, CLI, or another tool like Terraform.
+We played around with a few ways to achieve this, but the simplest ended up being [AWS Auto Scaling Groups Scheduled Actions](http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html). You can set these up using the AWS console, CLI, or another tool like Terraform.
 
 <!--more-->
 
 ## Using the AWS Console
 
-Find your Auto Scaling Group (called convox-<rack>-Instances-<id>), and switch to the Scheduled Actions tab:
+Find your Auto Scaling Group (called `convox-<rack>-Instances-<id>`), and switch to the Scheduled Actions tab:
 
 ![](https://cdn-images-1.medium.com/max/2000/1*O-eoQtSzpTpIbkli_y_gTg.png)
 
