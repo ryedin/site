@@ -43,7 +43,7 @@ If you do not use [Console](https://console.convox.com/), you can grant Travis C
 You can find your **Rack host** by either:
 
 * visiting the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation), specifying your region (as it appears in `convox rack --rack <name>`), selecting your Rack stack, and navigating to the "Outputs" tab. You'll want the value of the `Dashboard` output, which will have the following format: `<rack-name>-<timestamp>.<aws-region>.elb.amazonaws.com`.
-* via the AWS CLI, replacing `legit` with the name of your Rack below:
+* via the AWS CLI, replacing `us-east-1` and `legit` with the region and name of your own Rack below:
 
 ```
 aws cloudformation describe-stacks \
