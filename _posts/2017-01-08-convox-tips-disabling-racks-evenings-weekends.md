@@ -127,3 +127,7 @@ resource "aws_autoscaling_schedule" "scale_up" {
 * Sometimes, a dev needs to do some work late in the evening, or on a weekend. We’ve created Jenkins jobs to allow our devs to turn the environment on/off as needed. We also added a second scale down time late at night in case the developer forgot to turn the rack back off.
 * It usually takes between 5–10 minutes for a rack to spin up and start all of the app processes.
 * We’re saving over $200/m by scaling our dev racks down during off hours. This will only grow as we increase instance sizes, counts and number of developer racks.
+
+## About Wave
+
+[Wave](https://www.waveapps.com/) provides invoicing, credit card payments, accounting, and payroll for small businesses. If you're interested in joining the team, check out our [careers page](https://www.waveapps.com/about-us/jobs/) and get in touch!
