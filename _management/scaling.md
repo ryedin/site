@@ -66,6 +66,9 @@ Version  20160409181028
 Count    3
 Type     m4.xlarge
 ```
+<div class="block-callout block-show-callout type-warning" markdown="1">
+  The minimum instance count for a Rack is 3. See the [PR](https://github.com/convox/rack/pull/1395#issuecomment-261961713) for details.
+</div>
 
 #### Autoscale
 
