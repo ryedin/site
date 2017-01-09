@@ -130,4 +130,4 @@ resource "aws_autoscaling_schedule" "scale_up" {
 
 ## About Wave
 
-[Wave](https://www.waveapps.com/) provides invoicing, credit card payments, accounting, and payroll for small businesses. If you're interested in joining the team, check out our [careers page](https://www.waveapps.com/about-us/jobs/) and get in touch!
+[Wave](https://www.waveapps.com/) provides invoicing, credit card payments, accounting, and payroll for small businesses. If you're interested in joining the team, check out our [careers page](https://www.waveapps.com/about-us/jobs/) to find out why it's a great place to work and get in touch!
