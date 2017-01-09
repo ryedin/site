@@ -4,6 +4,10 @@ title: "SQS"
 
 {% include definitions/changes/warning.md %}
 
+<div class="alert alert-warning">
+<b>Note:</b> The SQS API does not permit Convox to lock SQS resources down from the public internet.  SQS queues <b>will</b> be accessible on the public internet!
+</div>
+
 ## Resource Creation
 
 You can create SQS queues using the `convox resources create` command:
