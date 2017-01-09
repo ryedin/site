@@ -14,3 +14,7 @@ You can easily configure [Console](https://console.convox.com) to build and depl
 * Go to the directory that contains your application.
 * Type `convox switch <org>/<rack>` to select the Rack that contains the application to deploy.
 * Type `convox deploy --app <appname>`
+
+## Canceling a deployment
+
+To cancel a bad or stuck deployment, run `convox apps cancel -a <app-name>`. Behind the scenes, this cancels the CloudFormation stack update that corresponds to the deployment in progress.
