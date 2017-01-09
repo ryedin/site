@@ -124,6 +124,6 @@ resource "aws_autoscaling_schedule" "scale_up" {
 * It usually takes between 5–10 minutes for a rack to spin up and start all of the app processes.
 * We’re saving over $200/m by scaling our dev racks down during off hours. This will only grow as we increase instance sizes, counts and number of developer racks.
 
-## About Wave
+## About The Author
 
-[Wave](https://www.waveapps.com/) provides invoicing, credit card payments, accounting, and payroll for small businesses. If you're interested in joining the team, check out our [careers page](https://www.waveapps.com/about-us/jobs/) to find out why it's a great place to work and get in touch!
+Michael is an Operations Engineer at [Wave](https://www.waveapps.com/). We provide invoicing, credit card payments, accounting, and payroll for small businesses. If you're interested in joining the team, check out our [careers page](https://www.waveapps.com/about-us/jobs/) to find out why it's a great place to work and get in touch!
