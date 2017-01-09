@@ -2260,9 +2260,10 @@ Usage:
 ![](/path/to/image.png) *Caption goes here, and must be on the same line.*
 */
 img + em {
-  text-align:center;
-  margin:0px 100px auto;
-  display:inline-block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   font-size: smaller;
   color: #477; /* Darker gray than DarkGray */
 }
