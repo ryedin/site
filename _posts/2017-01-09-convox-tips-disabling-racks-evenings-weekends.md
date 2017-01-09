@@ -18,13 +18,13 @@ Find your Auto Scaling Group (called `convox-<rack>-Instances-<id>`), and switch
 
 ![](https://cdn-images-1.medium.com/max/2000/1*O-eoQtSzpTpIbkli_y_gTg.png)
 
-Create the Scale Down action by clicking on the Create Scheduled Action button, and fill in the form (make sure to adjust the cron schedule to fit your requirements — and make sure you convert the times to UTC):
+Create the Scale Down action by clicking on the Create Scheduled Action button, and fill in the form:
 
-![](https://cdn-images-1.medium.com/max/2000/1*pNh_WBr3rAoq-Ufzzl6I_A.png)
+![](https://cdn-images-1.medium.com/max/2000/1*pNh_WBr3rAoq-Ufzzl6I_A.png) *Make sure to adjust the cron schedule to fit your requirements — and you need to convert the times to UTC*
 
-Create the Scale Up action by clicking on the Create Scheduled Action button, and fill in the form (note: the default Max for a convox rack is 100, and we only want to scale up Monday — Friday):
+Create the Scale Up action by clicking on the Create Scheduled Action button, and fill in the form:
 
-![](https://cdn-images-1.medium.com/max/1600/1*GCLwAWk_Byl07Nt4RiVA0Q.png)
+![](https://cdn-images-1.medium.com/max/1600/1*GCLwAWk_Byl07Nt4RiVA0Q.png) *Note: the default Max for a convox rack is 100, and we only want to scale up Monday — Friday*
 
 When you’re done, you should be have something like this:
 
