@@ -37,7 +37,7 @@ If you don't see what you expect, check that the correct geographic region is ac
 
 ### Via proxy
 
-Resources are configured so they are not accessible from the public internet.  You can get proxy access with the `convox resources proxy` command, e.g.:
+Resources are generally configured so they are not accessible from the public internet (when possible).  You can get proxy access with the `convox resources proxy` command, e.g.:
 
 ```
 $ convox resources proxy mysql-4624
@@ -70,6 +70,22 @@ To forward logs from an application to a syslog forwarder use `convox resources 
     Linked syslog-3786 to example-app
 
 Note: This is currently only supported with `syslog` resources. To link other resource types, use `convox env set` as described above.
+
+
+## Resource Updates
+
+A few types of resources can be updated. For instance, to modify the URL of a syslog resource that has `example.com` as the URL, run `convox resources update <resource name> --param=new_value`:
+
+```
+$ convox resources update syslog-3165 --url=example.net
+Updating syslog-3165 (url="example.com")...UPDATING
+
+$ convox resources info syslog-3165
+Name    syslog-3165
+Status  updating
+Exports
+  URL: example.net
+```
 
 ## Resource Deletion
 

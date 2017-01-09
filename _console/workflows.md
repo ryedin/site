@@ -42,7 +42,7 @@ Add additional tasks to your Workflow by clicking the green "Add Task" button. O
 
 Finally, give the Workflow a unique, recognizable name.
 
-![](/assets/images/docs/workflows/name.png)
+![Assign workflow name](/assets/images/docs/workflows/name.png) *This is the name that will be used to identify the overall purpose of the workflow.*
 
 #### An Example
 
