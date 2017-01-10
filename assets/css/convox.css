@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6, {
 header {
   text-align: left;
   color: #fff;
-	background: #045394;
+  background: #045394;
 }
 
 header#index {
@@ -161,8 +161,8 @@ span.mono {
 }
 
 .green_button {
-	border: rgb(59,122,187);
-	background: rgb(55,117,182);
+  border: rgb(59,122,187);
+  background: rgb(55,117,182);
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   transition: all 0.1s;
@@ -209,7 +209,7 @@ span.mono {
 }
 
 .wide_button {
-	width: 260px;
+  width: 260px;
 }
 
 @media (max-width: 479px) {
@@ -235,7 +235,7 @@ span.mono {
 }
 
 .sign-up {
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 .open-api {
@@ -347,8 +347,8 @@ span.mono {
 }
 
 #features .box {
-	padding-top: 8px;
-	height: 350px;
+  padding-top: 8px;
+  height: 350px;
 }
 
 #features .box p {
@@ -362,16 +362,16 @@ span.mono {
 }
 
 @media (max-width: 620px) {
-	#features .box {
-		height: 300px;
-	}
+  #features .box {
+    height: 300px;
+  }
 
-	#features .box p {
-		height: initial;
-	}
-	#features .box img {
-		display: none;
-	}
+  #features .box p {
+    height: initial;
+  }
+  #features .box img {
+    display: none;
+  }
 }
 
 
@@ -1458,6 +1458,7 @@ pre span {
 }
 
 .post {
+  float: left;
   padding: 50px 50px 40px;
   margin: 0;
 }
@@ -2157,6 +2158,70 @@ input#mc-embedded-subscribe {
 
 /*
  *
+ * Automation
+ *
+ */
+
+.automation #features {
+  background: #f6f6f6;
+  padding: 30px 0;
+}
+
+.automation #features .box {
+  height: 400px;
+  margin: 30px 15px;
+  padding: 40px 30px;
+  position: relative;
+}
+
+.automation #features .box h4 {
+  font-size: 3.4rem;
+  font-weight: lighter;
+}
+
+.automation #features .box p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  height: auto;
+  line-height: 1.8;
+}
+
+.automation #features .box .bottom-button {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: 1px solid #ddd;
+  bottom: 0;
+  display: block;
+  margin: 0 -30px; 0;
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+}
+
+.automation #features .box .bottom-button a {
+  text-align: center;
+}
+
+.automation #cta {
+  padding: 30px 0 50px;
+}
+
+.automation #cta h3 {
+  margin-bottom: 2rem;
+}
+
+.automation #cta p {
+  font-size: 1.8rem;
+  font-weight: lighter;
+}
+
+.automation #cta #get_in_touch {
+  margin: 20px 0 30px;
+}
+
+
+/*
+ *
  * Case
  *
  */
@@ -2233,12 +2298,12 @@ h6:hover .header-link {
 }
 
 .container.automation {
-	padding: 0;
+  padding: 0;
 }
 
 .guide table {
   border-collapse: collapse;
-  margin-left: auto; 
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -2284,4 +2349,17 @@ img + em {
   display: block;
   font-size: smaller;
   color: #477; /* Darker gray than DarkGray */
+}
+
+
+/*
+ *
+ * 404
+ *
+ */
+
+.not-found {
+  margin-top: 76px;
+  padding: 15% 50px 25%;
+  text-align: center;
 }

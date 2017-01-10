@@ -1,24 +1,14 @@
 ---
 title: Convox Case Studies
-layout: base
+layout: case
 ---
 
-<header>
-    <div class="container"><h2>Convox Case Studies</h2></div>
-</header>
+Read about why customers trust Convox to manage their business applications.
 
-<div class="container subnav-content" role="main">
-  <section class="col-xs-12" id="jobs">
-    <h1 class="title">Convox Case Studies</h1>
+## Interstate Analytics
 
-    <div class="content">
-      <p>
-        See what customers trust Convox to manage their business applications.
-      </p>
-      <ul>
-        <li><a href="/cases/interstate">Interstate Analytics</a></li>
-        <li><a href="/cases/opendoor">OpenDoor</a></li>
-      </ul>
-    </div>
-  </section>
-</div>
+Interstate Analytics moved their entire business onto Convox. Now they enjoy a simple and reliable platform that scales efficiently for their large Rails web servers and their hundreds of smaller analytics workers alike. [Read more...](/cases/interstate)
+
+## Opendoor
+
+Opendoor first tested out Convox on one of their data science applications in Python. The benefits of the memory configuration options on Convox were immediate for their memory hungry (14+ GB) Python workers. Opendoor can configure Convox to meet their needs, instead of writing their app to fit a platforms constraints. They are now using 2 Racks for their 10+ apps. [Read more...](/cases/opendoor)
