@@ -18,7 +18,28 @@ before_install: |
 The [after_success section](https://docs.travis-ci.com/user/deployment/custom/) of `.travis.yml` lets you specify commands to run after a successful build. In the example below, a successful build would trigger a deployment of `example-app` to the `org/staging` Rack.
 
     after_success:
-      - convox deploy --app example-app --rack org/staging
+      - convox deploy --app <app name> --rack <org name>/<rack name>
+
+### Example .travis.yml
+
+Here's an example `.travis.yml` that installs the Convox CLI, runs `convox doctor`, and deploys the app:
+
+<pre class="file yaml" title=".travis.yml">
+sudo: required
+
+services:
+  - docker
+
+before_install: |
+  curl -O https://bin.equinox.io/c/jewmwFCp7w9/convox-stable-linux-amd64.tgz &&\
+  sudo tar zxvf convox-stable-linux-amd64.tgz -C /usr/local/bin
+
+script:
+  convox doctor
+
+after_success:
+  - convox deploy --app cv-soulshake-net --rack personal/legit
+</pre>
 
 ## Authentication
 
@@ -31,7 +52,7 @@ If you use [Console](https://console.convox.com/) to manage access to your Racks
     CONVOX_HOST=console.convox.com
     CONVOX_PASSWORD=<deploy key>
 
-To generate a **deploy key**, log into your account at [console.convox.com](https://console.convox.com), select the appropriate organization, switch to the "Members" tab, and scroll down to the "Deploy Keys" section.
+To generate a **deploy key**, log into your account at [console.convox.com](https://console.convox.com), select the appropriate organization, switch to the "Members" tab, and scroll down to the "Deploy Keys" section. If your Rack is under your "personal" organization, use the Rack's API key instead of a deploy key.
 
 ### Authenticating directly with a Rack
 
@@ -52,4 +73,4 @@ aws cloudformation describe-stacks \
     --query 'Stacks[*].Outputs[?OutputKey==`Dashboard`].OutputValue'
 ```
 
-Your **Rack API key** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p PASSWORD`, or if you installed your Rack from the Console web interface, you'll need to [reset your Rack API key](/docs/api-keyroll/#roll-rack-api-key-ne-password).
+Your **Rack API key** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p APIKEY`, or if you installed your Rack from the Console web interface, you'll need to [reset your Rack API key](/docs/api-keyroll/#roll-rack-api-key-ne-password).
