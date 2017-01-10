@@ -16,7 +16,7 @@ Convox and Docker are recommended.
 
 ```shell
 $ git clone https://github.com/convox/site.git && cd site
-$ echo DEVELOPMENT >> .env
+$ echo DEVELOPMENT=true >> .env
 $ convox start
 ```
 
