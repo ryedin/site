@@ -38,7 +38,9 @@
         </p>
       {% else %}
         {{ include.post.content }}
+        {% include post-footer.html %}
       {% endif %}
+
     </div>
   </section>
 </section>

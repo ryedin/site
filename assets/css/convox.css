@@ -1602,6 +1602,24 @@ input#mc-embedded-subscribe {
   }
 }
 
+/* "Discuss on HackerNews" button */
+#container-hn-discuss-button {
+  border-top: 1px dashed;
+  border-bottom: 1px dashed;
+  margin: 0 auto;
+  float: right;
+  padding: 5px 3px 3px 18px;
+  border-radius: 10px;
+  background: url(/assets/images/hn.png) left center no-repeat;
+  background-position: 7px;
+  margin: 15px;
+}
+
+.hn-discuss-button {
+   font-family: 'Droid Sans', sans-serif;
+   font-weight: 800;
+}
+
 /*
  *
  * Docs
