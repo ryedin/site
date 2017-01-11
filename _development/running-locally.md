@@ -62,6 +62,8 @@ There are two ways to accomplish this: via the `--shift` flag, or via service la
 
 Passing the `--shift` flag to `convox start` will offset the public ports of all services by the provided number. For example, on an app that normally publishes port 80, running `convox start --shift 1` will publish port 81 instead, and update any corresponding port environment variables (`SERVICENAME_PORT`, etc) and container names.
 
+Additionally, all other port labels (`convox.port.<port>.protocol`, `convox.port.<port>.proxy`, `convox.port.<port>.secure`) will have their port values shifted.
+
 ```
 $ convox start
 ERROR: ports in use: [80 443]
