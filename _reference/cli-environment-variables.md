@@ -36,6 +36,10 @@ Email address to receive project updates.
 
 Private registry password for the [`convox registries`](/docs/private-registries command).
 
+## `CONVOX_WAIT`
+
+Setting `CONVOX_WAIT` to a truthy value (`true`, `True`, `1`, etc) will cause relevant commands (`convox deploy`, `convox apps create`, etc) to behave as if the `--wait` flag had been provided; that is, they will wait for the operation to complete before returning.
+
 ## `RACK`
 
 Active Rack name. Takes precedence over the `.convox/rack` repository setting, but is overridden by the `--rack` flag. For details, see [Switching between Racks](/docs/cli#switching-between-racks).
