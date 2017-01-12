@@ -67,3 +67,13 @@ services:
 ```
 
 This configuration will work with both `convox start` and `convox deploy`. Files written to `/var/www/html` will be persisted on the Docker host.
+
+## Cleanup
+
+Occasionally volumes become corrupted. If this happens, note that you can delete volumes on a Rack via `convox instances ssh`, e.g.:
+
+```
+$ convox instances ssh <instance-id> rm /volumes/foo/bar
+```
+
+Note that you need to keyroll at least once before using `convox instances ssh`. For details, see [SSH keyroll](/docs/ssh-keyroll/).
