@@ -74,7 +74,7 @@ This configuration will work with both `convox start` and `convox deploy`. Files
 Occasionally volumes become corrupted. If this happens, note that you can delete volumes on a Rack via `convox instances ssh`, e.g.:
 
 ```
-$ convox instances ssh <instance-id> rm /volumes/myapp/myservice
+$ convox instances ssh <instance-id> "sudo rm -rf /volumes/myrack-myapp/myservice/myvolume"
 ```
 
 You can get the `instance-id` via `convox instances`.
