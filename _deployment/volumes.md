@@ -23,7 +23,7 @@ services:
 If you specify your volume path this way, Convox will persist data on your Rack instances in an application-namespaced path under `/volumes`.
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-  By default, volumes are located at `/volumes/:app/:process/*`.
+  By default, volumes are located at `/volumes/<rack>-<app>/<service>/*`.
   You can also specify the volume in the more explicit `host:container` format, e.g. `/host/path:/container/path`. This allows you to set exactly where on the host instance to persist the data.
 </div>
 
