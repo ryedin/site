@@ -23,6 +23,7 @@ services:
 If you specify your volume path this way, Convox will persist data on your Rack instances in an application-namespaced path under `/volumes`.
 
 <div class="block-callout block-show-callout type-info" markdown="1">
+  By default, volumes are located at `/volumes/:app/:process/*`.
   You can also specify the volume in the more explicit `host:container` format, e.g. `/host/path:/container/path`. This allows you to set exactly where on the host instance to persist the data.
 </div>
 
@@ -73,7 +74,9 @@ This configuration will work with both `convox start` and `convox deploy`. Files
 Occasionally volumes become corrupted. If this happens, note that you can delete volumes on a Rack via `convox instances ssh`, e.g.:
 
 ```
-$ convox instances ssh <instance-id> rm /volumes/foo/bar
+$ convox instances ssh <instance-id> rm /volumes/myapp/myservice
 ```
+
+You can get the `instance-id` via `convox instances`.
 
 Note that you need to keyroll at least once before using `convox instances ssh`. For details, see [SSH keyroll](/docs/ssh-keyroll/).
