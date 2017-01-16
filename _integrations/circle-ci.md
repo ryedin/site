@@ -1,5 +1,6 @@
 ---
 title: "CircleCI"
+order: 200
 ---
 
 You can streamline your workflow by integrating Convox and CircleCI. At a high level, you'll be using familiar CLI commands like `convox build` and `convox deploy`, only from your CircleCI build servers.

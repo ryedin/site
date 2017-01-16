@@ -1,5 +1,6 @@
 ---
 title: "Travis CI"
+order: 400
 ---
 
 You can streamline your workflow by integrating Convox and Travis CI. At a high level, you'll be using familiar CLI commands like `convox build` and `convox deploy`, only from your Travis CI build servers.
