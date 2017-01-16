@@ -99,6 +99,10 @@ Anonymous identifier.
 
 ## ContainerDisk
 
+<div class="alert alert-info">
+Getting errors like <b>No space left on device</b>? You can extend the space on the device by increasing this parameter.
+</div>
+
 Default container disk size in GB.
 
 | Default value | `10` |
