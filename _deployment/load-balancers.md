@@ -45,6 +45,10 @@ web:
     - 5000
 ```
 
+<div class="block-callout block-show-callout type-info" markdown="1">
+Because Convox creates only one load balancer per service if you specify both internal and external ports an internal load balancer will be created.
+</div>
+
 #### Balancer Protocol
 
 You can specify one of four protocol types for a load balancer port in your `docker-compose.yml`:
