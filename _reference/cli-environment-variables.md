@@ -34,7 +34,7 @@ Email address to receive project updates.
 
 ## `PASSWORD`
 
-Private registry password for the [`convox registries`](/docs/private-registries command).
+Private registry password for the [`convox registries`](/docs/private-registries) command.
 
 ## `CONVOX_WAIT`
 
