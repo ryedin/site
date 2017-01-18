@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ ! -z ${TARGET} ]; then
+    # if running via `make`, look for TARGET=
+    target=${TARGET}
+else
+    # Otherwise, treat argument as input
+    target="$@"
+fi
+
+USAGE=$(cat <<-END
+    Usage:
+        make test TARGET=<scheme>://<domain>
+    or:
+        ./_bin/test <scheme>://<domain>
+END
+)
+
+[ -z $target ] && echo "$USAGE" && exit 1
+
+echo "Testing: $target"
+docker run -ti \
+    --net host \
+    soulshake/linkchecker "$target"
