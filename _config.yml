@@ -103,3 +103,5 @@ defaults:
 algolia:
   application_id: '2VBKDVKUPC'
   index_name:     'convox'
+
+exclude: [vendor]
