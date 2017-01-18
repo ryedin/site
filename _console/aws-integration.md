@@ -2,9 +2,11 @@
 title: "AWS Integration"
 ---
 
-AWS access and permissions are required to successfully install Racks in your AWS account.
+Convox is designed to give your team agility and consistency on top of AWS. In minutes you can install Convox and stand up new apps that follow AWS and DevOps best practices. Every Convox app leverages AWS CloudFormation and the EC2 Container Service for consistent configuration management and automation to reliably deploy, monitor and scale apps.
 
-The best practice to grant Convox this permission into your account is with <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM role access across AWS accounts</a>. If you create a role in your account and trust the Convox account to assume it, AWS operations can be performed with short-lived access keys.
+To this end, Convox requires access and permission to help manage resources in your AWS account.
+
+The best practice to grant Convox this permission into your account is with <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">a cross-account IAM role</a>. If you create a role in your account and trust the Convox account to assume it, AWS operations can be performed without sharing long term credentials.
 
 There are a few ways to create this role and policy.
 
