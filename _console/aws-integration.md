@@ -2,7 +2,7 @@
 title: "AWS Integration"
 ---
 
-AWS access and permissions are required to successfully install, uninstall and introspect Racks in your AWS account.
+AWS access and permissions are required to successfully install Racks in your AWS account.
 
 The best practice to grant Convox this permission into your account is with <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM role access across AWS accounts</a>. If you create a role in your account and trust the Convox account to assume it, AWS operations can be performed with short-lived access keys.
 
