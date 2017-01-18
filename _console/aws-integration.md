@@ -15,7 +15,7 @@ There are a few ways to create this role and policy.
 3. Click the **Enable** button for the AWS provider
 4. Drag a `credentials.csv` file or enter your Access Key ID and Secret Access Key into the access key form and click **Integrate AWS**
 
-That's it! Your AWS account now has a "convox/ConvoxRole-$ID" IAM role and a "convox/ConvoxPolicy" IAM policy, and Convox has permission to use it to [install Racks](/docs/installing-a-rack/).
+That's it! Your AWS account now has a **convox/ConvoxRole-$ID** IAM role (where $ID is your Console Organization ID) and a **convox/ConvoxPolicy** IAM policy. Convox has permission to use it to [install Racks](/docs/installing-a-rack/).
 
 ## Generating an Administrator Access Key
 
@@ -41,7 +41,7 @@ If you don't want to provide an Access Key to Convox, you can set up the role wi
 4. Copy the commands from the **AWS CLI Authorization** section into your terminal
 5. Paste the resulting ARN into the form and click **Integrate AWS**
 
-The CLI commands are custom for your Convox account, but take the general form of:
+The CLI commands take the general form of:
 
 ```bash
 aws iam create-policy --policy-name 'ConvoxPolicy' --path '/convox/' --description 'Policy that Convox can assume' --policy-document '...'
@@ -49,6 +49,8 @@ aws iam create-role --role-name 'ConvoxRole-$ID' --path '/convox/' --assume-role
 aws iam attach-role-policy --role-name 'ConvoxRole-$ID' --policy-arn $(aws iam list-policies --path-prefix '/convox/' --query 'Policies[?PolicyName==`ConvoxPolicy`].Arn' --output text)
 aws iam get-role --role-name 'ConvoxRole-$ID' --query Role.Arn --output text
 ```
+
+But they are custom for your accout, where $ID is your Console Organization ID.
 
 ## Convox Role Review
 
