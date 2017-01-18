@@ -15,7 +15,7 @@ There are a few ways to create this role and policy.
 3. Click the **Enable** button for the AWS provider
 4. Drag a `credentials.csv` file or enter your Access Key ID and Secret Access Key into the access key form and click **Integrate AWS**
 
-That's it! Your AWS account now has a **convox/ConvoxRole-$ID** IAM role (where $ID is your Console Organization ID) and a **convox/ConvoxPolicy** IAM policy. Convox has permission to use it to [install Racks](/docs/installing-a-rack/).
+That's it! Your AWS account now has a `convox/ConvoxRole-$ID` IAM role (where $ID is your Console Organization ID) and a `convox/ConvoxPolicy` IAM policy. Convox has permission to use it to [install Racks](/docs/installing-a-rack/).
 
 ## Generating an Administrator Access Key
 
@@ -50,7 +50,7 @@ aws iam attach-role-policy --role-name 'ConvoxRole-$ID' --policy-arn $(aws iam l
 aws iam get-role --role-name 'ConvoxRole-$ID' --query Role.Arn --output text
 ```
 
-But they are custom for your accout, where $ID is your Console Organization ID.
+But they are custom for your account, where `$ID` is your Console Organization ID.
 
 ## Convox Role Review
 
@@ -63,7 +63,7 @@ You can review the IAM Role and Trust Relationship on your own.
 
 ## Removing the AWS Integration
 
-At any time you can delete the "convox/ConvoxRole-$ID" and "convox/ConvoxPolicy". If you do this, you will not be able to install new racks, but it will not affect any running apps.
+At any time you can delete the `convox/ConvoxRole-$ID` role and `convox/ConvoxPolicy` policy. If you do this, you will not be able to install new Racks, but it will not affect any running apps.
 
 1. Log into [Console](https://console.convox.com/)
 2. Click the **Integrations** menu button
