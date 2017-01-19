@@ -435,6 +435,39 @@ input#mce-EMAIL {
   color: #3B95D2;
 }
 
+
+.blog .newslettermargin {
+  margin: 15px 0 0;
+}
+
+.blog .subscribe-form-field {
+  width: 64%;
+}
+
+.blog .subscribe-form-button {
+  width: 36%;
+}
+
+.blog input#mce-EMAIL {
+  font-size: 11pt;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 15px !important;
+}
+
+.blog #mc-embedded-subscribe {
+  font-size: 11pt;
+  height: 40px;
+  letter-spacing: normal;
+  line-height: 40px;
+}
+
+.blog #mc_embed_signup,
+.blog #mce-error-response {
+  font-size: 11pt;
+  margin: 10px 0 0 0;
+}
+
 footer {
   position: inherit; /* override convox styling */
 }
@@ -845,4 +878,12 @@ header .container {
   }
 
   .newslettermargin { margin-top:30px; }
+
+  .blog .subscribe-form-field {
+    width: 100%;
+  }
+
+  .blog .subscribe-form-button {
+    width: 100%;
+  }
 }
