@@ -23,4 +23,5 @@ echo "Testing: $target"
 
 docker run -ti \
     --net host \
-    soulshake/linkchecker --check-extern "$target"
+    soulshake/linkchecker "$target"
+    #soulshake/linkchecker --check-extern "$target"
