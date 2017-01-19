@@ -37,3 +37,7 @@ Have the app use Internal ELBs for all processes, i.e. make it unreachable from 
 
 | Allowed values | "Yes", "No" |
 | Default value  | "No"        |
+
+## SecurityGroup
+
+The `SecurityGroup` app parameter can be set to the ID of a custom AWS security group. When this param is set on an app, the security group rules will be applied to requests coming in to any of the app's load balancers.
