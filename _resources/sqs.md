@@ -19,7 +19,10 @@ This will provision an SQS queue. Creation will take a few moments. To check the
 
 <table>
   <tr><th>Option</th><th>Description</th></tr>
+  <tr><td><code>--message-retention-period=<b><i>345600</i></b></code></td><td>Seconds Amazon SQS retains a message</td></tr>
   <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
+  <tr><td><code>--receive-message-wait-time=<b><i>5</i></b></code></td><td>Seconds to wait for a message to appear in the queue</td></tr>
+  <tr><td><code>--visibility-timeout=<b><i>30</i></b></code></td><td>Seconds to hide a message from other components after delivery</td></tr>
 </table>
 
 ## Resource Information
