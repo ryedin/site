@@ -17,9 +17,78 @@ $ convox resources proxy mysql-4624
 
 Under the hood, this creates an HTTP websocket tunnel through your Rack process that talks to your database via a socket on your local machine. In other words, `convox resources proxy` allows you to communicate with your Postgres database (for example) as if it were running on your own machine.
 
+### Example
+
+In our [Flask example repo](https://github.com/convox-examples/flask), we've created a `counter` service and replaced the `redis` service with a redis resource (referred to here as `redis-9990`).
+
+We can't connect directly to our redis resource because it's inside our app's VPC and only accepts internal requests:
+
+```
+$ redis-cli -h lerabcdefghi.jklm5o.ng.0001.use1.cache.amazonaws.com:6379
+Could not connect to Redis at lerabcdefghi.jklm5o.ng.0001.use1.cache.amazonaws.com:6379: Connection timed out
+```
+
+The manual way to interact with the redis resource would be to use `convox exec` to get a shell in the `counter` container and install `redis-cli` there, but this is neither efficient nor recommended.
+
+`convox resources proxy` makes it much easier. In a terminal, run:
+
+```
+$ convox resources proxy redis-9990
+proxying 127.0.0.1:6379 to lerabcdefghi.jklm5o.ng.0001.use1.cache.amazonaws.com:6379
+```
+Then, in another terminal on your local machine, run:
+
+```
+$ redis-cli
+127.0.0.1:6379>
+```
+You'll see `connect: 6379` appear in the terminal where you ran `convox resources proxy` as evidence of your connection.
+
+Now you can indirect with your remote redis resource:
+
+```
+127.0.0.1:6379> ping "hello world"
+"hello world"
+```
 
 ## Access private services with `convox proxy`
 
 `convox proxy` works much the same way as `convox resources proxy` except for internal services (i.e. exposed behind an internal ELB inside a VPC) rather than [external resources](/docs/about-resources).
 
-Note that you can also access services via [`convox exec`](/docs/debugging/#convox-exec).
+### Example
+
+Let's say we want to proxy from port 8000 on our local machine to port 80 of the `counter` service:
+
+First get the service endpoint by running `convox apps info`:
+
+```
+$ convox apps info
+Name       flask
+Status     running
+Release    RTYQLLNIUTZ
+Processes  counter redis
+Endpoints  flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com:80 (counter)
+           flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com:443 (counter)
+```
+
+Then choose a port on your local machine (`8000` in our case), then run the `convox proxy` command in a terminal:
+
+```
+$ convox proxy 8000:flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com:80
+proxying 127.0.0.1:8000 to flask-counter-NJS6JDQ-842041791.us-east-1.elb.amazonaws.com:80
+```
+
+In another terminal, run `curl localhost:8000`:
+
+```
+$ curl -s localhost:8000 | grep served
+        <h2>This request was served by 3d511a719fc7.</h2>
+        <h2>3d511a719fc7 served 7 requests so far.</h2>
+        <h2>A grand total of 7 requests were served.</h2>
+```
+
+The page is returned as if it were being served from `localhost`.
+
+## See also
+
+- [Debugging](/docs/debugging)
