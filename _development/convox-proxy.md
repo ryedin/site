@@ -57,7 +57,7 @@ Now you can indirect with your remote redis resource:
 
 ### Example
 
-Let's say we want to proxy from port 8000 on our local machine to port 80 of the `counter` service:
+Let's say we want to proxy from port 8000 on our local machine to port 80 of the `counter` service in our [example repo](https://github.com/convox-examples/flask):
 
 First get the service endpoint by running `convox apps info`:
 
