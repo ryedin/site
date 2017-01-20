@@ -16,6 +16,7 @@ This will create a syslog forwarder. Creation will take a few moments. To check 
 <table>
   <tr><th>Option</th><th>Description</th></tr>
   <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
+  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
 </table>
 
 ## Resource Information

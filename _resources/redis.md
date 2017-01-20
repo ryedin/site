@@ -19,6 +19,7 @@ This will provision Redis on the Amazon ElastiCache. Creation can take a few min
   <tr><td><code>--instance-type=<b><i>cache.t2.micro</i></b></code></td><td>ElastiCache instance type to use</td></tr>
   <tr><td><code>--num-cache-clusters=<b><i>1</i></b></code></td><td>Number of cache clusters to create (one read-write, rest read-only)</td></tr>
   <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
+  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
 </table>
 
 ## Resource Information
