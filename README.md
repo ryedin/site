@@ -1,5 +1,7 @@
 # Convox Docs
 
+[![Build Status](https://travis-ci.org/convox/site.svg?branch=master)](https://travis-ci.org/convox/site)
+
 This repo contains the source files for [convox.com](https://convox.com/).
 
 Documentation is written in Markdown (with options similar to [Github's Flavor](https://help.github.com/articles/github-flavored-markdown/)).

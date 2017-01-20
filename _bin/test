@@ -8,17 +8,20 @@ else
     target="$@"
 fi
 
-USAGE=$(cat <<-END
-    Usage:
-        make test TARGET=<scheme>://<domain>
-    or:
-        ./_bin/test <scheme>://<domain>
-END
-)
+# Just use http://localhost if no argument is specified
+[ -z $target ] && target="http://localhost"
 
-[ -z $target ] && echo "$USAGE" && exit 1
+# See if the text 'Convox, Inc' appears in the output of 'curl localhost'
+# (since nginx will serve 404s at first)
+curl --silent $target | grep "Convox, Inc." > /dev/null 2>&1
+while [ $? -ne 0 ]; do
+    echo "Waiting for 'convox start'..." && sleep 5
+    curl --silent $target | grep "Convox, Inc." > /dev/null 2>&1
+done
 
 echo "Testing: $target"
+
 docker run -ti \
     --net host \
     soulshake/linkchecker "$target"
+    #soulshake/linkchecker --check-extern "$target"
