@@ -43,6 +43,8 @@ Resources are generally configured so they are not accessible from the public in
 $ convox resources proxy mysql-4624
 ```
 
+For details, see [convox resources proxy](/docs/convox-proxy).
+
 ### Resource credentials
 
 For some types of resources, the username and password are contained in the resource URL, which can be retrieved by running `convox resources info <resource name>`.
