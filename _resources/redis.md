@@ -2,8 +2,6 @@
 title: "Redis"
 ---
 
-{% include definitions/changes/warning.md %}
-
 ## Resource Creation
 
 You can create redis databases using the `convox resources create` command:
@@ -50,5 +48,3 @@ Deleting the database will take several minutes.
 <div class="block-callout block-show-callout type-warning" markdown="1">
 This action will cause an unrecoverable loss of data.
 </div>
-
-{% include definitions/changes/service-to-resource.md %}

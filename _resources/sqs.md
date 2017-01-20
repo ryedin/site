@@ -2,8 +2,6 @@
 title: "SQS"
 ---
 
-{% include definitions/changes/warning.md %}
-
 <div class="alert alert-warning">
 <b>Note:</b> The SQS API does not permit Convox to lock SQS resources down from the public internet.  SQS queues <b>will</b> be accessible on the public internet!
 </div>
@@ -39,5 +37,3 @@ To delete the queue, use the `convox resources delete` command:
 
     $ convox resources delete sqs-3785
     Deleting sqs-3785... DELETING
-
-{% include definitions/changes/service-to-resource.md %}
