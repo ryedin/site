@@ -3,7 +3,7 @@ title: "Load Balancers"
 order: 750
 ---
 
-Once you have containers running, the next step is to allow them to be accessed from the internet. Convox automatically sets up and configures load balancers appropriately to route traffic to your containers.
+Once you have containers running, the next step is to allow them to be accessed from the Internet. Convox automatically sets up and configures load balancers appropriately to route traffic to your containers.
 
 ### Configuration
 
@@ -20,10 +20,10 @@ worker:
   command: bin/worker
 ```
 
-In this example, Convox will create a load balancer in front of the `web` process. This load balancer will accept traffic from the internet on port 80 and forward it to the `web` containers on port `5000`.
+In this example, Convox will create a load balancer in front of the `web` process. This load balancer will accept traffic from the Internet on port 80 and forward it to the `web` containers on port `5000`.
 
 <div class="block-callout block-show-callout type-warning" markdown="1">
-Convox will only create a load balancer for ports in your `docker-compose.yml` file, not your `Dockerfile`.
+Convox will only create a load balancer for ports in your `docker-compose.yml` file, not in your `Dockerfile`.
 </div>
 
 ### Balancer Hostname
@@ -41,7 +41,7 @@ You can find the load balancer hostname(s) for your application using `convox ap
 
 #### Internal Load Balancers
 
-You can create a load balancer that is only accessible inside your Rack by specifying a single port (in other words, by _exposing_ a port rather than _publishing_ it):
+You can create a load balancer that is only accessible inside your Rack by specifying a single port:
 
 ```
 web:
@@ -50,7 +50,8 @@ web:
 ```
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-**Note: Convox creates only one load balancer per service.** If you specify both internal (exposed) and external (published) ports, only an internal load balancer will be created. If you specify multiple ports, only the first will be used.
+**Note: Convox creates only one load balancer per service.** If you specify both internal and external ports, only an internal load balancer will be created.
+This is due to the fact that while an ELB can have listeners on multiple ports, an ELB itself can only be either internal or external.
 </div>
 
 #### Balancer Protocol
@@ -88,9 +89,7 @@ web:
   </tr>
 </table>
 
-<div class="block-callout block-show-callout type-info" markdown="1">
-If no protocol label is specified the default of `tcp` will be used.
-</div>
+If no protocol label is specified, the default of `tcp` will be used.
 
 #### Health Check Options
 
@@ -170,3 +169,7 @@ convox apps params --app <name>
 ```
 
 For further reading on security groups, check out the AWS [documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) and [CLI reference](http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-sg.html).
+
+## See also
+
+- [Port mapping](/docs/port-mapping/)
