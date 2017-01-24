@@ -127,11 +127,22 @@ Existing VPC ID (if blank, a VPC will be created).
 
 ## InstanceBootCommand
 
-A single line of shell script to run as a cloud-init command early during instance boot.
+A single line of shell script to run (as root) as a cloud-init command early during instance boot.
 
 For more information about using cloud-init with EC2, see the AWS doc [Running Commands on Your Linux Instance at Launch](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html#user-data-cloud-init). For cloud-init specifics, see "bootcmd" in the doc [Run commands on first boot](http://cloudinit.readthedocs.io/en/latest/topics/examples.html#run-commands-on-first-boot).
 
 | Default value | "" |
+
+#### Example: increase virtual memory
+
+Tell the host EC2 instance to set operating system limits on mmap to `262144` (useful for ElasticSearch):
+
+```
+$ convox rack params set --rack <org>/<rack> 'InstanceBootCommand="sysctl -w vm.max_map_count=262144"'
+Updating parameters... OK
+```
+
+(Note the surrounding single quotes in the above command.)
 
 ## InstanceCount
 
