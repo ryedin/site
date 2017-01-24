@@ -3,7 +3,7 @@ title: "Load Balancers"
 order: 750
 ---
 
-Once you have containers running the next step is to allow them to be accessed from the Internet. Convox automatically helps you set up and configure load balancers appropriately to route traffic to your containers.
+Once you have containers running, the next step is to allow them to be accessed from the Internet. Convox automatically sets up and configures load balancers appropriately to route traffic to your containers.
 
 ### Configuration
 
@@ -20,7 +20,11 @@ worker:
   command: bin/worker
 ```
 
-In this example, Convox will create a load balancer in front of the `web` process. This load balancer will accept traffic from the internet on port 80 and forward it to the `web` containers on port `5000`.
+In this example, Convox will create a load balancer in front of the `web` process. This load balancer will accept traffic from the Internet on port 80 and forward it to the `web` containers on port `5000`.
+
+<div class="block-callout block-show-callout type-warning" markdown="1">
+Convox will only create a load balancer for ports in your `docker-compose.yml` file, not in your `Dockerfile`.
+</div>
 
 ### Balancer Hostname
 
@@ -42,11 +46,12 @@ You can create a load balancer that is only accessible inside your Rack by speci
 ```
 web:
   ports:
-    - 5000
+    - "5000"
 ```
 
 <div class="block-callout block-show-callout type-info" markdown="1">
-Because Convox creates only one load balancer per service if you specify both internal and external ports an internal load balancer will be created.
+**Note: Convox creates only one load balancer per service.** If you specify both internal and external ports, only an internal load balancer will be created.
+This is due to the fact that while an ELB can have listeners on multiple ports, an ELB itself can only be either internal or external.
 </div>
 
 #### Balancer Protocol
@@ -58,7 +63,7 @@ web:
   labels:
     - convox.port.443.protocol=https
   ports:
-    - 443:5000
+    - "443:5000"
 ```
 
 <table>
@@ -84,9 +89,7 @@ web:
   </tr>
 </table>
 
-<div class="block-callout block-show-callout type-info" markdown="1">
-If no protocol label is specified the default of `tcp` will be used.
-</div>
+If no protocol label is specified, the default of `tcp` will be used.
 
 #### Health Check Options
 
@@ -99,7 +102,7 @@ web:
       - convox.health.port=5000
       - convox.health.timeout=3
   ports:
-    - 443:5000
+    - "443:5000"
 ```
 <table>
   <tr>
@@ -123,7 +126,7 @@ web:
 
 #### End-to-end encryption
 
-By default, HTTPS/TLS is terminated at the load balancer, and the resulting data is transmitted unencrypted to your application. This is OK, because traffic between your load balancer and your application happens entirely on your Rack's internal network. However, for extra security you can encrypt the traffic between your load balancer and application by setting the `convox.port.<port>.secure label.
+By default, HTTPS/TLS is terminated at the load balancer, and the resulting data is transmitted unencrypted to your application. This is OK, because traffic between your load balancer and your application happens entirely on your Rack's internal network. However, for extra security you can encrypt the traffic between your load balancer and application by setting the `convox.port.<port>.secure` label.
 
 ```
 web:
@@ -131,7 +134,7 @@ web:
     - convox.port.443.secure=true
     - convox.port.443.protocol=https
   ports:
-    - 443:5001
+    - "443:5001"
 ```
 
 When you use this option you will need to terminate HTTPS or TLS directly inside your application or with a reverse proxy like nginx or haproxy.
@@ -146,14 +149,14 @@ web:
     - convox.port.443.protocol=tls
     - convox.port.443.proxy=true
   ports:
-    - 443:5000
+    - "443:5000"
 ```
 
 #### Limited Application Access
 
 For security reasons, access to an application might need to be limited. To achieve this, an existing security group can be applied to an application's load balancer. For example, within said security group, access can be granted only to an office VPN.
 
-This is done via an application parameter with a known security group ID:
+This is done via an [application parameter](/docs/app-parameters/#securitygroup) with a known security group ID:
 
 ```
 convox apps params --app <name> set SecurityGroup=sg-123456
@@ -166,3 +169,7 @@ convox apps params --app <name>
 ```
 
 For further reading on security groups, check out the AWS [documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) and [CLI reference](http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-sg.html).
+
+## See also
+
+- [Port mapping](/docs/port-mapping/)

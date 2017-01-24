@@ -26,3 +26,7 @@ This example configuration would listen to port `5000` on an internal-only load 
 If you want to make all of an application's ports internal, regardless of port definition, you can set the Internal app parameter.
 
     $ convox apps params set Internal=Yes
+
+## See also
+
+- [Load balancers](/docs/load-balancers)
