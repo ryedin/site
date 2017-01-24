@@ -13,6 +13,7 @@ Convox applications are configured using environment variables. Environment mana
 1. [Deployed](#deployed)
 1. [Scope](#scope)
 1. [Sensitive Information](#sensitive-information)
+1. [Under the hood](#under-the-hood)
 1. [Further Reading](#further-reading)
 
 ## Local
@@ -100,6 +101,12 @@ You can set environment variables at the [service](https://convox.com/docs/defin
 Since `docker-compose.yml` will typically be under version control, we recommend not setting sensitive default values there.
 
 We also recommend leaving your `.env` file out of version control and any images you build of your application to protect against leaking sensitive information. That might mean adding `.env` to `.gitignore` and `.dockerignore`, for example.
+
+## Under the hood
+
+When you use the `convox env` commands, you're actually interacting with a KMS-encrypted file stored in an S3 bucket in your AWS account. For example, `convox env` fetches that file, decrypts it, and then prints the environment variable pairs it contains. Likewise, `convox env get` fetches and decrypts that file, but then prints only the requested environment variable. As you might expect, `convox env set` fetches and decrypts the env file from S3, then appends the env var pairs you pass as arguments to that file, before re-encrypting the file and putting it back in the S3 bucket. Finally, `convox env unset` removes the specified variable from the file, rather than adding or updating it like `convox env set`.
+
+You should also keep in mind that the environment of each app is stored in its ECS task definitions, so that ECS can set the environment of each task (i.e. container) appropriately. As a result, you can view the decrypted environment data in the app's ECS task definitions.
 
 ## Further Reading
 
