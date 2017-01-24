@@ -7,7 +7,13 @@ order: 500
 This page is about the role of environment variables in containers and applications. For information about environment variables in the context of the Convox CLI, see [CLI environment variables](/docs/cli-environment-variables/).
 </div>
 
-Convox applications are configured using environment variables. Environment management differs depending on whether you are running your applications locally or in the cloud. See the [Local](#local) and [Deployed](#deployed) sections below for details.
+Convox applications are configured using environment variables. Environment management differs depending on whether you are running your applications locally or in the cloud. See the sections below for details.
+
+1. [Local](#local)
+1. [Deployed](#deployed)
+1. [Scope](#scope)
+1. [Sensitive Information](#sensitive-information)
+1. [Further Reading](#further-reading)
 
 ## Local
 
