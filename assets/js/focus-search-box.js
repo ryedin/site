@@ -1,3 +1,30 @@
+function inputFocus(){
+    'use strict';
+    // Focus search field when user types a slash
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    var f = document.getElementById("aa-search-input");
+    if(keycode == '191' || keycode == '47'){
+        f.focus();
+    }
+ }
+
+ function clearSearch() {
+    // Remove the / from the search field
+    var f = document.getElementById("aa-search-input");
+    if(f.value == "/"){
+        f.value = "";
+        f.focus();
+    }
+
+    // Remove search field focus when user presses <ESC>
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '27') {
+        $(document.activeElement).blur();
+    }
+ }
+
+window.onkeydown = inputFocus;
+window.onkeyup = clearSearch;
 
 // Logging function that accounts for browsers that don't have window.console
 function log(){
@@ -7,43 +34,3 @@ function log(){
     console.log( Array.prototype.slice.call(arguments)[0] );
   }
 }
-
-
-  //(function(){
-    //'use strict';
-    //log("in focus-search-box.js");
-
-    //$( document ).ready(function() {
-      //$( "input#aa-search-input.aa-input-search.aa-input" ).focus();
-    //});
-
-  //})();
-
-$(document).keypress(function(e) {
-  log(e.charCode);
-  if(e.charCode == 47) {
-    log("got charCode 47!!");
-    $( "input#aa-search-input.aa-input-search.aa-input" ).focus();
-
-    //$( "input#aa-search-input.aa-input-search.aa-input" ).focus(function(){
-        //$(this).focus();
-        //$(this).val('mraaaa');
-        //log("arr");
-    //});
-  }
-});
-
-//$('input:text').focus(
-    //function(){
-        //log("input:text is focused");
-        //$(this).val('');
-    //});
-
-
-//$( "input#aa-search-input.aa-input-search.aa-input" ).focus(function() {
-    //log("we're focused!");
-    //log(this.value);
-    //if (this.value === "/") {
-        //this.value = '';
-    //}
-//});
