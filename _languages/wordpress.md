@@ -2,8 +2,6 @@
 title: "WordPress"
 ---
 
-{% include definitions/changes/warning.md %}
-
 [WordPress](https://wordpress.org/) is a popular blogging platform based on PHP and MySQL. It's simple to set up a WordPress blog on Convox with the following steps.
 
 ## Create the App and Database
@@ -96,5 +94,3 @@ The `docker-compose.yml` file above configures port 443 for secure traffic. To e
 Then log into the Wordpress admin interface and click **Settings -> General**.
 
 Set **WordPress Address (URL)** and **Site Address (URL)** to https://www.yourdomain.com.
-
-{% include definitions/changes/service-to-resource.md %}

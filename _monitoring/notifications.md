@@ -2,8 +2,6 @@
 title: "Notifications"
 ---
 
-{% include definitions/changes/warning.md %}
-
 Console users can get notification for common Rack events. Below you can find a list of the types of notifications you will receive.
 
 #### [*example-rack*] Created app *example-app*
@@ -53,5 +51,3 @@ A request has been received to alter the number of instances in your Rack’s cl
 #### [*example-rack*] Updating rack to: instance type *db.t2.medium*
 
 A request has been received to alter the type of instances in your Rack’s cluster. This will require processes to be re-launched and can take a few minutes to complete.
-
-{% include definitions/changes/service-to-resource.md %}

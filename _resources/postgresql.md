@@ -2,8 +2,6 @@
 title: "PostgreSQL"
 ---
 
-{% include definitions/changes/warning.md %}
-
 ## Resource Creation
 
 You can create PostgreSQL databases using the `convox resources create` command:
@@ -23,6 +21,7 @@ This will provision postgres database on the Amazon RDS service. Creation can ta
   <tr><td><code>--max-connections=<b><i>{DBInstanceClassMemory/15000000}</i></b></code></td><td>Maximum connections to allow</td></tr>
   <tr><td><code>--multi-az</code></td><td>Enhanced availability and durability</td></tr>
   <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
+  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
   <tr><td><code>--version=<b><i>9.5.2</i></b></code></td><td>Postgres version</td></tr>
 </table>
 
@@ -53,5 +52,3 @@ Deleting the database will take several minutes.
 <div class="block-callout block-show-callout type-warning" markdown="1">
 This action will cause an unrecoverable loss of data.
 </div>
-
-{% include definitions/changes/service-to-resource.md %}

@@ -1,5 +1,6 @@
 ---
 title: "CircleCI"
+order: 200
 ---
 
 You can streamline your workflow by integrating Convox and CircleCI. At a high level, you'll be using familiar CLI commands like `convox build` and `convox deploy`, only from your CircleCI build servers.
@@ -36,4 +37,4 @@ If you do not use [Console](https://console.convox.com/), you can grant CircleCI
 
 You can find your **Rack host** by visiting the CloudFormation console, selecting your Rack stack, and navigating to the "Outputs" tab. You'll want the value of the "Dashboard" output, which will have the following format: `<rack-name>-<timestamp>.<aws-region>.elb.amazonaws.com`.
 
-Your **Rack password** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p PASSWORD`, or if you installed your Rack from the Console web interface, you'll need to reset your Rack password.
+Your **Rack API key** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p APIKEY`, or if you installed your Rack from the Console web interface, you'll need to [reset your Rack API key](/docs/api-keyroll#roll-rack-api-key-ne-password).

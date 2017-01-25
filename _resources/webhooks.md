@@ -2,8 +2,6 @@
 title: "Webhooks"
 ---
 
-{% include definitions/changes/warning.md %}
-
 You can use the `webhook` resource to subscribe to notifications for events on your Rack.
 
 ## Resource Creation
@@ -121,5 +119,3 @@ To delete the resource, use the `convox resources delete` command:
 
     $ convox resources delete webhook-9344
     Deleting webhook-9344... DELETING
-
-{% include definitions/changes/service-to-resource.md %}

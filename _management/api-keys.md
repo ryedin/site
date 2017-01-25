@@ -16,7 +16,7 @@ As a Convox user, there are several authentication-related concepts you should b
 
 Console users have a master API key that can access all the configured Racks. If you lose this API key, you can generate a new one.
 
-Log in to Console → Click Account → Click Roll API Key
+Log in to Console → Click Account → Click API Key → Click Regenerate API Key
 
 Then you can log in from the CLI with your new API key:
 

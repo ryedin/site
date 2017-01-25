@@ -2,8 +2,6 @@
 title: "Syslog"
 ---
 
-{% include definitions/changes/warning.md %}
-
 ## Resource Creation
 
 You can forward your logs to syslog using the `convox resources create` command:
@@ -18,7 +16,7 @@ This will create a syslog forwarder. Creation will take a few moments. To check 
 <table>
   <tr><th>Option</th><th>Description</th></tr>
   <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
-  <tr><td><code>--url=<b><i>&lt;url&gt;</i></b></code></td><td>The syslog endpoint</td></tr>
+  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
 </table>
 
 ## Resource Information
@@ -56,6 +54,3 @@ WARNING: If you want to switch your Rack back to public networking mode after cr
 First, delete the syslog resource(s) created in private mode: `convox resources delete syslog-1234`
 
 Next, log into the AWS VPC console. You will need to manually remove an Elastic Network Interface (ENI). The ENI ID varies, but its description in the AWS console will begin with `AWS Lambda VPC ENI`. Once the ENI is manually detached and deleted, it is safe to disable private networking. If you need assistance with this process, please open a support ticket at [https://console.convox.com](https://console.convox.com).
-
-
-{% include definitions/changes/service-to-resource.md %}

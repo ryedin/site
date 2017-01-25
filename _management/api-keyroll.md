@@ -5,17 +5,16 @@ order: 350
 
 There are two different concepts here: rolling (changing) a **Rack API key** (what Console uses to authenticate with Rack) and rolling your **user** (or **account**) **API key**.
 
-
 ### Roll User/Account API Key
 
 Each Convox account has its own API key (not to be confused with the account password).
 
 | **CLI instructions**                  | **Console instructions**                      |
-| n/a                                   | "Roll API key" (Account settings page)        |
+| n/a                                   | "Regenerate API key" (Account API Key page)   |
 
-If you're trying to roll your user API key, you can do that on the [Account page](https://console.convox.com/grid/user/profile).
+If you're trying to roll your user API key, you can do that on the [API Key page](https://console.convox.com/grid/user/api_key).
 
-Click **Roll API Key**. Make sure to store the new API key that will be displayed.
+Click **Regenerate API Key**. Make sure to store the new API key that will be displayed.
 
 Note that rolling your account API key will disable CLI access until you run `convox login console.convox.com`.
 

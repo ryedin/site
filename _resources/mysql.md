@@ -2,8 +2,6 @@
 title: "MySQL"
 ---
 
-{% include definitions/changes/warning.md %}
-
 ## Resource Creation
 
 You can create MySQL databases using the `convox resources create` command:
@@ -21,6 +19,7 @@ This will provision MySQL database on the Amazon RDS service. Creation can take 
   <tr><td><code>--instance-type=<b><i>db.t2.micro</i></b></code></td><td>RDS instance type to use</td></tr>
   <tr><td><code>--multi-az</code></td><td>Enhanced availability and durability</td></tr>
   <tr><td><code>--name=<b><i>&lt;name&gt;</i></b></code></td><td>The name of the resource to create</td></tr>
+  <tr><td><code>--private</code></td><td>Create in private subnets</td></tr>
 </table>
 
 ## Resource Information
@@ -50,5 +49,3 @@ Deleting the database will take several minutes.
 <div class="block-callout block-show-callout type-warning" markdown="1">
 This action will cause an unrecoverable loss of data.
 </div>
-
-{% include definitions/changes/service-to-resource.md %}

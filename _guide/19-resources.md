@@ -4,8 +4,6 @@ permalink: /guide/resources/
 phase: deploy
 ---
 
-{% include definitions/changes/warning.md %}
-
 Resources behave like services, but are external to your application. Your application communicates with these resources over a network.
 
 Examples of typical resources used with Convox are data stores like RDS or redis, mailservers, and so on.
@@ -94,11 +92,9 @@ redis   0        1        0    256
 For more information on resources, see:
 
 * [Resources](/guide/resources/) in the Convox docs
-* [Service linking](https://convox.com/docs/syslog#service-linking) in the Convox docs
+* [Resource linking](https://convox.com/docs/syslog#resource-linking) in the Convox docs
 * `convox resources create --help`
 * [The Twelve-Factor App: Backing services](https://12factor.net/backing-services){:target="_blank"}
-
-{% include definitions/changes/service-to-resource.md %}
 
 {% include_relative _includes/next.html
   next="Monitor your app"
