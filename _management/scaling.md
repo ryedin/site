@@ -83,3 +83,11 @@ To monitor for autoscaling events, use `convox rack logs` with the `--filter` op
 ```
 $ convox rack logs --filter="autoscaleRack change="
 ```
+
+##### Under the hood
+
+Every minute, your Rack runs an autoscale calculation to determine how many instances you need in your cluster. This calculation involves ports, memory, and CPU required by your services. When appropriate, autoscale will update your Rack instance count via a CloudFormation stack update. Autoscale will not change your instance type.
+
+During a deployment, the calculation gets more nuanced, since processes from an old release and a new release will temporarily run at the same time. This is known as a rolling deployment or [rolling update](https://convox.com/docs/rolling-updates). In ECS terms, this translates to having tasks from both the primary (new) deployment of each service and the active deployment (the one being replaced) of each service running at the same time. Autoscaling will take into account the number of instances needed to run the processes from both releases, i.e. the tasks in both primary and active ECS service deployments.
+
+When a deployment finishes, the old ECS tasks get terminated, and autoscale scales the Rack back down to the original instance count. This scaling down happens gradually--one instance at a time, every 5 minutes--to give ECS time to rebalance tasks across the instances in your cluster.
