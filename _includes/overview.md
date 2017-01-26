@@ -1,5 +1,7 @@
 Convox is an open-source tool for deploying, managing, and monitoring applications on cloud infrastructure.
 
+To get started, <a href="https://convox.com/signup">sign up for an account</a> and follow the interactive guide to set up AWS and your computer to deploy your first app.
+
 ### The Convox Philosophy
 
 #### Open over Closed
