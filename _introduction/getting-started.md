@@ -17,15 +17,21 @@ This guide takes around 30 minutes to go from zero to your first production depl
 
 First, sign up for [Convox Console](https://convox.com/signup), a web UI for managing your Organizations, Integrations and Racks.
 
-In Console you'll first set up your organization. All the Racks and integrations you set up in this organization are only visible to you. Later you can invite members of your team and assign them roles that control what they can access.
+## Create an Organization
 
-## Integrate with AWS and Install a Rack
+Next, set up your organization. All the Racks and integrations you set up are for this organization are only visible to you. Later you can invite members of your team and assign them roles that control what they can access.
 
-Click the **Setup** button then **Connect an AWS account** link and give Convox AWS credentials. This gives Convox access and permission to help manage resources in your AWS account.
+## Connect an AWS Account
 
-Then click on **Add a Rack** followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
+Next, click the **Setup** button then **Connect an AWS account** link and give Convox AWS credentials. This gives Convox access and permission to help manage resources in your AWS account.
 
-See [AWS Integration](/docs/aws-integration) and [Installing a Rack](/docs/installing-a-rack) for more details.
+See [AWS Integration](/docs/aws-integration) for more details.
+
+## Launch a Production-Ready Cluster
+
+Next, click on the **Add a Rack** button, followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
+
+See [Installing a Rack](/docs/installing-a-rack) for more details.
 
 ## Set Up the Convox CLI
 
@@ -37,9 +43,9 @@ We provide a `convox` command line tool that offers:
 
 along with numerous other utilities that make building, configuring, scaling and securing your apps easy.
 
-First, click the **Setup** button then **Connect the Convox CLI** to get your API key.
+Click the **Setup** button then **Connect the Convox CLI** to get your API key.
 
-Next, [install the Convox CLI](/docs/installation/).
+Next, [install the Convox CLI](/docs/installation/) for your platform.
 
 <pre id="install-mac">
 $ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
