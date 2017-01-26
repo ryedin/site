@@ -138,7 +138,7 @@ For more information about using cloud-init with EC2, see the AWS doc [Running C
 Tell the host EC2 instance to set operating system limits on mmap to `262144` (useful for ElasticSearch):
 
 ```
-$ convox rack params set --rack <org>/<rack> 'InstanceBootCommand="sysctl -w vm.max_map_count=262144"'
+$ convox rack params set 'InstanceBootCommand="sysctl -w vm.max_map_count=262144"'
 Updating parameters... OK
 ```
 
