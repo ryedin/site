@@ -51,6 +51,20 @@ Now you can indirect with your remote redis resource:
 "hello world"
 ```
 
+<div class="block-callout block-show-callout type-info" markdown="1">
+**Tip: Alternate ports** 
+
+To avoid local port conflicts (for example, if you already have Postgres running on 5432), you can specify a different local port with `--listen`:
+
+`$ convox resources proxy postgres-6525 --listen 5433`
+
+When you run the command above, you should see output like:
+
+`proxying 127.0.0.1:5433 to dev-postgres-6525.cbm068zjzjcr.us-east-1.rds.amazonaws.com:5432`
+
+and then you should be able to connect to localhost:5433.
+</div>
+
 ## Access private services with `convox proxy`
 
 `convox proxy` works much the same way as `convox resources proxy` except for internal services (i.e. exposed behind an internal ELB inside a VPC) rather than [external resources](/docs/about-resources).
