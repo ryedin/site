@@ -77,6 +77,10 @@ Now that you've added a link between your app services and resources, you have c
 
 You now have the foundation you need to [develop your app](/guide/develop/)!
 
+## See also
+
+- [Linking](/docs/linking) in the Convox documentation
+
 {% include_relative _includes/next.html
   next="Develop your app"
   next_url="/guide/develop/"

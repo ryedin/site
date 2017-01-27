@@ -89,3 +89,7 @@ database:
 When a service declares a link, the linked container (`database` in our example) needs to expose at least one port so convox can create a load balancer and construct the service URL.
 
 When multiple ports are specified, the first one in the list of ports is used to construct the link URL. This can be overridden with the `LINK_PORT` environment variable described above.
+
+## See also
+
+- [Environment](/docs/environment/)

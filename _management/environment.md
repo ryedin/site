@@ -81,6 +81,10 @@ services:
       - FOO=default   # override with `convox env set FOO=newvalue`
 ```
 
+## Linking
+
+Convox links containers by injecting environment variables. For example, if your `docker-compose.yml` links a service named `web` to a service named `database`, Convox will add environment variables in the form `DATABASE_URL`, `DATABASE_SCHEME`, etc to the `web` container environment. **This will override any environment variables you may have previously defined by the same name.** For details, see [Defining links](https://convox.com/docs/linking#defining-links).
+
 ## Scope
 
 Environment variables set via `convox env` are considered app-level configuration.
