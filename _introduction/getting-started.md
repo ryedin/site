@@ -23,11 +23,11 @@ Next, set up your organization. All the Racks and integrations you set up are fo
 
 ## Connect an AWS Account
 
-Next, click the **Setup** button then **Connect an AWS account** link and give Convox AWS credentials. This gives Convox access and permission to help manage resources in your AWS account.
+Next, click the **Setup** button then **Connect an AWS account** link and give Convox an AWS access key. This gives Convox access and permission to help manage resources in your AWS account.
 
 See [AWS Integration](/docs/aws-integration) for more details.
 
-## Launch a Production-Ready Cluster
+## Launch your private PaaS
 
 Next, click on the **Add a Rack** button, followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
 
