@@ -92,7 +92,7 @@ redis   0        1        0    256
 For more information on resources, see:
 
 * [Resources](/guide/resources/) in the Convox docs
-* [Resource linking](https://convox.com/docs/syslog#resource-linking) in the Convox docs
+* [Resource linking](/docs/syslog#resource-linking) in the Convox docs
 * `convox resources create --help`
 * [The Twelve-Factor App: Backing services](https://12factor.net/backing-services){:target="_blank"}
 

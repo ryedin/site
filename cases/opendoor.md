@@ -11,7 +11,7 @@ To support these rapid iterations, their team needs a platform that can deploy c
 
 ## The Solution: Advanced Convox Configurations
 
-Opendoor depends on two Convox Racks (see: [What Is A Rack?](https://convox.com/docs/rack/)). These Racks are peered together and with an existing AWS VPC. The two Racks make it easy for different engineering groups to run wholly different classes of experiments. The VPC peering makes it easy to move data around securely.
+Opendoor depends on two Convox Racks (see: [What Is A Rack?](/docs/rack/)). These Racks are peered together and with an existing AWS VPC. The two Racks make it easy for different engineering groups to run wholly different classes of experiments. The VPC peering makes it easy to move data around securely.
 
 Opendoor first tested out Convox on one of their data science applications in Python. The benefits of the memory configuration options on Convox were immediate for their memory hungry (14+ GB) Python workers. Opendoor can configure Convox to meet their needs, instead of writing their app to fit a platforms constraints. They are now using 2 Racks for their 10+ apps.
 

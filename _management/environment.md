@@ -90,7 +90,7 @@ services:
 
 ## Linking
 
-Convox links containers by injecting environment variables. For example, if your `docker-compose.yml` links a service named `web` to a service named `database`, Convox will add environment variables in the form `DATABASE_URL`, `DATABASE_SCHEME`, etc to the `web` container environment. **This will override any environment variables you may have previously defined by the same name.** For details, see [Defining links](https://convox.com/docs/linking#defining-links).
+Convox links containers by injecting environment variables. For example, if your `docker-compose.yml` links a service named `web` to a service named `database`, Convox will add environment variables in the form `DATABASE_URL`, `DATABASE_SCHEME`, etc to the `web` container environment. **This will override any environment variables you may have previously defined by the same name.** For details, see [Defining links](/docs/linking#defining-links).
 
 ## Scope
 
@@ -98,7 +98,7 @@ Environment variables set via `convox env` are considered app-level configuratio
 
 There isn't currently a way to set an environment variable for a whole cluster rather than just a single app.
 
-You can set environment variables at the [service](https://convox.com/docs/definitions/#service) level in `docker-compose.yml`.
+You can set environment variables at the [service](/docs/definitions/#service) level in `docker-compose.yml`.
 
 ## Sensitive Information
 
