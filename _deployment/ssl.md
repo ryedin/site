@@ -39,6 +39,10 @@ A confirmation email will be sent to addresses associated with the domain's WHOI
 Certificate generation is currently [only available in certain regions](http://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html).
 </div>
 
+#### Wildcard certificates
+
+You can generate a wildcard certificate with `*`, e.g. `convox certs generate *.example.com`. However, note that the wildcard only covers that level of the domain and not the bare domain. For instance, `*.example.com` will cover `www.example.com`, `mail.example.com` and so on, but not `example.com` itself.
+
 ### Purchase a Certificate
 
 You can also purchase an SSL certificate from most registrars and DNS providers. Convox is a fan of [Gandi](https://www.gandi.net/ssl).
