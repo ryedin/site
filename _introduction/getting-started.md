@@ -5,21 +5,35 @@ order: 400
 
 Getting started with Convox is easy. The instructions below guide you through:
 
-* Setting up your development environment
-* Developing your first app
-* Signing up for a Convox account
+* [Signing up for a Convox account](https://convox.com/signup)
 * Installing Convox Rack, your production-ready deployment environment
+* Setting up the Convox CLI
+* Developing your first app
 * Deploying your first app
 
 This guide takes around 30 minutes to go from zero to your first production deploy.
 
-### Install Docker
+## Sign Up
 
-Convox uses Docker to create a development environment that closely mimics the production environment.
+First, sign up for [Convox Console](https://convox.com/signup), a web UI for managing your Organizations, Integrations and Racks.
 
-We strongly recommend the [Docker for Mac](https://docs.docker.com/docker-for-mac/) and [Docker for Windows](https://docs.docker.com/docker-for-windows/) tools. See the [Get Started guides](https://docs.docker.com/docker-for-mac/) for instructions to download and install these tools.
+## Create an Organization
 
-## Set Up Your Development Environment
+Next, set up your organization. All the Racks and integrations you set up are for this organization are only visible to you. Later you can invite members of your team and assign them roles that control what they can access.
+
+## Connect an AWS Account
+
+Next, click the **Setup** button then **Connect an AWS account** link and give Convox an AWS access key. This gives Convox access and permission to help manage resources in your AWS account.
+
+See [AWS Integration](/docs/aws-integration) for more details.
+
+## Launch your private PaaS
+
+Next, click on the **Add a Rack** button, followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
+
+See [Installing a Rack](/docs/installing-a-rack) for more details.
+
+## Set Up the Convox CLI
 
 We provide a `convox` command line tool that offers:
 
@@ -29,7 +43,47 @@ We provide a `convox` command line tool that offers:
 
 along with numerous other utilities that make building, configuring, scaling and securing your apps easy.
 
-See [Installing the Convox CLI](/docs/installation/) for details.
+Click the **Setup** button then **Connect the Convox CLI** to get your API key.
+
+Next, [install the Convox CLI](/docs/installation/) for your platform.
+
+<pre id="install-mac">
+$ curl -Ls https://convox.com/install/osx.zip > /tmp/convox.zip
+$ unzip /tmp/convox.zip -d /usr/local/bin
+</pre>
+
+<pre id="install-linux" class="hidden" >
+$ curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip
+$ unzip /tmp/convox.zip -d /usr/local/bin
+</pre>
+
+<p id="install-windows" class="hidden">
+On Windows, download and run <a href="https://dl.equinox.io/convox/convox/stable">Windows Installer</a>. Read the <a href="https://convox.com/docs/windows/">Windows Reference</a> for full details.
+</p>
+
+Finally, use the `convox login` command with your API key:
+
+<pre id="login">
+$ convox login
+API Key:
+Logged in successfully.
+
+$ convox racks
+RACK                 STATUS
+personal/production  running
+
+$ convox apps
+APP    STATUS
+myapp  running
+</pre>
+
+See [Installing the Convox CLI](/docs/installation/) and [API Keys](/docs/api-keys/) for more details.
+
+### Install Docker
+
+Convox uses Docker to create a development environment that closely mimics the production environment.
+
+We strongly recommend the [Docker for Mac](https://docs.docker.com/docker-for-mac/) and [Docker for Windows](https://docs.docker.com/docker-for-windows/) tools. See the [Get Started guides](https://docs.docker.com/docker-for-mac/) for instructions to download and install these tools.
 
 ## Run an Application Locally
 
@@ -64,29 +118,6 @@ For a full listing of all of the `docker-compose.yml` settings that Convox uses,
 Once the application boots, it will be available at the address of your Docker host (`localhost` when using Docker for Mac). You can list all of the running Docker containers with `docker ps` and run commands on them directly with `docker exec`. For example, if your container has `bash` you can run `docker exec -it <container ID> bash` to get an interactive session on it.
 
 Once an application can be successfully booted with `convox start` it is ready to be deployed. The following steps will guide you through installing a Rack and deploying the sample application to it.
-
-## Sign Up
-
-First, sign up for [Convox Console](https://console.convox.com/grid/signup), a web UI for managing your Racks, Organizations and Integrations.
-
-### Log Into the CLI
-
-Once your account is created you can log into the CLI with the API key shown on the welcome page:
-
-    $ convox login console.convox.com
-    Password: <Your Console API key>
-
-For security purposes your API key will only be shown once, but you can generate a new one at any time by visiting your **Account** page and clicking the **Roll API Key** button.
-
-### Create an Organization
-
-In Console, you start out in a `personal` organization where the Racks you install are only visible to you. If you'd like to create a deployment environment that is shared with other members of your team, click on the **personal** dropdown followed by **Create Organization**. After this you can invite members of your team and assign them roles that control what they can access.
-
-## Install a Rack
-
-Click on **Add a Rack** followed by **Install a New Rack** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
-
-Follow the instructions to generate and share AWS credentials that allow Convox to install a new Rack into your AWS account. See [Installing a Rack](/docs/installing-a-rack) for more details.
 
 ## Deploy to Convox
 
@@ -127,3 +158,19 @@ Now that you've deployed your first application you can:
 * Install another Rack for isolated development or staging deployments
 
 Or you can easily [uninstall everything](/docs/uninstalling-convox/) you just experimented with.
+
+<script>
+$(document).ready(function() {
+  if (navigator.platform.indexOf('Win') > -1) {
+    $('#install-windows').removeClass('hidden')
+    $('#install-mac').addClass('hidden')
+    $('#install-linux').addClass('hidden')
+  }
+
+  if (navigator.platform.indexOf('Linux') > -1) {
+    $('#install-linux').removeClass('hidden')
+    $('#install-mac').addClass('hidden')
+    $('#install-windows').addClass('hidden')
+  }
+});
+</script>

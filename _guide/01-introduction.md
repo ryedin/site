@@ -5,7 +5,7 @@ permalink: /guide/
 
 Welcome to the Convox Guide, a set of best practices for developing, deploying and automating an app on the Convox platform.
 
-If you plan to follow along, you'll want to <a href="https://console.convox.com/grid/signup" target="_blank">sign up for Convox</a> and [install the Convox Command Line Interface](/docs/installation).
+If you plan to follow along, you'll want to <a href="https://convox.com/signup" target="_blank">sign up for an account</a> and follow the interactive setup to configure AWS and your computer to deploy your first app.
 
 # Our mission
 
