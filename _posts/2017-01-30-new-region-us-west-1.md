@@ -2,7 +2,7 @@
 title: us-west-1 now supported by Convox
 author: AJ Bowen
 twitter: s0ulshake
-published: false
+published: true
 ---
 
 We've added `us-west-1` to our list of supported AWS regions, bringing the total number of supported regions to **nine**.
