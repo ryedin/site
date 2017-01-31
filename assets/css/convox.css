@@ -1988,12 +1988,13 @@ input#mc-embedded-subscribe {
 }
 
 .team .member div {
-  padding: 0;
+  padding: 0 1.5em 0 0;
 }
 
 .team .member img {
   border: 1px solid #eee;
   border-radius: 4px;
+  width: 100%;
 }
 
 .team .member ul {
