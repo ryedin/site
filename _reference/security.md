@@ -29,4 +29,4 @@ Convox uses AWS Elastic Load Balancing (ELB) to route traffic to your applicatio
 
 ## Private Networking
 
-If you'd like to take network isolation one step further you can run your Rack in private networking mode, where the Rack instances run in private subnets that access the Internet through NATs. Read more on the private networking [doc](/docs/private-networking/).
+If you'd like to take network isolation one step further you can run your Rack in private networking mode, where the Rack instances run in private subnets that access the Internet through NATs. These instances are not routable via the public Internet. Read more on the private networking [doc](/docs/private-networking/).
