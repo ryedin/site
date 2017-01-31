@@ -1,0 +1,28 @@
+---
+title: "Security"
+---
+
+Convox always has your security in mind. Below are some of the ways your apps and resources are protected.
+
+## AWS Isolation
+
+Your Convox Rack is installed in your own AWS account. Unlike multi-tenant Paas platforms, you never have to worry about other users gaining access to your infrastructure.
+
+[Convox Console](https://console.convox.com) is a multi-tenant management layer that proxies API requests to your Rack and provides team management and workflow tools. If you don't want to use the multi-tenant Console you can run your own! [Contact us](mailto:support@convox.com) for information about plans and pricing.
+
+## AWS Permissions
+
+Convox strives to limit the scope of AWS permissions needed to manage a Rack. When you install a Rack, an IAM "KernelUser" is created and granted only the permissions required. Additionally, many of the permissions are scoped down further to only apply to the Rack's resources. As with security in general, this is an on going process. Future Rack updates will continue to limit these permissions as much as possible.
+
+Some examples of limited permissions inclue:
+- Access to IAM resources (roles, users, policies, etc) that belong to the `/convox/` path
+- Access to DynamoDB tables that only begin with the name of the Rack as a prefix
+- Access to RDS instances that only begin with the name of the Rack as a prefix
+
+## VPC Isolation
+
+All of the infrastructure that Convox creates for you runs inside a Virtual Priate Cloud ([VPC](https://aws.amazon.com/vpc/)). This provides additional isolation at the networking layer. By default, all resources such as datastores are created in such a way that they can only be access from inside the VPC.
+
+## Private Networking
+
+If you'd like to take network isolation one step further you can run your Rack in private networking mode, where the Rack instances run in private subnets that access the Internet through NATs. Read more on the private networking [doc](/docs/private-networking/).
