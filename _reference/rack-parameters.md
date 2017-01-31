@@ -68,7 +68,7 @@ How much memory should be reserved by the API web process.
 
 ## Autoscale
 
-Autoscale rack instances. See our [Scaling doc](https://convox.com/docs/scaling#autoscale) for more information.
+Autoscale rack instances. See our [Scaling doc](/docs/scaling#autoscale) for more information.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
@@ -175,7 +175,7 @@ The number of instances to update in a batch.
 
 ## Internal
 
-Make all new apps created in the Rack use Internal ELBs by default, i.e. make them accessible only from within the VPC and unreachable from the internet. See the [Internal Racks](https://convox.com/docs/internal-apps#internal-racks) section of our Internal Apps doc for more information.
+Make all new apps created in the Rack use Internal ELBs by default, i.e. make them accessible only from within the VPC and unreachable from the internet. See the [Internal Racks](/docs/internal-apps#internal-racks) section of our Internal Apps doc for more information.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
@@ -193,7 +193,7 @@ SSH key name for access to cluster instances.
 
 ## Private
 
-Have the Rack create non-publicly routable resources, i.e. in a private subnet. See our [Private Networking doc](https://convox.com/docs/private-networking/) for more information.
+Have the Rack create non-publicly routable resources, i.e. in a private subnet. See our [Private Networking doc](/docs/private-networking/) for more information.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |

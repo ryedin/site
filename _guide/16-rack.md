@@ -14,7 +14,7 @@ A Rack is secure cloud environment. It is a collection of a VPC, VM and Containe
 
 Convox installs the resources composing a Rack into your AWS account, then helps you manage it via the `convox` CLI and web console.
 
-You don't have to worry about the underlying infrastructure, but if you do look [under the hood](https://convox.com/docs/rack/), you'll find a simple open-source system that packages up the best practices of cloud infrastructure management.
+You don't have to worry about the underlying infrastructure, but if you do look [under the hood](/docs/rack/), you'll find a simple open-source system that packages up the best practices of cloud infrastructure management.
 
 Since all Rack components are installed in your own AWS account, you can always add extras or tweak things if needed.
 
@@ -25,7 +25,7 @@ Though there are other ways, we recommend installing Racks from the [web console
 <div class="block-callout block-show-callout type-info" markdown="1">
 ### AWS credentials
 
-Provisioning a Rack requires AWS credentials with sufficient IAM permissions. See [this page](https://convox.com/docs/iam-policy/) for instructions.
+Provisioning a Rack requires AWS credentials with sufficient IAM permissions. See [this page](/docs/iam-policy/) for instructions.
 </div>
 
 For our example app, we'll enter the following in the Rack install interface:
@@ -93,7 +93,7 @@ personal/example   installing
 personal/dev       running
 ```
 
-For more advanced options, including how to install a Rack via CLI, see [installing a Rack](https://convox.com/docs/installing-a-rack/) in the Convox docs.
+For more advanced options, including how to install a Rack via CLI, see [installing a Rack](/docs/installing-a-rack/) in the Convox docs.
 
 ## How do I start using a Rack?
 
