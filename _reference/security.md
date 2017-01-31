@@ -23,6 +23,10 @@ Some examples of limited permissions inclue:
 
 All of the infrastructure that Convox creates for you runs inside a Virtual Priate Cloud ([VPC](https://aws.amazon.com/vpc/)). This provides additional isolation at the networking layer. By default, all resources such as datastores are created in such a way that they can only be access from inside the VPC.
 
+## Load Balancers
+
+Convox uses AWS Elastic Load Balancing (ELB) to route traffic to your application. Load balancers and their Security Groups are set up to only listen on the ports you specify and only route requests to the relevant application services.
+
 ## Private Networking
 
 If you'd like to take network isolation one step further you can run your Rack in private networking mode, where the Rack instances run in private subnets that access the Internet through NATs. Read more on the private networking [doc](/docs/private-networking/).
