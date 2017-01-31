@@ -21,7 +21,7 @@ Some examples of limited permissions inclue:
 
 ## VPC Isolation
 
-All of the infrastructure that Convox creates for you runs inside a Virtual Priate Cloud ([VPC](https://aws.amazon.com/vpc/)). This provides additional isolation at the networking layer. By default, all resources such as datastores are created in such a way that they can only be access from inside the VPC.
+All of the infrastructure that Convox creates for you runs inside a Virtual Priate Cloud ([VPC](https://aws.amazon.com/vpc/)). This provides additional isolation at the networking layer. By default, all resources such as datastores are created in such a way that they can only be accessed from inside the VPC.
 
 ## Load Balancers
 
