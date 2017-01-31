@@ -28,7 +28,7 @@ To switch accounts, run `convox login console.convox.com --password=CONVOX_API_K
 
 ### How do I give someone access to a Rack?
 
-On [**Pro**](https://convox.com/pricing) organizations and above, you can add collaborators to Racks installed in that organization. For details, see [Access Control](/docs/access-control/).
+On [**Pro**](/pricing) organizations and above, you can add collaborators to Racks installed in that organization. For details, see [Access Control](/docs/access-control/).
 
 On Developer and Basic plans, or on Racks installed in your `personal` organization, you can share the Rack API key. Only share the Rack API key with users you trust, as they will have full control over the Rack.
 

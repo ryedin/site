@@ -446,8 +446,8 @@ pg_restore: creating SEQUENCE "public.auth_group_id_seq"
 
 Our first deploy to Convox is just the beginning. From here you can explore:
 
-* [Developing the app with `convox start`](https://convox.com/docs/running-locally/)
-* [Configuring HTTPS, TCP and private load balancing](https://convox.com/docs/load-balancers/)
-* [Attaching to a running container](https://convox.com/docs/one-off-commands/)
-* [SSHing to an instance](https://convox.com/docs/debugging/)
-* [Automating builds, tests and releases](https://convox.com/docs/workflows/)
+* [Developing the app with `convox start`](/docs/running-locally/)
+* [Configuring HTTPS, TCP and private load balancing](/docs/load-balancers/)
+* [Attaching to a running container](/docs/one-off-commands/)
+* [SSHing to an instance](/docs/debugging/)
+* [Automating builds, tests and releases](/docs/workflows/)

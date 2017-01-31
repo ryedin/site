@@ -28,7 +28,7 @@ Convox imposes carefully considered constraints on your application to help you 
 
 # Background
 
-The guide and tools are informed by the hands-on experience the team and community at [Convox](https://convox.com) have gained by "Dockerizing" thousands of apps and deploying them to the AWS EC2 Container Service. Much of that experience is in turn based on years of hands-on experience working on and using the [Heroku](https://heroku.com) platform.
+The guide and tools are informed by the hands-on experience the team and community at [Convox](/) have gained by "Dockerizing" thousands of apps and deploying them to the AWS EC2 Container Service. Much of that experience is in turn based on years of hands-on experience working on and using the [Heroku](https://heroku.com) platform.
 
 Many of the concepts in this guide will be familiar if you have experience with [Twelve-Factor Apps](https://12factor.net/), [Docker Compose](https://docs.docker.com/compose/overview/) and/or Infrastructure-as-a-Service.
 
@@ -50,7 +50,7 @@ You will hit roadblocks where your app is deviating from these best practices--b
 
 # Get ready
 
-If you haven't already, install the Convox Command Line Interface (see [Installation](https://convox.com/docs/installation/)).
+If you haven't already, install the Convox Command Line Interface (see [Installation](/docs/installation/)).
 
 Now run `convox doctor` to run the first checklist:
 

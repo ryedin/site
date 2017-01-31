@@ -117,7 +117,7 @@ This can be specified for the initial deployment in `docker-compose.yml`:
 
     cpu_shares: 512
 
-Or by running `convox scale` (see also [Scaling](https://convox.com/docs/scaling/)):
+Or by running `convox scale` (see also [Scaling](/docs/scaling/)):
 
     convox scale <process> --cpu=512
 
@@ -125,7 +125,7 @@ The default Convox value is `0`. When set to `0`, Docker will ignore the value a
 
 Note:
 
-- With `convox deploy`: `cpu_shares` is read and taken into account from `docker-compose.yml` only during the initial deployment. If you need to change it after deploying for the first time, use [`convox scale`](https://convox.com/docs/scaling/).
+- With `convox deploy`: `cpu_shares` is read and taken into account from `docker-compose.yml` only during the initial deployment. If you need to change it after deploying for the first time, use [`convox scale`](/docs/scaling/).
 - With `convox start`: When running locally via `convox start`, `cpu_shares` is always read from `docker-compose.yml`.
 
 You can view the current CPU shares allocation with either of the following commands:
@@ -224,7 +224,7 @@ This can be specified for the initial deployment in `docker-compose.yml`:
 
     mem_limit: 256MB
 
-Or by running `convox scale` (see also [Scaling](https://convox.com/docs/scaling/)):
+Or by running `convox scale` (see also [Scaling](/docs/scaling/)):
 
     convox scale <process> --memory=256
 
@@ -232,7 +232,7 @@ Minimum is 4 MB. If no unit label (e.g. `MB`) is provided, the amount is interpr
 
 Note:
 
-- With `convox deploy`: `mem_limit` is read and taken into account from `docker-compose.yml` only during the initial deployment. If you need to change it after deploying for the first time, use [`convox scale`](https://convox.com/docs/scaling/).
+- With `convox deploy`: `mem_limit` is read and taken into account from `docker-compose.yml` only during the initial deployment. If you need to change it after deploying for the first time, use [`convox scale`](/docs/scaling/).
 - With `convox start`: When running locally via `convox start`, `mem_limit` is always read from `docker-compose.yml`.
 
 You can view the current memory limit with either of the following commands:
