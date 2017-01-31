@@ -6,7 +6,7 @@ Convox always has your security in mind. Below are some of the ways your apps an
 
 ## AWS Isolation
 
-Your Convox Rack is installed in your own AWS account. Unlike multi-tenant Paas platforms, you never have to worry about other users gaining access to your infrastructure.
+Your Convox Rack is installed in your own AWS account. Unlike a multi-tenant PaaS, you never have to worry about other users gaining access to your infrastructure.
 
 [Convox Console](https://console.convox.com) is a multi-tenant management layer that proxies API requests to your Rack and provides team management and workflow tools. If you don't want to use the multi-tenant Console you can run your own! [Contact us](mailto:support@convox.com) for information about plans and pricing.
 
