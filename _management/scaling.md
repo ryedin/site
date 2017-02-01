@@ -72,10 +72,10 @@ Type     m4.xlarge
 
 #### Autoscale
 
-Your Rack can scale its own instance count based on the needs of the containers it provisions. To use this command, set the `Autoscale` parameter:
+Your Rack can scale its own instance count based on the needs of the containers it provisions. Autoscaling is enabled by default. To disable it, set the `Autoscale` parameter:
 
 ```
-$ convox rack params set Autoscale=Yes
+$ convox rack params set Autoscale=No
 ```
 
 To monitor for autoscaling events, use `convox rack logs` with the `--filter` option.
