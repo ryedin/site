@@ -3,7 +3,7 @@ title: "Convox Console"
 order: 300
 ---
 
-Convox offers the [Console](https://console.convox.com) service to manage and monitor your Racks. Console allows you to install new Racks, decide who has access to them, and integrate them with other services such as Gitlab or Slack.
+Convox offers the [Console](https://console.convox.com) service to manage and monitor your Racks. Console allows you to install new Racks, decide who has access to them, and integrate them with other services such as GitLab or Slack.
 
 ## How it works
 
@@ -23,5 +23,5 @@ Add your Slack team to Console and receive notifications for any changes to your
 
 #### Automated Builds
 
-Add your Gitlab or Github organization to Console and easily trigger builds every time you push a new change.
+Add your GitLab or Github organization to Console and easily trigger builds every time you push a new change.
 
