@@ -77,7 +77,7 @@ See [Installing the Convox CLI](/docs/installation/) and [API Keys](/docs/api-ke
     $ git clone https://github.com/convox-examples/rails
     $ cd rails
 
-#### Create an app on your Rack
+#### Create an app in your Rack
 
 Before deploying, create a new app in your Rack.
 
