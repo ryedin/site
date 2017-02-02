@@ -6,6 +6,7 @@ Convox uses [Docker Compose Labels](https://docs.docker.com/compose/compose-file
 
 <pre>
 labels:
+  - <a href="#convoxbalancer">convox.balancer</a>
   - <a href="#convoxcron">convox.cron.&lt;task name&gt;</a>
   - <a href="#convoxdeployment">convox.deployment.maximum</a>
   - <a href="#convoxdeployment">convox.deployment.minimum</a>
@@ -18,6 +19,12 @@ labels:
   - <a href="#convoxport">convox.port.&lt;number&gt;.secure</a>
   - <a href="#convoxstart">convox.start.shift</a>
 </pre>
+
+## convox.balancer
+
+The `convox.balancer` label allows you to explicitly disable the creation of an load balancer, while still exposing ports in the container and on the host. This is particularly useful for micro-service architectures.
+
+When set to `false`, Convox will not create a load balancer for the given process. As a result, the `convox.health` labels will be ignored and Convox will not monitor the health of your containers (containers that die will still be restarted, however). You may wish to implement your own health-checking system. Additionally, for a port mapping of `80:5000`, the host will expose port `80` instead of selecting a random port for a load balancer to communicate with. Ensuring there are no port conflicts between processes is an exercise left up to the user.
 
 ## convox.cron
 
