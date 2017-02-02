@@ -1,6 +1,6 @@
 ---
 title: Proxy to remote resources
-order: 200
+order: 500
 ---
 
 It's often useful to be able to interact with remote services or resources (e.g. databases) during local development. However, access to those remote services is often rightly restricted to traffic coming from the application itself, rather than from the internet.
