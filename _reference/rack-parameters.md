@@ -70,7 +70,7 @@ How much memory should be reserved by the API web process.
 
 Autoscale rack instances. See our [Scaling doc](/docs/scaling#autoscale) for more information.
 
-| Default value  | `No`        |
+| Default value  | `Yes`       |
 | Allowed values | `Yes`, `No` |
 
 ## BuildCpu
