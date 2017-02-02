@@ -15,7 +15,7 @@ To this end, we’re happy to announce our **AWS Integration**. Deploying your a
 
 ## Setup
 
-[Sign up to Convox](https://convox.com/signup). Follow the interactive setup checklist to create your first organization, then to integrate your AWS account.
+[Sign up for Convox](https://convox.com/signup). Follow the interactive setup checklist to create your first organization and to integrate your AWS account.
 
 Copy and paste an AWS access key into the form. If you are more comfortable using the [AWS Command Line Interface](https://aws.amazon.com/cli/), you can copy and paste a few commands into your terminal and paste the resulting IAM role ID into the form.
 
@@ -29,7 +29,7 @@ You can learn more about how it works from the [AWS Integration Doc](https://con
 
 Now Convox can use the **AWS Integration** to assemble AWS services like VPC, EC2 Container Service, and EC2 Container Registry into a easy to use platform with a few more clicks.
 
-Click the “Add Rack” button, enter “production” in the name, then click the “Install Convox” button to launch your private PaaS. After a few minutes you have everything you need to get your first app running on AWS with the convox deploy command.
+Click the “Add Rack” button, enter “production” in the name, then click the “Install Convox” button to launch your private PaaS. After a few minutes you have everything you need to get your first app running on AWS with the `convox deploy` command.
 
 ## Integrate Everything
 
@@ -43,6 +43,6 @@ You’ll get Slack messages for key AWS operations like instance security update
 
 At Convox we strongly prefer to integrate cloud services together over building and operating custom infrastructure systems.
 
-With the **AWS Integration**, Convox can acts as a simple and reliable hub to automatically configure AWS to run apps.
+With the **AWS Integration**, Convox can automatically and reliably configure AWS to run your apps..
 
 The result? You can focus solely on building your apps. Convox can focus on giving your team simple tools to manage apps. AWS can shoulder all the responsibility for keeping those apps running and secure.
