@@ -5,10 +5,6 @@ order: 100
 
 A [Rack](/docs/rack) is installed into your AWS account to manage your infrastructure and provision applications.
 
-<div class="block-callout block-show-callout type-info" markdown="1">
-In order to install a Rack you will first need to create temporary AWS credentials. Check out the [IAM policy](/docs/iam-policy) for instructions on setting up the necessary permissions.
-</div>
-
 Once launched, installation will take approximately 10 minutes to complete.
 
 ## Installing from Console
@@ -19,8 +15,6 @@ This is the recommended method for installing a Rack.
 * Choose the desired Organization from the dropdown in the top navigation.
 * Click **Add a Rack** and then **Install New Rack**.
 * Choose a name for your Rack, and select the desired AWS region.
-  - See [Supported AWS Regions](/docs/supported-aws-regions) for list of regions currently supported.
-* Enter your AWS credentials, or drag the `credentials.csv` file downloaded when you created a Convox IAM user. (If needed, you can create a new access key by clicking on the user in the [AWS Console](https://console.aws.amazon.com/iam/home#/users), from the "Security credentials" tab.)
 * Click **Install Convox**.
 
 ## Installing from the CLI

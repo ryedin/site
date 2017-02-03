@@ -22,12 +22,6 @@ Since all Rack components are installed in your own AWS account, you can always 
 
 Though there are other ways, we recommend installing Racks from the [web console](https://console.convox.com/).
 
-<div class="block-callout block-show-callout type-info" markdown="1">
-### AWS credentials
-
-Provisioning a Rack requires AWS credentials with sufficient IAM permissions. See [this page](/docs/iam-policy/) for instructions.
-</div>
-
 For our example app, we'll enter the following in the Rack install interface:
 
 | **Name**: | `example` |
