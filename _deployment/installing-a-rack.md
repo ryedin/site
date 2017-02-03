@@ -13,7 +13,8 @@ This is the recommended method for installing a Rack.
 
 * Browse to the [Convox Console](https://console.convox.com/).
 * Choose the desired Organization from the dropdown in the top navigation.
-* Click **Add a Rack** and then **Install New Rack**.
+* Make sure you have the [AWS Integration](/docs/aws-integration) enabled in your organization.
+* Click **Add Rack** and then **Install New**.
 * Choose a name for your Rack, and select the desired AWS region.
 * Click **Install Convox**.
 
