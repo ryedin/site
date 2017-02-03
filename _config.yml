@@ -12,12 +12,12 @@ collections:
     title: Introduction
     output: true
     permalink: /docs/:name/
-  development:
-    title: Development
-    output: true
-    permalink: /docs/:name/
   deployment:
     title: Deployment
+    output: true
+    permalink: /docs/:name/
+  development:
+    title: Development
     output: true
     permalink: /docs/:name/
   management:
