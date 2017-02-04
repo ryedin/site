@@ -1,6 +1,5 @@
 ---
 title: "Deploy Keys"
-order: 230
 ---
 
 Deploy keys are special, limited scope API keys that allow you to run the `build` and `deploy` commands from remote servers for the purposes of continuous integration.

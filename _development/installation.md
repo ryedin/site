@@ -3,7 +3,7 @@ title: "Installing the Convox CLI"
 order: 50
 ---
 
-We provide a `convox` command line tool that makes building, configuring, scaling, and securing your apps easy.
+The `convox` command line tool makes building, configuring, scaling, and securing your apps easy.
 
 Here are some of the highlights:
 
@@ -24,7 +24,7 @@ Alternatively, on OSX you can also install via Homebrew:
 
     $ brew install convox
 
-**Note for Homebrew users:** You will need to update the CLI by running `convox update`. (As of November 2016, the convox Homebrew package has not yet been set up to support `brew upgrade convox`.)
+**Note for Homebrew users:** You will need to update the CLI by running `convox update`.
 
 ## Linux
 

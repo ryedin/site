@@ -34,13 +34,13 @@ To see relevant info about the database, use the `convox resources info` command
     $ convox resources info postgres-3785
     Name    postgres-3785
     Status  running
-    URL     postgres://postgres::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app
+    URL     postgres://postgres:i3tNTHpZ8wmCn88nvN2c@dev-postgres-3785.cbm068zjzjcr.us-east-1.rds.amazonaws.com:5432/app
 
 ## Resource Linking
 
 You can add this URL to any application with `convox env set`:
 
-    $ convox env set 'DATABASE_URL=postgres://postgres::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:6379/app' --app example-app
+    $ convox env set 'DATABASE_URL=postgres://postgres:i3tNTHpZ8wmCn88nvN2c@dev-postgres-3785.cbm068zjzjcr.us-east-1.rds.amazonaws.com:5432/app' --app example-app
 
 ## Resource Deletion
 
