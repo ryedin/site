@@ -28,9 +28,9 @@ See [AWS Integration](/docs/aws-integration) for more details.
 
 ## Launch your private PaaS
 
-Next, click on the **Add Rack** button, followed by **Install New** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing. Choose an AWS region in which you'd like to install the Rack from the list of supported regions. It's best to choose a region geographically close to your users.
+Next, click on the **Add Rack** button, followed by **Install New** in the top navigation bar. Enter a descriptive Rack name such as `production` if you plan to deploy production services, or `development` if this is for testing.
 
-A live-updating window will show the installation progress of your Rack in real time, including all of the AWS resources that are created for it. When the installation is done you can dismiss this window, and you will see your new Rack listed with the status "running".
+See [Installing a Rack](/docs/installing-a-rack) for more details.
 
 ## Install the Convox CLI
 

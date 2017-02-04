@@ -23,8 +23,8 @@ You can install it via the command line:
 Alternatively, on OSX you can also install via Homebrew:
 
     $ brew install convox
-
-**Note for Homebrew users:** You will need to update the CLI by running `convox update`.
+    $ convox update
+    Updating convox: OK, 20170203184626
 
 ## Linux
 
