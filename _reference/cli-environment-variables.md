@@ -36,6 +36,10 @@ Email address to receive project updates.
 
 Defines which Rack `convox` commands should be applied to. Overrides `./.convox/rack` and `~/.convox/rack`. Can be overridden by `--rack` flag.
 
+## `CONVOX_HOST`
+
+Convox Rack or Console endpoint. If not present, `console.convox.com` is assumed. Overrides [`~/.convox/host`](/docs/cli-config-files/#convoxhost).
+
 ## `CONVOX_PASSWORD`
 
 Your Convox account password*; used when running [`convox login`](/docs/login-and-authentication/).
