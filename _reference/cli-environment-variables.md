@@ -36,13 +36,23 @@ Email address to receive project updates.
 
 Defines which Rack `convox` commands should be applied to. Overrides `./.convox/rack` and `~/.convox/rack`. Can be overridden by `--rack` flag.
 
-## `PASSWORD`
+## `CONVOX_HOST`
 
-Private registry password for the [`convox registries`](/docs/private-registries) command.
+Convox Rack or Console endpoint. If not present, `console.convox.com` is assumed. Overrides [`~/.convox/host`](/docs/cli-config-files/#convoxhost).
+
+## `CONVOX_PASSWORD`
+
+Your Convox account password*; used when running [`convox login`](/docs/login-and-authentication/).
+
+_* or Rack API key, if you're logging directly into a Rack._
 
 ## `CONVOX_WAIT`
 
 Setting `CONVOX_WAIT` to a truthy value (`true`, `True`, `1`, etc) will cause relevant commands (`convox deploy`, `convox apps create`, etc) to behave as if the `--wait` flag had been provided; that is, they will wait for the operation to complete before returning.
+
+## `PASSWORD`
+
+Private registry password for the [`convox registries`](/docs/private-registries) command.
 
 ## `RACK`
 
