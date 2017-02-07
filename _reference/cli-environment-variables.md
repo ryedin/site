@@ -32,6 +32,10 @@ Makes `convox` produce more verbose output.
 
 Email address to receive project updates.
 
+## `CONVOX_RACK`
+
+Defines which Rack `convox` commands should be applied to. Overrides `./.convox/rack` and `~/.convox/rack`. Can be overridden by `--rack` flag.
+
 ## `PASSWORD`
 
 Private registry password for the [`convox registries`](/docs/private-registries) command.
