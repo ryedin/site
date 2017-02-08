@@ -37,7 +37,8 @@ Select a key for more information and example usage.
       <a href="#entrypoint">entrypoint</a>: /bin/entrypoint
       <a href="#environment">environment</a>:
         - RACK_ENV=development
-        - SECRET_KEY_BASE
+        - SECRET_KEY
+        - FOO=
       <a href="#image">image</a>: convox/rails
       <a href="#labels">labels</a>:
         - convox.port.443.protocol=tls
@@ -162,7 +163,14 @@ Set environment variables, or allow them to be set, when the container is starte
 
     environment:
       - RACK_ENV=development
-      - SECRET_KEY_BASE
+      - SECRET_KEY
+      - FOO=
+
+Variables can be:
+
+- **defined directly** in the Compose file, as `RACK_ENV` above (can be optionally overridden by `.env`)
+- **required, but not defined** in the Compose file, as `SECRET_KEY` above (must therefore be defined in `.env`)
+- **set to an empty value**, as `FOO` above (can be optionally overridden by `.env`)
 
 See our [environment documentation](/docs/environment) for more.
 
