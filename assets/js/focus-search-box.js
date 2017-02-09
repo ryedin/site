@@ -3,7 +3,7 @@ function inputFocus(){
     // Focus search field when user types a slash
     var keycode = (event.keyCode ? event.keyCode : event.which);
     var f = document.getElementById("aa-search-input");
-    if(keycode == '191' || keycode == '47'){
+    if(keycode == '191' || keycode == '47' || keycode == '45'){
         f.focus();
     }
  }
