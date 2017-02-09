@@ -58,6 +58,10 @@ Private registry password for the [`convox registries`](/docs/private-registries
 
 Active Rack name. Takes precedence over the `.convox/rack` repository setting, but is overridden by the `--rack` flag. For details, see [Switching between Racks](/docs/cli#switching-between-racks).
 
+## `RACK_PRIVATE`
+
+Make Racks private by default when running `convox install` (overridden by `--private`).
+
 ## `STACK_NAME`
 
 Custom Rack name. Used when [installing a new Rack](/docs/installing-a-rack).
