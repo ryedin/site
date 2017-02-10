@@ -43,6 +43,16 @@ code.highlighter-rouge {
   padding: 3px 4px;
 }
 
+/* When monospace text is linkified, underline it so it's visible that it's a link */
+a code.highlighter-rouge {
+  text-decoration: underline;
+}
+
+/* Don't use the bright red monospace in h2 header */
+h2 code {
+  color: black;
+}
+
 h1,h2,h3,h4,h5,h6, {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-weight: 700;
