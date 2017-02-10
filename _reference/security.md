@@ -12,16 +12,16 @@ Your Convox Rack is installed in your own AWS account. Unlike a multi-tenant Paa
 
 ## AWS Permissions
 
-Convox strives to limit the scope of AWS permissions needed to manage a Rack. When you install a Rack, an IAM "KernelUser" is created and granted only the permissions required. Additionally, many of the permissions are scoped down further to only apply to the Rack's resources. As with security in general, this is an on going process. Future Rack updates will continue to limit these permissions as much as possible.
+Convox strives to limit the scope of AWS permissions needed to manage a Rack. When you install a Rack, an IAM "KernelUser" is created and granted only the permissions required. Additionally, many of the permissions are scoped down further to only apply to the Rack's resources. As with security in general, this is an ongoing process. Future Rack updates will continue to limit these permissions as much as possible.
 
-Some examples of limited permissions inclue:
+Some examples of limited permissions include:
 - Access to IAM resources (roles, users, policies, etc) that belong to the `/convox/` path
 - Access to DynamoDB tables that only begin with the name of the Rack as a prefix
 - Access to RDS instances that only begin with the name of the Rack as a prefix
 
 ## VPC Isolation
 
-All of the infrastructure that Convox creates for you runs inside a Virtual Priate Cloud ([VPC](https://aws.amazon.com/vpc/)). This provides additional isolation at the networking layer. By default, all resources such as datastores are created in such a way that they can only be accessed from inside the VPC.
+All of the infrastructure that Convox creates for you runs inside a Virtual Private Cloud ([VPC](https://aws.amazon.com/vpc/)). This provides additional isolation at the networking layer. By default, all resources such as datastores are created in such a way that they can only be accessed from inside the VPC.
 
 ## Load Balancers
 
