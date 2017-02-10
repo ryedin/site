@@ -70,3 +70,7 @@ You can even pipe these commands together directly:
 ```
 $ convox builds export <build ID> -a <app1> --rack <rack1> | convox builds import -a <app2> --rack <rack2>
 ```
+
+## Build arguments
+
+Convox respects the `ARG` Dockerfile directive. For more information, see [Dockerfile: ARG](/docs/dockerfile/#arg).

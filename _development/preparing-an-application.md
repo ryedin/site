@@ -117,15 +117,14 @@ Each top level key defines the processes necessary to run your application. This
 The `Dockerfile` describes the steps you need to build and run your application.
 
 * `FROM` defines the base image for your application.
-
 * `COPY` moves files from the local directory into the image.
-
 * `RUN` executes a command.
-
 * `ENTRYPOINT` defines a command prefix that should be prepended to any command run on this image.
-
 * `CMD` defines the default command to start application.
 
-For more information on how to write Dockerfiles, see the [Docker user guide](https://docs.docker.com/engine/tutorials/dockerimages/#/building-an-image-from-a-dockerfile) and the [Dockerfile reference](http://docs.docker.com/reference/builder/).
-
 Convox also offers custom Docker configuration as a paid service. To find out more about scheduling and pricing, contact us via the chat icon on the bottom right of your screen.
+
+## See also
+
+- [docker-compose.yml](/docs/docker-compose-file/)
+- [Dockerfile](/docs/dockerfile/)
