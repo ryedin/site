@@ -13,11 +13,15 @@ By contrast, server instances in a private Rack have no direct connection to the
 
 ## Installing a Private Rack
 
-A Rack can be installed as private using the Convox CLI:
+A Rack can be installed as private by selecting the **Private** checkbox in the Rack installation page in the Convox console.
+
+We recommend [installing via the Console](/docs/installing-a-rack/), but it's also possible using the Convox CLI:
 
 ```
 convox install --private
 ```
+
+Note that Racks installed via the CLI will need to be added manually to the Console.
 
 ## Converting an Existing Rack to Private
 
@@ -38,3 +42,7 @@ The benefits of running a Rack in private mode include:
 ## Cost
 
 Private networking mode requires the provisioning of up to three NAT gateways (one for each availability zone) which are charged based on time and traffic. This will increase the monthly cost of your rack. More pricing details can be found in the [AWS docs](https://aws.amazon.com/vpc/pricing/).
+
+## See also
+
+* [VPC Configurations](/docs/vpc-configurations)
