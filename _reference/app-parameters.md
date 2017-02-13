@@ -8,6 +8,7 @@ Parameters can be used to configure your Convox apps. Below is a list of the ava
   <li><a href="#ltprocessnamegtformation">&lt;ProcessName&gt;Formation</a></li>
   <li><a href="#internal">Internal</a></li>
   <li><a href="#securitygroup">SecurityGroup</a></li>
+  <li><a href="#taskrole">TaskRole</a></li>
 </ul>
 
 ## Setting Parameters
@@ -44,3 +45,7 @@ Have the app use Internal ELBs for all processes, i.e. make it unreachable from 
 The `SecurityGroup` app parameter can be set to the ID of a custom AWS security group. When this param is set on an app, the security group rules will be applied to requests coming in to any of the app's load balancers.
 
 For details, see [Load balancers: limited application access](/docs/load-balancers#limited-application-access).
+
+## TaskRole
+
+The `TaskRole` app parameter can be set to the ARN or short name of an IAM Role you wish to apply to the ECS Tasks of this app.
