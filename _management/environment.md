@@ -18,7 +18,7 @@ Convox applications are configured using environment variables. Environment mana
 
 ## Local
 
-#### .env
+### .env
 
 When running your application with `convox start` you should set values for your application's environment in a `.env` file:
 
@@ -27,7 +27,7 @@ SECRET_KEY=xyzzy
 FOO=bar
 ```
 
-#### docker-compose.yml
+### docker-compose.yml
 
 `convox start` will always read `.env`, but the environment variables set there will not be passed along to your application's containers unless you declare them in `docker-compose.yml`.
 
@@ -56,7 +56,7 @@ services:
 
 ## Deployed
 
-#### convox env
+### `convox env`
 
 When dealing with a deployed Convox application, use the `convox env` commands to manage your environment:
 
@@ -75,7 +75,14 @@ Updating environment... OK
 To deploy these changes run `convox releases promote RLGUFIKSJFY`
 ```
 
-#### docker-compose.yml
+#### Flags
+
+The following flags can optionally be provided to `convox env set`:
+
+* `--promote`: automatically promote the release.
+* `--id`: send `env set` logs to stderr; send only the resulting release ID to stdout (default behavior is to send all logs to stdout).
+
+### docker-compose.yml
 
 For deployed Convox applications, `docker-compose.yml` can only be used to set default values.
 
