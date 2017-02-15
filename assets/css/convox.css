@@ -1841,6 +1841,16 @@ input#mc-embedded-subscribe {
     margin-bottom: 30px;
 }
 
+.block-show-callout.type-info {
+  border-left: 4px solid #5bc0de;
+  background-color: #f4f8fa;
+}
+
+.block-show-callout.type-warning {
+  border-left: 4px solid #ea9b00;
+  background-color: #fef5e4;
+}
+
 .docs #doc .block-show-callout p:last-child {
   margin-bottom: 8px;
 }
