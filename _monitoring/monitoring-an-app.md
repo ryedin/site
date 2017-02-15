@@ -50,7 +50,7 @@ If, in addition to being able to monitor your new CloudWatch Dashboard, you'd li
 1. In the Alarm Preview section, confirm that Period is set to "15 Minutes" and the Statistic is "Average."
 1. Confirm that you see your new Alarm listed with State "OK."
 
-<div class="block-callout block-show-callout type-warning" markdown="1">
+<div class="block-callout block-show-callout type-info" markdown="1">
 Keep in mind that a notification email sent by a CloudWatch Alarm can be used as a trigger for other services like PagerDuty. See their [Email Integration Guide](https://www.pagerduty.com/docs/guides/email-integration-guide/) for more information.
 </div>
 
