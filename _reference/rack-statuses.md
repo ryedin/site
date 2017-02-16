@@ -1,0 +1,33 @@
+---
+title: "Rack Statuses"
+---
+
+As you interact with your Rack, you will notice a variety of statuses displayed in the Console web interface and in the output of CLI commands like `convox rack`. Here's what they mean.
+
+## converging
+
+Your Rack is running, but it is rearranging itself. For example, you might see the _converging_ status during a routine instance replacement, or when deploying an app to the Rack. If it seems like your Rack is _converging_ for a long time, you can run `convox apps` to see if any of your applications are still updating.
+
+## deleting
+
+When you uninstall a Rack, you'll see the _deleting_ status as the script deletes all of the underlying AWS resources.
+
+## installing
+
+After installing a Rack from the Console web interface or the CLI via `convox install`, the Rack will remain in the _installing_ status while resources are created and configured in your AWS account.
+
+## rollback
+
+If a Rack update fails to complete, or is canceled, the Rack will display a status of _rollback_ while it reverts to the last known good state.
+
+## running
+
+Most of the time, your Rack should display the _running_ status and be fully operational.
+
+## unreachable
+
+When Console or your CLI are unable to communicate with a Rack, that Rack will have a status of _unreachable_. Common causes of an _unreachable_ Rack include using a bad API Key and having just uninstalled the Rack. For help recovering from a bad API Key, see our documentation on how to [roll a Rack API Key](https://convox.com/docs/api-keyroll/#roll-rack-api-key-ne-password) or how to [set a specific Rack API Key](https://convox.com/docs/api-keyroll/#other-ways-to-change-rack-api-keys). To deal with an uninstalled Rack listed as _unreachable_, simply visit that Rack's settings page and click the "Remove Rack" button to tell Console to stop keeping track of it.
+
+## updating
+
+When you run `convox rack update`, the Rack will display a status of _updating_ until the update completes and transitions to a _running_ status or fails and transitions to a _rollback_ status.
