@@ -28,7 +28,7 @@ The ugly:
 
 * A standard untar operation to EFS is going at a mere **204 kBps**
 
-![EFS Performance Characteristics](https://medium2.global.ssl.fastly.net/max/2000/1*-4E7rbrcmg013Q3jqZu9ng.png){: .center }*EFS Performance Characteristics*
+![EFS Performance Characteristics](https://cdn-images-1.medium.com/max/2000/1*-4E7rbrcmg013Q3jqZu9ng.png){: .center }*EFS Performance Characteristics*
 
 All this leads me to conclude that **EFS works ok.** I am actually happy with the app deployment after getting it all set up. 
 
@@ -60,7 +60,7 @@ It is distributed as a Docker image that uses Docker volumes serve the app and s
 
 I am using EFS in “General Purpose Performance Mode”, the recommended setting for web server environments. I am also using the [recommended Linux mount options](http://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html).
 
-![EFS Management Console](https://medium2.global.ssl.fastly.net/max/6032/1*H-MoTFwXult9oZeHld9KMw.png){: .center }*EFS Management Console*
+![EFS Management Console](https://cdn-images-1.medium.com/max/6032/1*H-MoTFwXult9oZeHld9KMw.png){: .center }*EFS Management Console*
 
     $ mount
 
@@ -162,7 +162,7 @@ The CloudWatch metrics for EFS are very good.
 
 I can see over the course of the experiment that initial I/O percentage (red line) wasn’t coming anywhere near 100%. With lots of parallelism I could eventually max out IO which brought copy time down significantly.
 
-![](https://medium2.global.ssl.fastly.net/max/4204/1*jFjbyYQHwbsviDuq1eOoqA.png){: .center }*Visibility*
+![](https://cdn-images-1.medium.com/max/4204/1*jFjbyYQHwbsviDuq1eOoqA.png){: .center }*Visibility*
 
 ## Now The App Boots!
 
@@ -203,7 +203,7 @@ It seems like the write latency is a challenge for the PHP code and SQLite datab
 
 Of course I would heed the SQLite warning in all cases and use RDS. [Configuring that](https://convox.com/docs/postgresql/) and I finally have ownCloud running!
 
-![](https://medium2.global.ssl.fastly.net/max/2000/1*oD0Hgni5Ka_DVLfamgPXpg.png){: .center }*SQLite Errors*
+![](https://cdn-images-1.medium.com/max/2000/1*oD0Hgni5Ka_DVLfamgPXpg.png){: .center }*SQLite Errors*
 
 ## Traffic Benchmarks
 

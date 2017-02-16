@@ -7,7 +7,7 @@ twitter: nzoschke
 
 A few months ago I wrote *[AWS Missing Parts: Build Service](https://convox.com/blog/aws-missing-build-service/)*. At the 2016 re:Invent conference, AWS launched [CodeBuild](https://aws.amazon.com/codebuild/), a service to “build and test code with continuous scaling.”
 
-![[Werner Vogels re:Invent 2016 Keynote](https://www.youtube.com/watch?v=ZDScBNahsL4&t=34m48s) — Code Build Announcement](https://medium2.global.ssl.fastly.net/max/5108/1*F3Ggj41jsDImvFTjGXZN7Q.png)*[Werner Vogels re:Invent 2016 Keynote](https://www.youtube.com/watch?v=ZDScBNahsL4&t=34m48s) — Code Build Announcement*
+![[Werner Vogels re:Invent 2016 Keynote](https://www.youtube.com/watch?v=ZDScBNahsL4&t=34m48s) — Code Build Announcement](https://cdn-images-1.medium.com/max/5108/1*F3Ggj41jsDImvFTjGXZN7Q.png)*[Werner Vogels re:Invent 2016 Keynote](https://www.youtube.com/watch?v=ZDScBNahsL4&t=34m48s) — Code Build Announcement*
 
 I’m very excited that AWS filled in this gap in their platform. CodeBuild enables us to further simplify our systems, letting AWS do all the hard work of securing and operating the build step in our software delivery pipeline.
 
@@ -48,7 +48,7 @@ AWS CodeBuild offers additional benefits:
 
 Up until now, the Convox platform offered a private build service running inside an existing ECS cluster ([architecture diagram](https://convox.com/assets/images/build%20sequence%20diagram.png)). We now get to simplify the platform by delegating builds to CodeBuild:
 
-![Simple Build Architecture](https://medium2.global.ssl.fastly.net/max/2468/1*q8VCDvua49Yn1ZRUble45w.png)*Simple Build Architecture*
+![Simple Build Architecture](https://cdn-images-1.medium.com/max/2468/1*q8VCDvua49Yn1ZRUble45w.png)*Simple Build Architecture*
 
 We expect to see tangible platform improvements from this. Builds will be:
 
