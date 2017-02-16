@@ -8,7 +8,7 @@ twitter: _sandeep
 
 Analytics for web and mobile rely on events to deliver insights. For chat bots, on the other hand, insights comes from analyzing the content of conversations. Botmetrics accomplishes this with several services—collectors, workers, and a web app for interfacing with the user. These need to be setup separately and configured to work in concert.
 
-![Botmetrics Architecture Diagram](https://medium2.global.ssl.fastly.net/max/2000/1*GgZPs13LmUueafcf8NI4YQ.png)*Botmetrics Architecture Diagram*
+![Botmetrics Architecture Diagram](https://cdn-images-1.medium.com/max/2000/1*GgZPs13LmUueafcf8NI4YQ.png)*Botmetrics Architecture Diagram*
 
 <!--more-->
 
@@ -21,7 +21,7 @@ Clone the [Botmetrics repo](http://www.github.com/botmetrics/botmetrics) and in 
 * `convox apps create` to create an application called `botmetrics`
 * `convox apps info` to check if the app has been created
 
-![Checking on App Status](https://medium2.global.ssl.fastly.net/max/3596/1*yuyld8ZDdggOYM_OUPMhuQ.png)*Checking on App Status*
+![Checking on App Status](https://cdn-images-1.medium.com/max/3596/1*yuyld8ZDdggOYM_OUPMhuQ.png)*Checking on App Status*
 
 ## Adding Databases
 
@@ -33,7 +33,7 @@ Provisioning a Postgres database and Redis key store is easy with Convox:
 * `convox services create redis`
 * `convox services` to see the names and provisioning status of the services
 
-![Getting Service Names](https://medium2.global.ssl.fastly.net/max/3600/1*HUtYBgneEDNMNhK_Rbo9CA.png)*Getting Service Names*
+![Getting Service Names](https://cdn-images-1.medium.com/max/3600/1*HUtYBgneEDNMNhK_Rbo9CA.png)*Getting Service Names*
 
 ## Deploying to Production and Initial Setup
 
@@ -51,7 +51,7 @@ Then set the environment variables REDIS_URL for Redis and DATABASE_URL for Post
 
 * `convox env set <VARIABLE_NAME> <URL>`
 
-![Setting the REDIS_URL and DATABASE_URL Environment Variables](https://medium2.global.ssl.fastly.net/max/3600/1*9vu54wEe7jqBnGMs1qbuzw.png)*Setting the REDIS_URL and DATABASE_URL Environment Variables*
+![Setting the REDIS_URL and DATABASE_URL Environment Variables](https://cdn-images-1.medium.com/max/3600/1*9vu54wEe7jqBnGMs1qbuzw.png)*Setting the REDIS_URL and DATABASE_URL Environment Variables*
 
 You then need to set a few other environment variables that are required for Botmetrics to boot up in production mode:
 
@@ -73,11 +73,11 @@ Get the public URL for your app with:
 
 * `convox apps info`
 
-![Getting the App Hostname](https://medium2.global.ssl.fastly.net/max/3600/1*757jJ63VvdtU0VT6wcBGZg.png)*Getting the App Hostname*
+![Getting the App Hostname](https://cdn-images-1.medium.com/max/3600/1*757jJ63VvdtU0VT6wcBGZg.png)*Getting the App Hostname*
 
 Browse to the URL and start collecting data from your bots!
 
-![Botmetrics Homepage!](https://medium2.global.ssl.fastly.net/max/2640/1*D19tEMuLz_d5nzuKi6t5sg.png)*Botmetrics Homepage!*
+![Botmetrics Homepage!](https://cdn-images-1.medium.com/max/2640/1*D19tEMuLz_d5nzuKi6t5sg.png)*Botmetrics Homepage!*
 
 ## Updating your Botmetrics App
 

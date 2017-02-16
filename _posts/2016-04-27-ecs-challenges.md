@@ -173,7 +173,7 @@ We also need to be able to apply AMI updates gracefully, so having CloudFormatio
 
 I’m observing that right now that great instance management **even more important than before**, as heavy container workloads can be more demanding on an instance, and are exercising some fairly new corners of the kernel, network stack and filesystem.
 
-![Filesystem lockups in production: [https://github.com/convox/rack/issues/314](https://github.com/convox/rack/issues/314)](https://medium2.global.ssl.fastly.net/max/3064/1*hRswnGFTHiM82sKDICoiYQ.png)*Filesystem lockups in production: [https://github.com/convox/rack/issues/314](https://github.com/convox/rack/issues/314)*
+![Filesystem lockups in production: [https://github.com/convox/rack/issues/314](https://github.com/convox/rack/issues/314)](https://cdn-images-1.medium.com/max/3064/1*hRswnGFTHiM82sKDICoiYQ.png)*Filesystem lockups in production: [https://github.com/convox/rack/issues/314](https://github.com/convox/rack/issues/314)*
 
 ## 6. Logs and Events
 
