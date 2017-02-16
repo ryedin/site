@@ -34,7 +34,7 @@ Cron expressions use the following format. All times are UTC.
 |  .------------- hour (0 - 23)
 |  |  .---------- day-of-month (1 - 31)
 |  |  |  .------- month (1 - 12) OR JAN,FEB,MAR,APR ...
-|  |  |  |  .---- day-of-week (0 - 6) (Sunday=0 or 7) OR SUN,MON,TUE,WED,THU,FRI,SAT
+|  |  |  |  .---- day-of-week (1 - 7) OR SUN,MON,TUE,WED,THU,FRI,SAT
 |  |  |  |  |
 *  *  *  *  *
 ```
