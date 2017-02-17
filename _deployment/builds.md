@@ -74,3 +74,15 @@ $ convox builds export <build ID> -a <app1> --rack <rack1> | convox builds impor
 ## Build arguments
 
 Convox respects the `ARG` Dockerfile directive. For more information, see [Dockerfile: ARG](/docs/dockerfile/#arg).
+
+## Dedicated build instance
+
+You can assign a dedicated instance to a Rack for building images.
+
+You can set this:
+
+- on a new Rack by passing the `--build-instance` flag to `convox install`,
+- on new Racks by setting the [`RACK_BUILD_INSTANCE`](/docs/cli-environment-variables/#rackbuildinstance) environment variable,
+- on an existing Rack by setting the [`BuildInstance`](/docs/rack-parameters/#buildinstance) Rack parameter
+
+You can customize the amount of memory and CPU allocated to build instances by setting the [`BuildCpu`](/docs/rack-parameters/#buildcpu) and [`BuildMemory`](/docs/rack-parameters/#buildmemory) Rack parameters.

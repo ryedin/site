@@ -52,11 +52,15 @@ Setting `CONVOX_WAIT` to a truthy value (`true`, `True`, `1`, etc) will cause re
 
 ## `PASSWORD`
 
-Private registry password for the [`convox registries`](/docs/private-registries) command.
+Private registry password for the [`convox registries`](/docs/private-registries) command (overridden by `--password`).
 
 ## `RACK`
 
-Active Rack name. Takes precedence over the `.convox/rack` repository setting, but is overridden by the `--rack` flag. For details, see [Switching between Racks](/docs/cli#switching-between-racks).
+Active Rack name. Takes precedence over the [`.convox/rack`](/docs/cli-config-files/#convoxrack-1) repository setting, but is overridden by the `--rack` flag. For details, see [Switching between Racks](/docs/cli#switching-between-racks).
+
+## `RACK_BUILD_INSTANCE`
+
+Instance type for a dedicated build cluster to create when running `convox install` (overridden by the `--build-instance` flag).
 
 ## `RACK_PRIVATE`
 

@@ -6,7 +6,7 @@ This page describes a number of files and directories which can exist in `~/.con
 
 {% include definitions/evaluation-order.md %}
 
-## Configuration files
+## Global configuration files
 
 ### `~/.convox/auth`
 
@@ -84,7 +84,15 @@ $ cat ~/.convox/rack
 personal/dev
 ```
 
-You can also pin a repo to a specific Rack by creating a `.convox` directory in the repo root. Note that `convox switch` only updates `~/.convox/rack` and not `.convox/rack`.
+## Local configuration files
+
+### `.convox/app`
+
+You can pin a local directory to a specific app by putting a file called `app` containing the app name in the `.convox` directory in the directory.
+
+### `.convox/rack`
+
+You can pin a local directory to a specific Rack by putting a file called `rack` containing the Rack name in the `.convox` directory in the directory.
 
 
 ## See also
