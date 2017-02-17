@@ -5,7 +5,7 @@ order: 700
 
 Convox allows you to execute individual commands on your containers in several different contexts.
 
-<div class="block-callout block-show-callout type-warning" markdown="1">
+<div class="block-callout block-show-callout type-info" markdown="1">
 
 **To run a command on a container in your Convox rack...**
 
@@ -47,7 +47,7 @@ $ convox run web bin/migrate
 Migrating database... Done
 ```
 
-<div class="block-callout block-show-callout type-warning" markdown="1">
+<div class="block-callout block-show-callout type-info" markdown="1">
 #### Detached processes
 
 By default, `convox run` processes are run interactively ("attached"). This means you can interact with the running process via the terminal (stdin and stdout). Attached processes have a timeout of 1 hour.
@@ -67,7 +67,7 @@ Detached processes have no timeout and their output is available in the applicat
 **Syntax:** `convox exec [container ID] [command]`
 **Use:** Attaches to and executes the command in an existing container on your Convox rack.
 
-<div class="block-callout block-show-callout type-warning" markdown="1">
+<div class="block-callout block-show-callout type-info" markdown="1">
 Use `convox ps` to get the container ID:
 
 ```
@@ -121,6 +121,6 @@ $ convox start web 'node -e "console.log(\"Hello\")"'
 ```
 
 
-<div class="block-callout block-show-callout type-warning" markdown="1">
+<div class="block-callout block-show-callout type-info" markdown="1">
 Note: `convox start [service] [command]` is not intended to execute commands in _already running_ containers. It will start a single container and then execute the command on that container. If you want to run a command in the container of an app started locally via `convox start`, use `docker exec` instead.
 </div>
