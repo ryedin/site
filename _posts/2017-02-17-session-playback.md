@@ -4,7 +4,7 @@ author: Luke Roberts
 twitter: awsmsrc
 ---
 
-One of the advantages of Convox is that it runs entirely in your own AWS account which provides many benefits around security, cost and control. Many of our users also find this advantageous when it comes to compliance and regulations. Some of our customers pointed out that in order to meet their PCI requirements they needed to know exactly what an intruder may or may not have seen during any periods of unauthorized access.
+One of the advantages of Convox is that it runs entirely in your own AWS account which provides many benefits around security, cost and control. Many of our users also find this advantageous when it comes to compliance and regulations. Some of our customers pointed out that in order to meet their PCI or HIPAA requirements they needed to know exactly what an intruder may or may not have seen during any periods of unauthorized access.
 
 <!--more-->
 
