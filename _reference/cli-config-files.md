@@ -42,7 +42,11 @@ If not provided, a randomly generated string will be used.
 
 ### `~/.convox/rack`
 
-This file contains the organization and name of the active Rack. This is how `convox rack` determines which Rack you want to know about:
+This file contains the organization and name of the active Rack. Its contents are used as if passed to the `--rack` flag for Convox commands.
+
+It can be overridden by the [`RACK` environment variable](http://localhost/docs/cli-environment-variables/#rack) or with the `--rack` flag.
+
+Under the hood, this file is how `convox rack` determines which Rack you want to know about:
 
 ```
 $ cat ~/.convox/rack 
@@ -84,16 +88,24 @@ $ cat ~/.convox/rack
 personal/dev
 ```
 
+
 ## Local configuration files
 
 ### `.convox/app`
 
-You can pin a local directory to a specific app by putting a file called `app` containing the app name in the `.convox` directory in the directory.
+You can pin a local directory to a specific app by placing a file called `app` containing the app name in the `.convox` directory in the project root.
+
+```
+$ echo "myapp" > .convox/app
+```
 
 ### `.convox/rack`
 
-You can pin a local directory to a specific Rack by putting a file called `rack` containing the Rack name in the `.convox` directory in the directory.
+You can pin a local directory to a specific Rack by placing a file called `rack` containing the Rack name in the `.convox` directory in the project root.
 
+```
+$ echo "myorg/staging" > .convox/rack
+```
 
 ## See also
 
