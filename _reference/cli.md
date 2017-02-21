@@ -138,7 +138,7 @@ The `convox` CLI offers bash autocompletion and command prompt utilities.
 To set this up on OS X with Homebrew, save the convox autocomplete helper in the `bash_completion.d` directory:
 
     $ curl -o $(brew --prefix)/etc/bash_completion.d/convox \
-      https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete
+      https://raw.githubusercontent.com/urfave/cli/master/autocomplete/bash_autocomplete
 
 then add an autocomplete initializer `~/.bash_profile`:
 
@@ -146,9 +146,9 @@ then add an autocomplete initializer `~/.bash_profile`:
 
 ### Debian-based Linux distributions
 
-As root, save [this bash_autocomplete snippet](https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete) in `/etc/bash_completion.d/convox`, as in the following command:
+As root, save [this bash_autocomplete snippet](https://raw.githubusercontent.com/urfave/cli/master/autocomplete/bash_autocomplete) in `/etc/bash_completion.d/convox`, as in the following command:
 
-    $ curl https://raw.githubusercontent.com/codegangsta/cli/master/autocomplete/bash_autocomplete \
+    $ curl https://raw.githubusercontent.com/urfave/cli/master/autocomplete/bash_autocomplete \
       | sudo tee /etc/bash_completion.d/convox
 
 Make sure you're sourcing `/etc/bash_completion.d/convox` in your `.profile`:
