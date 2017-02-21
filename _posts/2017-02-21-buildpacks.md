@@ -14,6 +14,8 @@ The result is that you can jump straight into deploying an app -- no complex "Do
 
 Let's give it a try...
 
+<!--more-->
+
 ## Ghost App
 
 First, clone an app. We'll use with the Ghost blogging platform. This app follows the [twelve-factor methods](https://12factor.net/), so it should be easy to build and deploy with a buildpack.
