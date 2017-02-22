@@ -12,7 +12,7 @@ Analytics for web and mobile rely on events to deliver insights. For chat bots, 
 
 <!--more-->
 
-Convox makes it almost trivial to bring up this mix of Go and Ruby services in a coordinated and scalable way. We're going to assume that you already have a [Rack](https://github.com/convox/rack) set up and the Convox CLI installed. If not, follow [The Convox Guide](https://convox.com/guide/) to set up your laptop and cloud environment.
+Convox makes it almost trivial to bring up this mix of Go and Ruby services in a coordinated and scalable way. We're going to assume that you already have a [Rack](https://github.com/convox/rack) set up and the Convox CLI installed. If not, follow [The Convox Getting Started Guide](/docs/getting-started/) to set up your laptop and cloud environment.
 
 ## Setting up the Botmetrics App
 
