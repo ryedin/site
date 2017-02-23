@@ -14,6 +14,8 @@ By default, private Racks are installed into new VPCs created by the Convox inst
 
 If instead you would like to install the Rack into a VPC that already exists, select it from the **Use an existing VPC** dropdown menu, which is prepopulated with the existing VPCs found in your AWS account (within the region selected above).
 
+For more detailed information, see [VPC Configurations](/docs/vpc-configurations).
+
 #### Use an existing Internet Gateway
 
 If you've selected an existing VPC, any existing Internet Gateways associated with it will be available in the **Use an existing Internet Gateway** dropdown.
@@ -62,7 +64,5 @@ Select the **Dedicated instances** checkbox to create EC2 instances on dedicated
 
 ## See also
 
-* [Private Networking](/docs/private-networking)
 * [Rack Parameters](/docs/rack-parameters)
-* [VPC Configurations](/docs/vpc-configurations)
 

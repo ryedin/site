@@ -10,7 +10,7 @@ A [Rack](/docs/rack) is a private PaaS installed into your AWS account. Once you
 * Make sure you have the [AWS Integration](/docs/aws-integration) enabled in your organization.
 * Click the <img src="/assets/images/docs/add-rack.png" alt="Add Rack" style="height: 1.5em;"> button and then **Install New**.
 * Choose a name for your Rack, and select the desired AWS region.
-* If desired, specify [advanced configuration options](/docs/advanced-installer-options).
+* Consider [advanced configuration options](/docs/advanced-installer-options) if you'd like to integrate with existing VPCs or enable higher levels of security and isolation.
 * Click **Install Convox**.
 
 Once launched, installation will take approximately 10 minutes to complete.
