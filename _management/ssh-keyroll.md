@@ -18,17 +18,9 @@ This sets up a keypair between the Rack API and the EC2 instances for SSH access
 
 Keyroll triggers a CloudFormation update that performs a rolling replacement of all of the Rack's instances.
 
+The replacement takes advantage of [ECS container instance draining](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html); therefore, this operation should not cause any downtime.
+
 ## SSH Keyroll FAQ
-
-### Why is the Rack unavailable during an SSH instance keyroll?
-
-If a service has fewer than 3 containers, downtime can happen when you run `convox instances keyroll` (indeed, any time there is a full instance replacement).
-
-This downtime can be avoided by running at least 3 containers of any critical service. If you have 2 containers you'll *sometimes* get short downtime. If you have only 1 container, you'll be guaranteed some downtime.
-
-This is an unfortunate side effect of how autoscale groups terminate instances based on the desired count in one shot.
-
-We've talked about various solutions with AWS, who we hope will make ECS instance replacement more graceful. The problem is addressed in [this GitHub issue](https://github.com/aws/amazon-ecs-agent/issues/130) (upvotes here would help!).
 
 ### Can I provide my own SSH keys to be installed on the instances?
 

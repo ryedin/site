@@ -22,7 +22,7 @@ A rollout coordinates starting new processes in a way that maintains service upt
 
 #### Automatic Rollback
 
-If there are errors starting new processes, new processes are not verified as healthy, or the rollout doesn't complete in 10 minutes, an automatic rollback is performed. This will result in a `rollback` or `failed` state for the app:
+If there are errors starting new processes, new processes are not verified as healthy, or the rollout doesn't complete in 10 minutes, an automatic rollback is performed. This will result in a [`rollback`](/docs/rack-statuses/#rollback) or `failed` state for the app:
 
 ```
 $ convox apps info
