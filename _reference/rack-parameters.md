@@ -76,8 +76,6 @@ Autoscale rack instances. See our [Scaling doc](/docs/scaling#autoscale) for mor
 
 ## BuildCpu
 
-_Only applicable if [`BuildInstance`](#buildinstance) is defined._
-
 How much CPU should be allocated to builds.
 
 | Default value | `0` |
@@ -92,14 +90,10 @@ Override the default build image.
 
 Creates and assigns a [dedicated build instance](/docs/builds/#dedicated-build-instance) to a Rack.
 
-The build instance be fine-tuned with the [`BuildCpu`](#buildcpu) and [`BuildMemory`](#buildmemory) Rack parameters.
-
 | Default value  | ""                                                               |
 | Allowed values | [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/) |
 
 ## BuildMemory
-
-_Only applicable if [`BuildInstance`](#buildinstance) is defined._
 
 Defines the amount of memory (in MB) that the instance should allocate to build containers for each build.
 
