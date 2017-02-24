@@ -10,6 +10,7 @@ labels:
   - <a href="#convoxcron">convox.cron.&lt;task name&gt;</a>
   - <a href="#convoxdeployment">convox.deployment.maximum</a>
   - <a href="#convoxdeployment">convox.deployment.minimum</a>
+  - <a href="#convoxdrainingtimeout">convox.draining.timeout</a>
   - <a href="#convoxhealth">convox.health.path</a>
   - <a href="#convoxhealth">convox.health.port</a>
   - <a href="#convoxhealth">convox.health.timeout</a>
@@ -46,6 +47,13 @@ The `convox.deployment` labels allow you to fine-tune how ECS manages your deplo
 Both `minimum` and `maximum` are percentages relative to the desired count for a given process. If your application has a `web` process scaled to a desired count of 4, a `minimum` of 100 would instruct ECS to keep at least 4 `web` processes (or "tasks" in ECS terms) running throughout a deployment. A `maximum` of 200 would allow ECS to run up to 8 processes: 4 old processes and 4 new processes starting up, before ECS kills the old ones.
 
 If you'd like a more in-depth explanation, see the ECS doc [Updating a Service](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service.html).
+
+## convox.draining.timeout
+
+The `convox.draining.timeout` label allows you to specify the amount of time in seconds to allow a draining balancer to keep active connections open. After the timeout, the load balancer will close all connections to a deregistered or unhealthy instance. The minimum value is 1 and the maximum is 3600. The default value is 60. See the [AWS CloudFormation ConnectionDrainingPolicy document](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html) for more.
+
+    labels:
+      - convox.draining.timeout=300
 
 ## convox.health
 
