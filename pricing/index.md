@@ -33,13 +33,10 @@ layout: base
           <ul>
             <li class="price highlight">FREE</li>
             <li class="highlight">Community Support</li>
-            <li>Max 1 User</li>
-            <li>Unlimited Racks</li>
-            <li>Workflow Automation</li>
+            <li>Single User</li>
+            <li>Integrated CI/CD Workflows</li>
             <li>GitHub/GitLab Integration</li>
             <li>Slack Integration</li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
@@ -53,13 +50,10 @@ layout: base
           <ul>
             <li class="price monthly highlight">$100</li>
             <li class="highlight">Support Tickets</li>
-            <li class="upgrade">Unlimited Users</li>
-            <li>Unlimited Racks</li>
-            <li>Workflow Automation</li>
+            <li class="upgrade">Team-based Access Control</li>
+            <li>Integrated CI/CD Workflows</li>
             <li>GitHub/GitLab Integration</li>
             <li>Slack Integration</li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
@@ -73,15 +67,12 @@ layout: base
           <ul>
             <li class="price monthly highlight">$500</li>
             <li class="highlight">Business-Day Support</li>
-            <li class="upgrade">Unlimited Users</li>
-            <li>Unlimited Racks</li>
-            <li>Workflow Automation</li>
+            <li class="upgrade">Role-based Access Control</li>
+            <li>Integrated CI/CD Workflows</li>
             <li>GitHub/GitLab Integration</li>
             <li>Slack Integration</li>
-            <li>Role-based Access Control</li>
-            <li>Audit Logs</li>
-            <li>Google Authentication</li>
-            <li>&nbsp;</li>
+            <li class="upgrade">Audit Logs</li>
+            <li class="upgrade">Google Authentication</li>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
           </ul>
@@ -91,19 +82,16 @@ layout: base
           <img src="/assets/images/enterprise.png" alt="Enterprise">
           <h3>Enterprise</h3>
           <ul>
-            <li class="price highlight"><a id="get_a_quote" href="#" class="cta js-intercom-show">Get a Quote</a></li>
+            <li class="price highlight"><a id="get_a_quote" href="#" class="cta js-intercom-show">Contact Us</a></li>
             <li class="highlight">24/7 One-Hour Support</li>
-            <li class="upgrade">Unlimited Users</li>
-            <li>Unlimited Racks</li>
-            <li>Workflow Automation</li>
+            <li>Role-based Access Control</li>
+            <li>Integrated CI/CD Workflows</li>
             <li>GitHub/GitLab Integration</li>
             <li>Slack Integration</li>
-            <li class="upgrade">Fine-grained Access Control</li>
             <li>Audit Logs</li>
             <li>Google Authentication</li>
-            <li>LDAP/SAML Authentication</li>
-            <li>Multi-Rack Deployments</li>
-            <li>Self-Hosted Console</li>
+            <li class="upgrade">LDAP/SAML Authentication</li>
+            <li class="upgrade">Self-Hosted Console</li>
           </ul>
           <a href="https://console.convox.com/grid/signup" class="btn">SIGN UP NOW</a>
         </div>
