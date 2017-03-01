@@ -149,7 +149,7 @@ $ convox env set DATABASE_URL=postgres://postgres:***@dev-postgres-4328.cyzckls4
 Updating environment... OK
 To deploy these changes run `convox releases promote RWTRTXMWUSZ`
 
-$ convox releases promote RFWIVAEBSPI
+$ convox releases promote RWTRTXMWUSZ
 Promoting RWTRTXMWUSZ... UPDATING
 ```
 
