@@ -22,6 +22,7 @@ The following parameters can be used to configure your Convox Rack:
 * [Autoscale](#autoscale)
 * [BuildCpu](#buildcpu)
 * [BuildImage](#buildimage)
+* [BuildInstance](#buildinstance)
 * [BuildMemory](#buildmemory)
 * [ClientId](#clientid)
 * [ContainerDisk](#containerdisk)
@@ -85,11 +86,27 @@ Override the default build image.
 
 | Default value | "" |
 
+## BuildInstance
+
+Creates and assigns a [dedicated build instance](/docs/builds/#dedicated-build-instance) to a Rack.
+
+| Default value  | ""                                                               |
+| Allowed values | [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/) |
+
 ## BuildMemory
 
-Amount of memory (in MB) allocated to builds.
+Defines the amount of memory (in MB) that the instance should allocate to build containers for each build.
 
 | Default value  | 1024 |
+
+<div class="alert alert-info">
+Getting build errors like <b>Starting build... ERROR: not enough memory available to start process</b>? You should either reduce this parameter, or change the <a href="#instancetype">InstanceType</a> parameter to an <a href="https://aws.amazon.com/ec2/instance-types/">instance type</a> with more memory.
+</div>
+
+<div class="alert alert-warning">
+Note: If you set BuildMemory to an amount that's more than half of the total memory available to the build instance, you'll only be able to run one build at a time. If this value is too high, builds may fail.
+</div>
+
 
 ## ClientId
 

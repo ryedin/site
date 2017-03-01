@@ -37,7 +37,13 @@ RUN /tmp/heroku-buildpack-ruby/bin/compile /app /var/cache/build/gems
 
 ### Dedicated Build Instance
 
-If you'd like to segregate builds from apps, you can configure a dedicated build instance with the Rack `BuildInstance` parameter:
+If you'd like to segregate builds from apps or just need better build performance, you can configure a dedicated build instance that will give more CPU, memory and caching to builds.
+
+You can set this:
+
+- on a new Rack by passing the `--build-instance <instance type>` flag to `convox install`,
+- on new Racks by setting the [`RACK_BUILD_INSTANCE`](/docs/cli-environment-variables/#rackbuildinstance) environment variable to a [valid instance type](https://aws.amazon.com/ec2/instance-types/),
+- on an existing Rack by setting the [`BuildInstance`](/docs/rack-parameters/#buildinstance) Rack parameter:
 
 ```
 $ convox rack params set BuildInstance=c4.large
