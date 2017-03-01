@@ -18,7 +18,7 @@ Let's give it a try...
 
 ## Ghost App
 
-First, clone an app. We'll use with the Ghost blogging platform. This app follows the [twelve-factor methods](https://12factor.net/), so it should be easy to build and deploy with a buildpack.
+First, clone an app. For this demo we will use the Ghost blogging platform. This app follows the [twelve-factor methods](https://12factor.net/), so it should be easy to build and deploy with a buildpack.
 
 ```
 $ git clone https://github.com/cobyism/ghost-on-heroku.git ghost-on-convox
