@@ -28,7 +28,7 @@ Warning: It is not recommended to use build-time variables for passing secrets. 
 You can declare a build argument in the `Dockerfile`, with either a default value or an empty one:
 
 ```
-ARG BUNDLE_WITHOUT="development test"
+ARG BUNDLE_WITHOUT="development:test"
 ARG RAILS_ENV
 ```
 
@@ -38,14 +38,14 @@ You can then send a value to the `ARG` during the local build by defining that v
 
 ```
 $ cat .env
-BUNDLE_WITHOUT="development test"
+BUNDLE_WITHOUT="none"
 ```
 
 or by setting it in your host environment, like this:
 
 ```
-$ BUNDLE_WITHOUT="development test" convox start
-build    │ running: docker build --build-arg BUNDLE_WITHOUT="development test" -f /home/aj/git/convox/convox-examples/rails/Dockerfile -t rails/web /home/aj/git/convox/convox-examples/rails
+$ BUNDLE_WITHOUT="none" convox start
+build    │ running: docker build --build-arg BUNDLE_WITHOUT="none" -f /home/aj/git/convox/convox-examples/rails/Dockerfile -t rails/web /home/aj/git/convox/convox-examples/rails
 [...]
 ```
 
@@ -56,7 +56,7 @@ Note: Build arguments defined in `.env` supersede values in the host environment
 You can send a value (or set an empty value, as below) to be applied during remote builds on your Rack by setting it with `convox env`:
 
 ```
-$ convox env set BUNDLE_WITHOUT= --promote
+$ convox env set BUNDLE_WITHOUT=none --promote
 $ convox deploy
 ```
 
