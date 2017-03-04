@@ -23,4 +23,4 @@ Running this command will create a default `Dockerfile` and `docker-compose.yml`
 
 These files are generated to take advantage of Heroku's open-source buildpacks. To read more about how that works, check out the [convox init reference](/docs/command-convox-init/).
 
-If you'd rather write your own files or already use Docker in your application, refer to the [`docker-compose.yml`](/docs/docker-compose-file/) and [`Dockerfile`](/docs/dockerfile/) references to see how they work with Convox.
+If you'd rather write your own files or already use Docker in your application, refer to the [Docker Compose File](/docs/docker-compose-file/) and [Dockerfile](/docs/dockerfile/) references to see how they work with Convox.
