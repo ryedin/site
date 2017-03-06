@@ -20,15 +20,15 @@ Also note that forks from private repos in unauthorized GitHub organizations wil
 
 ### Write permissions
 
-We are currently requesting `user:email`, `admin:repo_hook` and `repo` scope.
+We are currently requesting `user:email`, `admin:repo_hook` and `repo` OAuth scope.
 
 We request `repo` scope so we can:
 
-- List all your repositories for easy selection in the integration and workflow builder tools
-- Query a repo branch to make sure other required status checks pass before running a workflow
-- Pull code to build Docker images during a workflow
+- List all your repositories for easy selection in the integration and Workflow builder tools
+- Query a repo branch to make sure other required status checks pass before running a Workflow
+- Pull code to build Docker images during a Workflow
 
-Unfortunately, `repo` scope also includes write permissions. Therefore, according to our current understanding of the GitHub OAuth feature, it's not currently possible to grant us read-only access to your repos.
+Unfortunately, `repo` scope also includes write permissions, but Convox does not write to your repositories.
 
 **We do not write to your GitHub repositories in any case.**
 
