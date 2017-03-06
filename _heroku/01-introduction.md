@@ -104,17 +104,6 @@ Other parts are similar, but represent more significant changes to your apps:
   </thead>
   <tbody>
     <tr>
-      <td>Dependencies</td>
-      <td>
-        <div>Cedar Stack Image</div>
-        <div>Buildpacks</div>
-      </td>
-      <td>
-        <div>Docker Base Image</div>
-        <div>Dockerfile</div>
-      </td>
-    </tr>
-    <tr>
       <td>Manifest</td>
       <td>
         <div>Procfile</div>
@@ -215,57 +204,19 @@ Creating app python-getting-started... CREATING
 
 If you don't have Convox set up in your AWS account, refer to the [Getting Started](http://localhost/docs/getting-started/) doc.
 
-## Dependencies
+Convox uses Heroku's buildpacks to build images for apps. The `convox init` command will generate a Dockerfile to describe how to build your app with the appropriate buildpack.
 
-<table class="vs">
-  <thead>
-    <tr>
-      <th>Heroku</th>
-      <th>Convox</th>
-    </tr>
-  </thead>
-  <tr>
-    <td>
-      Heroku uses <b>buildpacks</b> to package application code and dependencies into a <b>slug</b>.
-    </td>
-    <td>
-      Convox uses <b>Dockerfiles</b> to package an app into <b>images</b>.
-    </td>
-  </tr>
-</table>
+To get started, run:
 
-First we have to add a `Dockerfile` to our Heroku app.
-
-We prefer to write a Dockerfile from scratch that builds the application. This will result in a build recipe that is simple to understand and modify over the life of our application.
-
-For some apps this is straightforward. On the example app we can change to a modern Linux operating system, install the build dependencies with standard tooling, and run standard build steps in a few lines of code and no changes to the app.
-
-<pre class="file dockerfile" title="Dockerfile">
-FROM ubuntu:16.04
-
-RUN apt-get update && apt-get install -y libpq-dev python python-pip
-
-WORKDIR /app
-
-COPY requirements.txt /app/requirements.txt
-RUN pip install -r requirements.txt --disable-pip-version-check
-
-COPY . ./app
-</pre>
-
-<pre class="terminal">
-<span class="command">docker build .</span>
-Sending build context to Docker daemon 184.8 kB
-Step 1 : FROM ubuntu:16.04
-Step 2 : RUN apt-get update && apt-get install -y libpq-dev python python-pip
-Step 3 : WORKDIR /app
-Step 4 : COPY requirements.txt /app/requirements.txt
-Step 5 : RUN pip install -r requirements.txt --disable-pip-version-check
-Step 6 : COPY . /app
-Successfully built 21389aff49d2
-</pre>
-
-For other apps this could be hard due to the specifics of the Heroku runtime, assumptions in the buildpacks and nuances of Docker tooling. See the [Building a Heroku App with Docker](/guide/heroku/docker/) guide for ways to better emulate Heroku.
+```
+$ convox init
+Updating convox/init... OK
+Initializing a python app
+Building app metadata. This could take a while... OK
+Writing docker-compose.yml... OK
+Writing Dockerfile... OK
+Writing .dockerignore... OK
+```
 
 ## Manifest (service definitions)
 
@@ -286,50 +237,31 @@ For other apps this could be hard due to the specifics of the Heroku runtime, as
   </tr>
 </table>
 
-Next we have to add a `docker-compose.yml` file to our Convox app. Every process type and command in `Procfile` is added as a service and command to `docker-compose.yml`.
+The previous `convox init` command also generated `docker-compose.yml` file to our Convox app. Every process type and command in `Procfile` is added as a service and command to `docker-compose.yml`.
 
 <pre class="file yaml" title="docker-compose.yml">
-version: 2
+version: "2"
 services:
+  database:
+    image: convox/postgres
+    ports:
+    - 5432/tcp
+    volumes:
+    - /var/lib/postgresql/data
   web:
-    build: .
+    build:
+      context: .
     command: gunicorn gettingstarted.wsgi --log-file -
+    environment:
+    - PORT=4001
+    labels:
+      convox.port.443.protocol: tls
+    links:
+    - database
+    ports:
+    - 80:4001/tcp
+    - 443:4001/tcp
 </pre>
-
-## Ports
-
-<table class="vs">
-  <thead>
-    <tr>
-      <th>Heroku</th>
-      <th>Convox</th>
-    </tr>
-  </thead>
-  <tr>
-    <td>
-      Heroku uses a single <b>port assignment</b> and sets a <p>$PORT environment variable</p> that your app must bind to.
-    </td>
-    <td>
-      Convox uses multiple <b>port mappings</b> that your app must bind to.
-    </td>
-  </tr>
-</table>
-
-Next we have to add port mapping to our Convox app.
-
-<pre class="file yaml" title="docker-compose.yml">
-<span class="diff-u">version: 2</span>
-<span class="diff-u">services:</span>
-<span class="diff-u">  web:</span>
-<span class="diff-u">    build: .</span>
-<span class="diff-u">    command: gunicorn gettingstarted.wsgi --log-file -</span>
-<span class="diff-a">    ports:</span>
-<span class="diff-a">      - 80:8000</span>
-</pre>
-
-Convox uses virtual networking which allows every process to bind to whatever port(s) it wants. So we add a port mapping that says we want public-facing port `80` to map to the `gunicorn` server's port `8000`.
-
-See the [Port Mapping](/docs/port-mapping/) doc for more information.
 
 ## Deploying
 
@@ -337,29 +269,33 @@ Now our app can be deployed to Convox:
 
 <pre class="terminal">
 <span class="command">convox deploy</span>
+$ convox deploy
 Deploying python-getting-started
 Creating tarball... OK
-Uploading: 70.30 KB / 70.12 KB [=========================] 100.25 % 0s
-
+Uploading: 9.56 KB / 9.39 KB [===========================] 101.84 % 0s
 Starting build... OK
-running: docker build
-Sending build context to Docker daemon 184.8 kB
-Step 1 : FROM ubuntu:16.04
+running: docker build -f /tmp/407003531/Dockerfile -t python-getting-started/web /tmp/407003531
+Sending build context to Docker daemon 46.08 kB
+Step 1 : FROM heroku/cedar
 ...
-Successfully built b0acccdaa320
+Successfully built d9c7f075f169
 
 running: docker tag 
 running: docker push 
-web.BLEWKYOZMOV: digest: sha256:514ad420 size: 7865
 
-Promoting RQZVCPKHSIT... OK
+web.BXMCXIIFZSQ: digest: sha256:62815bd42414f508c7ce326a42dbc7df484beaf175ee5581ef7c0fda36dad21a size: 1994
+Release: RRYXNKQRAPD
+Promoting RRYXNKQRAPD... UPDATING
 
 <span class="command">convox apps info</span>
+$ convox apps info python-getting-started
 Name       python-getting-started
 Status     running
-Release    RQZVCPKHSIT
-Processes  web
-Endpoints  python-w-OMR6OMC-1706078211.us-east-1.elb.amazonaws.com:80 (web)
+Release    RRYXNKQRAPD
+Processes  database web
+Endpoints  internal-python-getting-started-AT3UMZ4-i-500316325.us-east-1.elb.amazonaws.com:5432 (database)
+           python-getting-started-w-IC7MLNI-1004687141.us-east-1.elb.amazonaws.com:80 (web)
+           python-getting-started-w-IC7MLNI-1004687141.us-east-1.elb.amazonaws.com:443 (web)
 </pre>
 
 Sure enough, our app is available at the endpoint.
@@ -383,7 +319,7 @@ Sure enough, our app is available at the endpoint.
   </tr>
 </table>
 
-The final step is to add a database to our Convox app. There are two strategies.
+The previous step deployed a database container. A containerized database is good for development and verification purposes, but in production we'll want a "real" hosted database. There are two strategies.
 
 #### Reuse Heroku Addons
 
@@ -441,6 +377,14 @@ pg_restore: creating TABLE "public.auth_group"
 pg_restore: creating SEQUENCE "public.auth_group_id_seq"
 ...
 </pre>
+
+### Scale Down Database Containers
+
+Now that we've got a real database set up, we'll want to scale down the database container so that we're not running unnecessary resources. Scaling the container to a count of -1 will also deprovision its load balancer, saving us money on our AWS bill.
+
+```
+$ convox scale database --count=1
+```
 
 ### Next Steps
 
