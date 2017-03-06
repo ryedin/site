@@ -7,34 +7,6 @@ By default, `convox build` processes run in a Rack just like other application p
 
 Convox offers advanced options that can improve the speed, throughput and security of builds.
 
-### Build Artifact Caching
-
-App language dependency management tools like [Ruby's Bundler](http://bundler.io/) and [Python PIP](https://pypi.python.org/pypi/pip) take care to reuse packages that have already been built and installed.
-
-Docker builds, however, are stateless and implement their own [image caching](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#/build-cache) which ends up having to rebuild all dependencies on any `Gemfile` change.
-
-Convox offers a convention to get the optimal dependency management behavior.
-
-After a `convox build`, any files in `/var/cache/build` are extracted and saved to an archive in S3. At the beginning of the next `convox build`, this archive is downloaded and extracted to a `.cache/` directory in the app source code.
-
-You can then instruct Docker to use the artifacts from the last build and update them for the next build by:
-
-```Dockerfile
-COPY Gemfile      /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
-COPY .cache/build/gems /var/cache/build/gems
-RUN bundle install --path /var/cache/build/gems
-```
-
-This convention is also usable with Buildpacks:
-
-```Dockerfile
-RUN cd /tmp && git clone https://github.com/heroku/heroku-buildpack-ruby
-COPY . /app
-COPY .cache/build/gems /var/cache/build/gems
-RUN /tmp/heroku-buildpack-ruby/bin/compile /app /var/cache/build/gems
-```
-
 ### Dedicated Build Instance
 
 If you'd like to segregate builds from apps or just need better build performance, you can configure a dedicated build instance that will give more CPU, memory and caching to builds.
