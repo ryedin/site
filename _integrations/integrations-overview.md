@@ -13,6 +13,7 @@ You're by no means limited to the services above. We invite you to submit a requ
 
 ## See also
 
+* [Console: Integrations](/docs/integrations)
 * [Connecting to a Rack](/docs/connecting-to-a-rack/)
 * [Workflows](/docs/workflows/)
 
