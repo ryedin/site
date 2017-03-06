@@ -74,8 +74,8 @@ See [Installing the Convox CLI](/docs/installation/) and [API Keys](/docs/api-ke
 
 #### Clone a sample application
 
-    $ git clone https://github.com/convox-examples/rails
-    $ cd rails
+    $ git clone https://github.com/convox-examples/rails5
+    $ cd rails5
 
 #### Create an app in your Rack
 
@@ -110,7 +110,7 @@ Now that you've deployed your first application you can:
 * Create a production database like [Postgres](/docs/postgresql/) and link it to your app
 * [Prepare and deploy more of your own apps](/docs/preparing-an-application/)
 * Grant your team members [access](/docs/access-control) to your organization
-* Set up Continuous Delivery [workflows](/docs/workflows)
+* Set up Continuous Delivery [Workflows](/docs/workflows)
 * Install another Rack for isolated development or staging deployments
 
 Or you can easily [uninstall everything](/docs/uninstalling-convox/) you just experimented with.

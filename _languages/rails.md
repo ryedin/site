@@ -10,24 +10,18 @@ Go to your local source directory and run `convox init`:
 
     $ cd ~/myapp
     $ convox init
-    Initializing rails...
-    Writing Dockerfile... OK
+    Updating convox/init... OK
+    Initializing a ruby app
+    Building app metadata. This could take a while... OK
     Writing docker-compose.yml... OK
+    Writing Dockerfile... OK
     Writing .dockerignore... OK
-
-See [Preparing an Application](/docs/preparing-an-application) for more details.
+    Writing .gitignore... EXISTS
+    Writing .env... OK
 
 ## What's Included
 
-The Convox-generated `Dockerfile` and `docker-compose.yml` will set up the following:
-
-#### bin/web
-
-This wrapper script will be created to assist in booting your application. You can find the source [here](https://github.com/convox/rails/blob/master/bin/web).
-
-#### nginx
-
-Nginx is included in your application to buffer incoming connections and inject proper headers to incoming HTTPS requests. You can find the configuration [here](https://github.com/convox/rails/blob/master/conf/nginx.conf).
+The Convox-generated `Dockerfile` and `docker-compose.yml` will give you a good starting configuration that leverages Heroku's open-source [ruby buildpack](https://github.com/heroku/heroku-buildpack-ruby) to build your application.
 
 ## Running the Application
 
