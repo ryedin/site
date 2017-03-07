@@ -74,3 +74,7 @@ $ convox builds export <build ID> -a <app1> --rack <rack1> | convox builds impor
 ## Build arguments
 
 Convox respects the `ARG` Dockerfile directive. For more information, see [Dockerfile: ARG](/docs/dockerfile/#arg).
+
+## Incremental builds
+
+Every invocation of `convox build` uploads a tarball containing all of a project's files to your Rack, no matter how many of the files in the build context actually changed. To optimize how these files are uploaded, run `convox build --incremental` to upload the files to S3, where they remain cached. Subsequent incremental builds will upload only those files which differ from those in the preceding incremental build. This will significantly reduce the amount of data uploaded, meaning your Rack can begin building an image much sooner.
