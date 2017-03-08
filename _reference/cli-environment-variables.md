@@ -28,6 +28,9 @@ Location of Convox config directory.
 
 Makes `convox` produce more verbose output.
 
+| Default behavior      | `false`                    |
+| Supported values      | `1`, `true` / `0`, `false` |
+
 ## `CONVOX_EMAIL`
 
 Email address to receive project updates.
@@ -50,6 +53,9 @@ _* or Rack API key, if you're logging directly into a Rack._
 
 Setting `CONVOX_WAIT` to a truthy value (`true`, `True`, `1`, etc) will cause relevant commands (`convox deploy`, `convox apps create`, etc) to behave as if the `--wait` flag had been provided; that is, they will wait for the operation to complete before returning.
 
+| Default behavior      | `false`                    |
+| Supported values      | `1`, `true` / `0`, `false` |
+
 ## `PASSWORD`
 
 Private registry password for the [`convox registries`](/docs/private-registries) command (overridden by `--password`).
@@ -65,6 +71,9 @@ Instance type for a dedicated build cluster to create when running `convox insta
 ## `RACK_PRIVATE`
 
 Make Racks private by default when running `convox install` (overridden by `--private`).
+
+| Default behavior      | `false`                    |
+| Supported values      | `1`, `true` / `0`, `false` |
 
 ## `STACK_NAME`
 
