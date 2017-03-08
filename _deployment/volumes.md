@@ -9,6 +9,19 @@ You can use Docker volumes to share data between application processes and persi
 
 Convox uses a network filesystem backed by [Amazon EFS](https://aws.amazon.com/efs/) that is shared among all of the instances in your Rack.
 
+<div class="block-callout block-show-callout type-warning" markdown="1">
+This is only possible in AWS regions that support Elastic File System (EFS). As of the time of this writing, the following regions are supported:
+
+- EU West 1 (Ireland)
+- US East 1 (N. Virginia)
+- US East 2 (Ohio)
+- US West 2 (Oregon)
+
+To check whether EFS is available in a given region, select your region from the dropdown in [the EFS section in the AWS console](https://console.aws.amazon.com/efs/home).
+
+Volumes on deployments into other regions will not persist or be shared across instances.
+</div>
+
 ## Sharing Data
 
 You can mount a shared volume by specifying a container path in the `volumes:` section of your `docker-compose.yml`: 
