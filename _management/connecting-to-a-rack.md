@@ -5,7 +5,7 @@ order: 375
 
 In some cases you may need to find the Rack's hostname or API key. Those are needed for things like:
 
-* adding a Rack to Console
+* [adding an existing Rack to Console](/docs/adding-an-existing-rack)
 * authenticating API requests sent directly to the rack (not through Console)
 * setting up a [third-party integration](/docs/integrations-overview)
 
