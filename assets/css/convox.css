@@ -2384,3 +2384,18 @@ img + em {
   padding: 15% 50px 25%;
   text-align: center;
 }
+
+
+/*
+ *
+ * Anchor offset for compatibility with fixed header
+ * http://stackoverflow.com/a/28824157
+ *
+ */
+
+:target:before {
+  content: "";
+  display: block;
+  height: 90px;
+  margin: -90px 0 0;
+}
