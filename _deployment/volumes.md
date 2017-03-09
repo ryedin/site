@@ -19,7 +19,7 @@ This is only possible in AWS regions that support Elastic File System (EFS). As 
 
 To check whether EFS is available in a given region, select your region from the dropdown in [the EFS section in the AWS console](https://console.aws.amazon.com/efs/home).
 
-Volumes on deployments into other regions will not persist or be shared across instances.
+Volumes used in regions without EFS will not persist or be shared across instances.
 </div>
 
 ## Sharing Data
