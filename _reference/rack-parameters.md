@@ -21,7 +21,6 @@ The following parameters can be used to configure your Convox Rack:
 * [ApiMemory](#apimemory)
 * [Autoscale](#autoscale)
 * [BuildCpu](#buildcpu)
-* [BuildImage](#buildimage)
 * [BuildInstance](#buildinstance)
 * [BuildMemory](#buildmemory)
 * [ClientId](#clientid)
@@ -79,12 +78,6 @@ Autoscale rack instances. See our [Scaling doc](/docs/scaling#autoscale) for mor
 How much CPU should be allocated to builds.
 
 | Default value | `0` |
-
-## BuildImage
-
-Override the default build image.
-
-| Default value | "" |
 
 ## BuildInstance
 
