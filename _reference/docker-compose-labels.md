@@ -6,6 +6,7 @@ Convox uses [Docker Compose Labels](https://docs.docker.com/compose/compose-file
 
 <pre>
 labels:
+  - <a href="#convoxagent">convox.agent</a>
   - <a href="#convoxbalancer">convox.balancer</a>
   - <a href="#convoxcron">convox.cron.&lt;task name&gt;</a>
   - <a href="#convoxdeployment">convox.deployment.maximum</a>
@@ -20,6 +21,15 @@ labels:
   - <a href="#convoxport">convox.port.&lt;number&gt;.secure</a>
   - <a href="#convoxstart">convox.start.shift</a>
 </pre>
+
+## convox.agent
+
+The `convox.agent` label allows you to run one process of a service per instance in your cluster. This common pattern is used by popular software like New Relic Infrastructure and DataDog to collect metrics from all of your cloud servers.
+
+    labels:
+      - convox.agent=true
+
+See [github.com/convox-examples/dd-agent](https://github.com/convox-examples/dd-agent) for an example of an app you might run as an agent.
 
 ## convox.balancer
 
