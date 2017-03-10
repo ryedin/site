@@ -29,7 +29,7 @@ Location of Convox config directory.
 Makes `convox` produce more verbose output.
 
 | Default behavior      | `false`                    |
-| Supported values      | `1`, `true` / `0`, `false` |
+| Supported values      | `1`, `true`, `0`, `false`  |
 
 ## `CONVOX_EMAIL`
 
@@ -54,7 +54,7 @@ _* or Rack API key, if you're logging directly into a Rack._
 Setting `CONVOX_WAIT` to a truthy value (`true`, `True`, `1`, etc) will cause relevant commands (`convox deploy`, `convox apps create`, etc) to behave as if the `--wait` flag had been provided; that is, they will wait for the operation to complete before returning.
 
 | Default behavior      | `false`                    |
-| Supported values      | `1`, `true` / `0`, `false` |
+| Supported values      | `1`, `true`, `0`, `false`  |
 
 ## `PASSWORD`
 
