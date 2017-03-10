@@ -73,7 +73,7 @@ Instance type for a dedicated build cluster to create when running `convox insta
 Make Racks private by default when running `convox install` (overridden by `--private`).
 
 | Default behavior      | `false`                    |
-| Supported values      | `1`, `true` / `0`, `false` |
+| Supported values      | `1`, `true`, `0`, `false` |
 
 ## `STACK_NAME`
 
