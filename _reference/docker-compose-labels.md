@@ -24,7 +24,7 @@ labels:
 
 ## convox.agent
 
-The `convox.agent` label allows you to run one process of a service per instance in your cluster. This common pattern is used by popular software like New Relic Infrastructure and DataDog to collect metrics from all of your cloud servers.
+The `convox.agent` label allows you to run one process of a service per instance in your cluster, scheduled continuously by a Lambda process. This common pattern is used by popular software like New Relic Infrastructure and DataDog to collect metrics from all of your cloud servers.
 
     labels:
       - convox.agent=true
