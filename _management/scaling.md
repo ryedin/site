@@ -91,3 +91,15 @@ Every minute, your Rack runs an autoscale calculation to determine how many inst
 During a deployment, the calculation gets more nuanced, since processes from an old release and a new release will temporarily run at the same time. This is known as a rolling deployment or [rolling update](/docs/rolling-updates). In ECS terms, this translates to having tasks from both the primary (new) deployment of each service and the active deployment (the one being replaced) of each service running at the same time. Autoscaling will take into account the number of instances needed to run the processes from both releases, i.e. the tasks in both primary and active ECS service deployments.
 
 When a deployment finishes, the old ECS tasks get terminated, and autoscale scales the Rack back down to the original instance count. This scaling down happens gradually--one instance at a time, every 5 minutes--to give ECS time to rebalance tasks across the instances in your cluster.
+
+##### Why does my Rack keep autoscaling?
+
+If your Rack shows more autoscaling activity than expected, there are a few possible explanations.
+
+First, note that any services with open ports you have running at scale of `n` will result in `n+1` instances. This is to allow for rolling deployments.
+
+If your instance count still seems higher than it should be, check the [ECS Tasks list](https://console.aws.amazon.com/ecs/home) and check for any Tasks which seem stuck in "pending." If so, are they all pending on the same instance? If so, terminate that instance (`convox instances terminate <instance id>`) and let it get replaced.
+
+You can also look for anomalies in the Rack's autoscaling log events with `convox rack logs --filter=autoscale`.
+
+Note: autoscaling does not yet take the subtleties of [deployment minimum/maximum](https://convox.com/docs/docker-compose-labels/#convoxdeployment) into account.
