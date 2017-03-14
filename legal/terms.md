@@ -1,4 +1,6 @@
-# Convox Console Terms of Use
+---
+title: Convox Console Terms of Use
+---
 
 Last updated UPDATED.  You can review changes to these terms at
 <https://github.com/convox/console-terms/commits/master/terms.md>.
