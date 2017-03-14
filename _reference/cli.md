@@ -143,6 +143,18 @@ To set this up on OS X with Homebrew, save the convox autocomplete helper in the
 then add an autocomplete initializer `~/.bash_profile`:
 
     echo "source $(brew --prefix)/etc/bash_completion.d/convox" >> "$HOME/.profile"
+    
+For `zsh`, then add the following to your `.zshrc`:
+
+    autoload -U compinit && compinit
+    autoload -U bashcompinit && bashcompinit
+    source $(brew --prefix)/etc/bash_completion.d/convox
+    
+You may need to change the first line of the bash completion script to:
+
+    : ${PROG:=$(basename $0)}
+
+as well for `zsh` 
 
 ### Debian-based Linux distributions
 
@@ -182,4 +194,13 @@ or
 
     PS1+="[$(__convox_switch)] "
     export PS1
+
+If using `zsh` and PowerLevel9K you can use a similar function to define a custom command as per: https://github.com/bhilburn/powerlevel9k#custom_command
+
+    convox_rack(){
+      [ -e ~/.convox/rack ] && convox switch || echo unknown;
+    }
+
+    POWERLEVEL9K_CUSTOM_CONVOX_RACK="convox_rack"
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon time root_indicator context dir custom_convox_rack rbenv vcs)
 
