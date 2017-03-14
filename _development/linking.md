@@ -52,7 +52,7 @@ Here is an example of what those actually look like with the `convox/postgres` i
 	DATABASE_PASSWORD=password
 	DATABASE_PATH=/app
 	DATABASE_PORT=5432
-	DATABASE_SCHEME=redis
+	DATABASE_SCHEME=postgres
 	DATABASE_URL=postgres://postgres:password@postgres-i-191910196.us-east-1.elb.amazonaws.com:5432/app
 	DATABASE_USERNAME=postgres
 
