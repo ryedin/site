@@ -98,8 +98,6 @@ If your Rack shows more autoscaling activity than expected, there are a few poss
 
 First, note that any services with open ports you have running at scale of `n` will result in `n+1` instances. This is to allow for rolling deployments.
 
-If your instance count still seems higher than it should be, check the [ECS Tasks list](https://console.aws.amazon.com/ecs/home) and check for any Tasks which seem stuck in "pending." If so, are they all pending on the same instance? If so, terminate that instance (`convox instances terminate <instance id>`) and let it get replaced.
+Autoscaling does not yet take the subtleties of [deployment minimum/maximum](https://convox.com/docs/docker-compose-labels/#convoxdeployment) into account. For example: a `web` service listening on port 80 with a scale count of 3 will still require 4 instances, even if it has `convox.deployment.minimum=50` set.
 
 You can also look for anomalies in the Rack's autoscaling log events with `convox rack logs --filter=autoscale`.
-
-Note: autoscaling does not yet take the subtleties of [deployment minimum/maximum](https://convox.com/docs/docker-compose-labels/#convoxdeployment) into account.
