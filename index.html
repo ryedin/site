@@ -3,176 +3,206 @@ layout: base
 title: Convox
 ---
 
-<header id="index">
+<header>
   <div class="container">
-    <div class="row">
+    <div class="row margin-bottom-2">
       <div class="col-xs-12 col-sm-12">
-        <div class="intro-text">
-          <span class="name">You made it.</span>
-          <div class="name-desc">
-            <p>Convox is the development and deployment platform that makes the cloud simple.</p>
-      <hr/>
-          </div>
-        </div>
-        <ul class="actions">
-          <li><a href="//vimeo.com/190645705" data-lity class="how-it-works">See&nbsp;How&nbsp;It&nbsp;Works</a></li>
-        </ul>
-        <div class="short-desc sign-up">
-          <div class="row" style="margin-bottom: 20px;">
-            <a id="sign_up" href="/signup" class="cta btnshadow orange_button">Sign Up For Free</a>
-          </div>
-        </div>
+        <h1><em>Build apps</em><br>not infrastructure</h1>
+        <p class="subheading">Convox makes the cloud simple.</p>
       </div>
     </div>
+    <div class="row">
+      <div class="actions col-xs-12">
+        <a href="//vimeo.com/190645705" data-lity class="button hollow shadow">See How It Works</a>
+        <a id="sign_up" href="/signup" class="button orange brighten shadow">Get Started For Free</a>
+      </div>
+    </div>
+
   </div>
 </header>
 
-<section>
+<section class="solution lane contrast">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4>Convox is the cloud solution you would have built.</h4>
+        <h2 class="margin-top-0 margin-bottom-6 text-center">Convox is the cloud solution you would have built.</h2>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        One CLI to develop, deploy and scale.<br />
-        <br />
-        $ convox start<br />
-        $ convox deploy<br />
-        $ convox scale<br />
-      </div>
-      <div class="col-md-4">
-        One configuration for dev, test, and prod workflows.<br />
-        <br />
-        [ Manifest image ]
-      </div>
-      <div class="col-md-4">
-        One click integrations with all of your favorite services.<br />
-        <br />
-        [ Logos: GitHub, Slack, Bitbucket, AWS ]
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alternate">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h4>Convox lets you focus on your applications.</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        Instant PCI and HIPAA
-      </div>
-      <div class="col-md-4">
-        Keep up with the ever-changing AWS landscape with no effort.
-      </div>
-      <div class="col-md-4">
-        Run an efficient, cost-effective infrastructure with no arduous planning.
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h4>Convox delivers 100% uptime with 0 upkeep.</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        Launch once, run forever.
-      </div>
-      <div class="col-md-4">
-        Automatic application health checks, failover, and alerts.
-      </div>
-      <div class="col-md-4">
-        Superior technical support from engineers who know the system.
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alternate">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h3>End your search. Get started with Convox now.</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="trusted-client">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-sm-12">
-        <h3>You're in good company.</h3>
-      </div>
-      <div class="col-lg-9 col-sm-12 text-center thumbnails">
-        <div>
-          <img src="/assets/images/shyp.png" alt="Shyp" class="img-responsive">
+    <div class="row text-center">
+      <div class="visual-group col-md-4">
+        <div class="visual terminal shadow">
+          <div class="bar">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+          <div class="scrollback">
+            <div class="command">convox start</div>
+            <div class="output">database │ accepting connections</div>
+            <div class="output">web      │ listening on port 3000</div>
+            <div class="output">&nbsp;</div>
+            <div class="command">convox deploy</div>
+            <div class="output">Deploying example-app</div>
+            <div class="output">Release: ROBMXCHERNN</div>
+            <div class="output">Promoting ROBMXCHERNN... UPDATING</div>
+            <div class="output">&nbsp;</div>
+            <div class="command">convox scale</div>
+            <div class="output">NAME      DESIRED  RUNNING  CPU  MEMORY</div>
+            <div class="output">web       3        3        0    512</div>
+            <div class="output">database  1        1        0    1024</div>
+          </div>
         </div>
-        <div>
-          <img src="/assets/images/opendoor.png" alt="OpenDoor" class="img-responsive">
+        <p class="caption">Develop, deploy, and scale with <a href="#">one CLI</a>.</p>
+      </div>
+      <div class="visual-group col-md-4">
+        <div class="visual file shadow">
+          <div class="line"><span class="key">version</span> '2'</div>
+          <div class="line"><span class="key">services</span></div>
+          <div class="line">  <span class="key">web</span></div>
+          <div class="line">    <span class="key">build</span> .</div>
+          <div class="line">    <span class="key">environment</span></div>
+          <div class="line">      - RAILS_ENV</div>
+          <div class="line">    <span class="key">links</span></div>
+          <div class="line">      - database</div>
+          <div class="line">    <span class="key">ports</span></div>
+          <div class="line">      - 80:3000</div>
+          <div class="line">  <span class="key">database</span></div>
+          <div class="line">    <span class="key">image</span> convox/postgres</div>
+          <div class="line">    <span class="key">ports</span></div>
+          <div class="line">      - 5432</div>
+          <div class="line">    <span class="key">volumes</span></div>
+          <div class="line">      - /var/lib/postgresql/data</div>
         </div>
-        <div>
-          <img src="/assets/images/doordash.png" alt="DoorDash" class="img-responsive">
-        </div>
-        <div>
-          <img src="/assets/images/podium.png" alt="Podium" class="img-responsive">
-        </div>
-        <div>
-          <img src="/assets/images/cloudwalk.png" alt="Cloudwalk" class="img-responsive">
-        </div>
-        <div>
-          <img src="/assets/images/statflo.png" alt="Statflo" class="img-responsive">
-        </div>
-        <div>
-          <img src="/assets/images/fixd.png" alt="Fixd" class="img-responsive">
-        </div>
-        <div>
-          <img src="/assets/images/havenlife.png" alt="Haven Life" class="img-responsive">
-        </div>
+        <p class="caption">Configure dev, test, and prod with <a href="#">one file</a>.</p>
+      </div>
+      <div class="visual-group col-md-4">
+        <table class="visual integrations shadow table table-striped">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Integration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AWS</td>
+              <td>
+                <button type="button" class="btn btn-success btn-xs">Enabled</button>
+                <button type="button" class="btn btn-default btn-xs">Details</button>
+              </td>
+            </tr>
+            <tr>
+              <td>GitHub</th>
+              <td><button type="button" class="btn btn-default btn-xs">Enable</button></td>
+            </tr>
+            <tr>
+              <td>GitLab</th>
+              <td><button type="button" class="btn btn-default btn-xs">Enable</button></td>
+            </tr>
+            <tr>
+              <td>Slack</th>
+              <td><button type="button" class="btn btn-default btn-xs">Enable</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="caption">Integrate with <a href="#">one click</a>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonial Section -->
-<section class="testimonials">
+<section class="lane focus alternate">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-sm-12 text-center">
+      <div class="col-xs-12 text-center">
+        <h2 class="margin-top-0 margin-bottom-4">Convox lets you focus on your applications.</h2>
+      </div>
+    </div>
+    <div class="benefits row alternate">
+      <div class="benefit a shadow flex-xs-12 flex-sm-6">
+        <div class="decoration">
+          <i class="material-icons">check</i>
+        </div>
+        <div class="description">
+          <p>Get instant PCI and HIPAA <a href="#">compliance</a>.</p>
+        </div>
+      </div>
+      <div class="benefit b shadow flex-xs-12 flex-sm-6" class="read-more">
+        <div class="decoration">
+          <i class="material-icons">directions_run</i>
+        </div>
+        <div class="description">
+          <p>Easily <a href="#">keep up</a> with the ever-changing AWS landscape.</p>
+        </div>
+      </div>
+      <div class="benefit c shadow flex-xs-12 flex-sm-6" class="read-more">
+        <div class="decoration">
+          <i class="material-icons">security</i>
+        </div>
+        <div class="description">
+          <p>Rely on automatic <a href="#">security</a> updates.</p>
+        </div>
+      </div>
+      <div class="benefit d shadow flex-xs-12 flex-sm-6" class="read-more">
+        <div class="decoration">
+          <i class="material-icons">attach_money</i>
+        </div>
+        <div class="description">
+          <p>Run an efficient, <a href="#">cost-effective</a> infrastructure by default.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lane uptime">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2 class="margin-top-0">Convox delivers 100% uptime with zero upkeep.</h2>
+        <p>Receive top-notch support from engineers who know the system.</p>
+        <p>Get automatic health checks, failovers, and alerts.</p>
+        <p>Launch an app once, run it forever.</p>
+        <a id="sign_up" href="/signup" class="cta button orange brighten margin-top-1">Get Started Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="customers lane text-center alternate">
+  <div class="container">
+    <div class="row align-center">
+      <div class="col-xs-12">
+        <h2 class="margin-top-0">You're in good company.</h2>
+        <div class="logos">
+          <img src="/assets/images/cloudwalk.png" alt="Cloudwalk">
+          <img src="/assets/images/doordash.png" alt="DoorDash">
+          <img src="/assets/images/fixd.png" alt="Fixd">
+          <img src="/assets/images/havenlife.png" alt="Haven Life">
+          <img src="/assets/images/opendoor.png" alt="OpenDoor">
+          <img src="/assets/images/podium.png" alt="Podium">
+          <img src="/assets/images/shyp.png" alt="Shyp">
+          <img src="/assets/images/statflo.png" alt="Statflo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials lane text-center">
+  <div class="container">
+    <div class="row">
+      <div class="testimonial col-sm-4">
         <p>"Having Convox on board has freed up roughly 25% of our engineer's time every week. The level of service they provide is truly astounding."</p>
-        <span style="background-image: url('/assets/images/testimonial-generic.png');">Arthur Weagel, Podium</span>
+        <div class="attribution">Arthur Weagel, Podium</div>
       </div>
-      <div class="col-lg-4 col-sm-12 text-center">
+      <div class="testimonial col-sm-4">
         <p>"Convox has been instrumental in helping us enjoy the flexibility of AWS. Their support, product, and team are second to none."</p>
-        <span style="background-image: url('/assets/images/testimonial-generic.png');">Jamie Quint, Interstate Analytics</span>
+        <div class="attribution">Jamie Quint, Interstate Analytics</div>
       </div>
-      <div class="col-lg-4 col-sm-12 text-center">
+      <div class="testimonial col-sm-4">
         <p>"Deploying our scientific Python stack used to be a nightmare. Convox eliminates the stress and uncertainty of packaging our code for production."</p>
-        <span style="background-image: url('/assets/images/testimonial-generic.png');">Ian Wong, OpenDoor</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alternate">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        We write regularly about the latest in cloud trends and the latest in Convox on our Blog.
-      </div>
-      <div class="col-md-6">
-        Subscribe to Convox news and get the latest directly to your inbox.
-        [ Email box ] [ Subscribe ]
+        <div class="attribution">Ian Wong, OpenDoor</div>
       </div>
     </div>
   </div>

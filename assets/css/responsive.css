@@ -1,0 +1,274 @@
+/*
+ *
+ * Extra small (xs) devices
+ *
+ */
+@media (min-width: 0px) {
+  /*
+   *
+   * Global styles: flexbox-bootstrap hybrids
+   *
+   */
+
+  .flex-xs-6 {
+    width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .flex-xs-12 {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+
+  /*
+   *
+   * Global styles: baselines
+   *
+   */
+
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+/*
+ *
+ * Small (sm) devices
+ *
+ */
+@media (min-width: 768px) {
+  /*
+   *
+   * Global styles: flexbox-bootstrap hybrids
+   *
+   */
+
+  .flex-sm-6 {
+    width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .flex-sm-12 {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  /*
+   *
+   * Global styles: header
+   *
+   */
+
+  header .container {
+    padding-top: calc(70px + 7rem);
+    padding-bottom: calc(0px + 11rem);
+  }
+
+  header h1 {
+    font-size: 32pt;
+    letter-spacing: 0.5pt;
+  }
+
+  header h1 em {
+    font-size: 42pt;
+  }
+
+  header .actions .button {
+    margin: 0;
+    width: auto;
+  }
+
+  header .actions .button:first-of-type {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+  /*
+   *
+   * Global styles: buttons
+   *
+   */
+
+  .button {
+    font-size: 12pt;
+  }
+
+
+  /*
+   *
+   * Global styles: visual groups
+   *
+   */
+
+  .visual-group {
+    padding: 0 12rem;
+  }
+
+  .visual-group .visual {
+    margin-bottom: 4rem;
+  }
+
+  .visual-group .caption {
+    margin-bottom: 8rem;
+  }
+
+  .visual-group:last-of-type .caption {
+    margin-bottom: 0;
+  }
+
+  /*
+   *
+   * Global styles: sections
+   *
+   */
+
+  section.lane {
+    padding: 8rem 0;
+  }
+
+  section.testimonials .testimonial {
+    margin-bottom: 0;
+  }
+
+
+  /*
+   *
+   * Global styles: footer
+   *
+   */
+
+  footer .legal .items .copyright {
+    margin-right: auto;
+  }
+
+  footer .legal .items .privacy {
+    margin-right: 2rem;
+  }
+
+  /*
+   *
+   * Scoped styles: pricing
+   *
+   */
+
+  .pricing .plan-wrap {
+    margin-bottom: 0;
+  }
+
+
+  /*
+   *
+   * Utility: margin classes
+   *
+   */
+
+  .margin-bottom-0 { margin-bottom: 0; }
+  .margin-bottom-1 { margin-bottom: 2rem; }
+  .margin-bottom-2 { margin-bottom: 4rem; }
+  .margin-bottom-3 { margin-bottom: 6rem; }
+  .margin-bottom-4 { margin-bottom: 8rem; }
+  .margin-bottom-5 { margin-bottom: 10rem; }
+
+  .margin-top-0 { margin-top: 0; }
+  .margin-top-1 { margin-top: 2rem; }
+  .margin-top-2 { margin-top: 4rem; }
+  .margin-top-3 { margin-top: 6rem; }
+  .margin-top-4 { margin-top: 8rem; }
+  .margin-top-5 { margin-top: 10rem; }
+}
+
+
+/*
+ *
+ * Medium (md) devices
+ *
+ */
+@media (min-width: 992px) {
+  /*
+   *
+   * Global styles: nav
+   *
+   */
+
+  .navbar .navbar-nav li a {
+    padding: 5px 0 5px 25px;
+  }
+
+
+  /*
+   *
+   * Global styles: visual groups
+   *
+   */
+
+  .visual-group {
+    padding: 0 15px;
+  }
+
+  .visual-group .visual {
+    margin-bottom: 4rem;
+  }
+
+  .visual-group .caption {
+    margin-bottom: 0;
+  }
+
+
+  /*
+   *
+   * Scoped styles: docs
+   *
+   */
+
+  .docs #doc {
+    padding: 40px 15px 40px 40px;
+  }
+
+
+  /*
+   *
+   * Scoped styles: pricing
+   *
+   */
+
+  .pricing .plans {
+    box-shadow: inset 0 -377px 0 -10px rgb(247, 247, 247);
+    padding-top: 5rem;
+  }
+}
+
+
+/*
+ *
+ * Large (lg) devices
+ *
+ */
+@media (min-width: 1200px) {
+  /*
+   *
+   * Global styles: nav
+   *
+   */
+
+  .navbar .navbar-nav li a {
+    padding: 5px 0 5px 35px;
+  }
+
+
+  /*
+   *
+   * Global styles: assertions
+   *
+   */
+
+  .assertion {
+    margin-bottom: 0;
+  }
+}
