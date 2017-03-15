@@ -22,11 +22,11 @@ You may only access or use Convox Console by agreeing to these terms. If Convox 
 
 ## Changes
 
-Convox may change these terms in the future.  Convox will post changes to <https://console.convox.com/terms> with a new "last updated" date. If you have an Account, Convox will notify you of changes by e-mail to the address provided for your account, by a message on Convox Console, or both.  If you do not have an account, Convox may notify you of changes by a general announcement via Convox Console, but it is up to you to check for changes to these terms.  After receiving notice of changes to these terms, you must accept those changes to continue using Convox Console.  You accept changes to these terms by continuing to use Convox Console.  Convox may change, suspend, or discontinue Convox Console or any Service Plan at any time without notice or liability to you.
+Convox may change these terms in the future.  Convox will post changes to <https://convox.com/legal/terms> with a new "last updated" date. If you have an Account, Convox will notify you of changes by e-mail to the address provided for your account, by a message on Convox Console, or both.  If you do not have an account, Convox may notify you of changes by a general announcement via Convox Console, but it is up to you to check for changes to these terms.  After receiving notice of changes to these terms, you must accept those changes to continue using Convox Console.  You accept changes to these terms by continuing to use Convox Console.  Convox may change, suspend, or discontinue Convox Console or any Service Plan at any time without notice or liability to you.
 
 ## Convox Policies
 
-Convox respects your privacy and limits use and sharing of information about you collected by Convox Console. The Convox Console privacy policy at <https://console.convox.com/privacy> describes these policies.  Convox will abide by that privacy policy and honor the privacy settings that you choose via Convox Console.
+Convox respects your privacy and limits use and sharing of information about you collected by Convox Console. The Convox Console privacy policy at <https://convox.com/legal/privacy> describes these policies.  Convox will abide by that privacy policy and honor the privacy settings that you choose via Convox Console.
 
 ## Use of Convox Console
 
