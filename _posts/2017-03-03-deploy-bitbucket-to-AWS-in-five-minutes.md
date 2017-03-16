@@ -10,7 +10,7 @@ Most Convox users deploy apps that they develop in-house. A team of developers i
 
 ## Deploying a pre-built app
 
-We'd like to share an example of deploying just such an app--one with extensive and familiar functionality. With a few lines of YAML config and a couple Convox CLI commands, you can deploy [Bitbucket Server]() to a Convox Rack running in your AWS account and have it ready to demo in just a few minutes. Here's what it takes:
+We'd like to share an example of deploying just such an app--one with extensive and familiar functionality. With a few lines of YAML config and a couple Convox CLI commands, you can deploy [Bitbucket Server](https://www.atlassian.com/software/bitbucket/server) to a Convox Rack running in your AWS account and have it ready to demo in just a few minutes. Here's what it takes:
 
 
 1. Create a new directory called 'bitbucket-server'.
