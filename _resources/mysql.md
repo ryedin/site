@@ -40,6 +40,13 @@ You can add this URL to any application with `convox env set`:
 
     $ convox env set 'DATABASE_URL=mysql://mysql::)t[THpZ[wmCn88n,N(:@my1.cbm068zjzjcr.us-east-1.rds.amazonaws.com:3306/app' --app example-app
 
+## Resource Update
+
+You can change options like multi-zone availability with `convox resources update`:
+
+    $ convox resources update mysql-3785 --multi-az
+    Updating mysql-3785 (multi-az="true")...UPDATING
+
 ## Resource Deletion
 
 To delete the database, use the `convox resources delete` command:
