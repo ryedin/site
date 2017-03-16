@@ -42,7 +42,7 @@ You can add this URL to any application with `convox env set`:
 
 ## Resource Update
 
-You can change e.g. multi-zone availablitly with `convox resources update`:
+You can change options like multi-zone availability with `convox resources update`:
 
     $ convox resources update mysql-3785 --multi-az
     Updating mysql-3785 (multi-az="true")...UPDATING
