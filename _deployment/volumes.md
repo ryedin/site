@@ -3,14 +3,20 @@ title: "Volumes"
 order: 600
 ---
 
-You can use Docker volumes to share data between application processes and persist data across restarts. This is useful for applications like WordPress or Jenkins that need to store data on the filesystem.
+You can use Docker volumes to make data persist between runs of a given service's containers across restarts and instance replacements. This is useful for applications like WordPress or Jenkins that need to store data on the filesystem.
+
+<div class="block-callout block-show-callout type-warning" markdown="1">
+<b>Note:</b> It's not currently possible to share volumes between containers of different services in the same app.
+</div>
 
 ## Shared Filesystem
 
 Convox uses a network filesystem backed by [Amazon EFS](https://aws.amazon.com/efs/) that is shared among all of the instances in your Rack.
 
 <div class="block-callout block-show-callout type-warning" markdown="1">
-This is only possible in AWS regions that support Elastic File System (EFS). As of the time of this writing, the following regions are supported:
+### Supported Regions
+
+Shared volumes are only possible in AWS regions that support Elastic File System (EFS). As of the time of this writing, the following regions are supported:
 
 - EU West 1 (Ireland)
 - US East 1 (N. Virginia)
