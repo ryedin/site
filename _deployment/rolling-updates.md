@@ -5,7 +5,7 @@ order: 400
 
 When a Release is promoted, new processes are gracefully rolled out into production.
 
-If there are errors starting new processes, new processes are not verified as healthy, or the rollout doesn't complete in 10 minutes, an automatic rollback is performed.
+If there are errors starting new processes, new processes are not [verified as healthy](/docs/health-checks), or the rollout doesn't complete in 10 minutes, an automatic rollback is performed.
 
 The number of new processes started at a time is configurable so large apps can be fully rolled out in 10 minutes.
 
@@ -16,7 +16,7 @@ Rollouts and rollbacks do not cause any service downtime.
 A rollout coordinates starting new processes in a way that maintains service uptime and capacity. The basic flow is:
 
 * Start 1 new process
-* Verify new process is healthy
+* Verify new process is [healthy](/docs/health-checks)
 * Stop 1 old process
 * Repeat for all processes in the formation
 
@@ -36,35 +36,11 @@ Status     failed
 
 #### Health Checks
 
-If the Process does not [expose ports](/docs/port-mapping) it is considered healthy if it starts and doesn't immediately exit or crash.
-
-If the Process [exposes ports](/docs/port-mapping) is it considered healthy after it:
-
-* Registers behind a load balancer
-* Passes a network connection health check
-
-Common causes for not passing health checks are:
-
-* The cluster does not have sufficient memory or CPU resources available to start a new process
-* The cluster does not have sufficient instances where a new process port is not already reserved by an older release
-* A process crashes immediately after starting due to a problem in the latest code
-* A process takes too long to initialize its server and therefore fails a network health check
+For a rolling update to succeed, certain criteria must be met. For more information, see [Health Checks](/docs/health-checks).
 
 #### Configuring Deployment Parameters
 
-By default, a process must boot and pass the network health check in 3 seconds. If your app takes longer to boot, you may need to increase this to 60 seconds by adding a label:
-
-```yaml
-version: '2'
-  services:
-    web:
-      labels:
-        - convox.health.timeout=60
-      ports:
-        - 443:5000
-```
-
-See the [load balancers](/docs/load-balancers) doc for more information about configuring the timeout as well as setting a custom health check port and HTTP path.
+By default, a process must boot and pass the network health check in 3 seconds. (See the [Health Check](/docs/health-checks) doc for more information about configuring the timeout as well as setting a custom health check port and HTTP path.)
 
 By default, 100% of the processes on the old release stay running and the same number of processes on the new release will attempt to start at once. As new processes are deemed healthy, old ones will be stopped.
 

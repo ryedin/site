@@ -93,36 +93,7 @@ If no protocol label is specified, the default of `tcp` will be used.
 
 #### Health Check Options
 
-By default Convox will set up a `tcp` health check to your application. You can customize the health check by adding the following labels to your `docker-compose.yml` file.
-
-```
-web:
-  labels:
-      - convox.health.path=/_health
-      - convox.health.port=5000
-      - convox.health.timeout=3
-  ports:
-    - "443:5000"
-```
-<table>
-  <tr>
-    <th>Label</th>
-    <th>Notes</th>
-  </tr>
-  <tr>
-    <td><code>path</code></td>
-    <td>The endpoint the load balancer will use to determine the application's health.</td>
-  </tr>
-  <tr>
-    <td><code>port</code></td>
-    <td>This is the port that your container is set up to listen on, not the load balancer port.</td>
-  </tr>
-  <tr>
-    <td><code>timeout</code></td>
-    <td>The time in seconds after which no response means a failed health check. If the process fails 2 consecutive health checks it will be restarted. By default, the interval between health checks is this value plus 2.</td>
-  </tr>
-</table>
-
+By default Convox will set up a `tcp` health check to your application. For more information, see [Health Checks](/docs/health-checks).
 
 #### End-to-end encryption
 
