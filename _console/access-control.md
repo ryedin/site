@@ -32,7 +32,8 @@ You should give a Deploy Key to a CI service like CircleCI or Travis CI so it ca
 | --------------------------- | ------------ | ------------ | ---------------- |
 | Billing:Read                |              |              | X                |
 | DeployKey:Read              |              |              | X                |
-| Environment:Read            | X            | X            | X                |
+| Environment:Read            |              | X            | X                |
+| Environment:Write           |              | X            | X                |
 | Integration:Create          |              | X            | X                |
 | Organization:Delete         |              | X            | X                |
 | Organization:Read           | X            | X            | X                |
