@@ -29,6 +29,7 @@ The following parameters can be used to configure your Convox Rack:
 * [Development](#development)
 * [Encryption](#encryption)
 * [ExistingVpc](#existingvpc)
+* [HttpProxy](#httpproxy)
 * [InstanceBootCommand](#instancebootcommand)
 * [InstanceCount](#instancecount)
 * [InstanceRunCommand](#instanceruncommand)
@@ -143,6 +144,16 @@ Encrypt secrets with KMS.
 ## ExistingVpc
 
 Existing VPC ID (if blank, a VPC will be created).
+
+## HttpProxy
+
+HTTP proxy for outbound HTTP connections (for network-restricted Racks).
+
+Set this value to the hostname (or IP address) and port number of an HTTP proxy to use for the ECS agent to connect to the internet.
+
+| Default value  | "" |
+
+For more information, see [HTTP Proxy Configuration](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/http_proxy_config.html) in the AWS docs.
 
 ## InstanceBootCommand
 
