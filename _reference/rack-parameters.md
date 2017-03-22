@@ -27,6 +27,7 @@ The following parameters can be used to configure your Convox Rack:
 * [ClientId](#clientid)
 * [ContainerDisk](#containerdisk)
 * [Development](#development)
+* [EncryptEbs](#encryptebs)
 * [Encryption](#encryption)
 * [ExistingVpc](#existingvpc)
 * [HttpProxy](#httpproxy)
@@ -130,6 +131,13 @@ Default container disk size in GB.
 ## Development
 
 Development mode.
+
+| Default value  | `No`        |
+| Allowed values | `Yes`, `No` |
+
+## EncryptEbs
+
+Enable encryption at rest for EBS volumes.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
