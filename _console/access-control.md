@@ -24,6 +24,8 @@ Deploy keys are special, limited-scope API keys that allow you to run the `build
 
 You should give a Deploy Key to a CI service like CircleCI or Travis CI so it can deploy code but not access or modify any other Rack resources.
 
+For more details, see [Deploy Keys](/docs/deploy-keys).
+
 ![Deploy Keys](/assets/images/docs/rbac/deploy-keys.png){: .screenshot }
 
 ## Permissions

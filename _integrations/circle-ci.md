@@ -25,7 +25,7 @@ If you use [Console](https://console.convox.com/) to manage access to your Racks
     CONVOX_HOST=console.convox.com
     CONVOX_PASSWORD=<deploy key>
 
-To generate a **deploy key**, log into your account at [console.convox.com](https://console.convox.com), select the appropriate organization, switch to the "Members" tab, and scroll down to the "Deploy Keys" section.
+For more information, see [deploy keys](/docs/deploy-keys).
 
 
 ### Authenticating directly with a Rack
