@@ -76,7 +76,7 @@ As mentioned above, Workflows can be used along with other tools that set commit
 
 With this setup, a merge into your master branch will automatically execute everything needed right up to going live in production. If you are satisfied with the state of your staging app when the Workflow completes, you can simply click "Promote" on your production app in Console to complete the process.
 
-For a fully automated production pipeline, enable promotion in step 3. Since a failure of any task in a Workflow halts execution for remaining tasks, you can be sure that your production app will only be promoted if the staging app was successfully promoted (i.e. all containers were rolled out and passed health checks).
+For a fully automated production pipeline, enable promotion in step 3. Since a failure of any task in a Workflow halts execution for remaining tasks, you can be sure that your production app will only be promoted if the staging app was successfully promoted (i.e. all containers were rolled out and passed [health checks](/docs/health-checks)).
 
 ### CI for Pull Requests
 
