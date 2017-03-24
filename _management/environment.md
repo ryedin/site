@@ -54,6 +54,10 @@ services:
       - FOO=default
 ```
 
+<div class="block-callout block-show-callout type-info" markdown="1">
+You can also define these variables in your local environment. Note that they will be overridden if defined in `.env` or `docker-compose.yml`.
+</div>
+
 ## Deployed
 
 ### `convox env`
