@@ -94,6 +94,8 @@ This parameter is used for local [development on Rack](https://github.com/convox
 
 Creates and assigns a [dedicated build instance](/docs/builds/#dedicated-build-instance) to a Rack.
 
+Note: the build instance will also use the [`InstanceBootCommand`](/docs/rack-parameters#instancebootcommand) and [`InstanceRunCommand`](/docs/rack-parameters#instanceruncommand) Rack params, if defined.
+
 | Default value  | ""                                                               |
 | Allowed values | [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/) |
 
@@ -169,6 +171,8 @@ A single line of shell script to run (as root) as a cloud-init command early dur
 
 For more information about using cloud-init with EC2, see the AWS doc [Running Commands on Your Linux Instance at Launch](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html#user-data-cloud-init). For cloud-init specifics, see "bootcmd" in the doc [Run commands on first boot](http://cloudinit.readthedocs.io/en/latest/topics/examples.html#run-commands-on-first-boot).
 
+The `InstanceBootCommand` will also apply to any [build instance](/docs/rack-parameters#buildinstance) associated with the Rack.
+
 | Default value | "" |
 
 #### Example: increase virtual memory
@@ -194,6 +198,8 @@ The number of EC2 instances in your Rack cluster.
 A single line of shell script to run as a cloud-init command late during instance boot.
 
 For more information about using cloud-init with EC2, see the AWS doc [Running Commands on Your Linux Instance at Launch](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html#user-data-cloud-init). For cloud-init specifics, see "runcmd" in the doc [Run commands on first boot](http://cloudinit.readthedocs.io/en/latest/topics/examples.html#run-commands-on-first-boot).
+
+The `InstanceRunCommand` will also apply to any [build instance](/docs/rack-parameters#buildinstance) associated with the Rack.
 
 | Default value | "" |
 
