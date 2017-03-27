@@ -43,8 +43,8 @@ You can view the logs for a Convox Rack itself using the `convox rack logs` comm
 
 ```
 $ convox rack logs
-2016-09-19T05:59:14Z web:20160916121812/560705a6c103 ns=api.web at=request state=success status=200 method="GET" path="/check" elapsed=0.115
-2016-09-19T05:59:14Z web:20160916121812/560705a6c103 ns=api.web at=request state=success status=200 method="GET" path="/check" elapsed=0.089
+2017-03-24T21:59:57Z web:20170322201601/0b92eed79c1d ns=provider.aws at=fetchLogs start=1490392796065 events=0 state=success end=1490392796066 elapsed=225.020
+2017-03-24T22:16:15Z web:20170322201601/e378ddb167fd who="EC2/ASG" what="Terminating EC2 instance: i-02ce4f07da10a5333" why="At 2017-03-24T22:14:38Z a user request update of AutoScalingGroup constraints to min: 3, max: 1000, desired: 3 changing the desired capacity from 4 to 3.  At 2017-03-24T22:15:02Z an instance was taken out of service in response to a difference between desired and actual capacity, shrinking the capacity from 4 to 3.  At 2017-03-24T22:15:02Z instance i-02ce4f07da10a5333 was selected for termination."
 ```
 
 You can use filters to understand Rack operations like what webhooks were sent:
@@ -55,3 +55,23 @@ $ convox rack logs --filter=EventSend --follow=false --since=1h
 2016-09-19T05:29:42Z web:20160916121812/1a7fc4c6d61b aws EventSend msg="{\"action\":\"rack:update\",\"status\":\"success\",\"data\":{\"count\":\"5\"},\"timestamp\":\"2016-09-19T05:29:42.46924934Z\"}"
 2016-09-19T05:30:26Z web:20160916121812/560705a6c103 aws EventSend msg="{\"action\":\"build:create\",\"status\":\"success\",\"data\":{\"app\":\"site-staging\",\"id\":\"BLRICHJXPCV\"},\"timestamp\":\"2016-09-19T05:30:26.007917831Z\"}"
 ```
+
+
+### AWS logs
+
+We include events from AWS services in the output of `convox logs` and `convox rack logs` to help you understand what's going on behind the scenes. You can `--filter` for these CloudFormation and ECS task events using the `[CFM]` and `[ECS]` event prefixes.
+
+```
+$ convox logs --filter=ECS
+2017-03-24T21:34:08Z [ECS] service="legit-cv-soulshake-net-ServiceWopr-1TNE86TXRESN5" task="46a3ea28-4868-4620-b43c-5e4af6732219" status="STOPPED" container="wopr"
+2017-03-24T21:34:09Z [ECS] service="legit-cv-soulshake-net-ServiceWopr-1TNE86TXRESN5" task="46a3ea28-4868-4620-b43c-5e4af6732219" status="RUNNING" container="wopr"
+```
+
+```
+$ convox rack logs --filter=CFM
+2017-03-24T21:59:56Z [CFM] resource="LaunchConfiguration" status="UPDATE_IN_PROGRESS" reason="Resource creation Initiated"
+2017-03-24T21:59:56Z [CFM] resource="LaunchConfiguration" status="UPDATE_COMPLETE" reason=""
+2017-03-24T22:00:04Z [CFM] resource="Instances" status="UPDATE_IN_PROGRESS" reason=""
+```
+
+These events can be useful for identifying issues with a deployment or an app. For example, when your Rack is in a "converging" state, i.e. some instances or ECS Tasks haven't stabilized yet, there are often AWS events in the app/Rack logs that will show a service crashing, a health check failing, or a placement error due to insufficient resources.
