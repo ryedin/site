@@ -131,30 +131,26 @@ When you want to pin an app to a specific Rack you should use `./convox/rack` wh
 
 ## Shell Autocomplete Support
 
-The `convox` CLI offers bash autocompletion and command prompt utilities.
+1. Download the [urfave/cli](https://github.com/urfave/cli) completion script.
 
-### OSX + Homebrew
+       $ curl -o ~/.convox/completion.bash \
+         https://raw.githubusercontent.com/urfave/cli/master/autocomplete/bash_autocomplete
 
-To set this up on OS X with Homebrew, save the convox autocomplete helper in the `bash_completion.d` directory:
+1. Source the completion script in your shell initialization file.
 
-    $ curl -o $(brew --prefix)/etc/bash_completion.d/convox \
-      https://raw.githubusercontent.com/urfave/cli/master/autocomplete/bash_autocomplete
+    a. For **bash**, add the following line to your `.bash_profile`:
 
-then add an autocomplete initializer `~/.bash_profile`:
+       source ~/.convox/completion.bash
 
-    echo "source $(brew --prefix)/etc/bash_completion.d/convox" >> "$HOME/.profile"
-    
-For `zsh`, then add the following to your `.zshrc`:
+    b. For **zsh**, add the following to your `.zshrc`:
 
-    autoload -U compinit && compinit
-    autoload -U bashcompinit && bashcompinit
-    source $(brew --prefix)/etc/bash_completion.d/convox
-    
-You may need to change the first line of the bash completion script to:
+       autoload -U compinit && compinit
+       autoload -U bashcompinit && bashcompinit
+       source ~/.convox/completion.bash
 
-    : ${PROG:=$(basename $0)}
+      Users of zsh may need to change the first line of the completion script to:
 
-as well for `zsh` 
+       : ${PROG:=$(basename $0)}
 
 ### Debian-based Linux distributions
 
