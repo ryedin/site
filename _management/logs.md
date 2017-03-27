@@ -16,8 +16,6 @@ $ convox logs
 2017-03-24T21:34:11Z [CFM] resource="legit-cv-soulshake-net" status="UPDATE_COMPLETE" reason=""
 ```
 
-Relevant AWS events from CloudFormation and ECS are denoted `[CFM]` and `[ECS]`.
-
 ### Additional Options
 
 <table>
@@ -57,8 +55,6 @@ $ convox rack logs
 2017-03-24T22:16:15Z web:20170322201601/e378ddb167fd who="EC2/ASG" what="Terminating EC2 instance: i-02ce4f07da10a5333" why="At 2017-03-24T22:14:38Z a user request update of AutoScalingGroup constraints to min: 3, max: 1000, desired: 3 changing the desired capacity from 4 to 3.  At 2017-03-24T22:15:02Z an instance was taken out of service in response to a difference between desired and actual capacity, shrinking the capacity from 4 to 3.  At 2017-03-24T22:15:02Z instance i-02ce4f07da10a5333 was selected for termination."
 ```
 
-Relevant AWS events from CloudFormation and ECS are denoted `[CFM]` and `[ECS]`.
-
 You can use filters to understand Rack operations like what webhooks were sent:
 
 ```
@@ -67,3 +63,12 @@ $ convox rack logs --filter=EventSend --follow=false --since=1h
 2016-09-19T05:29:42Z web:20160916121812/1a7fc4c6d61b aws EventSend msg="{\"action\":\"rack:update\",\"status\":\"success\",\"data\":{\"count\":\"5\"},\"timestamp\":\"2016-09-19T05:29:42.46924934Z\"}"
 2016-09-19T05:30:26Z web:20160916121812/560705a6c103 aws EventSend msg="{\"action\":\"build:create\",\"status\":\"success\",\"data\":{\"app\":\"site-staging\",\"id\":\"BLRICHJXPCV\"},\"timestamp\":\"2016-09-19T05:30:26.007917831Z\"}"
 ```
+
+
+### AWS logs
+
+When you deploy an app, CloudFormation will set up new instances and networking resources, then the new version of your app will be rolled into the new instances and subnets one at a time.
+
+As [health checks are passed](/docs/rolling-updates/#health-checks) and each old instance is terminated, the ECS Tasks that were running on it will be rescheduled onto a new instance. You can track the activity of these CloudFormation and ECS task events in the app logs, denoted by `[CFM]` and `[ECS]`.
+
+These events can be useful for identifying issues with a deployment or an app. For example, if your Rack is in a "converging" state, it means the app still has some instances or ECS Tasks that haven't been deemed healthy yet. There's usually info the app logs that will show a service crashing, or a health check failing, or a placement error.
