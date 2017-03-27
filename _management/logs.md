@@ -9,11 +9,6 @@ You can view the live logs for a Convox application using `convox logs`:
 $ convox logs
 2016-04-12 19:45:00 i-0234d285 example-app/web:RSPZQWVWGOP : 10.0.1.242 - - [12/Apr/2016:19:45:00 +0000] "GET / HTTP/1.1" 200 70 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"
 2016-04-12 19:45:00 i-0234d285 example-app/web:RSPZQWVWGOP : 10.0.1.242 - - [12 Apr/2016:19:45:00 +0000] "GET / HTTP/1.0" 200 70 0.0019
-2017-03-24T21:34:06Z [CFM] resource="WoprECSTaskDefinition" status="DELETE_IN_PROGRESS" reason=""
-2017-03-24T21:34:08Z [ECS] service="legit-cv-soulshake-net-ServiceWopr-1TNE86TXRESN5" task="46a3ea28-4868-4620-b43c-5e4af6732219" status="STOPPED" container="wopr"
-2017-03-24T21:34:09Z [ECS] service="legit-cv-soulshake-net-ServiceWopr-1TNE86TXRESN5" task="46a3ea28-4868-4620-b43c-5e4af6732219" status="RUNNING" container="wopr"
-2017-03-24T21:34:11Z [CFM] resource="WoprECSTaskDefinition" status="DELETE_COMPLETE" reason=""
-2017-03-24T21:34:11Z [CFM] resource="legit-cv-soulshake-net" status="UPDATE_COMPLETE" reason=""
 ```
 
 ### Additional Options
@@ -48,10 +43,7 @@ You can view the logs for a Convox Rack itself using the `convox rack logs` comm
 
 ```
 $ convox rack logs
-2017-03-24T21:59:56Z [CFM] resource="LaunchConfiguration" status="UPDATE_IN_PROGRESS" reason="Resource creation Initiated"
-2017-03-24T21:59:56Z [CFM] resource="LaunchConfiguration" status="UPDATE_COMPLETE" reason=""
 2017-03-24T21:59:57Z web:20170322201601/0b92eed79c1d ns=provider.aws at=fetchLogs start=1490392796065 events=0 state=success end=1490392796066 elapsed=225.020
-2017-03-24T22:00:04Z [CFM] resource="Instances" status="UPDATE_IN_PROGRESS" reason=""
 2017-03-24T22:16:15Z web:20170322201601/e378ddb167fd who="EC2/ASG" what="Terminating EC2 instance: i-02ce4f07da10a5333" why="At 2017-03-24T22:14:38Z a user request update of AutoScalingGroup constraints to min: 3, max: 1000, desired: 3 changing the desired capacity from 4 to 3.  At 2017-03-24T22:15:02Z an instance was taken out of service in response to a difference between desired and actual capacity, shrinking the capacity from 4 to 3.  At 2017-03-24T22:15:02Z instance i-02ce4f07da10a5333 was selected for termination."
 ```
 
@@ -69,6 +61,20 @@ $ convox rack logs --filter=EventSend --follow=false --since=1h
 
 When you deploy an app, CloudFormation will set up new instances and networking resources, then the new version of your app will be rolled into the new instances and subnets one at a time.
 
-As [health checks are passed](/docs/rolling-updates/#health-checks) and each old instance is terminated, the ECS Tasks that were running on it will be rescheduled onto a new instance. You can track the activity of these CloudFormation and ECS task events in the app logs, denoted by `[CFM]` and `[ECS]`.
+As [health checks are passed](/docs/rolling-updates/#health-checks) and each old instance is terminated, the ECS Tasks that were running on it will be rescheduled onto a new instance. You can track the activity of these CloudFormation and ECS task events in the app/Rack logs, denoted by `[CFM]` and `[ECS]`.
 
-These events can be useful for identifying issues with a deployment or an app. For example, if your Rack is in a "converging" state, it means the app still has some instances or ECS Tasks that haven't been deemed healthy yet. There's usually info the app logs that will show a service crashing, or a health check failing, or a placement error.
+```
+2017-03-24T21:34:06Z [CFM] resource="WoprECSTaskDefinition" status="DELETE_IN_PROGRESS" reason=""
+2017-03-24T21:34:08Z [ECS] service="legit-cv-soulshake-net-ServiceWopr-1TNE86TXRESN5" task="46a3ea28-4868-4620-b43c-5e4af6732219" status="STOPPED" container="wopr"
+2017-03-24T21:34:09Z [ECS] service="legit-cv-soulshake-net-ServiceWopr-1TNE86TXRESN5" task="46a3ea28-4868-4620-b43c-5e4af6732219" status="RUNNING" container="wopr"
+2017-03-24T21:34:11Z [CFM] resource="WoprECSTaskDefinition" status="DELETE_COMPLETE" reason=""
+2017-03-24T21:34:11Z [CFM] resource="legit-cv-soulshake-net" status="UPDATE_COMPLETE" reason=""
+```
+
+```
+2017-03-24T21:59:56Z [CFM] resource="LaunchConfiguration" status="UPDATE_IN_PROGRESS" reason="Resource creation Initiated"
+2017-03-24T21:59:56Z [CFM] resource="LaunchConfiguration" status="UPDATE_COMPLETE" reason=""
+2017-03-24T22:00:04Z [CFM] resource="Instances" status="UPDATE_IN_PROGRESS" reason=""
+```
+
+These events can be useful for identifying issues with a deployment or an app. For example, if your Rack is in a "converging" state, it means the app still has some instances or ECS Tasks that haven't been deemed healthy yet. There's usually info in the app/Rack logs that will show a service crashing, or a health check failing, or a placement error.
