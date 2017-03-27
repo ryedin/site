@@ -18,7 +18,15 @@ Convox applications are configured using environment variables. Environment mana
 
 ## Local
 
-### .env
+<div class="block-callout block-show-callout type-info" markdown="1">
+The priority for evaluating env values is:
+
+1. [`.env`](/docs/environment/#env)
+2. [host environment](/docs/environment/#host-environment)
+3. [`docker-compose.yml`](/docs/environment/#docker-composeyml)
+</div>
+
+### `.env`
 
 When running your application with `convox start` you should set values for your application's environment in a `.env` file:
 
@@ -27,7 +35,19 @@ SECRET_KEY=xyzzy
 FOO=bar
 ```
 
-### docker-compose.yml
+
+### Host environment
+
+Variables defined in your local environment will be taken into account as long as:
+
+- they are declared in `docker-compose.yml` (in either `KEY` or `KEY=VALUE` format), and
+- are not defined in `.env`.
+
+```
+$ DEVELOPMENT=true convox start
+```
+
+### `docker-compose.yml`
 
 `convox start` will always read `.env`, but the environment variables set there will not be passed along to your application's containers unless you declare them in `docker-compose.yml`.
 
@@ -43,12 +63,9 @@ services:
 The `environment` section of `docker-compose.yml` plays a couple of roles locally:
 
 1. _It serves as a list of required environment variables._ `convox start` will refuse to run your application if it doesn't find values for each of your required env vars in `.env`.
-1. _It allows you to set default values for environment variables._ Values in `.env` will override these defaults.
+1. _It allows you to set default values for environment variables._ Values in `.env` will override these defaults:
 
 ```
-services:
-  web:
-    build: .
     environment:
       - SECRET_KEY
       - FOO=default
