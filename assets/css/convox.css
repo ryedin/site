@@ -40,7 +40,7 @@ a,a:hover,a:focus,a:active,a.active {
 
 code.highlighter-rouge {
   border: 1px solid #eee;
-  padding: 3px 4px;
+  padding: 1px 1px 1px 1px;
 }
 
 /* When monospace text is linkified, underline it so it's visible that it's a link */
@@ -48,8 +48,8 @@ a code.highlighter-rouge {
   text-decoration: underline;
 }
 
-/* Don't use the bright red monospace in h2 header */
-h2 code {
+/* Don't use the bright red monospace in code headers */
+h1,h2,h3,h4,h5,h6, code {
   color: black;
 }
 
@@ -1719,7 +1719,7 @@ input#mc-embedded-subscribe {
 .docs #doc pre,
 .docs #doc ul,
 .docs #doc table {
-  margin-bottom: 1.4em;
+  margin-bottom: 1em;
 }
 
 .docs #doc ol ol,
@@ -1782,12 +1782,12 @@ input#mc-embedded-subscribe {
 .docs #doc pre {
   background: #eee;
   border-radius: 4px;
-  color: #666;
+  color: #000;
   font-family: 'Roboto Mono', Monaco, Consolas, monospace;
   font-size: .9em;
   font-weight: 300;
   line-height: 1.2em;
-  padding: 20px;
+  padding: 10px;
 }
 
 .docs pre code {
