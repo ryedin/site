@@ -76,9 +76,12 @@ The Convox CLI includes commands that let you list, update, and remove SSL certi
 You can see the certificates associated with your account with `convox certs`:
 
     $ convox certs
-    ID               DOMAIN       EXPIRES
-    cert-1234567890  example.org  2 months ago
-    cert-0987654321  example.org  2 months from now
+    ID                DOMAIN        EXPIRES
+    cert-1234567890   example.org   2 months ago
+    cert-0987654321   example.org   2 months from now
+    acm-d1cf956c7dba  *.convox.com  10 months from now
+
+User-uploaded certificates will have the name format `cert-*`. Certificates generated with `convox certs generate` will have an id like `acm-*`:
 
 ### Updating Your SSL Certificate
 
