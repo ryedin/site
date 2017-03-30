@@ -20,4 +20,4 @@ But if you're still getting those emails from AWS, you can:
 
 You can expect to receive a couple more updates from both AWS and Convox between now and April 30th, to make sure nobody is affected when the Lambda runtime is shut off for good.
 
-🎉🎉 Hooray for automatic infrastructure updates! 🎉🎉
+Happy automatic infrastructure updates! 🎉🎉
