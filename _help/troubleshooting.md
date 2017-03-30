@@ -10,7 +10,10 @@ Open a [Github issue](https://github.com/convox/rack/issues/new) with any errors
 
 ## I get an error when I deploy my app to Convox
 
-Run `convox logs --app convox` to inspect the Convox API logs for errors and `convox deploy` to try again.
+During a deployment, CloudFormation will not complete an update (i.e. replace existing instances in the cluster) until the ECS Services stabilize. If newly deployed processes don't pass health checks, eventually the update will time out and roll back. To figure out what's going wrong, you can look at the [app logs](/docs/logs) via `convox logs` to check for crashes and [health check](/docs/health-checks) failures.
+
+When you know there is an issue and want to stop a deployment, you can run the `convox apps cancel` command. This will trigger an immediate CloudFormation rollback so you can fix the problem and try another deployment.
+
 
 ## My app deployed but I cannot access it
 

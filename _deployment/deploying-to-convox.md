@@ -18,3 +18,7 @@ You can easily configure [Console](https://console.convox.com) to build and depl
 ## Canceling a deployment
 
 To cancel a bad or stuck deployment, run `convox apps cancel -a <app-name>`. Behind the scenes, this cancels the CloudFormation stack update that corresponds to the deployment in progress.
+
+## Troubleshooting
+
+For troubleshooting tips, see [this page](/docs/troubleshooting/#i-get-an-error-when-i-deploy-my-app-to-convox).
