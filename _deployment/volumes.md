@@ -46,6 +46,10 @@ If you specify your volume path this way, Convox will persist data on your Rack 
   You can also specify the volume in the more explicit `host:container` format, e.g. `/host/path:/container/path`. This allows you to set exactly where on the host instance to persist the data.
 </div>
 
+## Permissions
+
+It's not currently possible to mount EFS volumes as read-only with Convox. If this option would be useful to you, feel free to open a support ticket so we can track it as a feature request.
+
 ## Persistence
 
 When your `docker-compose.yml` declares a volume with the single-path format, the volume will be persisted across container runs of the same process type. The path where these volumes persist on the Docker host differs depending on whether you are running your apps locally or deployed in a Rack.
