@@ -81,3 +81,7 @@ Some example expressions:
     <td>Run at Midnight and Noon every day</td>
   </tr>
 </table>
+
+## Run options and persistence
+
+The service a scheduled task is associated with does not necessarily need running containers all the time. The service can be [scaled down to `-1` or `0`](/docs/scaling/#scaling-down-unused-services), and the scheduled task will "wake it up," causing a container to be created for the scheduled to task to run in, and exiting when it finishes.
