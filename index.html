@@ -3,7 +3,7 @@ layout: base
 title: Convox
 ---
 
-<header>
+<header class="full">
   <div class="container">
     <div class="row margin-bottom-2">
       <div class="col-xs-12 col-sm-12">
@@ -14,7 +14,7 @@ title: Convox
     <div class="row">
       <div class="actions col-xs-12">
         <a href="//vimeo.com/190645705" data-lity class="button hollow shadow">See How It Works</a>
-        <a id="sign_up" href="/signup" class="button orange brighten shadow">Get Started For Free</a>
+        <a href="/signup" class="button orange brighten shadow">Get Started For Free</a>
       </div>
     </div>
 
@@ -52,7 +52,9 @@ title: Convox
             <div class="output">database  1        1        0    1024</div>
           </div>
         </div>
-        <p class="caption">Develop, deploy, and scale with <a href="#">one CLI</a>.</p>
+        <p class="caption">
+          Develop, deploy, and scale with <a href="/docs/getting-started/#install-the-convox-cli">one CLI</a>.
+        </p>
       </div>
       <div class="visual-group col-md-4">
         <div class="visual file shadow">
@@ -73,10 +75,10 @@ title: Convox
           <div class="line">    <span class="key">volumes</span></div>
           <div class="line">      - /var/lib/postgresql/data</div>
         </div>
-        <p class="caption">Configure dev, test, and prod with <a href="#">one file</a>.</p>
+        <p class="caption">Configure dev and prod with <a href="/docs/docker-compose-file/">one file</a>.</p>
       </div>
       <div class="visual-group col-md-4">
-        <table class="visual integrations shadow table table-striped">
+        <table class="visual integrations shadow table">
           <thead>
             <tr>
               <th>Provider</th>
@@ -105,7 +107,7 @@ title: Convox
             </tr>
           </tbody>
         </table>
-        <p class="caption">Integrate with <a href="#">one click</a>.</p>
+        <p class="caption">Integrate with <a href="/docs/integrations/">one click</a>.</p>
       </div>
     </div>
   </div>
@@ -124,31 +126,31 @@ title: Convox
           <i class="material-icons">check</i>
         </div>
         <div class="description">
-          <p>Get instant PCI and HIPAA <a href="#">compliance</a>.</p>
+          <p>Get instant PCI and HIPAA <a href="/docs/hipaa-compliance/">compliance</a>.</p>
         </div>
       </div>
-      <div class="benefit b shadow flex-xs-12 flex-sm-6" class="read-more">
+      <div class="benefit b shadow flex-xs-12 flex-sm-6">
         <div class="decoration">
           <i class="material-icons">directions_run</i>
         </div>
         <div class="description">
-          <p>Easily <a href="#">keep up</a> with the ever-changing AWS landscape.</p>
+          <p>Easily <a href="/docs/rack-updates/">keep up</a> with the ever-changing AWS landscape.</p>
         </div>
       </div>
-      <div class="benefit c shadow flex-xs-12 flex-sm-6" class="read-more">
+      <div class="benefit c shadow flex-xs-12 flex-sm-6">
         <div class="decoration">
           <i class="material-icons">security</i>
         </div>
         <div class="description">
-          <p>Rely on automatic <a href="#">security</a> updates.</p>
+          <p>Rely on automatic <a href="/docs/security/">security</a> updates.</p>
         </div>
       </div>
-      <div class="benefit d shadow flex-xs-12 flex-sm-6" class="read-more">
+      <div class="benefit d shadow flex-xs-12 flex-sm-6">
         <div class="decoration">
           <i class="material-icons">attach_money</i>
         </div>
         <div class="description">
-          <p>Run an efficient, <a href="#">cost-effective</a> infrastructure by default.</p>
+          <p>Run an efficient, <a href="/docs/rack-cost/">cost-effective</a> infrastructure by default.</p>
         </div>
       </div>
     </div>
@@ -160,10 +162,12 @@ title: Convox
     <div class="row">
       <div class="col-xs-12 text-center">
         <h2 class="margin-top-0">Convox delivers 100% uptime with zero upkeep.</h2>
-        <p>Receive top-notch support from engineers who know the system.</p>
-        <p>Get automatic health checks, failovers, and alerts.</p>
-        <p>Launch an app once, run it forever.</p>
-        <a id="sign_up" href="/signup" class="cta button orange brighten margin-top-1">Get Started Now</a>
+        <div><!-- Separate inline p elements from anchor on small displays. -->
+          <p>Receive top-notch support from engineers who know the system.</p>
+          <p>Get automatic health checks, failovers, and alerts.</p>
+          <p>Launch an app once, run it forever.</p>
+        </div>
+        <a href="/signup" class="cta button orange brighten">Get Started Now</a>
       </div>
     </div>
   </div>
@@ -194,15 +198,15 @@ title: Convox
     <div class="row">
       <div class="testimonial col-sm-4">
         <p>"Having Convox on board has freed up roughly 25% of our engineer's time every week. The level of service they provide is truly astounding."</p>
-        <div class="attribution">Arthur Weagel, Podium</div>
+        <div class="attribution">Arthur Weagel, <a href="https://www.podium.com/">Podium</a></div>
       </div>
       <div class="testimonial col-sm-4">
         <p>"Convox has been instrumental in helping us enjoy the flexibility of AWS. Their support, product, and team are second to none."</p>
-        <div class="attribution">Jamie Quint, Interstate Analytics</div>
+        <div class="attribution">Jamie Quint, <a href="https://convox.com/cases/interstate">Interstate Analytics</a></div>
       </div>
       <div class="testimonial col-sm-4">
         <p>"Deploying our scientific Python stack used to be a nightmare. Convox eliminates the stress and uncertainty of packaging our code for production."</p>
-        <div class="attribution">Ian Wong, OpenDoor</div>
+        <div class="attribution">Ian Wong, <a href="https://www.opendoor.com/">OpenDoor</a></div>
       </div>
     </div>
   </div>

@@ -1,12 +1,46 @@
 /*
- *
- * Extra small (xs) devices
- *
- */
+  
+    CONVOX RESPONSIVE STYLES
+  
+    Bootstrap 3 has four device sizes (xs, sm, md, lg),
+    divided by three width breakpoints (768px, 992px, 1200px).
+  
+    To keep things simple, do not add new media queries to this stylesheet.
+    Instead, add new rules under one of the four media queries in this file.
+  
+    1. Extra small (xs) devices
+    2. Small (sm) devices
+    3. Medium (md) devices
+    4. Large (lg) devices
+  
+   NOTE: the extra small (sm) media query below exists for consistency, and
+   as a convenient location for responsive-specific rules. Keep in mind that
+   because Bootstrap 3 is mobile-first, the rules in the main.css stylesheet
+   target extra small devices by default. The small, medium, and large rules
+   in this stylesheet adjust those styles for larger screen sizes.
+  
+*/
+
+
+/* Extra small (xs) devices */
 @media (min-width: 0px) {
   /*
    *
+   * Layout styles: grid
+   *
+   */
+
+  /* The default of 15px of padding feels tight on mobile screens. */
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+
+  /*
+   *
    * Global styles: flexbox-bootstrap hybrids
+   * Use on elements that need `display: flex`, but also col-xs-* bootstrap classes.
    *
    */
 
@@ -21,30 +55,15 @@
     margin-left: 15px;
     margin-right: 15px;
   }
-
-
-  /*
-   *
-   * Global styles: baselines
-   *
-   */
-
-  .container {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
 }
 
 
-/*
- *
- * Small (sm) devices
- *
- */
+/* Small (sm) devices */
 @media (min-width: 768px) {
   /*
    *
    * Global styles: flexbox-bootstrap hybrids
+   * Use on elements that need `display: flex`, but also col-sm-* bootstrap classes.
    *
    */
 
@@ -60,9 +79,21 @@
     margin-right: 15px;
   }
 
+
   /*
    *
-   * Global styles: header
+   * Global styles: buttons
+   *
+   */
+
+  .button {
+    font-size: 12pt;
+  }
+
+
+  /*
+   *
+   * Layout styles: header
    *
    */
 
@@ -90,20 +121,59 @@
     margin-right: 2rem;
   }
 
+
   /*
    *
-   * Global styles: buttons
+   * Layout styles: footer
    *
    */
 
-  .button {
-    font-size: 12pt;
+  footer .legal .items .copyright {
+    margin-right: auto;
+  }
+
+  footer .legal .items .privacy {
+    margin-right: 2rem;
   }
 
 
   /*
    *
-   * Global styles: visual groups
+   * Regional styles: pricing
+   *
+   */
+
+  .pricing .plan-wrap {
+    margin-bottom: 0;
+  }
+
+
+  /*
+   *
+   * Local styles: lanes
+   *
+   */
+
+  .lane {
+    padding: 8rem 0;
+  }
+
+  .lane.testimonials .testimonial {
+    margin-bottom: 0;
+  }
+
+  .lane.uptime p {
+    display: block;
+  }
+
+  .lane.uptime .button {
+    margin-top: 1rem;
+  }
+
+
+  /*
+   *
+   * Local styles: visual groups
    *
    */
 
@@ -120,45 +190,6 @@
   }
 
   .visual-group:last-of-type .caption {
-    margin-bottom: 0;
-  }
-
-  /*
-   *
-   * Global styles: sections
-   *
-   */
-
-  section.lane {
-    padding: 8rem 0;
-  }
-
-  section.testimonials .testimonial {
-    margin-bottom: 0;
-  }
-
-
-  /*
-   *
-   * Global styles: footer
-   *
-   */
-
-  footer .legal .items .copyright {
-    margin-right: auto;
-  }
-
-  footer .legal .items .privacy {
-    margin-right: 2rem;
-  }
-
-  /*
-   *
-   * Scoped styles: pricing
-   *
-   */
-
-  .pricing .plan-wrap {
     margin-bottom: 0;
   }
 
@@ -185,15 +216,24 @@
 }
 
 
-/*
- *
- * Medium (md) devices
- *
- */
+/* Medium (md) devices */
 @media (min-width: 992px) {
   /*
    *
-   * Global styles: nav
+   * Layout styles: grid
+   *
+   */
+
+  /* Restore Bootstrap default of 15px of container padding. */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  /*
+   *
+   * Layout styles: navbar
    *
    */
 
@@ -204,7 +244,30 @@
 
   /*
    *
-   * Global styles: visual groups
+   * Regional styles: docs
+   *
+   */
+
+  .docs #doc {
+    padding: 40px 15px 40px 40px;
+  }
+
+
+  /*
+   *
+   * Regional styles: pricing
+   *
+   */
+
+  .pricing .plans {
+    box-shadow: inset 0 -377px 0 -10px rgb(247, 247, 247);
+    padding-top: 5rem;
+  }
+
+
+  /*
+   *
+   * Local styles: visual groups
    *
    */
 
@@ -219,41 +282,14 @@
   .visual-group .caption {
     margin-bottom: 0;
   }
-
-
-  /*
-   *
-   * Scoped styles: docs
-   *
-   */
-
-  .docs #doc {
-    padding: 40px 15px 40px 40px;
-  }
-
-
-  /*
-   *
-   * Scoped styles: pricing
-   *
-   */
-
-  .pricing .plans {
-    box-shadow: inset 0 -377px 0 -10px rgb(247, 247, 247);
-    padding-top: 5rem;
-  }
 }
 
 
-/*
- *
- * Large (lg) devices
- *
- */
+/* Large (lg) devices */
 @media (min-width: 1200px) {
   /*
    *
-   * Global styles: nav
+   * Layout styles: navbar
    *
    */
 
@@ -264,7 +300,7 @@
 
   /*
    *
-   * Global styles: assertions
+   * Local styles: assertions
    *
    */
 

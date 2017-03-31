@@ -1,46 +1,49 @@
-<section class="post">
-  <section class="col-xs-8 col-md-8">
-    <h1 class="blog-title">
-      <a href="{{ include.post.url }}">{{ include.post.title }}</a>
-    </h1>
-    {% if include.post.subtitle %}
-    <h2 class="blog-subtitle">
-      {{ include.post.subtitle }}
-    </h2>    
-    {% endif %}
-    <div class="blog-date visible-xs">
-      {{ include.post.date | date: "%b %d, %Y" }}
-    </div>
-  </section>
+<div class="post-wrap row">
+  <div class="post shadow col-xs-12">
+    <div class="post-header">
+      <h1 class="post-title">
+        <a href="{{ include.post.url }}">{{ include.post.title }}</a>
+      </h1>
 
-  {% if include.post.author %}
-  <section class="col-xs-4 col-md-4">
-    <div class="blog-author">
-      <a class="pull-right" href="https://twitter.com/@{{ include.post.twitter }}">
-        <img class="img-circle" src="https://twitter.com/{{ include.post.twitter }}/profile_image?size=normal" />
-      </a>
-      <div class="pull-right visible-sm visible-md visible-lg">
-        <div>{{ include.post.author }}</div>
-        <div class="blog-date">
+      {% if include.post.subtitle %}
+        <h2 class="post-subtitle">
+          {{ include.post.subtitle }}
+        </h2>    
+      {% endif %}
+    </div>
+
+    {% if include.post.author %}
+      <div class="post-meta">
+        <div class="post-date">
+          <div class="decoration">
+            <i class="material-icons">date_range</i>
+          </div>
           {{ include.post.date | date: "%b %d, %Y" }}
         </div>
+        <div class="post-author">
+          <img class="decoration hidden-xs hidden-sm" src="https://twitter.com/{{ include.post.twitter }}/profile_image?size=mini" />
+          <div class="decoration hidden-md hidden-lg">
+            <i class="material-icons">person</i>
+          </div>
+          <a href="https://twitter.com/@{{ include.post.twitter }}">{{ include.post.author }}</a>
+        </div>
       </div>
-    </div>
-  </section>
-  {% endif %}
+    {% endif %}
 
-  <section class="col-xs-12">
-    <div>
-      {% if include.excerpt %}
+    {% if include.excerpt %}
+      <div class="post-content">
         {{ include.post.excerpt }}
-        <p>
-          <a href="{{ include.post.url }}">Read more...</a>
-        </p>
-      {% else %}
+      </div>
+      <div class="post-footer">
+        <a href="{{ include.post.url }}" class="continue">Continue reading</a>
+      </div>
+    {% else %}
+      <div class="post-content">
         {{ include.post.content }}
-        {% include post-footer.html %}
-      {% endif %}
-
-    </div>
-  </section>
-</section>
+      </div>
+      <div class="post-footer">
+        {% include blog-extras.html %}
+      </div>
+    {% endif %}
+  </div>
+</div>

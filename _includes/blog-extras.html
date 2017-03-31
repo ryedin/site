@@ -1,32 +1,18 @@
-<section class="extras">
-  <section class="margin-bottom-2">
-    <h4><strong>What is Convox?</strong></h4>
-    <p>Convox is an open-source PAAS that makes the cloud simple.</p>
-  </section>
+<div class="row">
+  <div class="col-xs-12">
+    <div><a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet"></a></div>
+    <div><a id="js-hn-submit-link" class="hn-decorate" href="#">Hacker News</a></div>
+    <div class="blog-rss"><a href="/blog/rss.xml"><i class="material-icons md-36">rss_feed</i> RSS</a></div>
+  </div>
+</div>
 
-  <section class="margin-bottom-2">
-    <h4><strong>Keep up</strong></h4>
-    <p>Convox is evolving quickly. Subscribe to our newsletter to stay on top of the latest developments.</p>
-    {% include mailchimp.html %}
-  </section>
+<script>
+  var postUrl = encodeURIComponent(document.location);
+  var postTitle = encodeURIComponent(document.title);
+  var hnSubmitUrl = 'http://news.ycombinator.com/submitlink?u=' + postUrl + '&t=' + postTitle;
 
-  <section class="margin-bottom-2">
-    <h4><strong>Have a chat</strong></h4>
-    <p>Click to join our active and friendly Slack community.</p>
-    <script async defer src="https://invite.convox.com/slackin.js?large=true"></script>
-  </section>
-
-  <section class="margin-bottom-2">
-    <h4><strong>Reach out</strong></h4>
-    <p>We're <i>@goconvox</i> on Twitter.</p>
-    <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet"></a>
-  </section>
-
-  <section>
-    <h4><strong>Dive in</strong></h4>
-    <p>Ready to get started? <a href="https://console.convox.com/grid/signup">Sign up</a> for a Convox account now.</p>
-  </section>
-</section>
+  $('#js-hn-submit-link').click(function () { window.open(hnSubmitUrl, '_blank'); });
+</script>
 
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],

@@ -6,19 +6,17 @@ layout: blog
 <section class="blog index">
   <div class="container">
     <div class="row">
-      <div class="posts col-md-12 col-lg-9">
-        {% for post in site.posts %}
-          {% include post.html post=post excerpt=true %}
-          <hr class="col-xs-11 row" class="post-separator">
-        {% endfor %}
-
-        <div class="blog-author col-md-12">
-          <a href="/blog/rss.xml"><img src="/assets/images/static/rss-icon.png"></a>
-        </div>
+      <div class="col-md-12 col-lg-2">
+        {% include blog-extras.html %}
       </div>
 
-      <div class="col-md-12 col-lg-3">
-        {% include blog-extras.html %}
+      <div class="posts col-md-12 col-lg-8">
+        {% for post in site.posts %}
+          {% include post.html post=post excerpt=true %}
+        {% endfor %}
+      </div>
+
+      <div class="col-lg-2 visible-lg-block">
       </div>
     </div>
   </div>
