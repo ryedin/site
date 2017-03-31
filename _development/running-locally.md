@@ -119,6 +119,40 @@ database:
 
 Convox does not recommend running datastores as containers in your Rack. Instead, you should use a hosted service, such as the [Postgres](/docs/postgresql) resource that Convox configures using Amazon RDS, or externally-hosted resources like [Compose.io's MongoDB](https://www.compose.com/mongodb). For more information, see [Resources](/docs/about-resources/).
 
+## Interacting with remote resources during development
+
+Databases represent one of the trickier aspects of a development-vs-prod workflow and are one of the most common reasons we hear for having multiple Compose files. Convox is designed to make this much easier via [Resources](/docs/about-resources).
+
+If you have set up a database (or other) resource, you may wonder how to interact with it during local development.
+
+You have several options:
+
+### Tunnel to remote databases
+
+You can use `convox resources proxy` to tunnel to the remote production (or staging, or any) database as described [here](/docs/convox-proxy). This will allow your app to interact with the remote resource as if it were running on your own machine.
+
+### Use local containers
+
+You can also use local containers as defined via the services in `docker-compose.yml`. The environment variables your app should use to communicate between containers will be automatic for linked services as described [here](/docs/environment#linking).
+
+Either way, you'll want to [scale the remote services to `-1`](/docs/scaling/#scaling-down-unused-services) to avoid creating unnecessary containers and load balancers in production.
+
+### Use local binaries
+
+Sometimes you might want to run your app locally in containers while running a database on your local host. The steps required to do so vary by operating system and include extra configuration beyond the scope of this documentation.
+
+### Scale down remote resources
+
+Note that in any case, if you're running your database as a resource, you still need to have the service defined in your `docker-compose.yml` for your app to work locally, due to how Convox set up [links between containers](/docs/environment#linking). 
+
+On the other hand, you don't want that service to be deployed in production because it will create unnecessary containers and a load balancer for the service. You'll therefore want to scale that service down to `-1` as described here: [Scaling down unused services](/docs/scaling/#scaling-down-unused-services).
+
+## Local Volumes
+
+If your `docker-compose.yml` specifies volumes, they will be created on your local machine at `~/.convox/volumes`.
+
+For more information, see [Persistence for local containers](/docs/volumes/#persistence-for-local-containers).
+
 ## Troubleshooting
 
 If you encounter errors or unexpected behaviors when running `convox start`, try running `convox doctor` to check your app for problems.

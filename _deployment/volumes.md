@@ -56,7 +56,7 @@ When your `docker-compose.yml` declares a volume with the single-path format, th
 
 ### Persistence for local containers
 
-Local apps running via `convox start` mount their volumes from the local file system. More specifically, the volumes are persisted at `~/.convox/volumes/`.
+Local apps running via `convox start` mount [their volumes](/docs/docker-compose-file/#volumes) from the local file system. More specifically, the volumes are persisted at `~/.convox/volumes/`.
 
 The path structure looks like this:
 
@@ -64,6 +64,8 @@ The path structure looks like this:
 ~/.convox/volumes/<app-name>/<service-name>/<container-path>
 ~/.convox/volumes/example-app/web/my/shared/data
 ```
+
+If a volume seems corrupted or doesn't behave as expected (and you're sure you don't need the data), you can try deleting the directory above.
 
 ### Persistence for deployed containers
 
