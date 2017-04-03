@@ -459,6 +459,9 @@ section.customers .logos img {
   width: 64px;
 }
 
+section.customers .logos div {
+  font-size: 12px;
+}
 
 /*
  *
