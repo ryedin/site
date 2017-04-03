@@ -1888,14 +1888,13 @@ section.customers .logos img {
   margin-bottom: 3rem;
 }
 
-.visual-group .caption {
-  margin-bottom: 6rem;
-}
-
-.visual-group:last-of-type .caption {
+.visual-group:last-of-type .visual {
   margin-bottom: 0;
 }
 
+.visual-group .caption {
+  margin-bottom: 3rem;
+}
 
 /*
  *

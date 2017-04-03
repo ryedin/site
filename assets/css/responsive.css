@@ -207,13 +207,8 @@
   }
 
   .visual-group .caption {
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
   }
-
-  .visual-group:last-of-type .caption {
-    margin-bottom: 0;
-  }
-
 
   /*
    *
@@ -297,10 +292,6 @@
   }
 
   .visual-group .visual {
-    margin-bottom: 4rem;
-  }
-
-  .visual-group .caption {
     margin-bottom: 0;
   }
 }
