@@ -440,6 +440,10 @@ section.focus .benefit .description a {
   color: #60b0e6;
 }
 
+section.focus .compare {
+  padding-top: 6rem;
+}
+
 section.focus .benefit .description p {
   margin-bottom: 0;
 }
