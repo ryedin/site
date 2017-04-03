@@ -139,6 +139,23 @@
 
   /*
    *
+   * Regional styles: blog
+   *
+   */
+  
+  .blog .post-wrap {
+    border: 0;
+    margin: 5rem -15px;
+  }
+
+  .blog .post-wrap:last-of-type {
+    border: 0;
+    margin-bottom: 5rem;
+  }
+
+
+  /*
+   *
    * Regional styles: pricing
    *
    */

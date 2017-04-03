@@ -8,6 +8,7 @@
     4. Local
     5. Utility
     6. Workaround
+    7. Third-party
   
 */
 
@@ -263,7 +264,8 @@ header.medium {
 }
 
 header.compact {
-  background-image: url(/assets/images/header-compact.png);
+  background-image: none;
+  box-shadow: inset 0 -60px 0 -10px rgba(96, 176, 230, .3);
 }
 
 header .container {
@@ -274,7 +276,7 @@ header .container {
 
 header.compact .container {
   padding-top: calc(70px + 3rem);
-  padding-bottom: calc(0px + 8rem);
+  padding-bottom: calc(0px + 3rem);
 }
 
 header h1 {
@@ -502,15 +504,20 @@ section.customers .logos img {
   text-align: left;
 }
 
+.blog .post-wrap {
+  border-bottom: 1px solid #eee;
+  margin: 0 -60px 4rem;
+}
+
+.blog .post-wrap:last-of-type {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
 .blog .post {
   background: white;
   border-radius: 8px;
-  margin-top: 5rem;
   padding: 0;
-}
-
-.blog .post-wrap:last-of-type .post {
-  margin-bottom: 5rem;
 }
 
 .blog .post .post-header {
@@ -529,7 +536,7 @@ section.customers .logos img {
 }
 
 .blog .post .post-meta {
-  background: #fbfbfb;
+  background: #fdfdfd;
   border-bottom: 1px solid #eee;
   box-shadow: 0px 1px 2px #eee inset;
   display: flex;
@@ -665,9 +672,16 @@ section.customers .logos img {
  *
  */
 
-.hn-decorate {
-  background: url(/assets/images/hn.png) left center no-repeat;
-  padding-left: 20px;
+.blog .sharing-buttons {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px; /* Determines size of sharing buttons. */
+  margin-top: 5rem;
+}
+
+.blog .sharing-buttons a {
+  margin-bottom: 1rem;
 }
 
 
@@ -1976,4 +1990,112 @@ h6:hover .heading-link {
   display: block;
   height: 90px;
   margin: -90px 0 0;
+}
+
+
+/*
+ *
+ * Third party: sharingbuttons.io (used on blog)
+ *
+ */
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-flex;
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: top;
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+  fill: none;
+  stroke: #fff;
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover {
+  background-color: #2795e9;
+}
+
+.resp-sharing-button--reddit {
+  background-color: #5f99cf;
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #3a80c1;
+}
+
+.resp-sharing-button--hackernews {
+  background-color: #FF6600;
+}
+
+.resp-sharing-button--hackernews:hover,
+.resp-sharing-button--hackernews:focus {
+  background-color: #FB6200;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+}
+
+.resp-sharing-button--reddit {
+  background-color: #5f99cf;
+  border-color: #5f99cf;
+}
+
+.resp-sharing-button--reddit:hover,
+.resp-sharing-button--reddit:active {
+  background-color: #3a80c1;
+  border-color: #3a80c1;
+}
+
+.resp-sharing-button--hackernews {
+  background-color: #FF6600;
+  border-color: #FF6600;
+}
+
+.resp-sharing-button--hackernews:hover
+.resp-sharing-button--hackernews:active {
+  background-color: #FB6200;
+  border-color: #FB6200;
 }
