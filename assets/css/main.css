@@ -1654,6 +1654,19 @@ section.customers .logos div {
   border-top-right-radius: 4px;
 }
 
+.integrations.table > tbody > tr > td:first-of-type {
+  width: 50px;
+}
+
+.integrations.table > tbody > tr > td:nth-child(2) {
+  padding-left: 0;
+}
+
+.integrations.table img {
+  width: 24px;
+  height: 24px;
+}
+
 
 /*
  *
