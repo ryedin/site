@@ -35,14 +35,11 @@
         {{ include.post.excerpt }}
       </div>
       <div class="post-footer">
-        <a href="{{ include.post.url }}" class="continue">Continue reading</a>
+        <a href="{{ include.post.url }}" class="continue">Continue reading...</a>
       </div>
     {% else %}
       <div class="post-content">
         {{ include.post.content }}
-      </div>
-      <div class="post-footer">
-        {% include blog-extras.html %}
       </div>
     {% endif %}
   </div>

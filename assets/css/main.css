@@ -602,7 +602,7 @@ section.customers .logos img {
 }
 
 .blog .post .post-footer .continue {
-  font-size: 12pt;
+  font-size: 16pt;
 }
 
 /*
@@ -672,18 +672,23 @@ section.customers .logos img {
  *
  */
 
+
+.blog .extras p {
+  font-size: 12pt;
+  color: #888;
+  margin-bottom: 20pt;
+}
+
 .blog .sharing-buttons {
   align-items: flex-start;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 12px; /* Determines size of sharing buttons. */
-  margin-top: 5rem;
 }
 
 .blog .sharing-buttons a {
-  margin-bottom: 1rem;
+  margin: 1rem 0.5rem;
 }
-
 
 /*
  *

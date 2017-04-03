@@ -142,7 +142,11 @@
    * Regional styles: blog
    *
    */
-  
+
+  .blog .extras {
+    margin: 5rem 0;
+  }
+
   .blog .post-wrap {
     border: 0;
     margin: 5rem -15px;

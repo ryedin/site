@@ -3,14 +3,17 @@ layout: blog
 ---
 
 <section class="blog">
-  <div class="container with-extras">
+  <div class="container">
     <div class="row">
-      <div class="hidden-xs hidden-sm col-md-1 col-lg-2">
+      <div class="extras hidden-xs hidden-sm col-md-2 col-lg-2">
+        {% include blog-extras.html %}
       </div>
-      <div class="posts col-xs-12 col-sm-12 col-md-10 col-lg-8">
+
+      <div class="posts col-xs-12 col-sm-12 col-md-8 col-lg-8">
         {% include post.html post=page %}
       </div>
-      <div class="hidden-xs hidden-sm col-md-1 col-lg-2">
+
+      <div class="hidden-xs hidden-sm col-md-2 col-lg-2">
       </div>
     </div>
   </div>
