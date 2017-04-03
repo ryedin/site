@@ -265,7 +265,7 @@ header.medium {
 
 header.compact {
   background-image: none;
-  box-shadow: inset 0 -60px 0 -10px rgba(96, 176, 230, .3);
+  box-shadow: none;
 }
 
 header .container {
