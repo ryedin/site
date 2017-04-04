@@ -1,0 +1,195 @@
+---
+title: How It Works
+layout: base
+---
+
+<header class="medium">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h1>How It Works</h1>
+        <div class="subheading">Convox runs your infrastructure so that you can focus on your applications.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="actions col-xs-12">
+        <a href="/signup" class="button orange brighten shadow">Get Started For Free</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="how">
+  <section class="solution lane contrast">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="margin-top-0 margin-bottom-6 text-center">Configure, develop, and deploy.</h2>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="visual-group col-md-4">
+          <p class="caption">
+            One configuration file to describe your application.
+          </p>
+          <div class="visual file shadow">
+            <div class="line"><span class="key">version</span> '2'</div>
+            <div class="line"><span class="key">services</span></div>
+            <div class="line">  <span class="key">web</span></div>
+            <div class="line">    <span class="key">build</span> .</div>
+            <div class="line">    <span class="key">environment</span></div>
+            <div class="line">      - NODE_ENV=development</div>
+            <div class="line">    <span class="key">links</span></div>
+            <div class="line">      - redis</div>
+            <div class="line">    <span class="key">ports</span></div>
+            <div class="line">      - 80:8000</div>
+            <div class="line">  <span class="key">redis</span></div>
+            <div class="line">    <span class="key">image</span> convox/redis</div>
+            <div class="line">    <span class="key">ports</span></div>
+            <div class="line">      - 6379</div>
+          </div>
+        </div>
+        <div class="visual-group col-md-4">
+          <p class="caption">One command to boot your app on any <a href="/blog/windows/">Windows</a>, Mac or Linux laptop.</p>
+          <div class="visual terminal shadow">
+            <div class="bar">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <div class="scrollback">
+              <div class="command">convox start</div>
+              <div class="output">build    │ Step 1: FROM ubuntu 16.04</div>
+              <div class="output">build    │ Step 2: RUN apt-get install nodejs npm</div>
+              <div class="output">build    │ Step 3: RUN npm install</div>
+              <div class="output">redis    │ The server is now ready on port 6379</div>
+              <div class="output">web      │ Web running on port 8000</div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-group col-md-4">
+          <p class="caption">One command to deploy your application to production.</p>
+          <div class="visual terminal shadow">
+            <div class="bar">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <div class="scrollback">
+              <div class="command">convox deploy</div>
+              <div class="output">Deploying example-app</div>
+              <div class="output">Release: ROBMXCHERNN</div>
+              <div class="output">Promoting ROBMXCHERNN... UPDATING</div>
+              <div class="output">&nbsp;</div>
+              <div class="command">convox resources create redis</div>
+              <div class="output">Creating redis-5864... CREATING</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lane alternate">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h2 class="margin-top-0 margin-bottom-2">Integrated with your workflow</h2>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="visual-group col-md-5 col-md-offset-1">
+          <p class="caption">Automated workflows based on GitHub pushes.</p>
+          <div class="visual file shadow">
+            <div class="line"><span class="key">version</span> '2'</div>
+            <div class="line"><span class="key">services</span></div>
+            <div class="line">  <span class="key">web</span></div>
+            <div class="line">    <span class="key">build</span> .</div>
+            <div class="line">    <span class="key">environment</span></div>
+            <div class="line">      - NODE_ENV=development</div>
+            <div class="line">    <span class="key">links</span></div>
+            <div class="line">      - redis</div>
+            <div class="line">    <span class="key">ports</span></div>
+            <div class="line">      - 80:8000</div>
+            <div class="line">  <span class="key">redis</span></div>
+            <div class="line">    <span class="key">image</span> convox/redis</div>
+            <div class="line">    <span class="key">ports</span></div>
+            <div class="line">      - 6379</div>
+          </div>
+        </div>
+        <div class="visual-group col-md-5">
+          <p class="caption">Slack notifications keep you up to date.</p>
+          <div class="visual terminal shadow">
+            <div class="bar">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <div class="scrollback">
+              <div class="command">convox start</div>
+              <div class="output">build    │ Step 1: FROM ubuntu 16.04</div>
+              <div class="output">build    │ Step 2: RUN apt-get install nodejs npm</div>
+              <div class="output">build    │ Step 3: RUN npm install</div>
+              <div class="output">redis    │ The server is now ready on port 6379</div>
+              <div class="output">web      │ Web running on port 8000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lane focus">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h2 class="margin-top-0 margin-bottom-4">Get AWS expertise without being an expert.</h2>
+        </div>
+      </div>
+      <div class="benefits row alternate">
+        <div class="benefit a shadow flex-xs-12 flex-sm-6">
+          <div class="decoration">
+            <i class="material-icons">cloud upload</i>
+          </div>
+          <div class="description">
+            <p>Stay up to date with the latest AWS changes.</p>
+          </div>
+        </div>
+        <div class="benefit b shadow flex-xs-12 flex-sm-6">
+          <div class="decoration">
+            <i class="material-icons">monetization_on</i>
+          </div>
+          <div class="description">
+            <p>Save money and shrink your infrastructure.</p>
+          </div>
+        </div>
+        <div class="benefit c shadow flex-xs-12 flex-sm-6">
+          <div class="decoration">
+            <i class="material-icons">widgets</i>
+          </div>
+          <div class="description">
+            <p>Adopt a peer-reviewed cloud architecture.</p>
+          </div>
+        </div>
+        <div class="benefit c shadow flex-xs-12 flex-sm-6">
+          <div class="decoration">
+            <i class="material-icons">equalizer</i>
+          </div>
+          <div class="description">
+            <p>Containerize your application effortlessly.</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="lane alternate">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h2 class="margin-top-0 margin-bottom-2">Try it for yourself.</h2>
+          <a href="/signup" class="cta button orange brighten margin-top-0">Get Started Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
