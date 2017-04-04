@@ -208,17 +208,17 @@ Convox uses Heroku's buildpacks to build images for apps. The `convox init` comm
 
 To get started, run:
 
-```
-$ convox init
+<pre class="terminal">
+<span class="command">convox init</span>
 Updating convox/init... OK
 Initializing a python app
 Building app metadata. This could take a while... OK
 Writing docker-compose.yml... OK
 Writing Dockerfile... OK
 Writing .dockerignore... OK
-```
+</pre>
 
-## Manifest (service definitions)
+## Manifest
 
 <table class="vs">
   <thead>
@@ -382,9 +382,9 @@ pg_restore: creating SEQUENCE "public.auth_group_id_seq"
 
 Now that we've got a real database set up, we'll want to scale down the database container so that we're not running unnecessary resources. Scaling the container to a count of -1 will also deprovision its load balancer, saving us money on our AWS bill.
 
-```
-$ convox scale database --count=1
-```
+<pre class="terminal">
+<span class="command">convox scale database --count=1</span>
+</pre>
 
 ### Next Steps
 

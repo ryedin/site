@@ -1144,7 +1144,7 @@ section.customers .logos div {
   font-size: 11pt;
   font-weight: 300;
   line-height: 1.2em;
-  overflow-x: scroll;
+  /*overflow-x: scroll;*/
   padding: 20px;
 }
 
@@ -1616,6 +1616,11 @@ section.customers .logos div {
   content: ":"
 }
 
+.heroku .file {
+  height: auto;
+  overflow-y: hidden;
+}
+
 
 /*
  *
@@ -1865,6 +1870,10 @@ section.customers .logos div {
 .terminal .scrollback .output {
   color: #d5d5d5;
   white-space: pre;
+}
+
+.heroku .terminal {
+  height: auto;
 }
 
 
