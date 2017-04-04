@@ -989,6 +989,11 @@ section.customers .logos div {
   padding: 20px 0;
 }
 
+.pricing .plan li.plus {
+  color: #888;
+  font-weight: 500;
+}
+
 .pricing .plan .get-started {
   border-top: 1px solid #eee;
   font-weight: 500;
