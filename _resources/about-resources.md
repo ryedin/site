@@ -89,6 +89,10 @@ Exports
   URL: example.net
 ```
 
+## Scaling down unused services
+
+If you've replaced a service with a resource, you'll want to be sure to [scale the unused service down to `-1`](/docs/scaling/#scaling-down-unused-services) so it doesn't create unnecessary AWS resources in production.
+
 ## Resource Deletion
 
 To delete a resource, use the `convox resources delete` command:
