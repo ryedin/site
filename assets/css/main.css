@@ -1002,7 +1002,7 @@ section.customers .logos div {
 }
 
 .pricing .plan .get-started a {
-  color: #EA9B00;
+  /*color: #EA9B00;*/
   border-bottom: 0;
 }
 
@@ -1731,7 +1731,7 @@ section.customers .logos div {
 .lane.contrast a {
   border-bottom: 1px solid #91cef8;
   color: white;
-  padding-bottom: 2px;
+  /*padding-bottom: 2px;*/
 }
 
 .lane.contrast a:active,
