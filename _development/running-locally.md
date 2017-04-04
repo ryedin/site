@@ -121,8 +121,6 @@ Convox does not recommend running datastores as containers in your Rack. Instead
 
 ## Interacting with remote resources during development
 
-Databases represent one of the trickier aspects of a development-vs-prod workflow and are one of the most common reasons we hear for having multiple Compose files. Convox is designed to make this much easier via [Resources](/docs/about-resources).
-
 If you have set up a database (or other) resource, you may wonder how to interact with it during local development.
 
 You have several options:
@@ -135,17 +133,7 @@ You can use `convox resources proxy` to tunnel to the remote production (or stag
 
 You can also use local containers as defined via the services in `docker-compose.yml`. The environment variables your app should use to communicate between containers will be automatic for linked services as described [here](/docs/environment#linking).
 
-Either way, you'll want to [scale the remote services to `-1`](/docs/scaling/#scaling-down-unused-services) to avoid creating unnecessary containers and load balancers in production.
-
-### Use local binaries
-
-Sometimes you might want to run your app locally in containers while running a database on your local host. The steps required to do so vary by operating system and include extra configuration beyond the scope of this documentation.
-
-### Scale down remote resources
-
-Note that in any case, if you're running your database as a resource, you still need to have the service defined in your `docker-compose.yml` for your app to work locally, due to how Convox set up [links between containers](/docs/environment#linking). 
-
-On the other hand, you don't want that service to be deployed in production because it will create unnecessary containers and a load balancer for the service. You'll therefore want to scale that service down to `-1` as described here: [Scaling down unused services](/docs/scaling/#scaling-down-unused-services).
+You'll want to [scale the remote services to `-1`](/docs/scaling/#scaling-down-unused-services) to avoid creating unnecessary containers and load balancers in production.
 
 ## Local Volumes
 
