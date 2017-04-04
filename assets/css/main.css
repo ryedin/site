@@ -1599,7 +1599,7 @@ section.customers .logos div {
   background: white;
   border-left: 20px solid #f7f7f7;
   border-radius: 4px;
-  color: #d5d5d5;
+  color: #a5a5a5;
   font-family: 'Roboto Mono', monospace;
   font-size: 10pt;
   height: 200px;
@@ -1887,7 +1887,7 @@ section.customers .logos div {
 }
 
 .terminal .scrollback .output {
-  color: #d5d5d5;
+  color: #a5a5a5;
   white-space: pre;
 }
 
