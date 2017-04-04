@@ -1,0 +1,322 @@
+/*
+  
+    CONVOX RESPONSIVE STYLES
+  
+    Bootstrap 3 has four device sizes (xs, sm, md, lg),
+    divided by three width breakpoints (768px, 992px, 1200px).
+  
+    To keep things simple, do not add new media queries to this stylesheet.
+    Instead, add new rules under one of the four media queries in this file.
+  
+    1. Extra small (xs) devices
+    2. Small (sm) devices
+    3. Medium (md) devices
+    4. Large (lg) devices
+  
+   NOTE: the extra small (sm) media query below exists for consistency, and
+   as a convenient location for responsive-specific rules. Keep in mind that
+   because Bootstrap 3 is mobile-first, the rules in the main.css stylesheet
+   target extra small devices by default. The small, medium, and large rules
+   in this stylesheet adjust those styles for larger screen sizes.
+  
+*/
+
+
+/* Extra small (xs) devices */
+@media (min-width: 0px) {
+  /*
+   *
+   * Layout styles: grid
+   *
+   */
+
+  /* The default of 15px of padding feels tight on mobile screens. */
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+
+  /*
+   *
+   * Global styles: flexbox-bootstrap hybrids
+   * Use on elements that need `display: flex`, but also col-xs-* bootstrap classes.
+   *
+   */
+
+  .flex-xs-6 {
+    width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .flex-xs-12 {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+
+/* Small (sm) devices */
+@media (min-width: 768px) {
+  /*
+   *
+   * Global styles: flexbox-bootstrap hybrids
+   * Use on elements that need `display: flex`, but also col-sm-* bootstrap classes.
+   *
+   */
+
+  .flex-sm-6 {
+    width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .flex-sm-12 {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+
+  /*
+   *
+   * Global styles: buttons
+   *
+   */
+
+  .button {
+    font-size: 12pt;
+  }
+
+
+  /*
+   *
+   * Layout styles: header
+   *
+   */
+
+  header .container {
+    padding-top: calc(70px + 7rem);
+    padding-bottom: calc(0px + 11rem);
+  }
+
+  header h1 {
+    font-size: 32pt;
+    letter-spacing: 0.5pt;
+  }
+
+  header h1 em {
+    font-size: 42pt;
+  }
+
+  header .actions .button {
+    margin: 0;
+    width: auto;
+  }
+
+  header .actions .button:first-of-type {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+
+
+  /*
+   *
+   * Layout styles: footer
+   *
+   */
+
+  footer .legal .items .copyright {
+    margin-right: auto;
+  }
+
+  footer .legal .items .privacy {
+    margin-right: 2rem;
+  }
+
+
+  /*
+   *
+   * Regional styles: blog
+   *
+   */
+
+  .blog .extras {
+    margin: 5rem 0;
+  }
+
+  .blog .post-wrap {
+    border: 0;
+    margin: 5rem -15px;
+  }
+
+  .blog .post-wrap:last-of-type {
+    border: 0;
+    margin-bottom: 5rem;
+  }
+
+
+  /*
+   *
+   * Regional styles: pricing
+   *
+   */
+
+  .pricing .plan-wrap {
+    margin-bottom: 0;
+  }
+
+
+  /*
+   *
+   * Local styles: lanes
+   *
+   */
+
+  .lane {
+    padding: 8rem 0;
+  }
+
+  .lane.testimonials .testimonial {
+    margin-bottom: 0;
+  }
+
+  .lane.uptime p {
+    display: block;
+  }
+
+  .lane.uptime .button {
+    margin-top: 1rem;
+  }
+
+
+  /*
+   *
+   * Local styles: visual groups
+   *
+   */
+
+  .visual-group {
+    padding: 0 12rem;
+  }
+
+  .visual-group .visual {
+    margin-bottom: 4rem;
+  }
+
+  .visual-group .caption {
+    margin-bottom: 3rem;
+  }
+
+  /*
+   *
+   * Utility: margin classes
+   *
+   */
+
+  .margin-bottom-0 { margin-bottom: 0; }
+  .margin-bottom-1 { margin-bottom: 2rem; }
+  .margin-bottom-2 { margin-bottom: 4rem; }
+  .margin-bottom-3 { margin-bottom: 6rem; }
+  .margin-bottom-4 { margin-bottom: 8rem; }
+  .margin-bottom-5 { margin-bottom: 10rem; }
+
+  .margin-top-0 { margin-top: 0; }
+  .margin-top-1 { margin-top: 2rem; }
+  .margin-top-2 { margin-top: 4rem; }
+  .margin-top-3 { margin-top: 6rem; }
+  .margin-top-4 { margin-top: 8rem; }
+  .margin-top-5 { margin-top: 10rem; }
+}
+
+
+/* Medium (md) devices */
+@media (min-width: 992px) {
+  /*
+   *
+   * Layout styles: grid
+   *
+   */
+
+  /* Restore Bootstrap default of 15px of container padding. */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  /*
+   *
+   * Layout styles: navbar
+   *
+   */
+
+  .navbar .navbar-nav li a {
+    padding: 5px 0 5px 25px;
+  }
+
+
+  /*
+   *
+   * Regional styles: docs
+   *
+   */
+
+  .docs #doc {
+    padding: 40px 15px 40px 40px;
+  }
+
+
+  /*
+   *
+   * Regional styles: pricing
+   *
+   */
+
+  .pricing .plans {
+    box-shadow: inset 0 -377px 0 -10px rgb(247, 247, 247);
+    padding-top: 5rem;
+  }
+
+
+  /*
+   *
+   * Local styles: visual groups
+   *
+   */
+
+  .visual-group {
+    padding: 0 15px;
+  }
+
+  .visual-group .visual {
+    margin-bottom: 0;
+  }
+}
+
+
+/* Large (lg) devices */
+@media (min-width: 1200px) {
+  /*
+   *
+   * Layout styles: navbar
+   *
+   */
+
+  .navbar .navbar-nav li a {
+    padding: 5px 0 5px 35px;
+  }
+
+
+  /*
+   *
+   * Local styles: assertions
+   *
+   */
+
+  .assertion {
+    margin-bottom: 0;
+  }
+}

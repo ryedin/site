@@ -154,48 +154,9 @@ This guide explains the differences of the platforms, and walks you through the 
 
 ## Prerequisites
 
-Let's start with a simple Python and Postgres Heroku app. The codebase is in a GitHub repo.
+Let's start with a simple Python and Postgres Heroku app. The codebase is in [a GitHub repo](https://github.com/heroku/python-getting-started.git).
 
-<pre class="terminal">
-# clone source code and deploy to Heroku
-
-<span class="command">git clone https://github.com/heroku/python-getting-started.git</span>
-<span class="command">cd python-getting-started-getting-started</span>
-
-<span class="command">heroku create</span>
-Creating app... done, ⬢ pure-basin-53177
-https://pure-basin-53177.herokuapp.com/ | https://git.heroku.com/pure-basin-53177.git
-
-<span class="command">git push heroku master</span>
-remote: Building source:
-remote: 
-remote: -----> Python app detected
-remote: -----> Installing python-2.7.12
-remote:      $ pip install -r requirements.txt
-remote:      $ python manage.py collectstatic --noinput
-remote: -----> Discovering process types
-remote:        Procfile declares types -> web
-remote: -----> Launching...
-remote:        Released v4
-remote:        https://pure-basin-53177.herokuapp.com/ deployed to Heroku
-remote: 
-remote: Verifying deploy... done.
-To https://git.heroku.com/pure-basin-53177.git
- * [new branch]      master -> master
-
-# run database migrations
-
-<span class="command">heroku run python manage.py migrate</span>
-Running python manage.py migrate on ⬢ pure-basin-53177... up, run.3384 (Free)
-Operations to perform:
-  Apply all migrations: sessions, hello, contenttypes, auth, admin
-Running migrations:
-  Rendering model states... DONE
-  Applying contenttypes.0001_initial... OK
-  ...
-</pre>
-
-Next, let's start with an empty Convox app:
+First, let's create an empty Convox app:
 
 <pre class="terminal">
 <span class="command">convox apps create</span>
@@ -208,17 +169,17 @@ Convox uses Heroku's buildpacks to build images for apps. The `convox init` comm
 
 To get started, run:
 
-```
-$ convox init
+<pre class="terminal">
+<span class="command">convox init</span>
 Updating convox/init... OK
 Initializing a python app
 Building app metadata. This could take a while... OK
 Writing docker-compose.yml... OK
 Writing Dockerfile... OK
 Writing .dockerignore... OK
-```
+</pre>
 
-## Manifest (service definitions)
+## Manifest
 
 <table class="vs">
   <thead>
@@ -237,7 +198,7 @@ Writing .dockerignore... OK
   </tr>
 </table>
 
-The previous `convox init` command also generated `docker-compose.yml` file to our Convox app. Every process type and command in `Procfile` is added as a service and command to `docker-compose.yml`.
+The previous `convox init` command generated a `docker-compose.yml` file for our Convox app. Every process type and command in `Procfile` is added as a service and command to `docker-compose.yml`.
 
 <pre class="file yaml" title="docker-compose.yml">
 version: "2"
@@ -382,9 +343,9 @@ pg_restore: creating SEQUENCE "public.auth_group_id_seq"
 
 Now that we've got a real database set up, we'll want to scale down the database container so that we're not running unnecessary resources. Scaling the container to a count of -1 will also deprovision its load balancer, saving us money on our AWS bill.
 
-```
-$ convox scale database --count=1
-```
+<pre class="terminal">
+<span class="command">convox scale database --count=1</span>
+</pre>
 
 ### Next Steps
 
