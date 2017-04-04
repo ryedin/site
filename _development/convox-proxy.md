@@ -15,7 +15,7 @@ When possible, [resources](/docs/about-resources/) are generally configured so t
 $ convox resources proxy mysql-4624
 ```
 
-Under the hood, this creates an HTTP websocket tunnel through your Rack process that talks to your database via a socket on your local machine. In other words, `convox resources proxy` allows you to communicate with your Postgres database (for example) as if it were running on your own machine.
+Under the hood, this creates an encrypted and secure websocket tunnel through your Rack process that talks to your database via a socket on your local machine. In other words, `convox resources proxy` allows you to communicate with your Postgres database (for example) as if it were running on your own machine.
 
 ### Example
 
