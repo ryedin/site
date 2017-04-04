@@ -100,39 +100,55 @@ layout: base
       <div class="row text-center">
         <div class="visual-group col-md-5 col-md-offset-1">
           <p class="caption">Automated workflows based on GitHub pushes.</p>
-          <div class="visual file shadow">
-            <div class="line"><span class="key">version</span> '2'</div>
-            <div class="line"><span class="key">services</span></div>
-            <div class="line">  <span class="key">web</span></div>
-            <div class="line">    <span class="key">build</span> .</div>
-            <div class="line">    <span class="key">environment</span></div>
-            <div class="line">      - NODE_ENV=development</div>
-            <div class="line">    <span class="key">links</span></div>
-            <div class="line">      - redis</div>
-            <div class="line">    <span class="key">ports</span></div>
-            <div class="line">      - 80:8000</div>
-            <div class="line">  <span class="key">redis</span></div>
-            <div class="line">    <span class="key">image</span> convox/redis</div>
-            <div class="line">    <span class="key">ports</span></div>
-            <div class="line">      - 6379</div>
-          </div>
+          <table class="visual integrations workflow shadow table">
+            <thead>
+              <tr>
+                <th colspan="2">Trigger</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <label>Integration:</label>
+                  <select>
+                    <option>GitHub</option>
+                    <option>GitLab</option>
+                  </select>
+                </td>
+                <td>
+                  <label>Repo:</label>
+                  <select>
+                    <option>myorg/api</option>
+                    <option>myorg/admin</option>
+                    <option>myorg/web</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Event:</label>
+                  <select>
+                    <option>Push</option>
+                    <option>Pull Request</option>
+                  </select>
+                </td>
+                <td>
+                  <label>Branch:</label>
+                  <input type="text" value="master" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="visual-group col-md-5">
-          <p class="caption">Slack notifications keep you up to date.</p>
+          <p class="caption">Slack notifications keep your whole team up to date.</p>
           <div class="visual terminal shadow">
             <div class="bar">
               <div class="circle"></div>
               <div class="circle"></div>
               <div class="circle"></div>
             </div>
-            <div class="scrollback">
-              <div class="command">convox start</div>
-              <div class="output">build    │ Step 1: FROM ubuntu 16.04</div>
-              <div class="output">build    │ Step 2: RUN apt-get install nodejs npm</div>
-              <div class="output">build    │ Step 3: RUN npm install</div>
-              <div class="output">redis    │ The server is now ready on port 6379</div>
-              <div class="output">web      │ Web running on port 8000</div>
-            </div>
+            <img src="/assets/images/slack-bot.png" width="100%" />
           </div>
         </div>
       </div>

@@ -1682,6 +1682,18 @@ section.customers .logos div {
   height: 24px;
 }
 
+.integrations.table.workflow > tbody > tr > td {
+  border: none;
+  width: 50%;
+}
+
+.integrations.table.workflow > thead > tr > th {
+  background: #f0f0f0;
+}
+
+.integrations.table.workflow label {
+  display: block;
+}
 
 /*
  *
@@ -1833,6 +1845,7 @@ section.customers .logos div {
 .terminal {
   border-radius: 4px;
   height: 200px;
+  background: white;
 }
 
 .terminal .bar {
