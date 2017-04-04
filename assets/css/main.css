@@ -216,12 +216,13 @@ input#mce-EMAIL {
 }
 
 .navbar .navbar-brand {
-  padding: 15px;
+  padding: 0;
 }
 
 .navbar .navbar-brand img {
   display: inline;
-  height: 25px;
+  height: 35px;
+  margin-top: 8px;
   vertical-align: middle;
   width: auto;
 }
