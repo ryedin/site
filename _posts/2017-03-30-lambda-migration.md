@@ -14,9 +14,18 @@ Pieces of this have been released over the past weeks and months, so many of you
 
 But if you're still getting those emails from AWS, you can:
 
-1. Perform a `convox rack update`. This will automatically update all your Rack Lambda functions.
-2. Re-deploy your apps. This will automatically update all your app Lambda functions.
-3. Re-create any syslog resources with `convox services create syslog` and delete old ones. This will update your logging Lambda functions.
+1. Update Rack Lambda functions with `convox rack update`
+2. Update App Lambda functions by promoting a new release
+3. Update logging Lambda functions by re-creating syslog resources
+
+You can do this from the command line with commands like:
+
+```
+$ convox rack update --wait
+$ convox env set FOO=bar --promote --app myapp1
+$ convox resources create syslog --url tcp+tls://logs1.papertrailapp.com:12345
+$ convox resources delete syslog-1234
+```
 
 You can expect to receive a couple more updates from both AWS and Convox between now and April 30th, to make sure nobody is affected when the Lambda runtime is shut off for good.
 
