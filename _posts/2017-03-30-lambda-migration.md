@@ -23,8 +23,8 @@ You can do this from the command line with commands like:
 ```
 $ convox rack update --wait
 $ convox env set FOO=bar --promote --app myapp1
-$ convox resources delete syslog-1234
 $ convox resources create syslog --url tcp+tls://logs1.papertrailapp.com:12345
+$ convox resources delete syslog-1234
 ```
 
 You can expect to receive a couple more updates from both AWS and Convox between now and April 30th, to make sure nobody is affected when the Lambda runtime is shut off for good.
