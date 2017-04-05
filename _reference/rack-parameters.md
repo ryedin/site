@@ -92,12 +92,14 @@ This parameter is used for local [development on Rack](https://github.com/convox
 
 ## BuildInstance
 
-Creates and assigns a [dedicated build instance](/docs/builds/#dedicated-build-instance) to a Rack.
+EC2 instance type to create and use as the Rack's [dedicated build instance](/docs/builds/#dedicated-build-instance).
 
 Note: the build instance will also use the [`InstanceBootCommand`](/docs/rack-parameters#instancebootcommand) and [`InstanceRunCommand`](/docs/rack-parameters#instanceruncommand) Rack params, if defined.
 
 | Default value  | ""                                                               |
 | Allowed values | [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/) |
+
+See also the [InstanceType](#instancetype) Rack parameter and our page on [AWS Instance Types](/docs/aws-instance-types/).
 
 ## BuildMemory
 
@@ -205,10 +207,12 @@ The `InstanceRunCommand` will also apply to any [build instance](/docs/rack-para
 
 ## InstanceType
 
-The type of EC2 instance run in your Rack cluster.
+The type of EC2 instance to run in your Rack cluster.
 
-| Default value  | `t2.small`                                                         |
+| Default value  | `t2.small`                                                       |
 | Allowed values | [EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/) |
+
+See also the [BuildInstance](#buildinstance) Rack parameter and our page on [AWS Instance Types](/docs/aws-instance-types/).
 
 ## InstanceUpdateBatchSize
 
