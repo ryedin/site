@@ -14,7 +14,7 @@ Pieces of this have been released over the past weeks and months, so many of you
 
 But if you're still getting those emails from AWS, you can:
 
-1. Update Rack Lambda functions with `convox rack update`.
+1. Update Rack Lambda functions with `convox rack update`
 (If you are on an older Rack version you might need to run this multiple times to step through any required releases. Continue to update until your Rack is at version **20170330004259** or later.)
 2. Update App Lambda functions by promoting a new release
 3. Update logging Lambda functions by re-creating syslog resources
