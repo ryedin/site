@@ -6,7 +6,7 @@ title: "Syslog"
 
 You can forward your logs to syslog using the `convox resources create` command:
 
-    $ convox resources create syslog --url tcp+tls://logs1.papertrailapp.com:12345
+    $ convox resources create syslog --url=tcp+tls://logs1.papertrailapp.com:12345
     Creating syslog-3785 (syslog)... CREATING
 
 This will create a syslog forwarder. Creation will take a few moments. To check the status use `convox resources info`.
