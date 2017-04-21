@@ -17,7 +17,7 @@ A Rack will start multiple identical servers on which it will containerize and r
 
 ### Private Network
 
-Each Rack creates a private network inside which it runs its servers and services. All access from the internet comes through load balancers which are specifically configured route traffic to your containers.
+Each Rack creates a private network inside which it runs its servers and services. All access from the internet comes through load balancers which are specifically configured to route traffic to your containers.
 
 ### Resources
 
