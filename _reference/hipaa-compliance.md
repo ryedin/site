@@ -4,6 +4,8 @@ title: "HIPAA Compliance"
 
 At Convox we understand that for HIPAA-compliant teams, having full control of your customer data is the most important factor when choosing a new technology. We built Convox as a single-tenant solution and made privacy and security fundamental design goals to guarantee that you know exactly who and what has access to your data.
 
+Convox offers HIPAA customer references on request.
+
 ## Steps to ensure HIPAA Compliance with Convox
 
 ### Install a private rack on dedicated hardware
