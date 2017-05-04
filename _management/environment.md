@@ -3,10 +3,6 @@ title: "Environment"
 order: 500
 ---
 
-<div class="block-callout block-show-callout type-info" markdown="1">
-This page is about the role of environment variables in containers and applications. For information about environment variables in the context of the Convox CLI, see [CLI environment variables](/docs/cli-environment-variables/).
-</div>
-
 Convox applications are configured using environment variables. Environment management differs depending on whether you are running your applications locally or in the cloud. See the sections below for details.
 
 1. [Local](#local)
@@ -14,6 +10,7 @@ Convox applications are configured using environment variables. Environment mana
 1. [Scope](#scope)
 1. [Sensitive Information](#sensitive-information)
 1. [Under the hood](#under-the-hood)
+1. [Additional Security](#additional-security)
 1. [Further Reading](#further-reading)
 
 ## Local
@@ -34,7 +31,6 @@ When running your application with `convox start` you should set values for your
 SECRET_KEY=xyzzy
 FOO=bar
 ```
-
 
 ### Host environment
 
@@ -134,7 +130,27 @@ We also recommend leaving your `.env` file out of version control and any images
 
 When you use the `convox env` commands, you're actually interacting with a KMS-encrypted file stored in an S3 bucket in your AWS account. For example, `convox env` fetches that file, decrypts it, and then prints the environment variable pairs it contains. Likewise, `convox env get` fetches and decrypts that file, but then prints only the requested environment variable. As you might expect, `convox env set` fetches and decrypts the env file from S3, then appends the env var pairs you pass as arguments to that file, before re-encrypting the file and putting it back in the S3 bucket. Finally, `convox env unset` removes the specified variable from the file, rather than adding or updating it like `convox env set`.
 
-You should also keep in mind that the environment of each app is stored in its ECS task definitions, so that ECS can set the environment of each task (i.e. container) appropriately. As a result, you can view the decrypted environment data in the app's ECS task definitions.
+The environment of each service is stored in its ECS Task Definition so that ECS can set the environment of each task (i.e. container) appropriately. As a result, you can view the decrypted environment data in the app's ECS Task Definitions. If this is a concern for you, please see the following Additional Security section.
+
+## Additional Security
+
+You can prevent your environment variables from being visible in ECS Task Definitions by setting the `convox.environment.secure=true` label on each relevant service.
+
+    version: "2"
+
+    services:
+      web:
+        labels:
+          - convox.environment.secure=true
+
+When this label is set the environment variables will not be applied to that service's Task Definitions. Instead, the application itself will need to download and decrypt the environment file. To facilitate this, two environment variables will be available at runtime:
+
+- `SECURE_ENVIRONMENT_URL` - The URL of the S3 file that contains your environment variables
+- `SECURE_ENVIRONMENT_KEY` - The ARN of the KMS key needed to decrypt the environment file
+
+Although it's possible to handle this directly with the AWS SDK, Convox has provided a binary called `secure-environment` to make things easier. You can download the latest binary from the [releases page](https://github.com/convox/secure-environment/releases). It can be used with a Docker ENTRYPOINT script to download, decrypt, and source your environment variables at container runtime.
+
+See the example app at [https://github.com/convox-examples/secure-env-example](https://github.com/convox-examples/secure-env-example) for more details.
 
 ## Further Reading
 

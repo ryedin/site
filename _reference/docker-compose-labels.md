@@ -12,6 +12,7 @@ labels:
   - <a href="#convoxdeployment">convox.deployment.maximum</a>
   - <a href="#convoxdeployment">convox.deployment.minimum</a>
   - <a href="#convoxdrainingtimeout">convox.draining.timeout</a>
+  - <a href="#convoxenvironmentsecure">convox.environment.secure</a>
   - <a href="#convoxhealth">convox.health.path</a>
   - <a href="#convoxhealth">convox.health.port</a>
   - <a href="#convoxhealth">convox.health.timeout</a>
@@ -64,6 +65,13 @@ The `convox.draining.timeout` label allows you to specify the amount of time in 
 
     labels:
       - convox.draining.timeout=300
+
+## convox.environment.secure
+
+Setting this label to `true` for a specific service prevents environment variables from being stored in cleartext on that service's ECS Task Definition. This means that your application itself will need to download the environment variables file from S3, decrypt it using the Rack's KMS key, and (if desired) source the variables into the container environment. Please see the [Environment documentation](/docs/environment/#additional-security) for more info, examples, and tools.
+
+    labels:
+      - convox.environment.secure=true
 
 ## convox.health
 
