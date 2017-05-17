@@ -626,7 +626,11 @@ paths:
         200:
           description: success
           schema:
-            $ref: '#/definitions/success'
+            properties:
+              success:
+                type: boolean
+              pid:
+                type: string
         404:
           description: not found
           schema:
