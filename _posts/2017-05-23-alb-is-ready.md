@@ -10,13 +10,33 @@ Seven months ago I covered the AWS [Application Load Balancer (ALB) announcement
 
 It’s clear that the Elastic Load Balancer (ELB) is old and busted, and ALB is the new hotness.
 
-So I’m happy to announce that Convox now has an ALB path. Check out this new [Getting Started Guide](https://github.com/convox/praxis/blob/master/docs/getting-started.md) to learn how to set up a new version of the platform with a single ALB routing traffic to many apps. This brings the cost of a private, production-ready container cluster down to $35/mo for a handful of apps.
+So I’m happy to announce that Convox now has an ALB path. Check out this new [Getting Started Guide](https://github.com/convox/praxis/blob/master/docs/getting-started.md) to learn how to set up a new version of the platform with a single ALB routing traffic to many apps.
+
+This brings the cost of a small private, production-ready container cluster down to **$35/mo** for a handful of apps.
+
+It also simplifies scaling on all clusters, letting us run our workloads on fewer, bigger instances. This makes autoscaling of clusters easier than ever and could also mean big cost savings by reducing license fees for agents like NewRelic and Datadog.
 
 <!--more-->
 
-## Path Based Routing: Not Quite There
+## ELB Port Mapping → ALB Target Groups
 
-The August ALB announcement was exciting. ALB’s content-based routing showed that a single ALB could dynamically forward requests to more than one group of containers dynamically, based on the HTTP request. This is a big improvement over ELB which can only forward all traffic to a fixed set of instances and ports.
+At Convox we've been using ELBs to load balance traffic to apps on the EC2 Container Service (ECS) for years. While the reliability of ELB to ECS has been impeccable, there is one clear flaw in how it works.
+
+An ELB is configured to forward traffic from an internet-facing port to a single EC2 instance port. For example a common configuration is to forward the load balancer port 80 to instance port 8080, and the load balancer port 443 to instance port 4443. Since we can register many instances behind this load balancer, ELB port mapping is sufficient for horizontal scaling.
+
+However this means to add an additional backend we need to add an additional instance. In the container universe this is less than ideal.
+
+If we want to scale one web service out to 10 backends, we need 10 instances. Furthermore, when it comes time to a new version of the web service, if we want to always maintain at least 10 backends, we need one or more spare instances to place a new container before we can stop an old one. So we might be looking at a 12 instance cluster just to support one service type.
+
+So the August ALB announcement was exciting. It's clear that ALB was designed to directly address this flaw in ELB by introducing [target groups](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html).
+
+A backend from any instance and port can register itself into an target group and the ALB will start load balancing traffic to it. This means that two or more web backends on a single instance can share in load balancing.
+
+We no longer need 12 instances to support 10 web backends. In fact a single large instance could work!
+
+## ALB Path Based Routing: Not Quite There
+
+ALB’s content-based routing showed that a single ALB could dynamically forward requests to more than one group of containers dynamically, even two or more containers on the same instance, based on the HTTP request.
 
 But more research and development around ALB showed it wasn’t really ready for total adoption.
 
@@ -34,11 +54,11 @@ The reality of this implementation is that using ALB could require serious chang
 
 Because of these limitations of ALB, we took a conservative approach for Convox and persisted with an ELB strategy, where every set of containers gets it’s own ELB and own hostname. All those ELBs are annoying on the monthly bill, but at least we didn’t have to rewrite our apps.
 
-## Host Based Routing: YES!
+## ALB Host Based Routing: YES!
 
 Fast forward to the April 2017 announcement: [ALB Adds Support for Host-based Routing and Increased Rules](https://aws.amazon.com/about-aws/whats-new/2017/04/elastic-load-balancing-adds-support-for-host-based-routing-and-increased-rules-on-its-application-load-balancer/).
 
-A single ALB can now route requests to a target group based on the HTTP Host header. On top of this, ALB now supports **75 URL-based rules.** Now we’re talking! A single ALB in a container cluster can do it all…
+A single ALB can now route requests to a target group based on the HTTP Host header. On top of this, ALB now supports **75 URL-based rules.** Now we’re talking! A single ALB in a container cluster can do it all...
 
 * [https://myapp.com/](https://myapp.com/) → Nginx app
 
@@ -104,14 +124,16 @@ We’re hard at work finishing up and testing the new ALB architecture as we spe
 
 ## Conclusion
 
-AWS is constantly working hard to provide the component services we want to run our app. With the host-based routing feature, it’s clear that ALB is now the best and cheapest way to use AWS.
+AWS is constantly working hard to provide the component services we want to run our apps. With the host-based routing feature, it’s clear that ALB is now the best and cheapest way to use AWS.
 
 Convox is constantly evaluating the entire landscape of cloud services so we can leverage the best ones for our platform. It took a bit of patience, but we are now confident that an ALB architecture is the way to go.
 
-It gives us great pleasure to bring these massive price improvements to all our customers with no additional work.
+It gives us great pleasure to bring these massive architecture and price improvements to all our customers with no additional work on their part.
 
-Stay focused on your apps and leave the infrastructure work to us.
+They get to stay focused on apps and leave the infrastructure work to us.
 
 Have questions about ALB? Reach out on [Twitter](https://twitter.com/goconvox) or [Slack](http://invite.convox.com/).
 
+--
 
+Thanks to [Michael Warkentin](https://github.com/mwarkentin) for feedback!
