@@ -12,9 +12,11 @@ It’s clear that the Elastic Load Balancer (ELB) is old and busted, and ALB is 
 
 So I’m happy to announce that Convox now has an ALB path. Check out this new [Getting Started Guide](https://github.com/convox/praxis/blob/master/docs/getting-started.md) to learn how to set up a new version of the platform with a single ALB routing traffic to many apps.
 
-This brings the cost of a small private, production-ready container cluster down to **$35/mo** for a handful of apps.
+This improves deploy speeds. ALB allows us to launch and register many new containers into the load balancer at once, much faster than rolling new containers out one or two at a time behind an ELB.
 
 It also simplifies scaling on all clusters, letting us run our workloads on fewer, bigger instances. This makes autoscaling of clusters easier than ever and could also mean big cost savings by reducing license fees for agents like NewRelic and Datadog.
+
+Ultimately this brings the cost of a small private, production-ready container cluster down to **$35/mo** for a handful of apps.
 
 <!--more-->
 
@@ -28,11 +30,15 @@ However this means to add an additional backend we need to add an additional ins
 
 If we want to scale one web service out to 10 backends, we need 10 instances. Furthermore, when it comes time to a new version of the web service, if we want to always maintain at least 10 backends, we need one or more spare instances to place a new container before we can stop an old one. So we might be looking at a 12 instance cluster just to support one service type.
 
+This also impacts deployment speed. In the above scenario, we can only place one or two new containers at a time onto the spare instances. When these containers come up and pass health checks, ECS will stop old containers. This roll out is automatic but in practice can take 5 or 10 minutes.
+
 So the August ALB announcement was exciting. It's clear that ALB was designed to directly address this flaw in ELB by introducing [target groups](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html).
 
 A backend from any instance and port can register itself into an target group and the ALB will start load balancing traffic to it. This means that two or more web backends on a single instance can share in load balancing.
 
-We no longer need 12 instances to support 10 web backends. In fact a single large instance could work!
+We no longer need 12 instances to support 10 web backends. In fact a single large instance could work (but of course we want two instances for availabilty).
+
+We also don't need to roll out new containers a few at a time. We can launch 10 new containers into the cluster at once, then stop all the old ones at once. This should take only a minute or two.
 
 ## ALB Path Based Routing: Not Quite There
 
