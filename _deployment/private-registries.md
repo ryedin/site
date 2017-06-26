@@ -50,9 +50,9 @@ To remove private registry info, use the `convox registries remove` command. To 
     $ convox registries remove https://index.docker.io/v1/
     Done.
 
-## Adding an Amazon EC2 Container Registry (ECR)
+## Adding an Amazon EC2 Container Registry (ECR) from a different account
 
-You may also want to pull and build from images stored in a private EC2 Container Registry (ECR):
+Convox is already configured to use ECR in its own AWS account. However, you may also want to pull and build from images stored in the ECR of a different AWS account:
 
     database:
       image: 901416387788.dkr.ecr.us-east-1.amazonaws.com/postgres
