@@ -1,0 +1,7 @@
+services:
+  web:
+    certificate: ${HOST}
+    command: _bin/web
+    environment:
+      - DEVELOPMENT=false
+    port: 4001
