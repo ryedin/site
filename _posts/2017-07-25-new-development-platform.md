@@ -31,7 +31,7 @@ NAME  ENDPOINT
 web   https://web.docs.convox
 ```
 
-Here we created, build and deployed an app to our local machine. It is syncing code changes into the web containers and load balancing traffic between them. We can access it at a friendly URL:
+Here we created, built and deployed an app to our local machine. It is syncing code changes into the web containers and load balancing traffic between them. We can access it at a friendly URL:
 
 ![It works!](/assets/images/chrome-secure.png)*It works!*
 
