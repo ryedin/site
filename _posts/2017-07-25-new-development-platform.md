@@ -39,23 +39,21 @@ Here we created, build and deployed an app to our local machine. It is syncing c
 
 ## Development Platform
 
-The [Twelve-Factor App](https://12factor.net) methods talk about keeping development and production as similar as possible, aka [Dev / Prod parity](https://12factor.net/dev-prod-parity).
+The [Twelve-Factor App](https://12factor.net) methods talk about keeping development and production as similar as possible, aka [dev / prod parity](https://12factor.net/dev-prod-parity).
 
-The new development platform finally achieves this goal.
+Convox finally achieves this goal.
 
-It offers commands like `cx apps create`, `cx deploy`, `cx env`, `cx run` and  to manage apps, environment and processes on your local computer.
+The new development platform offers commands like `cx apps create`, `cx deploy`, `cx env`, `cx run` and  to manage apps, environment and processes on your local computer. This experience is what we expect when managing apps in the cloud, and bringing it to the daily development workflow is transformational.
 
-More importantly it emulates everything about the production environment like load balancing to multiple containers, SSL termination, DNS and more.
+The environment also uses an architecture exactly like a production environment, including a Linux runtime, load balancing to multiple processes, SSL termination, DNS and more.
 
-When you develop apps in this fashion, you need little to no code changes or tooling changes when going to production.
-
-The result is shipping code faster and safer.
+When you develop apps in this fashion, you need little to no code changes or tooling changes when going to production. You don't have to think about maintaining development docs, scripts and code hacks to make things work on a laptop. You get to focus on shipping changes to apps quickly and safely.
 
 ## Microservices
 
-We work with lots of development teams and an an extremely common challenge arises around microservices. When you have 5 small apps that interact with each other, managing everything on a laptop can be very challenging.
+We work with lots of development teams and an extremely common challenge arises around microservices. When you have 5 small apps that interact with each other, running them all together on a laptop can be difficult.
 
-The development platform design addresses this head on. You can now "deploy" all of these apps to run in the background of you computer with `cx deploy`, then bring one or more to the "foreground" to work on with `cx start`.
+The development platform design addresses this head on. You can now deploy all of these apps to run in the background of your computer with `cx deploy`, then bring one or more to the foreground to work on with `cx start`.
 
 ```
 $ cx apps create api
@@ -78,10 +76,10 @@ starting: convox.api.service.web.2
 web     | syncing: . to /app
 ```
 
-Here we are running the "api" app and its database in the background, and the "dashboard" app in the foreground. The dashboard code can access the API through the static `https://web.api.convox` URL.
+Here we run the "api" app and its database in the background, and the "dashboard" app in the foreground. The dashboard code can access the API through the static `https://web.api.convox` URL.
 
 ## Try it out
 
-If you'd like to give it a try, check out the [local development tutorial](https://docs-staging.convox.com/walkthroughs/local/) for more details.
+If you'd like to give it a try, check out the [local development tutorial](https://docs-staging.convox.com/walkthroughs/local/) for a full walkthrough.
 
 Stay tuned for more announcements around Convox 2.0!
