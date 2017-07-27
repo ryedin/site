@@ -199,7 +199,7 @@ input#mce-EMAIL {
   background-image: linear-gradient(-225deg, #222222 0%, #111111 100%);
   border: 0;
   margin-bottom: -70px;
-  padding: 10px 0;
+  padding: 10px 0 0 0;
   text-transform: none;
 }
 
@@ -240,6 +240,14 @@ input#mce-EMAIL {
   border: 0;
 }
 
+.navbar .banner {
+  text-align: center;
+  font-weight: bold;
+  background: #FFF7DD;
+  font-size: 18px;
+  padding: 5px 0;
+  margin-top: 10px;
+}
 
 /*
  *
@@ -270,13 +278,13 @@ header.compact {
 }
 
 header .container {
-  padding-top: calc(70px + 7rem);
+  padding-top: calc(105px + 7rem);
   padding-bottom: calc(0px + 11rem);
   text-align: center;
 }
 
 header.compact .container {
-  padding-top: calc(70px + 3rem);
+  padding-top: calc(105px + 3rem);
   padding-bottom: calc(0px + 3rem);
 }
 
