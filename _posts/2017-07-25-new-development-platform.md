@@ -74,7 +74,7 @@ creating dashboard: OK
 $ cx start
 build complete
 starting: convox.dashboard.service.web.1
-starting: convox.api.service.web.2
+starting: convox.dashboard.service.web.2
 web     | syncing: . to /app
 ```
 
