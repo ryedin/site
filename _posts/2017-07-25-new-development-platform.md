@@ -35,6 +35,8 @@ Here we created, build and deployed an app to our local machine. It is syncing c
 
 ![It works!](/assets/images/chrome-secure.png)*It works!*
 
+Try it out yourself by following the [local development walk through](https://docs.convox.com/walkthroughs/local/)...
+
 <!--more-->
 
 ## Development Platform
