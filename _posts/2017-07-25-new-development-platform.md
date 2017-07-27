@@ -1,5 +1,5 @@
 ---
-title: The New Convox Development Platform
+title: The Convox 2.0 Development Platform
 author: Noah Zoschke
 twitter: nzoschke
 ---
