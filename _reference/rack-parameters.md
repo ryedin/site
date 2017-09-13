@@ -17,6 +17,7 @@ You can also set multiple parameters at once.
 The following parameters can be used to configure your Convox Rack:
 
 * [Ami](#ami)
+* [ApiCount](#apicount)
 * [ApiCpu](#apicpu)
 * [ApiMemory](#apimemory)
 * [Autoscale](#autoscale)
@@ -38,9 +39,11 @@ The following parameters can be used to configure your Convox Rack:
 * [InstanceUpdateBatchSize](#instanceupdatebatchsize)
 * [Internal](#internal)
 * [Key](#key)
+* [OnDemandMinCount](#ondemandmincount)
 * [Password](#password) **(required)**
 * [Private](#private)
 * [PrivateApi](#privateapi)
+* [SpotInstanceBid](#spotinstancebid)
 * [Subnet0CIDR](#subnet0cidr)
 * [Subnet1CIDR](#subnet1cidr)
 * [Subnet2CIDR](#subnet2cidr)
@@ -56,6 +59,12 @@ The following parameters can be used to configure your Convox Rack:
 ## Ami
 
 Which [Amazon Machine Image](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html) should be used.
+
+## ApiCount
+
+How many Rack API containers to run. Setting this higher than 2 will guarantee better Rack API availability for mission critical clusters.
+
+| Default value | `2` |
 
 ## ApiCpu
 
@@ -228,6 +237,12 @@ Make all new apps created in the Rack use Internal ELBs by default, i.e. make th
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
 
+## OnDemandMinCount
+
+If using spot instances through the [SpotInstanceBid](#spotinstancebid) parameter, this configures the minimum number of on demand instances. This should be set to a value that will guarantee the minimum acceptable service availbility.
+
+| Default value | `3`    |
+
 ## Key
 
 SSH key name for access to cluster instances.
@@ -253,13 +268,17 @@ Put Rack API Load Balancer in a private network, i.e. have the Rack API use an I
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
 
+## SpotInstanceBid
+
+A value, in dollars, that you want to pay for spot instances. If spot instances are available for the bid price, the Rack instances will use spot instances instead of on demand instances, resulting in significant cost savings. If the parameter is empty, spot instances will not be utilized. This should be used with the [OnDemandMinCount](#ondemandmincount) parameter to guarantee some on demand instances are running if spot instances are not available.
+
+| Default value  | "" |
 
 ## Subnet0CIDR
 
 Public Subnet 0 CIDR Block.
 
 | Default value | `10.0.1.0/24` |
-
 
 ## Subnet1CIDR
 
@@ -321,7 +340,6 @@ Default disk size (in gibibytes) of the EBS volume attached to each EC2 instance
 VPC CIDR Block. Note that changing this has no effect since VPC CIDR ranges cannot be changed after they're created.
 
 | Default value | `10.0.0.0/16` |
-
 
 ## Reference
 
