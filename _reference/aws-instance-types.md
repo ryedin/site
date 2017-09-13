@@ -20,7 +20,7 @@ For instructions, see [How to Purchase Reserved Instances](https://aws.amazon.co
 
 ### Spot Instances
 
-You can specify utilize [Spot Instances](https://aws.amazon.com/ec2/spot/) to greatly reduce the cost of a cluster.
+You can utilize [Spot Instances](https://aws.amazon.com/ec2/spot/) to greatly reduce the cost of a cluster.
 
 - Turn off Rack [AutoScale](/docs/rack-parameters#autoscale)
 - Configure the Rack to use an [InstanceType](/docs/rack-parameters#instancetype) with spot instance availability
