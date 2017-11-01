@@ -9,7 +9,6 @@ layout: base
       <div class="col-xs-12 text-center">
         <h1>Plans & Pricing</h1>
         <div class="subheading">Convox is a trusted name in cloud infrastructure.</div>
-        <div class="subheading">We never charge for infrastructure services. Our mission is to reduce those bills.</div>
       </div>
     </div>
   </div>
@@ -17,74 +16,125 @@ layout: base
 
 <div class="pricing">
   <section class="plans lane text-center contrast">
-    <div class="container">
-      <div class="row">
-        <div class="plan-wrap col-xs-12 col-sm-4">
-          <div class="plan shadow">
-            <h3>Developer</h3>
-            <ul>
-              <li class="price">Free</li>
-              <li class="support">GitHub and Slack community support</li>
-              <li>Single user</li>
-              <li>Private deployment platform</li>
-              <li>Workflow automation</li>
-              <li>GitHub/GitLab integration</li>
-              <li>Slack integration</li>
-              <li class="get-started"><a href="/signup" class="cta button orange brighten">Get Started Now</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="plan-wrap col-xs-12 col-sm-4">
-          <div class="plan shadow">
-            <h3>Pro</h3>
-            <ul>
-              <li class="price monthly">$500</li>
-              <li class="support">Business-day support</li>
-              <li class="plus">Everything in Developer, plus:</li>
-              <li>Unlimited users</li>
-              <li>Role-based access control</li>
-              <li>Audit logs</li>
-              <li>&nbsp;</li>
-              <li class="get-started"><a href="/signup" class="cta button orange brighten">Get Started Now</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="plan-wrap col-xs-12 col-sm-4">
-          <div class="plan shadow">
-            <h3>Enterprise</h3>
-            <ul>
-              <li class="price">Custom</li>
-              <li class="support">24/7 support</li>
-              <li class="plus">Everything in Pro, plus:</li>
-              <li>LDAP Authentication</li>
-              <li>Self-hosted Console</li>
-              <li>&nbsp;</li>
-              <li>&nbsp;</li>
-              <li class="get-started"><a href="#" class="cta js-intercom-show button orange brighten">Get a Quote</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="lane text-center">
-    <div class="container">
-      <div class="content">
-        <div class="row margin-bottom-1">
-          <h2 class="margin-top-0">Solo developer or serious team?</h2>
-        </div>
-        <div>
-          <p>
-            Get one user, and automated staging and production deployment workflows&mdash;for free!
-          </p>
-          <p>
-            Add more admins, operators and developers and get support from Convox engineers&mdash;from $500/mo.
-          </p>
-          <p>
-            <a href="https://console.convox.com/grid/signup">Get started</a>.
-          </p>
-        </div>
+    <div class="container pricing">
+      <div class="col-xs-12 plan shadow">
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Developer</th>
+              <th>Basic</th>
+              <th>Pro</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td><a href="/signup" class="cta button orange brighten">Get Started</a></td>
+              <td><a href="/signup" class="cta button orange brighten">Get Started</a></td>
+              <td><a href="/signup" class="cta button orange brighten">Get Started</a></td>
+              <td><a href="mailto:sales@convox.com?subject=Convox Enterprise" class="cta js-intercom-show button orange brighten">Get Quote</a></td>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+              <th>Maximum Users</th>
+              <td>1</td>
+              <td>10</td>
+              <td style="padding-top:4px; padding-bottom:2px;"><span class="infinite">&infin;</span></td>
+              <td style="padding-top:4px; padding-bottom:2px;"><span class="infinite">&infin;</span></td>
+            </tr>
+            <tr>
+              <th>Maximum Racks</th>
+              <td>1</td>
+              <td style="padding-top:4px; padding-bottom:2px;"><span class="infinite">&infin;</span></td>
+              <td style="padding-top:4px; padding-bottom:2px;"><span class="infinite">&infin;</span></td>
+              <td style="padding-top:4px; padding-bottom:2px;"><span class="infinite">&infin;</span></td>
+            </tr>
+            <tr class="separator"><td colspan=5></td></tr>
+            <tr>
+              <th>Workflow Automation</th>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr>
+              <th>GitHub/GitLab Integration</th>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr>
+              <th>Slack Integration</th>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr class="separator"><td colspan=5></td></tr>
+            <tr>
+              <th>Role Based Access Control</th>
+              <td></td>
+              <td></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr>
+              <th>LDAP Authentication</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr>
+              <th>Audit Logs</td>
+              <td>None</td>
+              <td>24 hours</td>
+              <td>30 days</td>
+              <td style="padding-top:4px; padding-bottom:2px;"><span class="infinite">&infin;</span></td>
+            </tr>
+            <tr class="separator"><td colspan=5></td></tr>
+            <tr>
+              <th>Support Tickets</td>
+              <td></td>
+              <td></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr>
+              <th>Live Support</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr class="separator"><td colspan=5></td></tr>
+            <tr>
+              <th>Self-Hosted Console</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr>
+              <th>HIPAA/PCI Compliance</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><span class="has-feature fa fa-check"></span></td>
+            </tr>
+            <tr class="price">
+              <th></th>
+              <td>Free</td>
+              <td class="per-user">$59</td>
+              <td class="per-user">$129</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>

@@ -2159,3 +2159,45 @@ h6:hover .heading-link {
   background-color: #FB6200;
   border-color: #FB6200;
 }
+
+.pricing table {
+  margin-top: 20px;
+}
+
+.pricing thead th {
+  text-align: center;
+}
+
+.pricing tr.separator td {
+  background-color: #ddd;
+  padding: 2px 0px;
+}
+
+.pricing tr.price td {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #000;
+  padding-top: 16px;
+}
+
+.pricing .per-user::after {
+  content: "/user";
+  color: #999;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.pricing .infinite {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: rgb(95,175,230);
+}
+
+.pricing .has-feature {
+  font-size: 0.90em;
+  color: #093;
+}
+
+.pricing tfoot td {
+  padding-top: 20px !important;
+}
