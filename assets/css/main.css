@@ -2166,6 +2166,8 @@ h6:hover .heading-link {
 
 .pricing thead th {
   text-align: center;
+  font-size: 1.3em;
+  padding-bottom: 20px !important;
 }
 
 .pricing tr.separator td {
