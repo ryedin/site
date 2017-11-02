@@ -19,9 +19,6 @@ services:
     port: 3000
     resources:
       - database
-    scale:
-      count: 3
-      memory: 1024
 timers:
   cleanup:
     schedule: 0 3 * * *
