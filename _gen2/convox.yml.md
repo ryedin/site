@@ -99,7 +99,7 @@ A pair like `FOO=bar` creates an environment variable named `FOO` with a default
 
 Defining a name without a value like `HOST` will require that variable to be set in the application's environment to deploy successfully.
 
-You should not configure secrets here, as they would be recorded in version control. For secrets, simply specify the variable name, then set the actual value using the CLI `cx env set` command.
+You should not configure secrets here, as they would be recorded in version control. For secrets, simply specify the variable name, then set the actual value using the CLI `convox env set` command.
 
 Only environment variables that are listed here will be provided to the service at runtime.
 
