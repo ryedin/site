@@ -44,6 +44,10 @@ collections:
     title: Console
     output: true
     permalink: /docs/:name/
+  gen2:
+    title: Generation 2
+    output: true
+    permalink: /docs/gen2/:name/
   reference:
     title: Reference
     output: true
