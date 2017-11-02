@@ -2180,6 +2180,11 @@ h6:hover .heading-link {
   font-size: 1.2em;
   color: #000;
   padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.pricing tr.price .per-month {
+  font-size: 0.5em;
 }
 
 .pricing .per-user::after {
