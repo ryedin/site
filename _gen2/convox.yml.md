@@ -114,7 +114,7 @@ Defines the port on which the container is listening. Can be defined in the form
 
 ### resources
 
-The resources enumerated in the `resources` section that should be available to the service as environment variables. The network endpoint for a resource named `foo` would be `FOO_URL`.
+The resources enumerated in the `resources` section that will be available to the service as environment variables. The network endpoint for a resource named `foo` would be `FOO_URL`.
 
 ## Timers
 
