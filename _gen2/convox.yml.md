@@ -15,8 +15,14 @@ services:
       - FOO
       - BAR=baz
     health: /health
-    image: ubuntu:16.04
     port: 3000
+    resources:
+      - database
+  worker:
+    command: bin/worker
+    environment:
+      - FOO
+    image: my.external.host/image
     resources:
       - database
 timers:
@@ -26,7 +32,7 @@ timers:
     service: web
 ```
 
-The `convox.yml` file is a configuration file used to describe your application and all of its infrastructure needs. 
+The `convox.yml` file is a configuration file used to describe your application and all of its infrastructure needs.
 
 ### Sections
 
