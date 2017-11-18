@@ -2,18 +2,7 @@
 title: "Ruby (Sinatra)"
 ---
 
-Getting started with Sinatra on Convox is easy. Your app will need a `Dockerfile`, `docker-compose.yml`, and `.dockerignore` which you can either provide or generate using `convox init`.
-
-## Getting Started
-
-Go to your local source directory and run `convox init`:
-
-    $ cd ~/myapp
-    $ convox init
-    Initializing sinatra...
-    Writing Dockerfile... OK
-    Writing docker-compose.yml... OK
-    Writing .dockerignore... OK
+Getting started with Django on Convox is easy. Your app will need a `Dockerfile` and `docker-compose.yml`.
 
 See [Preparing an Application](/docs/preparing-an-application) for more details.
 

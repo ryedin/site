@@ -165,19 +165,7 @@ Creating app python-getting-started... CREATING
 
 If you don't have Convox set up in your AWS account, refer to the [Getting Started](http://localhost/docs/getting-started/) doc.
 
-Convox uses Heroku's buildpacks to build images for apps. The `convox init` command will generate a Dockerfile to describe how to build your app with the appropriate buildpack.
-
-To get started, run:
-
-<pre class="terminal">
-<span class="command">convox init</span>
-Updating convox/init... OK
-Initializing a python app
-Building app metadata. This could take a while... OK
-Writing docker-compose.yml... OK
-Writing Dockerfile... OK
-Writing .dockerignore... OK
-</pre>
+You will need a few manifest files to describe your application. See [Preparing An Application](/docs/preparing-an-application/) for more details.
 
 ## Manifest
 
@@ -198,7 +186,7 @@ Writing .dockerignore... OK
   </tr>
 </table>
 
-The previous `convox init` command generated a `docker-compose.yml` file for our Convox app. Every process type and command in `Procfile` is added as a service and command to `docker-compose.yml`.
+Once you have a `docker-compose.yml` it should look something like this:
 
 <pre class="file yaml" title="docker-compose.yml">
 version: "2"
