@@ -22,10 +22,12 @@ $ convox rack update --rack dev
 Updating to 20161111013816... UPDATING
 ```
 
+When you update your rack, you will likely need to redeploy applications so that they can pick up the changes and start logging to CloudWatch directly.
+
 ## Required Updates
 
 Occasionally, enhancements to Rack will replace an old component with a new one, but in a two-step process to ensure a seamless and stable migration. The mechanism we use to guarantee that a Rack completes these migrations properly is the required update.
 
-Let's say your Rack is running on release version A, and you want to update it to version D, but version B is a required release. Running `convox update` would first update your Rack to B to ensure its new component is introduced and put in use. Afterwards, with the first step of the migration complete, you could update the Rack to version C or D, which could safely remove the old component.
+Let's say your Rack is running on release version A, and you want to update it to version D, but version B is a required release. Running `convox rack update` would first update your Rack to B to ensure its new component is introduced and put in use. Afterwards, with the first step of the migration complete, you could update the Rack to version C or D, which could safely remove the old component.
 
-In practice, if you notice that a `convox update` doesn't update your Rack to the latest release, you've encountered a required release. Running `convox update` again will update your Rack to the latest release, unless another required release is encountered first.
+In practice, if you notice that a `convox rack update` doesn't update your Rack to the latest release, you've encountered a required release. Running `convox rack update` again will update your Rack to the latest release, unless another required release is encountered first.
