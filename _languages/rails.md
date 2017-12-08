@@ -2,7 +2,7 @@
 title: "Ruby (Rails)"
 ---
 
-Getting started with Django on Convox is easy. Your app will need a `Dockerfile` and `docker-compose.yml`.
+Getting started with Rails on Convox is easy. Your app will need a `Dockerfile` and `docker-compose.yml`.
 
 See [Preparing an Application](/docs/preparing-an-application) for more details.
 
