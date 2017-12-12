@@ -15,6 +15,7 @@ services:
       - FOO
       - BAR=baz
     health: /health
+    internal: true
     port: 3000
     resources:
       - database
@@ -113,6 +114,16 @@ The path that should be requested by the balancer's HTTP healthcheck of the serv
 ### image
 
 Use an external Docker image to back this service.
+
+### internal
+
+Flag app as an internal app, preventing access to it from outside your VPC. Defaults to `false`.
+
+Your rack must have the `Internal` param set to Yes to deploy internal services. You can set it with:
+
+```shell
+$ convox rack params set Internal=Yes
+ ```
 
 ### port
 
