@@ -16,6 +16,7 @@ services:
       - BAR=baz
     health: /health
     port: 3000
+    internal: true
     resources:
       - database
   worker:
@@ -117,6 +118,16 @@ Use an external Docker image to back this service.
 ### port
 
 Defines the port on which the container is listening. Can be defined in the format `port: 3000` or `port: https:3000` depending on the protocol the container expects.
+
+### internal
+
+Flag app as an internal app, preventing access to it from outside your VPC. Defaults to `false`.
+
+your rack must have the `Internal` param set to Yes to deploy internal services. You can set it with:
+
+```shell
+$ convox rack params set Internal=Yes
+ ```
 
 ### resources
 
