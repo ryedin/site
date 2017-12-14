@@ -123,7 +123,7 @@ Your rack must have the `Internal` param set to Yes to deploy internal services.
 
 ```shell
 $ convox rack params set Internal=Yes
- ```
+```
 
 ### port
 
