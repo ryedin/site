@@ -140,7 +140,3 @@ You'll want to [scale the remote services to `-1`](/docs/scaling/#scaling-down-u
 If your `docker-compose.yml` specifies volumes, they will be created on your local machine at `~/.convox/volumes`.
 
 For more information, see [Persistence for local containers](/docs/volumes/#persistence-for-local-containers).
-
-## Troubleshooting
-
-If you encounter errors or unexpected behaviors when running `convox start`, try running `convox doctor` to check your app for problems.

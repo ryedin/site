@@ -37,8 +37,8 @@ The Convox Console makes it easy to install and manage multiple Racks, like one 
 You can use `convox racks` and `convox switch` to select a Rack that your computer will operate against by default.
 
     $ convox racks
-    myorg/staging                    running    
-    myorg/production                 running    
+    myorg/staging                    running
+    myorg/production                 running
     personal/staging                 running
 
     $ convox switch production
@@ -63,16 +63,16 @@ You can specify a specific Rack on a per-command basis with the `--rack` flag:
     myorg/staging
 
     $ convox apps
-    APP           STATUS 
+    APP           STATUS
     api-staging   running
     docs-staging  running
 
     $ convox apps --rack personal/staging
-    APP    STATUS 
+    APP    STATUS
     httpd  running
     rails  running
 
-#### CONVOX_RACK Environment Variable 
+#### CONVOX_RACK Environment Variable
 
 You can specify a specific Rack for a new terminal session with the CONVOX_RACK environment variable:
 
@@ -85,7 +85,7 @@ You can specify a specific Rack for a new terminal session with the CONVOX_RACK 
     personal/staging
 
     $ convox apps
-    APP    STATUS 
+    APP    STATUS
     httpd  running
     rails  running
 
@@ -151,28 +151,6 @@ When you want to pin an app to a specific Rack you should use `./convox/rack` wh
       Users of zsh may need to change the first line of the completion script to:
 
        : ${PROG:=$(basename $0)}
-
-### Debian-based Linux distributions
-
-As root, save [this bash_autocomplete snippet](https://raw.githubusercontent.com/urfave/cli/master/autocomplete/bash_autocomplete) in `/etc/bash_completion.d/convox`, as in the following command:
-
-    $ curl https://raw.githubusercontent.com/urfave/cli/master/autocomplete/bash_autocomplete \
-      | sudo tee /etc/bash_completion.d/convox
-
-Make sure you're sourcing `/etc/bash_completion.d/convox` in your `.profile`:
-
-    $ echo "source /etc/bash_completion.d/convox" >> "$HOME/.profile"
-
-Now open a new tab and type `convox` and `convox builds` followed by the TAB key:
- 
-    $ convox <TAB>
-    api         certs       exec        install     proxy       registries  services    uninstall
-    apps        deploy      h           instances   ps          releases    ssl         update
-    build       doctor      help        login       rack        run         start       
-    builds      env         init        logs        racks       scale       switch      
-
-    $ convox builds <TAB>
-    create  delete  export  h       help    import  info    logs    
 
 ## Active Rack Command Prompt Helper
 
