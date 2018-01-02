@@ -37,7 +37,7 @@ For example, a release promotion on the app `example-app` would look like this:
 
 ```json
 {
-  "action": "app:promote",
+  "action": "release:promote",
   "status": "success",
   "timestamp": "2015-10-28T03:46:24.106682533Z",
   "data": {
@@ -52,7 +52,7 @@ When the `status` is `error`, the `data` attribute will have a `message` availab
 
 ```json
 {
-  "action": "app:promote",
+  "action": "release:promote",
   "status": "error",
   "timestamp": "2015-10-28T03:46:24.106682533Z",
   "data": {
