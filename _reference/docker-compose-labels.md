@@ -75,11 +75,14 @@ Setting this label to `true` for a specific service prevents environment variabl
 
 ## convox.health
 
-During [rolling updates](/docs/rolling-updates), Convox will attempt to start a new process and check its health before stopping an old process. These labels allow you to customize the path on your app that will respond to the health checks, the port on which the app will listen for the health check, and the number of seconds Convox should wait for a health check response before giving up and trying again.
+During [rolling updates](/docs/rolling-updates), Convox will attempt to start a new process and check its health before stopping an old process. These labels allow you to customize the path on your app that will respond to the health checks, the port on which the app will listen for the health check, the number of seconds Convox should wait for a health check response before giving up and trying again, the number of seconds between health checks, and the number of successful or failed health checks before a process is considered healthy or unhealthy.
 
     labels:
+      - convox.health.interval=10
       - convox.health.path=/health_check
       - convox.health.port=3001
+      - convox.health.threshold.healthy=3
+      - convox.health.threshold.unhealthy=4
       - convox.health.timeout=60
 
 ## convox.idle
