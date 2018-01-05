@@ -10,7 +10,7 @@ If the Process does not [expose ports](/docs/port-mapping) it is considered heal
 If the Process [exposes ports](/docs/port-mapping) is it considered healthy after it:
   
 * Registers behind a load balancer
-* Passes a network connection health check
+* Passes a certain number of network connection health checks
 
 Common causes for not passing health checks are:
 
@@ -29,8 +29,11 @@ version: "2"
 services:
   web:
     labels:
+        - convox.health.interval=10
         - convox.health.path=/_health
         - convox.health.port=5000
+        - convox.health.threshold.healthy=3
+        - convox.health.threshold.unhealthy=4
         - convox.health.timeout=3
     ports:
       - "443:5000"
@@ -41,6 +44,10 @@ services:
     <th>Notes</th>
   </tr>
   <tr>
+    <td><code>interval</code></td>
+    <td>The amount of time in between health checks. Default is <code>timeout + 2</code>.</td>
+  </tr>
+  <tr>
     <td><code>path</code></td>
     <td>The endpoint the load balancer will use to determine the application's health.</td>
   </tr>
@@ -49,8 +56,16 @@ services:
     <td>This is the port that your container is set up to listen on, not the load balancer port.</td>
   </tr>
   <tr>
+    <td><code>threshold.healthy</code></td>
+    <td>The number of consecutive successful health checks that must occur before declaring an EC2 instance healthy. Default is 2.</td>
+  </tr>
+  <tr>
+    <td><code>threshold.unhealthy</code></td>
+    <td>The number of consecutive failed health checks that must occur before declaring an EC2 instance unhealthy. Default is 2.</td>
+  </tr>
+  <tr>
     <td><code>timeout</code></td>
-    <td>The time in seconds after which no response means a failed health check (3 seconds by default; 60 seconds maximum). If the process fails 2 consecutive health checks it will be restarted. By default, the interval between health checks is this value plus 2.</td>
+    <td>The time in seconds after which no response means a failed health check (3 seconds by default; 60 seconds maximum).</td>
   </tr>
 </table>
 
