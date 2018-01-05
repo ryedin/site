@@ -45,7 +45,7 @@ services:
   </tr>
   <tr>
     <td><code>interval</code></td>
-    <td>The amount of time in between health checks. Default is <code>timeout + 2</code>.</td>
+    <td>The amount of time in between health checks. Default is <code>timeout + 2</code> seconds.</td>
   </tr>
   <tr>
     <td><code>path</code></td>
