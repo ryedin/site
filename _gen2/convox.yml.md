@@ -28,7 +28,6 @@ services:
       - database
   metrics:
     agent: true
-    command: bin/metrics
     image: awesome/metrics
 timers:
   cleanup:
