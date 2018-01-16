@@ -20,12 +20,16 @@ services:
     resources:
       - database
   worker:
+    build: ./worker
     command: bin/worker
     environment:
       - FOO
-    image: my.external.host/image
     resources:
       - database
+  metrics:
+    agent: true
+    command: bin/metrics
+    image: awesome/metrics
 timers:
   cleanup:
     schedule: 0 3 * * *
@@ -82,6 +86,10 @@ services:
     resources:
       - database
 ```
+
+### agent
+
+Set to `true` to run one copy of this container on every instance.
 
 ### build
 
