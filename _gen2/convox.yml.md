@@ -146,6 +146,7 @@ services:
 ```
 
 Or as an object with advanced settings:
+
 ```yaml
 services:
   web:
