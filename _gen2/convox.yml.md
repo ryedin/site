@@ -92,7 +92,27 @@ Set to `true` to run one copy of this container on every instance.
 
 ### build
 
-The directory inside the project to use to build this service. Defaults to `.`.
+Configuration options that define the build context and Dockerfile used.
+
+Can be defined as either a string containing a path to use to build this service:
+
+```yaml
+services:
+  web:
+    build: ./dir
+```
+
+or as an object:
+
+```yaml
+services:
+  web:
+    build:
+      path: .
+      manifest: ./path/to/Dockerfile
+```
+
+If you don't specify a build path then `.` is used by default.
 
 ### command
 
@@ -116,7 +136,27 @@ Only environment variables that are listed here will be provided to the service 
 
 ### health
 
-The path that should be requested by the balancer's HTTP healthcheck of the service. If you don't specify a path then the root path `/` will be used by default.
+Health checks are required for each service that exposes a port. Health check responses must return a 200 status for anonymous users. 
+
+Can be defined as either a string containing the path that should be requested by the balancer's HTTP healthcheck of the service:
+```yaml
+services:
+  web:
+    health: /health
+```
+
+Or as an object with advanced settings:
+
+```yaml
+services:
+  web:
+  health:
+    path: /health
+    interval: 5
+    timeout: 3
+```
+
+If you don't specify a path then the root path `/` will be used by default.
 
 ### image
 
