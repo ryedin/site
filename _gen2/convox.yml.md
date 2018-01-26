@@ -31,7 +31,7 @@ services:
     image: awesome/metrics
 timers:
   cleanup:
-    schedule: 0 3 * * *
+    schedule: 0 3 * * ?
     command: bin/cleanup
     service: web
 ```
