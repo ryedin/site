@@ -22,7 +22,7 @@ Example: to run the command `bin/myjob` every hour on the `web` process, you wou
 ```yaml
 web:
   labels:
-    - convox.cron.myjob=0 * * * ? bin/myjob
+    - convox.cron.myjob=0 * * * ? * bin/myjob
 ```
 
 #### Cron expression format
@@ -30,13 +30,14 @@ web:
 Cron expressions use the following format. All times are UTC.
 
 ```
-.---------------- minute (0 - 59)
-|  .------------- hour (0 - 23)
-|  |  .---------- day-of-month (1 - 31)
-|  |  |  .------- month (1 - 12) OR JAN,FEB,MAR,APR ...
-|  |  |  |  .---- day-of-week (1 - 7) OR SUN,MON,TUE,WED,THU,FRI,SAT
-|  |  |  |  |
-*  *  *  *  *
+.----------------- minute (0 - 59)
+|  .-------------- hour (0 - 23)
+|  |  .----------- day-of-month (1 - 31)
+|  |  |  .-------- month (1 - 12) OR JAN,FEB,MAR,APR ...
+|  |  |  |  .----- day-of-week (1 - 7) OR SUN,MON,TUE,WED,THU,FRI,SAT
+|  |  |  |  |  .-- year (1970 - 2199)
+|  |  |  |  |  |
+*  *  *  *  *  *
 ```
 
 <div class="block-callout block-show-callout type-info" markdown="1">
@@ -53,34 +54,36 @@ Some example expressions:
     <th>Meaning</th>
   </tr>
   <tr>
-    <td><code>* * * * ?</code></td>
+    <td><code>* * * * ? *</code></td>
     <td>Run every minute</td>
   </tr>
   <tr>
-    <td><code>*/10 * * * ?</code></td>
+    <td><code>*/10 * * * ? *</code></td>
     <td>Run every 10 minutes</td>
   </tr>
   <tr>
-    <td><code>0 * * * ?</code></td>
+    <td><code>0 * * * ? *</code></td>
     <td>Run every hour</td>
   </tr>
   <tr>
-    <td><code>30 6 * * ?</code></td>
+    <td><code>30 6 * * ? *</code></td>
     <td>Run at 6:30am UTC every day</td>
   </tr>
   <tr>
-    <td><code>30 18 ? * MON-FRI</code></td>
+    <td><code>30 18 ? * MON-FRI *</code></td>
     <td>Run at 6:30pm UTC every weekday</td>
   </tr>
   <tr>
-    <td><code>0 12 1 * ?</code></td>
+    <td><code>0 12 1 * ? *</code></td>
     <td>Run at noon on the first day of every month</td>
   </tr>
   <tr>
-    <td><code>0 0,12 * * ?</code></td>
+    <td><code>0 0,12 * * ? *</code></td>
     <td>Run at Midnight and Noon every day</td>
   </tr>
 </table>
+
+See the [Scheduled Events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) AWS documentation for more details.
 
 ## Run options and persistence
 

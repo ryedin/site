@@ -31,7 +31,7 @@ services:
     image: awesome/metrics
 timers:
   cleanup:
-    schedule: 0 3 * * ?
+    schedule: 0 3 * * ? *
     command: bin/cleanup
     service: web
 ```
@@ -188,7 +188,7 @@ The resources enumerated in the `resources` section that will be available to th
 timers:
   cleanup:
     command: bin/cleanup
-    schedule: 0 3 * * *
+    schedule: 0 3 * * ? *
     service: web
 ```
 
@@ -205,16 +205,19 @@ The command to be executed when the timer triggers.
 A cron-like schedule expression that sets when the timer will trigger. Schedule expressions use the following format. All times are UTC.
 
 <pre class="inline">
-  .---------------- minute (0 - 59)
-  |  .------------- hour (0 - 23)
-  |  |  .---------- day-of-month (1 - 31)
-  |  |  |  .------- month (1 - 12) OR JAN,FEB,MAR,APR ...
-  |  |  |  |  .---- day-of-week (1 - 7) OR SUN,MON,TUE,WED,THU,FRI,SAT
-  |  |  |  |  |
-  *  *  *  *  *
+  .----------------- minute (0 - 59)
+  |  .-------------- hour (0 - 23)
+  |  |  .----------- day-of-month (1 - 31)
+  |  |  |  .-------- month (1 - 12) OR JAN,FEB,MAR,APR ...
+  |  |  |  |  .----- day-of-week (1 - 7) OR SUN,MON,TUE,WED,THU,FRI,SAT
+  |  |  |  |  |  .-- year (1970 - 2199)
+  |  |  |  |  |  |
+  *  *  *  *  *  *
 </pre>
 
-Example: `0 4 * * ?` would run the timer every night at 4am UTC.
+Example: `0 4 * * ? *` would run the timer every night at 4am UTC.
+
+See the [Scheduled Events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) AWS documentation for more details.
 
 ### service
 
