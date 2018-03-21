@@ -74,8 +74,8 @@ See [Installing the Convox CLI](/docs/installation/) and [API Keys](/docs/api-ke
 
 #### Clone a sample application
 
-    $ git clone https://github.com/convox-examples/rails5
-    $ cd rails5
+    $ git clone https://github.com/convox-examples/rails
+    $ cd rails
 
 #### Create an app in your Rack
 
@@ -86,19 +86,19 @@ Before deploying, create a new app in your Rack.
 <div class="block-callout block-show-callout type-info" markdown="1">
 Convox infers the app name from the current directory name. If you'd like to specify another name use `convox apps create <name>` and specify `--app <name>` to each of the following commands.
 </div>
-    
+
 Wait for the underlying components to be created by watching for the app status to change to `running`:
 
     $ convox apps info
-    
+
 Deploy the application
 
     $ convox deploy
-    
+
 Continue to watch `convox apps info` to find the load balancer hostnames for the application.
 
     $ convox apps info
-    
+
 <div class="block-callout block-show-callout type-info" markdown="1">
 When a load balancer is first created it can take 5-10 minutes for its hostname to become available in DNS.
 </div>
