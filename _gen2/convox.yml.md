@@ -70,7 +70,7 @@ A Redis cluster.
 
 ## Services
 
-```shell
+```yaml
 services:
   web:
     build: .
@@ -127,7 +127,7 @@ Specify a custom domain to use to route to this service. Once you set this attri
 
 There's possibility to specify multiple domains like that:
 
-```
+```yaml
 service:
   foo:
     domain:
@@ -203,7 +203,7 @@ Set the initial scale parameters for this service.
 
 ## Timers
 
-```shell
+```yaml
 timers:
   cleanup:
     command: bin/cleanup
