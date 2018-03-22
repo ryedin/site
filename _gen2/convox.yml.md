@@ -199,11 +199,7 @@ The resources enumerated in the `resources` section that will be available to th
 
 ### scale
 
-Amount of memory, available to the specified process. Equivalent of:
-
-```
-convox scale <process> (--count | --memory | --cpu) 
-```
+Set the initial scale parameters for this service.
 
 ## Timers
 
