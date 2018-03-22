@@ -84,6 +84,9 @@ services:
     port: 3000
     resources:
       - database
+    scale:
+      memory: 1024
+      cpu: 512
 ```
 
 ### agent
@@ -120,7 +123,19 @@ Override the default command for this service.
 
 ### domain
 
-Specify a custom domain to use to route to this service. Once you set this attribute you'll need to approve (via email) the creation of the appropriate certificate and CNAME your custom domain to the service's endpoint.
+Specify a custom domain to use to route to this service. Once you set this attribute you'll need to approve (via email) the creation of the appropriate certificate and CNAME your custom domain to the service's endpoint (rack domain).
+
+There's possibility to specify multiple domains like that:
+
+```
+service:
+  foo:
+    domain:
+      - foo.example.org
+      - *.foo.example.org
+  bar:
+    domain: bar.example.org, *.bar.example.org
+```
 
 ### environment
 
@@ -181,6 +196,14 @@ Defines the port on which the container is listening. Can be defined in the form
 ### resources
 
 The resources enumerated in the `resources` section that will be available to the service as environment variables. The network endpoint for a resource named `foo` would be `FOO_URL`.
+
+### scale
+
+Amount of memory, available to the specified process. Equivalent of:
+
+```
+convox scale <process> (--count | --memory | --cpu) 
+```
 
 ## Timers
 
