@@ -85,6 +85,7 @@ services:
     resources:
       - database
     scale:
+      count: 2
       memory: 1024
       cpu: 512
 ```
