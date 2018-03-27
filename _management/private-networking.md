@@ -1,6 +1,5 @@
 ---
 title: "Private Networking"
-order: 750
 ---
 
 Convox Racks are installed using best practices for privacy and security. In cases with exceptional needs for isolation, Convox offers a "private" Rack mode that is easy to configure.

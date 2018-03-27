@@ -22,21 +22,14 @@ Common causes for not passing health checks are:
 
 #### Health Check Options
 
-By default Convox will set up a `tcp` health check to your application, defining that a process must boot and pass the network health check in 3 seconds. If your app takes longer to boot, you may need to increase this to up to 60 seconds by adding a label by adding one or more of the following labels to your `docker-compose.yml` file.
-
 ```yaml
-version: "2"
 services:
   web:
-    labels:
-        - convox.health.interval=10
-        - convox.health.path=/_health
-        - convox.health.port=5000
-        - convox.health.threshold.healthy=3
-        - convox.health.threshold.unhealthy=4
-        - convox.health.timeout=3
-    ports:
-      - "443:5000"
+  health:
+    grace: 5
+    interval: 5
+    path: /health
+    timeout: 3
 ```
 <table>
   <tr>
@@ -44,28 +37,20 @@ services:
     <th>Notes</th>
   </tr>
   <tr>
+    <td><code>grace</code></td>
+    <td>The amount of time to wait for a service to boot before beginning health checks.</td>
+  </tr>
+  <tr>
     <td><code>interval</code></td>
-    <td>The amount of time in between health checks. Default is <code>timeout + 2</code> seconds.</td>
+    <td>The amount of time between health checks (default 5 seconds).</td>
   </tr>
   <tr>
     <td><code>path</code></td>
-    <td>The endpoint the load balancer will use to determine the application's health.</td>
-  </tr>
-  <tr>
-    <td><code>port</code></td>
-    <td>This is the port that your container is set up to listen on, not the load balancer port.</td>
-  </tr>
-  <tr>
-    <td><code>threshold.healthy</code></td>
-    <td>The number of consecutive successful health checks that must occur before declaring an EC2 instance healthy. Default is 2.</td>
-  </tr>
-  <tr>
-    <td><code>threshold.unhealthy</code></td>
-    <td>The number of consecutive failed health checks that must occur before declaring an EC2 instance unhealthy. Default is 2.</td>
+    <td>The HTTP endpoint the load balancer will use to determine the application's health.</td>
   </tr>
   <tr>
     <td><code>timeout</code></td>
-    <td>The time in seconds after which no response means a failed health check (3 seconds by default; 60 seconds maximum).</td>
+    <td>The time in seconds after which no response means a failed health check (defaults to <code>interval</code> minus 1).</td>
   </tr>
 </table>
 

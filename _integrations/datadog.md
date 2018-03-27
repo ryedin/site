@@ -12,24 +12,18 @@ If you don’t have an account already, [sign up for Datadog](https://app.datado
 
 ## Deploy the Datadog Agent
 
-You can deploying the datadog agent as a Convox app with a very simple docker-compose.yml manifest:
+You can deploying the datadog agent as a Convox app with a very simple `convox.yml` manifest:
 
-```bash
-# check out the repo
-$ git clone https://github.com/convox-examples/dd-agent.git
-$ cd dd-agent
-
-# create the app and secrets
-$ convox apps create
-$ convox env set API_KEY=<your api key>
-$ convox deploy
-$ convox scale agent --count=3 --cpu=10 --memory=128
 ```
-
-Use a `count` that matches the `InstanceCount` parameter of your Rack.
-
-## Auto Scaling
-
-If [autoscaling](/docs/scaling) is enabled on your Rack, you'll need to dynamically scale the Datadog agent count to match the Rack instance count.
-
-See the [Listening for ECS CloudWatch Events Tutorial](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_cwet.html) for guidance.
+services:
+  datadog:
+    agent: true
+    environment:
+      - API_KEY=${DATADOG_API_KEY}
+      - DD_APM_ENABLED=true
+    image: datadog/docker-dd-agent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /proc/:/host/proc
+      - /cgroup:/host/sys/fs/cgroup
+```

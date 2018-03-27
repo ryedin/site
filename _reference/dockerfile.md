@@ -13,9 +13,7 @@ The `Dockerfile` describes the steps you need to build and run your application.
 
 ### ARG
 
-Convox respects the `ARG` Dockerfile directive, allowing you to specify build-time variables to be populated:
-- from the `.env` file or local environment during the build step of `convox start`
-- from `convox env` during `convox build` and `convox deploy`
+Convox respects the `ARG` Dockerfile directive, allowing you to specify build-time variables to be populated.
 
 This is useful for creating dynamic build environments, allowing you to do things like:
 - building differently in production and development environments
@@ -32,27 +30,6 @@ ARG BUNDLE_WITHOUT="development:test"
 ARG RAILS_ENV
 ```
 
-### Local builds
-
-You can then send a value to the `ARG` during the local build by defining that variable in your `.env`:
-
-```
-$ cat .env
-BUNDLE_WITHOUT="none"
-```
-
-or by setting it in your host environment, like this:
-
-```
-$ BUNDLE_WITHOUT="none" convox start
-build    │ running: docker build --build-arg BUNDLE_WITHOUT="none" -f /home/aj/git/convox/convox-examples/rails/Dockerfile -t rails/web /home/aj/git/convox/convox-examples/rails
-[...]
-```
-
-Note: Build arguments defined in `.env` supersede values in the host environment.
-
-### Remote builds
-
 You can send a value (or set an empty value, as below) to be applied during remote builds on your Rack by setting it with `convox env`:
 
 ```
@@ -60,11 +37,9 @@ $ convox env set BUNDLE_WITHOUT=none --promote
 $ convox deploy
 ```
 
-Now local builds via `convox start` will include development and testing dependencies. Production builds via `convox deploy` will not.
-
 ## See also
 
 - [Builds](/docs/builds)
-- [-\-build-arg](https://docs.docker.com/engine/reference/commandline/image_build/#/set-build-time-variables---build-arg)
-- [Docker basics: Build your own image](https://docs.docker.com/engine/getstarted/step_four/)
-- [Dockerfile reference: ARG](https://docs.docker.com/engine/reference/builder/#arg)
+- [Docker: ARG](https://docs.docker.com/engine/reference/builder/#arg)
+- [Docker: -\-build-arg](https://docs.docker.com/engine/reference/commandline/image_build/#/set-build-time-variables---build-arg)
+- [Docker: Build your own image](https://docs.docker.com/engine/getstarted/step_four/)

@@ -18,10 +18,13 @@ Convox uses a network filesystem backed by [Amazon EFS](https://aws.amazon.com/e
 
 Shared volumes are only possible in AWS regions that support Elastic File System (EFS). As of the time of this writing, the following regions are supported:
 
-- EU West 1 (Ireland)
-- US East 1 (N. Virginia)
-- US East 2 (Ohio)
-- US West 2 (Oregon)
+- ap-southeast-2 (Sydney)
+- eu-central-1
+- eu-west-1 (Ireland)
+- us-east-1 (N. Virginia)
+- us-east-2 (Ohio)
+- us-west-1 (N. California)
+- us-west-2 (Oregon)
 
 To check whether EFS is available in a given region, select your region from the dropdown in [the EFS section in the AWS console](https://console.aws.amazon.com/efs/home).
 
@@ -30,7 +33,7 @@ Volumes used in regions without EFS will not persist or be shared across instanc
 
 ## Sharing Data
 
-You can mount a shared volume by specifying a container path in the `volumes:` section of your `docker-compose.yml`: 
+You can mount a shared volume by specifying a container path in the `volumes:` section of your `convox.yml`: 
 
 ```
 services:
@@ -52,31 +55,7 @@ It's not currently possible to mount EFS volumes as read-only with Convox. If th
 
 ## Persistence
 
-When your `docker-compose.yml` declares a volume with the single-path format, the volume will be persisted across container runs of the same process type. The path where these volumes persist on the Docker host differs depending on whether you are running your apps locally or deployed in a Rack.
-
-### Persistence for local containers
-
-Local apps running via `convox start` mount [their volumes](/docs/docker-compose-file/#volumes) from the local file system. More specifically, the volumes are persisted at `~/.convox/volumes/`.
-
-The path structure looks like this:
-
-```
-~/.convox/volumes/<app-name>/<service-name>/<container-path>
-~/.convox/volumes/example-app/web/my/shared/data
-```
-
-If a volume seems corrupted or doesn't behave as expected (and you're sure you don't need the data), you can try deleting the directory above.
-
-### Persistence for deployed containers
-
-Deployed apps running in a Rack mount their volumes from the file system of EC2 instances in the Convox cluster. More specifically, the volumes are persisted at `/volumes/` on the EC2 instances, which have mounted that volume from EFS to share it across the cluster. Going back in the other direction, the persisted volume is mounted from EFS to cluster instances, and then from those cluster instances into the relevant containers.
-
-The path structure looks like this:
-
-```
-/volumes/<rack-name>-<app-name>/<service-name>/<container-path>
-/volumes/production-example-app/web/my/shared/data
-```
+Files and directories written to the volume inside the container will be persisted between processes of the same service type at that location.
 
 ## Example: WordPress
 
@@ -93,15 +72,3 @@ services:
 ```
 
 This configuration will work with both `convox start` and `convox deploy`. Files written to `/var/www/html` will be persisted on the Docker host.
-
-## Cleanup
-
-Occasionally volumes become corrupted. If this happens, note that you can delete volumes on a Rack via `convox instances ssh`, e.g.:
-
-```
-$ convox instances ssh <instance-id> "sudo rm -rf /volumes/myrack-myapp/myservice/myvolume"
-```
-
-You can get the `instance-id` via `convox instances`.
-
-Note that you need to keyroll at least once before using `convox instances ssh`. For details, see [SSH keyroll](/docs/ssh-keyroll/).

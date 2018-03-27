@@ -47,7 +47,7 @@ layout: base
             <ul>
               {% assign pages = collection.docs | sort: 'order' %}
               {% for p in pages %}
-                {% if page.title == p.title %}
+                {% if page.url == p.url %}
                   <li class="active"><a href="{{ p.url }}">{{ p.title }}</a></li>
                 {% else %}
                   <li><a href="{{ p.url }}">{{ p.title }}</a></li>

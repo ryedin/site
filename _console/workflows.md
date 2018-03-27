@@ -46,7 +46,7 @@ Finally, give the Workflow a unique, recognizable name.
 
 #### An Example
 
-Here is an example Build task that uses a manifest named `docker-compose.yml` (this could be `docker-compose.custom.yml`). It promotes the Release corresponding to the resulting Build to complete the automated deployment.
+Here is an example Build. It promotes the Release corresponding to the resulting Build to complete the automated deployment.
 
 ![](/assets/images/docs/workflows/task.png)
 

@@ -1,6 +1,5 @@
 ---
 title: "Logs"
-order: 600
 ---
 
 You can view the live logs for a Convox application using `convox logs`:

@@ -1,6 +1,5 @@
 ---
 title: "Connecting to a Rack"
-order: 375
 ---
 
 In some cases you may need to find the Rack's hostname or API key. Those are needed for things like:

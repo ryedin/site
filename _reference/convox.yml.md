@@ -1,6 +1,5 @@
 ---
 title: convox.yml
-order: 10
 ---
 
 ```yaml

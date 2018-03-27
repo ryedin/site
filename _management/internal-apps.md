@@ -1,6 +1,5 @@
 ---
 title: "Internal Apps"
-order: 550
 ---
 
 An application can be made "internal" by setting its `Internal` parameter:

@@ -1,6 +1,5 @@
 ---
 title: "One-off Commands"
-order: 700
 ---
 
 Convox allows you to execute individual commands on your containers in several different contexts.
@@ -104,23 +103,3 @@ FOO=bar
 BAZ=qux
 [snip]
 ```
-
-## convox start
-
-**Syntax:** `convox start [service] [command]`
-**Use:** Spawns a new local container to run the desired command.
-
-`convox start` is roughly analogous to `docker run <image> <command>` or `docker-compose run <service> <command>`.
-
-This command lets you interact with your app and its tooling during local development.
-
-**Examples:**
-
-```
-$ convox start web 'node -e "console.log(\"Hello\")"'
-```
-
-
-<div class="block-callout block-show-callout type-info" markdown="1">
-Note: `convox start [service] [command]` is not intended to execute commands in _already running_ containers. It will start a single container and then execute the command on that container. If you want to run a command in the container of an app started locally via `convox start`, use `docker exec` instead.
-</div>

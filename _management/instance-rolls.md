@@ -1,6 +1,5 @@
 ---
 title: "Instance Rolls"
-order: 525
 ---
 
 An instance roll is a one-by-one replacement of every instance in your Rack cluster. By replacing instances one at a time, the desired instance count of the Rack can be maintained throughout the operation. When an instance is terminated, it is first drained of any services, which must be rescheduled within the cluster and converge, i.e. run at the desired count in the cluster, before termination can complete. Once an instance is terminated, the process repeats with the next instance. Instance rolls are triggered by some updates of your Rack's CloudFormation stack, including those that occur during the following situations:

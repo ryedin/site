@@ -193,7 +193,7 @@ paths:
         in: formData
         required: false
       - name: manifest
-        default: "docker-compose.yml"
+        default: "convox.yml"
         description: path to a docker compose yaml file that declares what images to build and processes to run
         type: string
         in: formData
