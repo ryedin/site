@@ -43,7 +43,7 @@ Resources are generally configured so they are not accessible from the public in
 $ convox resources proxy mysql-4624
 ```
 
-For details, see [convox resources proxy](/docs/convox-proxy).
+For details, see [convox resources proxy](/docs/remote-resources).
 
 ### Resource credentials
 

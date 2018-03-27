@@ -1,6 +1,5 @@
 ---
 title: "Custom Domains"
-order: 800
 ---
 
 You can easily map a custom domain to a Convox application by creating a `CNAME` to your load balancer hostname.

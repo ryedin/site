@@ -1,6 +1,5 @@
 ---
 title: "Load Balancers"
-order: 750
 ---
 
 Once you have containers running, the next step is to allow them to be accessed from the Internet. Convox automatically sets up and configures load balancers appropriately to route traffic to your containers.
@@ -93,7 +92,7 @@ If no protocol label is specified, the default of `tcp` will be used.
 
 #### Health Check Options
 
-By default Convox will set up a `tcp` health check to your application. For more information, see [Health Checks](/docs/health-checks).
+By default Convox will set up a `tcp` health check to your application. For more information, see [Health Checks](/docs/gen1/health-checks).
 
 #### End-to-end encryption
 
@@ -127,7 +126,7 @@ web:
 
 For security reasons, access to an application might need to be limited. To achieve this, an existing security group can be applied to an application's load balancer. For example, within said security group, access can be granted only to an office VPN.
 
-This is done via an [application parameter](/docs/app-parameters/#securitygroup) with a known security group ID:
+This is done via an [application parameter](/docs/gen1/app-parameters/#securitygroup) with a known security group ID:
 
 ```
 convox apps params --app <name> set SecurityGroup=sg-123456
@@ -143,4 +142,4 @@ For further reading on security groups, check out the AWS [documentation](http:/
 
 ## See also
 
-- [Port mapping](/docs/port-mapping/)
+- [Port mapping](/docs/gen1/port-mapping/)

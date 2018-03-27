@@ -1,6 +1,5 @@
 ---
 title: "Port Mapping"
-order: 700
 ---
 
 You can define the ports on which your processes will listen in the manifest for your application.
@@ -40,4 +39,4 @@ This example configuration would listen to ports `80` and `443` **on an Internet
 
 ## See also
 
-- [Load balancers](/docs/load-balancers)
+- [Load balancers](/docs/gen1/load-balancers)

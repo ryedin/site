@@ -1,13 +1,12 @@
 ---
 title: "Health Checks"
-order: 350
 ---
 
 By default, for a deployment to succeed, it must pass certain "health checks."
 
-If the Process does not [expose ports](/docs/port-mapping) it is considered healthy if it starts and doesn't immediately exit or crash.
+If the Process does not [expose ports](/docs/gen1/port-mapping) it is considered healthy if it starts and doesn't immediately exit or crash.
   
-If the Process [exposes ports](/docs/port-mapping) is it considered healthy after it:
+If the Process [exposes ports](/docs/gen1/port-mapping) is it considered healthy after it:
   
 * Registers behind a load balancer
 * Passes a certain number of network connection health checks
@@ -71,5 +70,5 @@ services:
 
 ## See also
 
-* [Rolling Updates](/docs/rolling-updates/)
-* [Load Balancers](/docs/load-balancers/)
+* [Load Balancers](/docs/gen1/load-balancers/)
+* [Rolling Updates](/docs/gen1/rolling-updates/)

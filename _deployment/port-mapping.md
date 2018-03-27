@@ -25,5 +25,5 @@ Convox will automatically configure the Rack's load balancer to route external p
 
 ## See also
 
-- [Custom Domains](/docs/load-balancers)
+- [Custom Domains](/docs/custom-domains)
 - [SSL](/docs/ssl)

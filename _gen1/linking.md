@@ -1,6 +1,5 @@
 ---
 title: "Linking"
-order: 400
 ---
 
 Convox allows you to link containers by declaring associations in the `docker-compose.yml` manifest. Links are created by injecting environment variables that point at the linked container.
@@ -92,4 +91,4 @@ When multiple ports are specified, the first one in the list of ports is used to
 
 ## See also
 
-- [Environment](/docs/environment/)
+- [Environment](/docs/gen1/environment/)

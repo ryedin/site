@@ -25,7 +25,7 @@ All of the infrastructure that Convox creates for you runs inside a Virtual Priv
 
 ## Load Balancers
 
-Convox uses AWS Elastic Load Balancing (ELB) to route traffic to your application. Load balancers and their Security Groups are set up to only listen on the ports you specify and only route requests to the relevant application services.
+Convox uses AWS Load Balancers to route traffic to your application. Load balancers and their Security Groups are set up to only listen on the ports you specify and only route requests to the relevant application services.
 
 ## Private Networking
 

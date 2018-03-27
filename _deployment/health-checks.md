@@ -57,4 +57,3 @@ services:
 ## See also
 
 * [Rolling Updates](/docs/rolling-updates/)
-* [Load Balancers](/docs/load-balancers/)

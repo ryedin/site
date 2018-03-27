@@ -59,7 +59,7 @@ Files and directories written to the volume inside the container will be persist
 
 ## Example: WordPress
 
-[WordPress](/docs/wordpress) is a popular PHP blogging platform. It expects a persistent filesystem for storing themes, plugins, and media uploads. You can persist this data by specifying a shared volume at `/var/www/html`:
+WordPress is a popular PHP blogging platform. It expects a persistent filesystem for storing themes, plugins, and media uploads. You can persist this data by specifying a shared volume at `/var/www/html`:
 
 ```
 services:

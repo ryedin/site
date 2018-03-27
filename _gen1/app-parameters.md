@@ -44,7 +44,7 @@ Have the app use Internal ELBs for all processes, i.e. make it unreachable from 
 
 The `SecurityGroup` app parameter can be set to the ID of a custom AWS security group. When this param is set on an app, the security group rules will be applied to requests coming in to any of the app's load balancers.
 
-For details, see [Load balancers: limited application access](/docs/load-balancers#limited-application-access).
+For details, see [Load balancers: limited application access](/docs/gen1/load-balancers#limited-application-access).
 
 ## TaskRole
 

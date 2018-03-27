@@ -1,6 +1,5 @@
 ---
 title: "Running Locally"
-order: 200
 ---
 
 Convox can boot your application locally using Docker in an environment identical to production.
@@ -36,7 +35,7 @@ Use `convox start` to build and run your application locally.
     web    | == Sinatra (v1.4.6) has taken the stage on 3000 for development with backup from WEBrick
     web    | [2015-09-18 06:16:53] INFO  WEBrick::HTTPServer#start: pid=7 port=3000
 
-This will read your `docker-compose.yml` and use the information found there to boot all of your app's processes and apply configured [links](/docs/linking). Local code changes will be [synced](/docs/code-sync) with your running processes in real time.
+This will read your `docker-compose.yml` and use the information found there to boot all of your app's processes and apply configured [links](/docs/gen1/linking). Local code changes will be [synced](/docs/code-sync) with your running processes in real time.
 
 To exit `convox start` gracefully, press `Ctrl+C`. To force-quit, press `Ctrl+C` again.
 
@@ -79,7 +78,7 @@ web    │   Server running... press ctrl-c to stop.
 
 #### `convox.start.shift` label
 
-You can make this port shifting more persistent on a per-service basis with the [convox.start.shift](/docs/docker-compose-labels/#convoxstart) label in `docker-compose.yml`:
+You can make this port shifting more persistent on a per-service basis with the [convox.start.shift](/docs/gen1/docker-compose-labels/#convoxstart) label in `docker-compose.yml`:
 
 ```
   labels:
@@ -102,7 +101,7 @@ Note: The `--shift` and `convox.start.shift` label values are cumulative. If you
 
 ### Environment
 
-`convox start` will read variables defined in a file called `.env` in the project root directory. For more information, see the [Environment](/docs/environment/#local) documentation.
+`convox start` will read variables defined in a file called `.env` in the project root directory. For more information, see the [Environment](/docs/gen1/environment/#local) documentation.
 
 ## Data persistence
 
@@ -127,13 +126,13 @@ You have several options:
 
 ### Tunnel to remote databases
 
-You can use `convox resources proxy` to tunnel to the remote production (or staging, or any) database as described [here](/docs/convox-proxy). This will allow your app to interact with the remote resource as if it were running on your own machine.
+You can use `convox resources proxy` to tunnel to the remote production (or staging, or any) database as described [here](/docs/remote-resources). This will allow your app to interact with the remote resource as if it were running on your own machine.
 
 ### Use local containers
 
-You can also use local containers as defined via the services in `docker-compose.yml`. The environment variables your app should use to communicate between containers will be automatic for linked services as described [here](/docs/environment#linking).
+You can also use local containers as defined via the services in `docker-compose.yml`. The environment variables your app should use to communicate between containers will be automatic for linked services as described [here](/docs/gen1/environment#linking).
 
-You'll want to [scale the remote services to `-1`](/docs/scaling/#scaling-down-unused-services) to avoid creating unnecessary containers and load balancers in production.
+You'll want to [scale the remote services to `-1`](/docs/gen1/scaling/#scaling-down-unused-services) to avoid creating unnecessary containers and load balancers in production.
 
 ## Local Volumes
 

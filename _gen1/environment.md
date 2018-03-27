@@ -1,6 +1,5 @@
 ---
 title: "Environment"
-order: 500
 ---
 
 Convox applications are configured using environment variables. Environment management differs depending on whether you are running your applications locally or in the cloud. See the sections below for details.
@@ -18,9 +17,9 @@ Convox applications are configured using environment variables. Environment mana
 <div class="block-callout block-show-callout type-info" markdown="1">
 The priority for evaluating env values is:
 
-1. [`.env`](/docs/environment/#env)
-2. [host environment](/docs/environment/#host-environment)
-3. [`docker-compose.yml`](/docs/environment/#docker-composeyml)
+1. [`.env`](/docs/gen1/environment/#env)
+2. [host environment](/docs/gen1/environment/#host-environment)
+3. [`docker-compose.yml`](/docs/gen1/environment/#docker-composeyml)
 </div>
 
 ### `.env`
@@ -110,7 +109,7 @@ services:
 
 ## Linking
 
-Convox links containers by injecting environment variables. For example, if your `docker-compose.yml` links a service named `web` to a service named `database`, Convox will add environment variables in the form `DATABASE_URL`, `DATABASE_SCHEME`, etc to the `web` container environment. **This will override any environment variables you may have previously defined by the same name.** For details, see [Defining links](/docs/linking#defining-links).
+Convox links containers by injecting environment variables. For example, if your `docker-compose.yml` links a service named `web` to a service named `database`, Convox will add environment variables in the form `DATABASE_URL`, `DATABASE_SCHEME`, etc to the `web` container environment. **This will override any environment variables you may have previously defined by the same name.** For details, see [Defining links](/docs/gen1/linking#defining-links).
 
 ## Scope
 

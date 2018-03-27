@@ -1,6 +1,5 @@
 ---
 title: "SSL"
-order: 900
 ---
 
 You can easily secure traffic to your application using TLS (SSL).

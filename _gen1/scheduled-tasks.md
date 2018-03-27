@@ -1,6 +1,5 @@
 ---
 title: "Scheduled Tasks"
-order: 450
 ---
 
 Convox can set up `cron`-like recurring tasks on any of your application processes. This can be useful for background work like data dumps, batch jobs, or even queueing other background jobs for a worker.
@@ -86,4 +85,4 @@ See the [Scheduled Events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/e
 
 ## Run options and persistence
 
-The service a scheduled task is associated with does not necessarily need running containers all the time. The service can be [scaled down to `-1` or `0`](/docs/scaling/#scaling-down-unused-services), and the scheduled task will "wake it up," causing a container to be created for the scheduled to task to run in, and exiting when it finishes.
+The service a scheduled task is associated with does not necessarily need running containers all the time. The service can be [scaled down to `-1` or `0`](/docs/gen1/scaling/#scaling-down-unused-services), and the scheduled task will "wake it up," causing a container to be created for the scheduled to task to run in, and exiting when it finishes.
