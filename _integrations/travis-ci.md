@@ -54,24 +54,3 @@ If you use [Console](https://console.convox.com/) to manage access to your Racks
     CONVOX_PASSWORD=<deploy key>
 
 For more information, see [deploy keys](/docs/deploy-keys).
-
-### Authenticating directly with a Rack
-
-If you do not use [Console](https://console.convox.com/), you can grant Travis CI direct access to your Rack by setting the following environment variables in Travis CI:
-
-    CONVOX_HOST=<Rack host>
-    CONVOX_PASSWORD=<Rack API key>
-
-You can find your **Rack host** by either:
-
-* visiting the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation), specifying your region (as it appears in `convox rack --rack <name>`), selecting your Rack stack, and navigating to the "Outputs" tab. You'll want the value of the `Dashboard` output, which will have the following format: `<rack-name>-<timestamp>.<aws-region>.elb.amazonaws.com`.
-* via the AWS CLI, replacing `us-east-1` and `legit` with the region and name of your own Rack below:
-
-```
-aws cloudformation describe-stacks \
-    --region us-east-1 \
-    --stack-name legit \
-    --query 'Stacks[*].Outputs[?OutputKey==`Dashboard`].OutputValue'
-```
-
-Your **Rack API key** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p APIKEY`, or if you installed your Rack from the Console web interface, you'll need to [reset your Rack API key](/docs/api-keyroll/#roll-rack-api-key-ne-password).
