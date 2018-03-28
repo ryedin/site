@@ -10,8 +10,8 @@ You can view all of the output of your application's processes using `convox log
 
 ```
 $ convox logs
-2016-04-12 19:45:00 i-0234d285 example-app/web:RSPZQWVWGOP : 10.0.1.242 - - [12/Apr/2016:19:45:00 +0000] "GET / HTTP/1.1" 200 70 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"
-2016-04-12 19:45:00 i-0234d285 example-app/web:RSPZQWVWGOP : 10.0.1.242 - - [12/Apr/2016:19:45:00 +0000] "GET / HTTP/1.0" 200 70 0.0019
+2016-04-12 19:45:00 i-0234d285 service/web:RSPZQWVWGOP/5e3c8576b942 : 10.0.1.242 - - [12/Apr/2016:19:45:00 +0000] "GET / HTTP/1.1" 200 70 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"
+2016-04-12 19:45:00 i-0234d285 service/web:RSPZQWVWGOP/5e3c8576b942 : 10.0.1.242 - - [12/Apr/2016:19:45:00 +0000] "GET / HTTP/1.0" 200 70 0.0019
 ```
 
 #### convox exec

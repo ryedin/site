@@ -109,7 +109,5 @@ $ echo "myorg/staging" > .convox/rack
 
 ## See also
 
-- [API Keys](/docs/api-keys)
-- [API Keyroll](/docs/api-keyroll)
-- [Login and authentication](/docs/login-and-authentication/)
 - [CLI environment variables](/docs/cli-environment-variables/)
+- [Login and authentication](/docs/login-and-authentication/)

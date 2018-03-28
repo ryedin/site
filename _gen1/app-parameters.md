@@ -35,7 +35,7 @@ Keep in mind that [ECS will terminate your app](http://docs.aws.amazon.com/AWSCl
 
 ## Internal
 
-Have the app use Internal ELBs for all processes, i.e. make it unreachable from the Internet. See our [Internal Apps doc](/docs/internal-apps) for more information.
+Have the app use Internal ELBs for all processes, i.e. make it unreachable from the Internet. See our [Internal Apps doc](/docs/gen1/internal-apps) for more information.
 
 | Allowed values | "Yes", "No" |
 | Default value  | "No"        |

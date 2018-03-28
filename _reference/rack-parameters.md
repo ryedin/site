@@ -232,7 +232,7 @@ The number of instances to update in a batch.
 
 ## Internal
 
-Make all new apps created in the Rack use Internal ELBs by default, i.e. make them accessible only from within the VPC and unreachable from the internet. See the [Internal Racks](/docs/internal-apps#internal-racks) section of our Internal Apps doc for more information.
+Enable the internal load balancer for this Rack. See [Internal Services](/docs/internal-services)
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |

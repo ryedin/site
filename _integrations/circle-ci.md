@@ -26,15 +26,3 @@ If you use [Console](https://console.convox.com/) to manage access to your Racks
     CONVOX_PASSWORD=<deploy key>
 
 For more information, see [deploy keys](/docs/deploy-keys).
-
-
-### Authenticating directly with a Rack
-
-If you do not use [Console](https://console.convox.com/), you can grant CircleCI direct access to your Rack by setting the following environment variables in CircleCI:
-
-    CONVOX_HOST=<Rack host>
-    CONVOX_PASSWORD=<Rack password>
-
-You can find your **Rack host** by visiting the CloudFormation console, selecting your Rack stack, and navigating to the "Outputs" tab. You'll want the value of the "Dashboard" output, which will have the following format: `<rack-name>-<timestamp>.<aws-region>.elb.amazonaws.com`.
-
-Your **Rack API key** is irrecoverable, so if you don't have a record of it from when you first installed your Rack with `convox install -p APIKEY`, or if you installed your Rack from the Console web interface, you'll need to [reset your Rack API key](/docs/api-keyroll#roll-rack-api-key-ne-password).

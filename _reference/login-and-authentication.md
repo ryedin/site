@@ -26,18 +26,7 @@ In other words: if `auth` contains the correct hostname + API key pair correspon
 
 To switch accounts, run `convox login console.convox.com --password=CONVOX_API_KEY`, replacing `CONVOX_API_KEY` with your user API key, which can be regenerated in [your Convox account settings](https://console.convox.com/grid/user/profile).
 
-### How do I give someone access to a Rack?
-
-On [**Pro**](/pricing) organizations and above, you can add collaborators to Racks installed in that organization. For details, see [Access Control](/docs/access-control/).
-
-On Developer plans or on Racks installed in your `personal` organization, you can share the Rack API key. Only share the Rack API key with users you trust, as they will have full control over the Rack.
-
-* If you installed the Rack via Console, its API key was not revealed to you. You can reset it manually; see [API Keyroll](/docs/api-keyroll/).
-* If you installed via `convox install`, the Rack's API key can be found in `~/.convox/auth`.
-
 ## See also
 
-- [API Keyroll](/docs/api-keyroll)
 - [CLI configuration files](/docs/cli-config-files/)
 - [CLI environment variables](/docs/cli-environment-variables/)
-

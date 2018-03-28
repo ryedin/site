@@ -32,7 +32,7 @@ This can correspond to `CREATE_COMPLETE`, `DELETE_FAILED`, `UPDATE_COMPLETE` or 
 
 ## unreachable
 
-When Console or your CLI are unable to communicate with a Rack, that Rack will have a status of _unreachable_. Common causes of an _unreachable_ Rack include using a bad API Key and having just uninstalled the Rack. For help recovering from a bad API Key, see our documentation on how to [roll a Rack API Key](/docs/api-keyroll/#roll-rack-api-key-ne-password) or how to [set a specific Rack API Key](/docs/api-keyroll/#other-ways-to-change-rack-api-keys). To deal with an uninstalled Rack listed as _unreachable_, simply visit that Rack's settings page and click the "Remove Rack" button to tell Console to stop keeping track of it.
+When Console or your CLI are unable to communicate with a Rack, that Rack will have a status of _unreachable_.
 
 ## updating
 

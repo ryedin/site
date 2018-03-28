@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   version: 1.0.0
   title: Convox Rack API
-  description: Enter your Convox API key from your <a href="https://console.convox.com/grid/user/profile">account settings</a> in the field above and click Authorize. <br><b>Caution:</b> Commands on this page will really be applied to your resources. <br>For help, see the <a href="https://convox.com/docs/api-keys/">documentation</a>.
+  description: Enter your Convox API key from your <a href="https://console.convox.com/grid/user/profile">account settings</a> in the field above and click Authorize. <br><b>Caution:</b> Commands on this page will really be applied to your resources.
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0

@@ -13,7 +13,6 @@ If you'd like to segregate builds from apps or just need better build performanc
 You can set this:
 
 - on a new Rack by passing the `--build-instance <instance type>` flag to `convox install`,
-- on new Racks by setting the [`RACK_BUILD_INSTANCE`](/docs/cli-environment-variables/#rackbuildinstance) environment variable to a [valid instance type](https://aws.amazon.com/ec2/instance-types/),
 - on an existing Rack by setting the [`BuildInstance`](/docs/rack-parameters/#buildinstance) Rack parameter:
 
 ```
@@ -30,9 +29,3 @@ This will guarantee that:
 This option offers the best performance for very CPU or memory intensive builds. It also helps with compliance and system auditing requirements by moving all build operations off of application servers.
 
 You will incur the cost of running a dedicated build instance 24/7.
-
-### Dedicated Build Rack
-
-You can also isolate builds on the Rack level.
-
-This is the best option for teams with a very high volume of builds.

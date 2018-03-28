@@ -68,8 +68,6 @@ API Key:
 Logged in successfully.
 </pre>
 
-See [Installing the Convox CLI](/docs/installation/) and [API Keys](/docs/api-keys/) for more details.
-
 ## Deploy to Convox
 
 #### Clone a sample application
