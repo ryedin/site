@@ -1,6 +1,5 @@
 ---
 title: "API Keyroll"
-order: 350
 ---
 
 There are two different concepts here: rolling (changing) a **Rack API key** (what Console uses to authenticate with Rack) and rolling your **user** (or **account**) **API key**.

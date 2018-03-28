@@ -36,18 +36,14 @@ collections:
     title: Integrations
     output: true
     permalink: /docs/:name/
-  languages:
-    title: Languages & Frameworks
-    output: true
-    permalink: /docs/:name/
   console:
     title: Console
     output: true
     permalink: /docs/:name/
-  gen2:
-    title: Generation 2
+  gen1:
+    title: Generation 1
     output: true
-    permalink: /docs/gen2/:name/
+    permalink: /docs/gen1/:name/
   reference:
     title: Reference
     output: true
@@ -57,8 +53,6 @@ collections:
     output: true
     permalink: /docs/:name/
   guide:
-    output: true
-  heroku:
     output: true
 
 defaults:
@@ -79,6 +73,10 @@ defaults:
     values:
       layout: docs
   - scope:
+      path: docs/gen1
+    values:
+      layout: gen1
+  - scope:
       path: jobs
     values:
       layout: jobs
@@ -98,11 +96,6 @@ defaults:
       path: guide
     values:
       layout: guide
-  - scope:
-      path: heroku
-    values:
-      layout: heroku
-
 
 algolia:
   application_id: '2VBKDVKUPC'

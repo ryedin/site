@@ -3,44 +3,35 @@ title: "Custom Domains"
 order: 800
 ---
 
-You can easily map a custom domain to a Convox application by creating a `CNAME` to your load balancer hostname.
+You can specify that your service should listen on a custom domain:
 
-## Balancer Hostname
+```yaml
+services:
+  web:
+    domain: myapp.example.org
+    port: 3000
+```
 
-You can find the load balancer hostname(s) for your application using `convox apps info`:
+You can also specify multiple domains using this syntax:
 
-    $ convox apps info 
-    Name       docs
-	Status     running
-	Release    RHUFNNNVEAP
-	Processes  web  
-	Endpoints  docs-web-R72RMTP-326048479.us-east-1.elb.amazonaws.com:80 (web)
-	
+```yaml
+services:
+  web:
+    domain:
+      - myapp.example.org
+      - *.example.net
+    port: 3000
+```
+
+You can use environment interpolation so that you don't have to hardcode the hostname in your `convox.yml`:
+
+```yaml
+services:
+  web:
+    domain: ${HOST}
+    port: 3000
+```
+
 ## Configuring DNS
 
-Create an appropriate DNS entry to map your desired custom domain to your Convox app. In the example above one might create the following DNS entry:
-
-<table>
-  <tr>
-    <th>Name</th>
-    <td><code>docs.convox.com</code></td>
-  </tr>
-  <tr>
-    <th>Type</th>
-    <td><code>CNAME</code></td>
-  </tr>
-  <tr>
-    <th>Value</th>
-    <td><code>docs-web-R72RMTP-326048479.us-east-1.elb.amazonaws.com</code></td>
-  </tr>
-  <tr>
-    <th>TTL</th>
-    <td><code>60</code></td>
-  </tr>
-</table>
-
-&nbsp;
-
-<div class="block-callout block-show-callout type-info" markdown="1">
-To set up DNS for a root domain you should use the `ALIAS` type with Route 53 or the equivalent with your DNS provider.
-</div>
+Run `convox rack` and find the `Domain` value. Configure your custom domain as a `CNAME` or `ALIAS` pointer to this domain.

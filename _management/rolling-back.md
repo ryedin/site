@@ -1,6 +1,5 @@
 ---
 title: "Rolling Back"
-order: 775
 ---
 
 Convox keeps history for your Apps and for Rack and CLI releases. It's possible to roll back to previous versions of all of these.

@@ -17,8 +17,8 @@ When you run this command the following steps are executed:
 
 - The Convox CLI builds a tarball from all the files in your project (except the ones specified in `.dockerignore`)
 - The CLI uploads the tarball to your Rack
-- The Rack extracts the tarball and reads `docker-compose.yml`
-- Docker images are built or pulled as specified by `docker-compose.yml`
+- The Rack extracts the tarball and reads `convox.yml`
+- Docker images are built or pulled as specified by `convox.yml`
 - The images are tagged and pushed into your Rack's private Amazon ECR registry
 - Build metadata is saved to the Rack
 - A new [release](/docs/releases) is created from the build and its metadata is saved too
@@ -74,7 +74,3 @@ $ convox builds export <build ID> -a <app1> --rack <rack1> | convox builds impor
 ## Build arguments
 
 Convox respects the `ARG` Dockerfile directive. For more information, see [Dockerfile: ARG](/docs/dockerfile/#arg).
-
-## Incremental builds
-
-Every invocation of `convox build` uploads a tarball containing all of a project's files to your Rack, no matter how many of the files in the build context actually changed. To optimize how these files are uploaded, run `convox build --incremental` to upload the files to S3, where they remain cached. Subsequent incremental builds will upload only those files which differ from those in the preceding incremental build. This will significantly reduce the amount of data uploaded, meaning your Rack can begin building an image much sooner.

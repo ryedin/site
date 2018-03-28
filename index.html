@@ -57,24 +57,20 @@ title: Convox
         </div>
       </div>
       <div class="visual-group col-md-4">
-        <p class="caption">Configure dev and prod with <a href="/docs/docker-compose-file/">one file</a>.</p>
+        <p class="caption">Configure your application using <a href="/docs/convox-yml/">one file</a>.</p>
         <div class="visual file shadow">
-          <div class="line"><span class="key">version</span> '2'</div>
           <div class="line"><span class="key">services</span></div>
           <div class="line">  <span class="key">web</span></div>
           <div class="line">    <span class="key">build</span> .</div>
           <div class="line">    <span class="key">environment</span></div>
-          <div class="line">      - RAILS_ENV</div>
-          <div class="line">    <span class="key">links</span></div>
-          <div class="line">      - database</div>
-          <div class="line">    <span class="key">ports</span></div>
-          <div class="line">      - 80:3000</div>
-          <div class="line">  <span class="key">database</span></div>
-          <div class="line">    <span class="key">image</span> convox/postgres</div>
-          <div class="line">    <span class="key">ports</span></div>
-          <div class="line">      - 5432</div>
-          <div class="line">    <span class="key">volumes</span></div>
-          <div class="line">      - /var/lib/postgresql/data</div>
+          <div class="line">      - RAILS_ENV=production</div>
+          <div class="line">      - SECRET</div>
+          <div class="line">    <span class="key">port</span> 3000</div>
+          <div class="line"><span class="key">timers</span></div>
+          <div class="line">  <span class="key">cleanup</span></div>
+          <div class="line">    <span class="key">command</span> bin/cleanup</div>
+          <div class="line">    <span class="key">schedule</span> */30 * * * ?</div>
+          <div class="line">    <span class="key">service</span> web</div>
         </div>
       </div>
       <div class="visual-group col-md-4">

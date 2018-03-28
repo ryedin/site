@@ -1,6 +1,5 @@
 ---
 title: "VPC Configurations"
-order: 800
 ---
 
 When you [install a Rack](/docs/installing-a-rack/), most of the AWS resources used by Convox are launched inside of a new [VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html). That default behavior might not be sufficient in all cases, so we've covered a few of the common non-default VPC configurations below.

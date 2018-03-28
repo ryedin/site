@@ -1,5 +1,5 @@
 ---
-title: Proxy to remote resources
+title: Remote Resources
 order: 500
 ---
 
@@ -7,7 +7,7 @@ It's often useful to be able to interact with remote services or resources (e.g.
 
 In these cases, `convox proxy` and `convox resources proxy` can help by proxying traffic from your local development machine to your app's services via your Rack.
 
-## Access external resources with `convox resources proxy`
+## Access external resources
 
 When possible, [resources](/docs/about-resources/) are generally configured so they are not accessible from the public internet.  You can get proxy access with the `convox resources proxy` command, e.g.:
 

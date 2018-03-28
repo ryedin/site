@@ -1,6 +1,5 @@
 ---
 title: "Advanced Build Options"
-order: 500
 ---
 
 By default, `convox build` processes run in a Rack just like other application processes. This is designed to handle a normal number of builds at a minimal cost. Builds use spare capacity on a Rack instance, and will autoscale the Rack up and then back down if any addition build capacity is needed.

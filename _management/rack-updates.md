@@ -1,6 +1,5 @@
 ---
 title: "Rack Updates"
-order: 762
 ---
 
 As Convox is in active development, new Rack releases are frequently available. There are two ways to update a Rack: [via Console](#via-console) and [via the CLI](#via-the-cli). Also keep in mind that some Rack releases are [required](#required-updates), i.e. cannot be skipped even if there is a newer release available.

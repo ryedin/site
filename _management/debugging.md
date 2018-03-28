@@ -1,6 +1,5 @@
 ---
 title: "Debugging"
-order: 400
 ---
 
 Convox makes it easy to debug your running applications.
