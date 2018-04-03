@@ -12,50 +12,6 @@ You can also set multiple parameters at once.
 
     convox rack params set Foo=bar Baz=qux
 
-# Available Parameters
-
-The following parameters can be used to configure your Convox Rack:
-
-* [Ami](#ami)
-* [ApiCount](#apicount)
-* [ApiCpu](#apicpu)
-* [ApiMemory](#apimemory)
-* [Autoscale](#autoscale)
-* [BuildCpu](#buildcpu)
-* [BuildImage](#buildimage)
-* [BuildInstance](#buildinstance)
-* [BuildMemory](#buildmemory)
-* [ClientId](#clientid)
-* [ContainerDisk](#containerdisk)
-* [Development](#development)
-* [EncryptEbs](#encryptebs)
-* [Encryption](#encryption)
-* [ExistingVpc](#existingvpc)
-* [HttpProxy](#httpproxy)
-* [InstanceBootCommand](#instancebootcommand)
-* [InstanceCount](#instancecount)
-* [InstanceRunCommand](#instanceruncommand)
-* [InstanceType](#instancetype)
-* [InstanceUpdateBatchSize](#instanceupdatebatchsize)
-* [Internal](#internal)
-* [Key](#key)
-* [OnDemandMinCount](#ondemandmincount)
-* [Password](#password) **(required)**
-* [Private](#private)
-* [PrivateApi](#privateapi)
-* [SpotInstanceBid](#spotinstancebid)
-* [Subnet0CIDR](#subnet0cidr)
-* [Subnet1CIDR](#subnet1cidr)
-* [Subnet2CIDR](#subnet2cidr)
-* [SubnetPrivate0CIDR](#subnetprivate0cidr)
-* [SubnetPrivate1CIDR](#subnetprivate1cidr)
-* [SubnetPrivate2CIDR](#subnetprivate2cidr)
-* [SwapSize](#swapsize)
-* [Tenancy](#tenancy)
-* [Version](#version) **(required)**
-* [VolumeSize](#volumesize)
-* [VPCCIDR](#vpccidr)
-
 ## Ami
 
 Which [Amazon Machine Image](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html) should be used.
@@ -267,6 +223,12 @@ Put Rack API Load Balancer in a private network, i.e. have the Rack API use an I
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
+
+## RouterSecurityGroup
+
+Specify a custom security group to use for the Rack's router.
+
+| Default value  | "" |
 
 ## SpotInstanceBid
 
