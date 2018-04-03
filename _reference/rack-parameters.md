@@ -2,7 +2,7 @@
 title: "Rack Parameters"
 ---
 
-# Setting Parameters
+## Setting Parameters
 
 Parameters can be set using the following command.
 
@@ -12,42 +12,42 @@ You can also set multiple parameters at once.
 
     convox rack params set Foo=bar Baz=qux
 
-## Ami
+### Ami
 
 Which [Amazon Machine Image](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html) should be used.
 
-## ApiCount
+### ApiCount
 
 How many Rack API containers to run. Setting this higher than 2 will guarantee better Rack API availability for mission critical clusters.
 
 | Default value | `2` |
 
-## ApiCpu
+### ApiCpu
 
 How much CPU should be reserved by the API web process.
 
 | Default value | `128` |
 
-## ApiMemory
+### ApiMemory
 
 How much memory should be reserved by the API web process.
 
 | Default value | `128` |
 
-## Autoscale
+### Autoscale
 
 Autoscale rack instances. See our [Scaling doc](/docs/scaling#autoscale) for more information.
 
 | Default value  | `Yes`       |
 | Allowed values | `Yes`, `No` |
 
-## BuildCpu
+### BuildCpu
 
 How much CPU should be allocated to builds.
 
 | Default value | `0` |
 
-## BuildImage
+### BuildImage
 
 Override the default build image.
 
@@ -55,7 +55,7 @@ This parameter is used for local [development on Rack](https://github.com/convox
 
 | Default value | "" |
 
-## BuildInstance
+### BuildInstance
 
 EC2 instance type to create and use as the Rack's [dedicated build instance](/docs/builds/#dedicated-build-instance).
 
@@ -66,7 +66,7 @@ Note: the build instance will also use the [`InstanceBootCommand`](/docs/rack-pa
 
 See also the [InstanceType](#instancetype) Rack parameter and our page on [AWS Instance Types](/docs/aws-instance-types/).
 
-## BuildMemory
+### BuildMemory
 
 Defines the amount of memory (in MB) that the instance should allocate to build containers for each build.
 
@@ -80,14 +80,13 @@ Getting build errors like <b>Starting build... ERROR: not enough memory availabl
 Note: If you set BuildMemory to an amount that's more than half of the total memory available to the build instance, you'll only be able to run one build at a time. If this value is too high, builds may fail.
 </div>
 
-
-## ClientId
+### ClientId
 
 Anonymous identifier.
 
 | Default value  | `dev@convox.com` |
 
-## ContainerDisk
+### ContainerDisk
 
 <div class="alert alert-info">
 Getting errors like <b>No space left on device</b>? You can extend the space on the device by increasing this parameter.
@@ -97,32 +96,25 @@ Default container disk size in GB.
 
 | Default value | `10` |
 
-## Development
-
-Development mode.
-
-| Default value  | `No`        |
-| Allowed values | `Yes`, `No` |
-
-## EncryptEbs
+### EncryptEbs
 
 Enable encryption at rest for EBS volumes.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
 
-## Encryption
+### Encryption
 
 Encrypt secrets with KMS.
 
 | Default value    | `Yes`       |
 | Permitted values | `Yes`, `No` |
 
-## ExistingVpc
+### ExistingVpc
 
 Existing VPC ID (if blank, a VPC will be created).
 
-## HttpProxy
+### HttpProxy
 
 HTTP proxy for outbound HTTP connections (for network-restricted Racks).
 
@@ -132,7 +124,7 @@ Set this value to the hostname (or IP address) and port number of an HTTP proxy 
 
 For more information, see [HTTP Proxy Configuration](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/http_proxy_config.html) in the AWS docs.
 
-## InstanceBootCommand
+### InstanceBootCommand
 
 A single line of shell script to run (as root) as a cloud-init command early during instance boot.
 
@@ -153,14 +145,14 @@ Updating parameters... OK
 
 (Note the surrounding single quotes in the above command.)
 
-## InstanceCount
+### InstanceCount
 
 The number of EC2 instances in your Rack cluster.
 
 | Default value | `3`    |
 | Minimum value | `3`    |
 
-## InstanceRunCommand
+### InstanceRunCommand
 
 A single line of shell script to run as a cloud-init command late during instance boot.
 
@@ -170,7 +162,7 @@ The `InstanceRunCommand` will also apply to any [build instance](/docs/rack-para
 
 | Default value | "" |
 
-## InstanceType
+### InstanceType
 
 The type of EC2 instance to run in your Rack cluster.
 
@@ -179,27 +171,27 @@ The type of EC2 instance to run in your Rack cluster.
 
 See also the [BuildInstance](#buildinstance) Rack parameter and our page on [AWS Instance Types](/docs/aws-instance-types/).
 
-## InstanceUpdateBatchSize
+### InstanceUpdateBatchSize
 
 The number of instances to update in a batch.
 
 | Default value | `1`    |
 | Minimum value | `1`    |
 
-## Internal
+### Internal
 
 Enable the internal load balancer for this Rack. See [Internal Services](/docs/internal-services)
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
 
-## OnDemandMinCount
+### OnDemandMinCount
 
 If using spot instances through the [SpotInstanceBid](#spotinstancebid) parameter, this configures the minimum number of on demand instances. This should be set to a value that will guarantee the minimum acceptable service availbility.
 
 | Default value | `3`    |
 
-## Key
+### Key
 
 SSH key name for access to cluster instances.
 
@@ -210,99 +202,95 @@ SSH key name for access to cluster instances.
 | Minimum length  | 1  |
 | Maximum length  | 50 |
 
-## Private
+### Private
 
 Have the Rack create non-publicly routable resources, i.e. in a private subnet. See our [Private Networking doc](/docs/private-networking/) for more information.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
 
-## PrivateApi
+### PrivateApi
 
 Put Rack API Load Balancer in a private network, i.e. have the Rack API use an Internal ELB, making it unreachable from the internet.
 
 | Default value  | `No`        |
 | Allowed values | `Yes`, `No` |
 
-## RouterSecurityGroup
+### RouterSecurityGroup
 
 Specify a custom security group to use for the Rack's router.
 
 | Default value  | "" |
 
-## SpotInstanceBid
+### SpotInstanceBid
 
 A value, in dollars, that you want to pay for spot instances. If spot instances are available for the bid price, the Rack instances will use spot instances instead of on demand instances, resulting in significant cost savings. If the parameter is empty, spot instances will not be utilized. This should be used with the [OnDemandMinCount](#ondemandmincount) parameter to guarantee some on demand instances are running if spot instances are not available.
 
 | Default value  | "" |
 
-## Subnet0CIDR
+### Subnet0CIDR
 
 Public Subnet 0 CIDR Block.
 
 | Default value | `10.0.1.0/24` |
 
-## Subnet1CIDR
+### Subnet1CIDR
 
 Public Subnet 1 CIDR Block.
 
 | Default value | `10.0.2.0/24` |
 
-## Subnet2CIDR
+### Subnet2CIDR
 
 Public Subnet 2 CIDR Block.
 
 | Default value | `10.0.3.0/24` |
 
-## SubnetPrivate0CIDR
+### SubnetPrivate0CIDR
 
 Private Subnet 0 CIDR Block.
 
 | Default value | `10.0.4.0/24` |
 
-## SubnetPrivate1CIDR
+### SubnetPrivate1CIDR
 
 Private Subnet 1 CIDR Block.
 
 | Default value | `10.0.5.0/24` |
 
-## SubnetPrivate2CIDR
+### SubnetPrivate2CIDR
 
 Private Subnet 2 CIDR Block.
 
 | Default value | `10.0.6.0/24` |
 
-## SwapSize
+### SwapSize
 
 Default swap volume size in GB.
 
 | Default value | `5` |
 
-## Tenancy
+### Tenancy
 
 Dedicated hardware.
 
 | Default value  | `default`              |
 | Allowed values | `default`, `dedicated` |
 
-## Version
+### Version
 
 (REQUIRED) Convox release version.
 
 | Minimum length | 1 |
 
-## VolumeSize
+### VolumeSize
 
 Default disk size (in gibibytes) of the EBS volume attached to each EC2 instance in the cluster.
 
 | Default value | `50` |
 
-## VPCCIDR
+### VPCCIDR
 
 VPC CIDR Block. Note that changing this has no effect since VPC CIDR ranges cannot be changed after they're created.
 
 | Default value | `10.0.0.0/16` |
-
-## Reference
-
-* [rack.json](https://github.com/convox/rack/blob/b7d9a114d5cc5f0a2843b89413067466aa41bc94/provider/aws/dist/rack.json#L176) on GitHub
