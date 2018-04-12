@@ -151,7 +151,7 @@ Only environment variables that are listed here will be provided to the service 
 
 ### health
 
-Health checks are required for each service that exposes a port. Health check responses must return a 200 status for anonymous users.
+Health checks are required for each service that exposes a port. Health check responses must return a status code between 200-399.
 
 Can be defined as either a string containing the path that should be requested by the balancer's HTTP healthcheck of the service:
 
